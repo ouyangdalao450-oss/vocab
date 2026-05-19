@@ -2,175 +2,216 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>英语词汇表 - 全部日期</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>英语词汇本</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f0f2f5; color:#1a1a2e; padding:16px; -webkit-text-size-adjust:100%; }
-.container { max-width:1100px; margin:0 auto; }
-h1 { text-align:center; font-size:1.6em; margin-bottom:4px; color:#16213e; }
-.subtitle { text-align:center; color:#666; margin-bottom:16px; font-size:0.9em; }
-.top-bar { display:flex; justify-content:center; gap:12px; margin-bottom:12px; flex-wrap:wrap; align-items:center; }
-.search-box { width:100%; display:flex; justify-content:center; }
-.search-box input { width:100%; max-width:500px; padding:10px 16px; border:2px solid #ddd; border-radius:24px; font-size:1em; outline:none; transition:border-color 0.2s; }
-.search-box input:focus { border-color:#764ba2; }
-.date-nav { display:flex; gap:8px; flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 0; scrollbar-width:none; }
-.date-nav::-webkit-scrollbar { display:none; }
-.date-nav button { padding:8px 16px; border:2px solid #ddd; border-radius:20px; background:#fff; color:#555; font-size:0.88em; cursor:pointer; transition:all 0.2s; font-weight:600; white-space:nowrap; flex-shrink:0; -webkit-tap-highlight-color:transparent; }
-.date-nav button:hover { border-color:#764ba2; color:#764ba2; background:#f8f0ff; }
-.date-nav button.active { border-color:#764ba2; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
-.stats { color:#888; font-size:0.82em; text-align:center; margin-bottom:12px; }
-.date-section { margin-bottom:24px; }
-.date-header { font-size:1.1em; font-weight:700; color:#764ba2; padding:10px 14px; background:linear-gradient(90deg,#f0e6ff,#e8daff); border-left:4px solid #764ba2; border-radius:0 8px 8px 0; margin-bottom:10px; }
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { width:100%; overflow-x:hidden; }
+body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f5f0ff; color:#1a1a2e; padding:12px; -webkit-text-size-adjust:100%; }
 
-/* 桌面端表格 */
-table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin-bottom:8px; display:table; }
-thead { background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; }
-thead th { padding:12px 10px; text-align:left; font-weight:600; font-size:0.88em; letter-spacing:0.5px; }
-tbody tr { border-bottom:1px solid #eee; transition:background 0.15s; }
-tbody tr:hover { background:#f8f0ff; }
-tbody tr:last-child { border-bottom:none; }
-td { padding:9px 10px; font-size:0.92em; vertical-align:middle; }
-td:first-child { text-align:center; font-weight:700; color:#764ba2; width:38px; }
-.word-cell { font-weight:700; color:#16213e; font-size:1.05em; display:flex; align-items:center; gap:6px; }
-.phonetic { color:#888; font-size:0.88em; font-family:"Lucida Sans Unicode",sans-serif; }
-.pos { color:#764ba2; font-weight:600; font-size:0.85em; background:#f0e6ff; padding:2px 8px; border-radius:10px; display:inline-block; }
-.meaning { color:#333; line-height:1.5; }
-.example { color:#666; font-style:italic; font-size:0.88em; line-height:1.4; }
-.speak-btn { background:none; border:none; cursor:pointer; font-size:1.15em; padding:2px 4px; border-radius:6px; transition:all 0.15s; line-height:1; -webkit-tap-highlight-color:transparent; }
-.speak-btn:hover { background:#e8daff; transform:scale(1.2); }
-.speak-btn:active { transform:scale(0.9); }
-.speak-btn.playing { background:#c8a8ff; }
-.no-results { text-align:center; color:#aaa; padding:40px; font-size:1.1em; }
-.footer { text-align:center; color:#aaa; font-size:0.75em; margin-top:24px; padding-bottom:20px; }
-.back-top { position:fixed; right:20px; bottom:28px; width:48px; height:48px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.5em; cursor:pointer; box-shadow:0 4px 16px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:opacity 0.3s,transform 0.2s; z-index:999; display:flex; align-items:center; justify-content:center; -webkit-tap-highlight-color:transparent; }
-.back-top.visible { opacity:1; pointer-events:auto; }
-.back-top:hover { transform:scale(1.12); }
+/* ===== 顶部 ===== */
+.top { position:sticky; top:0; z-index:10; background:#f5f0ff; padding:10px 0 8px; }
+h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; margin-bottom:6px; }
+.search-wrap { position:relative; max-width:500px; margin:0 auto 8px; }
+.search-wrap input { width:100%; padding:10px 16px 10px 38px; border:2px solid #ddd; border-radius:24px; font-size:16px; outline:none; background:#fff; transition:border-color 0.2s; }
+.search-wrap input:focus { border-color:#764ba2; }
+.search-wrap .search-icon { position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:1.1em; pointer-events:none; }
+.date-btn { display:flex; align-items:center; justify-content:center; gap:6px; margin:0 auto; padding:7px 20px; border:2px solid #764ba2; border-radius:20px; background:#fff; color:#764ba2; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; }
+.date-btn:active { background:#f0e6ff; }
+.stats { text-align:center; font-size:0.78em; color:#999; margin-top:6px; }
 
-/* ====== 手机端卡片布局 ====== */
+/* ===== 遮罩 + 日历弹窗 ===== */
+.overlay { display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.45); opacity:0; transition:opacity 0.25s; }
+.overlay.show { display:flex; align-items:flex-end; justify-content:center; opacity:1; }
+@media (min-width:600px) { .overlay.show { align-items:center; } }
+.calendar-sheet { width:100%; max-width:480px; max-height:85vh; background:#fff; border-radius:20px 20px 0 0; padding:20px 16px 24px; overflow-y:auto; transform:translateY(100%); transition:transform 0.35s cubic-bezier(0.32,0.72,0,1); }
+@media (min-width:600px) { .calendar-sheet { border-radius:20px; transform:translateY(0) scale(0.9); transition:transform 0.3s, opacity 0.3s; } .overlay.show .calendar-sheet { transform:translateY(0) scale(1); } }
+.overlay.show .calendar-sheet { transform:translateY(0); }
+.cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.cal-header h2 { font-size:1.1em; color:#2d1b69; }
+.cal-close { width:32px; height:32px; border-radius:50%; border:none; background:#f0e6ff; color:#764ba2; font-size:1.2em; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.cal-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(130px,1fr)); gap:10px; }
+.cal-card { background:linear-gradient(135deg,#f8f0ff,#ede4ff); border:2px solid #e8daff; border-radius:14px; padding:12px; cursor:pointer; transition:all 0.2s; position:relative; overflow:hidden; }
+.cal-card::before { content:''; position:absolute; top:-10px; right:-10px; width:40px; height:40px; background:#764ba220; border-radius:50%; }
+.cal-card:active { transform:scale(0.97); border-color:#764ba2; }
+.cal-card .cal-date { font-weight:700; font-size:0.95em; color:#2d1b69; margin-bottom:4px; }
+.cal-card .cal-count { font-size:0.78em; color:#764ba2; font-weight:600; }
+.cal-card .cal-words { font-size:0.72em; color:#aaa; margin-top:4px; }
+
+/* ===== 内容区 ===== */
+.content { padding-bottom:80px; }
+.date-section { margin-bottom:20px; }
+.date-header { font-size:1.05em; font-weight:700; color:#764ba2; padding:9px 14px; background:linear-gradient(90deg,#ede4ff,#f8f0ff); border-left:4px solid #764ba2; border-radius:0 10px 10px 0; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.date-header .dh-count { font-size:0.75em; color:#aaa; font-weight:400; }
+
+/* 桌面表格 */
+.desk-table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06); display:table; margin-bottom:8px; }
+.desk-table thead { background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
+.desk-table th { padding:10px 8px; text-align:left; font-size:0.84em; font-weight:600; letter-spacing:0.3px; }
+.desk-table td { padding:8px 8px; font-size:0.9em; vertical-align:middle; border-bottom:1px solid #f0f0f0; }
+.desk-table tr:last-child td { border-bottom:none; }
+.desk-table .td-num { text-align:center; color:#764ba2; font-weight:700; width:32px; }
+.desk-table .word-cell { font-weight:700; color:#16213e; display:flex; align-items:center; gap:6px; }
+.desk-table .phonetic { color:#999; font-size:0.85em; }
+.desk-table .pos { color:#764ba2; font-weight:600; font-size:0.8em; background:#f0e6ff; padding:2px 8px; border-radius:8px; display:inline-block; }
+.desk-table .meaning { color:#333; font-size:0.9em; line-height:1.4; }
+.desk-table .example { color:#888; font-size:0.84em; font-style:italic; line-height:1.4; }
+.speak-btn { background:none; border:none; font-size:1.3em; padding:4px 6px; border-radius:8px; cursor:pointer; transition:background 0.15s; }
+.speak-btn:active { background:#e8daff; }
+
+/* 手机卡片 */
+.mobile-cards { display:none; flex-direction:column; gap:9px; }
+.vocab-card { background:#fff; border-radius:14px; padding:12px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.05); border-left:4px solid #764ba2; }
+.vocab-card .card-top { display:flex; align-items:center; gap:8px; margin-bottom:5px; }
+.vocab-card .card-num { color:#764ba2; font-weight:700; font-size:0.82em; min-width:22px; }
+.vocab-card .card-speak { background:none; border:none; font-size:1.7em; padding:2px 6px; cursor:pointer; border-radius:10px; line-height:1; }
+.vocab-card .card-speak:active { background:#e8daff; }
+.vocab-card .card-speak.playing { background:#c8a8ff; }
+.vocab-card .card-word { font-weight:700; font-size:1.15em; color:#16213e; }
+.vocab-card .card-phonetic { color:#aaa; font-size:0.82em; font-family:"Lucida Sans Unicode",sans-serif; margin-left:2px; }
+.vocab-card .card-pos { display:inline-block; color:#764ba2; font-weight:600; font-size:0.78em; background:#f0e6ff; padding:2px 10px; border-radius:10px; margin-bottom:5px; }
+.vocab-card .card-meaning { color:#333; font-size:0.92em; line-height:1.45; margin-bottom:4px; }
+.vocab-card .card-example { color:#999; font-size:0.82em; font-style:italic; line-height:1.4; }
+
+/* 响应式 */
 @media (max-width:768px) {
-  body { padding:10px; }
-  h1 { font-size:1.3em; }
-  .subtitle { font-size:0.8em; margin-bottom:10px; }
-  .search-box input { padding:12px 16px; font-size:16px; } /* 16px防止iOS缩放 */
-  .date-nav { gap:6px; padding:2px 0; }
-  .date-nav button { padding:7px 14px; font-size:0.82em; }
-
-  /* 隐藏表格，显示卡片 */
-  table, thead, tbody, tr, th, td { display:none !important; }
-  .mobile-cards { display:flex; flex-direction:column; gap:10px; }
-  .vocab-card { background:#fff; border-radius:14px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #764ba2; }
-  .vocab-card .card-top { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
-  .vocab-card .card-num { color:#764ba2; font-weight:700; font-size:0.85em; min-width:24px; }
-  .vocab-card .card-speak { background:none; border:none; font-size:1.6em; padding:4px 8px; cursor:pointer; border-radius:10px; -webkit-tap-highlight-color:transparent; }
-  .vocab-card .card-speak:active { background:#e8daff; }
-  .vocab-card .card-speak.playing { background:#c8a8ff; }
-  .vocab-card .card-word { font-weight:700; font-size:1.2em; color:#16213e; }
-  .vocab-card .card-phonetic { color:#888; font-size:0.85em; font-family:"Lucida Sans Unicode",sans-serif; margin-left:2px; }
-  .vocab-card .card-pos { color:#764ba2; font-weight:600; font-size:0.8em; background:#f0e6ff; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:6px; }
-  .vocab-card .card-meaning { color:#333; font-size:0.95em; line-height:1.5; margin-bottom:6px; padding-left:2px; }
-  .vocab-card .card-example { color:#888; font-style:italic; font-size:0.85em; line-height:1.4; padding-left:2px; }
-
-  .back-top { right:14px; bottom:20px; width:44px; height:44px; font-size:1.3em; }
-  .footer { font-size:0.7em; }
+  .desk-table { display:none !important; }
+  .mobile-cards { display:flex !important; }
 }
-
-/* 桌面端隐藏卡片容器 */
 @media (min-width:769px) {
   .mobile-cards { display:none !important; }
+  body { padding:20px; }
+  .top { padding:16px 0 12px; }
+  h1 { font-size:1.6em; }
 }
+
+/* 回到顶端 */
+.back-top { position:fixed; right:16px; bottom:24px; width:46px; height:46px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.4em; cursor:pointer; box-shadow:0 4px 14px rgba(118,75,162,0.45); opacity:0; pointer-events:none; transition:opacity 0.3s,transform 0.2s; z-index:50; display:flex; align-items:center; justify-content:center; }
+.back-top.visible { opacity:1; pointer-events:auto; }
+.back-top:active { transform:scale(0.9); }
+
+.no-results { text-align:center; color:#ccc; padding:40px 0; font-size:1em; }
+.footer { text-align:center; color:#ccc; font-size:0.72em; padding:16px 0 24px; }
 </style>
 </head>
 <body>
-<div class="container">
-<h1>📖 英语词汇总表</h1>
-<p class="subtitle">点击 🔊 听剑桥词典真人美式发音 | 搜索框全局搜索 | 离线可用</p>
-<div class="top-bar">
-  <div class="search-box"><input type="text" id="searchInput" placeholder="搜索单词或含义..." oninput="filterAll()"></div>
+
+<div class="top">
+  <h1>📖 英语词汇本</h1>
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="搜索单词或含义..." inputmode="search">
+  </div>
+  <button class="date-btn" id="dateBtn">📅 选择日期</button>
+  <div class="stats" id="stats">加载中…</div>
 </div>
-<div class="date-nav" id="dateNav"></div>
-<div class="stats" id="stats">正在加载...</div>
-<div id="content"></div>
-<div class="footer">发音来源：Cambridge Dictionary 真人录音（美式） | 更新单词：编辑 vocab-data.js 后刷新</div>
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+
+<!-- 日历弹窗 -->
+<div class="overlay" id="overlay">
+  <div class="calendar-sheet" id="calendarSheet">
+    <div class="cal-header">
+      <h2>📅 选择日期</h2>
+      <button class="cal-close" id="calClose">✕</button>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
 </div>
+
+<div class="content" id="content"></div>
+
+<button class="back-top" id="backTop">⬆</button>
+
+<div class="footer">发音：Cambridge Dictionary 美式真人录音</div>
 
 <script src="vocab-data.js"></script>
 <script>
+/* ===== 音频管理 ===== */
+const audioPool = {};   // 预加载缓存
 let currentAudio = null;
+let userInteracted = false;
 
-function speak(word, btn) {
-  if (currentAudio) { currentAudio.pause(); currentAudio.remove(); }
-  const safeName = word.toLowerCase().replace(/\s+/g, '_');
-  const a = new Audio('vocab-audio/' + safeName + '.mp3');
-  currentAudio = a;
-  btn.classList.add('playing');
-  a.onended = () => { a.remove(); btn.classList.remove('playing'); };
-  a.onerror = () => {
-    a.remove(); btn.classList.remove('playing');
-    console.warn('音频加载失败:', safeName);
-  };
-  a.play().catch(() => { btn.classList.remove('playing'); });
+// 标记已发生用户交互（iOS 需要）
+function markInteracted() { userInteracted = true; }
+document.addEventListener('click', markInteracted, { once:true });
+document.addEventListener('touchstart', markInteracted, { once:true });
+
+function preloadAudio(word) {
+  const key = word.toLowerCase().replace(/\s+/g, '_');
+  if (audioPool[key]) return audioPool[key];
+  const a = new Audio();
+  a.src = 'vocab-audio/' + key + '.mp3';
+  a.preload = 'auto';
+  a.onerror = () => { delete audioPool[key]; };
+  audioPool[key] = a;
+  return a;
 }
 
-// 构建日期导航
-function buildDateNav() {
-  const nav = document.getElementById('dateNav');
-  // "全部"按钮
-  const allBtn = document.createElement('button');
-  allBtn.textContent = '📋 全部';
-  allBtn.className = 'active';
-  allBtn.onclick = () => { renderAll(''); document.getElementById('searchInput').value = ''; setActiveNav(allBtn); };
-  nav.appendChild(allBtn);
-  // 每个日期一个按钮
-  VOCAB_DATA.forEach((sec, idx) => {
-    const btn = document.createElement('button');
-    const dateLabel = sec.date.replace(/📅\s*/, '').replace(/（.*）/, '');
-    btn.textContent = dateLabel;
-    btn.onclick = () => { jumpToDate(idx); setActiveNav(btn); };
-    nav.appendChild(btn);
-  });
-}
-
-function setActiveNav(activeBtn) {
-  document.querySelectorAll('.date-nav button').forEach(b => b.classList.remove('active'));
-  activeBtn.classList.add('active');
-}
-
-function jumpToDate(idx) {
-  renderAll('');
-  document.getElementById('searchInput').value = '';
-  // 手机端需要等DOM更新
-  requestAnimationFrame(() => {
-    const sections = document.querySelectorAll('.date-section');
-    if (sections[idx]) {
-      const y = sections[idx].getBoundingClientRect().top + window.scrollY - 10;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+// 预加载当前可见词的音频（在用户交互后）
+function preloadVisible() {
+  if (!userInteracted) return;
+  document.querySelectorAll('[data-word]').forEach(el => {
+    const w = el.getAttribute('data-word');
+    if (w && !audioPool[w.toLowerCase().replace(/\s+/g, '_')]) {
+      preloadAudio(w);
     }
   });
 }
 
-// 词性排序优先级：名词→动词→形容词→副词→短语→其他
+function speak(word, btn) {
+  if (currentAudio) { currentAudio.pause(); currentAudio.remove(); }
+  const key = word.toLowerCase().replace(/\s+/g, '_');
+  let a = audioPool[key];
+  if (!a) {
+    a = new Audio('vocab-audio/' + key + '.mp3');
+    audioPool[key] = a;
+  }
+  currentAudio = a;
+  btn.classList.add('playing');
+  a.onended = () => { btn.classList.remove('playing'); currentAudio = null; };
+  a.onerror = () => { btn.classList.remove('playing'); currentAudio = null; };
+  a.currentTime = 0;
+  a.play().catch(() => { btn.classList.remove('playing'); currentAudio = null; });
+
+  // 预加载相邻词的音频
+  preloadAdjacent(word);
+}
+
+function preloadAdjacent(currentWord) {
+  // 简单策略：预加载数据中所有音频（限制并发）
+  // 实际上只预加载当前日期区的词
+  if (!userInteracted) return;
+  const allWords = [];
+  VOCAB_DATA.forEach(sec => sec.words.forEach(w => allWords.push(w.en)));
+  // 只预加载前20个未缓存的
+  let loaded = 0;
+  for (const w of allWords) {
+    if (loaded >= 20) break;
+    const k = w.toLowerCase().replace(/\s+/g, '_');
+    if (!audioPool[k]) { preloadAudio(w); loaded++; }
+  }
+}
+
+/* ===== 词性排序 ===== */
 function posPriority(pos) {
-  const p = pos.toLowerCase().trim();
-  if (p.startsWith('n')) return 1;       // n. n./v. n./adj. etc
-  if (p.startsWith('v') || p.startsWith('modal')) return 2;  // v. modal v.
-  if (p.startsWith('adj')) return 3;    // adj.
-  if (p.startsWith('adv') || p.startsWith('prep')) return 4; // adv. prep./adv.
+  const p = (pos||'').toLowerCase().trim();
+  if (p.startsWith('n')) return 1;
+  if (p.startsWith('v') || p.startsWith('modal')) return 2;
+  if (p.startsWith('adj')) return 3;
+  if (p.startsWith('adv') || p.startsWith('prep')) return 4;
   if (p === 'phrase') return 5;
   return 6;
 }
+function sortByPos(words) { return [...words].sort((a,b) => posPriority(a.pos)-posPriority(b.pos)); }
 
-function sortByPos(words) {
-  return [...words].sort((a, b) => posPriority(a.pos) - posPriority(b.pos));
-}
+/* ===== 渲染 ===== */
+const isMobile = () => window.innerWidth <= 768;
 
 function renderAll(filter) {
-  const q = (filter || '').toLowerCase();
+  const q = (filter||'').toLowerCase();
   const c = document.getElementById('content');
   c.innerHTML = '';
   let total = 0, shown = 0;
-  const isMobile = window.innerWidth <= 768;
+  const mobile = isMobile();
 
   VOCAB_DATA.forEach(sec => {
     let m = sec.words.filter(w =>
@@ -183,20 +224,19 @@ function renderAll(filter) {
 
     const d = document.createElement('div');
     d.className = 'date-section';
-    d.innerHTML = `<div class="date-header">${sec.date} — ${m.length}/${sec.words.length} 词</div>`;
+    d.innerHTML = `<div class="date-header">${sec.date} <span class="dh-count">${m.length}/${sec.words.length} 词</span></div>`;
 
-    if (isMobile) {
-      // 手机端：卡片布局
+    if (mobile) {
       const cards = document.createElement('div');
       cards.className = 'mobile-cards';
-      m.forEach((w, i) => {
-        const esc = w.en.replace(/'/g, "\\'");
+      m.forEach((w,i) => {
+        const esc = w.en.replace(/'/g,"\\'");
         const card = document.createElement('div');
         card.className = 'vocab-card';
         card.innerHTML = `
           <div class="card-top">
             <span class="card-num">${i+1}</span>
-            <button class="card-speak" onclick="speak('${esc}',this)">🔊</button>
+            <button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>
             <span class="card-word">${w.en}</span>
             <span class="card-phonetic">${w.phonetic}</span>
           </div>
@@ -207,47 +247,104 @@ function renderAll(filter) {
       });
       d.appendChild(cards);
     } else {
-      // 桌面端：表格布局
-      const rows = m.map((w, i) => {
-        const esc = w.en.replace(/'/g, "\\'");
+      const rows = m.map((w,i) => {
+        const esc = w.en.replace(/'/g,"\\'");
         return `<tr>
-          <td>${i+1}</td>
-          <td><span class="word-cell"><button class="speak-btn" onclick="speak('${esc}',this)">🔊</button>${w.en}</span></td>
+          <td class="td-num">${i+1}</td>
+          <td><div class="word-cell"><button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>${w.en}</div></td>
           <td class="phonetic">${w.phonetic}</td>
           <td><span class="pos">${w.pos}</span></td>
           <td class="meaning">${w.meaning}</td>
           <td class="example">${w.example}</td>
         </tr>`;
       }).join('');
-      d.innerHTML += `<table><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+      d.innerHTML += `<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
     }
-
     c.appendChild(d);
   });
 
   document.getElementById('stats').textContent =
-    q ? `共 ${total} 词，匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词，全部显示`;
+    q ? `共 ${total} 词，匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词`;
   if (!shown) c.innerHTML = '<div class="no-results">没有找到匹配的单词 😢</div>';
+
+  // 渲染后预加载可见词音频
+  setTimeout(preloadVisible, 500);
 }
 
-function filterAll() { renderAll(document.getElementById('searchInput').value); }
-buildDateNav();
-renderAll();
+/* ===== 日历弹窗 ===== */
+function buildCalendar() {
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  VOCAB_DATA.forEach((sec, idx) => {
+    const card = document.createElement('div');
+    card.className = 'cal-card';
+    const dateStr = sec.date.replace(/📅\s*/,'').replace(/（.*）/,'');
+    // 取前3个词做预览
+    const preview = sec.words.slice(0,3).map(w => w.en).join(', ');
+    card.innerHTML = `<div class="cal-date">📅 ${dateStr}</div>
+      <div class="cal-count">${sec.words.length} 词</div>
+      <div class="cal-words">${preview}…</div>`;
+    card.onclick = () => { closeCalendar(); jumpToDate(idx); };
+    grid.appendChild(card);
+  });
+}
 
-// 回到顶端按钮：滚动超过一屏时显示
+function openCalendar() {
+  buildCalendar();
+  const ov = document.getElementById('overlay');
+  ov.style.display = 'flex';
+  requestAnimationFrame(() => ov.classList.add('show'));
+}
+function closeCalendar() {
+  const ov = document.getElementById('overlay');
+  ov.classList.remove('show');
+  setTimeout(() => { ov.style.display = 'none'; }, 350);
+}
+
+document.getElementById('dateBtn').onclick = openCalendar;
+document.getElementById('calClose').onclick = closeCalendar;
+document.getElementById('overlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeCalendar();
+});
+
+function jumpToDate(idx) {
+  renderAll('');
+  document.getElementById('searchInput').value = '';
+  requestAnimationFrame(() => {
+    const secs = document.querySelectorAll('.date-section');
+    if (secs[idx]) {
+      const y = secs[idx].getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top:y, behavior:'smooth' });
+    }
+  });
+}
+
+/* ===== 搜索 ===== */
+document.getElementById('searchInput').addEventListener('input', function() {
+  renderAll(this.value);
+});
+
+/* ===== 回到顶端 ===== */
 window.addEventListener('scroll', () => {
-  document.getElementById('backTop').classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+  document.getElementById('backTop').classList.toggle('visible', window.scrollY > window.innerHeight * 0.4);
 });
 
-// 窗口大小变化时重新渲染（桌面↔手机切换）
-let lastWidth = window.innerWidth;
+/* ===== resize 重渲染 ===== */
+let lastW = window.innerWidth;
 window.addEventListener('resize', () => {
-  const w = window.innerWidth;
-  const wasMobile = lastWidth <= 768;
-  const isMobile = w <= 768;
-  if (wasMobile !== isMobile) { renderAll(document.getElementById('searchInput').value); }
-  lastWidth = w;
+  if ((lastW <= 768) !== (window.innerWidth <= 768)) {
+    renderAll(document.getElementById('searchInput').value);
+    lastW = window.innerWidth;
+  }
 });
+
+/* ===== 启动 ===== */
+renderAll('');
+
+/* ===== Service Worker（可选离线）===== */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
 </script>
 </body>
 </html>
