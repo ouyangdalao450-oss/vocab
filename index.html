@@ -6,21 +6,25 @@
 <title>英语词汇表 - 全部日期</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f0f2f5; color:#1a1a2e; padding:20px; }
+body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f0f2f5; color:#1a1a2e; padding:16px; -webkit-text-size-adjust:100%; }
 .container { max-width:1100px; margin:0 auto; }
-h1 { text-align:center; font-size:1.8em; margin-bottom:6px; color:#16213e; }
-.subtitle { text-align:center; color:#666; margin-bottom:20px; font-size:0.95em; }
-.top-bar { display:flex; justify-content:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; align-items:center; }
-.search-box input { width:320px; max-width:90%; padding:10px 16px; border:2px solid #ddd; border-radius:24px; font-size:1em; outline:none; transition:border-color 0.2s; }
+h1 { text-align:center; font-size:1.6em; margin-bottom:4px; color:#16213e; }
+.subtitle { text-align:center; color:#666; margin-bottom:16px; font-size:0.9em; }
+.top-bar { display:flex; justify-content:center; gap:12px; margin-bottom:12px; flex-wrap:wrap; align-items:center; }
+.search-box { width:100%; display:flex; justify-content:center; }
+.search-box input { width:100%; max-width:500px; padding:10px 16px; border:2px solid #ddd; border-radius:24px; font-size:1em; outline:none; transition:border-color 0.2s; }
 .search-box input:focus { border-color:#764ba2; }
-.date-nav { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
-.date-nav button { padding:8px 18px; border:2px solid #ddd; border-radius:20px; background:#fff; color:#555; font-size:0.92em; cursor:pointer; transition:all 0.2s; font-weight:600; }
+.date-nav { display:flex; gap:8px; flex-wrap:nowrap; justify-content:flex-start; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:4px 0; scrollbar-width:none; }
+.date-nav::-webkit-scrollbar { display:none; }
+.date-nav button { padding:8px 16px; border:2px solid #ddd; border-radius:20px; background:#fff; color:#555; font-size:0.88em; cursor:pointer; transition:all 0.2s; font-weight:600; white-space:nowrap; flex-shrink:0; -webkit-tap-highlight-color:transparent; }
 .date-nav button:hover { border-color:#764ba2; color:#764ba2; background:#f8f0ff; }
 .date-nav button.active { border-color:#764ba2; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
-.stats { color:#888; font-size:0.85em; text-align:center; margin-bottom:16px; }
-.date-section { margin-bottom:32px; }
-.date-header { font-size:1.2em; font-weight:700; color:#764ba2; padding:10px 16px; background:linear-gradient(90deg,#f0e6ff,#e8daff); border-left:5px solid #764ba2; border-radius:0 8px 8px 0; margin-bottom:12px; }
-table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin-bottom:8px; }
+.stats { color:#888; font-size:0.82em; text-align:center; margin-bottom:12px; }
+.date-section { margin-bottom:24px; }
+.date-header { font-size:1.1em; font-weight:700; color:#764ba2; padding:10px 14px; background:linear-gradient(90deg,#f0e6ff,#e8daff); border-left:4px solid #764ba2; border-radius:0 8px 8px 0; margin-bottom:10px; }
+
+/* 桌面端表格 */
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin-bottom:8px; display:table; }
 thead { background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; }
 thead th { padding:12px 10px; text-align:left; font-weight:600; font-size:0.88em; letter-spacing:0.5px; }
 tbody tr { border-bottom:1px solid #eee; transition:background 0.15s; }
@@ -33,19 +37,47 @@ td:first-child { text-align:center; font-weight:700; color:#764ba2; width:38px; 
 .pos { color:#764ba2; font-weight:600; font-size:0.85em; background:#f0e6ff; padding:2px 8px; border-radius:10px; display:inline-block; }
 .meaning { color:#333; line-height:1.5; }
 .example { color:#666; font-style:italic; font-size:0.88em; line-height:1.4; }
-.speak-btn { background:none; border:none; cursor:pointer; font-size:1.15em; padding:2px 4px; border-radius:6px; transition:all 0.15s; line-height:1; }
+.speak-btn { background:none; border:none; cursor:pointer; font-size:1.15em; padding:2px 4px; border-radius:6px; transition:all 0.15s; line-height:1; -webkit-tap-highlight-color:transparent; }
 .speak-btn:hover { background:#e8daff; transform:scale(1.2); }
 .speak-btn:active { transform:scale(0.9); }
 .speak-btn.playing { background:#c8a8ff; }
 .no-results { text-align:center; color:#aaa; padding:40px; font-size:1.1em; }
-.footer { text-align:center; color:#aaa; font-size:0.8em; margin-top:30px; padding-bottom:20px; }
-.back-top { position:fixed; right:28px; bottom:32px; width:48px; height:48px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.5em; cursor:pointer; box-shadow:0 4px 16px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:opacity 0.3s,transform 0.2s; z-index:999; display:flex; align-items:center; justify-content:center; }
+.footer { text-align:center; color:#aaa; font-size:0.75em; margin-top:24px; padding-bottom:20px; }
+.back-top { position:fixed; right:20px; bottom:28px; width:48px; height:48px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.5em; cursor:pointer; box-shadow:0 4px 16px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:opacity 0.3s,transform 0.2s; z-index:999; display:flex; align-items:center; justify-content:center; -webkit-tap-highlight-color:transparent; }
 .back-top.visible { opacity:1; pointer-events:auto; }
 .back-top:hover { transform:scale(1.12); }
-@media (max-width:700px) {
-  table { font-size:0.85em; }
-  td { padding:7px 5px; }
-  thead th { padding:8px 5px; font-size:0.8em; }
+
+/* ====== 手机端卡片布局 ====== */
+@media (max-width:768px) {
+  body { padding:10px; }
+  h1 { font-size:1.3em; }
+  .subtitle { font-size:0.8em; margin-bottom:10px; }
+  .search-box input { padding:12px 16px; font-size:16px; } /* 16px防止iOS缩放 */
+  .date-nav { gap:6px; padding:2px 0; }
+  .date-nav button { padding:7px 14px; font-size:0.82em; }
+
+  /* 隐藏表格，显示卡片 */
+  table, thead, tbody, tr, th, td { display:none !important; }
+  .mobile-cards { display:flex; flex-direction:column; gap:10px; }
+  .vocab-card { background:#fff; border-radius:14px; padding:14px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border-left:4px solid #764ba2; }
+  .vocab-card .card-top { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .vocab-card .card-num { color:#764ba2; font-weight:700; font-size:0.85em; min-width:24px; }
+  .vocab-card .card-speak { background:none; border:none; font-size:1.6em; padding:4px 8px; cursor:pointer; border-radius:10px; -webkit-tap-highlight-color:transparent; }
+  .vocab-card .card-speak:active { background:#e8daff; }
+  .vocab-card .card-speak.playing { background:#c8a8ff; }
+  .vocab-card .card-word { font-weight:700; font-size:1.2em; color:#16213e; }
+  .vocab-card .card-phonetic { color:#888; font-size:0.85em; font-family:"Lucida Sans Unicode",sans-serif; margin-left:2px; }
+  .vocab-card .card-pos { color:#764ba2; font-weight:600; font-size:0.8em; background:#f0e6ff; padding:3px 10px; border-radius:12px; display:inline-block; margin-bottom:6px; }
+  .vocab-card .card-meaning { color:#333; font-size:0.95em; line-height:1.5; margin-bottom:6px; padding-left:2px; }
+  .vocab-card .card-example { color:#888; font-style:italic; font-size:0.85em; line-height:1.4; padding-left:2px; }
+
+  .back-top { right:14px; bottom:20px; width:44px; height:44px; font-size:1.3em; }
+  .footer { font-size:0.7em; }
+}
+
+/* 桌面端隐藏卡片容器 */
+@media (min-width:769px) {
+  .mobile-cards { display:none !important; }
 }
 </style>
 </head>
@@ -108,10 +140,14 @@ function setActiveNav(activeBtn) {
 function jumpToDate(idx) {
   renderAll('');
   document.getElementById('searchInput').value = '';
-  const sections = document.querySelectorAll('.date-section');
-  if (sections[idx]) {
-    sections[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  // 手机端需要等DOM更新
+  requestAnimationFrame(() => {
+    const sections = document.querySelectorAll('.date-section');
+    if (sections[idx]) {
+      const y = sections[idx].getBoundingClientRect().top + window.scrollY - 10;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  });
 }
 
 // 词性排序优先级：名词→动词→形容词→副词→短语→其他
@@ -134,6 +170,7 @@ function renderAll(filter) {
   const c = document.getElementById('content');
   c.innerHTML = '';
   let total = 0, shown = 0;
+  const isMobile = window.innerWidth <= 768;
 
   VOCAB_DATA.forEach(sec => {
     let m = sec.words.filter(w =>
@@ -144,22 +181,47 @@ function renderAll(filter) {
     total += sec.words.length;
     shown += m.length;
 
-    const rows = m.map((w, i) => {
-      const esc = w.en.replace(/'/g, "\\'");
-      return `<tr>
-        <td>${i+1}</td>
-        <td><span class="word-cell"><button class="speak-btn" onclick="speak('${esc}',this)">🔊</button>${w.en}</span></td>
-        <td class="phonetic">${w.phonetic}</td>
-        <td><span class="pos">${w.pos}</span></td>
-        <td class="meaning">${w.meaning}</td>
-        <td class="example">${w.example}</td>
-      </tr>`;
-    }).join('');
-
     const d = document.createElement('div');
     d.className = 'date-section';
-    d.innerHTML = `<div class="date-header">${sec.date} — ${m.length}/${sec.words.length} 词</div>
-      <table><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+    d.innerHTML = `<div class="date-header">${sec.date} — ${m.length}/${sec.words.length} 词</div>`;
+
+    if (isMobile) {
+      // 手机端：卡片布局
+      const cards = document.createElement('div');
+      cards.className = 'mobile-cards';
+      m.forEach((w, i) => {
+        const esc = w.en.replace(/'/g, "\\'");
+        const card = document.createElement('div');
+        card.className = 'vocab-card';
+        card.innerHTML = `
+          <div class="card-top">
+            <span class="card-num">${i+1}</span>
+            <button class="card-speak" onclick="speak('${esc}',this)">🔊</button>
+            <span class="card-word">${w.en}</span>
+            <span class="card-phonetic">${w.phonetic}</span>
+          </div>
+          <span class="card-pos">${w.pos}</span>
+          <div class="card-meaning">${w.meaning}</div>
+          <div class="card-example">${w.example}</div>`;
+        cards.appendChild(card);
+      });
+      d.appendChild(cards);
+    } else {
+      // 桌面端：表格布局
+      const rows = m.map((w, i) => {
+        const esc = w.en.replace(/'/g, "\\'");
+        return `<tr>
+          <td>${i+1}</td>
+          <td><span class="word-cell"><button class="speak-btn" onclick="speak('${esc}',this)">🔊</button>${w.en}</span></td>
+          <td class="phonetic">${w.phonetic}</td>
+          <td><span class="pos">${w.pos}</span></td>
+          <td class="meaning">${w.meaning}</td>
+          <td class="example">${w.example}</td>
+        </tr>`;
+      }).join('');
+      d.innerHTML += `<table><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+    }
+
     c.appendChild(d);
   });
 
@@ -175,6 +237,16 @@ renderAll();
 // 回到顶端按钮：滚动超过一屏时显示
 window.addEventListener('scroll', () => {
   document.getElementById('backTop').classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+});
+
+// 窗口大小变化时重新渲染（桌面↔手机切换）
+let lastWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+  const w = window.innerWidth;
+  const wasMobile = lastWidth <= 768;
+  const isMobile = w <= 768;
+  if (wasMobile !== isMobile) { renderAll(document.getElementById('searchInput').value); }
+  lastWidth = w;
 });
 </script>
 </body>
