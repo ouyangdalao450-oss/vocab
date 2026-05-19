@@ -108,7 +108,7 @@ const VOCAB_DATA = [
     date: "📅 2026-05-20（58词）",
     words: [
       { en:"festival", phonetic:"/ˈfestəvl/", pos:"n.", meaning:"❶ 文化节、艺术节（一系列演出/活动，通常每年在同一地点举办） ❷ 节日、庆典日（人们停止工作庆祝特殊日子，常与宗教有关）", example:"There are many music festivals in summer." },
-      { en:"historical", phonetic:"/hɪˈstɔːrɪkl/", pos:"adj.", meaning:"❶ 历史的、有关历史的 ❷ 基于史实的 ❸ 有历史意义的（区别于historic：historical指"关于历史的"，historic指"有历史意义的"）", example:"This is a historical building from the 1800s." },
+      { en:"historical", phonetic:"/hɪˈstɔːrɪkl/", pos:"adj.", meaning:"❶ 历史的、有关历史的 ❷ 基于史实的 ❸ 有历史意义的（区别于historic：historical指「关于历史的」，historic指「有历史意义的」）", example:"This is a historical building from the 1800s." },
       { en:"center", phonetic:"/ˈsentər/", pos:"n./v.", meaning:"❶ n. 中心、中央 ❷ n. 活动中心、机构 ❸ n. 中锋（体育） ❹ v. 集中、以…为中心（center on/around）", example:"The hotel is in the city center." },
       { en:"stair", phonetic:"/ster/", pos:"n.", meaning:"❶ 台阶、阶梯（单级） ❷ 楼梯（stairs，复数形式常用）", example:"Go up the stairs to the second floor." },
       { en:"spiral", phonetic:"/ˈspaɪrəl/", pos:"n./adj./v.", meaning:"❶ n. 螺旋形 ❷ n. 不断恶化/上升的进程 ❸ adj. 螺旋的 ❹ v. 螺旋式上升/下降 ❺ v. 急剧恶化", example:"The staircase has a beautiful spiral design." },
