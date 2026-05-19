@@ -56,24 +56,33 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .desk-table .pos { color:#764ba2; font-weight:600; font-size:0.8em; background:#f0e6ff; padding:2px 8px; border-radius:8px; display:inline-block; }
 .desk-table .meaning { color:#333; font-size:0.9em; line-height:1.4; }
 .desk-table .example { color:#888; font-size:0.84em; font-style:italic; line-height:1.4; }
-.speak-btn { background:none; border:none; font-size:1.3em; padding:4px 6px; border-radius:8px; cursor:pointer; transition:background 0.15s; }
-.speak-btn:active { background:#e8daff; }
+.speak-btn { background:none; border:none; font-size:1.3em; padding:4px 6px; border-radius:8px; cursor:pointer; transition:transform 0.1s; }
+.speak-btn:active { transform:scale(0.85); }
+.speak-btn.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
+.speak-btn.loading { opacity:0.5; }
+.speak-btn.error { background:#ffe0e0; }
 
 /* 手机卡片 */
 .mobile-cards { display:none; flex-direction:column; gap:9px; }
 .vocab-card { background:#fff; border-radius:14px; padding:12px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.05); border-left:4px solid #764ba2; }
 .vocab-card .card-top { display:flex; align-items:center; gap:8px; margin-bottom:5px; }
 .vocab-card .card-num { color:#764ba2; font-weight:700; font-size:0.82em; min-width:22px; }
-.vocab-card .card-speak { background:none; border:none; font-size:1.7em; padding:2px 6px; cursor:pointer; border-radius:10px; line-height:1; }
-.vocab-card .card-speak:active { background:#e8daff; }
-.vocab-card .card-speak.playing { background:#c8a8ff; }
+.vocab-card .card-speak { background:none; border:none; font-size:1.7em; padding:2px 6px; cursor:pointer; border-radius:10px; line-height:1; transition:transform 0.1s; }
+.vocab-card .card-speak:active { transform:scale(0.85); }
+.vocab-card .card-speak.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
+.vocab-card .card-speak.loading { opacity:0.5; }
+.vocab-card .card-speak.error { background:#ffe0e0; }
 .vocab-card .card-word { font-weight:700; font-size:1.15em; color:#16213e; }
 .vocab-card .card-phonetic { color:#aaa; font-size:0.82em; font-family:"Lucida Sans Unicode",sans-serif; margin-left:2px; }
 .vocab-card .card-pos { display:inline-block; color:#764ba2; font-weight:600; font-size:0.78em; background:#f0e6ff; padding:2px 10px; border-radius:10px; margin-bottom:5px; }
 .vocab-card .card-meaning { color:#333; font-size:0.92em; line-height:1.45; margin-bottom:4px; }
 .vocab-card .card-example { color:#999; font-size:0.82em; font-style:italic; line-height:1.4; }
 
-/* 响应式 */
+/* ===== 响应式 ===== */
+@keyframes pulse {
+  0%, 100% { transform:scale(1); }
+  50% { transform:scale(1.15); }
+}
 @media (max-width:768px) {
   .desk-table { display:none !important; }
   .mobile-cards { display:flex !important; }
@@ -125,70 +134,111 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <script src="vocab-data.js"></script>
 <script>
-/* ===== 音频管理 ===== */
-const audioPool = {};   // 预加载缓存
-let currentAudio = null;
-let userInteracted = false;
+/* ===== 音频引擎（Web Audio API + 缓存池）===== */
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const bufferCache = {};   // wordKey → AudioBuffer
+const loadingSet = new Set(); // 正在加载的
+let currentSource = null;     // 当前播放的 BufferSource
+let currentBtn = null;        // 当前播放的按钮
+let currentKey = null;        // 当前播放的word key
+let unlocked = false;
 
-// 标记已发生用户交互（iOS 需要）
-function markInteracted() { userInteracted = true; }
-document.addEventListener('click', markInteracted, { once:true });
-document.addEventListener('touchstart', markInteracted, { once:true });
+// iOS: 首次触摸解锁 AudioContext
+function unlockAudio() {
+  if (unlocked) return;
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  unlocked = true;
+  // 解锁后开始全量预加载
+  preloadAll();
+}
+document.addEventListener('touchstart', unlockAudio, { once:true });
+document.addEventListener('click', unlockAudio, { once:true });
 
-function preloadAudio(word) {
-  const key = word.toLowerCase().replace(/\s+/g, '_');
-  if (audioPool[key]) return audioPool[key];
-  const a = new Audio();
-  a.src = 'vocab-audio/' + key + '.mp3';
-  a.preload = 'auto';
-  a.onerror = () => { delete audioPool[key]; };
-  audioPool[key] = a;
-  return a;
+// 异步加载音频到 AudioBuffer
+async function loadBuffer(key) {
+  if (bufferCache[key]) return bufferCache[key];
+  if (loadingSet.has(key)) return null; // 正在加载
+  loadingSet.add(key);
+  try {
+    const resp = await fetch('vocab-audio/' + key + '.mp3');
+    const arrayBuf = await resp.arrayBuffer();
+    const audioBuf = await audioCtx.decodeAudioData(arrayBuf);
+    bufferCache[key] = audioBuf;
+    return audioBuf;
+  } catch(e) {
+    console.warn('音频加载失败:', key);
+    return null;
+  } finally {
+    loadingSet.delete(key);
+  }
 }
 
-// 预加载当前可见词的音频（在用户交互后）
-function preloadVisible() {
-  if (!userInteracted) return;
-  document.querySelectorAll('[data-word]').forEach(el => {
-    const w = el.getAttribute('data-word');
-    if (w && !audioPool[w.toLowerCase().replace(/\s+/g, '_')]) {
-      preloadAudio(w);
+// 全量预加载（解锁后调用）
+function preloadAll() {
+  const keys = [];
+  VOCAB_DATA.forEach(sec => sec.words.forEach(w => {
+    const k = w.en.toLowerCase().replace(/\s+/g, '_');
+    if (!bufferCache[k] && !loadingSet.has(k)) keys.push(k);
+  }));
+  // 依次加载，不并发太多
+  keys.reduce((p, k) => p.then(() => loadBuffer(k)), Promise.resolve());
+}
+
+// 核心：播放/停止
+async function speak(word, btn) {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const key = word.toLowerCase().replace(/\s+/g, '_');
+
+  // 如果点的是正在播放的按钮 → 停止
+  if (currentKey === key && currentSource) {
+    stopCurrent();
+    return;
+  }
+
+  // 停掉上一个
+  stopCurrent();
+
+  // 标记按钮为loading状态
+  btn.classList.add('loading');
+
+  // 加载buffer（已缓存则瞬间返回）
+  const buf = await loadBuffer(key);
+  btn.classList.remove('loading');
+
+  if (!buf) {
+    btn.classList.add('error');
+    setTimeout(() => btn.classList.remove('error'), 600);
+    return;
+  }
+
+  // 播放
+  const source = audioCtx.createBufferSource();
+  source.buffer = buf;
+  source.connect(audioCtx.destination);
+  source.onended = () => {
+    if (currentKey === key) {
+      btn.classList.remove('playing');
+      currentSource = null;
+      currentBtn = null;
+      currentKey = null;
     }
-  });
-}
+  };
+  source.start(0);
 
-function speak(word, btn) {
-  if (currentAudio) { currentAudio.pause(); currentAudio.remove(); }
-  const key = word.toLowerCase().replace(/\s+/g, '_');
-  let a = audioPool[key];
-  if (!a) {
-    a = new Audio('vocab-audio/' + key + '.mp3');
-    audioPool[key] = a;
-  }
-  currentAudio = a;
+  currentSource = source;
+  currentBtn = btn;
+  currentKey = key;
   btn.classList.add('playing');
-  a.onended = () => { btn.classList.remove('playing'); currentAudio = null; };
-  a.onerror = () => { btn.classList.remove('playing'); currentAudio = null; };
-  a.currentTime = 0;
-  a.play().catch(() => { btn.classList.remove('playing'); currentAudio = null; });
-
-  // 预加载相邻词的音频
-  preloadAdjacent(word);
 }
 
-function preloadAdjacent(currentWord) {
-  // 简单策略：预加载数据中所有音频（限制并发）
-  // 实际上只预加载当前日期区的词
-  if (!userInteracted) return;
-  const allWords = [];
-  VOCAB_DATA.forEach(sec => sec.words.forEach(w => allWords.push(w.en)));
-  // 只预加载前20个未缓存的
-  let loaded = 0;
-  for (const w of allWords) {
-    if (loaded >= 20) break;
-    const k = w.toLowerCase().replace(/\s+/g, '_');
-    if (!audioPool[k]) { preloadAudio(w); loaded++; }
+function stopCurrent() {
+  if (currentSource) {
+    try { currentSource.stop(); } catch(e) {}
+    currentSource = null;
   }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  currentBtn = null;
+  currentKey = null;
 }
 
 /* ===== 词性排序 ===== */
@@ -266,9 +316,6 @@ function renderAll(filter) {
   document.getElementById('stats').textContent =
     q ? `共 ${total} 词，匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词`;
   if (!shown) c.innerHTML = '<div class="no-results">没有找到匹配的单词 😢</div>';
-
-  // 渲染后预加载可见词音频
-  setTimeout(preloadVisible, 500);
 }
 
 /* ===== 日历弹窗 ===== */
