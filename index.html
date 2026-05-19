@@ -62,7 +62,9 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .speak-btn.loading { opacity:0.5; }
 .speak-btn.error { background:#ffe0e0; }
 .compound-tag { font-size:0.7em; margin-left:4px; vertical-align:middle; }
-.no-audio-mark { font-size:1em; opacity:0.35; }
+.tts-mark { font-size:0.65em; color:#764ba2; margin-left:2px; vertical-align:middle; }
+.root-meaning { color:#8b6fc0; font-size:0.82em; line-height:1.4; margin-top:3px; font-style:italic; }
+.root-meaning::before { content:'💡 '; }
 
 /* 手机卡片 */
 .mobile-cards { display:none; flex-direction:column; gap:9px; }
@@ -78,6 +80,8 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .vocab-card .card-phonetic { color:#aaa; font-size:0.82em; font-family:"Lucida Sans Unicode",sans-serif; margin-left:2px; }
 .vocab-card .card-pos { display:inline-block; color:#764ba2; font-weight:600; font-size:0.78em; background:#f0e6ff; padding:2px 10px; border-radius:10px; margin-bottom:5px; }
 .vocab-card .card-meaning { color:#333; font-size:0.92em; line-height:1.45; margin-bottom:4px; }
+.vocab-card .card-root { color:#8b6fc0; font-size:0.82em; line-height:1.4; margin-top:2px; font-style:italic; }
+.vocab-card .card-root::before { content:'💡 '; }
 .vocab-card .card-example { color:#999; font-size:0.82em; font-style:italic; line-height:1.4; }
 
 /* ===== 响应式 ===== */
@@ -132,17 +136,18 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
-<div class="footer">🔊 Cambridge Dictionary 美式真人录音 | 🔗 复合词（发音取自组成部分）| 🔇 短语暂无发音</div>
+<div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意</div>
 
 <script src="vocab-data.js"></script>
 <script>
-/* ===== 音频引擎（Web Audio API + 缓存池）===== */
+/* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const bufferCache = {};   // wordKey → AudioBuffer
 const loadingSet = new Set(); // 正在加载的
 let currentSource = null;     // 当前播放的 BufferSource
 let currentBtn = null;        // 当前播放的按钮
 let currentKey = null;        // 当前播放的word key
+let currentTTS = false;       // 当前是否在播TTS
 let unlocked = false;
 
 // iOS: 首次触摸解锁 AudioContext
@@ -150,7 +155,6 @@ function unlockAudio() {
   if (unlocked) return;
   if (audioCtx.state === 'suspended') audioCtx.resume();
   unlocked = true;
-  // 解锁后开始全量预加载
   preloadAll();
 }
 document.addEventListener('touchstart', unlockAudio, { once:true });
@@ -159,84 +163,140 @@ document.addEventListener('click', unlockAudio, { once:true });
 // 异步加载音频到 AudioBuffer
 async function loadBuffer(key) {
   if (bufferCache[key]) return bufferCache[key];
-  if (loadingSet.has(key)) return null; // 正在加载
+  if (loadingSet.has(key)) return null;
   loadingSet.add(key);
   try {
     const resp = await fetch('vocab-audio/' + key + '.mp3');
+    if (!resp.ok) { bufferCache[key] = null; return null; }
     const arrayBuf = await resp.arrayBuffer();
     const audioBuf = await audioCtx.decodeAudioData(arrayBuf);
     bufferCache[key] = audioBuf;
     return audioBuf;
   } catch(e) {
-    console.warn('音频加载失败:', key);
+    bufferCache[key] = null;
     return null;
   } finally {
     loadingSet.delete(key);
   }
 }
 
-// 全量预加载（解锁后调用）
+// 全量预加载
 function preloadAll() {
   const keys = [];
   VOCAB_DATA.forEach(sec => sec.words.forEach(w => {
+    if (w.noAudio) return; // TTS词不预加载
     const k = w.en.toLowerCase().replace(/\s+/g, '_');
-    if (!bufferCache[k] && !loadingSet.has(k)) keys.push(k);
+    if (!bufferCache.hasOwnProperty(k) && !loadingSet.has(k)) keys.push(k);
   }));
-  // 依次加载，不并发太多
   keys.reduce((p, k) => p.then(() => loadBuffer(k)), Promise.resolve());
 }
 
-// 核心：播放/停止
+// TTS 播放（浏览器语音合成）
+function speakTTS(word, btn) {
+  if (!('speechSynthesis' in window)) return false;
+  const key = word.toLowerCase().replace(/\s+/g, '_');
+
+  if (currentKey === key && currentTTS) {
+    speechSynthesis.cancel();
+    stopCurrent();
+    return true;
+  }
+  stopCurrent();
+
+  const utt = new SpeechSynthesisUtterance(word);
+  utt.lang = 'en-US';
+  utt.rate = 0.85;
+  // 优先选美式英语声音
+  const voices = speechSynthesis.getVoices();
+  const usVoice = voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
+  if (usVoice) utt.voice = usVoice;
+
+  currentKey = key;
+  currentBtn = btn;
+  currentTTS = true;
+  btn.classList.add('playing');
+
+  utt.onend = () => {
+    if (currentKey === key) {
+      btn.classList.remove('playing');
+      currentKey = null;
+      currentBtn = null;
+      currentTTS = false;
+    }
+  };
+  utt.onerror = () => {
+    btn.classList.remove('playing');
+    btn.classList.add('error');
+    setTimeout(() => btn.classList.remove('error'), 600);
+    currentKey = null;
+    currentBtn = null;
+    currentTTS = false;
+  };
+  speechSynthesis.speak(utt);
+  return true;
+}
+
+// 核心：播放/停止（优先真人音频 → TTS兜底）
 async function speak(word, btn) {
   if (audioCtx.state === 'suspended') audioCtx.resume();
   const key = word.toLowerCase().replace(/\s+/g, '_');
 
   // 如果点的是正在播放的按钮 → 停止
-  if (currentKey === key && currentSource) {
+  if (currentKey === key && (currentSource || currentTTS)) {
+    if (currentTTS) speechSynthesis.cancel();
     stopCurrent();
     return;
   }
-
-  // 停掉上一个
   stopCurrent();
 
-  // 标记按钮为loading状态
-  btn.classList.add('loading');
+  // 查找该词条
+  const entry = VOCAB_DATA.flatMap(s => s.words).find(w => w.en.toLowerCase().replace(/\s+/g,'_') === key);
 
-  // 加载buffer（已缓存则瞬间返回）
-  const buf = await loadBuffer(key);
-  btn.classList.remove('loading');
-
-  if (!buf) {
-    btn.classList.add('error');
-    setTimeout(() => btn.classList.remove('error'), 600);
+  // noAudio 标记 → 直接用 TTS
+  if (entry && entry.noAudio) {
+    speakTTS(word, btn);
     return;
   }
 
-  // 播放
-  const source = audioCtx.createBufferSource();
-  source.buffer = buf;
-  source.connect(audioCtx.destination);
-  source.onended = () => {
-    if (currentKey === key) {
-      btn.classList.remove('playing');
-      currentSource = null;
-      currentBtn = null;
-      currentKey = null;
-    }
-  };
-  source.start(0);
+  // 尝试真人音频
+  btn.classList.add('loading');
+  const buf = await loadBuffer(key);
+  btn.classList.remove('loading');
 
-  currentSource = source;
-  currentBtn = btn;
-  currentKey = key;
-  btn.classList.add('playing');
+  if (buf) {
+    const source = audioCtx.createBufferSource();
+    source.buffer = buf;
+    source.connect(audioCtx.destination);
+    source.onended = () => {
+      if (currentKey === key) {
+        btn.classList.remove('playing');
+        currentSource = null;
+        currentBtn = null;
+        currentKey = null;
+      }
+    };
+    source.start(0);
+    currentSource = source;
+    currentBtn = btn;
+    currentKey = key;
+    btn.classList.add('playing');
+  } else {
+    // 真人音频不存在 → TTS 兜底
+    if (!speakTTS(word, btn)) {
+      btn.classList.add('error');
+      setTimeout(() => btn.classList.remove('error'), 600);
+    }
+  }
 }
 
 function stopCurrent() {
   if (currentSource) {
     try { currentSource.stop(); } catch(e) {}
     currentSource = null;
+  }
+  if (currentTTS) {
+    speechSynthesis.cancel();
+    currentTTS = false;
   }
   if (currentBtn) currentBtn.classList.remove('playing');
   currentBtn = null;
@@ -285,17 +345,20 @@ function renderAll(filter) {
         const esc = w.en.replace(/'/g,"\\'");
         const card = document.createElement('div');
         card.className = 'vocab-card';
-        const audioBtn = w.noAudio ? '' : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+        const audioBtn = w.noAudio ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
         card.innerHTML = `
           <div class="card-top">
             <span class="card-num">${i+1}</span>
             ${audioBtn}
-            <span class="card-word">${w.en}</span>${compoundTag}
+            <span class="card-word">${w.en}</span>${compoundTag}${ttsTag}
             <span class="card-phonetic">${w.phonetic}</span>
           </div>
           <span class="card-pos">${w.pos}</span>
           <div class="card-meaning">${w.meaning}</div>
+          ${rootHtml}
           <div class="card-example">${w.example}</div>`;
         cards.appendChild(card);
       });
@@ -303,14 +366,16 @@ function renderAll(filter) {
     } else {
       const rows = m.map((w,i) => {
         const esc = w.en.replace(/'/g,"\\'");
-        const audioBtn = w.noAudio ? '<span class="no-audio-mark">🔇</span>' : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+        const audioBtn = w.noAudio ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
         return `<tr>
           <td class="td-num">${i+1}</td>
-          <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}</div></td>
+          <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
           <td class="phonetic">${w.phonetic}</td>
           <td><span class="pos">${w.pos}</span></td>
-          <td class="meaning">${w.meaning}</td>
+          <td class="meaning">${w.meaning}${rootHtml}</td>
           <td class="example">${w.example}</td>
         </tr>`;
       }).join('');
