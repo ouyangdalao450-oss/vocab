@@ -61,6 +61,8 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .speak-btn.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
 .speak-btn.loading { opacity:0.5; }
 .speak-btn.error { background:#ffe0e0; }
+.compound-tag { font-size:0.7em; margin-left:4px; vertical-align:middle; }
+.no-audio-mark { font-size:1em; opacity:0.35; }
 
 /* 手机卡片 */
 .mobile-cards { display:none; flex-direction:column; gap:9px; }
@@ -130,7 +132,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
-<div class="footer">发音：Cambridge Dictionary 美式真人录音</div>
+<div class="footer">🔊 Cambridge Dictionary 美式真人录音 | 🔗 复合词（发音取自组成部分）| 🔇 短语暂无发音</div>
 
 <script src="vocab-data.js"></script>
 <script>
@@ -283,11 +285,13 @@ function renderAll(filter) {
         const esc = w.en.replace(/'/g,"\\'");
         const card = document.createElement('div');
         card.className = 'vocab-card';
+        const audioBtn = w.noAudio ? '' : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+        const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
         card.innerHTML = `
           <div class="card-top">
             <span class="card-num">${i+1}</span>
-            <button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>
-            <span class="card-word">${w.en}</span>
+            ${audioBtn}
+            <span class="card-word">${w.en}</span>${compoundTag}
             <span class="card-phonetic">${w.phonetic}</span>
           </div>
           <span class="card-pos">${w.pos}</span>
@@ -299,9 +303,11 @@ function renderAll(filter) {
     } else {
       const rows = m.map((w,i) => {
         const esc = w.en.replace(/'/g,"\\'");
+        const audioBtn = w.noAudio ? '<span class="no-audio-mark">🔇</span>' : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+        const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
         return `<tr>
           <td class="td-num">${i+1}</td>
-          <td><div class="word-cell"><button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>${w.en}</div></td>
+          <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}</div></td>
           <td class="phonetic">${w.phonetic}</td>
           <td><span class="pos">${w.pos}</span></td>
           <td class="meaning">${w.meaning}</td>
