@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语词汇表 - 全部日期</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; background:#f0f2f5; color:#1a1a2e; padding:20px; }
+.container { max-width:1100px; margin:0 auto; }
+h1 { text-align:center; font-size:1.8em; margin-bottom:6px; color:#16213e; }
+.subtitle { text-align:center; color:#666; margin-bottom:20px; font-size:0.95em; }
+.top-bar { display:flex; justify-content:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; align-items:center; }
+.search-box input { width:320px; max-width:90%; padding:10px 16px; border:2px solid #ddd; border-radius:24px; font-size:1em; outline:none; transition:border-color 0.2s; }
+.search-box input:focus { border-color:#764ba2; }
+.date-nav { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+.date-nav button { padding:8px 18px; border:2px solid #ddd; border-radius:20px; background:#fff; color:#555; font-size:0.92em; cursor:pointer; transition:all 0.2s; font-weight:600; }
+.date-nav button:hover { border-color:#764ba2; color:#764ba2; background:#f8f0ff; }
+.date-nav button.active { border-color:#764ba2; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
+.stats { color:#888; font-size:0.85em; text-align:center; margin-bottom:16px; }
+.date-section { margin-bottom:32px; }
+.date-header { font-size:1.2em; font-weight:700; color:#764ba2; padding:10px 16px; background:linear-gradient(90deg,#f0e6ff,#e8daff); border-left:5px solid #764ba2; border-radius:0 8px 8px 0; margin-bottom:12px; }
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin-bottom:8px; }
+thead { background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; }
+thead th { padding:12px 10px; text-align:left; font-weight:600; font-size:0.88em; letter-spacing:0.5px; }
+tbody tr { border-bottom:1px solid #eee; transition:background 0.15s; }
+tbody tr:hover { background:#f8f0ff; }
+tbody tr:last-child { border-bottom:none; }
+td { padding:9px 10px; font-size:0.92em; vertical-align:middle; }
+td:first-child { text-align:center; font-weight:700; color:#764ba2; width:38px; }
+.word-cell { font-weight:700; color:#16213e; font-size:1.05em; display:flex; align-items:center; gap:6px; }
+.phonetic { color:#888; font-size:0.88em; font-family:"Lucida Sans Unicode",sans-serif; }
+.pos { color:#764ba2; font-weight:600; font-size:0.85em; background:#f0e6ff; padding:2px 8px; border-radius:10px; display:inline-block; }
+.meaning { color:#333; line-height:1.5; }
+.example { color:#666; font-style:italic; font-size:0.88em; line-height:1.4; }
+.speak-btn { background:none; border:none; cursor:pointer; font-size:1.15em; padding:2px 4px; border-radius:6px; transition:all 0.15s; line-height:1; }
+.speak-btn:hover { background:#e8daff; transform:scale(1.2); }
+.speak-btn:active { transform:scale(0.9); }
+.speak-btn.playing { background:#c8a8ff; }
+.no-results { text-align:center; color:#aaa; padding:40px; font-size:1.1em; }
+.footer { text-align:center; color:#aaa; font-size:0.8em; margin-top:30px; padding-bottom:20px; }
+.back-top { position:fixed; right:28px; bottom:32px; width:48px; height:48px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.5em; cursor:pointer; box-shadow:0 4px 16px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:opacity 0.3s,transform 0.2s; z-index:999; display:flex; align-items:center; justify-content:center; }
+.back-top.visible { opacity:1; pointer-events:auto; }
+.back-top:hover { transform:scale(1.12); }
+@media (max-width:700px) {
+  table { font-size:0.85em; }
+  td { padding:7px 5px; }
+  thead th { padding:8px 5px; font-size:0.8em; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📖 英语词汇总表</h1>
+<p class="subtitle">点击 🔊 听剑桥词典真人美式发音 | 搜索框全局搜索 | 离线可用</p>
+<div class="top-bar">
+  <div class="search-box"><input type="text" id="searchInput" placeholder="搜索单词或含义..." oninput="filterAll()"></div>
+</div>
+<div class="date-nav" id="dateNav"></div>
+<div class="stats" id="stats">正在加载...</div>
+<div id="content"></div>
+<div class="footer">发音来源：Cambridge Dictionary 真人录音（美式） | 更新单词：编辑 vocab-data.js 后刷新</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
+</div>
+
+<script src="vocab-data.js"></script>
+<script>
+let currentAudio = null;
+
+function speak(word, btn) {
+  if (currentAudio) { currentAudio.pause(); currentAudio.remove(); }
+  const safeName = word.toLowerCase().replace(/\s+/g, '_');
+  const a = new Audio('vocab-audio/' + safeName + '.mp3');
+  currentAudio = a;
+  btn.classList.add('playing');
+  a.onended = () => { a.remove(); btn.classList.remove('playing'); };
+  a.onerror = () => {
+    a.remove(); btn.classList.remove('playing');
+    console.warn('音频加载失败:', safeName);
+  };
+  a.play().catch(() => { btn.classList.remove('playing'); });
+}
+
+// 构建日期导航
+function buildDateNav() {
+  const nav = document.getElementById('dateNav');
+  // "全部"按钮
+  const allBtn = document.createElement('button');
+  allBtn.textContent = '📋 全部';
+  allBtn.className = 'active';
+  allBtn.onclick = () => { renderAll(''); document.getElementById('searchInput').value = ''; setActiveNav(allBtn); };
+  nav.appendChild(allBtn);
+  // 每个日期一个按钮
+  VOCAB_DATA.forEach((sec, idx) => {
+    const btn = document.createElement('button');
+    const dateLabel = sec.date.replace(/📅\s*/, '').replace(/（.*）/, '');
+    btn.textContent = dateLabel;
+    btn.onclick = () => { jumpToDate(idx); setActiveNav(btn); };
+    nav.appendChild(btn);
+  });
+}
+
+function setActiveNav(activeBtn) {
+  document.querySelectorAll('.date-nav button').forEach(b => b.classList.remove('active'));
+  activeBtn.classList.add('active');
+}
+
+function jumpToDate(idx) {
+  renderAll('');
+  document.getElementById('searchInput').value = '';
+  const sections = document.querySelectorAll('.date-section');
+  if (sections[idx]) {
+    sections[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// 词性排序优先级：名词→动词→形容词→副词→短语→其他
+function posPriority(pos) {
+  const p = pos.toLowerCase().trim();
+  if (p.startsWith('n')) return 1;       // n. n./v. n./adj. etc
+  if (p.startsWith('v') || p.startsWith('modal')) return 2;  // v. modal v.
+  if (p.startsWith('adj')) return 3;    // adj.
+  if (p.startsWith('adv') || p.startsWith('prep')) return 4; // adv. prep./adv.
+  if (p === 'phrase') return 5;
+  return 6;
+}
+
+function sortByPos(words) {
+  return [...words].sort((a, b) => posPriority(a.pos) - posPriority(b.pos));
+}
+
+function renderAll(filter) {
+  const q = (filter || '').toLowerCase();
+  const c = document.getElementById('content');
+  c.innerHTML = '';
+  let total = 0, shown = 0;
+
+  VOCAB_DATA.forEach(sec => {
+    let m = sec.words.filter(w =>
+      !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
+    );
+    if (!m.length) return;
+    m = sortByPos(m);
+    total += sec.words.length;
+    shown += m.length;
+
+    const rows = m.map((w, i) => {
+      const esc = w.en.replace(/'/g, "\\'");
+      return `<tr>
+        <td>${i+1}</td>
+        <td><span class="word-cell"><button class="speak-btn" onclick="speak('${esc}',this)">🔊</button>${w.en}</span></td>
+        <td class="phonetic">${w.phonetic}</td>
+        <td><span class="pos">${w.pos}</span></td>
+        <td class="meaning">${w.meaning}</td>
+        <td class="example">${w.example}</td>
+      </tr>`;
+    }).join('');
+
+    const d = document.createElement('div');
+    d.className = 'date-section';
+    d.innerHTML = `<div class="date-header">${sec.date} — ${m.length}/${sec.words.length} 词</div>
+      <table><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+    c.appendChild(d);
+  });
+
+  document.getElementById('stats').textContent =
+    q ? `共 ${total} 词，匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词，全部显示`;
+  if (!shown) c.innerHTML = '<div class="no-results">没有找到匹配的单词 😢</div>';
+}
+
+function filterAll() { renderAll(document.getElementById('searchInput').value); }
+buildDateNav();
+renderAll();
+
+// 回到顶端按钮：滚动超过一屏时显示
+window.addEventListener('scroll', () => {
+  document.getElementById('backTop').classList.toggle('visible', window.scrollY > window.innerHeight * 0.5);
+});
+</script>
+</body>
+</html>
