@@ -1,5 +1,5 @@
-// sw.js �?Service Worker for offline vocab
-const CACHE = 'vocab-v3';
+// sw.js �?Service Worker for offline vocab
+const CACHE = 'vocab-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -18,7 +18,7 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
-  // 音频文件：缓存优�?  if (url.pathname.includes('vocab-audio/')) {
+  // 音频文件：缓存优�?  if (url.pathname.includes('vocab-audio/')) {
     e.respondWith(
       caches.match(e.request).then(r => r || fetch(e.request).then(resp => {
         const clone = resp.clone();
@@ -28,7 +28,7 @@ self.addEventListener('fetch', e => {
     );
     return;
   }
-  // 其他：网络优�?  e.respondWith(
+  // 其他：网络优�?  e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
   );
 });
