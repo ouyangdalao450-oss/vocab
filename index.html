@@ -264,7 +264,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522l"></script>
+<script src="vocab-data.js?v=20260522m"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1306,7 +1306,9 @@ function checkListenSpell() {
     quizState.wrong.push({ word: q.word, yourAnswer: '拼写错误: ' + input.value.trim() });
     recordMistake(q.word.en);
 
-    // 显示正确答案和含义选项（但已判错，选择只是学习）
+    // 显示正确拼写 + 含义选项
+    const hint = document.getElementById('quizSpellHint');
+    if (hint) { hint.innerHTML = '<span class="quiz-spell-hint wrong">✗ ' + input.value.trim() + '</span> → <span class="quiz-spell-hint correct">✓ ' + q.word.en + '</span>'; }
     showListenSpellMeaningOptions(q, true);
     document.getElementById('quizNextBtn').style.display = '';
     document.querySelector('.quiz-score-live').textContent = '✅ ' + quizState.score;
