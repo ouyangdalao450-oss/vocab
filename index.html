@@ -57,10 +57,13 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .desk-table .meaning { color:#333; font-size:0.9em; line-height:1.4; }
 .desk-table .example { color:#888; font-size:0.84em; font-style:italic; line-height:1.4; }
 .desk-table .example-zh { color:#5a8a5a; font-style:normal; font-size:0.84em; line-height:1.4; }
-.toggle-zh-btn { background:none; border:1px solid #ccc; font-size:0.7em; padding:2px 6px; border-radius:6px; cursor:pointer; color:#999; margin-left:4px; vertical-align:middle; transition:all 0.15s; }
-.toggle-zh-btn:hover { border-color:#764ba2; color:#764ba2; }
+.toggle-zh-btn { background:none; border:1px solid #ddd; font-size:0.68em; padding:1px 7px; border-radius:10px; cursor:pointer; color:#aaa; margin-left:6px; vertical-align:middle; transition:all 0.15s; font-weight:500; }
+.toggle-zh-btn:hover { border-color:#764ba2; color:#764ba2; background:#f8f0ff; }
 .toggle-zh-btn.zh-mode { background:#764ba2; color:#fff; border-color:#764ba2; }
-.irr-badge { display:inline-block; background:linear-gradient(135deg,#ff6b6b,#ee5a24); color:#fff; font-size:0.72em; font-weight:700; padding:2px 8px; border-radius:6px; margin-left:4px; vertical-align:middle; letter-spacing:0.3px; }
+.irr-badge { display:inline-flex; align-items:center; gap:0; font-size:0.72em; margin-left:2px; margin-right:4px; vertical-align:middle; }
+.irr-badge .irr-label { background:#ff6b6b; color:#fff; font-weight:700; padding:1px 6px; border-radius:4px 0 0 4px; white-space:nowrap; line-height:1.6; }
+.irr-badge .irr-forms { background:#fff0f0; color:#c0392b; font-weight:600; padding:1px 6px; border-radius:0 4px 4px 0; border:1px solid #ffcccc; border-left:none; white-space:nowrap; line-height:1.6; }
+.irr-badge .irr-sep { margin:0 3px; color:#e74c3c; font-weight:400; }
 .speak-btn { background:none; border:none; font-size:1.3em; padding:4px 6px; border-radius:8px; cursor:pointer; transition:transform 0.1s; }
 .speak-btn:active { transform:scale(0.85); }
 .speak-btn.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
@@ -89,9 +92,10 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .vocab-card .card-root::before { content:'💡 '; }
 .vocab-card .card-example { color:#999; font-size:0.82em; font-style:italic; line-height:1.4; }
 .vocab-card .card-example-zh { color:#5a8a5a; font-style:normal; font-size:0.82em; line-height:1.4; }
-.vocab-card .card-irr { margin-top:2px; }
-.card-toggle-zh { background:none; border:1px solid #ccc; font-size:0.7em; padding:2px 6px; border-radius:6px; cursor:pointer; color:#999; margin-left:4px; vertical-align:middle; transition:all 0.15s; }
-.card-toggle-zh:hover { border-color:#764ba2; color:#764ba2; }
+.vocab-card .card-irr { margin-top:4px; }
+.vocab-card .irr-badge { font-size:0.76em; }
+.card-toggle-zh { background:none; border:1px solid #ddd; font-size:0.68em; padding:1px 7px; border-radius:10px; cursor:pointer; color:#aaa; margin-left:6px; vertical-align:middle; transition:all 0.15s; font-weight:500; }
+.card-toggle-zh:hover { border-color:#764ba2; color:#764ba2; background:#f8f0ff; }
 .card-toggle-zh.zh-mode { background:#764ba2; color:#fff; border-color:#764ba2; }
 
 /* ===== 响应式 ===== */
@@ -148,7 +152,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260521a"></script>
+<script src="vocab-data.js?v=20260521b"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -344,6 +348,30 @@ function sortByPos(words) { return [...words].sort((a,b) => posPriority(a.pos)-p
 /* ===== 渲染 ===== */
 const isMobile = () => window.innerWidth <= 768;
 
+/* 格式化不规则动词标签 */
+function formatIrrTag(irr) {
+  if (!irr) return '';
+  // 格式: "过去:stuck|过分:stuck" 或纯文本 "may的过去式"
+  if (irr.includes('|')) {
+    const parts = irr.split('|');
+    const past = parts[0].replace('过去:', '');
+    const pp = parts[1].replace('过分:', '');
+    return `<span class="irr-badge"><span class="irr-label">过去式</span><span class="irr-forms">${past}</span></span> <span class="irr-badge"><span class="irr-label">过去分词</span><span class="irr-forms">${pp}</span></span>`;
+  }
+  // 纯文本（如 may的过去式）
+  return `<span class="irr-badge"><span class="irr-label">⚡</span><span class="irr-forms">${irr}</span></span>`;
+}
+function formatIrrInline(irr) {
+  if (!irr) return '';
+  if (irr.includes('|')) {
+    const parts = irr.split('|');
+    const past = parts[0].replace('过去:', '');
+    const pp = parts[1].replace('过分:', '');
+    return `<span class="irr-badge"><span class="irr-label">过去式</span><span class="irr-forms">${past}</span></span><span class="irr-badge"><span class="irr-label">过去分词</span><span class="irr-forms">${pp}</span></span>`;
+  }
+  return `<span class="irr-badge"><span class="irr-label">⚡</span><span class="irr-forms">${irr}</span></span>`;
+}
+
 function renderAll(filter) {
   const q = (filter||'').toLowerCase();
   const c = document.getElementById('content');
@@ -374,9 +402,9 @@ function renderAll(filter) {
         const audioBtn = w.noAudio ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
         const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
-        const irrTag = w.irr ? `<span class="irr-badge">⚡ ${w.irr}</span>` : '';
+        const irrTag = w.irr ? formatIrrInline(w.irr) : '';
         const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
-        const irrHtml = w.irr ? `<div class="card-irr"><span class="irr-badge">⚡ ${w.irr}</span></div>` : '';
+        const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
         const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
         card.innerHTML = `
           <div class="card-top">
@@ -399,9 +427,9 @@ function renderAll(filter) {
         const audioBtn = w.noAudio ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
         const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
-        const irrTag = w.irr ? `<span class="irr-badge">⚡ ${w.irr}</span>` : '';
+        const irrTag = w.irr ? formatIrrInline(w.irr) : '';
         const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
-        const irrHtml = w.irr ? `<div style="margin-top:2px"><span class="irr-badge">⚡ ${w.irr}</span></div>` : '';
+        const irrHtml = w.irr ? `<div style="margin-top:3px">${formatIrrTag(w.irr)}</div>` : '';
         const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
         return `<tr>
           <td class="td-num">${i+1}</td>
