@@ -264,7 +264,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522n"></script>
+<script src="vocab-data.js?v=20260522o"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1306,10 +1306,9 @@ function checkListenSpell() {
     quizState.wrong.push({ word: q.word, yourAnswer: '拼写错误: ' + input.value.trim() });
     recordMistake(q.word.en);
 
-    // 显示正确拼写 + 含义选项
+    // 显示正确拼写，不出现含义选项，Enter直接下一题
     const hint = document.getElementById('quizSpellHint');
     if (hint) { hint.innerHTML = '<span class="quiz-spell-hint wrong">✗ ' + input.value.trim() + '</span> → <span class="quiz-spell-hint correct">✓ ' + q.word.en + '</span>'; }
-    showListenSpellMeaningOptions(q, true);
     document.getElementById('quizNextBtn').style.display = '';
     document.querySelector('.quiz-score-live').textContent = '✅ ' + quizState.score;
     return;
@@ -1439,15 +1438,11 @@ document.addEventListener('keydown', function(e) {
     return;
   }
   // A-Z → 选择对应选项（支持任意数量选项）
-  // listenSpell答错后仍可选含义(学习阶段), 其它模式只在未答时选
-  const lsMeaningOpts = document.querySelectorAll('.quiz-opt[onclick*="selectListenSpellMeaning"]');
-  const allowKeySelect = !quizState.answered || lsMeaningOpts.length > 0;
-  if (allowKeySelect && /^[a-zA-Z]$/.test(e.key)) {
+  if (!quizState.answered && /^[a-zA-Z]$/.test(e.key)) {
     const idx = e.key.toUpperCase().charCodeAt(0) - 65;
     const opts = document.querySelectorAll('.quiz-opt');
     if (idx < opts.length) {
       e.preventDefault();
-      // 判断是听声默写含义选择还是普通选择
       if (opts[idx].getAttribute('onclick')?.includes('selectListenSpellMeaning')) {
         selectListenSpellMeaning(opts[idx], false);
       } else {
