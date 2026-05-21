@@ -256,7 +256,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522"></script>
+<script src="vocab-data.js?v=20260522e"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -926,6 +926,12 @@ function generateQuestions(mode, words, count) {
       const fill = rootDist.length < 3 ? [...distractors.slice(0, 3-rootDist.length)] : [];
       options = shuffle([w, ...rootDist, ...fill].slice(0,4).map(x => ({ display: x.en, key: x.en })));
     }
+    // 检查词根提示是否泄露答案：提示中包含单词本身的就不适合出题
+    const firstArrow = w.root.indexOf('\u2192');
+    const rootHint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
+    const wordParts = w.en.toLowerCase().split(/\s+/).filter(sw => sw.length > 2);
+    const rootLeaks = wordParts.some(sw => rootHint.toLowerCase().includes(sw));
+    if (rootLeaks && mode === 'root') { q._rootLeaks = true; }
     q.options = options;
     return q;
   });
@@ -1018,9 +1024,16 @@ function setQuizRange(range, btn) {
 function startQuiz() {
   const words = getWordsByRange(quizState.range);
   if (quizState.mode === 'root') {
-    // 词根模式只用有root的词
-    const rootWords = words.filter(w => w.root);
-    if (rootWords.length < 4) { alert('有词根的词不足4个，无法出题'); return; }
+    // 词根模式：只用有root且词根提示不泄露答案的词
+    const all = getAllWords();
+    const rootWords = words.filter(w => {
+      if (!w.root) return false;
+      const firstArrow = w.root.indexOf('\u2192');
+      const hint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
+      const wordParts = w.en.toLowerCase().split(/\s+/).filter(sw => sw.length > 2);
+      return !wordParts.some(sw => hint.toLowerCase().includes(sw));
+    });
+    if (rootWords.length < 4) { alert('适合词根测验的词不足4个，请选择更多范围'); return; }
     quizState.questions = generateQuestions(quizState.mode, rootWords, quizState.count);
   } else {
     quizState.questions = generateQuestions(quizState.mode, words, quizState.count);
@@ -1062,11 +1075,11 @@ function renderQuizQuestion() {
       <div class="qq-phonetic" style="visibility:hidden">${w.phonetic}</div>
     `;
   } else if (q.mode === 'root') {
-    // 截掉最后「→ 含义」部分，避免直接给答案
-    const rootParts = w.root.split('\u2192');
-    const rootHint = rootParts.length > 1 ? rootParts.slice(0, -1).join('\u2192').trimEnd() : w.root;
+    // 只取词根拆解部分（第一个→之前），避免推理过程和含义泄露答案
+    const firstArrow = w.root.indexOf('\u2192');
+    const rootHint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
     questionHTML = `
-      <div class="qq-prompt">根据词根推理，这是哪个单词？</div>
+      <div class="qq-prompt">根据词根拆解，这是哪个单词？</div>
       <div class="qq-hint" style="font-size:1.15em;color:#764ba2;font-style:normal;font-weight:700;margin:8px 0">${rootHint}</div>
     `;
   } else if (q.mode === 'spell') {
