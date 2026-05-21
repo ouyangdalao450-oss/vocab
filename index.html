@@ -264,7 +264,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522r"></script>
+<script src="vocab-data.js?v=20260522s"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1278,7 +1278,7 @@ function checkSpell() {
     playCorrectSound();
   } else {
     input.classList.add('wrong');
-    const _sm = (q.word.meaning||[]).join('；');
+    const _sm = q.word.meaning || '';
     const _sp = q.word.pos ? `<span style="background:#e8daff;color:#764ba2;padding:2px 8px;border-radius:6px;font-size:0.7em;margin-right:6px">${q.word.pos}</span>` : '';
     hint.innerHTML = `❌ 正确答案: <strong>${q.word.en}</strong><div style="margin-top:6px;font-size:0.95em;color:#2c3e50">${_sp}${_sm}</div>`;
     hint.className = 'quiz-spell-hint wrong';
@@ -1317,8 +1317,7 @@ function checkListenSpell() {
     }
     const meaningsEl = document.getElementById('listenSpellMeanings');
     if (meaningsEl) {
-      const m = q.word.meaning || [];
-      const meaningText = m.join('；');
+      const meaningText = q.word.meaning || '';
       const posTag = q.word.pos ? '<span style="background:#e8daff;color:#764ba2;padding:2px 8px;border-radius:6px;font-size:0.6em;margin-right:6px">' + q.word.pos + '</span>' : '';
       meaningsEl.innerHTML = '<div style="margin-top:10px;padding:14px;background:#eafaf1;border:2px solid #27ae60;border-radius:12px;text-align:center"><div style="font-size:1.4em;font-weight:700;color:#1e8449;letter-spacing:2px">' + q.word.en + '</div><div style="margin-top:8px;font-size:1em;color:#2c3e50">' + posTag + meaningText + '</div></div>';
     }
