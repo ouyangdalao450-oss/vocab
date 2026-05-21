@@ -256,7 +256,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522e"></script>
+<script src="vocab-data.js?v=20260522f"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -663,6 +663,7 @@ const QUIZ_MODES = [
   { id:'listen', icon:'🔊辨词', title:'听音辨词', desc:'听发音选对应单词' },
   { id:'root', icon:'💡词根', title:'词根推理', desc:'看词根选对应单词' },
   { id:'spell', icon:'✍️拼写', title:'拼写挑战', desc:'看含义拼出英文' },
+  { id:'listenSpell', icon:'🎧默写', title:'听声默写', desc:'听发音写单词+选含义' },
 ];
 
 
@@ -904,6 +905,30 @@ function pickDistractors(allWords, correctWord, n) {
   return shuffle(pool).slice(0, n);
 }
 
+
+// 从含义中移除单词本身（防泄露）
+function cleanMeaningForQuiz(meaning, wordEn) {
+  let clean = meaning;
+  const parts = wordEn.toLowerCase().split(/\s+/);
+  parts.forEach(p => {
+    if (p.length <= 2) return;
+    // Use indexOf for simple substring replacement (no regex escaping issues)
+    const lower = clean.toLowerCase();
+    let idx = lower.indexOf(p);
+    while (idx >= 0) {
+      // Check word boundaries
+      const beforeOk = idx === 0 || /[^a-zA-Z]/.test(clean[idx - 1]);
+      const afterIdx = idx + p.length;
+      const afterOk = afterIdx >= clean.length || /[^a-zA-Z]/.test(clean[afterIdx]);
+      if (beforeOk && afterOk) {
+        clean = clean.substring(0, idx) + '____' + clean.substring(afterIdx);
+      }
+      idx = lower.indexOf(p, idx + 1);
+    }
+  });
+  return clean;
+}
+
 // 生成题目
 function generateQuestions(mode, words, count) {
   const all = getAllWords();
@@ -911,10 +936,20 @@ function generateQuestions(mode, words, count) {
   return picked.map(w => {
     const q = { word: w, mode };
     if (mode === 'spell') return q; // 拼写模式不需要选项
+    if (mode === 'listenSpell') {
+      // 听声默写：不需要预设选项（先拼写，再选含义）
+      // 含义选项：5选1
+      const meaningDistractors = pickDistractors(all, w, 4);
+      q.meaningOptions = shuffle([w, ...meaningDistractors].map(x => ({
+        display: cleanMeaningForQuiz(x.meaning.replace(/[❶❷❸❹❺]/g, '').trim(), x.en),
+        key: x.en
+      })));
+      return q;
+    }
     const distractors = pickDistractors(all, w, 3);
     let options;
     if (mode === 'en2zh') {
-      options = shuffle([w, ...distractors].map(x => ({ display: x.meaning.replace(/[❶❷❸❹❺]/g, '').trim(), key: x.en })));
+      options = shuffle([w, ...distractors].map(x => ({ display: cleanMeaningForQuiz(x.meaning.replace(/[❶❷❸❹❺]/g, '').trim(), x.en), key: x.en })));
     } else if (mode === 'zh2en') {
       options = shuffle([w, ...distractors].map(x => ({ display: x.en, key: x.en })));
     } else if (mode === 'listen') {
@@ -1071,7 +1106,7 @@ function renderQuizQuestion() {
   } else if (q.mode === 'listen') {
     questionHTML = `
       <div class="qq-prompt">听发音，选出对应单词</div>
-      <button class="qq-listen-btn" id="quizListenBtn" onclick="quizPlayAudio('${w.en.replace(/'/g,"\\'")}',this)">🔊</button>
+      <button class="qq-listen-btn" id="quizListenBtn" data-word="${w.en.replace(/"/g,'&quot;')}" onclick="quizPlayAudio(this.dataset.word,this)">🔊</button>
       <div class="qq-phonetic" style="visibility:hidden">${w.phonetic}</div>
     `;
   } else if (q.mode === 'root') {
@@ -1083,10 +1118,20 @@ function renderQuizQuestion() {
       <div class="qq-hint" style="font-size:1.15em;color:#764ba2;font-style:normal;font-weight:700;margin:8px 0">${rootHint}</div>
     `;
   } else if (q.mode === 'spell') {
+    const spellMeaning = cleanMeaningForQuiz(w.meaning, w.en);
     questionHTML = `
       <div class="qq-prompt">拼出这个单词</div>
-      <div class="qq-word" style="font-size:1.2em">${w.meaning}</div>
+      <div class="qq-word" style="font-size:1.2em">${spellMeaning}</div>
       ${w.pos ? `<div style="margin-top:4px"><span class="pos">${w.pos}</span></div>` : ''}
+    `;
+  } else if (q.mode === 'listenSpell') {
+    questionHTML = `
+      <div class="qq-prompt">🎧 听发音，拼出这个单词</div>
+      <button class="qq-listen-btn" id="quizListenBtn" onclick="quizPlayAudio('${w.en.replace(/'/g,"\\\\'")}',this)">🔊</button>
+      <div style="margin-top:10px">
+        <input type="text" class="quiz-spell-input" id="quizSpellInput" placeholder="输入单词..." autocomplete="off" autocapitalize="off" spellcheck="false">
+      </div>
+      <div id="listenSpellMeanings"></div>
     `;
   }
 
@@ -1137,6 +1182,19 @@ function renderQuizQuestion() {
     }, 100);
   }
 
+  // 听声默写模式：自动播放+聚焦+回车
+  if (q.mode === 'listenSpell') {
+    setTimeout(() => {
+      const input = document.getElementById('quizSpellInput');
+      if (input) {
+        input.focus();
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') checkListenSpell(); });
+      }
+      const btn = document.getElementById('quizListenBtn');
+      if (btn) quizPlayAudio(w.en, btn);
+    }, 300);
+  }
+
   // 听音模式自动播放
   if (q.mode === 'listen') {
     setTimeout(() => {
@@ -1185,8 +1243,7 @@ function selectOption(el) {
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
   // 记录答题结果到错题本
   if (selected === correct) { recordCorrect(q.word.en); } else { recordMistake(q.word.en); }
-  // 1.5秒后自动跳下一题
-  quizState._autoNext = setTimeout(() => nextQuestion(), 1500);
+  // 不自动跳转，需手动点击
 }
 
 function checkSpell() {
@@ -1216,8 +1273,82 @@ function checkSpell() {
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
   // 记录答题结果到错题本
   if (answer === correct) { recordCorrect(q.word.en); } else { recordMistake(q.word.en); }
-  // 1.5秒后自动跳下一题
-  quizState._autoNext = setTimeout(() => nextQuestion(), 1500);
+  // 不自动跳转，需手动点击
+}
+
+// 听声默写：先拼写，再选含义
+function checkListenSpell() {
+  if (quizState.answered) return;
+  const input = document.getElementById('quizSpellInput');
+  if (!input) return;
+  const q = quizState.questions[quizState.idx];
+  const answer = input.value.trim().toLowerCase();
+  const correct = q.word.en.toLowerCase();
+
+  if (answer !== correct) {
+    // 拼写错误，直接判错
+    quizState.answered = true;
+    input.classList.add('wrong');
+    playWrongSound();
+    quizState.wrong.push({ word: q.word, yourAnswer: '拼写错误: ' + input.value.trim() });
+    recordMistake(q.word.en);
+
+    // 显示正确答案和含义选项（但已判错，选择只是学习）
+    showListenSpellMeaningOptions(q, true);
+    document.getElementById('quizNextBtn').style.display = '';
+    document.querySelector('.quiz-score-live').textContent = '✅ ' + quizState.score;
+    return;
+  }
+
+  // 拼写正确，进入第二阶段：选含义
+  input.classList.add('correct');
+  input.disabled = true;
+  playCorrectSound();
+
+  showListenSpellMeaningOptions(q, false);
+}
+
+function showListenSpellMeaningOptions(q, alreadyWrong) {
+  const w = q.word;
+  const optionsHTML = q.meaningOptions.map((opt, i) => {
+    const letter = String.fromCharCode(65 + i);
+    return '<div class="quiz-opt" data-key="' + opt.key + '" onclick="selectListenSpellMeaning(this,' + (alreadyWrong ? 'true' : 'false') + ')">' + letter + '. ' + opt.display + '</div>';
+  }).join('');
+
+  const container = document.getElementById('listenSpellMeanings');
+  if (container) {
+    container.innerHTML = '<div class="qq-prompt" style="margin-top:14px;margin-bottom:8px">选择正确的含义：</div><div class="quiz-options">' + optionsHTML + '</div>';
+  }
+}
+
+function selectListenSpellMeaning(el, alreadyWrong) {
+  if (quizState.answered && !alreadyWrong) return;
+  quizState.answered = true;
+  const q = quizState.questions[quizState.idx];
+  const selected = el.dataset.key;
+  const correct = q.word.en;
+
+  document.querySelectorAll('.quiz-opt').forEach(opt => {
+    opt.classList.add('disabled');
+    if (opt.dataset.key === correct) opt.classList.add('show-correct');
+  });
+
+  if (selected === correct && !alreadyWrong) {
+    el.classList.add('correct');
+    quizState.score++;
+    playCorrectSound();
+    recordCorrect(q.word.en);
+  } else {
+    el.classList.add('wrong');
+    if (!alreadyWrong) {
+      quizState.wrong.push({ word: q.word, yourAnswer: '含义选错' });
+      recordMistake(q.word.en);
+    }
+    playWrongSound();
+  }
+
+  document.getElementById('quizNextBtn').style.display = '';
+  document.querySelector('.quiz-score-live').textContent = '✅ ' + quizState.score;
 }
 
 function nextQuestion() {
