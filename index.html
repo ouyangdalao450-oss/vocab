@@ -263,7 +263,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522h"></script>
+<script src="vocab-data.js?v=20260522i"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1153,6 +1153,8 @@ function renderQuizQuestion() {
         <button class="quiz-next-btn" onclick="checkSpell()">确认</button>
       </div>
     `;
+  } else if (q.mode === 'listenSpell') {
+    optionsHTML = '';
   } else {
     optionsHTML = `
       <div class="quiz-options">
@@ -1417,6 +1419,16 @@ function renderQuizResult() {
 /* ===== Service Worker（可选离线）===== */
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(()=>{});
+// Enter键触发下一题
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Enter') return;
+  const btn = document.getElementById('quizNextBtn');
+  if (btn && btn.style.display !== 'none' && quizState.answered) {
+    e.preventDefault();
+    nextQuestion();
+  }
+});
+
 }
 </script>
 <!-- Quiz 全屏页面 -->
