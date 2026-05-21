@@ -665,7 +665,221 @@ const QUIZ_MODES = [
   { id:'spell', icon:'✍️拼写', title:'拼写挑战', desc:'看含义拼出英文' },
 ];
 
+
+/* ===== 测验音效（Web Audio API 合成）===== */
+function playCorrectSound() {
+  try {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const now = audioCtx.currentTime;
+    // 上行三音和弦 C5→E5→G5
+    [523.25, 659.25, 783.99].forEach((freq, i) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.15, now + i * 0.08);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.3);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now + i * 0.08);
+      osc.stop(now + i * 0.08 + 0.35);
+    });
+  } catch(e) {}
+}
+
+function playWrongSound() {
+  try {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(220, now);
+    osc.frequency.linearRampToValueAtTime(180, now + 0.25);
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.35);
+  } catch(e) {}
+}
+
+/* ===== 错题记录本（localStorage 持久化）===== */
+const MISTAKE_KEY = 'vocab_mistakes_v1';
+
+function loadMistakes() {
+  try {
+    return JSON.parse(localStorage.getItem(MISTAKE_KEY)) || {};
+  } catch(e) { return {}; }
+}
+
+function saveMistakes(data) {
+  try { localStorage.setItem(MISTAKE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+// 记录一次错误
+function recordMistake(wordEn) {
+  const data = loadMistakes();
+  if (!data[wordEn]) data[wordEn] = { count: 0, firstAt: Date.now(), lastAt: Date.now(), correctAfterWrong: 0 };
+  data[wordEn].count++;
+  data[wordEn].lastAt = Date.now();
+  data[wordEn].correctAfterWrong = 0; // 重置连续正确计数
+  saveMistakes(data);
+}
+
+// 记录一次正确（连续正确计数，用于判断是否"已掌握"）
+function recordCorrect(wordEn) {
+  const data = loadMistakes();
+  if (data[wordEn]) {
+    data[wordEn].correctAfterWrong = (data[wordEn].correctAfterWrong || 0) + 1;
+    data[wordEn].lastCorrectAt = Date.now();
+    saveMistakes(data);
+  }
+}
+
+// 艾宾浩斯遗忘曲线分析：返回需要复习的词，按紧急程度排序
+function analyzeMistakes() {
+  const data = loadMistakes();
+  const allWords = getAllWords();
+  const now = Date.now();
+  const results = [];
+
+  Object.keys(data).forEach(en => {
+    const m = data[en];
+    const word = allWords.find(w => w.en === en);
+    if (!word) return;
+
+    // 遗忘曲线复习间隔（小时）：1h, 8h, 1d, 2d, 4d, 7d, 15d, 30d
+    const intervals = [1, 8, 24, 48, 96, 168, 360, 720];
+    const stage = Math.min(m.correctAfterWrong || 0, intervals.length - 1);
+    const reviewInterval = intervals[stage] * 3600000; // 转毫秒
+
+    const timeSinceLastCorrect = m.lastCorrectAt ? (now - m.lastCorrectAt) : (now - m.firstAt);
+    const timeSinceLastMistake = now - m.lastAt;
+    const overdue = timeSinceLastMistake > reviewInterval;
+
+    // 熟练度评分 0-100（越高越熟练）
+    let mastery = 0;
+    if (m.count === 0) { mastery = 100; }
+    else {
+      // 基础分：错误越多分越低
+      const errorPenalty = Math.min(m.count * 15, 60);
+      // 连续正确加分
+      const streakBonus = Math.min((m.correctAfterWrong || 0) * 12, 36);
+      // 时间衰减：上次错误越久，稍微恢复
+      const hoursSince = timeSinceLastMistake / 3600000;
+      const decayRecovery = Math.min(hoursSince * 0.3, 10);
+      mastery = Math.max(0, Math.min(100, 100 - errorPenalty + streakBonus + decayRecovery));
+    }
+
+    // 紧急度：需要复习的程度（0-100）
+    let urgency = 0;
+    if (m.count > 0) {
+      if (overdue || !m.lastCorrectAt) {
+        urgency = Math.min(100, 40 + m.count * 10 + (overdue ? 30 : 0));
+      } else {
+        const progressRatio = timeSinceLastCorrect / reviewInterval;
+        urgency = Math.min(100, progressRatio * 60 + m.count * 5);
+      }
+    }
+
+    results.push({
+      word,
+      mistakes: m,
+      mastery: Math.round(mastery),
+      urgency: Math.round(urgency),
+      stage,
+      overdue,
+      reviewDue: m.lastCorrectAt ? new Date(m.lastCorrectAt + reviewInterval) : null,
+    });
+  });
+
+  // 按紧急度降序排列
+  results.sort((a, b) => b.urgency - a.urgency);
+  return results;
+}
+
 let quizState = { mode:null, range:'all', count:15, questions:[], idx:0, score:0, wrong:[], answered:false };
+
+function renderMistakeBook() {
+  const analysis = analyzeMistakes();
+  const el = document.getElementById('quizInner');
+
+  const totalMistakes = analysis.length;
+  const needReview = analysis.filter(r => r.urgency >= 50);
+  const mastered = analysis.filter(r => r.mastery >= 80);
+  const struggling = analysis.filter(r => r.mastery < 40);
+
+  let listHTML = '';
+  if (analysis.length === 0) {
+    listHTML = '<div style="text-align:center;color:#aaa;padding:40px 0;font-size:1.1em">🎉 还没有错题记录！<br>去做一次测验吧</div>';
+  } else {
+    listHTML = analysis.map(r => {
+      const urgencyColor = r.urgency >= 70 ? '#e74c3c' : r.urgency >= 40 ? '#e67e22' : '#27ae60';
+      const urgencyLabel = r.urgency >= 70 ? '⚠️ 急需复习' : r.urgency >= 40 ? '🔄 需要巩固' : r.mastery >= 80 ? '✅ 已掌握' : '📈 进步中';
+      const masteryBar = `<div style="background:#ede4ff;border-radius:4px;height:6px;width:80px;overflow:hidden;display:inline-block;vertical-align:middle"><div style="height:100%;background:${urgencyColor};width:${r.mastery}%;border-radius:4px"></div></div>`;
+      const lastMistakeDate = new Date(r.mistakes.lastAt).toLocaleDateString('zh-CN');
+      return `<div class="quiz-wrong-item" style="border-left-color:${urgencyColor}">
+        <div class="qwi-word">${r.word.en} <span class="phonetic">${r.word.phonetic}</span></div>
+        <div class="qwi-meaning">${r.word.meaning.replace(/[❶❷❸❹❺]/g,'').trim()}</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:4px;font-size:0.82em">
+          <span style="color:${urgencyColor};font-weight:700">${urgencyLabel}</span>
+          ${masteryBar}
+          <span style="color:#999">熟练度 ${r.mastery}%</span>
+        </div>
+        <div style="font-size:0.78em;color:#aaa;margin-top:2px">
+          错 ${r.mistakes.count} 次 | 最近错误: ${lastMistakeDate}
+          ${r.mistakes.correctAfterWrong ? ' | 连续正确 ' + r.mistakes.correctAfterWrong + ' 次' : ''}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  el.innerHTML = `
+    <div class="quiz-top">
+      <h2>📕 错题本</h2>
+      <button class="quiz-close-btn" onclick="renderQuizHome()">←</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">
+      <div style="background:#fff;border-radius:12px;padding:12px;text-align:center;border:2px solid #f0e6ff">
+        <div style="font-size:1.5em;font-weight:800;color:#e74c3c">${totalMistakes}</div>
+        <div style="font-size:0.75em;color:#999">错过的词</div>
+      </div>
+      <div style="background:#fff;border-radius:12px;padding:12px;text-align:center;border:2px solid #f0e6ff">
+        <div style="font-size:1.5em;font-weight:800;color:#e67e22">${needReview.length}</div>
+        <div style="font-size:0.75em;color:#999">需要复习</div>
+      </div>
+      <div style="background:#fff;border-radius:12px;padding:12px;text-align:center;border:2px solid #f0e6ff">
+        <div style="font-size:1.5em;font-weight:800;color:#27ae60">${mastered.length}</div>
+        <div style="font-size:0.75em;color:#999">已掌握</div>
+      </div>
+    </div>
+    ${struggling.length > 0 ? `<div style="background:#fff0f0;border-radius:12px;padding:12px;margin-bottom:12px;border:1px solid #ffcccc">
+      <div style="font-weight:700;color:#c0392b;margin-bottom:6px">🔴 最需要加强的词</div>
+      <div style="font-size:0.88em;color:#555">${struggling.map(r => '<strong>' + r.word.en + '</strong>(' + r.mistakes.count + '次)').join('、')}</div>
+      <div style="font-size:0.78em;color:#999;margin-top:4px">💡 建议：多次重复测试这些词，每次间隔1-2天</div>
+    </div>` : ''}
+    ${needReview.length >= 4 ? `<button class="quiz-start-btn" style="margin-bottom:14px" onclick="startMistakeQuiz()">🔄 复习错题 (${Math.min(needReview.length, 15)}题)</button>` : ''}
+    <div style="margin-bottom:8px;font-weight:700;color:#2d1b69;font-size:0.95em">所有错词（按紧急度排序）</div>
+    ${listHTML}
+    ${analysis.length > 0 ? `<button style="margin-top:16px;padding:10px 20px;border:2px solid #e74c3c;border-radius:12px;background:#fff;color:#e74c3c;font-weight:700;cursor:pointer" onclick="if(confirm('确定清空所有错题记录？')){localStorage.removeItem('${MISTAKE_KEY}');renderMistakeBook();}">🗑️ 清空记录</button>` : ''}
+  `;
+}
+
+function startMistakeQuiz() {
+  const analysis = analyzeMistakes().filter(r => r.urgency >= 50);
+  if (analysis.length < 4) { alert('需要复习的词不足4个，先去做普通测验吧'); return; }
+  const words = analysis.map(r => r.word);
+  quizState.mode = 'en2zh';
+  quizState.range = 'all';
+  quizState.questions = generateQuestions('en2zh', words, Math.min(words.length, 15));
+  quizState.idx = 0;
+  quizState.score = 0;
+  quizState.wrong = [];
+  quizState.answered = false;
+  renderQuizQuestion();
+}
 
 function getAllWords() {
   return VOCAB_DATA.flatMap(s => s.words);
@@ -700,7 +914,7 @@ function generateQuestions(mode, words, count) {
     const distractors = pickDistractors(all, w, 3);
     let options;
     if (mode === 'en2zh') {
-      options = shuffle([w, ...distractors].map(x => ({ display: x.meaning, key: x.en })));
+      options = shuffle([w, ...distractors].map(x => ({ display: x.meaning.replace(/[❶❷❸❹❺]/g, '').trim(), key: x.en })));
     } else if (mode === 'zh2en') {
       options = shuffle([w, ...distractors].map(x => ({ display: x.en, key: x.en })));
     } else if (mode === 'listen') {
@@ -746,6 +960,11 @@ function renderQuizHome() {
           <div class="qmc-desc">${m.desc}</div>
         </div>
       `).join('')}
+      <div class="quiz-mode-card" onclick="renderMistakeBook()" style="grid-column:span 2;border-color:#e67e22;background:linear-gradient(135deg,#fff8f0,#fff0e0)">
+        <div class="qmc-icon">📕</div>
+        <div class="qmc-title">错题本</div>
+        <div class="qmc-desc">查看错误记录 · 艾宾浩斯复习提醒</div>
+      </div>
     </div>
   `;
 }
@@ -828,13 +1047,13 @@ function renderQuizQuestion() {
     questionHTML = `
       <div class="qq-prompt">这个单词的含义是？</div>
       <div class="qq-word">${w.en}</div>
-      <div class="qq-phonetic">${w.phonetic}</div>
       ${w.pos ? `<div style="margin-top:4px"><span class="pos">${w.pos}</span></div>` : ''}
     `;
   } else if (q.mode === 'zh2en') {
+    const cleanMeaning = w.meaning.replace(/[❶❷❸❹❺]/g, '').trim();
     questionHTML = `
       <div class="qq-prompt">哪个单词是这个含义？</div>
-      <div class="qq-word" style="font-size:1.3em">${w.meaning}</div>
+      <div class="qq-word" style="font-size:1.3em">${cleanMeaning}</div>
     `;
   } else if (q.mode === 'listen') {
     questionHTML = `
@@ -854,7 +1073,6 @@ function renderQuizQuestion() {
     questionHTML = `
       <div class="qq-prompt">拼出这个单词</div>
       <div class="qq-word" style="font-size:1.2em">${w.meaning}</div>
-      <div class="qq-phonetic">${w.phonetic}</div>
       ${w.pos ? `<div style="margin-top:4px"><span class="pos">${w.pos}</span></div>` : ''}
     `;
   }
@@ -952,6 +1170,10 @@ function selectOption(el) {
   document.getElementById('quizNextBtn').style.display = '';
   // 更新实时分数
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
+  // 记录答题结果到错题本
+  if (selected === correct) { recordCorrect(q.word.en); } else { recordMistake(q.word.en); }
+  // 1.5秒后自动跳下一题
+  quizState._autoNext = setTimeout(() => nextQuestion(), 1500);
 }
 
 function checkSpell() {
@@ -979,9 +1201,14 @@ function checkSpell() {
   }
   document.getElementById('quizNextBtn').style.display = '';
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
+  // 记录答题结果到错题本
+  if (answer === correct) { recordCorrect(q.word.en); } else { recordMistake(q.word.en); }
+  // 1.5秒后自动跳下一题
+  quizState._autoNext = setTimeout(() => nextQuestion(), 1500);
 }
 
 function nextQuestion() {
+  if (quizState._autoNext) { clearTimeout(quizState._autoNext); quizState._autoNext = null; }
   quizState.idx++;
   if (quizState.idx >= quizState.questions.length) {
     renderQuizResult();
