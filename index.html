@@ -56,6 +56,11 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .desk-table .pos { color:#764ba2; font-weight:600; font-size:0.8em; background:#f0e6ff; padding:2px 8px; border-radius:8px; display:inline-block; }
 .desk-table .meaning { color:#333; font-size:0.9em; line-height:1.4; }
 .desk-table .example { color:#888; font-size:0.84em; font-style:italic; line-height:1.4; }
+.desk-table .example-zh { color:#5a8a5a; font-style:normal; font-size:0.84em; line-height:1.4; }
+.toggle-zh-btn { background:none; border:1px solid #ccc; font-size:0.7em; padding:2px 6px; border-radius:6px; cursor:pointer; color:#999; margin-left:4px; vertical-align:middle; transition:all 0.15s; }
+.toggle-zh-btn:hover { border-color:#764ba2; color:#764ba2; }
+.toggle-zh-btn.zh-mode { background:#764ba2; color:#fff; border-color:#764ba2; }
+.irr-badge { display:inline-block; background:linear-gradient(135deg,#ff6b6b,#ee5a24); color:#fff; font-size:0.72em; font-weight:700; padding:2px 8px; border-radius:6px; margin-left:4px; vertical-align:middle; letter-spacing:0.3px; }
 .speak-btn { background:none; border:none; font-size:1.3em; padding:4px 6px; border-radius:8px; cursor:pointer; transition:transform 0.1s; }
 .speak-btn:active { transform:scale(0.85); }
 .speak-btn.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
@@ -83,6 +88,11 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .vocab-card .card-root { color:#8b6fc0; font-size:0.82em; line-height:1.4; margin-top:2px; font-style:italic; }
 .vocab-card .card-root::before { content:'💡 '; }
 .vocab-card .card-example { color:#999; font-size:0.82em; font-style:italic; line-height:1.4; }
+.vocab-card .card-example-zh { color:#5a8a5a; font-style:normal; font-size:0.82em; line-height:1.4; }
+.vocab-card .card-irr { margin-top:2px; }
+.card-toggle-zh { background:none; border:1px solid #ccc; font-size:0.7em; padding:2px 6px; border-radius:6px; cursor:pointer; color:#999; margin-left:4px; vertical-align:middle; transition:all 0.15s; }
+.card-toggle-zh:hover { border-color:#764ba2; color:#764ba2; }
+.card-toggle-zh.zh-mode { background:#764ba2; color:#fff; border-color:#764ba2; }
 
 /* ===== 响应式 ===== */
 @keyframes pulse {
@@ -136,9 +146,9 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
-<div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意</div>
+<div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260520d"></script>
+<script src="vocab-data.js?v=20260521a"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -304,6 +314,22 @@ function stopCurrent() {
 }
 
 /* ===== 词性排序 ===== */
+
+/* ===== 例句中英切换 ===== */
+function toggleZh(id, btn) {
+  const enEl = document.getElementById(id + '-en');
+  const zhEl = document.getElementById(id + '-zh');
+  if (!enEl || !zhEl) return;
+  const showingEn = enEl.style.display !== 'none';
+  if (showingEn) {
+    enEl.style.display = 'none';
+    zhEl.style.display = '';
+  } else {
+    enEl.style.display = '';
+    zhEl.style.display = 'none';
+  }
+}
+
 function posPriority(pos) {
   const p = (pos||'').toLowerCase().trim();
   if (p.startsWith('n')) return 1;
@@ -348,18 +374,22 @@ function renderAll(filter) {
         const audioBtn = w.noAudio ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
         const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const irrTag = w.irr ? `<span class="irr-badge">⚡ ${w.irr}</span>` : '';
         const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
+        const irrHtml = w.irr ? `<div class="card-irr"><span class="irr-badge">⚡ ${w.irr}</span></div>` : '';
+        const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
         card.innerHTML = `
           <div class="card-top">
             <span class="card-num">${i+1}</span>
             ${audioBtn}
-            <span class="card-word">${w.en}</span>${compoundTag}${ttsTag}
+            <span class="card-word">${w.en}</span>${compoundTag}${ttsTag}${irrTag}
             <span class="card-phonetic">${w.phonetic}</span>
           </div>
           <span class="card-pos">${w.pos}</span>
           <div class="card-meaning">${w.meaning}</div>
-          ${rootHtml}
-          <div class="card-example">${w.example}</div>`;
+          ${rootHtml}${irrHtml}
+          <div class="card-example" id="${zhId}-en">${w.example}<button class="card-toggle-zh" onclick="toggleZh('${zhId}',this)">中</button></div>
+          <div class="card-example-zh" id="${zhId}-zh" style="display:none">${w.exampleZh||''}<button class="card-toggle-zh zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div>`;
         cards.appendChild(card);
       });
       d.appendChild(cards);
@@ -369,14 +399,17 @@ function renderAll(filter) {
         const audioBtn = w.noAudio ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
         const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const irrTag = w.irr ? `<span class="irr-badge">⚡ ${w.irr}</span>` : '';
         const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
+        const irrHtml = w.irr ? `<div style="margin-top:2px"><span class="irr-badge">⚡ ${w.irr}</span></div>` : '';
+        const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
         return `<tr>
           <td class="td-num">${i+1}</td>
-          <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
+          <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}${irrTag}</div></td>
           <td class="phonetic">${w.phonetic}</td>
           <td><span class="pos">${w.pos}</span></td>
-          <td class="meaning">${w.meaning}${rootHtml}</td>
-          <td class="example">${w.example}</td>
+          <td class="meaning">${w.meaning}${rootHtml}${irrHtml}</td>
+          <td><div id="${zhId}-en" class="example">${w.example}<button class="toggle-zh-btn" onclick="toggleZh('${zhId}',this)">中</button></div><div id="${zhId}-zh" class="example-zh" style="display:none">${w.exampleZh||''}<button class="toggle-zh-btn zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div></td>
         </tr>`;
       }).join('');
       d.innerHTML += `<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
