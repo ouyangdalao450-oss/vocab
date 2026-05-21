@@ -179,7 +179,8 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .quiz-opt.correct { border-color:#27ae60; background:#eafaf1; color:#1e8449; font-weight:700; }
 .quiz-opt.wrong { border-color:#e74c3c; background:#fdecea; color:#c0392b; }
 .quiz-opt.disabled { pointer-events:none; opacity:0.6; }
-.quiz-opt.show-correct { border-color:#27ae60; background:#eafaf1; }
+.quiz-opt.show-correct { border-color:#27ae60; background:#eafaf1; color:#1e8449; font-weight:700; opacity:1 !important; }
+
 
 /* 拼写输入 */
 .quiz-spell-input { width:100%; padding:14px 16px; border:2px solid #ddd; border-radius:14px; font-size:1.2em; outline:none; text-align:center; transition:border-color 0.2s; font-weight:700; letter-spacing:2px; }
@@ -263,7 +264,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522i"></script>
+<script src="vocab-data.js?v=20260522j"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1236,8 +1237,8 @@ function selectOption(el) {
 
   // 标记所有选项
   document.querySelectorAll('.quiz-opt').forEach(opt => {
-    opt.classList.add('disabled');
-    if (opt.dataset.key === correct) opt.classList.add('show-correct');
+    if (opt.dataset.key === correct) { opt.classList.add('show-correct'); }
+    else { opt.classList.add('disabled'); }
   });
 
   if (selected === correct) {
@@ -1341,8 +1342,8 @@ function selectListenSpellMeaning(el, alreadyWrong) {
   const correct = q.word.en;
 
   document.querySelectorAll('.quiz-opt').forEach(opt => {
-    opt.classList.add('disabled');
-    if (opt.dataset.key === correct) opt.classList.add('show-correct');
+    if (opt.dataset.key === correct) { opt.classList.add('show-correct'); }
+    else { opt.classList.add('disabled'); }
   });
 
   if (selected === correct && !alreadyWrong) {
