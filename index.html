@@ -264,7 +264,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522p"></script>
+<script src="vocab-data.js?v=20260522q"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1300,16 +1300,25 @@ function checkListenSpell() {
   const correct = q.word.en.toLowerCase();
 
   if (answer !== correct) {
-    // 拼写错误，直接判错
+    // 拼写错误：显示正确拼写，不出现含义选项，Enter直接下一题
     quizState.answered = true;
     input.classList.add('wrong');
+    input.disabled = true;
     playWrongSound();
     quizState.wrong.push({ word: q.word, yourAnswer: '拼写错误: ' + input.value.trim() });
     recordMistake(q.word.en);
 
-    // 显示正确拼写，不出现含义选项，Enter直接下一题
+    // 多重方式确保正确拼写可见
+    // 1. 通过hint div
     const hint = document.getElementById('quizSpellHint');
-    if (hint) { hint.innerHTML = '<span class="quiz-spell-hint wrong">✗ ' + input.value.trim() + '</span> → <span class="quiz-spell-hint correct">✓ ' + q.word.en + '</span>'; }
+    if (hint) {
+      hint.innerHTML = '<div style="margin-top:12px;padding:12px;background:#fdecea;border-radius:10px;font-size:1.15em"><span style="color:#e74c3c">✗ ' + input.value.trim() + '</span>  →  <span style="color:#27ae60;font-weight:700;font-size:1.3em">✓ ' + q.word.en + '</span></div>';
+    }
+    // 2. 通过listenSpellMeanings区域（备用，更醒目）
+    const meaningsEl = document.getElementById('listenSpellMeanings');
+    if (meaningsEl) {
+      meaningsEl.innerHTML = '<div style="margin-top:10px;padding:14px;background:#eafaf1;border:2px solid #27ae60;border-radius:12px;text-align:center;font-size:1.4em;font-weight:700;color:#1e8449;letter-spacing:2px">' + q.word.en + '</div>';
+    }
     document.getElementById('quizNextBtn').style.display = '';
     document.querySelector('.quiz-score-live').textContent = '✅ ' + quizState.score;
     return;
