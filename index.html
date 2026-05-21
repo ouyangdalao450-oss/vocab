@@ -264,7 +264,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522o"></script>
+<script src="vocab-data.js?v=20260522p"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1140,6 +1140,7 @@ function renderQuizQuestion() {
       <button class="qq-listen-btn" id="quizListenBtn" onclick="quizPlayAudio('${w.en.replace(/'/g,"\\\\'")}',this)">🔊</button>
       <div style="margin-top:10px">
         <input type="text" class="quiz-spell-input" id="quizSpellInput" placeholder="输入单词..." autocomplete="off" autocapitalize="off" spellcheck="false">
+        <div class="quiz-spell-hint" id="quizSpellHint"></div>
       </div>
       <div id="listenSpellMeanings"></div>
     `;
