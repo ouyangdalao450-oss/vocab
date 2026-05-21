@@ -63,7 +63,11 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .irr-badge { display:inline-flex; align-items:center; gap:0; font-size:0.72em; margin-left:2px; margin-right:4px; vertical-align:middle; }
 .irr-badge .irr-label { background:#ff6b6b; color:#fff; font-weight:700; padding:1px 6px; border-radius:4px 0 0 4px; white-space:nowrap; line-height:1.6; }
 .irr-badge .irr-forms { background:#fff0f0; color:#c0392b; font-weight:600; padding:1px 6px; border-radius:0 4px 4px 0; border:1px solid #ffcccc; border-left:none; white-space:nowrap; line-height:1.6; }
+.irr-phonetic { font-weight:400; font-size:0.9em; color:#e07070; margin-left:3px; font-family:"Lucida Sans Unicode",sans-serif; }
 .irr-row { margin:3px 0 2px 0; }
+.irr-speak-btn { background:none; border:none; font-size:1.1em; padding:1px 4px; border-radius:6px; cursor:pointer; transition:transform 0.1s; vertical-align:middle; line-height:1; }
+.irr-speak-btn:active { transform:scale(0.8); }
+.irr-speak-btn.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
 .irr-badge .irr-sep { margin:0 3px; color:#e74c3c; font-weight:400; }
 .speak-btn { background:none; border:none; font-size:1.3em; padding:4px 6px; border-radius:8px; cursor:pointer; transition:transform 0.1s; }
 .speak-btn:active { transform:scale(0.85); }
@@ -153,7 +157,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260521c"></script>
+<script src="vocab-data.js?v=20260521d"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -304,6 +308,39 @@ async function speak(word, btn) {
   }
 }
 
+// 变形词发音（优先真人音频，TTS兜底）
+async function speakIrr(word, btn) {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  const key = word.toLowerCase().replace(/\s+/g, '_');
+  if (currentKey === key && (currentSource || currentTTS)) {
+    if (currentTTS) speechSynthesis.cancel();
+    stopCurrent();
+    return;
+  }
+  stopCurrent();
+  btn.classList.add('loading');
+  const buf = await loadBuffer(key);
+  btn.classList.remove('loading');
+  if (buf) {
+    const source = audioCtx.createBufferSource();
+    source.buffer = buf;
+    source.connect(audioCtx.destination);
+    source.onended = () => {
+      if (currentKey === key) { btn.classList.remove('playing'); currentSource = null; currentBtn = null; currentKey = null; }
+    };
+    source.start(0);
+    currentSource = source;
+    currentBtn = btn;
+    currentKey = key;
+    btn.classList.add('playing');
+  } else {
+    if (!speakTTS(word, btn)) {
+      btn.classList.add('error');
+      setTimeout(() => btn.classList.remove('error'), 600);
+    }
+  }
+}
+
 function stopCurrent() {
   if (currentSource) {
     try { currentSource.stop(); } catch(e) {}
@@ -352,13 +389,21 @@ const isMobile = () => window.innerWidth <= 768;
 /* 格式化不规则动词标签 */
 function formatIrrTag(irr) {
   if (!irr) return '';
+  const irrBtn = word => `<button class="irr-speak-btn" onclick="speakIrr('${word}',this)" title="播放 ${word}">🔊</button>`;
   if (irr.includes('|')) {
     const parts = irr.split('|');
-    const past = parts[0].replace('过去:', '');
-    const pp = parts[1].replace('过分:', '');
-    return `<span class="irr-badge"><span class="irr-label">过去式</span><span class="irr-forms">${past}</span></span> <span class="irr-badge"><span class="irr-label">过去分词</span><span class="irr-forms">${pp}</span></span>`;
+    const pastRaw = parts[0].replace('过去:', '');
+    const ppRaw = parts[1].replace('过分:', '');
+    const splitWP = s => { const m = s.match(/^(.+?)(\s+\/.+\/)$/); return m ? {w:m[1], p:m[2]} : {w:s, p:''}; };
+    const past = splitWP(pastRaw);
+    const pp = splitWP(ppRaw);
+    const ph = s => s.p ? `<span class="irr-phonetic">${s.p}</span>` : '';
+    return `<span class="irr-badge"><span class="irr-label">过去式</span><span class="irr-forms">${past.w}${ph(past)}</span>${irrBtn(past.w)}</span> <span class="irr-badge"><span class="irr-label">过去分词</span><span class="irr-forms">${pp.w}${ph(pp)}</span>${irrBtn(pp.w)}</span>`;
   }
-  return `<span class="irr-badge"><span class="irr-label">⚡</span><span class="irr-forms">${irr}</span></span>`;
+  // might: "may的过去式"
+  const mayMatch = irr.match(/^(.+)的过去式$/);
+  if (mayMatch) return `<span class="irr-badge"><span class="irr-label">⚡</span><span class="irr-forms">${irr}</span>${irrBtn(mayMatch[1])}</span>`;
+  return `<span class="irr-badge"><span class="irr-label">⚡</span><span class="irr-forms">${irr}</span>${irrBtn(irr.split('/')[0].trim())}</span>`;
 }
 
 function renderAll(filter) {
