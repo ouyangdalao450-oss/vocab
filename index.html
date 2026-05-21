@@ -843,9 +843,12 @@ function renderQuizQuestion() {
       <div class="qq-phonetic" style="visibility:hidden">${w.phonetic}</div>
     `;
   } else if (q.mode === 'root') {
+    // 截掉最后「→ 含义」部分，避免直接给答案
+    const rootParts = w.root.split('\u2192');
+    const rootHint = rootParts.length > 1 ? rootParts.slice(0, -1).join('\u2192').trimEnd() : w.root;
     questionHTML = `
-      <div class="qq-prompt">哪个单词的词根是这个？</div>
-      <div class="qq-hint" style="font-size:1.15em;color:#764ba2;font-style:normal;font-weight:700;margin:8px 0">${w.root}</div>
+      <div class="qq-prompt">根据词根推理，这是哪个单词？</div>
+      <div class="qq-hint" style="font-size:1.15em;color:#764ba2;font-style:normal;font-weight:700;margin:8px 0">${rootHint}</div>
     `;
   } else if (q.mode === 'spell') {
     questionHTML = `
@@ -939,9 +942,11 @@ function selectOption(el) {
   if (selected === correct) {
     el.classList.add('correct');
     quizState.score++;
+    playCorrectSound();
   } else {
     el.classList.add('wrong');
     quizState.wrong.push({ word: q.word, yourAnswer: el.textContent.replace(/^[A-D]\.\s*/, '') });
+    playWrongSound();
   }
 
   document.getElementById('quizNextBtn').style.display = '';
@@ -964,11 +969,13 @@ function checkSpell() {
     hint.textContent = '✅ 正确！';
     hint.className = 'quiz-spell-hint correct';
     quizState.score++;
+    playCorrectSound();
   } else {
     input.classList.add('wrong');
     hint.innerHTML = `❌ 正确答案: <strong>${q.word.en}</strong>`;
     hint.className = 'quiz-spell-hint wrong';
     quizState.wrong.push({ word: q.word, yourAnswer: input.value.trim() });
+    playWrongSound();
   }
   document.getElementById('quizNextBtn').style.display = '';
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
