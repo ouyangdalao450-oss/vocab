@@ -309,7 +309,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260523e"></script>
+<script src="vocab-data.js?v=20260523f"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1552,56 +1552,78 @@ function findExistingWord(word) {
 
 let pendingWord = null;
 
-async function fetchYoudaoFull(word) {
-  // Youdao full dictionary API via allorigins CORS proxy
-  // Returns: { phonetic, pos, meanings[], examples:[{en,zh}] }
+async function fetchCambridgeZh(word) {
+  // Cambridge bilingual dictionary (English-Chinese Simplified)
+  // Uses allorigins.win/raw proxy (CORS *) to bypass Cloudflare
   try {
-    const ydUrl = 'https://dict.youdao.com/jsonapi?q=' + encodeURIComponent(word) + '&doctype=json';
-    const resp = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(ydUrl));
+    const camUrl = 'https://dictionary.cambridge.org/dictionary/english-chinese-simplified/' + encodeURIComponent(word);
+    const resp = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(camUrl));
     if (!resp.ok) return null;
-    const wrapper = await resp.json();
-    const data = JSON.parse(wrapper.contents);
-    if (!data || !data.ec || !data.ec.word || !data.ec.word.length) return null;
+    const htmlText = await resp.text();
+    if (!htmlText || htmlText.length < 1000) return null;
 
-    const entry = data.ec.word[0];
-    const result = { phonetic: '', pos: '', meanings: [], examples: [] };
+    const result = { phonetic: '', posList: [], defs: [], usAudio: '' };
 
-    // US phonetic
-    if (entry.usphone) {
-      result.phonetic = '/' + entry.usphone + '/';
+    // US phonetic (IPA)
+    const usBlock = htmlText.match(/class="us dpron-i[\s\S]*?class="pron dpron">[\s\S]*?<\/span>/);
+    if (usBlock) {
+      const ipaMatch = usBlock[0].match(/class="ipa[^"]*">([\s\S]*?)<\/span>/);
+      if (ipaMatch) {
+        result.phonetic = '/' + ipaMatch[1].replace(/<[^>]+>/g, '').trim() + '/';
+      }
     }
 
-    // Meanings - extract from trs
-    const trs = entry.trs || [];
-    trs.forEach((t, idx) => {
-      const text = (t.tr || []).map(x => {
-        const l = x.l;
-        if (!l) return '';
-        if (l.i) return (Array.isArray(l.i) ? l.i.join('') : l.i);
-        return '';
-      }).join('').replace(/<[^>]+>/g, '').trim();
-      if (text && idx < 8) {
-        result.meanings.push(text);
+    // POS tags
+    const posMatches = htmlText.match(/class="pos dpos"[^>]*>([^<]+)/g) || [];
+    result.posList = [...new Set(posMatches.map(p => {
+      const t = p.replace(/<[^>]+>/g, '').trim();
+      if (t === 'noun') return 'n.';
+      if (t === 'verb') return 'v.';
+      if (t === 'adjective') return 'adj.';
+      if (t === 'adverb') return 'adv.';
+      if (t === 'preposition') return 'prep.';
+      if (t === 'conjunction') return 'conj.';
+      if (t === 'pronoun') return 'pron.';
+      if (t === 'interjection' || t === 'exclamation') return 'interj.';
+      return t.includes('.') ? t : t + '.';
+    }))];
+
+    // US audio URL
+    const usAudioMatch = htmlText.match(/class="us[^"]*dpron-i[^"]*[\s\S]*?src="([^"]*us_pron[^"]*\.mp3)"/);
+    if (usAudioMatch) {
+      let url = usAudioMatch[1];
+      if (!url.startsWith('http')) url = 'https://dictionary.cambridge.org' + url;
+      result.usAudio = url;
+    }
+
+    // Definitions with Chinese translations
+    const defBlocks = htmlText.match(/class="def-block ddef_block[\s\S]*?class="def-body ddef_b"[\s\S]*?<\/div>/g) || [];
+    defBlocks.forEach((block) => {
+      const transSpan = block.match(/class="trans dtrans dtrans-se[\s\S]*?<\/span>/);
+      let zhText = '';
+      if (transSpan) {
+        const dtransAll = transSpan[0].match(/class="dtrans">([^<]+)/g) || [];
+        zhText = dtransAll.map(d => d.replace(/class="[^"]*">/, '')).join('\uFF1B');
+      }
+      const enDef = block.match(/class="def ddef_d db[^"]*">([\s\S]*?)<\/span>/);
+      const enText = enDef ? enDef[1].replace(/<[^>]+>/g, '').trim() : '';
+      const exampEn = block.match(/class="eg deg[^"]*">([\s\S]*?)<\/span>/);
+      const exampZh = block.match(/class="trans dtrans dtrans-se hdb[^"]*"[^>]*>([^<]+)/);
+
+      if (zhText || enText) {
+        result.defs.push({
+          zh: zhText,
+          en: enText,
+          exampleEn: exampEn ? exampEn[1].replace(/<[^>]+>/g, '').trim() : '',
+          exampleZh: exampZh ? exampZh[1].trim() : ''
+        });
       }
     });
 
-    // Example sentences
-    if (data.blng_sents_part && data.blng_sents_part['sentence-pair']) {
-      const pairs = data.blng_sents_part['sentence-pair'];
-      const arr = Array.isArray(pairs) ? pairs : [pairs];
-      arr.slice(0, 2).forEach(p => {
-        if (p['sentence-eng'] && p['sentence-translation']) {
-          result.examples.push({
-            en: p['sentence-eng'].replace(/<[^>]+>/g, '').trim(),
-            zh: p['sentence-translation'].replace(/<[^>]+>/g, '').trim()
-          });
-        }
-      });
-    }
-
+    result.defs = result.defs.filter(d => d.zh);
     return result;
   } catch(e) {
-    console.warn('Youdao fetch failed:', e);
+    console.warn('Cambridge fetch failed:', e);
     return null;
   }
 }
@@ -1695,20 +1717,32 @@ async function searchAndAdd() {
 
     // Step 3: Get Chinese definitions from Youdao
     status.textContent = '\u{1F4D6} \u6B63\u5728\u83B7\u53D6\u6709\u9053\u8BCD\u5178\u4E2D\u6587\u91CA\u4E49...';
-    const youdao = await fetchYoudaoFull(word);
+    const cambridge = await fetchCambridgeZh(word);
 
     // Build word data
     let phonetic = '';
     let posList = [];
     let meaningZh = '';
 
-    if (youdao && youdao.meanings.length > 0) {
-      // Use Youdao data (professional Chinese dictionary)
-      phonetic = youdao.phonetic || '';
+    if (cambridge && cambridge.defs.length > 0) {
+      // Use Cambridge bilingual dictionary data
+      phonetic = cambridge.phonetic || '';
+      posList = cambridge.posList || [];
+
       const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
-      meaningZh = youdao.meanings.map((m, i) => i < 10 ? circled.charAt(i) + ' ' + m : m).join(' ');
+      meaningZh = cambridge.defs.map((d, i) => i < 10 ? circled.charAt(i) + ' ' + d.zh : d.zh).join(' ');
+
+      // Use Cambridge examples
+      if (cambridge.defs.length > 0 && cambridge.defs[0].exampleEn) {
+        example = cambridge.defs.map(d => d.exampleEn).filter(Boolean).join(' / ');
+        exampleZh = cambridge.defs.map(d => d.exampleZh).filter(Boolean).join(' / ');
+      }
+
+      // Use Cambridge audio if available (direct from Cambridge CDN)
+      // Cambridge CDN audio has no CORS, skip
+      // audioUrl already from Free Dictionary API (has CORS *)
     } else {
-      // Fallback: use Free Dictionary API + MyMemory translation
+      // Cambridge无结果，降级Free Dictionary API + MyMemory翻译
       let meaningEnParts = [];
       for (const m of meanings) {
         let pos = m.partOfSpeech || '';
