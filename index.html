@@ -309,7 +309,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260523d"></script>
+<script src="vocab-data.js?v=20260523e"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -424,6 +424,36 @@ async function speak(word, btn) {
   const entry = getMergedData().flatMap(s => s.words).find(w => w.en.toLowerCase().replace(/\s+/g,'_') === key);
 
   // noAudio 标记 → 直接用 TTS
+  if (entry && entry.customAudioUrl) {
+    // Real human audio from Free Dictionary API CDN
+    btn.classList.add('loading');
+    try {
+      const resp = await fetch(entry.customAudioUrl);
+      if (resp.ok) {
+        const arrayBuf = await resp.arrayBuffer();
+        const audioBuf = await audioCtx.decodeAudioData(arrayBuf);
+        const source = audioCtx.createBufferSource();
+        source.buffer = audioBuf;
+        source.connect(audioCtx.destination);
+        source.onended = () => {
+          if (currentKey === key) {
+            btn.classList.remove('playing');
+            currentSource = null;
+            currentBtn = null;
+            currentKey = null;
+          }
+        };
+        source.start(0);
+        currentSource = source;
+        currentBtn = btn;
+        currentKey = key;
+        btn.classList.add('playing');
+        btn.classList.remove('loading');
+        return;
+      }
+    } catch(e) { /* fall through to TTS */ }
+    btn.classList.remove('loading');
+  }
   if (entry && entry.noAudio) {
     speakTTS(word, btn);
     return;
@@ -585,9 +615,9 @@ function renderAll(filter) {
         const esc = w.en.replace(/'/g,"\\'");
         const card = document.createElement('div');
         card.className = 'vocab-card';
-        const audioBtn = w.noAudio ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+        const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
         const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
         const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
         const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
@@ -610,9 +640,9 @@ function renderAll(filter) {
     } else {
       const rows = m.map((w,i) => {
         const esc = w.en.replace(/'/g,"\\'");
-        const audioBtn = w.noAudio ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+        const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
         const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
         const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
         const irrHtml = w.irr ? `<div class="irr-row">${formatIrrTag(w.irr)}</div>` : '';
         const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
@@ -1522,19 +1552,58 @@ function findExistingWord(word) {
 
 let pendingWord = null;
 
-async function fetchYoudaoZh(word) {
-  // Youdao via allorigins CORS proxy (Youdao has no CORS headers)
+async function fetchYoudaoFull(word) {
+  // Youdao full dictionary API via allorigins CORS proxy
+  // Returns: { phonetic, pos, meanings[], examples:[{en,zh}] }
   try {
-    const ydUrl = 'https://dict.youdao.com/suggest?num=1&doctype=json&q=' + encodeURIComponent(word);
+    const ydUrl = 'https://dict.youdao.com/jsonapi?q=' + encodeURIComponent(word) + '&doctype=json';
     const resp = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(ydUrl));
-    if (!resp.ok) return '';
+    if (!resp.ok) return null;
     const wrapper = await resp.json();
     const data = JSON.parse(wrapper.contents);
-    if (data && data.data && data.data.entries && data.data.entries.length > 0) {
-      return data.data.entries[0].explain || '';
+    if (!data || !data.ec || !data.ec.word || !data.ec.word.length) return null;
+
+    const entry = data.ec.word[0];
+    const result = { phonetic: '', pos: '', meanings: [], examples: [] };
+
+    // US phonetic
+    if (entry.usphone) {
+      result.phonetic = '/' + entry.usphone + '/';
     }
-    return '';
-  } catch(e) { return ''; }
+
+    // Meanings - extract from trs
+    const trs = entry.trs || [];
+    trs.forEach((t, idx) => {
+      const text = (t.tr || []).map(x => {
+        const l = x.l;
+        if (!l) return '';
+        if (l.i) return (Array.isArray(l.i) ? l.i.join('') : l.i);
+        return '';
+      }).join('').replace(/<[^>]+>/g, '').trim();
+      if (text && idx < 8) {
+        result.meanings.push(text);
+      }
+    });
+
+    // Example sentences
+    if (data.blng_sents_part && data.blng_sents_part['sentence-pair']) {
+      const pairs = data.blng_sents_part['sentence-pair'];
+      const arr = Array.isArray(pairs) ? pairs : [pairs];
+      arr.slice(0, 2).forEach(p => {
+        if (p['sentence-eng'] && p['sentence-translation']) {
+          result.examples.push({
+            en: p['sentence-eng'].replace(/<[^>]+>/g, '').trim(),
+            zh: p['sentence-translation'].replace(/<[^>]+>/g, '').trim()
+          });
+        }
+      });
+    }
+
+    return result;
+  } catch(e) {
+    console.warn('Youdao fetch failed:', e);
+    return null;
+  }
 }
 
 async function fetchZhTranslation(text) {
@@ -1550,9 +1619,26 @@ async function fetchZhTranslation(text) {
   } catch(e) { return ''; }
 }
 
+async function fetchUSAudio(word) {
+  // Get real human US pronunciation from Free Dictionary API
+  try {
+    const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
+    if (!resp.ok) return '';
+    const data = await resp.json();
+    if (!data || !data.length) return '';
+    const phonetics = data[0]?.phonetics || [];
+    // Prefer US audio
+    const usAudio = phonetics.find(p => p.audio && p.audio.includes('-us'));
+    if (usAudio) return usAudio.audio;
+    // Fallback to any audio
+    const anyAudio = phonetics.find(p => p.audio);
+    return anyAudio?.audio || '';
+  } catch(e) { return ''; }
+}
+
 async function searchAndAdd() {
   const input = document.getElementById('addWordInput');
-  const word = input.value.trim();
+  const word = input.value.trim().toLowerCase();
   if (!word) return;
 
   const status = document.getElementById('awStatus');
@@ -1582,87 +1668,69 @@ async function searchAndAdd() {
 
   const searchBtn = document.getElementById('addWordSearchBtn');
   searchBtn.disabled = true;
-  status.textContent = '\u{1F50D} \u6B63\u5728\u67E5\u8BE2 "' + word + '"...';
+  status.textContent = '\u{1F50D} \u6B63\u5728\u67E5\u8BE2\u8BCD\u5178...';
   status.className = 'aw-status loading';
 
   try {
-    const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
-    if (!resp.ok) {
+    // Step 1: Fetch from Free Dictionary API for English data
+    const fdaResp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
+    if (!fdaResp.ok) {
       status.textContent = '\u274C \u672A\u627E\u5230 "' + word + '"\uFF0C\u8BF7\u68C0\u67E5\u62FC\u5199';
       status.className = 'aw-status error';
       return;
     }
-    const data = await resp.json();
-    if (!data || !data.length) {
+    const fdaData = await fdaResp.json();
+    if (!fdaData || !fdaData.length) {
       status.textContent = '\u274C \u672A\u627E\u5230 "' + word + '" \u7684\u8D44\u6599';
       status.className = 'aw-status error';
       return;
     }
 
-    const entry = data[0];
+    const entry = fdaData[0];
     const meanings = entry.meanings || [];
 
-    let phonetic = entry.phonetic || '';
-    if (!phonetic && entry.phonetics) {
-      const ph = entry.phonetics.find(p => p.text);
-      if (ph) phonetic = ph.text;
-    }
-    if (phonetic && !phonetic.startsWith('/')) phonetic = '/' + phonetic;
-    if (phonetic && !phonetic.endsWith('/')) phonetic = phonetic + '/';
+    // Step 2: Get US audio URL (real human pronunciation)
+    status.textContent = '\u{1F3B5} \u6B63\u5728\u83B7\u53D6\u7CBE\u4EBA\u7F8E\u5F0F\u53D1\u97F3...';
+    const audioUrl = await fetchUSAudio(word);
 
-    let meaningEnParts = [];
-    let allExamples = [];
+    // Step 3: Get Chinese definitions from Youdao
+    status.textContent = '\u{1F4D6} \u6B63\u5728\u83B7\u53D6\u6709\u9053\u8BCD\u5178\u4E2D\u6587\u91CA\u4E49...';
+    const youdao = await fetchYoudaoFull(word);
+
+    // Build word data
+    let phonetic = '';
     let posList = [];
-    let num = 1;
-    for (const m of meanings) {
-      let pos = m.partOfSpeech || '';
-      if (pos === 'noun') pos = 'n.';
-      else if (pos === 'verb') pos = 'v.';
-      else if (pos === 'adjective') pos = 'adj.';
-      else if (pos === 'adverb') pos = 'adv.';
-      else if (pos === 'preposition') pos = 'prep.';
-      else if (pos === 'conjunction') pos = 'conj.';
-      else if (pos === 'pronoun') pos = 'pron.';
-      else if (pos === 'interjection' || pos === 'exclamation') pos = 'interj.';
-      else if (pos && !pos.includes('.')) pos = pos + '.';
-      posList.push(pos);
-
-      for (const def of (m.definitions || [])) {
-        meaningEnParts.push(def.definition);
-        if (def.example && allExamples.length < 2) {
-          allExamples.push(def.example);
-        }
-        num++;
-        if (num > 6) break;
-      }
-      if (num > 6) break;
-    }
-
-    const posStr = [...new Set(posList)].join('/');
-
-    // Get Chinese meaning from Youdao
-    status.textContent = '\u{1F310} \u6B63\u5728\u83B7\u53D6\u4E2D\u6587\u91CA\u4E49...';
-
     let meaningZh = '';
-    const youdaoResult = await fetchYoudaoZh(word);
 
-    if (youdaoResult) {
-      // Youdao returns "pos. Chinese definition" format
-      // e.g. "int. 喂，你好（用于问候或打招呼）"
-      // Strip the POS prefix from Youdao since we already have it from Free Dictionary
-      let cleaned = youdaoResult.replace(/^(n|v|adj|adv|prep|conj|pron|interj|int)\.s*/g, '').trim();
-      // Split by semicolons or Chinese semicolons to get multiple definitions
+    if (youdao && youdao.meanings.length > 0) {
+      // Use Youdao data (professional Chinese dictionary)
+      phonetic = youdao.phonetic || '';
       const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
-      const defs = cleaned.split(/[;；]/).map(s => s.trim()).filter(s => s && s.length > 1);
-      if (defs.length === 0) {
-        meaningZh = circled.charAt(0) + ' ' + cleaned;
-      } else if (defs.length === 1) {
-        meaningZh = circled.charAt(0) + ' ' + defs[0];
-      } else {
-        meaningZh = defs.map((d, i) => i < 10 ? circled.charAt(i) + ' ' + d : d).join(' ');
-      }
+      meaningZh = youdao.meanings.map((m, i) => i < 10 ? circled.charAt(i) + ' ' + m : m).join(' ');
     } else {
-      // Fallback: MyMemory translation
+      // Fallback: use Free Dictionary API + MyMemory translation
+      let meaningEnParts = [];
+      for (const m of meanings) {
+        let pos = m.partOfSpeech || '';
+        if (pos === 'noun') pos = 'n.';
+        else if (pos === 'verb') pos = 'v.';
+        else if (pos === 'adjective') pos = 'adj.';
+        else if (pos === 'adverb') pos = 'adv.';
+        else if (pos === 'preposition') pos = 'prep.';
+        else if (pos === 'conjunction') pos = 'conj.';
+        else if (pos === 'pronoun') pos = 'pron.';
+        else if (pos === 'interjection' || pos === 'exclamation') pos = 'interj.';
+        else if (pos && !pos.includes('.')) pos = pos + '.';
+        posList.push(pos);
+
+        for (const def of (m.definitions || [])) {
+          meaningEnParts.push(def.definition);
+          if (meaningEnParts.length >= 6) break;
+        }
+        if (meaningEnParts.length >= 6) break;
+      }
+
+      status.textContent = '\u{1F310} \u6B63\u5728\u7FFB\u8BD1\u4E2D\u6587\u91CA\u4E49...';
       const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
       const parts = [];
       for (let i = 0; i < meaningEnParts.length; i++) {
@@ -1671,29 +1739,77 @@ async function searchAndAdd() {
         if (i < meaningEnParts.length - 1) await new Promise(r => setTimeout(r, 300));
       }
       meaningZh = parts.join(' ');
+
+      if (!phonetic) {
+        phonetic = entry.phonetic || '';
+        if (!phonetic && entry.phonetics) {
+          const ph = entry.phonetics.find(p => p.text);
+          if (ph) phonetic = ph.text;
+        }
+        if (phonetic && !phonetic.startsWith('/')) phonetic = '/' + phonetic;
+        if (phonetic && !phonetic.endsWith('/')) phonetic = phonetic + '/';
+      }
     }
 
-    // Translate examples
-    let exampleZh = '';
-    if (allExamples.length > 0) {
-      exampleZh = await fetchZhTranslation(allExamples.join(' ; '));
+    // POS from Free Dictionary API (more accurate than Youdao for English)
+    if (posList.length === 0) {
+      for (const m of meanings) {
+        let pos = m.partOfSpeech || '';
+        if (pos === 'noun') pos = 'n.';
+        else if (pos === 'verb') pos = 'v.';
+        else if (pos === 'adjective') pos = 'adj.';
+        else if (pos === 'adverb') pos = 'adv.';
+        else if (pos === 'preposition') pos = 'prep.';
+        else if (pos === 'conjunction') pos = 'conj.';
+        else if (pos === 'pronoun') pos = 'pron.';
+        else if (pos === 'interjection' || pos === 'exclamation') pos = 'interj.';
+        else if (pos && !pos.includes('.')) pos = pos + '.';
+        posList.push(pos);
+      }
     }
+    const posStr = [...new Set(posList)].join('/');
+
+    // Examples: prefer Youdao bilingual examples
+    let example = '';
+    let exampleZh = '';
+    if (youdao && youdao.examples.length > 0) {
+      example = youdao.examples.map(e => e.en).join(' / ');
+      exampleZh = youdao.examples.map(e => e.zh).join(' / ');
+    } else {
+      // Fallback: examples from Free Dictionary API + translate
+      const allExamples = [];
+      for (const m of meanings) {
+        for (const def of (m.definitions || [])) {
+          if (def.example) allExamples.push(def.example);
+          if (allExamples.length >= 2) break;
+        }
+        if (allExamples.length >= 2) break;
+      }
+      example = allExamples.join(' / ');
+      if (example) {
+        exampleZh = await fetchZhTranslation(example);
+      }
+    }
+
+    const hasRealAudio = audioUrl && audioUrl.length > 0;
 
     const wordData = {
       en: entry.word || word,
       phonetic: phonetic,
       pos: posStr || 'n.',
       meaning: meaningZh,
-      example: allExamples.join(' / ') || '',
+      example: example,
       exampleZh: exampleZh || '',
       root: '',
-      noAudio: true,
+      noAudio: !hasRealAudio,
+      customAudioUrl: hasRealAudio ? audioUrl : '',
       custom: true,
       addedAt: new Date().toISOString().slice(0,10)
     };
 
     pendingWord = wordData;
 
+    const audioTag = hasRealAudio ? '\u{1F50A} \u7CBE\u4EBA\u7F8E\u5F0F' : '\u{1F916} TTS';
     document.getElementById('awrWord').textContent = wordData.en;
     document.getElementById('awrPhonetic').textContent = wordData.phonetic;
     document.getElementById('awrPos').textContent = wordData.pos;
@@ -1701,7 +1817,7 @@ async function searchAndAdd() {
     document.getElementById('awrExample').textContent = wordData.example;
     result.classList.add('show');
     addBtn.classList.add('show');
-    status.textContent = '\u2705 \u67E5\u8BE2\u5B8C\u6210\uFF01\u70B9\u51FB\u4E0B\u65B9\u6309\u94AE\u6DFB\u52A0';
+    status.textContent = '\u2705 \u67E5\u8BE2\u5B8C\u6210\uFF01' + audioTag + ' | \u70B9\u51FB\u6DFB\u52A0';
     status.className = 'aw-status success';
 
   } catch(e) {
