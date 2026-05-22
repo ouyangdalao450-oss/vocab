@@ -302,7 +302,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260523a"></script>
+<script src="vocab-data.js?v=20260523b"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1515,6 +1515,20 @@ function findExistingWord(word) {
 
 let pendingWord = null;
 
+async function translateToZh(text) {
+  if (!text) return '';
+  try {
+    const resp = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=en|zh-CN');
+    const data = await resp.json();
+    if (data.responseData && data.responseData.translatedText) {
+      let t = data.responseData.translatedText;
+      if (t === t.toUpperCase() && t.length < 20) t = t.toLowerCase();
+      return t;
+    }
+    return '';
+  } catch(e) { return ''; }
+}
+
 async function searchAndAdd() {
   const input = document.getElementById('addWordInput');
   const word = input.value.trim();
@@ -1525,19 +1539,16 @@ async function searchAndAdd() {
   const addBtn = document.getElementById('awAddBtn');
   const already = document.getElementById('awAlready');
 
-  // Reset
   result.classList.remove('show');
   addBtn.classList.remove('show');
   already.classList.remove('show');
   pendingWord = null;
 
-  // Check if already exists
   const existing = findExistingWord(word);
   if (existing) {
     already.classList.add('show');
     status.textContent = '';
     status.className = 'aw-status';
-    // Still show the word info
     const d = existing.data;
     document.getElementById('awrWord').textContent = d.en;
     document.getElementById('awrPhonetic').textContent = d.phonetic || '';
@@ -1548,22 +1559,21 @@ async function searchAndAdd() {
     return;
   }
 
-  // Search online
   const searchBtn = document.getElementById('addWordSearchBtn');
   searchBtn.disabled = true;
-  status.textContent = '🔍 正在搜索 "' + word + '"...';
+  status.textContent = '\u{1F50D} 正在搜索 "' + word + '"...';
   status.className = 'aw-status loading';
 
   try {
     const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
     if (!resp.ok) {
-      status.textContent = '❌ 未找到 "' + word + '" 的资料，请检查拼写';
+      status.textContent = '\u274C 未找到 "' + word + '" 的资料，请检查拼写';
       status.className = 'aw-status error';
       return;
     }
     const data = await resp.json();
     if (!data || !data.length) {
-      status.textContent = '❌ 未找到 "' + word + '" 的资料';
+      status.textContent = '\u274C 未找到 "' + word + '" 的资料';
       status.className = 'aw-status error';
       return;
     }
@@ -1571,48 +1581,61 @@ async function searchAndAdd() {
     const entry = data[0];
     const meanings = entry.meanings || [];
 
-    // Build word data
     let phonetic = entry.phonetic || '';
     if (!phonetic && entry.phonetics) {
       const ph = entry.phonetics.find(p => p.text);
       if (ph) phonetic = ph.text;
     }
 
-    // Collect all meanings
-    let meaningParts = [];
+    let meaningEnParts = [];
     let allExamples = [];
     let posList = [];
     let num = 1;
+    const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
     for (const m of meanings) {
       const pos = m.partOfSpeech || '';
       posList.push(pos);
       for (const def of (m.definitions || [])) {
-        meaningParts.push('❶❷❸❹❺❻❼❽❾❿①②③④⑤⑥⑦⑧⑨⑩'.charAt(num-1) + ' ' + def.definition);
+        meaningEnParts.push(def.definition);
         if (def.example && allExamples.length < 2) {
           allExamples.push(def.example);
         }
         num++;
-        if (num > 6) break; // Limit to 6 meanings
+        if (num > 6) break;
       }
       if (num > 6) break;
+    }
+
+    // Translate to Chinese
+    status.textContent = '\u{1F310} 正在翻译中文释义...';
+    const meaningZhParts = [];
+    for (let i = 0; i < meaningEnParts.length; i++) {
+      const zh = await translateToZh(meaningEnParts[i]);
+      meaningZhParts.push(circled.charAt(i) + ' ' + (zh || meaningEnParts[i]));
+      if (i < meaningEnParts.length - 1) await new Promise(r => setTimeout(r, 300));
+    }
+
+    let exampleZh = '';
+    if (allExamples.length > 0) {
+      exampleZh = await translateToZh(allExamples.join(' ; '));
     }
 
     const wordData = {
       en: entry.word || word,
       phonetic: phonetic,
       pos: posList.join('/') || 'n',
-      meaning: meaningParts.join(' '),
+      meaning: meaningZhParts.join(' '),
+      meaningEn: meaningEnParts.join(' | '),
       example: allExamples.join(' / ') || '',
-      exampleZh: '',
+      exampleZh: exampleZh || '',
       root: '',
-      noAudio: true, // Will use TTS
+      noAudio: true,
       custom: true,
       addedAt: new Date().toISOString().slice(0,10)
     };
 
     pendingWord = wordData;
 
-    // Show result
     document.getElementById('awrWord').textContent = wordData.en;
     document.getElementById('awrPhonetic').textContent = wordData.phonetic;
     document.getElementById('awrPos').textContent = wordData.pos;
@@ -1620,11 +1643,11 @@ async function searchAndAdd() {
     document.getElementById('awrExample').textContent = wordData.example;
     result.classList.add('show');
     addBtn.classList.add('show');
-    status.textContent = '✅ 找到资料！点击下方按钮添加';
+    status.textContent = '\u2705 找到资料并翻译完成！点击下方按钮添加';
     status.className = 'aw-status success';
 
   } catch(e) {
-    status.textContent = '❌ 网络错误: ' + e.message;
+    status.textContent = '\u274C 网络错误: ' + e.message;
     status.className = 'aw-status error';
   } finally {
     searchBtn.disabled = false;
