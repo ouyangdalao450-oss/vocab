@@ -47,7 +47,14 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 /* 桌面表格 */
 .desk-table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06); display:table; margin-bottom:8px; }
 .desk-table thead { background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
+.desk-table { table-layout:fixed; }
 .desk-table th { padding:10px 8px; text-align:left; font-size:0.84em; font-weight:600; letter-spacing:0.3px; }
+.desk-table th:nth-child(1), .desk-table td.td-num { width:36px; }
+.desk-table th:nth-child(2) { width:18%; }
+.desk-table th:nth-child(3) { width:16%; }
+.desk-table th:nth-child(4) { width:8%; }
+.desk-table th:nth-child(5) { width:32%; }
+.desk-table th:nth-child(6) { width:auto; }
 .desk-table td { padding:8px 8px; font-size:0.9em; vertical-align:middle; border-bottom:1px solid #f0f0f0; }
 .desk-table tr:last-child td { border-bottom:none; }
 .desk-table .td-num { text-align:center; color:#764ba2; font-weight:700; width:32px; }
@@ -302,7 +309,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260523c"></script>
+<script src="vocab-data.js?v=20260523d"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1516,17 +1523,13 @@ function findExistingWord(word) {
 let pendingWord = null;
 
 async function fetchYoudaoZh(word) {
-  // Youdao suggest API - gives Chinese definitions for English words
+  // Youdao via allorigins CORS proxy (Youdao has no CORS headers)
   try {
-    const resp = await fetch('https://dict.youdao.com/suggest?num=1&doctype=json&q=' + encodeURIComponent(word));
-    const text = await resp.text();
-    // Youdao may return JSONP or plain JSON
-    let data;
-    try { data = JSON.parse(text); } catch(e) {
-      // Try extracting JSON from JSONP
-      const m = text.match(/\((\{.*\})\)/s);
-      if (m) data = JSON.parse(m[1]); else return '';
-    }
+    const ydUrl = 'https://dict.youdao.com/suggest?num=1&doctype=json&q=' + encodeURIComponent(word);
+    const resp = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(ydUrl));
+    if (!resp.ok) return '';
+    const wrapper = await resp.json();
+    const data = JSON.parse(wrapper.contents);
     if (data && data.data && data.data.entries && data.data.entries.length > 0) {
       return data.data.entries[0].explain || '';
     }
@@ -1535,7 +1538,6 @@ async function fetchYoudaoZh(word) {
 }
 
 async function fetchZhTranslation(text) {
-  // Fallback: MyMemory translation
   try {
     const resp = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=en|zh-CN');
     const data = await resp.json();
@@ -1580,20 +1582,19 @@ async function searchAndAdd() {
 
   const searchBtn = document.getElementById('addWordSearchBtn');
   searchBtn.disabled = true;
-  status.textContent = '\u{1F50D} 正在查询 "' + word + '"...';
+  status.textContent = '\u{1F50D} \u6B63\u5728\u67E5\u8BE2 "' + word + '"...';
   status.className = 'aw-status loading';
 
   try {
-    // Step 1: Fetch English data from Free Dictionary API
     const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
     if (!resp.ok) {
-      status.textContent = '\u274C 未找到 "' + word + '"，请检查拼写';
+      status.textContent = '\u274C \u672A\u627E\u5230 "' + word + '"\uFF0C\u8BF7\u68C0\u67E5\u62FC\u5199';
       status.className = 'aw-status error';
       return;
     }
     const data = await resp.json();
     if (!data || !data.length) {
-      status.textContent = '\u274C 未找到 "' + word + '" 的资料';
+      status.textContent = '\u274C \u672A\u627E\u5230 "' + word + '" \u7684\u8D44\u6599';
       status.className = 'aw-status error';
       return;
     }
@@ -1606,7 +1607,6 @@ async function searchAndAdd() {
       const ph = entry.phonetics.find(p => p.text);
       if (ph) phonetic = ph.text;
     }
-    // Add slashes if missing
     if (phonetic && !phonetic.startsWith('/')) phonetic = '/' + phonetic;
     if (phonetic && !phonetic.endsWith('/')) phonetic = phonetic + '/';
 
@@ -1615,20 +1615,17 @@ async function searchAndAdd() {
     let posList = [];
     let num = 1;
     for (const m of meanings) {
-      const pos = m.partOfSpeech || '';
-      // Format POS like built-in: "n.", "v.", "adj.", "adv.", "prep.", "conj.", "pron.", "interj.", "n./v."
-      let posShort = pos;
-      if (pos === 'noun') posShort = 'n.';
-      else if (pos === 'verb') posShort = 'v.';
-      else if (pos === 'adjective') posShort = 'adj.';
-      else if (pos === 'adverb') posShort = 'adv.';
-      else if (pos === 'preposition') posShort = 'prep.';
-      else if (pos === 'conjunction') posShort = 'conj.';
-      else if (pos === 'pronoun') posShort = 'pron.';
-      else if (pos === 'interjection') posShort = 'interj.';
-      else if (pos === 'exclamation') posShort = 'interj.';
-      else if (pos && !pos.includes('.')) posShort = pos + '.';
-      posList.push(posShort);
+      let pos = m.partOfSpeech || '';
+      if (pos === 'noun') pos = 'n.';
+      else if (pos === 'verb') pos = 'v.';
+      else if (pos === 'adjective') pos = 'adj.';
+      else if (pos === 'adverb') pos = 'adv.';
+      else if (pos === 'preposition') pos = 'prep.';
+      else if (pos === 'conjunction') pos = 'conj.';
+      else if (pos === 'pronoun') pos = 'pron.';
+      else if (pos === 'interjection' || pos === 'exclamation') pos = 'interj.';
+      else if (pos && !pos.includes('.')) pos = pos + '.';
+      posList.push(pos);
 
       for (const def of (m.definitions || [])) {
         meaningEnParts.push(def.definition);
@@ -1643,15 +1640,29 @@ async function searchAndAdd() {
 
     const posStr = [...new Set(posList)].join('/');
 
-    // Step 2: Get Chinese meaning
-    status.textContent = '\u{1F310} 正在获取中文释义...';
+    // Get Chinese meaning from Youdao
+    status.textContent = '\u{1F310} \u6B63\u5728\u83B7\u53D6\u4E2D\u6587\u91CA\u4E49...';
 
     let meaningZh = '';
-    // Try Youdao first (gives native Chinese definitions)
-    meaningZh = await fetchYoudaoZh(word);
+    const youdaoResult = await fetchYoudaoZh(word);
 
-    if (!meaningZh) {
-      // Fallback: translate each definition via MyMemory
+    if (youdaoResult) {
+      // Youdao returns "pos. Chinese definition" format
+      // e.g. "int. 喂，你好（用于问候或打招呼）"
+      // Strip the POS prefix from Youdao since we already have it from Free Dictionary
+      let cleaned = youdaoResult.replace(/^(n|v|adj|adv|prep|conj|pron|interj|int)\.s*/g, '').trim();
+      // Split by semicolons or Chinese semicolons to get multiple definitions
+      const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
+      const defs = cleaned.split(/[;；]/).map(s => s.trim()).filter(s => s && s.length > 1);
+      if (defs.length === 0) {
+        meaningZh = circled.charAt(0) + ' ' + cleaned;
+      } else if (defs.length === 1) {
+        meaningZh = circled.charAt(0) + ' ' + defs[0];
+      } else {
+        meaningZh = defs.map((d, i) => i < 10 ? circled.charAt(i) + ' ' + d : d).join(' ');
+      }
+    } else {
+      // Fallback: MyMemory translation
       const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
       const parts = [];
       for (let i = 0; i < meaningEnParts.length; i++) {
@@ -1660,18 +1671,6 @@ async function searchAndAdd() {
         if (i < meaningEnParts.length - 1) await new Promise(r => setTimeout(r, 300));
       }
       meaningZh = parts.join(' ');
-    } else {
-      // Youdao returns format like "n. 中文释义" - extract just Chinese part
-      // Reformat to match built-in style: "❶ 中文 ❷ 中文"
-      const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
-      // Split by common delimiters
-      const defs = meaningZh.split(/[;；,，]/).map(s => s.trim()).filter(s => s);
-      if (defs.length <= 1) {
-        // Single definition, add circled number
-        meaningZh = circled.charAt(0) + ' ' + meaningZh;
-      } else {
-        meaningZh = defs.map((d, i) => i < 10 ? circled.charAt(i) + ' ' + d : d).join(' ');
-      }
     }
 
     // Translate examples
@@ -1702,11 +1701,11 @@ async function searchAndAdd() {
     document.getElementById('awrExample').textContent = wordData.example;
     result.classList.add('show');
     addBtn.classList.add('show');
-    status.textContent = '\u2705 查询完成！点击下方按钮添加';
+    status.textContent = '\u2705 \u67E5\u8BE2\u5B8C\u6210\uFF01\u70B9\u51FB\u4E0B\u65B9\u6309\u94AE\u6DFB\u52A0';
     status.className = 'aw-status success';
 
   } catch(e) {
-    status.textContent = '\u274C 网络错误: ' + e.message;
+    status.textContent = '\u274C \u7F51\u7EDC\u9519\u8BEF: ' + e.message;
     status.className = 'aw-status error';
   } finally {
     searchBtn.disabled = false;
