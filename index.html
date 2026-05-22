@@ -302,7 +302,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260523b"></script>
+<script src="vocab-data.js?v=20260523c"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1515,8 +1515,27 @@ function findExistingWord(word) {
 
 let pendingWord = null;
 
-async function translateToZh(text) {
-  if (!text) return '';
+async function fetchYoudaoZh(word) {
+  // Youdao suggest API - gives Chinese definitions for English words
+  try {
+    const resp = await fetch('https://dict.youdao.com/suggest?num=1&doctype=json&q=' + encodeURIComponent(word));
+    const text = await resp.text();
+    // Youdao may return JSONP or plain JSON
+    let data;
+    try { data = JSON.parse(text); } catch(e) {
+      // Try extracting JSON from JSONP
+      const m = text.match(/\((\{.*\})\)/s);
+      if (m) data = JSON.parse(m[1]); else return '';
+    }
+    if (data && data.data && data.data.entries && data.data.entries.length > 0) {
+      return data.data.entries[0].explain || '';
+    }
+    return '';
+  } catch(e) { return ''; }
+}
+
+async function fetchZhTranslation(text) {
+  // Fallback: MyMemory translation
   try {
     const resp = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=en|zh-CN');
     const data = await resp.json();
@@ -1554,20 +1573,21 @@ async function searchAndAdd() {
     document.getElementById('awrPhonetic').textContent = d.phonetic || '';
     document.getElementById('awrPos').textContent = d.pos || '';
     document.getElementById('awrMeaning').textContent = d.meaning || '';
-    document.getElementById('awrExample').textContent = d.example ? (d.exampleZh ? d.example + ' / ' + d.exampleZh : d.example) : '';
+    document.getElementById('awrExample').textContent = d.example || '';
     result.classList.add('show');
     return;
   }
 
   const searchBtn = document.getElementById('addWordSearchBtn');
   searchBtn.disabled = true;
-  status.textContent = '\u{1F50D} 正在搜索 "' + word + '"...';
+  status.textContent = '\u{1F50D} 正在查询 "' + word + '"...';
   status.className = 'aw-status loading';
 
   try {
+    // Step 1: Fetch English data from Free Dictionary API
     const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
     if (!resp.ok) {
-      status.textContent = '\u274C 未找到 "' + word + '" 的资料，请检查拼写';
+      status.textContent = '\u274C 未找到 "' + word + '"，请检查拼写';
       status.className = 'aw-status error';
       return;
     }
@@ -1586,15 +1606,30 @@ async function searchAndAdd() {
       const ph = entry.phonetics.find(p => p.text);
       if (ph) phonetic = ph.text;
     }
+    // Add slashes if missing
+    if (phonetic && !phonetic.startsWith('/')) phonetic = '/' + phonetic;
+    if (phonetic && !phonetic.endsWith('/')) phonetic = phonetic + '/';
 
     let meaningEnParts = [];
     let allExamples = [];
     let posList = [];
     let num = 1;
-    const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
     for (const m of meanings) {
       const pos = m.partOfSpeech || '';
-      posList.push(pos);
+      // Format POS like built-in: "n.", "v.", "adj.", "adv.", "prep.", "conj.", "pron.", "interj.", "n./v."
+      let posShort = pos;
+      if (pos === 'noun') posShort = 'n.';
+      else if (pos === 'verb') posShort = 'v.';
+      else if (pos === 'adjective') posShort = 'adj.';
+      else if (pos === 'adverb') posShort = 'adv.';
+      else if (pos === 'preposition') posShort = 'prep.';
+      else if (pos === 'conjunction') posShort = 'conj.';
+      else if (pos === 'pronoun') posShort = 'pron.';
+      else if (pos === 'interjection') posShort = 'interj.';
+      else if (pos === 'exclamation') posShort = 'interj.';
+      else if (pos && !pos.includes('.')) posShort = pos + '.';
+      posList.push(posShort);
+
       for (const def of (m.definitions || [])) {
         meaningEnParts.push(def.definition);
         if (def.example && allExamples.length < 2) {
@@ -1606,26 +1641,50 @@ async function searchAndAdd() {
       if (num > 6) break;
     }
 
-    // Translate to Chinese
-    status.textContent = '\u{1F310} 正在翻译中文释义...';
-    const meaningZhParts = [];
-    for (let i = 0; i < meaningEnParts.length; i++) {
-      const zh = await translateToZh(meaningEnParts[i]);
-      meaningZhParts.push(circled.charAt(i) + ' ' + (zh || meaningEnParts[i]));
-      if (i < meaningEnParts.length - 1) await new Promise(r => setTimeout(r, 300));
+    const posStr = [...new Set(posList)].join('/');
+
+    // Step 2: Get Chinese meaning
+    status.textContent = '\u{1F310} 正在获取中文释义...';
+
+    let meaningZh = '';
+    // Try Youdao first (gives native Chinese definitions)
+    meaningZh = await fetchYoudaoZh(word);
+
+    if (!meaningZh) {
+      // Fallback: translate each definition via MyMemory
+      const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
+      const parts = [];
+      for (let i = 0; i < meaningEnParts.length; i++) {
+        const zh = await fetchZhTranslation(meaningEnParts[i]);
+        parts.push(circled.charAt(i) + ' ' + (zh || meaningEnParts[i]));
+        if (i < meaningEnParts.length - 1) await new Promise(r => setTimeout(r, 300));
+      }
+      meaningZh = parts.join(' ');
+    } else {
+      // Youdao returns format like "n. 中文释义" - extract just Chinese part
+      // Reformat to match built-in style: "❶ 中文 ❷ 中文"
+      const circled = '\u2776\u2777\u2778\u2779\u277A\u277B\u277C\u277D\u277E\u277F';
+      // Split by common delimiters
+      const defs = meaningZh.split(/[;；,，]/).map(s => s.trim()).filter(s => s);
+      if (defs.length <= 1) {
+        // Single definition, add circled number
+        meaningZh = circled.charAt(0) + ' ' + meaningZh;
+      } else {
+        meaningZh = defs.map((d, i) => i < 10 ? circled.charAt(i) + ' ' + d : d).join(' ');
+      }
     }
 
+    // Translate examples
     let exampleZh = '';
     if (allExamples.length > 0) {
-      exampleZh = await translateToZh(allExamples.join(' ; '));
+      exampleZh = await fetchZhTranslation(allExamples.join(' ; '));
     }
 
     const wordData = {
       en: entry.word || word,
       phonetic: phonetic,
-      pos: posList.join('/') || 'n',
-      meaning: meaningZhParts.join(' '),
-      meaningEn: meaningEnParts.join(' | '),
+      pos: posStr || 'n.',
+      meaning: meaningZh,
       example: allExamples.join(' / ') || '',
       exampleZh: exampleZh || '',
       root: '',
@@ -1643,7 +1702,7 @@ async function searchAndAdd() {
     document.getElementById('awrExample').textContent = wordData.example;
     result.classList.add('show');
     addBtn.classList.add('show');
-    status.textContent = '\u2705 找到资料并翻译完成！点击下方按钮添加';
+    status.textContent = '\u2705 查询完成！点击下方按钮添加';
     status.className = 'aw-status success';
 
   } catch(e) {
@@ -1699,9 +1758,9 @@ function getMergedData() {
   const myWords = getMyWords();
   if (!myWords.length) return VOCAB_DATA;
   // Check if "my words" section already exists
-  let merged = VOCAB_DATA.filter(s => s.date !== '📋 我添加的');
+  let merged = VOCAB_DATA.filter(s => !s.date.includes('📋 我添加的'));
   if (myWords.length > 0) {
-    merged.push({ date: '📋 我添加的', words: myWords });
+    merged.push({ date: '📋 我添加的（' + myWords.length + '词）', words: myWords });
   }
   return merged;
 }
