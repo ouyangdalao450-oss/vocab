@@ -232,6 +232,43 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
   color: #666; padding: 4px 10px; border-radius: 8px;
 }
 .quiz-back-arrow:hover { background: #f0f0f0; color: #333; }
+
+/* ===== 添加单词 ===== */
+.add-word-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #27ae60; border-radius:20px; background:#fff; color:#27ae60; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
+.add-word-btn:active { background:#eafaf1; }
+.add-word-overlay { display:none; position:fixed; inset:0; z-index:300; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; }
+.add-word-overlay.active { display:flex; }
+.add-word-dialog { background:#fff; border-radius:20px; padding:24px; max-width:440px; width:90%; max-height:85vh; overflow-y:auto; position:relative; }
+.add-word-dialog h2 { font-size:1.15em; color:#2d1b69; margin-bottom:14px; }
+.add-word-dialog .aw-close { position:absolute; top:14px; right:14px; width:32px; height:32px; border-radius:50%; border:none; background:#f0e6ff; color:#764ba2; font-size:1.2em; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.add-word-input-wrap { display:flex; gap:8px; margin-bottom:14px; }
+.add-word-input-wrap input { flex:1; padding:12px 16px; border:2px solid #ddd; border-radius:14px; font-size:1.05em; outline:none; transition:border-color 0.2s; }
+.add-word-input-wrap input:focus { border-color:#27ae60; }
+.add-word-input-wrap button { padding:12px 20px; border:none; border-radius:14px; background:linear-gradient(135deg,#27ae60,#2ecc71); color:#fff; font-size:1em; font-weight:700; cursor:pointer; white-space:nowrap; }
+.add-word-input-wrap button:disabled { opacity:0.5; cursor:not-allowed; }
+.aw-status { font-size:0.85em; color:#999; margin-bottom:10px; min-height:20px; }
+.aw-status.loading { color:#764ba2; }
+.aw-status.error { color:#e74c3c; }
+.aw-status.success { color:#27ae60; }
+.aw-result { background:#f8f0ff; border-radius:14px; padding:14px; margin-bottom:12px; border:2px solid #e8daff; display:none; }
+.aw-result.show { display:block; }
+.aw-result .awr-word { font-size:1.4em; font-weight:800; color:#16213e; }
+.aw-result .awr-phonetic { color:#999; font-family:"Lucida Sans Unicode",sans-serif; font-size:0.9em; margin-left:6px; }
+.aw-result .awr-pos { display:inline-block; color:#764ba2; font-weight:600; font-size:0.78em; background:#f0e6ff; padding:2px 10px; border-radius:10px; margin:6px 0; }
+.aw-result .awr-meaning { color:#333; font-size:0.92em; line-height:1.5; margin:6px 0; }
+.aw-result .awr-example { color:#888; font-size:0.84em; font-style:italic; line-height:1.4; margin:4px 0; }
+.aw-add-btn { width:100%; padding:12px; border:none; border-radius:12px; background:linear-gradient(135deg,#27ae60,#2ecc71); color:#fff; font-size:1em; font-weight:700; cursor:pointer; margin-top:8px; display:none; }
+.aw-add-btn.show { display:block; }
+.aw-add-btn:active { transform:scale(0.98); }
+.aw-already { color:#e67e22; font-size:0.85em; font-weight:600; display:none; }
+.aw-already.show { display:block; }
+.aw-my-words-section { margin-top:16px; }
+.aw-my-words-section h3 { font-size:0.95em; color:#2d1b69; margin-bottom:8px; }
+.aw-my-list { display:flex; flex-wrap:wrap; gap:6px; }
+.aw-my-tag { display:inline-flex; align-items:center; gap:4px; padding:4px 12px; background:#eafaf1; border:1px solid #27ae60; border-radius:20px; font-size:0.82em; color:#27ae60; font-weight:600; cursor:default; }
+.aw-my-tag .aw-remove { cursor:pointer; color:#e74c3c; font-weight:700; margin-left:2px; }
+.aw-my-tag .aw-remove:hover { background:#fdecea; border-radius:50%; }
+
 </style>
 </head>
 <body>
@@ -244,6 +281,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
   </div>
   <button class="date-btn" id="dateBtn">📅 选择日期</button>
   <button class="quiz-btn" id="quizBtn">🧠 测验</button>
+  <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加单词</button>
   <div class="stats" id="stats">加载中…</div>
 </div>
 
@@ -264,7 +302,7 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260522s"></script>
+<script src="vocab-data.js?v=20260523a"></script>
 <script>
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -376,7 +414,7 @@ async function speak(word, btn) {
   stopCurrent();
 
   // 查找该词条
-  const entry = VOCAB_DATA.flatMap(s => s.words).find(w => w.en.toLowerCase().replace(/\s+/g,'_') === key);
+  const entry = getMergedData().flatMap(s => s.words).find(w => w.en.toLowerCase().replace(/\s+/g,'_') === key);
 
   // noAudio 标记 → 直接用 TTS
   if (entry && entry.noAudio) {
@@ -520,7 +558,7 @@ function renderAll(filter) {
   let total = 0, shown = 0;
   const mobile = isMobile();
 
-  VOCAB_DATA.forEach(sec => {
+  getMergedData().forEach(sec => {
     let m = sec.words.filter(w =>
       !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
     );
@@ -594,7 +632,7 @@ function renderAll(filter) {
 function buildCalendar() {
   const grid = document.getElementById('calGrid');
   grid.innerHTML = '';
-  VOCAB_DATA.forEach((sec, idx) => {
+  getMergedData().forEach((sec, idx) => {
     const card = document.createElement('div');
     card.className = 'cal-card';
     const dateStr = sec.date.replace(/📅\s*/,'').replace(/（.*）/,'');
@@ -891,12 +929,12 @@ function startMistakeQuiz() {
 }
 
 function getAllWords() {
-  return VOCAB_DATA.flatMap(s => s.words);
+  return getMergedData().flatMap(s => s.words);
 }
 
 function getWordsByRange(range) {
   if (range === 'all') return getAllWords();
-  const sec = VOCAB_DATA.find(s => s.date === range);
+  const sec = getMergedData().find(s => s.date === range);
   return sec ? sec.words : getAllWords();
 }
 
@@ -1039,7 +1077,7 @@ function renderQuizSetup() {
       <h3>选择范围</h3>
       <div class="quiz-range">
         <button class="quiz-range-btn ${quizState.range==='all'?'selected':''}" onclick="setQuizRange('all',this)">全部 (${getAllWords().length})</button>
-        ${VOCAB_DATA.map((s,i) => {
+        ${getMergedData().map((s,i) => {
           const dateStr = s.date.replace(/📅\s*/,'').replace(/（.*）/,'');
           return `<button class="quiz-range-btn ${quizState.range===s.date?'selected':''}" onclick="setQuizRange('${s.date}',this)">${dateStr} (${s.words.length})</button>`;
         }).join('')}
@@ -1430,6 +1468,222 @@ function renderQuizResult() {
   `;
 }
 
+
+/* ===== 添加单词功能 ===== */
+const MY_WORDS_KEY = 'vocab_my_words';
+
+function getMyWords() {
+  try { return JSON.parse(localStorage.getItem(MY_WORDS_KEY) || '[]'); } catch(e) { return []; }
+}
+function saveMyWords(words) {
+  localStorage.setItem(MY_WORDS_KEY, JSON.stringify(words));
+}
+
+function showAddWord() {
+  document.getElementById('addWordOverlay').classList.add('active');
+  document.getElementById('addWordInput').focus();
+  renderMyWordTags();
+}
+function closeAddWord() {
+  document.getElementById('addWordOverlay').classList.remove('active');
+  clearAddWordState();
+}
+function clearAddWordState() {
+  document.getElementById('awStatus').textContent = '';
+  document.getElementById('awStatus').className = 'aw-status';
+  document.getElementById('awResult').classList.remove('show');
+  document.getElementById('awAddBtn').classList.remove('show');
+  document.getElementById('awAlready').classList.remove('show');
+  document.getElementById('addWordInput').value = '';
+}
+
+// Check if word exists in VOCAB_DATA or my words
+function findExistingWord(word) {
+  const w = word.toLowerCase().trim();
+  // Check VOCAB_DATA
+  for (const sec of VOCAB_DATA) {
+    for (const wd of sec.words) {
+      if (wd.en.toLowerCase() === w) return { source: 'builtin', data: wd };
+    }
+  }
+  // Check my words
+  const myWords = getMyWords();
+  const found = myWords.find(m => m.en.toLowerCase() === w);
+  if (found) return { source: 'custom', data: found };
+  return null;
+}
+
+let pendingWord = null;
+
+async function searchAndAdd() {
+  const input = document.getElementById('addWordInput');
+  const word = input.value.trim();
+  if (!word) return;
+
+  const status = document.getElementById('awStatus');
+  const result = document.getElementById('awResult');
+  const addBtn = document.getElementById('awAddBtn');
+  const already = document.getElementById('awAlready');
+
+  // Reset
+  result.classList.remove('show');
+  addBtn.classList.remove('show');
+  already.classList.remove('show');
+  pendingWord = null;
+
+  // Check if already exists
+  const existing = findExistingWord(word);
+  if (existing) {
+    already.classList.add('show');
+    status.textContent = '';
+    status.className = 'aw-status';
+    // Still show the word info
+    const d = existing.data;
+    document.getElementById('awrWord').textContent = d.en;
+    document.getElementById('awrPhonetic').textContent = d.phonetic || '';
+    document.getElementById('awrPos').textContent = d.pos || '';
+    document.getElementById('awrMeaning').textContent = d.meaning || '';
+    document.getElementById('awrExample').textContent = d.example ? (d.exampleZh ? d.example + ' / ' + d.exampleZh : d.example) : '';
+    result.classList.add('show');
+    return;
+  }
+
+  // Search online
+  const searchBtn = document.getElementById('addWordSearchBtn');
+  searchBtn.disabled = true;
+  status.textContent = '🔍 正在搜索 "' + word + '"...';
+  status.className = 'aw-status loading';
+
+  try {
+    const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
+    if (!resp.ok) {
+      status.textContent = '❌ 未找到 "' + word + '" 的资料，请检查拼写';
+      status.className = 'aw-status error';
+      return;
+    }
+    const data = await resp.json();
+    if (!data || !data.length) {
+      status.textContent = '❌ 未找到 "' + word + '" 的资料';
+      status.className = 'aw-status error';
+      return;
+    }
+
+    const entry = data[0];
+    const meanings = entry.meanings || [];
+
+    // Build word data
+    let phonetic = entry.phonetic || '';
+    if (!phonetic && entry.phonetics) {
+      const ph = entry.phonetics.find(p => p.text);
+      if (ph) phonetic = ph.text;
+    }
+
+    // Collect all meanings
+    let meaningParts = [];
+    let allExamples = [];
+    let posList = [];
+    let num = 1;
+    for (const m of meanings) {
+      const pos = m.partOfSpeech || '';
+      posList.push(pos);
+      for (const def of (m.definitions || [])) {
+        meaningParts.push('❶❷❸❹❺❻❼❽❾❿①②③④⑤⑥⑦⑧⑨⑩'.charAt(num-1) + ' ' + def.definition);
+        if (def.example && allExamples.length < 2) {
+          allExamples.push(def.example);
+        }
+        num++;
+        if (num > 6) break; // Limit to 6 meanings
+      }
+      if (num > 6) break;
+    }
+
+    const wordData = {
+      en: entry.word || word,
+      phonetic: phonetic,
+      pos: posList.join('/') || 'n',
+      meaning: meaningParts.join(' '),
+      example: allExamples.join(' / ') || '',
+      exampleZh: '',
+      root: '',
+      noAudio: true, // Will use TTS
+      custom: true,
+      addedAt: new Date().toISOString().slice(0,10)
+    };
+
+    pendingWord = wordData;
+
+    // Show result
+    document.getElementById('awrWord').textContent = wordData.en;
+    document.getElementById('awrPhonetic').textContent = wordData.phonetic;
+    document.getElementById('awrPos').textContent = wordData.pos;
+    document.getElementById('awrMeaning').textContent = wordData.meaning;
+    document.getElementById('awrExample').textContent = wordData.example;
+    result.classList.add('show');
+    addBtn.classList.add('show');
+    status.textContent = '✅ 找到资料！点击下方按钮添加';
+    status.className = 'aw-status success';
+
+  } catch(e) {
+    status.textContent = '❌ 网络错误: ' + e.message;
+    status.className = 'aw-status error';
+  } finally {
+    searchBtn.disabled = false;
+  }
+}
+
+function confirmAddWord() {
+  if (!pendingWord) return;
+  const myWords = getMyWords();
+  // Double check no duplicate
+  if (myWords.find(w => w.en.toLowerCase() === pendingWord.en.toLowerCase())) {
+    document.getElementById('awAlready').classList.add('show');
+    return;
+  }
+  myWords.push(pendingWord);
+  saveMyWords(myWords);
+  pendingWord = null;
+
+  const status = document.getElementById('awStatus');
+  status.textContent = '✅ 已添加！';
+  status.className = 'aw-status success';
+  document.getElementById('awAddBtn').classList.remove('show');
+  document.getElementById('awResult').classList.remove('show');
+  document.getElementById('addWordInput').value = '';
+
+  renderMyWordTags();
+  renderAll(document.getElementById('searchInput').value); // Refresh main view
+}
+
+function removeMyWord(en) {
+  let myWords = getMyWords();
+  myWords = myWords.filter(w => w.en.toLowerCase() !== en.toLowerCase());
+  saveMyWords(myWords);
+  renderMyWordTags();
+  renderAll(document.getElementById('searchInput').value);
+}
+
+function renderMyWordTags() {
+  const myWords = getMyWords();
+  document.getElementById('awMyCount').textContent = myWords.length;
+  const list = document.getElementById('awMyList');
+  list.innerHTML = myWords.map(w =>
+    '<span class="aw-my-tag">' + w.en + ' <span class="aw-remove" onclick="removeMyWord(\'' + w.en.replace(/'/g, "\\'") + '\')">✕</span></span>'
+  ).join('');
+}
+
+// Merge my words into VOCAB_DATA for rendering
+function getMergedData() {
+  const myWords = getMyWords();
+  if (!myWords.length) return VOCAB_DATA;
+  // Check if "my words" section already exists
+  let merged = VOCAB_DATA.filter(s => s.date !== '📋 我添加的');
+  if (myWords.length > 0) {
+    merged.push({ date: '📋 我添加的', words: myWords });
+  }
+  return merged;
+}
+
+
 /* ===== Service Worker（可选离线）===== */
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').catch(()=>{});
@@ -1467,6 +1721,33 @@ document.addEventListener('keydown', function(e) {
 
 }
 </script>
+
+<!-- 添加单词弹窗 -->
+<div class="add-word-overlay" id="addWordOverlay" onclick="if(event.target===this)closeAddWord()">
+  <div class="add-word-dialog">
+    <button class="aw-close" onclick="closeAddWord()">✕</button>
+    <h2>➕ 添加单词</h2>
+    <div class="add-word-input-wrap">
+      <input type="text" id="addWordInput" placeholder="输入英文单词..." autocomplete="off" spellcheck="false" onkeydown="if(event.key==='Enter')searchAndAdd()">
+      <button id="addWordSearchBtn" onclick="searchAndAdd()">搜索</button>
+    </div>
+    <div class="aw-status" id="awStatus"></div>
+    <div class="aw-result" id="awResult">
+      <div class="awr-word" id="awrWord"></div>
+      <div class="awr-phonetic" id="awrPhonetic"></div>
+      <div class="awr-pos" id="awrPos"></div>
+      <div class="awr-meaning" id="awrMeaning"></div>
+      <div class="awr-example" id="awrExample"></div>
+    </div>
+    <div class="aw-already" id="awAlready">⚠ 这个词已经在你的词库中了</div>
+    <button class="aw-add-btn" id="awAddBtn" onclick="confirmAddWord()">✅ 添加到我的词库</button>
+    <div class="aw-my-words-section">
+      <h3>📋 我添加的单词 (<span id="awMyCount">0</span>)</h3>
+      <div class="aw-my-list" id="awMyList"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Quiz 全屏页面 -->
 <div class="quiz-overlay" id="quizOverlay">
   <div class="quiz-inner" id="quizInner"></div>
