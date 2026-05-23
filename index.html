@@ -276,6 +276,17 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .aw-my-tag .aw-remove { cursor:pointer; color:#e74c3c; font-weight:700; margin-left:2px; }
 .aw-my-tag .aw-remove:hover { background:#fdecea; border-radius:50%; }
 
+
+/* ===== 高频名词500 子分区导航 ===== */
+.subcat-nav { display:flex; flex-wrap:wrap; gap:6px; padding:8px 12px; margin-bottom:10px; background:linear-gradient(90deg,#fff8e1,#fff3e0); border-radius:10px; border-left:4px solid #ff9800; }
+.subcat-btn { padding:4px 10px; border-radius:14px; border:1.5px solid #ffb74d; background:#fff; color:#e65100; font-size:0.75em; font-weight:600; cursor:pointer; white-space:nowrap; transition:all 0.2s; }
+.subcat-btn:hover, .subcat-btn:active { background:#ff9800; color:#fff; }
+.subcat-btn.active { background:#ff9800; color:#fff; }
+.subcat-header { font-size:0.95em; font-weight:700; color:#e65100; padding:10px 14px; margin:12px 0 6px; background:linear-gradient(90deg,#fff3e0,#fff8e1); border-left:3px solid #ff9800; border-radius:0 8px 8px 0; display:flex; align-items:center; gap:8px; }
+.subcat-header .sc-count { font-size:0.72em; color:#ff9800; font-weight:400; }
+.nouns500-header { background:linear-gradient(90deg,#fff8e1,#ffe0b2)!important; border-left-color:#ff9800!important; }
+.nouns500-header .date-header { color:#e65100; }
+
 </style>
 </head>
 <body>
@@ -595,7 +606,7 @@ function renderAll(filter) {
   let total = 0, shown = 0;
   const mobile = isMobile();
 
-  getMergedData().forEach(sec => {
+  getMergedData().forEach((sec, secIdx) => {
     let m = sec.words.filter(w =>
       !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
     );
@@ -606,56 +617,147 @@ function renderAll(filter) {
 
     const d = document.createElement('div');
     d.className = 'date-section';
-    d.innerHTML = `<div class="date-header">${sec.date} <span class="dh-count">${m.length}/${sec.words.length} 词</span></div>`;
+    if (sec.isNouns500) d.classList.add('nouns500-section');
+    d.id = 'section-' + secIdx;
+    d.innerHTML = `<div class="date-header ${sec.isNouns500?'nouns500-header':''}">${sec.date} <span class="dh-count">${m.length}/${sec.words.length} 词</span></div>`;
 
-    if (mobile) {
-      const cards = document.createElement('div');
-      cards.className = 'mobile-cards';
-      m.forEach((w,i) => {
-        const esc = w.en.replace(/'/g,"\\'");
-        const card = document.createElement('div');
-        card.className = 'vocab-card';
-        const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
-        const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-        const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
-        const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
-        const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
-        const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
-        card.innerHTML = `
-          <div class="card-top">
-            <span class="card-num">${i+1}</span>
-            ${audioBtn}
-            <span class="card-word">${w.en}</span>${compoundTag}${ttsTag}
-            <span class="card-phonetic">${w.phonetic}</span>
-          </div>
-          <span class="card-pos">${w.pos}</span>
-          ${irrHtml}
-          <div class="card-meaning">${w.meaning}</div>
-          ${rootHtml}
-          <div class="card-example" id="${zhId}-en">${w.example}<button class="card-toggle-zh" onclick="toggleZh('${zhId}',this)">中</button></div>
-          <div class="card-example-zh" id="${zhId}-zh" style="display:none">${w.exampleZh||''}<button class="card-toggle-zh zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div>`;
-        cards.appendChild(card);
+    // Sub-category navigation for nouns500
+    if (sec.isNouns500 && sec.categories) {
+      const nav = document.createElement('div');
+      nav.className = 'subcat-nav';
+      sec.categories.forEach((cat, ci) => {
+        const btn = document.createElement('button');
+        btn.className = 'subcat-btn';
+        btn.textContent = cat.nameZh;
+        btn.onclick = () => {
+          const target = document.getElementById('subcat-' + secIdx + '-' + ci);
+          if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+          nav.querySelectorAll('.subcat-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        };
+        nav.appendChild(btn);
       });
-      d.appendChild(cards);
+      d.appendChild(nav);
+
+      // Render words grouped by sub-category
+      const catGroups = {};
+      m.forEach(w => {
+        const key = w.subcategory || 'other';
+        if (!catGroups[key]) catGroups[key] = [];
+        catGroups[key].push(w);
+      });
+
+      sec.categories.forEach((cat, ci) => {
+        const catWords = catGroups[cat.name] || [];
+        if (!catWords.length) return;
+
+        const header = document.createElement('div');
+        header.className = 'subcat-header';
+        header.id = 'subcat-' + secIdx + '-' + ci;
+        header.innerHTML = cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '词</span>';
+        d.appendChild(header);
+
+        if (mobile) {
+          const cards = document.createElement('div');
+          cards.className = 'mobile-cards';
+          catWords.forEach((w, i) => {
+            const esc = w.en.replace(/'/g,"\\'");
+            const card = document.createElement('div');
+            card.className = 'vocab-card';
+            const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+            const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+            const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
+            const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
+            const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
+            const zhId = `zh-${secIdx}-${ci}-${i}-${w.en.replace(/\s+/g,'-')}`;
+            card.innerHTML = `
+              <div class="card-top">
+                <span class="card-num">${i+1}</span>
+                ${audioBtn}
+                <span class="card-word">${w.en}</span>${compoundTag}${ttsTag}
+                <span class="card-phonetic">${w.phonetic}</span>
+              </div>
+              <span class="card-pos">${w.pos}</span>
+              ${irrHtml}
+              <div class="card-meaning">${w.meaning}</div>
+              ${rootHtml}
+              <div class="card-example" id="${zhId}-en">${w.example}<button class="card-toggle-zh" onclick="toggleZh('${zhId}',this)">中</button></div>
+              <div class="card-example-zh" id="${zhId}-zh" style="display:none">${w.exampleZh||''}<button class="card-toggle-zh zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div>`;
+            cards.appendChild(card);
+          });
+          d.appendChild(cards);
+        } else {
+          const rows = catWords.map((w, i) => {
+            const esc = w.en.replace(/'/g,"\\'");
+            const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+            const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+            const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
+            const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
+            const irrHtml = w.irr ? `<div class="irr-row">${formatIrrTag(w.irr)}</div>` : '';
+            const zhId = `zh-${secIdx}-${ci}-${i}-${w.en.replace(/\s+/g,'-')}`;
+            return `<tr>
+              <td class="td-num">${i+1}</td>
+              <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
+              <td class="phonetic">${w.phonetic}</td>
+              <td><span class="pos">${w.pos}</span></td>
+              <td class="meaning">${irrHtml}${w.meaning}${rootHtml}</td>
+              <td><div id="${zhId}-en" class="example">${w.example}<button class="toggle-zh-btn" onclick="toggleZh('${zhId}',this)">中</button></div><div id="${zhId}-zh" class="example-zh" style="display:none">${w.exampleZh||''}<button class="toggle-zh-btn zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div></td>
+            </tr>`;
+          }).join('');
+          d.innerHTML += `<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+        }
+      });
     } else {
-      const rows = m.map((w,i) => {
-        const esc = w.en.replace(/'/g,"\\'");
-        const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
-        const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-        const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
-        const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
-        const irrHtml = w.irr ? `<div class="irr-row">${formatIrrTag(w.irr)}</div>` : '';
-        const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
-        return `<tr>
-          <td class="td-num">${i+1}</td>
-          <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
-          <td class="phonetic">${w.phonetic}</td>
-          <td><span class="pos">${w.pos}</span></td>
-          <td class="meaning">${irrHtml}${w.meaning}${rootHtml}</td>
-          <td><div id="${zhId}-en" class="example">${w.example}<button class="toggle-zh-btn" onclick="toggleZh('${zhId}',this)">中</button></div><div id="${zhId}-zh" class="example-zh" style="display:none">${w.exampleZh||''}<button class="toggle-zh-btn zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div></td>
-        </tr>`;
-      }).join('');
-      d.innerHTML += `<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+      // Regular date group rendering (unchanged)
+      if (mobile) {
+        const cards = document.createElement('div');
+        cards.className = 'mobile-cards';
+        m.forEach((w,i) => {
+          const esc = w.en.replace(/'/g,"\\'");
+          const card = document.createElement('div');
+          card.className = 'vocab-card';
+          const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+          const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+          const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
+          const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
+          const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
+          const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
+          card.innerHTML = `
+            <div class="card-top">
+              <span class="card-num">${i+1}</span>
+              ${audioBtn}
+              <span class="card-word">${w.en}</span>${compoundTag}${ttsTag}
+              <span class="card-phonetic">${w.phonetic}</span>
+            </div>
+            <span class="card-pos">${w.pos}</span>
+            ${irrHtml}
+            <div class="card-meaning">${w.meaning}</div>
+            ${rootHtml}
+            <div class="card-example" id="${zhId}-en">${w.example}<button class="card-toggle-zh" onclick="toggleZh('${zhId}',this)">中</button></div>
+            <div class="card-example-zh" id="${zhId}-zh" style="display:none">${w.exampleZh||''}<button class="card-toggle-zh zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div>`;
+          cards.appendChild(card);
+        });
+        d.appendChild(cards);
+      } else {
+        const rows = m.map((w,i) => {
+          const esc = w.en.replace(/'/g,"\\'");
+          const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+          const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+          const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
+          const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
+          const irrHtml = w.irr ? `<div class="irr-row">${formatIrrTag(w.irr)}</div>` : '';
+          const zhId = `zh-${i}-${w.en.replace(/\s+/g,'-')}`;
+          return `<tr>
+            <td class="td-num">${i+1}</td>
+            <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
+            <td class="phonetic">${w.phonetic}</td>
+            <td><span class="pos">${w.pos}</span></td>
+            <td class="meaning">${irrHtml}${w.meaning}${rootHtml}</td>
+            <td><div id="${zhId}-en" class="example">${w.example}<button class="toggle-zh-btn" onclick="toggleZh('${zhId}',this)">中</button></div><div id="${zhId}-zh" class="example-zh" style="display:none">${w.exampleZh||''}<button class="toggle-zh-btn zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div></td>
+          </tr>`;
+        }).join('');
+        d.innerHTML += `<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>${rows}</tbody></table>`;
+      }
     }
     c.appendChild(d);
   });
@@ -672,10 +774,12 @@ function buildCalendar() {
   getMergedData().forEach((sec, idx) => {
     const card = document.createElement('div');
     card.className = 'cal-card';
-    const dateStr = sec.date.replace(/📅\s*/,'').replace(/（.*）/,'');
+    if (sec.isNouns500) card.style.borderColor = '#ff9800';
+    const dateStr = sec.date.replace(/[📅📚]\s*/,'').replace(/（.*）/,'');
+    const icon = sec.isNouns500 ? '📚' : '📅';
     // 取前3个词做预览
     const preview = sec.words.slice(0,3).map(w => w.en).join(', ');
-    card.innerHTML = `<div class="cal-date">📅 ${dateStr}</div>
+    card.innerHTML = `<div class="cal-date">${icon} ${dateStr}</div>
       <div class="cal-count">${sec.words.length} 词</div>
       <div class="cal-words">${preview}…</div>`;
     card.onclick = () => { closeCalendar(); jumpToDate(idx); };
