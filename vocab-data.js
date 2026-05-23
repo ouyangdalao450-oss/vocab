@@ -167,4 +167,18 @@ const VOCAB_DATA = [
       { en:"transport", phonetic:"/ˈtrænspɔːrt/", pos:"n./v.", meaning:"❶n. 交通系统、运输方式 ❷n. 交通工具", example:"Public transport is very convenient in this city.", root:"trans(跨越)+portare(携带) → 把东西带过去 → 运输", exampleZh:"这个城市的公共交通很方便。" }
     ]
   }
-];
+,
+  {
+    date: "📅 2026-05-23（8词）",
+    words: [
+      { en:"secret", phonetic:"/ˈsiːkrət/", pos:"adj./n.", meaning:"❶ adj. 秘密的、机密的（只有少数人知道的） ❷ n. 秘密、内情 ❸ n. 诀窍、秘诀（成功的最佳方法）", example:"Can you keep a secret?", root:"se(分开)+cernere(筛选) → 筛选出来单独藏着 → 秘密的", exampleZh:"你能保守秘密吗？" },
+      { en:"leg", phonetic:"/leɡ/", pos:"n.", meaning:"❶ 腿（人或动物连接脚和身体的长部分） ❷ 腿肉（动物腿部的肉，尤指上段） ❸ 裤腿 ❹ 桌椅等的腿 ❺ 一段旅程/赛程（trip/race的leg）", example:"I broke my leg playing football.", root:"古印欧语词根，原义'弯曲的' → 腿是弯曲活动的肢体 → 腿", exampleZh:"我踢足球时摔断了腿。" },
+      { en:"bottom", phonetic:"/ˈbɑːtəm/", pos:"n./adj.", meaning:"❶ n. 底部、最下部 ❷ n. 容器内底 ❸ n. 最低位置/排名 ❹ n. 臀部（坐的部分） ❺ adj. 底部的、最低的", example:"Footnotes are given at the bottom of each page.", root:"botm(深处/地基) → 最深处 → 底部", exampleZh:"脚注在每页的底部。" },
+      { en:"at", phonetic:"/ət/", pos:"prep.", meaning:"❶ 在某处（地点） ❷ 在某时（时间） ❸ 朝向某方向 ❹ 处于某种状态 ❺ 以某种速度/价格 ❻ 在某方面（good at）", example:"We left at 2 o'clock.", root:"古英语æt，表示位置/时间的指向点 → 在", exampleZh:"我们两点出发的。", noAudio:true },
+      { en:"letter", phonetic:"/ˈletər/", pos:"n.", meaning:"❶ 信、信件 ❷ 字母 ❸ 字母标志（校队荣誉徽章）", example:"There's a letter for you from your mother.", root:"litera(字母/文字) → 用文字写的消息 → 信", exampleZh:"有你妈妈给你的一封信。" },
+      { en:"column", phonetic:"/ˈkɑːləm/", pos:"n.", meaning:"❶ 柱子（支撑或装饰建筑的圆柱） ❷ 柱状物（如烟柱） ❸ 栏、列（书/报的竖排分区） ❹ 专栏（报纸定期栏目） ❺ 纵列数字/词汇 ❻ 长列队伍", example:"The temple is supported by marble columns.", root:"columna(柱) → 从地面竖直向上 → 柱/列/专栏", exampleZh:"神殿由大理石柱支撑。" },
+      { en:"lion", phonetic:"/ˈlaɪən/", pos:"n.", meaning:"❶ 狮子（大型猫科动物，群猎，雄狮有鬃毛）", example:"Lions hunt in groups on the African savanna.", root:"leon(狮子) → 百兽之王 → 狮子", exampleZh:"狮子在非洲大草原上成群捕猎。" },
+      { en:"tail", phonetic:"/teɪl/", pos:"n./v.", meaning:"❶ n. 尾巴（鸟兽鱼可摆动的身体后部） ❷ n. 尾部、末尾（飞机/队列等的后部） ❸ n. 硬币反面（heads or tails） ❹ n. 跟踪者（informal） ❺ v. 尾随、跟踪", example:"The dog ran up, wagging its tail.", root:"古英语tægel → 动物身后拖着的部分 → 尾巴", exampleZh:"那条狗摇着尾巴跑了过来。" }
+    ]
+  }
+]
