@@ -1,8 +1,4 @@
-// vocab-data.js — 英语词汇数据
-// 排序规则：名词→动词→形容词→副词→介词→短语（最后），同词性内相关性高的放一起
-// 含义以牛津学习词典(Oxford Advanced Learner's Dictionary)美式释义为准
-// 高频名词500：按生活场景分类，含子分区导航
-
+// vocab-data.js
 const VOCAB_DATA = [
   {
     "date": "📅 2026-05-17（47词）",
@@ -2231,7 +2227,7 @@ const VOCAB_DATA = [
         "meaning": "香皂",
         "example": "I forgot to bring my soap to the bathroom.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我忘带香皂去浴室了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2242,7 +2238,7 @@ const VOCAB_DATA = [
         "meaning": "洗发水",
         "example": "Please put the shampoo back on the shelf after using it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "用完请把洗发水放回架子上。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2253,7 +2249,7 @@ const VOCAB_DATA = [
         "meaning": "毛巾",
         "example": "Please put the towel back on the shelf after using it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "用完请把毛巾放回架子上。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2264,7 +2260,7 @@ const VOCAB_DATA = [
         "meaning": "牙刷",
         "example": "The toothbrush in this hotel is really nice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家酒店的牙刷真的很不错。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2275,7 +2271,7 @@ const VOCAB_DATA = [
         "meaning": "牙膏",
         "example": "I forgot to bring my toothpaste to the bathroom.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我忘带牙膏去浴室了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2286,7 +2282,7 @@ const VOCAB_DATA = [
         "meaning": "马桶",
         "example": "She cleaned the toilet thoroughly this morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她今天早上把马桶彻底清洗了一遍。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2297,7 +2293,7 @@ const VOCAB_DATA = [
         "meaning": "洗手池",
         "example": "Please put the sink back on the shelf after using it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "用完请把洗手池放回架子上。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2308,7 +2304,7 @@ const VOCAB_DATA = [
         "meaning": "镜子",
         "example": "Please put the mirror back on the shelf after using it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "用完请把镜子放回架子上。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2319,7 +2315,7 @@ const VOCAB_DATA = [
         "meaning": "淋浴",
         "example": "Please put the shower back on the shelf after using it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "用完请把淋浴放回架子上。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2330,7 +2326,7 @@ const VOCAB_DATA = [
         "meaning": "浴缸",
         "example": "I forgot to bring my bathtub to the bathroom.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我忘带浴缸去浴室了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2341,7 +2337,7 @@ const VOCAB_DATA = [
         "meaning": "水龙头",
         "example": "She cleaned the faucet thoroughly this morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她今天早上把水龙头彻底清洗了一遍。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2352,7 +2348,7 @@ const VOCAB_DATA = [
         "meaning": "卫生纸",
         "example": "The toilet paper in this hotel is really nice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家酒店的卫生纸真的很不错。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间",
         "compound": true
@@ -2364,7 +2360,7 @@ const VOCAB_DATA = [
         "meaning": "剃须刀",
         "example": "She cleaned the razor thoroughly this morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她今天早上把剃须刀彻底清洗了一遍。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2375,7 +2371,7 @@ const VOCAB_DATA = [
         "meaning": "梳子",
         "example": "I forgot to bring my comb to the bathroom.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我忘带梳子去浴室了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2386,7 +2382,7 @@ const VOCAB_DATA = [
         "meaning": "吹风机",
         "example": "The hair dryer in this hotel is really nice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家酒店的吹风机真的很不错。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间",
         "compound": true
@@ -2398,7 +2394,7 @@ const VOCAB_DATA = [
         "meaning": "纸巾",
         "example": "The tissue in this hotel is really nice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家酒店的纸巾真的很不错。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2409,7 +2405,7 @@ const VOCAB_DATA = [
         "meaning": "乳液",
         "example": "She cleaned the lotion thoroughly this morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她今天早上把乳液彻底清洗了一遍。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2420,7 +2416,7 @@ const VOCAB_DATA = [
         "meaning": "除臭剂",
         "example": "I forgot to bring my deodorant to the bathroom.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我忘带除臭剂去浴室了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2431,7 +2427,7 @@ const VOCAB_DATA = [
         "meaning": "棉签",
         "example": "She cleaned the cotton swab thoroughly this morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她今天早上把棉签彻底清洗了一遍。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间",
         "compound": true
@@ -2443,7 +2439,7 @@ const VOCAB_DATA = [
         "meaning": "指甲刀",
         "example": "I forgot to bring my nail clipper to the bathroom.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我忘带指甲刀去浴室了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间",
         "noAudio": true,
@@ -2456,7 +2452,7 @@ const VOCAB_DATA = [
         "meaning": "床",
         "example": "The bed matches the color of the walls perfectly.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "床和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2467,7 +2463,7 @@ const VOCAB_DATA = [
         "meaning": "枕头",
         "example": "We need to buy a new pillow for the guest room.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要给客房买一个新的枕头。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2478,7 +2474,7 @@ const VOCAB_DATA = [
         "meaning": "毯子",
         "example": "The baby was cold, so his mother put a blanket over him.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "婴儿很冷，所以他妈妈给他盖上了毯子。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2489,7 +2485,7 @@ const VOCAB_DATA = [
         "meaning": "床单",
         "example": "He put his clothes in the sheet.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把衣服放进了床单里。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2500,7 +2496,7 @@ const VOCAB_DATA = [
         "meaning": "床垫",
         "example": "The mattress matches the color of the walls perfectly.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "床垫和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2511,7 +2507,7 @@ const VOCAB_DATA = [
         "meaning": "衣柜",
         "example": "He put his clothes in the wardrobe.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把衣服放进了衣柜里。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2522,7 +2518,7 @@ const VOCAB_DATA = [
         "meaning": "衣架",
         "example": "The hanger matches the color of the walls perfectly.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "衣架和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2533,7 +2529,7 @@ const VOCAB_DATA = [
         "meaning": "闹钟",
         "example": "She fluffed the alarm clock before going to sleep.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她睡前把闹钟拍松了。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室",
         "compound": true
@@ -2545,7 +2541,7 @@ const VOCAB_DATA = [
         "meaning": "台灯",
         "example": "He put his clothes in the lamp.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把衣服放进了台灯里。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2556,7 +2552,7 @@ const VOCAB_DATA = [
         "meaning": "窗帘",
         "example": "She fluffed the curtain before going to sleep.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她睡前把窗帘拍松了。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2567,7 +2563,7 @@ const VOCAB_DATA = [
         "meaning": "地毯",
         "example": "He put his clothes in the carpet.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把衣服放进了地毯里。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2578,7 +2574,7 @@ const VOCAB_DATA = [
         "meaning": "睡衣",
         "example": "The pajamas matches the color of the walls perfectly.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "睡衣和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2589,7 +2585,7 @@ const VOCAB_DATA = [
         "meaning": "拖鞋",
         "example": "We need to buy a new slippers for the guest room.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要给客房买一个新的拖鞋。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2600,7 +2596,7 @@ const VOCAB_DATA = [
         "meaning": "抽屉",
         "example": "We need to buy a new drawer for the guest room.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要给客房买一个新的抽屉。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2611,7 +2607,7 @@ const VOCAB_DATA = [
         "meaning": "被子",
         "example": "He put his clothes in the quilt.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把衣服放进了被子里。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2622,7 +2618,7 @@ const VOCAB_DATA = [
         "meaning": "靠垫",
         "example": "She fluffed the cushion before going to sleep.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她睡前把靠垫拍松了。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2633,7 +2629,7 @@ const VOCAB_DATA = [
         "meaning": "床头柜",
         "example": "The nightstand matches the color of the walls perfectly.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "床头柜和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2644,7 +2640,7 @@ const VOCAB_DATA = [
         "meaning": "羽绒被",
         "example": "The duvet matches the color of the walls perfectly.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "羽绒被和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2655,7 +2651,7 @@ const VOCAB_DATA = [
         "meaning": "壁橱",
         "example": "We need to buy a new closet for the guest room.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要给客房买一个新的壁橱。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2666,7 +2662,7 @@ const VOCAB_DATA = [
         "meaning": "冰箱",
         "example": "She used the fridge to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用冰箱准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2677,7 +2673,7 @@ const VOCAB_DATA = [
         "meaning": "烤箱",
         "example": "We need to replace the old oven in the kitchen.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要换掉厨房里那个旧的烤箱。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2688,7 +2684,7 @@ const VOCAB_DATA = [
         "meaning": "微波炉",
         "example": "The microwave is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "微波炉在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2699,7 +2695,7 @@ const VOCAB_DATA = [
         "meaning": "炉灶",
         "example": "She used the stove to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用炉灶准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2710,7 +2706,7 @@ const VOCAB_DATA = [
         "meaning": "刀",
         "example": "Put the knife in the kitchen after washing it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "洗完后把刀放回厨房。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2721,7 +2717,7 @@ const VOCAB_DATA = [
         "meaning": "叉子",
         "example": "The fork is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "叉子在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2732,7 +2728,7 @@ const VOCAB_DATA = [
         "meaning": "勺子",
         "example": "She used the spoon to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用勺子准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2743,7 +2739,7 @@ const VOCAB_DATA = [
         "meaning": "盘子",
         "example": "She used the plate to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用盘子准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2754,7 +2750,7 @@ const VOCAB_DATA = [
         "meaning": "碗",
         "example": "The bowl is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "碗在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2765,7 +2761,7 @@ const VOCAB_DATA = [
         "meaning": "杯子",
         "example": "The cup is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "杯子在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2776,7 +2772,7 @@ const VOCAB_DATA = [
         "meaning": "玻璃杯",
         "example": "The glass is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "玻璃杯在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2787,7 +2783,7 @@ const VOCAB_DATA = [
         "meaning": "平底锅",
         "example": "She used the pan to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用平底锅准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2798,7 +2794,7 @@ const VOCAB_DATA = [
         "meaning": "锅",
         "example": "The pot is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "锅在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2809,7 +2805,7 @@ const VOCAB_DATA = [
         "meaning": "砧板",
         "example": "She used the cutting board to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用砧板准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房",
         "compound": true
@@ -2821,7 +2817,7 @@ const VOCAB_DATA = [
         "meaning": "锅铲",
         "example": "The spatula is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "锅铲在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2832,7 +2828,7 @@ const VOCAB_DATA = [
         "meaning": "勺子/长柄勺",
         "example": "Put the ladle in the kitchen after washing it.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "洗完后把勺子/长柄勺放回厨房。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2843,7 +2839,7 @@ const VOCAB_DATA = [
         "meaning": "水壶",
         "example": "The kettle is on the counter next to the stove.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "水壶在灶台旁边。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2854,7 +2850,7 @@ const VOCAB_DATA = [
         "meaning": "洗碗机",
         "example": "We need to replace the old dishwasher in the kitchen.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要换掉厨房里那个旧的洗碗机。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2865,7 +2861,7 @@ const VOCAB_DATA = [
         "meaning": "垃圾桶",
         "example": "She used the trash can to prepare dinner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用垃圾桶准备晚餐。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房",
         "compound": true
@@ -2877,7 +2873,7 @@ const VOCAB_DATA = [
         "meaning": "沙发",
         "example": "The sofa is the centerpiece of the living room.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "沙发是客厅的核心。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2888,7 +2884,7 @@ const VOCAB_DATA = [
         "meaning": "长沙发",
         "example": "Please don't put your feet on the couch.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把脚放在长沙发上。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2899,7 +2895,7 @@ const VOCAB_DATA = [
         "meaning": "桌子",
         "example": "The cat is sleeping on the table again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "猫又趴在桌子上睡觉了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2910,7 +2906,7 @@ const VOCAB_DATA = [
         "meaning": "椅子",
         "example": "She arranged the chair to face the window.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把椅子朝窗户的方向摆好。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2921,7 +2917,7 @@ const VOCAB_DATA = [
         "meaning": "电视",
         "example": "The cat is sleeping on the TV again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "猫又趴在电视上睡觉了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2932,7 +2928,7 @@ const VOCAB_DATA = [
         "meaning": "遥控器",
         "example": "The cat is sleeping on the remote control again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "猫又趴在遥控器上睡觉了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅",
         "compound": true
@@ -2944,7 +2940,7 @@ const VOCAB_DATA = [
         "meaning": "书架",
         "example": "She arranged the bookshelf to face the window.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把书架朝窗户的方向摆好。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2955,7 +2951,7 @@ const VOCAB_DATA = [
         "meaning": "地毯",
         "example": "The cat is sleeping on the rug again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "猫又趴在地毯上睡觉了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2966,7 +2962,7 @@ const VOCAB_DATA = [
         "meaning": "窗户",
         "example": "The cat is sleeping on the window again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "猫又趴在窗户上睡觉了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2977,7 +2973,7 @@ const VOCAB_DATA = [
         "meaning": "风扇",
         "example": "She arranged the fan to face the window.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把风扇朝窗户的方向摆好。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2988,7 +2984,7 @@ const VOCAB_DATA = [
         "meaning": "空调",
         "example": "Please don't put your feet on the air conditioner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把脚放在空调上。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅",
         "compound": true
@@ -3000,7 +2996,7 @@ const VOCAB_DATA = [
         "meaning": "取暖器",
         "example": "Please don't put your feet on the heater.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把脚放在取暖器上。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -3011,7 +3007,7 @@ const VOCAB_DATA = [
         "meaning": "杯垫",
         "example": "She arranged the coaster to face the window.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把杯垫朝窗户的方向摆好。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -3022,7 +3018,7 @@ const VOCAB_DATA = [
         "meaning": "咖啡桌",
         "example": "The cat is sleeping on the coffee table again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "猫又趴在咖啡桌上睡觉了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅",
         "compound": true
@@ -3034,7 +3030,7 @@ const VOCAB_DATA = [
         "meaning": "花瓶",
         "example": "She arranged the vase to face the window.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把花瓶朝窗户的方向摆好。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -3045,7 +3041,7 @@ const VOCAB_DATA = [
         "meaning": "画",
         "example": "The painting is the centerpiece of the living room.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "画是客厅的核心。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -3056,7 +3052,7 @@ const VOCAB_DATA = [
         "meaning": "衬衫",
         "example": "She bought a new shirt for the party.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她为聚会买了一件新衬衫。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3067,7 +3063,7 @@ const VOCAB_DATA = [
         "meaning": "T恤",
         "example": "You should wear a T-shirt — it's cold outside.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你应该穿件T恤——外面很冷。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3078,7 +3074,7 @@ const VOCAB_DATA = [
         "meaning": "裤子",
         "example": "The film was a load [or pile] of pants.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这部电影是一堆（或一堆）裤子。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3089,7 +3085,7 @@ const VOCAB_DATA = [
         "meaning": "牛仔裤",
         "example": "She bought a new jeans for the party.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她为聚会买了一件新牛仔裤。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3100,7 +3096,7 @@ const VOCAB_DATA = [
         "meaning": "连衣裙",
         "example": "This dress doesn't fit me anymore.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这件连衣裙我已经穿不下了。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3111,7 +3107,7 @@ const VOCAB_DATA = [
         "meaning": "裙子",
         "example": "The plain was skirted by rows of trees.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "平原周围是一排排的树木。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3122,7 +3118,7 @@ const VOCAB_DATA = [
         "meaning": "夹克",
         "example": "He hung his jacket on the back of the chair.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把夹克挂在椅背上。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3133,7 +3129,7 @@ const VOCAB_DATA = [
         "meaning": "大衣",
         "example": "You should wear a coat — it's cold outside.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你应该穿件大衣——外面很冷。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3144,7 +3140,7 @@ const VOCAB_DATA = [
         "meaning": "袜子",
         "example": "You should wear a socks — it's cold outside.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你应该穿件袜子——外面很冷。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3155,7 +3151,7 @@ const VOCAB_DATA = [
         "meaning": "鞋子",
         "example": "She bought a new shoes for the party.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她为聚会买了一件新鞋子。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3166,7 +3162,7 @@ const VOCAB_DATA = [
         "meaning": "靴子",
         "example": "You should wear a boots — it's cold outside.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你应该穿件靴子——外面很冷。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3177,7 +3173,7 @@ const VOCAB_DATA = [
         "meaning": "帽子",
         "example": "This hat doesn't fit me anymore.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这件帽子我已经穿不下了。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3188,7 +3184,7 @@ const VOCAB_DATA = [
         "meaning": "围巾",
         "example": "You should wear a scarf — it's cold outside.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你应该穿件围巾——外面很冷。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3199,7 +3195,7 @@ const VOCAB_DATA = [
         "meaning": "手套",
         "example": "He hung his gloves on the back of the chair.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把手套挂在椅背上。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3210,7 +3206,7 @@ const VOCAB_DATA = [
         "meaning": "皮带",
         "example": "This belt doesn't fit me anymore.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这件皮带我已经穿不下了。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3221,7 +3217,7 @@ const VOCAB_DATA = [
         "meaning": "内衣",
         "example": "This underwear doesn't fit me anymore.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这件内衣我已经穿不下了。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3232,7 +3228,7 @@ const VOCAB_DATA = [
         "meaning": "毛衣",
         "example": "You should wear a sweater — it's cold outside.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你应该穿件毛衣——外面很冷。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3243,7 +3239,7 @@ const VOCAB_DATA = [
         "meaning": "短裤",
         "example": "She bought a new shorts for the party.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她为聚会买了一件新短裤。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3254,7 +3250,7 @@ const VOCAB_DATA = [
         "meaning": "凉鞋",
         "example": "This sandals doesn't fit me anymore.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这件凉鞋我已经穿不下了。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3265,7 +3261,7 @@ const VOCAB_DATA = [
         "meaning": "西装",
         "example": "This suit doesn't fit me anymore.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这件西装我已经穿不下了。",
         "subcategory": "Clothing",
         "subcategoryZh": "衣物 / 穿戴"
       },
@@ -3276,7 +3272,7 @@ const VOCAB_DATA = [
         "meaning": "米饭",
         "example": "The rice at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的米饭太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3287,7 +3283,7 @@ const VOCAB_DATA = [
         "meaning": "面包",
         "example": "Would you like some bread with your meal?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你想来点面包配餐吗？",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3298,7 +3294,7 @@ const VOCAB_DATA = [
         "meaning": "鸡蛋",
         "example": "She added a little egg to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点鸡蛋让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3309,7 +3305,7 @@ const VOCAB_DATA = [
         "meaning": "牛奶",
         "example": "We need to buy more milk from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点牛奶。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3320,7 +3316,7 @@ const VOCAB_DATA = [
         "meaning": "水",
         "example": "She added a little water to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点水让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3331,7 +3327,7 @@ const VOCAB_DATA = [
         "meaning": "咖啡",
         "example": "We need to buy more coffee from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点咖啡。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3342,7 +3338,7 @@ const VOCAB_DATA = [
         "meaning": "茶",
         "example": "She added a little tea to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点茶让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3353,7 +3349,7 @@ const VOCAB_DATA = [
         "meaning": "果汁",
         "example": "The juice at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的果汁太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3364,7 +3360,7 @@ const VOCAB_DATA = [
         "meaning": "啤酒",
         "example": "The beer at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的啤酒太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3375,7 +3371,7 @@ const VOCAB_DATA = [
         "meaning": "葡萄酒",
         "example": "She added a little wine to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点葡萄酒让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3386,7 +3382,7 @@ const VOCAB_DATA = [
         "meaning": "苹果",
         "example": "She added a little apple to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点苹果让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3397,7 +3393,7 @@ const VOCAB_DATA = [
         "meaning": "香蕉",
         "example": "The banana at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的香蕉太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3408,7 +3404,7 @@ const VOCAB_DATA = [
         "meaning": "橙子",
         "example": "The orange at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的橙子太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3419,7 +3415,7 @@ const VOCAB_DATA = [
         "meaning": "葡萄",
         "example": "She added a little grape to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点葡萄让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3430,7 +3426,7 @@ const VOCAB_DATA = [
         "meaning": "番茄",
         "example": "We need to buy more tomato from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点番茄。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3441,7 +3437,7 @@ const VOCAB_DATA = [
         "meaning": "土豆",
         "example": "She added a little potato to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点土豆让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3452,7 +3448,7 @@ const VOCAB_DATA = [
         "meaning": "胡萝卜",
         "example": "We need to buy more carrot from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点胡萝卜。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3463,7 +3459,7 @@ const VOCAB_DATA = [
         "meaning": "洋葱",
         "example": "We need to buy more onion from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点洋葱。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3474,7 +3470,7 @@ const VOCAB_DATA = [
         "meaning": "鸡肉",
         "example": "We need to buy more chicken from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点鸡肉。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3485,7 +3481,7 @@ const VOCAB_DATA = [
         "meaning": "牛肉",
         "example": "She added a little beef to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点牛肉让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3496,7 +3492,7 @@ const VOCAB_DATA = [
         "meaning": "猪肉",
         "example": "Would you like some pork with your meal?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你想来点猪肉配餐吗？",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3507,7 +3503,7 @@ const VOCAB_DATA = [
         "meaning": "鱼",
         "example": "The fish at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的鱼太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3518,7 +3514,7 @@ const VOCAB_DATA = [
         "meaning": "虾",
         "example": "The shrimp at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的虾太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3529,7 +3525,7 @@ const VOCAB_DATA = [
         "meaning": "面条",
         "example": "She added a little noodle to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点面条让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3540,7 +3536,7 @@ const VOCAB_DATA = [
         "meaning": "汤",
         "example": "She added a little soup to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点汤让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3551,7 +3547,7 @@ const VOCAB_DATA = [
         "meaning": "沙拉",
         "example": "She added a little salad to make it taste better.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她加了一点沙拉让味道更好。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3562,7 +3558,7 @@ const VOCAB_DATA = [
         "meaning": "奶酪",
         "example": "The cheese at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的奶酪太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3573,7 +3569,7 @@ const VOCAB_DATA = [
         "meaning": "黄油",
         "example": "We need to buy more butter from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点黄油。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3584,7 +3580,7 @@ const VOCAB_DATA = [
         "meaning": "酸奶",
         "example": "The yogurt at this restaurant is amazing.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这家餐厅的酸奶太棒了。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3595,7 +3591,7 @@ const VOCAB_DATA = [
         "meaning": "巧克力",
         "example": "We need to buy more chocolate from the grocery store.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们需要去杂货店多买点巧克力。",
         "subcategory": "Food & Drink",
         "subcategoryZh": "饮食"
       },
@@ -3606,7 +3602,7 @@ const VOCAB_DATA = [
         "meaning": "汽车",
         "example": "We rented a car for our trip.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们旅行时租了一辆汽车。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3617,7 +3613,7 @@ const VOCAB_DATA = [
         "meaning": "公交车",
         "example": "The bus is the fastest way to get there.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "公交车是去那里最快的方式。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3628,7 +3624,7 @@ const VOCAB_DATA = [
         "meaning": "出租车",
         "example": "We rented a taxi for our trip.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们旅行时租了一辆出租车。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3639,7 +3635,7 @@ const VOCAB_DATA = [
         "meaning": "火车",
         "example": "The train was delayed by twenty minutes.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "火车晚点了二十分钟。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3650,7 +3646,7 @@ const VOCAB_DATA = [
         "meaning": "地铁",
         "example": "She takes the subway to work every day.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天坐地铁去上班。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3661,7 +3657,7 @@ const VOCAB_DATA = [
         "meaning": "自行车",
         "example": "We rented a bicycle for our trip.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们旅行时租了一辆自行车。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3672,7 +3668,7 @@ const VOCAB_DATA = [
         "meaning": "摩托车",
         "example": "The motorcycle was delayed by twenty minutes.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "摩托车晚点了二十分钟。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3683,7 +3679,7 @@ const VOCAB_DATA = [
         "meaning": "卡车",
         "example": "The truck is the fastest way to get there.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "卡车是去那里最快的方式。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3694,7 +3690,7 @@ const VOCAB_DATA = [
         "meaning": "飞机",
         "example": "The plane is the fastest way to get there.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "飞机是去那里最快的方式。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3705,7 +3701,7 @@ const VOCAB_DATA = [
         "meaning": "船",
         "example": "We rented a boat for our trip.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们旅行时租了一辆船。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3716,7 +3712,7 @@ const VOCAB_DATA = [
         "meaning": "轮船",
         "example": "The ship was delayed by twenty minutes.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "轮船晚点了二十分钟。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3727,7 +3723,7 @@ const VOCAB_DATA = [
         "meaning": "头盔",
         "example": "The helmet is the fastest way to get there.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "头盔是去那里最快的方式。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3738,7 +3734,7 @@ const VOCAB_DATA = [
         "meaning": "安全带",
         "example": "We rented a seatbelt for our trip.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们旅行时租了一辆安全带。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3749,7 +3745,7 @@ const VOCAB_DATA = [
         "meaning": "轮子",
         "example": "The wheel was delayed by twenty minutes.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "轮子晚点了二十分钟。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3760,7 +3756,7 @@ const VOCAB_DATA = [
         "meaning": "轮胎",
         "example": "She takes the tire to work every day.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天坐轮胎去上班。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3771,7 +3767,7 @@ const VOCAB_DATA = [
         "meaning": "发动机",
         "example": "She takes the engine to work every day.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天坐发动机去上班。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3782,7 +3778,7 @@ const VOCAB_DATA = [
         "meaning": "刹车",
         "example": "She takes the brake to work every day.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天坐刹车去上班。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3793,7 +3789,7 @@ const VOCAB_DATA = [
         "meaning": "方向盘",
         "example": "She takes the steering wheel to work every day.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天坐方向盘去上班。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通",
         "compound": true
@@ -3805,7 +3801,7 @@ const VOCAB_DATA = [
         "meaning": "红绿灯",
         "example": "We rented a traffic light for our trip.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们旅行时租了一辆红绿灯。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通",
         "compound": true
@@ -3817,7 +3813,7 @@ const VOCAB_DATA = [
         "meaning": "加油站",
         "example": "The gas station was delayed by twenty minutes.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "加油站晚点了二十分钟。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通",
         "compound": true
@@ -3829,7 +3825,7 @@ const VOCAB_DATA = [
         "meaning": "笔",
         "example": "There are two steers in the third pen.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "第三支钢笔里有两个舵。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3840,7 +3836,7 @@ const VOCAB_DATA = [
         "meaning": "铅笔",
         "example": "Can I borrow your pencil for a moment?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "能借用一下你的铅笔吗？",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3851,7 +3847,7 @@ const VOCAB_DATA = [
         "meaning": "橡皮",
         "example": "She left her eraser on the desk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把橡皮落在桌上了。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3862,7 +3858,7 @@ const VOCAB_DATA = [
         "meaning": "笔记本",
         "example": "She left her notebook on the desk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把笔记本落在桌上了。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3873,7 +3869,7 @@ const VOCAB_DATA = [
         "meaning": "书",
         "example": "The book is essential for this assignment.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "书对这项作业来说是必需的。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3884,7 +3880,7 @@ const VOCAB_DATA = [
         "meaning": "电脑",
         "example": "She left her computer on the desk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把电脑落在桌上了。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3895,7 +3891,7 @@ const VOCAB_DATA = [
         "meaning": "键盘",
         "example": "The keyboard is essential for this assignment.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "键盘对这项作业来说是必需的。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3906,7 +3902,7 @@ const VOCAB_DATA = [
         "meaning": "鼠标",
         "example": "He always carries a mouse in his bag.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他总是随身带着鼠标。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3917,7 +3913,7 @@ const VOCAB_DATA = [
         "meaning": "显示器",
         "example": "The camp monitors look after the children during the night, when the teachers are asleep.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "当老师们睡觉时，营地监视器会在夜间照顾孩子们。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3928,7 +3924,7 @@ const VOCAB_DATA = [
         "meaning": "打印机",
         "example": "Can I borrow your printer for a moment?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "能借用一下你的打印机吗？",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3939,7 +3935,7 @@ const VOCAB_DATA = [
         "meaning": "订书机",
         "example": "The stapler is essential for this assignment.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "订书机对这项作业来说是必需的。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3950,7 +3946,7 @@ const VOCAB_DATA = [
         "meaning": "纸",
         "example": "He always carries a paper in his bag.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他总是随身带着纸。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3961,7 +3957,7 @@ const VOCAB_DATA = [
         "meaning": "文件夹",
         "example": "She left her folder on the desk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把文件夹落在桌上了。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3972,7 +3968,7 @@ const VOCAB_DATA = [
         "meaning": "书桌",
         "example": "The desk is essential for this assignment.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "书桌对这项作业来说是必需的。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3983,7 +3979,7 @@ const VOCAB_DATA = [
         "meaning": "计算器",
         "example": "He always carries a calculator in his bag.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他总是随身带着计算器。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -3994,7 +3990,7 @@ const VOCAB_DATA = [
         "meaning": "尺子",
         "example": "Can I borrow your ruler for a moment?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "能借用一下你的尺子吗？",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -4005,7 +4001,7 @@ const VOCAB_DATA = [
         "meaning": "剪刀",
         "example": "The erroneous testimony was scissored from the record.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "错误的证词是从记录中剪下来的。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -4016,7 +4012,7 @@ const VOCAB_DATA = [
         "meaning": "胶带",
         "example": "She left her tape on the desk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把胶带落在桌上了。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -4027,7 +4023,7 @@ const VOCAB_DATA = [
         "meaning": "荧光笔",
         "example": "The highlighter is essential for this assignment.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "荧光笔对这项作业来说是必需的。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -4038,7 +4034,7 @@ const VOCAB_DATA = [
         "meaning": "头",
         "example": "He injured his head during the game.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他在比赛中伤到了头。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4049,7 +4045,7 @@ const VOCAB_DATA = [
         "meaning": "头发",
         "example": "She felt a sharp pain in her hair.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到头发一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4060,7 +4056,7 @@ const VOCAB_DATA = [
         "meaning": "脸",
         "example": "She felt a sharp pain in her face.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到脸一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4071,7 +4067,7 @@ const VOCAB_DATA = [
         "meaning": "眼睛",
         "example": "Put your eye on the table, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把眼睛放在桌子上。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4082,7 +4078,7 @@ const VOCAB_DATA = [
         "meaning": "鼻子",
         "example": "She felt a sharp pain in her nose.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到鼻子一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4093,7 +4089,7 @@ const VOCAB_DATA = [
         "meaning": "嘴巴",
         "example": "She felt a sharp pain in her mouth.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到嘴巴一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4104,7 +4100,7 @@ const VOCAB_DATA = [
         "meaning": "耳朵",
         "example": "He injured his ear during the game.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他在比赛中伤到了耳朵。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4115,7 +4111,7 @@ const VOCAB_DATA = [
         "meaning": "牙齿",
         "example": "He injured his tooth during the game.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他在比赛中伤到了牙齿。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4126,7 +4122,7 @@ const VOCAB_DATA = [
         "meaning": "舌头",
         "example": "The doctor examined her tongue carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的舌头。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4137,7 +4133,7 @@ const VOCAB_DATA = [
         "meaning": "脖子",
         "example": "The doctor examined her neck carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的脖子。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4148,7 +4144,7 @@ const VOCAB_DATA = [
         "meaning": "肩膀",
         "example": "She felt a sharp pain in her shoulder.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到肩膀一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4159,7 +4155,7 @@ const VOCAB_DATA = [
         "meaning": "手臂",
         "example": "The doctor examined her arm carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的手臂。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4170,7 +4166,7 @@ const VOCAB_DATA = [
         "meaning": "肘",
         "example": "The doctor examined her elbow carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的肘。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4181,7 +4177,7 @@ const VOCAB_DATA = [
         "meaning": "手",
         "example": "The doctor examined her hand carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的手。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4192,7 +4188,7 @@ const VOCAB_DATA = [
         "meaning": "手指",
         "example": "She felt a sharp pain in her finger.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到手指一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4203,7 +4199,7 @@ const VOCAB_DATA = [
         "meaning": "胸部",
         "example": "The doctor examined her chest carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的胸部。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4214,7 +4210,7 @@ const VOCAB_DATA = [
         "meaning": "胃/肚子",
         "example": "The doctor examined her stomach carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的胃/肚子。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4225,7 +4221,7 @@ const VOCAB_DATA = [
         "meaning": "背",
         "example": "Put your back on the table, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把背放在桌子上。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4236,7 +4232,7 @@ const VOCAB_DATA = [
         "meaning": "腿",
         "example": "Put your leg on the table, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把腿放在桌子上。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4247,7 +4243,7 @@ const VOCAB_DATA = [
         "meaning": "膝盖",
         "example": "The doctor examined her knee carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的膝盖。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4258,7 +4254,7 @@ const VOCAB_DATA = [
         "meaning": "脚",
         "example": "Put your foot on the table, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把脚放在桌子上。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4269,7 +4265,7 @@ const VOCAB_DATA = [
         "meaning": "脚趾",
         "example": "She felt a sharp pain in her toe.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她感到脚趾一阵剧痛。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4280,7 +4276,7 @@ const VOCAB_DATA = [
         "meaning": "皮肤",
         "example": "The doctor examined her skin carefully.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "医生仔细检查了她的皮肤。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4291,7 +4287,7 @@ const VOCAB_DATA = [
         "meaning": "骨头",
         "example": "Put your bone on the table, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把骨头放在桌子上。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4302,7 +4298,7 @@ const VOCAB_DATA = [
         "meaning": "心脏",
         "example": "He injured his heart during the game.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他在比赛中伤到了心脏。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4313,7 +4309,7 @@ const VOCAB_DATA = [
         "meaning": "太阳",
         "example": "The sun is one of the most amazing things in nature.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "太阳是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4324,7 +4320,7 @@ const VOCAB_DATA = [
         "meaning": "月亮",
         "example": "After the rain, the moon appeared.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨后，月亮出现了。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4335,7 +4331,7 @@ const VOCAB_DATA = [
         "meaning": "星星",
         "example": "We hiked through the star all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在星星中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4346,7 +4342,7 @@ const VOCAB_DATA = [
         "meaning": "天空",
         "example": "The sky is one of the most amazing things in nature.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "天空是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4357,7 +4353,7 @@ const VOCAB_DATA = [
         "meaning": "云",
         "example": "We hiked through the cloud all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在云中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4368,7 +4364,7 @@ const VOCAB_DATA = [
         "meaning": "雨",
         "example": "The rain is one of the most amazing things in nature.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4379,7 +4375,7 @@ const VOCAB_DATA = [
         "meaning": "雪",
         "example": "After the rain, the snow appeared.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨后，雪出现了。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4390,7 +4386,7 @@ const VOCAB_DATA = [
         "meaning": "风",
         "example": "We hiked through the wind all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在风中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4401,7 +4397,7 @@ const VOCAB_DATA = [
         "meaning": "树",
         "example": "The tree looked beautiful in the morning light.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "晨光中的树看起来很美。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4412,7 +4408,7 @@ const VOCAB_DATA = [
         "meaning": "花",
         "example": "We hiked through the flower all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在花中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4423,7 +4419,7 @@ const VOCAB_DATA = [
         "meaning": "草",
         "example": "We hiked through the grass all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在草中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4434,7 +4430,7 @@ const VOCAB_DATA = [
         "meaning": "叶子",
         "example": "The leaf is one of the most amazing things in nature.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "叶子是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4445,7 +4441,7 @@ const VOCAB_DATA = [
         "meaning": "石头",
         "example": "The rock looked beautiful in the morning light.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "晨光中的石头看起来很美。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4456,7 +4452,7 @@ const VOCAB_DATA = [
         "meaning": "沙子",
         "example": "We hiked through the sand all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在沙子中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4467,7 +4463,7 @@ const VOCAB_DATA = [
         "meaning": "河流",
         "example": "After the rain, the river appeared.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨后，河流出现了。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4478,7 +4474,7 @@ const VOCAB_DATA = [
         "meaning": "湖泊",
         "example": "After the rain, the lake appeared.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨后，湖泊出现了。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4489,7 +4485,7 @@ const VOCAB_DATA = [
         "meaning": "山",
         "example": "We hiked through the mountain all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在山中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4500,7 +4496,7 @@ const VOCAB_DATA = [
         "meaning": "森林",
         "example": "The forest is one of the most amazing things in nature.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "森林是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4511,7 +4507,7 @@ const VOCAB_DATA = [
         "meaning": "鸟",
         "example": "We hiked through the bird all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在鸟中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4522,7 +4518,7 @@ const VOCAB_DATA = [
         "meaning": "狗",
         "example": "We hiked through the dog all afternoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们整个下午都在狗中徒步。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4533,7 +4529,7 @@ const VOCAB_DATA = [
         "meaning": "猫",
         "example": "The cat looked beautiful in the morning light.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "晨光中的猫看起来很美。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4544,7 +4540,7 @@ const VOCAB_DATA = [
         "meaning": "昆虫",
         "example": "The insect is one of the most amazing things in nature.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "昆虫是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4555,7 +4551,7 @@ const VOCAB_DATA = [
         "meaning": "蝴蝶",
         "example": "The butterfly looked beautiful in the morning light.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "晨光中的蝴蝶看起来很美。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4566,7 +4562,7 @@ const VOCAB_DATA = [
         "meaning": "蚂蚁",
         "example": "After the rain, the ant appeared.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨后，蚂蚁出现了。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4577,7 +4573,7 @@ const VOCAB_DATA = [
         "meaning": "蜜蜂",
         "example": "After the rain, the bee appeared.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "雨后，蜜蜂出现了。",
         "subcategory": "Nature & Outdoors",
         "subcategoryZh": "自然 / 户外"
       },
@@ -4588,7 +4584,7 @@ const VOCAB_DATA = [
         "meaning": "手机",
         "example": "She bought the latest phone last week.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她上周买了最新款的手机。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4599,7 +4595,7 @@ const VOCAB_DATA = [
         "meaning": "相机",
         "example": "Can you pass me the camera?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你能把相机递给我吗？",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4610,7 +4606,7 @@ const VOCAB_DATA = [
         "meaning": "笔记本电脑",
         "example": "My laptop ran out of battery again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的笔记本电脑又没电了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4621,7 +4617,7 @@ const VOCAB_DATA = [
         "meaning": "平板电脑",
         "example": "She bought the latest tablet last week.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她上周买了最新款的平板电脑。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4632,7 +4628,7 @@ const VOCAB_DATA = [
         "meaning": "充电器",
         "example": "The charger is connected to the Wi-Fi.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "充电器已经连上Wi-Fi了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4643,7 +4639,7 @@ const VOCAB_DATA = [
         "meaning": "电池",
         "example": "The battery is connected to the Wi-Fi.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "电池已经连上Wi-Fi了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4654,7 +4650,7 @@ const VOCAB_DATA = [
         "meaning": "耳机",
         "example": "My headphone ran out of battery again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的耳机又没电了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4665,7 +4661,7 @@ const VOCAB_DATA = [
         "meaning": "音箱",
         "example": "The company hired a motivational speaker to boost morale.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "该公司聘请了一位鼓舞人心的演讲者来鼓舞士气。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4676,7 +4672,7 @@ const VOCAB_DATA = [
         "meaning": "洗衣机",
         "example": "She bought the latest washing machine last week.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她上周买了最新款的洗衣机。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "compound": true
@@ -4688,7 +4684,7 @@ const VOCAB_DATA = [
         "meaning": "烘干机",
         "example": "The sun and a northwesterly wind are great driers of the earth.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "太阳和西北风是地球的干燥剂。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4699,7 +4695,7 @@ const VOCAB_DATA = [
         "meaning": "吸尘器",
         "example": "Can you pass me the vacuum cleaner?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你能把吸尘器递给我吗？",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "compound": true
@@ -4711,7 +4707,7 @@ const VOCAB_DATA = [
         "meaning": "熨斗",
         "example": "My iron ran out of battery again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的熨斗又没电了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4722,7 +4718,7 @@ const VOCAB_DATA = [
         "meaning": "烤面包机",
         "example": "My toaster ran out of battery again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的烤面包机又没电了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4733,7 +4729,7 @@ const VOCAB_DATA = [
         "meaning": "搅拌机",
         "example": "Can you pass me the blender?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你能把搅拌机递给我吗？",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4744,7 +4740,7 @@ const VOCAB_DATA = [
         "meaning": "冰箱",
         "example": "My refrigerator ran out of battery again.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的冰箱又没电了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4755,7 +4751,7 @@ const VOCAB_DATA = [
         "meaning": "空气净化器",
         "example": "She bought the latest air purifier last week.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她上周买了最新款的空气净化器。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "noAudio": true,
@@ -4768,7 +4764,7 @@ const VOCAB_DATA = [
         "meaning": "灯泡",
         "example": "The light bulb is connected to the Wi-Fi.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "灯泡已经连上Wi-Fi了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "compound": true
@@ -4780,7 +4776,7 @@ const VOCAB_DATA = [
         "meaning": "门",
         "example": "She used the door to clean up the mess.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用门清理了脏乱。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4791,7 +4787,7 @@ const VOCAB_DATA = [
         "meaning": "钥匙",
         "example": "The key to solving this problem is persistence.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "解决这个问题的关键是坚持不懈。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4802,7 +4798,7 @@ const VOCAB_DATA = [
         "meaning": "锁",
         "example": "Where did you put the lock?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你把锁放哪了？",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4813,7 +4809,7 @@ const VOCAB_DATA = [
         "meaning": "墙壁",
         "example": "The town wall was surrounded by a moat.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "城墙周围环绕着一条护城河。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4824,7 +4820,7 @@ const VOCAB_DATA = [
         "meaning": "地板",
         "example": "The room has a wooden floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "房间铺有木地板。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4835,7 +4831,7 @@ const VOCAB_DATA = [
         "meaning": "天花板",
         "example": "Please don't leave the ceiling on the floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把天花板留在地板上。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4846,7 +4842,7 @@ const VOCAB_DATA = [
         "meaning": "屋顶",
         "example": "The roof was blown off by the tornado.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "屋顶被龙卷风吹走了。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4857,7 +4853,7 @@ const VOCAB_DATA = [
         "meaning": "楼梯",
         "example": "Please don't leave the stair on the floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把楼梯留在地板上。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4868,7 +4864,7 @@ const VOCAB_DATA = [
         "meaning": "电梯",
         "example": "Please don't leave the elevator on the floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把电梯留在地板上。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4879,7 +4875,7 @@ const VOCAB_DATA = [
         "meaning": "阳台",
         "example": "Where did you put the balcony?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你把阳台放哪了？",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4890,7 +4886,7 @@ const VOCAB_DATA = [
         "meaning": "花园",
         "example": "Please don't leave the garden on the floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把花园留在地板上。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4901,7 +4897,7 @@ const VOCAB_DATA = [
         "meaning": "车库",
         "example": "She used the garage to clean up the mess.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用车库清理了脏乱。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4912,7 +4908,7 @@ const VOCAB_DATA = [
         "meaning": "地下室",
         "example": "Please don't leave the basement on the floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把地下室留在地板上。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4923,7 +4919,7 @@ const VOCAB_DATA = [
         "meaning": "阁楼",
         "example": "The attic needs to be fixed.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "阁楼需要修一下。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4934,7 +4930,7 @@ const VOCAB_DATA = [
         "meaning": "洗衣物",
         "example": "Where did you put the laundry?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你把洗衣物放哪了？",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4945,7 +4941,7 @@ const VOCAB_DATA = [
         "meaning": "洗衣液",
         "example": "She used the detergent to clean up the mess.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用洗衣液清理了脏乱。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4956,7 +4952,7 @@ const VOCAB_DATA = [
         "meaning": "漂白剂",
         "example": "Where did you put the bleach?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你把漂白剂放哪了？",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4967,7 +4963,7 @@ const VOCAB_DATA = [
         "meaning": "扫帚",
         "example": "She used the broom to clean up the mess.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她用扫帚清理了脏乱。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4978,7 +4974,7 @@ const VOCAB_DATA = [
         "meaning": "拖把",
         "example": "Where did you put the mop?",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "你把拖把放哪了？",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -4989,7 +4985,7 @@ const VOCAB_DATA = [
         "meaning": "桶",
         "example": "Please don't leave the bucket on the floor.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请不要把桶留在地板上。",
         "subcategory": "Household Items",
         "subcategoryZh": "家居杂物"
       },
@@ -5000,7 +4996,7 @@ const VOCAB_DATA = [
         "meaning": "道路",
         "example": "Turn left at the road.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "在道路处左转。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5011,7 +5007,7 @@ const VOCAB_DATA = [
         "meaning": "街道",
         "example": "Turn left at the street.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "在街道处左转。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5022,7 +5018,7 @@ const VOCAB_DATA = [
         "meaning": "人行道",
         "example": "The sidewalk was crowded with tourists.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "人行道挤满了游客。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5033,7 +5029,7 @@ const VOCAB_DATA = [
         "meaning": "桥",
         "example": "They built a new bridge downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的桥。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5044,7 +5040,7 @@ const VOCAB_DATA = [
         "meaning": "建筑物",
         "example": "They built a new building downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的建筑物。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5055,7 +5051,7 @@ const VOCAB_DATA = [
         "meaning": "商店",
         "example": "The store is just around the corner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "商店就在拐角处。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5066,7 +5062,7 @@ const VOCAB_DATA = [
         "meaning": "市场",
         "example": "The market is just around the corner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "市场就在拐角处。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5077,7 +5073,7 @@ const VOCAB_DATA = [
         "meaning": "餐厅",
         "example": "They built a new restaurant downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的餐厅。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5088,7 +5084,7 @@ const VOCAB_DATA = [
         "meaning": "酒店",
         "example": "They built a new hotel downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的酒店。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5099,7 +5095,7 @@ const VOCAB_DATA = [
         "meaning": "医院",
         "example": "Turn left at the hospital.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "在医院处左转。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5110,7 +5106,7 @@ const VOCAB_DATA = [
         "meaning": "学校",
         "example": "The school is just around the corner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "学校就在拐角处。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5121,7 +5117,7 @@ const VOCAB_DATA = [
         "meaning": "银行",
         "example": "They built a new bank downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的银行。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5132,7 +5128,7 @@ const VOCAB_DATA = [
         "meaning": "邮局",
         "example": "Turn left at the post office.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "在邮局处左转。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市",
         "compound": true
@@ -5144,7 +5140,7 @@ const VOCAB_DATA = [
         "meaning": "警察局",
         "example": "The police station was crowded with tourists.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "警察局挤满了游客。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市",
         "compound": true
@@ -5156,7 +5152,7 @@ const VOCAB_DATA = [
         "meaning": "消防站",
         "example": "The fire station is just around the corner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "消防站就在拐角处。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市",
         "compound": true
@@ -5168,7 +5164,7 @@ const VOCAB_DATA = [
         "meaning": "公园",
         "example": "Turn left at the park.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "在公园处左转。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5179,7 +5175,7 @@ const VOCAB_DATA = [
         "meaning": "图书馆",
         "example": "They built a new library downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的图书馆。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5190,7 +5186,7 @@ const VOCAB_DATA = [
         "meaning": "博物馆",
         "example": "They built a new museum downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的博物馆。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5201,7 +5197,7 @@ const VOCAB_DATA = [
         "meaning": "电影院",
         "example": "The cinema is just around the corner.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "电影院就在拐角处。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5212,7 +5208,7 @@ const VOCAB_DATA = [
         "meaning": "商场",
         "example": "They built a new mall downtown.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们在市中心建了一个新的商场。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5223,7 +5219,7 @@ const VOCAB_DATA = [
         "meaning": "锤子",
         "example": "The hammer is in the garage.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "锤子在车库里。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5234,7 +5230,7 @@ const VOCAB_DATA = [
         "meaning": "螺丝刀",
         "example": "Hand me the screwdriver, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把螺丝刀递给我。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5245,7 +5241,7 @@ const VOCAB_DATA = [
         "meaning": "扳手",
         "example": "He used a wrench to fix the shelf.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他用扳手修好了架子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5256,7 +5252,7 @@ const VOCAB_DATA = [
         "meaning": "电钻",
         "example": "The drill is in the garage.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "电钻在车库里。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5267,7 +5263,7 @@ const VOCAB_DATA = [
         "meaning": "锯子",
         "example": "You'll need a saw for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把锯子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5278,7 +5274,7 @@ const VOCAB_DATA = [
         "meaning": "钉子",
         "example": "You'll need a nail for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把钉子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5289,7 +5285,7 @@ const VOCAB_DATA = [
         "meaning": "螺丝",
         "example": "The screw is in the garage.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "螺丝在车库里。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5300,7 +5296,7 @@ const VOCAB_DATA = [
         "meaning": "卷尺",
         "example": "You'll need a tape measure for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把卷尺。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修",
         "compound": true
@@ -5312,7 +5308,7 @@ const VOCAB_DATA = [
         "meaning": "梯子",
         "example": "You'll need a ladder for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把梯子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5323,7 +5319,7 @@ const VOCAB_DATA = [
         "meaning": "手电筒",
         "example": "The flashlight is in the garage.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "手电筒在车库里。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5334,7 +5330,7 @@ const VOCAB_DATA = [
         "meaning": "蜡烛",
         "example": "The candle is in the garage.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "蜡烛在车库里。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5345,7 +5341,7 @@ const VOCAB_DATA = [
         "meaning": "火柴",
         "example": "You'll need a match for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把火柴。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5356,7 +5352,7 @@ const VOCAB_DATA = [
         "meaning": "打火机",
         "example": "You'll need a lighter for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把打火机。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5367,7 +5363,7 @@ const VOCAB_DATA = [
         "meaning": "绳子",
         "example": "He used a rope to fix the shelf.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他用绳子修好了架子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5378,7 +5374,7 @@ const VOCAB_DATA = [
         "meaning": "链条",
         "example": "He used a chain to fix the shelf.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他用链条修好了架子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5389,7 +5385,7 @@ const VOCAB_DATA = [
         "meaning": "胶水",
         "example": "Hand me the glue, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把胶水递给我。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5400,7 +5396,7 @@ const VOCAB_DATA = [
         "meaning": "油漆",
         "example": "You'll need a paint for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把油漆。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5411,7 +5407,7 @@ const VOCAB_DATA = [
         "meaning": "刷子",
         "example": "You'll need a brush for this project.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个项目你需要一把刷子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5422,7 +5418,7 @@ const VOCAB_DATA = [
         "meaning": "铲子",
         "example": "Hand me the shovel, please.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "请把铲子递给我。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5433,7 +5429,7 @@ const VOCAB_DATA = [
         "meaning": "斧头",
         "example": "He used a axe to fix the shelf.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他用斧头修好了架子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5444,7 +5440,7 @@ const VOCAB_DATA = [
         "meaning": "时间",
         "example": "The forecast says time is coming.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "预报说时间要来了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5455,7 +5451,7 @@ const VOCAB_DATA = [
         "meaning": "天",
         "example": "The day was perfect for a walk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个天很适合散步。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5466,7 +5462,7 @@ const VOCAB_DATA = [
         "meaning": "夜晚",
         "example": "We've been waiting since night.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们从夜晚就在等了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5477,7 +5473,7 @@ const VOCAB_DATA = [
         "meaning": "早上",
         "example": "We've been waiting since morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们从早上就在等了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5488,7 +5484,7 @@ const VOCAB_DATA = [
         "meaning": "下午",
         "example": "She loves the afternoon — it's her favorite time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她喜欢下午——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5499,7 +5495,7 @@ const VOCAB_DATA = [
         "meaning": "傍晚",
         "example": "The evening was perfect for a walk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个傍晚很适合散步。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5510,7 +5506,7 @@ const VOCAB_DATA = [
         "meaning": "周",
         "example": "The forecast says week is coming.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "预报说周要来了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5521,7 +5517,7 @@ const VOCAB_DATA = [
         "meaning": "月",
         "example": "She loves the month — it's her favorite time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她喜欢月——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5532,7 +5528,7 @@ const VOCAB_DATA = [
         "meaning": "年",
         "example": "The year was perfect for a walk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个年很适合散步。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5543,7 +5539,7 @@ const VOCAB_DATA = [
         "meaning": "小时",
         "example": "The hour was perfect for a walk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个小时很适合散步。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5554,7 +5550,7 @@ const VOCAB_DATA = [
         "meaning": "分钟",
         "example": "The minute was perfect for a walk.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个分钟很适合散步。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5565,7 +5561,7 @@ const VOCAB_DATA = [
         "meaning": "秒",
         "example": "They were discounted because they contained blemishes, nicks or were otherwise factory seconds.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "它们被打折，因为它们包含瑕疵，刻痕或工厂秒。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5576,7 +5572,7 @@ const VOCAB_DATA = [
         "meaning": "周一",
         "example": "We've been waiting since Monday.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们从周一就在等了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5587,7 +5583,7 @@ const VOCAB_DATA = [
         "meaning": "今天",
         "example": "She loves the today — it's her favorite time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她喜欢今天——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5598,7 +5594,7 @@ const VOCAB_DATA = [
         "meaning": "明天",
         "example": "We've been waiting since tomorrow.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们从明天就在等了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5609,7 +5605,7 @@ const VOCAB_DATA = [
         "meaning": "昨天",
         "example": "The forecast says yesterday is coming.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "预报说昨天要来了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5620,7 +5616,7 @@ const VOCAB_DATA = [
         "meaning": "生日",
         "example": "She loves the birthday — it's her favorite time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她喜欢生日——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5631,7 +5627,7 @@ const VOCAB_DATA = [
         "meaning": "假期",
         "example": "The forecast says holiday is coming.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "预报说假期要来了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5642,7 +5638,7 @@ const VOCAB_DATA = [
         "meaning": "周末",
         "example": "We've been waiting since weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们从周末就在等了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5653,7 +5649,7 @@ const VOCAB_DATA = [
         "meaning": "季节",
         "example": "The forecast says season is coming.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "预报说季节要来了。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5664,7 +5660,7 @@ const VOCAB_DATA = [
         "meaning": "男人",
         "example": "The show is especially popular with middle-aged men.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "该节目特别受中年男性的欢迎。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5675,7 +5671,7 @@ const VOCAB_DATA = [
         "meaning": "女人",
         "example": "My woman always gives good advice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的女人总能给出好建议。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5686,7 +5682,7 @@ const VOCAB_DATA = [
         "meaning": "男孩",
         "example": "He introduced his boy to us.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把男孩介绍给了我们。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5697,7 +5693,7 @@ const VOCAB_DATA = [
         "meaning": "女孩",
         "example": "Her girl came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的女孩上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5708,7 +5704,7 @@ const VOCAB_DATA = [
         "meaning": "婴儿",
         "example": "He introduced his baby to us.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把婴儿介绍给了我们。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5719,7 +5715,7 @@ const VOCAB_DATA = [
         "meaning": "孩子",
         "example": "My child always gives good advice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的孩子总能给出好建议。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5730,7 +5726,7 @@ const VOCAB_DATA = [
         "meaning": "父母",
         "example": "Her parent came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的父母上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5741,7 +5737,7 @@ const VOCAB_DATA = [
         "meaning": "父亲",
         "example": "He introduced his father to us.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把父亲介绍给了我们。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5752,7 +5748,7 @@ const VOCAB_DATA = [
         "meaning": "母亲",
         "example": "The mother was very kind and helpful.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "那位母亲非常和善热心。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5763,7 +5759,7 @@ const VOCAB_DATA = [
         "meaning": "兄弟",
         "example": "He introduced his brother to us.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把兄弟介绍给了我们。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5774,7 +5770,7 @@ const VOCAB_DATA = [
         "meaning": "姐妹",
         "example": "He introduced his sister to us.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把姐妹介绍给了我们。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5785,7 +5781,7 @@ const VOCAB_DATA = [
         "meaning": "丈夫",
         "example": "Her husband came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的丈夫上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5796,7 +5792,7 @@ const VOCAB_DATA = [
         "meaning": "妻子",
         "example": "My wife always gives good advice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的妻子总能给出好建议。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5807,7 +5803,7 @@ const VOCAB_DATA = [
         "meaning": "朋友",
         "example": "Her friend came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的朋友上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5818,7 +5814,7 @@ const VOCAB_DATA = [
         "meaning": "邻居",
         "example": "My neighbor always gives good advice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的邻居总能给出好建议。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5829,7 +5825,7 @@ const VOCAB_DATA = [
         "meaning": "老师",
         "example": "He introduced his teacher to us.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他把老师介绍给了我们。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5840,7 +5836,7 @@ const VOCAB_DATA = [
         "meaning": "学生",
         "example": "Her student came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的学生上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5851,7 +5847,7 @@ const VOCAB_DATA = [
         "meaning": "医生",
         "example": "My doctor always gives good advice.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我的医生总能给出好建议。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5862,7 +5858,7 @@ const VOCAB_DATA = [
         "meaning": "护士",
         "example": "Her nurse came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的护士上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5873,7 +5869,7 @@ const VOCAB_DATA = [
         "meaning": "警察",
         "example": "Her police came to visit last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她的警察上周末来看她了。",
         "subcategory": "People & Relationships",
         "subcategoryZh": "人物 / 关系"
       },
@@ -5884,7 +5880,7 @@ const VOCAB_DATA = [
         "meaning": "红色",
         "example": "He chose the red one from the group.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他从组里选了红色色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5895,7 +5891,7 @@ const VOCAB_DATA = [
         "meaning": "蓝色",
         "example": "The sign has a blue background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是蓝色色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5906,7 +5902,7 @@ const VOCAB_DATA = [
         "meaning": "绿色",
         "example": "She painted the wall green.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把墙刷成了绿色色。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5917,7 +5913,7 @@ const VOCAB_DATA = [
         "meaning": "黄色",
         "example": "The sign has a yellow background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是黄色色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5928,7 +5924,7 @@ const VOCAB_DATA = [
         "meaning": "黑色",
         "example": "He chose the black one from the group.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他从组里选了黑色色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5939,7 +5935,7 @@ const VOCAB_DATA = [
         "meaning": "白色",
         "example": "She painted the wall white.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把墙刷成了白色色。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5950,7 +5946,7 @@ const VOCAB_DATA = [
         "meaning": "紫色",
         "example": "He chose the purple one from the group.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他从组里选了紫色色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5961,7 +5957,7 @@ const VOCAB_DATA = [
         "meaning": "粉色",
         "example": "The sign has a pink background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是粉色色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5972,7 +5968,7 @@ const VOCAB_DATA = [
         "meaning": "棕色",
         "example": "The sign has a brown background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是棕色色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5983,7 +5979,7 @@ const VOCAB_DATA = [
         "meaning": "灰色",
         "example": "The gray one is mine.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "灰色色的那个是我的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -5994,7 +5990,7 @@ const VOCAB_DATA = [
         "meaning": "圆形",
         "example": "The sign has a circle background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是圆形色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6005,7 +6001,7 @@ const VOCAB_DATA = [
         "meaning": "正方形",
         "example": "The sign has a square background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是正方形色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6016,7 +6012,7 @@ const VOCAB_DATA = [
         "meaning": "三角形",
         "example": "The sign has a triangle background.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "标志的背景是三角形色的。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6027,7 +6023,7 @@ const VOCAB_DATA = [
         "meaning": "线",
         "example": "He chose the line one from the group.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他从组里选了线色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6038,7 +6034,7 @@ const VOCAB_DATA = [
         "meaning": "一",
         "example": "She painted the wall one.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把墙刷成了一色。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6049,7 +6045,7 @@ const VOCAB_DATA = [
         "meaning": "二",
         "example": "He chose the two one from the group.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他从组里选了二色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6060,7 +6056,7 @@ const VOCAB_DATA = [
         "meaning": "三",
         "example": "She painted the wall three.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把墙刷成了三色。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6071,7 +6067,7 @@ const VOCAB_DATA = [
         "meaning": "十",
         "example": "She painted the wall ten.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她把墙刷成了十色。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6082,7 +6078,7 @@ const VOCAB_DATA = [
         "meaning": "百",
         "example": "He chose the hundred one from the group.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他从组里选了百色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6093,7 +6089,7 @@ const VOCAB_DATA = [
         "meaning": "爱",
         "example": "The love in her voice was unmistakable.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她声音中的爱是掩饰不住的。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6104,7 +6100,7 @@ const VOCAB_DATA = [
         "meaning": "幸福",
         "example": "He couldn't hide his happiness.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他无法掩饰自己的幸福。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6115,7 +6111,7 @@ const VOCAB_DATA = [
         "meaning": "悲伤",
         "example": "The sadness in her voice was unmistakable.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她声音中的悲伤是掩饰不住的。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6126,7 +6122,7 @@ const VOCAB_DATA = [
         "meaning": "愤怒",
         "example": "Anger is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "愤怒是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6137,7 +6133,7 @@ const VOCAB_DATA = [
         "meaning": "恐惧",
         "example": "Fear is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "恐惧是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6148,7 +6144,7 @@ const VOCAB_DATA = [
         "meaning": "惊讶",
         "example": "Surprise is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "惊讶是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6159,7 +6155,7 @@ const VOCAB_DATA = [
         "meaning": "希望",
         "example": "Hope is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "希望是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6170,7 +6166,7 @@ const VOCAB_DATA = [
         "meaning": "梦想",
         "example": "Dream is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "梦想是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6181,7 +6177,7 @@ const VOCAB_DATA = [
         "meaning": "记忆",
         "example": "Memory is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "记忆是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6192,7 +6188,7 @@ const VOCAB_DATA = [
         "meaning": "想法",
         "example": "A feeling of idea came over her.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一种想法的感觉涌上她的心头。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6203,7 +6199,7 @@ const VOCAB_DATA = [
         "meaning": "问题",
         "example": "A feeling of problem came over her.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一种问题的感觉涌上她的心头。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6214,7 +6210,7 @@ const VOCAB_DATA = [
         "meaning": "答案",
         "example": "Answer is a natural human emotion.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "答案是人类自然的情感。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6225,7 +6221,7 @@ const VOCAB_DATA = [
         "meaning": "理由",
         "example": "The reason in her voice was unmistakable.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她声音中的理由是掩饰不住的。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6236,7 +6232,7 @@ const VOCAB_DATA = [
         "meaning": "机会",
         "example": "He couldn't hide his chance.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他无法掩饰自己的机会。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6247,7 +6243,7 @@ const VOCAB_DATA = [
         "meaning": "选择",
         "example": "The choice in her voice was unmistakable.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她声音中的选择是掩饰不住的。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6258,7 +6254,7 @@ const VOCAB_DATA = [
         "meaning": "错误",
         "example": "He couldn't hide his mistake.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他无法掩饰自己的错误。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6269,7 +6265,7 @@ const VOCAB_DATA = [
         "meaning": "成功",
         "example": "He couldn't hide his success.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他无法掩饰自己的成功。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6280,7 +6276,7 @@ const VOCAB_DATA = [
         "meaning": "失败",
         "example": "A feeling of failure came over her.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一种失败的感觉涌上她的心头。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6291,7 +6287,7 @@ const VOCAB_DATA = [
         "meaning": "健康",
         "example": "A feeling of health came over her.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一种健康的感觉涌上她的心头。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6302,7 +6298,7 @@ const VOCAB_DATA = [
         "meaning": "真相",
         "example": "The truth is that our leaders knew a lot more than they were letting on.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "事实是，我们的领导人知道的比他们所说的多得多。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6313,7 +6309,7 @@ const VOCAB_DATA = [
         "meaning": "马",
         "example": "The horse is one of the most popular pets.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "马是最受欢迎的宠物之一。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6324,7 +6320,7 @@ const VOCAB_DATA = [
         "meaning": "奶牛",
         "example": "A wild cow crossed the road.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一只野奶牛穿过了马路。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6335,7 +6331,7 @@ const VOCAB_DATA = [
         "meaning": "猪",
         "example": "The man kept a pen with two pigs that he fed from carrots to cabbage.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这名男子拿着一支钢笔和两头猪，用胡萝卜喂白菜。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6346,7 +6342,7 @@ const VOCAB_DATA = [
         "meaning": "羊",
         "example": "She has a pet sheep at home.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她家里养了一只宠物羊。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6357,7 +6353,7 @@ const VOCAB_DATA = [
         "meaning": "鸭",
         "example": "She has a pet duck at home.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她家里养了一只宠物鸭。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6368,7 +6364,7 @@ const VOCAB_DATA = [
         "meaning": "兔子",
         "example": "The pioneers survived by eating the small game they could get: rabbits, squirrels and occasionally a raccoon.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "先驱们靠吃掉他们能得到的小猎物而活了下来：兔子、松鼠，偶尔还有一只浣熊。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6379,7 +6375,7 @@ const VOCAB_DATA = [
         "meaning": "熊",
         "example": "The bear is one of the most popular pets.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "熊是最受欢迎的宠物之一。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6390,7 +6386,7 @@ const VOCAB_DATA = [
         "meaning": "老虎",
         "example": "The tiger is one of the most popular pets.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "老虎是最受欢迎的宠物之一。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6401,7 +6397,7 @@ const VOCAB_DATA = [
         "meaning": "狮子",
         "example": "The lion is one of the most popular pets.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "狮子是最受欢迎的宠物之一。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6412,7 +6408,7 @@ const VOCAB_DATA = [
         "meaning": "大象",
         "example": "The elephant was resting in the shade.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "大象在阴凉处休息。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6423,7 +6419,7 @@ const VOCAB_DATA = [
         "meaning": "猴子",
         "example": "She has a pet monkey at home.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她家里养了一只宠物猴子。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6434,7 +6430,7 @@ const VOCAB_DATA = [
         "meaning": "蛇",
         "example": "The path snaked through the forest.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "小路蜿蜒穿过森林。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6445,7 +6441,7 @@ const VOCAB_DATA = [
         "meaning": "青蛙",
         "example": "She has a pet frog at home.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她家里养了一只宠物青蛙。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6456,7 +6452,7 @@ const VOCAB_DATA = [
         "meaning": "蜘蛛",
         "example": "The spider is one of the most popular pets.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "蜘蛛是最受欢迎的宠物之一。",
         "subcategory": "Animals",
         "subcategoryZh": "动物"
       },
@@ -6467,7 +6463,7 @@ const VOCAB_DATA = [
         "meaning": "球",
         "example": "Ball is a great way to stay active.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "球是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6478,7 +6474,7 @@ const VOCAB_DATA = [
         "meaning": "足球",
         "example": "We bought football tickets for Saturday.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们买了周六足球的票。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6489,7 +6485,7 @@ const VOCAB_DATA = [
         "meaning": "篮球",
         "example": "We bought basketball tickets for Saturday.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们买了周六篮球的票。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6500,7 +6496,7 @@ const VOCAB_DATA = [
         "meaning": "网球",
         "example": "We bought tennis tickets for Saturday.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "我们买了周六网球的票。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6511,7 +6507,7 @@ const VOCAB_DATA = [
         "meaning": "游泳",
         "example": "Swim is a great way to stay active.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "游泳是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6522,7 +6518,7 @@ const VOCAB_DATA = [
         "meaning": "跑步",
         "example": "She's been into run lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了跑步。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6533,7 +6529,7 @@ const VOCAB_DATA = [
         "meaning": "走路",
         "example": "Walk is a great way to stay active.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "走路是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6544,7 +6540,7 @@ const VOCAB_DATA = [
         "meaning": "跳舞",
         "example": "She's been into dance lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了跳舞。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6555,7 +6551,7 @@ const VOCAB_DATA = [
         "meaning": "歌曲",
         "example": "She's been into song lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了歌曲。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6566,7 +6562,7 @@ const VOCAB_DATA = [
         "meaning": "音乐",
         "example": "They went to a music last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们上周末去音乐了。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6577,7 +6573,7 @@ const VOCAB_DATA = [
         "meaning": "电影",
         "example": "She's been into movie lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了电影。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6588,7 +6584,7 @@ const VOCAB_DATA = [
         "meaning": "游戏",
         "example": "They went to a game last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们上周末去游戏了。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6599,7 +6595,7 @@ const VOCAB_DATA = [
         "meaning": "玩具",
         "example": "They went to a toy last weekend.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他们上周末去玩具了。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6610,7 +6606,7 @@ const VOCAB_DATA = [
         "meaning": "娃娃",
         "example": "Doll is a great way to stay active.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "娃娃是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6621,7 +6617,7 @@ const VOCAB_DATA = [
         "meaning": "吉他",
         "example": "She's been into guitar lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了吉他。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6632,7 +6628,7 @@ const VOCAB_DATA = [
         "meaning": "钢琴",
         "example": "She's been into piano lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了钢琴。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6643,7 +6639,7 @@ const VOCAB_DATA = [
         "meaning": "鼓",
         "example": "She's been into drum lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了鼓。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6654,7 +6650,7 @@ const VOCAB_DATA = [
         "meaning": "票",
         "example": "She's been into ticket lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了票。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6665,7 +6661,7 @@ const VOCAB_DATA = [
         "meaning": "照片",
         "example": "She's been into photo lately.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她最近迷上了照片。",
         "subcategory": "Sports & Entertainment",
         "subcategoryZh": "运动 / 娱乐"
       },
@@ -6676,7 +6672,7 @@ const VOCAB_DATA = [
         "meaning": "钱",
         "example": "Understanding money helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解钱能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6687,7 +6683,7 @@ const VOCAB_DATA = [
         "meaning": "价格",
         "example": "Price plays an important role in modern society.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "价格在现代社会中扮演着重要角色。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6698,7 +6694,7 @@ const VOCAB_DATA = [
         "meaning": "商店",
         "example": "Understanding shop helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解商店能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6709,7 +6705,7 @@ const VOCAB_DATA = [
         "meaning": "工作",
         "example": "Understanding job helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解工作能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6720,7 +6716,7 @@ const VOCAB_DATA = [
         "meaning": "办公室",
         "example": "Understanding office helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解办公室能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6731,7 +6727,7 @@ const VOCAB_DATA = [
         "meaning": "公司",
         "example": "She studied company at university.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她在大学学了公司。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6742,7 +6738,7 @@ const VOCAB_DATA = [
         "meaning": "工厂",
         "example": "Understanding factory helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解工厂能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6753,7 +6749,7 @@ const VOCAB_DATA = [
         "meaning": "国家",
         "example": "Country plays an important role in modern society.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "国家在现代社会中扮演着重要角色。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6764,7 +6760,7 @@ const VOCAB_DATA = [
         "meaning": "城市",
         "example": "The city has changed a lot over the years.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "城市这些年来变化很大。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6775,7 +6771,7 @@ const VOCAB_DATA = [
         "meaning": "村庄",
         "example": "Understanding village helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解村庄能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6786,7 +6782,7 @@ const VOCAB_DATA = [
         "meaning": "语言",
         "example": "Understanding language helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解语言能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6797,7 +6793,7 @@ const VOCAB_DATA = [
         "meaning": "名字",
         "example": "Name plays an important role in modern society.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "名字在现代社会中扮演着重要角色。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6808,7 +6804,7 @@ const VOCAB_DATA = [
         "meaning": "号码",
         "example": "Understanding number helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解号码能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6819,7 +6815,7 @@ const VOCAB_DATA = [
         "meaning": "地址",
         "example": "The address has changed a lot over the years.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "地址这些年来变化很大。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6830,7 +6826,7 @@ const VOCAB_DATA = [
         "meaning": "地图",
         "example": "The map has changed a lot over the years.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "地图这些年来变化很大。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6841,7 +6837,7 @@ const VOCAB_DATA = [
         "meaning": "新闻",
         "example": "Understanding news helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解新闻能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6852,7 +6848,7 @@ const VOCAB_DATA = [
         "meaning": "信件",
         "example": "She studied letter at university.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她在大学学了信件。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6863,7 +6859,7 @@ const VOCAB_DATA = [
         "meaning": "礼物",
         "example": "She studied gift at university.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她在大学学了礼物。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6874,7 +6870,7 @@ const VOCAB_DATA = [
         "meaning": "派对",
         "example": "Understanding party helps us see the world differently.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "理解派对能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
         "subcategoryZh": "社会 / 抽象"
       },
@@ -6885,7 +6881,7 @@ const VOCAB_DATA = [
         "meaning": "餐",
         "example": "A quick meal cleared her mind.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一次快速的餐让她头脑清醒。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6896,7 +6892,7 @@ const VOCAB_DATA = [
         "meaning": "早餐",
         "example": "His breakfast impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的早餐让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6907,7 +6903,7 @@ const VOCAB_DATA = [
         "meaning": "午餐",
         "example": "A quick lunch cleared her mind.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一次快速的午餐让她头脑清醒。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6918,7 +6914,7 @@ const VOCAB_DATA = [
         "meaning": "晚餐",
         "example": "A quick dinner cleared her mind.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一次快速的晚餐让她头脑清醒。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6929,7 +6925,7 @@ const VOCAB_DATA = [
         "meaning": "零食",
         "example": "A quick snack cleared her mind.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一次快速的零食让她头脑清醒。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6940,7 +6936,7 @@ const VOCAB_DATA = [
         "meaning": "饮料",
         "example": "She enjoys the drink every morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天早上享受饮料。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6951,7 +6947,7 @@ const VOCAB_DATA = [
         "meaning": "水果",
         "example": "A quick fruit cleared her mind.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一次快速的水果让她头脑清醒。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6962,7 +6958,7 @@ const VOCAB_DATA = [
         "meaning": "蔬菜",
         "example": "His vegetable impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的蔬菜让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6973,7 +6969,7 @@ const VOCAB_DATA = [
         "meaning": "肉",
         "example": "A quick meat cleared her mind.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一次快速的肉让她头脑清醒。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6984,7 +6980,7 @@ const VOCAB_DATA = [
         "meaning": "蛋糕",
         "example": "His cake impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的蛋糕让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6995,7 +6991,7 @@ const VOCAB_DATA = [
         "meaning": "冰淇淋",
         "example": "His ice cream impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的冰淇淋让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词",
         "compound": true
@@ -7007,7 +7003,7 @@ const VOCAB_DATA = [
         "meaning": "饼干",
         "example": "His cookie impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的饼干让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7018,7 +7014,7 @@ const VOCAB_DATA = [
         "meaning": "糖果",
         "example": "His candy impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的糖果让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7029,7 +7025,7 @@ const VOCAB_DATA = [
         "meaning": "派",
         "example": "The family had steak and kidney pie for dinner and cherry pie for dessert.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "一家人晚餐吃牛排和肾馅饼，甜点吃樱桃馅饼。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7040,7 +7036,7 @@ const VOCAB_DATA = [
         "meaning": "酱汁",
         "example": "The sauce took longer than expected.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "酱汁花的时间比预期的长。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7051,7 +7047,7 @@ const VOCAB_DATA = [
         "meaning": "盐",
         "example": "His salt impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的盐让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7062,7 +7058,7 @@ const VOCAB_DATA = [
         "meaning": "糖",
         "example": "She enjoys the sugar every morning.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她每天早上享受糖。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7073,7 +7069,7 @@ const VOCAB_DATA = [
         "meaning": "胡椒粉",
         "example": "His pepper impressed everyone.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "他的胡椒粉让所有人印象深刻。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7084,7 +7080,7 @@ const VOCAB_DATA = [
         "meaning": "世界",
         "example": "There will always be lovers, till the world’s end.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "永远都会有爱人，直到世界末日。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7095,7 +7091,7 @@ const VOCAB_DATA = [
         "meaning": "生活/生命",
         "example": "The life is something we all need.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "生活/生命是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7106,7 +7102,7 @@ const VOCAB_DATA = [
         "meaning": "死亡",
         "example": "The death of my grandmother saddened the whole family.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "祖母的去世让全家人都很难过。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7117,7 +7113,7 @@ const VOCAB_DATA = [
         "meaning": "家",
         "example": "This home has changed my perspective.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个家改变了我的看法。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7128,7 +7124,7 @@ const VOCAB_DATA = [
         "meaning": "房子",
         "example": "The house is something we all need.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "房子是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7139,7 +7135,7 @@ const VOCAB_DATA = [
         "meaning": "房间",
         "example": "She thought about the room for a long time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她想了很久关于那个房间。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7150,7 +7146,7 @@ const VOCAB_DATA = [
         "meaning": "厨房",
         "example": "She thought about the kitchen for a long time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她想了很久关于那个厨房。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7161,7 +7157,7 @@ const VOCAB_DATA = [
         "meaning": "浴室",
         "example": "This bathroom has changed my perspective.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个浴室改变了我的看法。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7172,7 +7168,7 @@ const VOCAB_DATA = [
         "meaning": "卧室",
         "example": "This bedroom has changed my perspective.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个卧室改变了我的看法。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7183,7 +7179,7 @@ const VOCAB_DATA = [
         "meaning": "光/灯",
         "example": "She thought about the light for a long time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她想了很久关于那个光/灯。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7194,7 +7190,7 @@ const VOCAB_DATA = [
         "meaning": "火",
         "example": "This fire has changed my perspective.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个火改变了我的看法。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7205,7 +7201,7 @@ const VOCAB_DATA = [
         "meaning": "空气",
         "example": "The air is something we all need.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "空气是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7216,7 +7212,7 @@ const VOCAB_DATA = [
         "meaning": "食物",
         "example": "The innkeeper brought them food and drink.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "客栈老板给他们带来了食物和饮料。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7227,7 +7223,7 @@ const VOCAB_DATA = [
         "meaning": "人们",
         "example": "There were so many people at the restaurant last night.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "昨晚餐厅里人太多了。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7238,7 +7234,7 @@ const VOCAB_DATA = [
         "meaning": "工作",
         "example": "There's no work like this one.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "没有哪个工作像这个一样。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7249,7 +7245,7 @@ const VOCAB_DATA = [
         "meaning": "东西/事情",
         "example": "This thing has changed my perspective.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个东西/事情改变了我的看法。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7260,7 +7256,7 @@ const VOCAB_DATA = [
         "meaning": "方式/路",
         "example": "The way is something we all need.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "方式/路是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7271,7 +7267,7 @@ const VOCAB_DATA = [
         "meaning": "地方",
         "example": "This place has changed my perspective.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "这个地方改变了我的看法。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7282,7 +7278,7 @@ const VOCAB_DATA = [
         "meaning": "点/要点",
         "example": "She thought about the point for a long time.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "她想了很久关于那个点/要点。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7293,10 +7289,10 @@ const VOCAB_DATA = [
         "meaning": "结束/末端",
         "example": "There's no end like this one.",
         "root": "",
-        "exampleZh": "",
+        "exampleZh": "没有哪个结束/末端像这个一样。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       }
     ]
   }
-]
+];
