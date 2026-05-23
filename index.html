@@ -855,6 +855,7 @@ function renderAll(filter) {
   document.getElementById('stats').textContent =
     q ? `共 ${total} 词，匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词`;
   if (!shown) c.innerHTML = '<div class="no-results">没有找到匹配的单词 😢</div>';
+  addExampleSpeakButtons();
 }
 
 /* ===== 日历弹窗 ===== */
