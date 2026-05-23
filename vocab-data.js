@@ -1,184 +1,2088 @@
 // vocab-data.js — 英语词汇数据
-// 新增日期只需在下方数组追加一个对象，然后刷新 HTML 即可
-// 格式：{ date: "显示日期", words: [ {en, phonetic, pos, meaning, example, root, ...}, ... ] }
+// 排序规则：名词→动词→形容词→副词→介词→短语（最后），同词性内相关性高的放一起
 // 含义以牛津学习词典(Oxford Advanced Learner's Dictionary)美式释义为准
 
 const VOCAB_DATA = [
   {
-    date: "📅 2026-05-17（47词）",
-    words: [
-      { en:"pronunciation", phonetic:"/prəˌnʌnsiˈeɪʃn/", pos:"n.", meaning:"❶ 发音方式（某个词或语言的读法） ❷ 某人的发音（口音）", example:"Your pronunciation of 'th' needs work.", root:"pro(向前)+nounce(说)+ation → 把话说出来的方式 → 发音", exampleZh:"你发'th'的音还需要练习。" },
-      { en:"comprehension", phonetic:"/ˌkɑːmprɪˈhenʃn/", pos:"n.", meaning:"❶ 理解力（读懂/听懂的能力） ❷ 理解练习（如阅读理解、听力理解）", example:"The test has a listening comprehension section.", root:"com(完全)+prehend(抓住) → 完全抓住意思 → 理解", exampleZh:"考试有听力理解部分。" },
-      { en:"sentence structure", phonetic:"/ˈsentəns ˈstrʌktʃər/", pos:"n.", meaning:"句子结构（主谓宾等成分的排列方式）", example:"Vary sentence structure for better writing.", root:"sentence(句子)的structure(建造方式) → 句子怎么搭的", exampleZh:"变换句式能让写作更好。", noAudio:true },
-      { en:"method", phonetic:"/ˈmeθəd/", pos:"n.", meaning:"❶ 方法、办法（做某事的特定/系统方式） ❷ 条理、秩序（做事有计划、有组织的品质）", example:"The method we used was surveys.", root:"meta(跟随)+hodos(道路) → 沿着走的路 → 方法", exampleZh:"我们使用的方法是问卷调查。" },
-      { en:"comprehensible input", phonetic:"/ˌkɑːmprɪˈhensəbl ˈɪnpʊt/", pos:"n.", meaning:"可理解性输入（Krashen二语习得理论：略高于当前水平的输入，i+1）", example:"Comprehensible input is key in Krashen's theory.", root:"能被理解(comprehend)的输入(input) → 听得懂的材料", exampleZh:"可理解性输入是Krashen理论的关键。", noAudio:true },
-      { en:"lesson", phonetic:"/ˈlesn/", pos:"n.", meaning:"❶一节课 ❷教训（从经历中学到的道理）", example:"That failure taught me a valuable lesson.", root:"learn的变体 → 学到的东西 → 一课/教训", exampleZh:"那次失败给了我一个宝贵的教训。" },
-      { en:"adventure", phonetic:"/ədˈventʃər/", pos:"n.", meaning:"❶ 冒险（不寻常的、刺激的经历） ❷ 冒险精神", example:"We had many adventures in South America.", root:"ad(向)+vent(来) → 向未知的未来走去 → 冒险", exampleZh:"我们在南美有很多冒险经历。" },
-      { en:"goal", phonetic:"/ɡoʊl/", pos:"n.", meaning:"❶目标、目的 ❷球门", example:"My goal is to become fluent.", root:"古义: 障碍/边界 → 需要到达的终点 → 目标", exampleZh:"我的目标是变得流利。" },
-      { en:"quiz", phonetic:"/kwɪz/", pos:"n./v.", meaning:"❶ n. 小测验、问答比赛 ❷ v. 盘问、考问", example:"We have a quiz on chapter 3.", root:"起源不确定，可能来自拉丁语qui es? → 问你知道多少 → 小测验", exampleZh:"我们第三章有一个小测验。" },
-      { en:"chance", phonetic:"/tʃæns/", pos:"n./v.", meaning:"❶n. 机会（做某事的合适时机，a chance to do） ❷n. 可能性（某事发生的概率，a chance of）", example:"This is your chance to prove yourself.", root:"cadere(落下) → 像骰子落下一样 → 随机的可能性", exampleZh:"这是你证明自己的机会。" },
-      { en:"software", phonetic:"/ˈsɔːftwer/", pos:"n.", meaning:"软件（计算机程序和指令的统称，不可数）", example:"Install the software first.", root:"soft(软的)+ware(商品) → 看不见摸不着但能用的程序 → 软件", exampleZh:"先安装软件。" },
-      { en:"confusion", phonetic:"/kənˈfjuːʒn/", pos:"n.", meaning:"❶困惑、糊涂 ❷混乱、混淆", example:"There was confusion about the time.", root:"con(一起)+fundere(倾倒) → 全混在一起分不清 → 困惑/混乱", exampleZh:"关于时间有些混淆。" },
-      { en:"term", phonetic:"/tɜːrm/", pos:"n./v.", meaning:"❶n. 术语、措辞 ❷n. 学期 ❸n. 期限、任期 ❹n. 条款、条件（terms of agreement）", example:"What does this term mean?", root:"terminus(边界/终点) → 划定范围的词 → 术语/期限", exampleZh:"这个术语是什么意思？" },
-      { en:"visual", phonetic:"/ˈvɪʒuəl/", pos:"adj./n.", meaning:"❶ adj. 视觉的、看得见的 ❷ n. 视觉资料（图片、图表等）", example:"The visuals drove the point home.", root:"vis(看) → 与看见有关的 → 视觉的", exampleZh:"视觉资料让人印象深刻。" },
-      { en:"routine", phonetic:"/ruːˈtiːn/", pos:"n./adj.", meaning:"❶n. 常规、例行公事 ❷adj. 日常的、例行的 ❸n. 一套动作（舞蹈/喜剧等）", example:"Reading is my daily routine.", root:"route(路线) → 每天走同一条路 → 常规", exampleZh:"阅读是我的日常习惯。" },
-      { en:"stick", phonetic:"/stɪk/", pos:"v./n.", meaning:"❶v. 粘住、坚持（stick to/with） ❷n. 棍、棒、枝条", example:"Stick to the plan.", root:"古义: 树枝/棍子 → 用棍子固定住 → 粘住/坚持", exampleZh:"坚持按计划来。", irr:"过去:stuck /stʌk/|过分:stuck /stʌk/" },
-      { en:"part", phonetic:"/pɑːrt/", pos:"n./v.", meaning:"❶n. 部分、组件 ❷n. 角色（戏剧中的）", example:"She is a part of our team.", root:"pars(部分) → 整体中的一块 → 部分", exampleZh:"她是我们的团队成员。" },
-      { en:"prompt", phonetic:"/prɑːmpt/", pos:"v./adj./n.", meaning:"❶v. 提示、促使 ❷adj. 迅速的、及时的", example:"Write a better prompt for better results.", root:"pro(向前)+emere(拿) → 把想法拿出来的 → 提示/促使", exampleZh:"写更好的提示词能得到更好的结果。" },
-      { en:"tense", phonetic:"/tens/", pos:"adj./n.", meaning:"❶ adj. 紧张的、绷紧的 ❷ n. 时态（动词的时间形式）", example:"English has 12 tenses.", root:"tempus(时间) → 动词标记时间的形状 → 时态；拉紧 → 紧张", exampleZh:"英语有12种时态。" },
-      { en:"design", phonetic:"/dɪˈzaɪn/", pos:"v./n.", meaning:"❶v. 设计、构思 ❷n. 设计方案", example:"The app is designed to help beginners.", root:"de(出)+signare(标记) → 做出标记来规划 → 设计", exampleZh:"这个应用是为初学者设计的。" },
-      { en:"reach", phonetic:"/riːtʃ/", pos:"v./n.", meaning:"❶v. 到达、抵达 ❷v. 伸手够到", example:"We reached the summit at dawn.", root:"古义: 伸展手臂 → 伸手够到的范围 → 到达", exampleZh:"我们在黎明时分到达山顶。" },
-      { en:"study", phonetic:"/ˈstʌdi/", pos:"v./n.", meaning:"❶v. 学习、研究 ❷n. 研究、调查 ❸n. 书房", example:"She studies English every day.", root:"studium(热心) → 投入热情去做 → 学习/研究", exampleZh:"她每天学习英语。" },
-      { en:"practice", phonetic:"/ˈpræktɪs/", pos:"v./n.", meaning:"❶v./n. 练习、训练 ❷n. 惯例、做法", example:"Practice makes perfect.", root:"practicus(实用的) → 反复做直到熟练 → 练习", exampleZh:"熟能生巧。" },
-      { en:"stick around", phonetic:"/stɪk əˈraʊnd/", pos:"phrasal v.", meaning:"留在原地、待着不走（口语）", example:"Stick around until you reach your goals.", root:"stick(粘住)+around(在周围) → 粘在附近不走 → 待着", exampleZh:"坚持下去，直到实现你的目标。", noAudio:true },
-      { en:"allow", phonetic:"/əˈlaʊ/", pos:"v.", meaning:"❶允许、准许（allow sb to do） ❷使能够、给…机会（allow access）", example:"Smoking is not allowed here.", root:"ad(向)+laudare(赞美) → 给予认可 → 允许", exampleZh:"这里不允许吸烟。" },
-      { en:"reinforce", phonetic:"/ˌriːɪnˈfɔːrs/", pos:"v.", meaning:"❶加强、强化（观点/行为等） ❷增援（军事）", example:"This data reinforces our conclusion.", root:"re(再)+in+force(力量) → 再次注入力量 → 加强", exampleZh:"这些数据强化了我们的结论。" },
-      { en:"explain", phonetic:"/ɪkˈspleɪn/", pos:"v.", meaning:"❶ 解释、说明 ❷ 为…辩解、说明原因", example:"Let me explain it to you.", root:"ex(出)+plain(平坦) → 把复杂的摊平说清楚 → 解释", exampleZh:"让我给你解释一下。" },
-      { en:"ensure", phonetic:"/ɪnˈʃʊr/", pos:"v.", meaning:"确保、保证（某事一定发生）", example:"Ensure that all doors are locked.", root:"en(使)+sure(确定) → 使之确定 → 确保", exampleZh:"确保所有门都锁好了。" },
-      { en:"solidify", phonetic:"/səˈlɪdɪfaɪ/", pos:"v.", meaning:"❶ 巩固、使稳固（关系/地位等） ❷ 使凝固、变硬", example:"This win solidified her position.", root:"solid(固体)+ify(使) → 使变成固体 → 巩固", exampleZh:"这次胜利巩固了她的地位。" },
-      { en:"present", phonetic:"/ˈpreznt/ /prɪˈzent/", pos:"adj./n./v.", meaning:"❶adj. 在场的、出席的（be present at） ❷adj. 当前的、现在的（at the present time） ❸n. 礼物、赠品 ❹v. 呈现、展示 ❺v. 颁发、赠送", example:"She presented her findings.", root:"pre(在前)+esse(存在) → 在眼前存在 → 出席/呈现/礼物", exampleZh:"她展示了她的研究发现。" },
-      { en:"fluent", phonetic:"/ˈfluːənt/", pos:"adj.", meaning:"❶ 流利的、流畅的（语言） ❷ 流畅的（动作/表达）", example:"She's fluent in three languages.", root:"fluere(流动) → 像水一样流出来 → 流利", exampleZh:"她能流利地说三种语言。" },
-      { en:"possible", phonetic:"/ˈpɑːsəbl/", pos:"adj./n.", meaning:"❶adj. 可能的、有可能实现的 ❷adj. 合理的、可接受的", example:"It's possible that it will rain.", root:"posse(能够) → 能够做到的 → 可能的", exampleZh:"可能会下雨。" },
-      { en:"intermediate", phonetic:"/ˌɪntərˈmiːdiət/", pos:"adj./n.", meaning:"❶ adj. 中级的、中间的 ❷ n. 中级水平者/中级课程", example:"This is for intermediate learners.", root:"inter(在之间)+medius(中间) → 夹在中间的 → 中级的", exampleZh:"这是给中级学习者的。" },
-      { en:"advanced", phonetic:"/ədˈvænst/", pos:"adj.", meaning:"❶高级的、先进的 ❷深入的（阶段/水平）", example:"She's in the advanced English class.", root:"advance(前进)的过去分词 → 已经走得很前面的 → 高级的", exampleZh:"她在高级英语班。" },
-      { en:"customizable", phonetic:"/ˈkʌstəmaɪzəbl/", pos:"adj.", meaning:"可定制的、可按用户需求修改的", example:"The dashboard is fully customizable.", root:"custom(习惯/定制)+ize(使)+able(可) → 可以按习惯改的 → 可定制", exampleZh:"仪表盘完全可定制。" },
-      { en:"comfortable", phonetic:"/ˈkʌmftəbl/ /ˈkʌmfərtəbl/", pos:"adj.", meaning:"❶舒适的、舒服的 ❷自在的、放松的（comfortable with）", example:"This sofa is very comfortable.", root:"com(加强)+fortis(强壮) → 有力量支撑 → 舒适/自在", exampleZh:"这张沙发很舒服。" },
-      { en:"optional", phonetic:"/ˈɑːpʃənl/", pos:"adj.", meaning:"可选的、非强制的（不选也行）", example:"Attendance is optional.", root:"option(选择)+al → 可以选择要不要的 → 可选的", exampleZh:"出勤是可选的。" },
-      { en:"beneficial", phonetic:"/ˌbenɪˈfɪʃl/", pos:"adj.", meaning:"有益的、有利的（对…有好处）", example:"Exercise is beneficial to health.", root:"bene(好)+facere(做) → 做好事 → 有益的", exampleZh:"锻炼对身体有益。" },
-      { en:"less", phonetic:"/les/", pos:"adj./adv./det.", meaning:"❶ adj./det. 更少的、较少的 ❷ adv. 较少地、不如", example:"We have less time than I thought.", root:"古义: 更小的 → 数量上更少的 → less", exampleZh:"我们的时间比我想的少。" },
-      { en:"daily", phonetic:"/ˈdeɪli/", pos:"adj./adv./n.", meaning:"❶adj. 每日的、日常的 ❷adv. 每天", example:"Exercise is part of my daily routine.", root:"day(天)+ly(每) → 每天的 → 日常的", exampleZh:"锻炼是我日常生活的一部分。" },
-      { en:"without", phonetic:"/wɪˈðaʊt/", pos:"prep.", meaning:"prep. 没有、不带", example:"He left without saying goodbye.", root:"with(有)+out(外) → 在有的范围之外 → 没有", exampleZh:"他没说再见就走了。" },
-      { en:"especially", phonetic:"/ɪˈspeʃəli/", pos:"adv.", meaning:"❶ 尤其、特别 ❷ 专门地、特意地", example:"I love fruit, especially mangoes.", root:"es(出)+special(特别) → 特别地从中突出 → 尤其", exampleZh:"我喜欢水果，尤其是芒果。" },
-      { en:"on top of that", phonetic:"/ɑːn tɑːp əv ðæt/", pos:"phrase", meaning:"而且、更何况（在已有不好的事情上再加一层）", example:"I lost my wallet, and on top of that, my phone died.", root:"在已经有的(top)上面再加一层 → 而且/更何况", exampleZh:"我丢了钱包，更糟的是，手机也没电了。", noAudio:true },
-      { en:"whether", phonetic:"/ˈweðər/", pos:"conj.", meaning:"❶ 是否（引导间接疑问句或条件句） ❷ 不管…还是…（whether...or...）", example:"Whether you go or stay is up to you.", root:"古英语hwæther(两者中哪个) → 二选一 → 是否/不管…还是", exampleZh:"去还是留由你决定。" },
-      { en:"conclusion", phonetic:"/kənˈkluːʒn/", pos:"n.", meaning:"❶结论、推论 ❷结尾、结局", example:"What conclusion did you reach?", root:"con(一起)+cludere(关闭) → 把论证收拢关上 → 结论", exampleZh:"你得出了什么结论？" },
-      { en:"description", phonetic:"/dɪˈskrɪpʃn/", pos:"n.", meaning:"❶ 描述、描写 ❷ 种类、类型（of a certain description）", example:"Give a brief description of the problem.", root:"de(向下)+scribere(写) → 写下来的细节 → 描述", exampleZh:"简要描述一下这个问题。" },
-      { en:"definition", phonetic:"/ˌdefɪˈnɪʃn/", pos:"n.", meaning:"❶ 定义、释义 ❷ 清晰度、鲜明度（图像/声音）", example:"Look up the definition of this word.", root:"de(完全)+finire(限定) → 严格划定边界 → 定义", exampleZh:"查一下这个词的定义。" }
-    ]
-  },
-  {
-    date: "📅 2026-05-18（43词）",
-    words: [
-      { en:"side", phonetic:"/saɪd/", pos:"n./adj./v.", meaning:"❶n. 侧面、一边 ❷n. 方面、立场", example:"Choose a side and stick with it.", root:"古义: 宽而扁的面 → 物体/立场的某一侧 → 侧面/方面", exampleZh:"选一边站，然后坚持下去。" },
-      { en:"reroute", phonetic:"/ˌriːˈruːt/", pos:"v.", meaning:"改道、改变路线（使走另一条路）", example:"Traffic was rerouted due to the accident.", root:"re(重新)+route(路线) → 换一条路走 → 改道", exampleZh:"因为事故，交通改道了。" },
-      { en:"accident", phonetic:"/ˈæksɪdənt/", pos:"n.", meaning:"❶ 事故、意外事件 ❷ 偶然、意外（by accident）", example:"The accident happened at the intersection.", root:"ad(向)+cadere(落下) → 不该发生却落到头上的事 → 事故/意外", exampleZh:"事故发生在十字路口。" },
-      { en:"different path than normal", phonetic:"/ˈdɪfrənt pæθ ðæn ˈnɔːrml/", pos:"phrase", meaning:"不同于平常的路（走了另外一条）", example:"We took a different path than normal to avoid traffic.", root:"不是平常(normal)走的那条路(path) → 绕道", exampleZh:"我们走了不同于平常的路来避开堵车。", noAudio:true },
-      { en:"path", phonetic:"/pæθ/", pos:"n.", meaning:"❶小路、小径 ❷路线、途径", example:"Follow the path through the forest.", root:"古英语pæth → 脚踩出来的路线 → 小径/途径", exampleZh:"沿着小路穿过森林。" },
-      { en:"spin", phonetic:"/spɪn/", pos:"v./n.", meaning:"❶v. 快速旋转 ❷v. 纺纱、吐丝", example:"The wheel started to spin.", root:"古义: 快速旋转(如纺锤) → 绕轴高速转动 → 转", exampleZh:"轮子开始旋转。", irr:"过去:spun /spʌn/|过分:spun /spʌn/" },
-      { en:"circle", phonetic:"/ˈsɜːrkl/", pos:"n./v.", meaning:"❶n. 圆、圆圈 ❷n. 圈子（社交/学术）", example:"The children sat in a circle.", root:"circus(圆环) → 没有角的闭合形状 → 圆", exampleZh:"孩子们围成一圈坐下。" },
-      { en:"windy", phonetic:"/ˈwɪndi/", pos:"adj.", meaning:"多风的、风大的", example:"It's too windy to go sailing today.", root:"wind(风)+y → 风很多的 → 多风的", exampleZh:"今天风太大，不能去航海。" },
-      { en:"electricity", phonetic:"/ɪˌlekˈtrɪsəti/", pos:"n.", meaning:"电、电力（能量形式，通过电线输送供照明/驱动等）", example:"The electricity was cut off during the storm.", root:"elektron(琥珀) → 琥珀摩擦生电 → 电", exampleZh:"暴风雨期间电被切断了。" },
-      { en:"sharp drop", phonetic:"/ʃɑːrp drɑːp/", pos:"phrase", meaning:"骤降、暴跌（温度/价格/数量等急剧下降）", example:"There was a sharp drop in temperature overnight.", root:"sharp(陡峭的)+drop(掉落) → 像悬崖一样垂直掉下去 → 骤降", exampleZh:"一夜之间气温骤降。", compound:true },
-      { en:"median", phonetic:"/ˈmiːdiən/", pos:"n./adj.", meaning:"❶n. 中位数（统计学） ❷n. 中央分隔带（道路）", example:"The median income is lower than the average.", root:"medius(中间) → 正中间的那一个 → 中位数/中央隔离带", exampleZh:"中位数收入低于平均收入。" },
-      { en:"dump truck", phonetic:"/ˈdʌmp trʌk/", pos:"n.", meaning:"自卸卡车、翻斗车（车厢可倾斜卸货）", example:"The dump truck unloaded the gravel.", root:"dump(倾倒)+truck(卡车) → 能把东西倒出来的卡车 → 翻斗车", exampleZh:"自卸卡车卸下了碎石。", compound:true },
-      { en:"roundabout", phonetic:"/ˈraʊndəˌbaʊt/", pos:"n./adj.", meaning:"❶n. 环形交叉路口（英式，美式常用traffic circle） ❷n. 旋转木马", example:"Take the roundabout instead of turning left.", root:"round(绕圈)+about(到处) → 绕一大圈 → 环形路口/绕弯的", exampleZh:"走环岛，不要左转。" },
-      { en:"solar", phonetic:"/ˈsoʊlər/", pos:"adj.", meaning:"❶ 太阳的、来自太阳的 ❷ 利用太阳能的", example:"Solar panels convert sunlight into electricity.", root:"sol(太阳) → 来自太阳的 → 太阳的", exampleZh:"太阳能电池板把阳光转化为电。" },
-      { en:"solar panel", phonetic:"/ˈsoʊlər ˈpænl/", pos:"n.", meaning:"太阳能电池板（将阳光转化为电能的板）", example:"We installed solar panels on the roof.", root:"solar(太阳的)+panel(板) → 用太阳光的板 → 太阳能板", exampleZh:"我们在屋顶安装了太阳能板。", compound:true },
-      { en:"shoulder", phonetic:"/ˈʃoʊldər/", pos:"n./v.", meaning:"❶n. 肩膀 ❷n. 路肩（道路两侧的紧急停车带）", example:"He shouldered the responsibility for the team.", root:"古义: 承载重物的部位 → 肩膀 → 承担", exampleZh:"他肩负起了团队的责任。" },
-      { en:"nozzle", phonetic:"/ˈnɑːzl/", pos:"n.", meaning:"❶ 喷嘴、管嘴 ❷ 加油枪嘴", example:"Fill up the tank and return the nozzle.", root:"古法语nose → 管子的「鼻子」→ 喷嘴", exampleZh:"加满油然后把加油枪放回去。" },
-      { en:"fill up", phonetic:"/fɪl ʌp/", pos:"phrasal v.", meaning:"❶加满、装满 ❷填写（表格）", example:"I need to fill up the car with gas.", root:"fill(填满)+up(到顶) → 填到最上面 → 加满", exampleZh:"我需要给车加满油。", noAudio:true },
-      { en:"sidewalk", phonetic:"/ˈsaɪdwɔːk/", pos:"n.", meaning:"人行道（美式英语，英式为pavement）", example:"Walk on the sidewalk, not the road.", root:"side(旁边)+walk(走道) → 路边用来走的 → 人行道", exampleZh:"走人行道，别走马路。" },
-      { en:"stuff", phonetic:"/stʌf/", pos:"n./v.", meaning:"❶ n. 东西、物品（口语，不可数） ❷ v. 塞满、填满（stuff into）", example:"Put your stuff in the back seat.", root:"古义: 塞进去的材料 → 不知名的杂七杂八 → 东西", exampleZh:"把你的东西放在后座。" },
-      { en:"nightstand", phonetic:"/ˈnaɪtstænd/", pos:"n.", meaning:"床头柜（美式英语，英式为bedside table）", example:"Put the lamp on the nightstand.", root:"night(夜晚)+stand(架子) → 床头夜间用的架子 → 床头柜", exampleZh:"把灯放在床头柜上。" },
-      { en:"huge", phonetic:"/hjuːdʒ/", pos:"adj.", meaning:"❶ 巨大的、庞大的 ❷ 极大的、非常多的", example:"That's a huge difference.", root:"古法语ahuge → 大到让人敬畏 → 巨大的", exampleZh:"那是一个巨大的差异。" },
-      { en:"deadbolt lock", phonetic:"/ˈdedboʊlt lɑːk/", pos:"n.", meaning:"死栓锁、插销锁（需手动旋转才能开关的锁，比弹簧锁更安全）", example:"Always use the deadbolt lock at night.", root:"dead(死/固定)+bolt(插销)+lock → 死死插住不能弹回的锁 → 插销锁", exampleZh:"晚上一定要用死栓锁。", compound:true },
-      { en:"hallway", phonetic:"/ˈhɔːlweɪ/", pos:"n.", meaning:"走廊、过道（建筑内部的通道）", example:"Leave your shoes in the hallway.", root:"hall(大厅)+way(通道) → 穿过大厅的通道 → 走廊", exampleZh:"把鞋放在走廊里。" },
-      { en:"elevator", phonetic:"/ˈelɪveɪtər/", pos:"n.", meaning:"电梯、升降机（美式英语，英式为lift）", example:"Take the elevator to the fifth floor.", root:"elevare(举起) → 把人举上去的机器 → 电梯", exampleZh:"坐电梯到五楼。" },
-      { en:"laundromat", phonetic:"/ˈlɔːndrəmæt/", pos:"n.", meaning:"自助洗衣店（投币使用洗衣机和烘干机）", example:"I go to the laundromat every Sunday.", root:"laundry(洗衣)+automatic(自动) → 自助洗衣 → 自助洗衣店", exampleZh:"我每个星期天去自助洗衣店。" },
-      { en:"plaza", phonetic:"/ˈplɑːzə/", pos:"n.", meaning:"❶ 广场、露天公共空间 ❷ 购物中心、商业区", example:"We met at the plaza in front of the library.", root:"拉丁语platea(宽阔空间) → 城市中的开阔地 → 广场", exampleZh:"我们在图书馆前的广场见面。" },
-      { en:"religious", phonetic:"/rɪˈlɪdʒəs/", pos:"adj.", meaning:"❶宗教的、宗教上的 ❷虔诚的、笃信的", example:"She's not very religious, but she respects all faiths.", root:"religio(绑定) → 与神灵绑在一起的 → 宗教的/虔诚的", exampleZh:"她不太虔诚，但尊重所有信仰。" },
-      { en:"church", phonetic:"/tʃɜːrtʃ/", pos:"n.", meaning:"❶ 教堂（基督教礼拜场所） ❷ 教会、教派", example:"The church is on the corner of Main Street.", root:"古英语cirice → 基督徒聚会的建筑 → 教堂", exampleZh:"教堂在主街的拐角处。" },
-      { en:"main park", phonetic:"/meɪn pɑːrk/", pos:"phrase", meaning:"主公园（城里最大或最主要的公园）", example:"Let's meet at the main park downtown.", root:"main(主要的)+park(公园) → 城里最重要的公园 → 主公园", exampleZh:"我们在市中心的主公园见面吧。", compound:true },
-      { en:"square", phonetic:"/skwer/", pos:"n./adj./v.", meaning:"❶n. 正方形 ❷n. 广场", example:"The hotel is near the town square.", root:"古法语esquarre → 四条边一样长的形状 → 正方形/广场", exampleZh:"酒店在城镇广场附近。" },
-      { en:"statue", phonetic:"/ˈstætʃuː/", pos:"n.", meaning:"雕像、塑像（人/动物的立体造型）", example:"There's a statue of the founder in the square.", root:"statuere(立起来) → 立在那里给人看的东西 → 雕像", exampleZh:"广场上有一座创始人的雕像。" },
-      { en:"famous", phonetic:"/ˈfeɪməs/", pos:"adj.", meaning:"著名的、有名的", example:"This restaurant is famous for its pizza.", root:"fama(传闻/名声) → 名声传遍各处的 → 著名的", exampleZh:"这家餐厅以披萨闻名。" },
-      { en:"popular", phonetic:"/ˈpɑːpjələr/", pos:"adj.", meaning:"❶受欢迎的、流行的（popular with/among） ❷大众的、通俗的（popular music）", example:"This is the most popular beach in town.", root:"populus(人民) → 受大众喜爱的 → 受欢迎的", exampleZh:"这是镇上最受欢迎的海滩。" },
-      { en:"cathedral", phonetic:"/kəˈθiːdrəl/", pos:"n.", meaning:"大教堂（有主教座位的教堂，比普通church规模大、地位高）", example:"Notre-Dame is a famous cathedral in Paris.", root:"cathedra(座位) → 放主教宝座的教堂 → 大教堂", exampleZh:"巴黎圣母院是巴黎著名的大教堂。" },
-      { en:"tower", phonetic:"/ˈtaʊər/", pos:"n./v.", meaning:"❶n. 塔、塔楼 ❷n. 高楼（tower block）", example:"The TV tower overlooks the whole city.", root:"古法语tor → 向天空突出的高建筑 → 塔", exampleZh:"电视塔俯瞰整个城市。" },
-      { en:"else", phonetic:"/els/", pos:"adj./adv.", meaning:"❶adv. 其他、另外（用在疑问词/不定代词后） ❷adj. 别的、其他的", example:"Do you want anything else?", root:"古英语elles → 其他的、别的 → 否则", exampleZh:"你还要别的什么吗？" },
-      { en:"graffiti", phonetic:"/ɡrəˈfiːti/", pos:"n.", meaning:"涂鸦（在公共墙面上的未经许可的字画，不可数名词）", example:"The wall was covered in graffiti.", root:"graffiare(刮/刻) → 在墙上刻画的痕迹 → 涂鸦", exampleZh:"墙上满是涂鸦。" },
-      { en:"mural", phonetic:"/ˈmjʊrəl/", pos:"n.", meaning:"壁画（画在墙面上的大型画作，通常为官方委托创作）", example:"The city commissioned a mural for the side of the building.", root:"murus(墙) → 画在墙上的 → 壁画", exampleZh:"市政府委托在楼侧画了一幅壁画。" },
-      { en:"flood", phonetic:"/flʌd/", pos:"n./v.", meaning:"❶n. 洪水、水灾 ❷n. 大量、大批（a flood of letters）", example:"The flood damaged many homes.", root:"古英语flod → 水漫过正常范围 → 洪水", exampleZh:"洪水损坏了很多房屋。" },
-      { en:"come down", phonetic:"/kʌm daʊn/", pos:"phrasal v.", meaning:"❶下来、降落 ❷下跌、降价", example:"The rain is coming down hard.", root:"come(来)+down(下) → 从高处下来 → 下来/下跌", exampleZh:"雨下得很大。", irr:"过去:came /keɪm/ down|过分:come /kʌm/ down", noAudio:true },
-      { en:"completely", phonetic:"/kəmˈpliːtli/", pos:"adv.", meaning:"完全地、彻底地（百分之百，毫无保留）", example:"I completely forgot about the meeting.", root:"com(完全)+plere(填满)+ly → 一点空隙都不留 → 完全地", exampleZh:"我完全忘了那个会议。" },
-      { en:"spork", phonetic:"/spɔːrk/", pos:"n.", meaning:"叉勺（勺子和叉子的合体餐具，spoon + fork）", example:"They gave us a spork with the takeout meal.", root:"spoon(勺)+fork(叉)的混成词 → 又是勺又是叉 → 叉勺", exampleZh:"外卖给了我们一个叉勺。" }
-    ]
-  },
-  {
-    date: "📅 2026-05-20（58词）",
-    words: [
-      { en:"festival", phonetic:"/ˈfestəvl/", pos:"n.", meaning:"❶ 节日、庆典日（人们停止工作庆祝特殊日子，常与宗教有关） ❷ 文化节、艺术节（一系列演出/活动，通常每年在同一地点举办）", example:"There are many music festivals in summer.", root:"festum(节日) → 大家停下来庆祝的日子 → 节日/文化节", exampleZh:"夏天有很多音乐节。" },
-      { en:"historical", phonetic:"/hɪˈstɔːrɪkl/", pos:"adj.", meaning:"❶历史的、有关历史的 ❷基于史实的", example:"This is a historical building from the 1800s.", root:"historia(故事/记录) → 基于历史记录的 → 历史的", exampleZh:"这是一栋1800年代的历史建筑。" },
-      { en:"center", phonetic:"/ˈsentər/", pos:"n./v.", meaning:"❶n. 中心、中央 ❷n. 活动中心、机构", example:"The hotel is in the city center.", root:"centrum(圆心/中心点) → 一切围绕的那个点 → 中心", exampleZh:"酒店在市中心。" },
-      { en:"stair", phonetic:"/ster/", pos:"n.", meaning:"❶ 台阶、阶梯（单级） ❷ 楼梯（stairs，复数形式常用）", example:"Go up the stairs to the second floor.", root:"古英语stǣr → 一步步往上走的台阶 → 阶梯", exampleZh:"上楼到二楼。" },
-      { en:"spiral", phonetic:"/ˈspaɪrəl/", pos:"n./adj./v.", meaning:"❶n. 螺旋形 ❷n. 不断恶化/上升的进程", example:"The staircase has a beautiful spiral design.", root:"spira(螺旋/线圈) → 像弹簧一样绕圈上升 → 螺旋", exampleZh:"楼梯有漂亮的螺旋设计。" },
-      { en:"bite", phonetic:"/baɪt/", pos:"v./n.", meaning:"❶v. 咬、叮 ❷v. 上当、咬钩", example:"The mosquito bit me on the arm.", root:"古英语bītan → 用牙齿切入 → 咬", exampleZh:"蚊子咬了我的手臂。", irr:"过去:bit /bɪt/|过分:bitten /ˈbɪtən/" },
-      { en:"rob", phonetic:"/rɑːb/", pos:"v.", meaning:"❶ 抢劫、掠夺 ❷ 使丧失（rob sb of sth）", example:"He was robbed on his way home.", root:"古诺斯语rauba → 剥夺别人的东西 → 抢劫", exampleZh:"他在回家的路上被抢了。" },
-      { en:"gate", phonetic:"/ɡeɪt/", pos:"n.", meaning:"❶大门、栅栏门 ❷登机口", example:"We waited at the airport gate.", root:"古英语ġeat → 围墙上的开口 → 大门", exampleZh:"我们在登机口等。" },
-      { en:"light", phonetic:"/laɪt/", pos:"n./adj./v.", meaning:"❶ n. 光、灯 ❷ v. 点燃、照亮 ❸ adj. 轻的、少量的（light rain / light meal） ❹ adj. 浅色的、淡色的", example:"Turn on the light, please.", root:"古英语lēoht → 让世界可见的东西 → 光/轻的", exampleZh:"请把灯打开。", irr:"过去:lit /lɪt/|过分:lit /lɪt/" },
-      { en:"camera", phonetic:"/ˈkæmərə/ /ˈkæmrə/", pos:"n.", meaning:"❶照相机、摄像机 ❷监控摄像头", example:"Don't forget to bring your camera.", root:"camera(房间/暗室) → 暗箱拍照的装置 → 相机", exampleZh:"别忘了带相机。" },
-      { en:"sign", phonetic:"/saɪn/", pos:"n./v.", meaning:"❶n. 标志、指示牌 ❷n. 迹象、征兆（sign of） ❸v. 签名、签字 ❹n. 手势、示意动作", example:"Follow the signs to the exit.", root:"signum(标记) → 用来指示或代表某物的 → 标志/签名", exampleZh:"跟着指示牌走到出口。" },
-      { en:"intersection", phonetic:"/ˌɪntərˈsekʃn/", pos:"n.", meaning:"❶十字路口、交叉路口 ❷交叉点、交点", example:"Turn left at the intersection.", root:"inter(之间)+secare(切) → 两条路互相切过的点 → 交叉路口", exampleZh:"在十字路口左转。" },
-      { en:"empty", phonetic:"/ˈempti/", pos:"adj./v.", meaning:"❶adj. 空的、没有内容的 ❷adj. 空洞的、无意义的（empty words/promises）", example:"The room was completely empty.", root:"古英语ǣmettig → 里面什么都没有的 → 空的", exampleZh:"房间完全空了。" },
-      { en:"security", phonetic:"/sɪˈkjʊrəti/", pos:"n.", meaning:"❶安全、保障（保护免受攻击/危险） ❷安保措施、安保人员", example:"Airport security checked our bags.", root:"se(离开)+cura(担忧) → 不用担忧 → 安全/保障", exampleZh:"机场安检检查了我们的包。" },
-      { en:"guard", phonetic:"/ɡɑːrd/", pos:"n./v.", meaning:"❶n. 警卫、守卫 ❷n. 卫兵、哨兵", example:"The guard stood at the entrance.", root:"gard(看守) → 守护入口的人 → 警卫", exampleZh:"警卫站在入口处。" },
-      { en:"break", phonetic:"/breɪk/", pos:"v./n.", meaning:"❶ v. 打破、弄碎 ❷ v. 违反、打破（break a law/promise/record） ❸ n. 休息、间歇（take a break）", example:"Don't break the window.", root:"古英语brecan → 把完整的东西分开 → 打破", exampleZh:"不要打破窗户。", irr:"过去:broke /broʊk/|过分:broken /ˈbroʊkən/" },
-      { en:"law", phonetic:"/lɔː/", pos:"n.", meaning:"❶法律、法规 ❷法学、法律界", example:"It's against the law to steal.", root:"古诺斯语lag → 让大家遵守的规则 → 法律", exampleZh:"偷东西是违法的。" },
-      { en:"giant", phonetic:"/ˈdʒaɪənt/", pos:"n./adj.", meaning:"❶n. 巨人（传说中的） ❷n. 大公司、巨头（商业/体育）", example:"A giant tree stood in the middle of the park.", root:"古希腊语gigas → 体型远超常人的存在 → 巨人", exampleZh:"公园中央矗立着一棵巨大的树。" },
-      { en:"vault", phonetic:"/vɔːlt/", pos:"n./v.", meaning:"❶n. 金库、保险库 ❷v. 跳越、撑杆跳 ❸n. 地下墓室", example:"The bank vault was locked overnight.", root:"volvere(卷/拱) → 拱形覆盖的空间 → 金库/拱顶", exampleZh:"银行金库锁了一整夜。" },
-      { en:"mayor", phonetic:"/ˈmeɪər/ /ˈmer/", pos:"n.", meaning:"市长（城镇/城市的民选最高行政长官）", example:"The mayor gave a speech at the festival.", root:"maior(更大的) → 城镇里最大的官 → 市长", exampleZh:"市长在节庆上发表了讲话。" },
-      { en:"Spain", phonetic:"/speɪn/", pos:"n.", meaning:"西班牙（欧洲西南部国家）", example:"She travelled to Spain last summer.", root:"拉丁语Hispania → 伊比利亚半岛国家 → 西班牙", exampleZh:"她去年夏天去了西班牙旅行。" },
-      { en:"pedal", phonetic:"/ˈpedl/", pos:"n./v.", meaning:"❶ n. 踏板（自行车/钢琴/汽车） ❷ v. 踩踏板、骑自行车", example:"She pedalled hard up the hill.", root:"pes(脚) → 用脚踩的东西 → 踏板", exampleZh:"她使劲踩踏板上坡。" },
-      { en:"sushi bowl", phonetic:"/ˈsuːʃi boʊl/", pos:"n.", meaning:"寿司碗（寿司食材放在碗里的日式餐食，也叫poke bowl的变体）", example:"I ordered a sushi bowl for lunch.", root:"sushi(寿司)+bowl(碗) → 装在碗里的寿司 → 寿司碗", exampleZh:"我午餐点了一份寿司碗。", compound:true },
-      { en:"arch", phonetic:"/ɑːrtʃ/", pos:"n./v./adj.", meaning:"❶n. 拱、拱门 ❷v. 形成拱形、拱起", example:"The bridge was built with stone arches.", root:"arcus(弧) → 弯成弧形的结构 → 拱门", exampleZh:"这座桥是用石拱建造的。" },
-      { en:"alleyway", phonetic:"/ˈæliweɪ/", pos:"n.", meaning:"小巷、窄巷（建筑物之间的狭窄通道，= alley）", example:"We walked down a narrow alleyway.", root:"alley(小巷)+way(路) → 建筑之间的窄路 → 小巷", exampleZh:"我们走过一条窄巷。" },
-      { en:"lick", phonetic:"/lɪk/", pos:"v./n.", meaning:"❶v. 舔 ❷v. 轻易击败（口语，lick sb）", example:"The dog licked my hand.", root:"古英语liccian → 用舌头触碰 → 舔", exampleZh:"狗舔了我的手。" },
-      { en:"express", phonetic:"/ɪkˈspres/", pos:"v./adj./n.", meaning:"❶v. 表达、表述（thoughts/feelings） ❷adj. 快速的、快递的 ❸n. 快车、快递服务", example:"I find it hard to express my feelings.", root:"ex(出)+pressare(压) → 把里面的想法压出来 → 表达/快递", exampleZh:"我发现很难表达自己的感受。" },
-      { en:"desire", phonetic:"/dɪˈzaɪər/", pos:"n./v.", meaning:"❶n. 渴望、欲望（strong desire） ❷n. 性欲", example:"He has a strong desire to travel the world.", root:"de+siderare(观察星辰) → 仰望星空般地渴望 → 欲望", exampleZh:"他有强烈的环游世界的渴望。" },
-      { en:"bus", phonetic:"/bʌs/", pos:"n.", meaning:"n. 公共汽车、巴士（沿固定路线行驶的大客车）", example:"We took the bus to the festival.", root:"拉丁语omnibus(为大家所有人) → 载所有人的车 → 公交车", exampleZh:"我们坐公交去音乐节。" },
-      { en:"light rail transit", phonetic:"/laɪt reɪl ˈtrænzɪt/", pos:"n.", meaning:"轻轨交通（城市轨道客运系统，比地铁轻、比有轨电车快，缩写LRT）", example:"The city is building a new light rail transit line.", root:"light(轻的)+rail(铁轨)+transit(过境) → 轻量级轨道交通 → 轻轨", exampleZh:"城市正在建新的轻轨线路。", compound:true },
-      { en:"skin", phonetic:"/skɪn/", pos:"n./v.", meaning:"❶n. 皮肤、表皮 ❷n. 外皮、外壳（水果/动物的皮）", example:"She has sensitive skin.", root:"古英语scinn → 覆盖身体的外层 → 皮肤", exampleZh:"她的皮肤很敏感。" },
-      { en:"dairy product", phonetic:"/ˈderi ˈprɑːdʌkt/", pos:"n.", meaning:"乳制品（牛奶、奶酪、酸奶、黄油等）", example:"Cheese and yoghurt are dairy products.", root:"dairy(乳品)+product(产品) → 从牛奶加工出来的 → 乳制品", exampleZh:"奶酪和酸奶是乳制品。", compound:true },
-      { en:"product", phonetic:"/ˈprɑːdʌkt/", pos:"n.", meaning:"❶产品、制品（制造出来出售的东西） ❷产物、结果（the product of hard work）", example:"This is our best-selling product.", root:"pro(向前)+ducere(引导) → 引导产出的东西 → 产品", exampleZh:"这是我们的畅销产品。" },
-      { en:"section", phonetic:"/ˈsekʃn/", pos:"n./v.", meaning:"❶n. 部分、区域 ❷n. 章节（书的）", example:"The book is divided into three sections.", root:"secare(切) → 从整体上切下来的一块 → 部分/章节", exampleZh:"这本书分为三个章节。" },
-      { en:"dry", phonetic:"/draɪ/", pos:"adj./v.", meaning:"❶adj. 干的、干燥的 ❷adj. 无甜味的（酒）", example:"Hang the clothes outside to dry.", root:"古英语drūge → 没有水分的 → 干的", exampleZh:"把衣服挂在外面晾干。" },
-      { en:"check out", phonetic:"/tʃek aʊt/", pos:"phrasal v.", meaning:"❶查看、了解（口语：去试试/看看） ❷退房（酒店）", example:"You should check out that new restaurant.", root:"check(核实)+out(出去) → 核实完离开 → 退房/查看", exampleZh:"你应该去看看那家新餐厅。", noAudio:true },
-      { en:"suit jacket", phonetic:"/suːt ˈdʒækɪt/", pos:"n.", meaning:"西装外套（与西裤配套的上装）", example:"He wore a dark suit jacket to the interview.", root:"suit(套装)+jacket(外套) → 西装套装中的上装 → 西装外套", exampleZh:"他面试时穿了一件深色西装外套。", compound:true },
-      { en:"might", phonetic:"/maɪt/", pos:"modal v./n.", meaning:"❶ modal v. 可能、也许（比may更不确定） ❷ n. 力量、威力（with all one's might）", example:"It might rain later.", root:"古英语mihte → 可能存在的力量 → 也许(可能性)/力量", exampleZh:"可能会下雨。", irr:"may /meɪ/ 的过去式" },
-      { en:"raw", phonetic:"/rɔː/", pos:"adj.", meaning:"❶生的、未烹煮的 ❷未加工的、天然状态的（raw material/sugar）", example:"I prefer raw vegetables in my salad.", root:"古英语hrēaw → 未经任何处理的原始状态 → 生的/原始的", exampleZh:"我更喜欢沙拉里放生的蔬菜。" },
-      { en:"stall", phonetic:"/stɔːl/", pos:"n./v.", meaning:"❶n. 摊位、售货亭（市场的） ❷n. 畜栏、隔间（农场）", example:"We bought fruit from a market stall.", root:"stallum(站立的地方) → 站着卖东西的位置 → 摊位", exampleZh:"我们从市场摊位买了水果。" },
-      { en:"blender", phonetic:"/ˈblendər/", pos:"n.", meaning:"搅拌机、榨汁机（厨房电器，用于打碎和混合食物）", example:"She made a smoothie in the blender.", root:"blend(混合)+er(器) → 把东西混在一起的机器 → 搅拌机", exampleZh:"她用搅拌机做了冰沙。" },
-      { en:"sausage", phonetic:"/ˈsɔːsɪdʒ/", pos:"n.", meaning:"香肠（碎肉加调料灌入肠衣制成，可数）", example:"We had sausages and eggs for breakfast.", root:"salsus(加盐的) → 用盐腌制的碎肉灌肠 → 香肠", exampleZh:"我们早餐吃了香肠和鸡蛋。" },
-      { en:"cut up", phonetic:"/kʌt ʌp/", pos:"phrasal v.", meaning:"❶ 切碎、切成小块 ❷ 伤心、难受（口语：cut up about）", example:"Cut up the vegetables before putting them in the soup.", root:"cut(切)+up(彻底) → 彻底切成碎块 → 切碎", exampleZh:"把蔬菜切碎再放进汤里。", irr:"过去:cut /kʌt/ up|过分:cut /kʌt/ up", noAudio:true },
-      { en:"pork", phonetic:"/pɔːrk/", pos:"n.", meaning:"猪肉（不可数名词，指食材；与pig的区别：pig是活猪，pork是猪肉）", example:"We had roast pork for dinner.", root:"拉丁语porcus(猪) → 猪身上的肉(区别于活猪pig) → 猪肉", exampleZh:"我们晚餐吃了烤猪肉。" },
-      { en:"crisp", phonetic:"/krɪsp/", pos:"adj./n./v.", meaning:"❶adj. 脆的、酥脆的 ❷adj. 清爽的、干冷的（天气）", example:"The skin on the roast pork was perfectly crisp.", root:"古英语crisp → 咬下去咔嚓响的 → 脆的", exampleZh:"烤猪皮的脆度完美。" },
-      { en:"extreme", phonetic:"/ɪkˈstriːm/", pos:"adj./n.", meaning:"adj. 极端的、极度的", example:"The weather here is extreme in summer.", root:"extremus(最外面的) → 离正常范围最远的 → 极端的", exampleZh:"这里夏天天气极端。" },
-      { en:"hairdresser", phonetic:"/ˈherdresər/", pos:"n.", meaning:"理发师、美发师（为顾客剪发、染发、做造型的人）", example:"She's been going to the same hairdresser for years.", root:"hair(头发)+dresser(打理的人) → 给头发做造型的人 → 理发师", exampleZh:"她多年来一直去同一个理发师。" },
-      { en:"butcher", phonetic:"/ˈbʊtʃər/", pos:"n./v.", meaning:"❶n. 屠夫、肉贩 ❷v. 拙劣地做、搞砸（butcher a performance）", example:"We buy our meat from the local butcher.", root:"bouchier(屠夫) → 杀动物卖肉的人 → 屠夫", exampleZh:"我们从当地肉贩那里买肉。" },
-      { en:"peanut butter", phonetic:"/ˈpiːnʌt ˈbʌtər/", pos:"n.", meaning:"花生酱（花生磨成的酱，不可数）", example:"Peanut butter and jelly is a classic sandwich.", root:"peanut(花生)+butter(黄油状酱) → 花生磨成的酱 → 花生酱", exampleZh:"花生酱果冻是经典三明治。", compound:true },
-      { en:"set up", phonetic:"/set ʌp/", pos:"phrasal v.", meaning:"❶建立、创办 ❷搭建、安装", example:"They set up a stall at the market.", root:"set(放置)+up(立起来) → 把东西立起来准备好 → 建立/搭建", exampleZh:"他们在市场搭了一个摊位。", irr:"过去:set /set/ up|过分:set /set/ up", noAudio:true },
-      { en:"tent", phonetic:"/tent/", pos:"n./v.", meaning:"❶ n. 帐篷 ❷ v. 搭帐篷、宿营", example:"We pitched the tent by the river.", root:"tendere(拉伸) → 用布拉伸搭起的 shelter → 帐篷", exampleZh:"我们在河边搭了帐篷。" },
-      { en:"structure", phonetic:"/ˈstrʌktʃər/", pos:"n./v.", meaning:"❶n. 结构、构造 ❷n. 建筑物 ❸v. 组织、安排", example:"The structure of this building is impressive.", root:"struere(建造) → 建造出来的框架 → 结构", exampleZh:"这座建筑的结构令人印象深刻。" },
-      { en:"grow", phonetic:"/ɡroʊ/", pos:"v.", meaning:"❶生长、成长 ❷种植、栽培（grow tomatoes）", example:"Plants grow faster in spring.", root:"古英语grōwan → 从小变大 → 生长", exampleZh:"植物在春天长得更快。", irr:"过去:grew /ɡruː/|过分:grown /ɡroʊn/" },
-      { en:"farm", phonetic:"/fɑːrm/", pos:"n./v.", meaning:"❶n. 农场、养殖场 ❷v. 务农、种田", example:"They live on a dairy farm.", root:"古英语feorm(租/口粮) → 产出口粮的地方 → 农场", exampleZh:"他们住在一个奶牛场。" },
-      { en:"shell", phonetic:"/ʃel/", pos:"n./v.", meaning:"❶n. 壳、贝壳 ❷v. 剥壳、去壳 ❸n. 炮弹、弹壳", example:"We spent the afternoon shelling peas.", root:"古英语sciell → 覆盖在外的硬层 → 壳", exampleZh:"我们花了一下午剥豌豆。" },
-      { en:"plantain", phonetic:"/ˈplæntɪn/", pos:"n.", meaning:"大蕉、烹饪蕉（类似香蕉但更大更硬，通常需烹饪后食用，是拉美/加勒比/非洲的主食）", example:"Fried plantain is a popular side dish in many countries.", root:"planta(脚掌) → 叶子像脚掌一样宽的蕉 → 大蕉", exampleZh:"炸大蕉在许多国家是受欢迎的配菜。" },
-      { en:"wood pallet", phonetic:"/wʊd ˈpælɪt/", pos:"n.", meaning:"木托盘、木栈板（用于堆放和搬运货物的木质平台）", example:"The goods were stacked on wood pallets in the warehouse.", root:"wood(木)+pallet(托盘) → 木质搬运平台 → 木托盘", exampleZh:"仓库里的货物堆在木托盘上。", compound:true },
-      { en:"transport", phonetic:"/ˈtrænspɔːrt/", pos:"n./v.", meaning:"❶n. 交通系统、运输方式 ❷n. 交通工具", example:"Public transport is very convenient in this city.", root:"trans(跨越)+portare(携带) → 把东西带过去 → 运输", exampleZh:"这个城市的公共交通很方便。" }
-    ]
-  }
-,
-  {
-    date: "📅 2026-05-23（8词）",
-    words: [
-      { en:"secret", phonetic:"/ˈsiːkrət/", pos:"adj./n.", meaning:"❶ adj. 秘密的、机密的（只有少数人知道的） ❷ n. 秘密、内情 ❸ n. 诀窍、秘诀（成功的最佳方法）", example:"Can you keep a secret?", root:"se(分开)+cernere(筛选) → 筛选出来单独藏着 → 秘密的", exampleZh:"你能保守秘密吗？" },
-      { en:"leg", phonetic:"/leɡ/", pos:"n.", meaning:"❶ 腿（人或动物连接脚和身体的长部分） ❷ 腿肉（动物腿部的肉，尤指上段） ❸ 裤腿 ❹ 桌椅等的腿 ❺ 一段旅程/赛程（trip/race的leg）", example:"I broke my leg playing football.", root:"古印欧语词根，原义'弯曲的' → 腿是弯曲活动的肢体 → 腿", exampleZh:"我踢足球时摔断了腿。" },
-      { en:"bottom", phonetic:"/ˈbɑːtəm/", pos:"n./adj.", meaning:"❶ n. 底部、最下部 ❷ n. 容器内底 ❸ n. 最低位置/排名 ❹ n. 臀部（坐的部分） ❺ adj. 底部的、最低的", example:"Footnotes are given at the bottom of each page.", root:"botm(深处/地基) → 最深处 → 底部", exampleZh:"脚注在每页的底部。" },
-      { en:"at", phonetic:"/ət/", pos:"prep.", meaning:"❶ 在某处（地点） ❷ 在某时（时间） ❸ 朝向某方向 ❹ 处于某种状态 ❺ 以某种速度/价格 ❻ 在某方面（good at）", example:"We left at 2 o'clock.", root:"古英语æt，表示位置/时间的指向点 → 在", exampleZh:"我们两点出发的。", noAudio:true },
-      { en:"letter", phonetic:"/ˈletər/", pos:"n.", meaning:"❶ 信、信件 ❷ 字母 ❸ 字母标志（校队荣誉徽章）", example:"There's a letter for you from your mother.", root:"litera(字母/文字) → 用文字写的消息 → 信", exampleZh:"有你妈妈给你的一封信。" },
-      { en:"column", phonetic:"/ˈkɑːləm/", pos:"n.", meaning:"❶ 柱子（支撑或装饰建筑的圆柱） ❷ 柱状物（如烟柱） ❸ 栏、列（书/报的竖排分区） ❹ 专栏（报纸定期栏目） ❺ 纵列数字/词汇 ❻ 长列队伍", example:"The temple is supported by marble columns.", root:"columna(柱) → 从地面竖直向上 → 柱/列/专栏", exampleZh:"神殿由大理石柱支撑。" },
-      { en:"lion", phonetic:"/ˈlaɪən/", pos:"n.", meaning:"❶ 狮子（大型猫科动物，群猎，雄狮有鬃毛）", example:"Lions hunt in groups on the African savanna.", root:"leon(狮子) → 百兽之王 → 狮子", exampleZh:"狮子在非洲大草原上成群捕猎。" },
-      { en:"tail", phonetic:"/teɪl/", pos:"n./v.", meaning:"❶ n. 尾巴（鸟兽鱼可摆动的身体后部） ❷ n. 尾部、末尾（飞机/队列等的后部） ❸ n. 硬币反面（heads or tails） ❹ n. 跟踪者（informal） ❺ v. 尾随、跟踪", example:"The dog ran up, wagging its tail.", root:"古英语tægel → 动物身后拖着的部分 → 尾巴", exampleZh:"那条狗摇着尾巴跑了过来。" }
+    "date": "📅 2026-05-24（225词）",
+    "words": [
+      {
+        "en": "studio",
+        "phonetic": "/ˈstuːdioʊ/",
+        "pos": "n.",
+        "meaning": "❶ 工作室、画室 ❷ 演播室、录音棚 ❸ 电影公司",
+        "example": "She painted in her studio all day.",
+        "root": "studium(学习/研究) → 创作研究的空间 → 工作室",
+        "exampleZh": "她整天在工作室里画画。"
+      },
+      {
+        "en": "paint",
+        "phonetic": "/peɪnt/",
+        "pos": "n./v.",
+        "meaning": "❶n. 油漆、涂料 ❷n. 颜料（paints） ❸v. 刷漆 ❹v. 画画",
+        "example": "We've had the house painted.",
+        "root": "拉丁语pingere → 涂抹颜色 → 油漆/绘画",
+        "exampleZh": "我们请人把房子刷了漆。"
+      },
+      {
+        "en": "art",
+        "phonetic": "/ɑːrt/",
+        "pos": "n.",
+        "meaning": "❶ 艺术（绘画/雕塑等） ❷ 艺术品 ❸ 美术（学科） ❹ the arts 艺术总称 ❺ 技艺、技巧",
+        "example": "Modern art can be confusing.",
+        "root": "ars(技艺/手艺) → 创造美的技巧 → 艺术",
+        "exampleZh": "现代艺术有时让人困惑。"
+      },
+      {
+        "en": "hallway",
+        "phonetic": "/ˈhɔːlweɪ/",
+        "pos": "n.",
+        "meaning": "走廊、过道（建筑内部的通道）",
+        "example": "Leave your shoes in the hallway.",
+        "root": "hall(大厅)+way(通道) → 穿过大厅的通道 → 走廊",
+        "exampleZh": "把鞋放在走廊里。"
+      },
+      {
+        "en": "elevator",
+        "phonetic": "/ˈelɪveɪtər/",
+        "pos": "n.",
+        "meaning": "电梯、升降机（美式英语，英式为lift）",
+        "example": "Take the elevator to the fifth floor.",
+        "root": "elevare(举起) → 把人举上去的机器 → 电梯",
+        "exampleZh": "坐电梯到五楼。"
+      },
+      {
+        "en": "tower",
+        "phonetic": "/ˈtaʊər/",
+        "pos": "n./v.",
+        "meaning": "❶n. 塔、塔楼 ❷n. 高楼（tower block）",
+        "example": "The TV tower overlooks the whole city.",
+        "root": "古法语tor → 向天空突出的高建筑 → 塔",
+        "exampleZh": "电视塔俯瞰整个城市。"
+      },
+      {
+        "en": "stair",
+        "phonetic": "/ster/",
+        "pos": "n.",
+        "meaning": "❶ 台阶、阶梯（单级） ❷ 楼梯（stairs，复数形式常用）",
+        "example": "Go up the stairs to the second floor.",
+        "root": "古英语stǣr → 一步步往上走的台阶 → 阶梯",
+        "exampleZh": "上楼到二楼。"
+      },
+      {
+        "en": "spiral",
+        "phonetic": "/ˈspaɪrəl/",
+        "pos": "n./adj./v.",
+        "meaning": "❶n. 螺旋形 ❷n. 不断恶化/上升的进程",
+        "example": "The staircase has a beautiful spiral design.",
+        "root": "spira(螺旋/线圈) → 像弹簧一样绕圈上升 → 螺旋",
+        "exampleZh": "楼梯有漂亮的螺旋设计。"
+      },
+      {
+        "en": "vault",
+        "phonetic": "/vɔːlt/",
+        "pos": "n./v.",
+        "meaning": "❶n. 金库、保险库 ❷v. 跳越、撑杆跳 ❸n. 地下墓室",
+        "example": "The bank vault was locked overnight.",
+        "root": "volvere(卷/拱) → 拱形覆盖的空间 → 金库/拱顶",
+        "exampleZh": "银行金库锁了一整夜。"
+      },
+      {
+        "en": "arch",
+        "phonetic": "/ɑːrtʃ/",
+        "pos": "n./v./adj.",
+        "meaning": "❶n. 拱、拱门 ❷v. 形成拱形、拱起",
+        "example": "The bridge was built with stone arches.",
+        "root": "arcus(弧) → 弯成弧形的结构 → 拱门",
+        "exampleZh": "这座桥是用石拱建造的。"
+      },
+      {
+        "en": "structure",
+        "phonetic": "/ˈstrʌktʃər/",
+        "pos": "n./v.",
+        "meaning": "❶n. 结构、构造 ❷n. 建筑物 ❸v. 组织、安排",
+        "example": "The structure of this building is impressive.",
+        "root": "struere(建造) → 建造出来的框架 → 结构",
+        "exampleZh": "这座建筑的结构令人印象深刻。"
+      },
+      {
+        "en": "column",
+        "phonetic": "/ˈkɑːləm/",
+        "pos": "n.",
+        "meaning": "❶ 柱子（支撑或装饰建筑的圆柱） ❷ 柱状物（如烟柱） ❸ 栏、列（书/报的竖排分区） ❹ 专栏（报纸定期栏目） ❺ 纵列数字/词汇 ❻ 长列队伍",
+        "example": "The temple is supported by marble columns.",
+        "root": "columna(柱) → 从地面竖直向上 → 柱/列/专栏",
+        "exampleZh": "神殿由大理石柱支撑。"
+      },
+      {
+        "en": "roundabout",
+        "phonetic": "/ˈraʊndəˌbaʊt/",
+        "pos": "n./adj.",
+        "meaning": "❶n. 环形交叉路口（英式，美式常用traffic circle） ❷n. 旋转木马",
+        "example": "Take the roundabout instead of turning left.",
+        "root": "round(绕圈)+about(到处) → 绕一大圈 → 环形路口/绕弯的",
+        "exampleZh": "走环岛，不要左转。"
+      },
+      {
+        "en": "sidewalk",
+        "phonetic": "/ˈsaɪdwɔːk/",
+        "pos": "n.",
+        "meaning": "人行道（美式英语，英式为pavement）",
+        "example": "Walk on the sidewalk, not the road.",
+        "root": "side(旁边)+walk(走道) → 路边用来走的 → 人行道",
+        "exampleZh": "走人行道，别走马路。"
+      },
+      {
+        "en": "plaza",
+        "phonetic": "/ˈplɑːzə/",
+        "pos": "n.",
+        "meaning": "❶ 广场、露天公共空间 ❷ 购物中心、商业区",
+        "example": "We met at the plaza in front of the library.",
+        "root": "拉丁语platea(宽阔空间) → 城市中的开阔地 → 广场",
+        "exampleZh": "我们在图书馆前的广场见面。"
+      },
+      {
+        "en": "square",
+        "phonetic": "/skwer/",
+        "pos": "n./adj./v.",
+        "meaning": "❶n. 正方形 ❷n. 广场",
+        "example": "The hotel is near the town square.",
+        "root": "古法语esquarre → 四条边一样长的形状 → 正方形/广场",
+        "exampleZh": "酒店在城镇广场附近。"
+      },
+      {
+        "en": "center",
+        "phonetic": "/ˈsentər/",
+        "pos": "n./v.",
+        "meaning": "❶n. 中心、中央 ❷n. 活动中心、机构",
+        "example": "The hotel is in the city center.",
+        "root": "centrum(圆心/中心点) → 一切围绕的那个点 → 中心",
+        "exampleZh": "酒店在市中心。"
+      },
+      {
+        "en": "gate",
+        "phonetic": "/ɡeɪt/",
+        "pos": "n.",
+        "meaning": "❶大门、栅栏门 ❷登机口",
+        "example": "We waited at the airport gate.",
+        "root": "古英语ġeat → 围墙上的开口 → 大门",
+        "exampleZh": "我们在登机口等。"
+      },
+      {
+        "en": "intersection",
+        "phonetic": "/ˌɪntərˈsekʃn/",
+        "pos": "n.",
+        "meaning": "❶十字路口、交叉路口 ❷交叉点、交点",
+        "example": "Turn left at the intersection.",
+        "root": "inter(之间)+secare(切) → 两条路互相切过的点 → 交叉路口",
+        "exampleZh": "在十字路口左转。"
+      },
+      {
+        "en": "alleyway",
+        "phonetic": "/ˈæliweɪ/",
+        "pos": "n.",
+        "meaning": "小巷、窄巷（建筑物之间的狭窄通道，= alley）",
+        "example": "We walked down a narrow alleyway.",
+        "root": "alley(小巷)+way(路) → 建筑之间的窄路 → 小巷",
+        "exampleZh": "我们走过一条窄巷。"
+      },
+      {
+        "en": "sushi bowl",
+        "phonetic": "/ˈsuːʃi boʊl/",
+        "pos": "n.",
+        "meaning": "寿司碗（寿司食材放在碗里的日式餐食，也叫poke bowl的变体）",
+        "example": "I ordered a sushi bowl for lunch.",
+        "root": "sushi(寿司)+bowl(碗) → 装在碗里的寿司 → 寿司碗",
+        "exampleZh": "我午餐点了一份寿司碗。",
+        "compound": true
+      },
+      {
+        "en": "dairy product",
+        "phonetic": "/ˈderi ˈprɑːdʌkt/",
+        "pos": "n.",
+        "meaning": "乳制品（牛奶、奶酪、酸奶、黄油等）",
+        "example": "Cheese and yoghurt are dairy products.",
+        "root": "dairy(乳品)+product(产品) → 从牛奶加工出来的 → 乳制品",
+        "exampleZh": "奶酪和酸奶是乳制品。",
+        "compound": true
+      },
+      {
+        "en": "blender",
+        "phonetic": "/ˈblendər/",
+        "pos": "n.",
+        "meaning": "搅拌机、榨汁机（厨房电器，用于打碎和混合食物）",
+        "example": "She made a smoothie in the blender.",
+        "root": "blend(混合)+er(器) → 把东西混在一起的机器 → 搅拌机",
+        "exampleZh": "她用搅拌机做了冰沙。"
+      },
+      {
+        "en": "sausage",
+        "phonetic": "/ˈsɔːsɪdʒ/",
+        "pos": "n.",
+        "meaning": "香肠（碎肉加调料灌入肠衣制成，可数）",
+        "example": "We had sausages and eggs for breakfast.",
+        "root": "salsus(加盐的) → 用盐腌制的碎肉灌肠 → 香肠",
+        "exampleZh": "我们早餐吃了香肠和鸡蛋。"
+      },
+      {
+        "en": "pork",
+        "phonetic": "/pɔːrk/",
+        "pos": "n.",
+        "meaning": "猪肉（不可数名词，指食材；与pig的区别：pig是活猪，pork是猪肉）",
+        "example": "We had roast pork for dinner.",
+        "root": "拉丁语porcus(猪) → 猪身上的肉(区别于活猪pig) → 猪肉",
+        "exampleZh": "我们晚餐吃了烤猪肉。"
+      },
+      {
+        "en": "butcher",
+        "phonetic": "/ˈbʊtʃər/",
+        "pos": "n./v.",
+        "meaning": "❶n. 屠夫、肉贩 ❷v. 拙劣地做、搞砸（butcher a performance）",
+        "example": "We buy our meat from the local butcher.",
+        "root": "bouchier(屠夫) → 杀动物卖肉的人 → 屠夫",
+        "exampleZh": "我们从当地肉贩那里买肉。"
+      },
+      {
+        "en": "peanut butter",
+        "phonetic": "/ˈpiːnʌt ˈbʌtər/",
+        "pos": "n.",
+        "meaning": "花生酱（花生磨成的酱，不可数）",
+        "example": "Peanut butter and jelly is a classic sandwich.",
+        "root": "peanut(花生)+butter(黄油状酱) → 花生磨成的酱 → 花生酱",
+        "exampleZh": "花生酱果冻是经典三明治。",
+        "compound": true
+      },
+      {
+        "en": "plantain",
+        "phonetic": "/ˈplæntɪn/",
+        "pos": "n.",
+        "meaning": "大蕉、烹饪蕉（类似香蕉但更大更硬，通常需烹饪后食用，是拉美/加勒比/非洲的主食）",
+        "example": "Fried plantain is a popular side dish in many countries.",
+        "root": "planta(脚掌) → 叶子像脚掌一样宽的蕉 → 大蕉",
+        "exampleZh": "炸大蕉在许多国家是受欢迎的配菜。"
+      },
+      {
+        "en": "deadbolt lock",
+        "phonetic": "/ˈdedboʊlt lɑːk/",
+        "pos": "n.",
+        "meaning": "死栓锁、插销锁（需手动旋转才能开关的锁，比弹簧锁更安全）",
+        "example": "Always use the deadbolt lock at night.",
+        "root": "dead(死/固定)+bolt(插销)+lock → 死死插住不能弹回的锁 → 插销锁",
+        "exampleZh": "晚上一定要用死栓锁。",
+        "compound": true
+      },
+      {
+        "en": "security",
+        "phonetic": "/sɪˈkjʊrəti/",
+        "pos": "n.",
+        "meaning": "❶安全、保障（保护免受攻击/危险） ❷安保措施、安保人员",
+        "example": "Airport security checked our bags.",
+        "root": "se(离开)+cura(担忧) → 不用担忧 → 安全/保障",
+        "exampleZh": "机场安检检查了我们的包。"
+      },
+      {
+        "en": "guard",
+        "phonetic": "/ɡɑːrd/",
+        "pos": "n./v.",
+        "meaning": "❶n. 警卫、守卫 ❷n. 卫兵、哨兵",
+        "example": "The guard stood at the entrance.",
+        "root": "gard(看守) → 守护入口的人 → 警卫",
+        "exampleZh": "警卫站在入口处。"
+      },
+      {
+        "en": "pedal",
+        "phonetic": "/ˈpedl/",
+        "pos": "n./v.",
+        "meaning": "❶ n. 踏板（自行车/钢琴/汽车） ❷ v. 踩踏板、骑自行车",
+        "example": "She pedalled hard up the hill.",
+        "root": "pes(脚) → 用脚踩的东西 → 踏板",
+        "exampleZh": "她使劲踩踏板上坡。"
+      },
+      {
+        "en": "bus",
+        "phonetic": "/bʌs/",
+        "pos": "n.",
+        "meaning": "n. 公共汽车、巴士（沿固定路线行驶的大客车）",
+        "example": "We took the bus to the festival.",
+        "root": "拉丁语omnibus(为大家所有人) → 载所有人的车 → 公交车",
+        "exampleZh": "我们坐公交去音乐节。"
+      },
+      {
+        "en": "light rail transit",
+        "phonetic": "/laɪt reɪl ˈtrænzɪt/",
+        "pos": "n.",
+        "meaning": "轻轨交通（城市轨道客运系统，比地铁轻、比有轨电车快，缩写LRT）",
+        "example": "The city is building a new light rail transit line.",
+        "root": "light(轻的)+rail(铁轨)+transit(过境) → 轻量级轨道交通 → 轻轨",
+        "exampleZh": "城市正在建新的轻轨线路。",
+        "compound": true
+      },
+      {
+        "en": "transport",
+        "phonetic": "/ˈtrænspɔːrt/",
+        "pos": "n./v.",
+        "meaning": "❶n. 交通系统、运输方式 ❷n. 交通工具",
+        "example": "Public transport is very convenient in this city.",
+        "root": "trans(跨越)+portare(携带) → 把东西带过去 → 运输",
+        "exampleZh": "这个城市的公共交通很方便。"
+      },
+      {
+        "en": "solar panel",
+        "phonetic": "/ˈsoʊlər ˈpænl/",
+        "pos": "n.",
+        "meaning": "太阳能电池板（将阳光转化为电能的板）",
+        "example": "We installed solar panels on the roof.",
+        "root": "solar(太阳的)+panel(板) → 用太阳光的板 → 太阳能板",
+        "exampleZh": "我们在屋顶安装了太阳能板。",
+        "compound": true
+      },
+      {
+        "en": "flood",
+        "phonetic": "/flʌd/",
+        "pos": "n./v.",
+        "meaning": "❶n. 洪水、水灾 ❷n. 大量、大批（a flood of letters）",
+        "example": "The flood damaged many homes.",
+        "root": "古英语flod → 水漫过正常范围 → 洪水",
+        "exampleZh": "洪水损坏了很多房屋。"
+      },
+      {
+        "en": "farm",
+        "phonetic": "/fɑːrm/",
+        "pos": "n./v.",
+        "meaning": "❶n. 农场、养殖场 ❷v. 务农、种田",
+        "example": "They live on a dairy farm.",
+        "root": "古英语feorm(租/口粮) → 产出口粮的地方 → 农场",
+        "exampleZh": "他们住在一个奶牛场。"
+      },
+      {
+        "en": "shell",
+        "phonetic": "/ʃel/",
+        "pos": "n./v.",
+        "meaning": "❶n. 壳、贝壳 ❷v. 剥壳、去壳 ❸n. 炮弹、弹壳",
+        "example": "We spent the afternoon shelling peas.",
+        "root": "古英语sciell → 覆盖在外的硬层 → 壳",
+        "exampleZh": "我们花了一下午剥豌豆。"
+      },
+      {
+        "en": "product",
+        "phonetic": "/ˈprɑːdʌkt/",
+        "pos": "n.",
+        "meaning": "❶产品、制品（制造出来出售的东西） ❷产物、结果（the product of hard work）",
+        "example": "This is our best-selling product.",
+        "root": "pro(向前)+ducere(引导) → 引导产出的东西 → 产品",
+        "exampleZh": "这是我们的畅销产品。"
+      },
+      {
+        "en": "stall",
+        "phonetic": "/stɔːl/",
+        "pos": "n./v.",
+        "meaning": "❶n. 摊位、售货亭（市场的） ❷n. 畜栏、隔间（农场）",
+        "example": "We bought fruit from a market stall.",
+        "root": "stallum(站立的地方) → 站着卖东西的位置 → 摊位",
+        "exampleZh": "我们从市场摊位买了水果。"
+      },
+      {
+        "en": "tent",
+        "phonetic": "/tent/",
+        "pos": "n./v.",
+        "meaning": "❶ n. 帐篷 ❷ v. 搭帐篷、宿营",
+        "example": "We pitched the tent by the river.",
+        "root": "tendere(拉伸) → 用布拉伸搭起的 shelter → 帐篷",
+        "exampleZh": "我们在河边搭了帐篷。"
+      },
+      {
+        "en": "wood pallet",
+        "phonetic": "/wʊd ˈpælɪt/",
+        "pos": "n.",
+        "meaning": "木托盘、木栈板（用于堆放和搬运货物的木质平台）",
+        "example": "The goods were stacked on wood pallets in the warehouse.",
+        "root": "wood(木)+pallet(托盘) → 木质搬运平台 → 木托盘",
+        "exampleZh": "仓库里的货物堆在木托盘上。",
+        "compound": true
+      },
+      {
+        "en": "shoulder",
+        "phonetic": "/ˈʃoʊldər/",
+        "pos": "n./v.",
+        "meaning": "❶n. 肩膀 ❷n. 路肩（道路两侧的紧急停车带）",
+        "example": "He shouldered the responsibility for the team.",
+        "root": "古义: 承载重物的部位 → 肩膀 → 承担",
+        "exampleZh": "他肩负起了团队的责任。"
+      },
+      {
+        "en": "skin",
+        "phonetic": "/skɪn/",
+        "pos": "n./v.",
+        "meaning": "❶n. 皮肤、表皮 ❷n. 外皮、外壳（水果/动物的皮）",
+        "example": "She has sensitive skin.",
+        "root": "古英语scinn → 覆盖身体的外层 → 皮肤",
+        "exampleZh": "她的皮肤很敏感。"
+      },
+      {
+        "en": "leg",
+        "phonetic": "/leɡ/",
+        "pos": "n.",
+        "meaning": "❶ 腿（人或动物连接脚和身体的长部分） ❷ 腿肉（动物腿部的肉，尤指上段） ❸ 裤腿 ❹ 桌椅等的腿 ❺ 一段旅程/赛程（trip/race的leg）",
+        "example": "I broke my leg playing football.",
+        "root": "古印欧语词根，原义'弯曲的' → 腿是弯曲活动的肢体 → 腿",
+        "exampleZh": "我踢足球时摔断了腿。"
+      },
+      {
+        "en": "path",
+        "phonetic": "/pæθ/",
+        "pos": "n.",
+        "meaning": "❶小路、小径 ❷路线、途径",
+        "example": "Follow the path through the forest.",
+        "root": "古英语pæth → 脚踩出来的路线 → 小径/途径",
+        "exampleZh": "沿着小路穿过森林。"
+      },
+      {
+        "en": "direction",
+        "phonetic": "/dɪˈrɛkʃn/",
+        "pos": "n.",
+        "meaning": "❶ 方向、方位 ❷ 指导、管理 ❸ 趋势、动向",
+        "example": "Which direction is the station?",
+        "root": "di(分开)+rigere(引导) → 引导向某处 → 方向",
+        "exampleZh": "车站在哪个方向？"
+      },
+      {
+        "en": "location",
+        "phonetic": "/loʊˈkeɪʃn/",
+        "pos": "n.",
+        "meaning": "❶ 位置、地点 ❷ 外景拍摄地 ❸ 定位、找出位置",
+        "example": "This is a great location for a restaurant.",
+        "root": "locus(地方)+ation → 某个地方 → 位置",
+        "exampleZh": "这是个开餐厅的好位置。"
+      },
+      {
+        "en": "pronunciation",
+        "phonetic": "/prəˌnʌnsiˈeɪʃn/",
+        "pos": "n.",
+        "meaning": "❶ 发音方式（某个词或语言的读法） ❷ 某人的发音（口音）",
+        "example": "Your pronunciation of 'th' needs work.",
+        "root": "pro(向前)+nounce(说)+ation → 把话说出来的方式 → 发音",
+        "exampleZh": "你发'th'的音还需要练习。"
+      },
+      {
+        "en": "comprehension",
+        "phonetic": "/ˌkɑːmprɪˈhenʃn/",
+        "pos": "n.",
+        "meaning": "❶ 理解力（读懂/听懂的能力） ❷ 理解练习（如阅读理解、听力理解）",
+        "example": "The test has a listening comprehension section.",
+        "root": "com(完全)+prehend(抓住) → 完全抓住意思 → 理解",
+        "exampleZh": "考试有听力理解部分。"
+      },
+      {
+        "en": "method",
+        "phonetic": "/ˈmeθəd/",
+        "pos": "n.",
+        "meaning": "❶ 方法、办法（做某事的特定/系统方式） ❷ 条理、秩序（做事有计划、有组织的品质）",
+        "example": "The method we used was surveys.",
+        "root": "meta(跟随)+hodos(道路) → 沿着走的路 → 方法",
+        "exampleZh": "我们使用的方法是问卷调查。"
+      },
+      {
+        "en": "comprehensible input",
+        "phonetic": "/ˌkɑːmprɪˈhensəbl ˈɪnpʊt/",
+        "pos": "n.",
+        "meaning": "可理解性输入（Krashen二语习得理论：略高于当前水平的输入，i+1）",
+        "example": "Comprehensible input is key in Krashen's theory.",
+        "root": "能被理解(comprehend)的输入(input) → 听得懂的材料",
+        "exampleZh": "可理解性输入是Krashen理论的关键。",
+        "noAudio": true
+      },
+      {
+        "en": "lesson",
+        "phonetic": "/ˈlesn/",
+        "pos": "n.",
+        "meaning": "❶一节课 ❷教训（从经历中学到的道理）",
+        "example": "That failure taught me a valuable lesson.",
+        "root": "learn的变体 → 学到的东西 → 一课/教训",
+        "exampleZh": "那次失败给了我一个宝贵的教训。"
+      },
+      {
+        "en": "quiz",
+        "phonetic": "/kwɪz/",
+        "pos": "n./v.",
+        "meaning": "❶ n. 小测验、问答比赛 ❷ v. 盘问、考问",
+        "example": "We have a quiz on chapter 3.",
+        "root": "起源不确定，可能来自拉丁语qui es? → 问你知道多少 → 小测验",
+        "exampleZh": "我们第三章有一个小测验。"
+      },
+      {
+        "en": "term",
+        "phonetic": "/tɜːrm/",
+        "pos": "n./v.",
+        "meaning": "❶n. 术语、措辞 ❷n. 学期 ❸n. 期限、任期 ❹n. 条款、条件（terms of agreement）",
+        "example": "What does this term mean?",
+        "root": "terminus(边界/终点) → 划定范围的词 → 术语/期限",
+        "exampleZh": "这个术语是什么意思？"
+      },
+      {
+        "en": "conclusion",
+        "phonetic": "/kənˈkluːʒn/",
+        "pos": "n.",
+        "meaning": "❶结论、推论 ❷结尾、结局",
+        "example": "What conclusion did you reach?",
+        "root": "con(一起)+cludere(关闭) → 把论证收拢关上 → 结论",
+        "exampleZh": "你得出了什么结论？"
+      },
+      {
+        "en": "description",
+        "phonetic": "/dɪˈskrɪpʃn/",
+        "pos": "n.",
+        "meaning": "❶ 描述、描写 ❷ 种类、类型（of a certain description）",
+        "example": "Give a brief description of the problem.",
+        "root": "de(向下)+scribere(写) → 写下来的细节 → 描述",
+        "exampleZh": "简要描述一下这个问题。"
+      },
+      {
+        "en": "definition",
+        "phonetic": "/ˌdefɪˈnɪʃn/",
+        "pos": "n.",
+        "meaning": "❶ 定义、释义 ❷ 清晰度、鲜明度（图像/声音）",
+        "example": "Look up the definition of this word.",
+        "root": "de(完全)+finire(限定) → 严格划定边界 → 定义",
+        "exampleZh": "查一下这个词的定义。"
+      },
+      {
+        "en": "law",
+        "phonetic": "/lɔː/",
+        "pos": "n.",
+        "meaning": "❶法律、法规 ❷法学、法律界",
+        "example": "It's against the law to steal.",
+        "root": "古诺斯语lag → 让大家遵守的规则 → 法律",
+        "exampleZh": "偷东西是违法的。"
+      },
+      {
+        "en": "sentence structure",
+        "phonetic": "/ˈsentəns ˈstrʌktʃər/",
+        "pos": "n.",
+        "meaning": "句子结构（主谓宾等成分的排列方式）",
+        "example": "Vary sentence structure for better writing.",
+        "root": "sentence(句子)的structure(建造方式) → 句子怎么搭的",
+        "exampleZh": "变换句式能让写作更好。",
+        "noAudio": true
+      },
+      {
+        "en": "adventure",
+        "phonetic": "/ədˈventʃər/",
+        "pos": "n.",
+        "meaning": "❶ 冒险（不寻常的、刺激的经历） ❷ 冒险精神",
+        "example": "We had many adventures in South America.",
+        "root": "ad(向)+vent(来) → 向未知的未来走去 → 冒险",
+        "exampleZh": "我们在南美有很多冒险经历。"
+      },
+      {
+        "en": "goal",
+        "phonetic": "/ɡoʊl/",
+        "pos": "n.",
+        "meaning": "❶目标、目的 ❷球门",
+        "example": "My goal is to become fluent.",
+        "root": "古义: 障碍/边界 → 需要到达的终点 → 目标",
+        "exampleZh": "我的目标是变得流利。"
+      },
+      {
+        "en": "chance",
+        "phonetic": "/tʃæns/",
+        "pos": "n./v.",
+        "meaning": "❶n. 机会（做某事的合适时机，a chance to do） ❷n. 可能性（某事发生的概率，a chance of）",
+        "example": "This is your chance to prove yourself.",
+        "root": "cadere(落下) → 像骰子落下一样 → 随机的可能性",
+        "exampleZh": "这是你证明自己的机会。"
+      },
+      {
+        "en": "software",
+        "phonetic": "/ˈsɔːftwer/",
+        "pos": "n.",
+        "meaning": "软件（计算机程序和指令的统称，不可数）",
+        "example": "Install the software first.",
+        "root": "soft(软的)+ware(商品) → 看不见摸不着但能用的程序 → 软件",
+        "exampleZh": "先安装软件。"
+      },
+      {
+        "en": "confusion",
+        "phonetic": "/kənˈfjuːʒn/",
+        "pos": "n.",
+        "meaning": "❶困惑、糊涂 ❷混乱、混淆",
+        "example": "There was confusion about the time.",
+        "root": "con(一起)+fundere(倾倒) → 全混在一起分不清 → 困惑/混乱",
+        "exampleZh": "关于时间有些混淆。"
+      },
+      {
+        "en": "routine",
+        "phonetic": "/ruːˈtiːn/",
+        "pos": "n./adj.",
+        "meaning": "❶n. 常规、例行公事 ❷adj. 日常的、例行的 ❸n. 一套动作（舞蹈/喜剧等）",
+        "example": "Reading is my daily routine.",
+        "root": "route(路线) → 每天走同一条路 → 常规",
+        "exampleZh": "阅读是我的日常习惯。"
+      },
+      {
+        "en": "part",
+        "phonetic": "/pɑːrt/",
+        "pos": "n./v.",
+        "meaning": "❶n. 部分、组件 ❷n. 角色（戏剧中的）",
+        "example": "She is a part of our team.",
+        "root": "pars(部分) → 整体中的一块 → 部分",
+        "exampleZh": "她是我们的团队成员。"
+      },
+      {
+        "en": "side",
+        "phonetic": "/saɪd/",
+        "pos": "n./adj./v.",
+        "meaning": "❶n. 侧面、一边 ❷n. 方面、立场",
+        "example": "Choose a side and stick with it.",
+        "root": "古义: 宽而扁的面 → 物体/立场的某一侧 → 侧面/方面",
+        "exampleZh": "选一边站，然后坚持下去。"
+      },
+      {
+        "en": "accident",
+        "phonetic": "/ˈæksɪdənt/",
+        "pos": "n.",
+        "meaning": "❶ 事故、意外事件 ❷ 偶然、意外（by accident）",
+        "example": "The accident happened at the intersection.",
+        "root": "ad(向)+cadere(落下) → 不该发生却落到头上的事 → 事故/意外",
+        "exampleZh": "事故发生在十字路口。"
+      },
+      {
+        "en": "circle",
+        "phonetic": "/ˈsɜːrkl/",
+        "pos": "n./v.",
+        "meaning": "❶n. 圆、圆圈 ❷n. 圈子（社交/学术）",
+        "example": "The children sat in a circle.",
+        "root": "circus(圆环) → 没有角的闭合形状 → 圆",
+        "exampleZh": "孩子们围成一圈坐下。"
+      },
+      {
+        "en": "electricity",
+        "phonetic": "/ɪˌlekˈtrɪsəti/",
+        "pos": "n.",
+        "meaning": "电、电力（能量形式，通过电线输送供照明/驱动等）",
+        "example": "The electricity was cut off during the storm.",
+        "root": "elektron(琥珀) → 琥珀摩擦生电 → 电",
+        "exampleZh": "暴风雨期间电被切断了。"
+      },
+      {
+        "en": "median",
+        "phonetic": "/ˈmiːdiən/",
+        "pos": "n./adj.",
+        "meaning": "❶n. 中位数（统计学） ❷n. 中央分隔带（道路）",
+        "example": "The median income is lower than the average.",
+        "root": "medius(中间) → 正中间的那一个 → 中位数/中央隔离带",
+        "exampleZh": "中位数收入低于平均收入。"
+      },
+      {
+        "en": "dump truck",
+        "phonetic": "/ˈdʌmp trʌk/",
+        "pos": "n.",
+        "meaning": "自卸卡车、翻斗车（车厢可倾斜卸货）",
+        "example": "The dump truck unloaded the gravel.",
+        "root": "dump(倾倒)+truck(卡车) → 能把东西倒出来的卡车 → 翻斗车",
+        "exampleZh": "自卸卡车卸下了碎石。",
+        "compound": true
+      },
+      {
+        "en": "nozzle",
+        "phonetic": "/ˈnɑːzl/",
+        "pos": "n.",
+        "meaning": "❶ 喷嘴、管嘴 ❷ 加油枪嘴",
+        "example": "Fill up the tank and return the nozzle.",
+        "root": "古法语nose → 管子的「鼻子」→ 喷嘴",
+        "exampleZh": "加满油然后把加油枪放回去。"
+      },
+      {
+        "en": "stuff",
+        "phonetic": "/stʌf/",
+        "pos": "n./v.",
+        "meaning": "❶ n. 东西、物品（口语，不可数） ❷ v. 塞满、填满（stuff into）",
+        "example": "Put your stuff in the back seat.",
+        "root": "古义: 塞进去的材料 → 不知名的杂七杂八 → 东西",
+        "exampleZh": "把你的东西放在后座。"
+      },
+      {
+        "en": "nightstand",
+        "phonetic": "/ˈnaɪtstænd/",
+        "pos": "n.",
+        "meaning": "床头柜（美式英语，英式为bedside table）",
+        "example": "Put the lamp on the nightstand.",
+        "root": "night(夜晚)+stand(架子) → 床头夜间用的架子 → 床头柜",
+        "exampleZh": "把灯放在床头柜上。"
+      },
+      {
+        "en": "laundromat",
+        "phonetic": "/ˈlɔːndrəmæt/",
+        "pos": "n.",
+        "meaning": "自助洗衣店（投币使用洗衣机和烘干机）",
+        "example": "I go to the laundromat every Sunday.",
+        "root": "laundry(洗衣)+automatic(自动) → 自助洗衣 → 自助洗衣店",
+        "exampleZh": "我每个星期天去自助洗衣店。"
+      },
+      {
+        "en": "church",
+        "phonetic": "/tʃɜːrtʃ/",
+        "pos": "n.",
+        "meaning": "❶ 教堂（基督教礼拜场所） ❷ 教会、教派",
+        "example": "The church is on the corner of Main Street.",
+        "root": "古英语cirice → 基督徒聚会的建筑 → 教堂",
+        "exampleZh": "教堂在主街的拐角处。"
+      },
+      {
+        "en": "statue",
+        "phonetic": "/ˈstætʃuː/",
+        "pos": "n.",
+        "meaning": "雕像、塑像（人/动物的立体造型）",
+        "example": "There's a statue of the founder in the square.",
+        "root": "statuere(立起来) → 立在那里给人看的东西 → 雕像",
+        "exampleZh": "广场上有一座创始人的雕像。"
+      },
+      {
+        "en": "cathedral",
+        "phonetic": "/kəˈθiːdrəl/",
+        "pos": "n.",
+        "meaning": "大教堂（有主教座位的教堂，比普通church规模大、地位高）",
+        "example": "Notre-Dame is a famous cathedral in Paris.",
+        "root": "cathedra(座位) → 放主教宝座的教堂 → 大教堂",
+        "exampleZh": "巴黎圣母院是巴黎著名的大教堂。"
+      },
+      {
+        "en": "graffiti",
+        "phonetic": "/ɡrəˈfiːti/",
+        "pos": "n.",
+        "meaning": "涂鸦（在公共墙面上的未经许可的字画，不可数名词）",
+        "example": "The wall was covered in graffiti.",
+        "root": "graffiare(刮/刻) → 在墙上刻画的痕迹 → 涂鸦",
+        "exampleZh": "墙上满是涂鸦。"
+      },
+      {
+        "en": "mural",
+        "phonetic": "/ˈmjʊrəl/",
+        "pos": "n.",
+        "meaning": "壁画（画在墙面上的大型画作，通常为官方委托创作）",
+        "example": "The city commissioned a mural for the side of the building.",
+        "root": "murus(墙) → 画在墙上的 → 壁画",
+        "exampleZh": "市政府委托在楼侧画了一幅壁画。"
+      },
+      {
+        "en": "spork",
+        "phonetic": "/spɔːrk/",
+        "pos": "n.",
+        "meaning": "叉勺（勺子和叉子的合体餐具，spoon + fork）",
+        "example": "They gave us a spork with the takeout meal.",
+        "root": "spoon(勺)+fork(叉)的混成词 → 又是勺又是叉 → 叉勺",
+        "exampleZh": "外卖给了我们一个叉勺。"
+      },
+      {
+        "en": "festival",
+        "phonetic": "/ˈfestəvl/",
+        "pos": "n.",
+        "meaning": "❶ 节日、庆典日（人们停止工作庆祝特殊日子，常与宗教有关） ❷ 文化节、艺术节（一系列演出/活动，通常每年在同一地点举办）",
+        "example": "There are many music festivals in summer.",
+        "root": "festum(节日) → 大家停下来庆祝的日子 → 节日/文化节",
+        "exampleZh": "夏天有很多音乐节。"
+      },
+      {
+        "en": "light",
+        "phonetic": "/laɪt/",
+        "pos": "n./adj./v.",
+        "meaning": "❶ n. 光、灯 ❷ v. 点燃、照亮 ❸ adj. 轻的、少量的（light rain / light meal） ❹ adj. 浅色的、淡色的",
+        "example": "Turn on the light, please.",
+        "root": "古英语lēoht → 让世界可见的东西 → 光/轻的",
+        "exampleZh": "请把灯打开。",
+        "irr": "过去:lit /lɪt/|过分:lit /lɪt/"
+      },
+      {
+        "en": "camera",
+        "phonetic": "/ˈkæmərə/ /ˈkæmrə/",
+        "pos": "n.",
+        "meaning": "❶照相机、摄像机 ❷监控摄像头",
+        "example": "Don't forget to bring your camera.",
+        "root": "camera(房间/暗室) → 暗箱拍照的装置 → 相机",
+        "exampleZh": "别忘了带相机。"
+      },
+      {
+        "en": "sign",
+        "phonetic": "/saɪn/",
+        "pos": "n./v.",
+        "meaning": "❶n. 标志、指示牌 ❷n. 迹象、征兆（sign of） ❸v. 签名、签字 ❹n. 手势、示意动作",
+        "example": "Follow the signs to the exit.",
+        "root": "signum(标记) → 用来指示或代表某物的 → 标志/签名",
+        "exampleZh": "跟着指示牌走到出口。"
+      },
+      {
+        "en": "giant",
+        "phonetic": "/ˈdʒaɪənt/",
+        "pos": "n./adj.",
+        "meaning": "❶n. 巨人（传说中的） ❷n. 大公司、巨头（商业/体育）",
+        "example": "A giant tree stood in the middle of the park.",
+        "root": "古希腊语gigas → 体型远超常人的存在 → 巨人",
+        "exampleZh": "公园中央矗立着一棵巨大的树。"
+      },
+      {
+        "en": "mayor",
+        "phonetic": "/ˈmeɪər/ /ˈmer/",
+        "pos": "n.",
+        "meaning": "市长（城镇/城市的民选最高行政长官）",
+        "example": "The mayor gave a speech at the festival.",
+        "root": "maior(更大的) → 城镇里最大的官 → 市长",
+        "exampleZh": "市长在节庆上发表了讲话。"
+      },
+      {
+        "en": "Spain",
+        "phonetic": "/speɪn/",
+        "pos": "n.",
+        "meaning": "西班牙（欧洲西南部国家）",
+        "example": "She travelled to Spain last summer.",
+        "root": "拉丁语Hispania → 伊比利亚半岛国家 → 西班牙",
+        "exampleZh": "她去年夏天去了西班牙旅行。"
+      },
+      {
+        "en": "desire",
+        "phonetic": "/dɪˈzaɪər/",
+        "pos": "n./v.",
+        "meaning": "❶n. 渴望、欲望（strong desire） ❷n. 性欲",
+        "example": "He has a strong desire to travel the world.",
+        "root": "de+siderare(观察星辰) → 仰望星空般地渴望 → 欲望",
+        "exampleZh": "他有强烈的环游世界的渴望。"
+      },
+      {
+        "en": "section",
+        "phonetic": "/ˈsekʃn/",
+        "pos": "n./v.",
+        "meaning": "❶n. 部分、区域 ❷n. 章节（书的）",
+        "example": "The book is divided into three sections.",
+        "root": "secare(切) → 从整体上切下来的一块 → 部分/章节",
+        "exampleZh": "这本书分为三个章节。"
+      },
+      {
+        "en": "suit jacket",
+        "phonetic": "/suːt ˈdʒækɪt/",
+        "pos": "n.",
+        "meaning": "西装外套（与西裤配套的上装）",
+        "example": "He wore a dark suit jacket to the interview.",
+        "root": "suit(套装)+jacket(外套) → 西装套装中的上装 → 西装外套",
+        "exampleZh": "他面试时穿了一件深色西装外套。",
+        "compound": true
+      },
+      {
+        "en": "hairdresser",
+        "phonetic": "/ˈherdresər/",
+        "pos": "n.",
+        "meaning": "理发师、美发师（为顾客剪发、染发、做造型的人）",
+        "example": "She's been going to the same hairdresser for years.",
+        "root": "hair(头发)+dresser(打理的人) → 给头发做造型的人 → 理发师",
+        "exampleZh": "她多年来一直去同一个理发师。"
+      },
+      {
+        "en": "bottom",
+        "phonetic": "/ˈbɑːtəm/",
+        "pos": "n./adj.",
+        "meaning": "❶ n. 底部、最下部 ❷ n. 容器内底 ❸ n. 最低位置/排名 ❹ n. 臀部（坐的部分） ❺ adj. 底部的、最低的",
+        "example": "Footnotes are given at the bottom of each page.",
+        "root": "botm(深处/地基) → 最深处 → 底部",
+        "exampleZh": "脚注在每页的底部。"
+      },
+      {
+        "en": "letter",
+        "phonetic": "/ˈletər/",
+        "pos": "n.",
+        "meaning": "❶ 信、信件 ❷ 字母 ❸ 字母标志（校队荣誉徽章）",
+        "example": "There's a letter for you from your mother.",
+        "root": "litera(字母/文字) → 用文字写的消息 → 信",
+        "exampleZh": "有你妈妈给你的一封信。"
+      },
+      {
+        "en": "lion",
+        "phonetic": "/ˈlaɪən/",
+        "pos": "n.",
+        "meaning": "❶ 狮子（大型猫科动物，群猎，雄狮有鬃毛）",
+        "example": "Lions hunt in groups on the African savanna.",
+        "root": "leon(狮子) → 百兽之王 → 狮子",
+        "exampleZh": "狮子在非洲大草原上成群捕猎。"
+      },
+      {
+        "en": "tail",
+        "phonetic": "/teɪl/",
+        "pos": "n./v.",
+        "meaning": "❶ n. 尾巴（鸟兽鱼可摆动的身体后部） ❷ n. 尾部、末尾（飞机/队列等的后部） ❸ n. 硬币反面（heads or tails） ❹ n. 跟踪者（informal） ❺ v. 尾随、跟踪",
+        "example": "The dog ran up, wagging its tail.",
+        "root": "古英语tægel → 动物身后拖着的部分 → 尾巴",
+        "exampleZh": "那条狗摇着尾巴跑了过来。"
+      },
+      {
+        "en": "goat",
+        "phonetic": "/ɡoʊt/",
+        "pos": "n.",
+        "meaning": "❶ 山羊（有角、善攀爬的家畜） ❷ 色鬼（口语，old goat）",
+        "example": "The goat climbed up the steep hill.",
+        "root": "古英语gāt → 有角善攀爬的动物 → 山羊",
+        "exampleZh": "山羊爬上了陡峭的山坡。"
+      },
+      {
+        "en": "trunk",
+        "phonetic": "/trʌŋk/",
+        "pos": "n.",
+        "meaning": "❶ 树干 ❷ 汽车后备箱 ❸ 象鼻 ❹ 大箱子 ❺ 躯干",
+        "example": "The trunk of that tree is huge.",
+        "root": "truncus(截断的) → 主要的粗大部分 → 树干/后备箱/象鼻",
+        "exampleZh": "那棵树的树干很粗。"
+      },
+      {
+        "en": "challenge",
+        "phonetic": "/ˈtʃælɪndʒ/",
+        "pos": "n./v.",
+        "meaning": "❶n. 挑战、难题 ❷n. 质疑 ❸v. 向…挑战 ❹v. 质疑、怀疑",
+        "example": "Learning a new language is a challenge.",
+        "root": "calumnia(诽谤) → 被质疑要证明自己 → 挑战",
+        "exampleZh": "学一门新语言是一种挑战。"
+      },
+      {
+        "en": "team",
+        "phonetic": "/tiːm/",
+        "pos": "n.",
+        "meaning": "❶ 团队、小组（一起工作的人） ❷ 运动队",
+        "example": "Our team won the championship.",
+        "root": "古英语tēam → 拉同一辆车的一组人 → 团队",
+        "exampleZh": "我们队赢得了冠军。"
+      },
+      {
+        "en": "forecast",
+        "phonetic": "/ˈfɔːrkæst/",
+        "pos": "n./v.",
+        "meaning": "❶n. 预测、预报 ❷v. 预测、预报",
+        "example": "The weather forecast says it will rain tomorrow.",
+        "root": "fore(提前)+cast(抛) → 提前抛出判断 → 预报",
+        "exampleZh": "天气预报说明天会下雨。"
+      },
+      {
+        "en": "floor",
+        "phonetic": "/flɔːr/",
+        "pos": "n.",
+        "meaning": "❶ 地板、地面 ❷ 楼层 ❸ 发言权（take the floor）",
+        "example": "The office is on the third floor.",
+        "root": "古英语flōr → 脚下踩的平面 → 地板/楼层",
+        "exampleZh": "办公室在三楼。"
+      },
+      {
+        "en": "clue",
+        "phonetic": "/kluː/",
+        "pos": "n.",
+        "meaning": "❶ 线索、提示 ❷ 毫无头绪（not have a clue）",
+        "example": "I don't have a clue where she went.",
+        "root": "clew(线团) → 跟着线团走能找到出路 → 线索",
+        "exampleZh": "我完全不知道她去哪了。"
+      },
+      {
+        "en": "crown",
+        "phonetic": "/kraʊn/",
+        "pos": "n./v.",
+        "meaning": "❶n. 王冠、皇冠 ❷n. 冠军头衔 ❸v. 加冕、为…加冠",
+        "example": "The king wore a golden crown.",
+        "root": "corona(花环/冠) → 戴在头顶的象征 → 王冠",
+        "exampleZh": "国王戴着金色的王冠。"
+      },
+      {
+        "en": "spray",
+        "phonetic": "/spreɪ/",
+        "pos": "n./v.",
+        "meaning": "❶n. 喷雾、水花 ❷n. 喷雾器/喷雾剂 ❸v. 喷、喷射",
+        "example": "A cloud of fine spray came up from the waterfall.",
+        "root": "古法语espreindre → 挤压出 → 喷出细水滴 → 喷雾",
+        "exampleZh": "瀑布溅起一团细水雾。"
+      },
+      {
+        "en": "draw",
+        "phonetic": "/drɔː/",
+        "pos": "v./n.",
+        "meaning": "❶v. 画、绘图（铅笔/钢笔） ❷v. 拉/拖 ❸v. 吸引 ❹v. 汲取 ❺n. 平局",
+        "example": "She drew a house.",
+        "root": "dragan → 拉/拖 → 用笔拉出线条 → 画",
+        "exampleZh": "她画了一栋房子。",
+        "irr": "过去:drew /druː/|过分:drawn /drɔːn/"
+      },
+      {
+        "en": "rob",
+        "phonetic": "/rɑːb/",
+        "pos": "v.",
+        "meaning": "❶ 抢劫、掠夺 ❷ 使丧失（rob sb of sth）",
+        "example": "He was robbed on his way home.",
+        "root": "古诺斯语rauba → 剥夺别人的东西 → 抢劫",
+        "exampleZh": "他在回家的路上被抢了。"
+      },
+      {
+        "en": "reroute",
+        "phonetic": "/ˌriːˈruːt/",
+        "pos": "v.",
+        "meaning": "改道、改变路线（使走另一条路）",
+        "example": "Traffic was rerouted due to the accident.",
+        "root": "re(重新)+route(路线) → 换一条路走 → 改道",
+        "exampleZh": "因为事故，交通改道了。"
+      },
+      {
+        "en": "grow",
+        "phonetic": "/ɡroʊ/",
+        "pos": "v.",
+        "meaning": "❶生长、成长 ❷种植、栽培（grow tomatoes）",
+        "example": "Plants grow faster in spring.",
+        "root": "古英语grōwan → 从小变大 → 生长",
+        "exampleZh": "植物在春天长得更快。",
+        "irr": "过去:grew /ɡruː/|过分:grown /ɡroʊn/"
+      },
+      {
+        "en": "bite",
+        "phonetic": "/baɪt/",
+        "pos": "v./n.",
+        "meaning": "❶v. 咬、叮 ❷v. 上当、咬钩",
+        "example": "The mosquito bit me on the arm.",
+        "root": "古英语bītan → 用牙齿切入 → 咬",
+        "exampleZh": "蚊子咬了我的手臂。",
+        "irr": "过去:bit /bɪt/|过分:bitten /ˈbɪtən/"
+      },
+      {
+        "en": "lick",
+        "phonetic": "/lɪk/",
+        "pos": "v./n.",
+        "meaning": "❶v. 舔 ❷v. 轻易击败（口语，lick sb）",
+        "example": "The dog licked my hand.",
+        "root": "古英语liccian → 用舌头触碰 → 舔",
+        "exampleZh": "狗舔了我的手。"
+      },
+      {
+        "en": "study",
+        "phonetic": "/ˈstʌdi/",
+        "pos": "v./n.",
+        "meaning": "❶v. 学习、研究 ❷n. 研究、调查 ❸n. 书房",
+        "example": "She studies English every day.",
+        "root": "studium(热心) → 投入热情去做 → 学习/研究",
+        "exampleZh": "她每天学习英语。"
+      },
+      {
+        "en": "practice",
+        "phonetic": "/ˈpræktɪs/",
+        "pos": "v./n.",
+        "meaning": "❶v./n. 练习、训练 ❷n. 惯例、做法",
+        "example": "Practice makes perfect.",
+        "root": "practicus(实用的) → 反复做直到熟练 → 练习",
+        "exampleZh": "熟能生巧。"
+      },
+      {
+        "en": "break",
+        "phonetic": "/breɪk/",
+        "pos": "v./n.",
+        "meaning": "❶ v. 打破、弄碎 ❷ v. 违反、打破（break a law/promise/record） ❸ n. 休息、间歇（take a break）",
+        "example": "Don't break the window.",
+        "root": "古英语brecan → 把完整的东西分开 → 打破",
+        "exampleZh": "不要打破窗户。",
+        "irr": "过去:broke /broʊk/|过分:broken /ˈbroʊkən/"
+      },
+      {
+        "en": "stick",
+        "phonetic": "/stɪk/",
+        "pos": "v./n.",
+        "meaning": "❶v. 粘住、坚持（stick to/with） ❷n. 棍、棒、枝条",
+        "example": "Stick to the plan.",
+        "root": "古义: 树枝/棍子 → 用棍子固定住 → 粘住/坚持",
+        "exampleZh": "坚持按计划来。",
+        "irr": "过去:stuck /stʌk/|过分:stuck /stʌk/"
+      },
+      {
+        "en": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "pos": "v./adj./n.",
+        "meaning": "❶v. 提示、促使 ❷adj. 迅速的、及时的",
+        "example": "Write a better prompt for better results.",
+        "root": "pro(向前)+emere(拿) → 把想法拿出来的 → 提示/促使",
+        "exampleZh": "写更好的提示词能得到更好的结果。"
+      },
+      {
+        "en": "design",
+        "phonetic": "/dɪˈzaɪn/",
+        "pos": "v./n.",
+        "meaning": "❶v. 设计、构思 ❷n. 设计方案",
+        "example": "The app is designed to help beginners.",
+        "root": "de(出)+signare(标记) → 做出标记来规划 → 设计",
+        "exampleZh": "这个应用是为初学者设计的。"
+      },
+      {
+        "en": "reach",
+        "phonetic": "/riːtʃ/",
+        "pos": "v./n.",
+        "meaning": "❶v. 到达、抵达 ❷v. 伸手够到",
+        "example": "We reached the summit at dawn.",
+        "root": "古义: 伸展手臂 → 伸手够到的范围 → 到达",
+        "exampleZh": "我们在黎明时分到达山顶。"
+      },
+      {
+        "en": "allow",
+        "phonetic": "/əˈlaʊ/",
+        "pos": "v.",
+        "meaning": "❶允许、准许（allow sb to do） ❷使能够、给…机会（allow access）",
+        "example": "Smoking is not allowed here.",
+        "root": "ad(向)+laudare(赞美) → 给予认可 → 允许",
+        "exampleZh": "这里不允许吸烟。"
+      },
+      {
+        "en": "reinforce",
+        "phonetic": "/ˌriːɪnˈfɔːrs/",
+        "pos": "v.",
+        "meaning": "❶加强、强化（观点/行为等） ❷增援（军事）",
+        "example": "This data reinforces our conclusion.",
+        "root": "re(再)+in+force(力量) → 再次注入力量 → 加强",
+        "exampleZh": "这些数据强化了我们的结论。"
+      },
+      {
+        "en": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "pos": "v.",
+        "meaning": "❶ 解释、说明 ❷ 为…辩解、说明原因",
+        "example": "Let me explain it to you.",
+        "root": "ex(出)+plain(平坦) → 把复杂的摊平说清楚 → 解释",
+        "exampleZh": "让我给你解释一下。"
+      },
+      {
+        "en": "ensure",
+        "phonetic": "/ɪnˈʃʊr/",
+        "pos": "v.",
+        "meaning": "确保、保证（某事一定发生）",
+        "example": "Ensure that all doors are locked.",
+        "root": "en(使)+sure(确定) → 使之确定 → 确保",
+        "exampleZh": "确保所有门都锁好了。"
+      },
+      {
+        "en": "solidify",
+        "phonetic": "/səˈlɪdɪfaɪ/",
+        "pos": "v.",
+        "meaning": "❶ 巩固、使稳固（关系/地位等） ❷ 使凝固、变硬",
+        "example": "This win solidified her position.",
+        "root": "solid(固体)+ify(使) → 使变成固体 → 巩固",
+        "exampleZh": "这次胜利巩固了她的地位。"
+      },
+      {
+        "en": "spin",
+        "phonetic": "/spɪn/",
+        "pos": "v./n.",
+        "meaning": "❶v. 快速旋转 ❷v. 纺纱、吐丝",
+        "example": "The wheel started to spin.",
+        "root": "古义: 快速旋转(如纺锤) → 绕轴高速转动 → 转",
+        "exampleZh": "轮子开始旋转。",
+        "irr": "过去:spun /spʌn/|过分:spun /spʌn/"
+      },
+      {
+        "en": "express",
+        "phonetic": "/ɪkˈspres/",
+        "pos": "v./adj./n.",
+        "meaning": "❶v. 表达、表述（thoughts/feelings） ❷adj. 快速的、快递的 ❸n. 快车、快递服务",
+        "example": "I find it hard to express my feelings.",
+        "root": "ex(出)+pressare(压) → 把里面的想法压出来 → 表达/快递",
+        "exampleZh": "我发现很难表达自己的感受。"
+      },
+      {
+        "en": "might",
+        "phonetic": "/maɪt/",
+        "pos": "modal v./n.",
+        "meaning": "❶ modal v. 可能、也许（比may更不确定） ❷ n. 力量、威力（with all one's might）",
+        "example": "It might rain later.",
+        "root": "古英语mihte → 可能存在的力量 → 也许(可能性)/力量",
+        "exampleZh": "可能会下雨。",
+        "irr": "may /meɪ/ 的过去式"
+      },
+      {
+        "en": "find",
+        "phonetic": "/faɪnd/",
+        "pos": "v.",
+        "meaning": "❶ 找到、发现 ❷ 觉得、认为（find sth adj.） ❸ 裁决、判定",
+        "example": "I can't find my keys.",
+        "root": "古英语findan → 遇到/碰到 → 找到",
+        "exampleZh": "我找不到我的钥匙。",
+        "irr": "过去:found /faʊnd/|过分:found /faʊnd/"
+      },
+      {
+        "en": "remember",
+        "phonetic": "/rɪˈmɛmbər/",
+        "pos": "v.",
+        "meaning": "❶ 记得、记住 ❷ 回想、想起 ❸ 代…问候（remember me to）",
+        "example": "Do you remember her name?",
+        "root": "re(再)+memor(记忆) → 再次从记忆中取出 → 记得",
+        "exampleZh": "你记得她的名字吗？"
+      },
+      {
+        "en": "start",
+        "phonetic": "/stɑːrt/",
+        "pos": "v./n.",
+        "meaning": "❶v. 开始、启动 ❷v. 出发 ❸n. 开端、起点 ❹n. 惊跳（startle）",
+        "example": "Let's start the meeting.",
+        "root": "古英语styrtan → 突然跳起 → 开始/出发",
+        "exampleZh": "我们开始开会吧。"
+      },
+      {
+        "en": "say",
+        "phonetic": "/seɪ/",
+        "pos": "v.",
+        "meaning": "❶ 说、讲 ❷ 表明、说明 ❸ 比如说（let's say）",
+        "example": "What did she say?",
+        "root": "古英语secgan → 用语言表达 → 说",
+        "exampleZh": "她说了什么？",
+        "irr": "过去:said /sɛd/|过分:said /sɛd/"
+      },
+      {
+        "en": "look",
+        "phonetic": "/lʊk/",
+        "pos": "v./n.",
+        "meaning": "❶v. 看、瞧 ❷v. 看起来、显得 ❸n. 看、目光 ❹n. 外表、样子",
+        "example": "Look at this picture.",
+        "root": "古英语lōcian → 用眼睛观察 → 看",
+        "exampleZh": "看这张图片。"
+      },
+      {
+        "en": "try",
+        "phonetic": "/traɪ/",
+        "pos": "v./n.",
+        "meaning": "❶v. 尝试、试图 ❷v. 审判、审理 ❸n. 尝试",
+        "example": "Try it, you might like it.",
+        "root": "古法语trier → 挑选/检验 → 尝试",
+        "exampleZh": "试试看，你可能会喜欢。",
+        "irr": "过去:tried /traɪd/|过分:tried /traɪd/"
+      },
+      {
+        "en": "put",
+        "phonetic": "/pʊt/",
+        "pos": "v.",
+        "meaning": "❶ 放、放置 ❷ 表达、说（put it this way） ❸ 使处于某种状态",
+        "example": "Put the book on the table.",
+        "root": "古英语putian → 放到某个位置 → 放",
+        "exampleZh": "把书放在桌子上。",
+        "irr": "过去:put /pʊt/|过分:put /pʊt/"
+      },
+      {
+        "en": "hold",
+        "phonetic": "/hoʊld/",
+        "pos": "v./n.",
+        "meaning": "❶v. 拿住、握住 ❷v. 举办、举行 ❸v. 容纳 ❹v. 保持 ❺n. 抓、握",
+        "example": "Hold this for me, please.",
+        "root": "古英语healdan → 用手抓住不放 → 拿住/举办",
+        "exampleZh": "请帮我拿一下这个。",
+        "irr": "过去:held /hɛld/|过分:held /hɛld/"
+      },
+      {
+        "en": "lose",
+        "phonetic": "/luːz/",
+        "pos": "v.",
+        "meaning": "❶ 丢失、失去 ❷ 输掉、失败 ❸ 迷路 ❹ 浪费（lose time）",
+        "example": "Don't lose your ticket.",
+        "root": "古英语losian → 变得失无所 → 丢失/输掉",
+        "exampleZh": "别丢了你的票。",
+        "irr": "过去:lost /lɔːst/|过分:lost /lɔːst/"
+      },
+      {
+        "en": "sit",
+        "phonetic": "/sɪt/",
+        "pos": "v.",
+        "meaning": "❶ 坐、坐下 ❷ 位于、坐落 ❸ 开会、开庭",
+        "example": "Please sit down.",
+        "root": "古英语sittan → 臀部放低 → 坐",
+        "exampleZh": "请坐下。",
+        "irr": "过去:sat /sæt/|过分:sat /sæt/"
+      },
+      {
+        "en": "eat",
+        "phonetic": "/iːt/",
+        "pos": "v.",
+        "meaning": "❶ 吃、进食 ❷ 吃饭",
+        "example": "I was too nervous to eat.",
+        "root": "古英语etan → 把食物送入嘴里 → 吃",
+        "exampleZh": "我太紧张了吃不下。",
+        "irr": "过去:ate /eɪt/|过分:eaten /ˈiːtən/"
+      },
+      {
+        "en": "walk",
+        "phonetic": "/wɔːk/",
+        "pos": "v./n.",
+        "meaning": "❶v. 走、步行 ❷v. 陪走/遛 ❸n. 步行、散步",
+        "example": "The baby is just learning to walk.",
+        "root": "古英语wealcan → 移动脚步 → 走/散步",
+        "exampleZh": "宝宝刚在学走路。"
+      },
+      {
+        "en": "ask",
+        "phonetic": "/æsk/",
+        "pos": "v.",
+        "meaning": "❶ 问、询问 ❷ 请求、要求 ❸ 邀请 ❹ 请求许可",
+        "example": "Can I ask a question?",
+        "root": "古英语āscian → 向人发问 → 问/请求",
+        "exampleZh": "我可以问个问题吗？"
+      },
+      {
+        "en": "fail",
+        "phonetic": "/feɪl/",
+        "pos": "v.",
+        "meaning": "❶ 失败 ❷ 未能（fail to do） ❸ 不及格 ❹ 失灵/停止工作 ❺ 辜负",
+        "example": "She failed to get into law school.",
+        "root": "拉丁语fallere → 欺骗/失误 → 未成功 → 失败",
+        "exampleZh": "她没能考上法学院。"
+      },
+      {
+        "en": "mad",
+        "phonetic": "/mæd/",
+        "pos": "adj.",
+        "meaning": "❶ 生气的、恼怒的（口语，美式常用） ❷ 疯狂的、发疯的",
+        "example": "Are you mad at me?",
+        "root": "古英语gemǣd → 精神失常 → 发疯/生气",
+        "exampleZh": "你生我气了吗？"
+      },
+      {
+        "en": "confident",
+        "phonetic": "/ˈkɑːnfɪdənt/",
+        "pos": "adj.",
+        "meaning": "❶ 自信的、有信心的 ❷ 确信的、肯定的",
+        "example": "She's confident about the exam.",
+        "root": "con(完全)+fidere(信任) → 完全信任自己 → 自信的",
+        "exampleZh": "她对考试很有信心。"
+      },
+      {
+        "en": "nervous",
+        "phonetic": "/ˈnɜːrvəs/",
+        "pos": "adj.",
+        "meaning": "❶ 紧张的、不安的 ❷ 神经的、神经系统的",
+        "example": "I always get nervous before exams.",
+        "root": "nervus(神经) → 神经受刺激 → 紧张的",
+        "exampleZh": "考试前我总是紧张。"
+      },
+      {
+        "en": "calm",
+        "phonetic": "/kɑːm/",
+        "pos": "adj./v./n.",
+        "meaning": "❶adj. 平静的、冷静的 ❷v. 使平静、使镇定 ❸n. 平静、安宁",
+        "example": "Stay calm and take a deep breath.",
+        "root": "古法语calme → 没有风浪的状态 → 平静",
+        "exampleZh": "保持冷静，深呼吸。"
+      },
+      {
+        "en": "excited",
+        "phonetic": "/ɪkˈsaɪtɪd/",
+        "pos": "adj.",
+        "meaning": "❶ 兴奋的、激动的（对即将发生的事感到期待）",
+        "example": "The kids are so excited about the trip.",
+        "root": "ex(出)+citare(唤起) → 被唤起来的情绪 → 兴奋的",
+        "exampleZh": "孩子们对这次旅行很兴奋。"
+      },
+      {
+        "en": "positive",
+        "phonetic": "/ˈpɑːzətɪv/",
+        "pos": "adj./n.",
+        "meaning": "❶adj. 积极的、正面的 ❷adj. 确定的、肯定的 ❸adj. 正的（数学）",
+        "example": "Try to stay positive.",
+        "root": "positus(放置的) → 确定站住的 → 积极的/肯定的",
+        "exampleZh": "尽量保持积极。"
+      },
+      {
+        "en": "exhausted",
+        "phonetic": "/ɪɡˈzɔːstɪd/",
+        "pos": "adj.",
+        "meaning": "❶ 筋疲力尽的、极度疲惫的 ❷ 用完的、耗尽的",
+        "example": "I was completely exhausted after the hike.",
+        "root": "ex(出)+haurire(抽干) → 被抽干的 → 筋疲力尽的",
+        "exampleZh": "徒步之后我完全筋疲力尽了。"
+      },
+      {
+        "en": "angry",
+        "phonetic": "/ˈæŋɡri/",
+        "pos": "adj.",
+        "meaning": "❶ 生气的、愤怒的 ❷ （伤口）红肿发炎的 ❸ （海/天）狂暴的",
+        "example": "Please don't be angry with me.",
+        "root": "anger+y → 有怒气的 → 生气的",
+        "exampleZh": "请不要对我生气。"
+      },
+      {
+        "en": "raw",
+        "phonetic": "/rɔː/",
+        "pos": "adj.",
+        "meaning": "❶生的、未烹煮的 ❷未加工的、天然状态的（raw material/sugar）",
+        "example": "I prefer raw vegetables in my salad.",
+        "root": "古英语hrēaw → 未经任何处理的原始状态 → 生的/原始的",
+        "exampleZh": "我更喜欢沙拉里放生的蔬菜。"
+      },
+      {
+        "en": "crisp",
+        "phonetic": "/krɪsp/",
+        "pos": "adj./n./v.",
+        "meaning": "❶adj. 脆的、酥脆的 ❷adj. 清爽的、干冷的（天气）",
+        "example": "The skin on the roast pork was perfectly crisp.",
+        "root": "古英语crisp → 咬下去咔嚓响的 → 脆的",
+        "exampleZh": "烤猪皮的脆度完美。"
+      },
+      {
+        "en": "solar",
+        "phonetic": "/ˈsoʊlər/",
+        "pos": "adj.",
+        "meaning": "❶ 太阳的、来自太阳的 ❷ 利用太阳能的",
+        "example": "Solar panels convert sunlight into electricity.",
+        "root": "sol(太阳) → 来自太阳的 → 太阳的",
+        "exampleZh": "太阳能电池板把阳光转化为电。"
+      },
+      {
+        "en": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "pos": "adj./n.",
+        "meaning": "❶ adj. 视觉的、看得见的 ❷ n. 视觉资料（图片、图表等）",
+        "example": "The visuals drove the point home.",
+        "root": "vis(看) → 与看见有关的 → 视觉的",
+        "exampleZh": "视觉资料让人印象深刻。"
+      },
+      {
+        "en": "tense",
+        "phonetic": "/tens/",
+        "pos": "adj./n.",
+        "meaning": "❶ adj. 紧张的、绷紧的 ❷ n. 时态（动词的时间形式）",
+        "example": "English has 12 tenses.",
+        "root": "tempus(时间) → 动词标记时间的形状 → 时态；拉紧 → 紧张",
+        "exampleZh": "英语有12种时态。"
+      },
+      {
+        "en": "present",
+        "phonetic": "/ˈpreznt/ /prɪˈzent/",
+        "pos": "adj./n./v.",
+        "meaning": "❶adj. 在场的、出席的（be present at） ❷adj. 当前的、现在的（at the present time） ❸n. 礼物、赠品 ❹v. 呈现、展示 ❺v. 颁发、赠送",
+        "example": "She presented her findings.",
+        "root": "pre(在前)+esse(存在) → 在眼前存在 → 出席/呈现/礼物",
+        "exampleZh": "她展示了她的研究发现。"
+      },
+      {
+        "en": "fluent",
+        "phonetic": "/ˈfluːənt/",
+        "pos": "adj.",
+        "meaning": "❶ 流利的、流畅的（语言） ❷ 流畅的（动作/表达）",
+        "example": "She's fluent in three languages.",
+        "root": "fluere(流动) → 像水一样流出来 → 流利",
+        "exampleZh": "她能流利地说三种语言。"
+      },
+      {
+        "en": "possible",
+        "phonetic": "/ˈpɑːsəbl/",
+        "pos": "adj./n.",
+        "meaning": "❶adj. 可能的、有可能实现的 ❷adj. 合理的、可接受的",
+        "example": "It's possible that it will rain.",
+        "root": "posse(能够) → 能够做到的 → 可能的",
+        "exampleZh": "可能会下雨。"
+      },
+      {
+        "en": "intermediate",
+        "phonetic": "/ˌɪntərˈmiːdiət/",
+        "pos": "adj./n.",
+        "meaning": "❶ adj. 中级的、中间的 ❷ n. 中级水平者/中级课程",
+        "example": "This is for intermediate learners.",
+        "root": "inter(在之间)+medius(中间) → 夹在中间的 → 中级的",
+        "exampleZh": "这是给中级学习者的。"
+      },
+      {
+        "en": "advanced",
+        "phonetic": "/ədˈvænst/",
+        "pos": "adj.",
+        "meaning": "❶高级的、先进的 ❷深入的（阶段/水平）",
+        "example": "She's in the advanced English class.",
+        "root": "advance(前进)的过去分词 → 已经走得很前面的 → 高级的",
+        "exampleZh": "她在高级英语班。"
+      },
+      {
+        "en": "customizable",
+        "phonetic": "/ˈkʌstəmaɪzəbl/",
+        "pos": "adj.",
+        "meaning": "可定制的、可按用户需求修改的",
+        "example": "The dashboard is fully customizable.",
+        "root": "custom(习惯/定制)+ize(使)+able(可) → 可以按习惯改的 → 可定制",
+        "exampleZh": "仪表盘完全可定制。"
+      },
+      {
+        "en": "comfortable",
+        "phonetic": "/ˈkʌmftəbl/ /ˈkʌmfərtəbl/",
+        "pos": "adj.",
+        "meaning": "❶舒适的、舒服的 ❷自在的、放松的（comfortable with）",
+        "example": "This sofa is very comfortable.",
+        "root": "com(加强)+fortis(强壮) → 有力量支撑 → 舒适/自在",
+        "exampleZh": "这张沙发很舒服。"
+      },
+      {
+        "en": "optional",
+        "phonetic": "/ˈɑːpʃənl/",
+        "pos": "adj.",
+        "meaning": "可选的、非强制的（不选也行）",
+        "example": "Attendance is optional.",
+        "root": "option(选择)+al → 可以选择要不要的 → 可选的",
+        "exampleZh": "出勤是可选的。"
+      },
+      {
+        "en": "beneficial",
+        "phonetic": "/ˌbenɪˈfɪʃl/",
+        "pos": "adj.",
+        "meaning": "有益的、有利的（对…有好处）",
+        "example": "Exercise is beneficial to health.",
+        "root": "bene(好)+facere(做) → 做好事 → 有益的",
+        "exampleZh": "锻炼对身体有益。"
+      },
+      {
+        "en": "less",
+        "phonetic": "/les/",
+        "pos": "adj./adv./det.",
+        "meaning": "❶ adj./det. 更少的、较少的 ❷ adv. 较少地、不如",
+        "example": "We have less time than I thought.",
+        "root": "古义: 更小的 → 数量上更少的 → less",
+        "exampleZh": "我们的时间比我想的少。"
+      },
+      {
+        "en": "daily",
+        "phonetic": "/ˈdeɪli/",
+        "pos": "adj./adv./n.",
+        "meaning": "❶adj. 每日的、日常的 ❷adv. 每天",
+        "example": "Exercise is part of my daily routine.",
+        "root": "day(天)+ly(每) → 每天的 → 日常的",
+        "exampleZh": "锻炼是我日常生活的一部分。"
+      },
+      {
+        "en": "windy",
+        "phonetic": "/ˈwɪndi/",
+        "pos": "adj.",
+        "meaning": "多风的、风大的",
+        "example": "It's too windy to go sailing today.",
+        "root": "wind(风)+y → 风很多的 → 多风的",
+        "exampleZh": "今天风太大，不能去航海。"
+      },
+      {
+        "en": "huge",
+        "phonetic": "/hjuːdʒ/",
+        "pos": "adj.",
+        "meaning": "❶ 巨大的、庞大的 ❷ 极大的、非常多的",
+        "example": "That's a huge difference.",
+        "root": "古法语ahuge → 大到让人敬畏 → 巨大的",
+        "exampleZh": "那是一个巨大的差异。"
+      },
+      {
+        "en": "religious",
+        "phonetic": "/rɪˈlɪdʒəs/",
+        "pos": "adj.",
+        "meaning": "❶宗教的、宗教上的 ❷虔诚的、笃信的",
+        "example": "She's not very religious, but she respects all faiths.",
+        "root": "religio(绑定) → 与神灵绑在一起的 → 宗教的/虔诚的",
+        "exampleZh": "她不太虔诚，但尊重所有信仰。"
+      },
+      {
+        "en": "famous",
+        "phonetic": "/ˈfeɪməs/",
+        "pos": "adj.",
+        "meaning": "著名的、有名的",
+        "example": "This restaurant is famous for its pizza.",
+        "root": "fama(传闻/名声) → 名声传遍各处的 → 著名的",
+        "exampleZh": "这家餐厅以披萨闻名。"
+      },
+      {
+        "en": "popular",
+        "phonetic": "/ˈpɑːpjələr/",
+        "pos": "adj.",
+        "meaning": "❶受欢迎的、流行的（popular with/among） ❷大众的、通俗的（popular music）",
+        "example": "This is the most popular beach in town.",
+        "root": "populus(人民) → 受大众喜爱的 → 受欢迎的",
+        "exampleZh": "这是镇上最受欢迎的海滩。"
+      },
+      {
+        "en": "else",
+        "phonetic": "/els/",
+        "pos": "adj./adv.",
+        "meaning": "❶adv. 其他、另外（用在疑问词/不定代词后） ❷adj. 别的、其他的",
+        "example": "Do you want anything else?",
+        "root": "古英语elles → 其他的、别的 → 否则",
+        "exampleZh": "你还要别的什么吗？"
+      },
+      {
+        "en": "historical",
+        "phonetic": "/hɪˈstɔːrɪkl/",
+        "pos": "adj.",
+        "meaning": "❶历史的、有关历史的 ❷基于史实的",
+        "example": "This is a historical building from the 1800s.",
+        "root": "historia(故事/记录) → 基于历史记录的 → 历史的",
+        "exampleZh": "这是一栋1800年代的历史建筑。"
+      },
+      {
+        "en": "empty",
+        "phonetic": "/ˈempti/",
+        "pos": "adj./v.",
+        "meaning": "❶adj. 空的、没有内容的 ❷adj. 空洞的、无意义的（empty words/promises）",
+        "example": "The room was completely empty.",
+        "root": "古英语ǣmettig → 里面什么都没有的 → 空的",
+        "exampleZh": "房间完全空了。"
+      },
+      {
+        "en": "dry",
+        "phonetic": "/draɪ/",
+        "pos": "adj./v.",
+        "meaning": "❶adj. 干的、干燥的 ❷adj. 无甜味的（酒）",
+        "example": "Hang the clothes outside to dry.",
+        "root": "古英语drūge → 没有水分的 → 干的",
+        "exampleZh": "把衣服挂在外面晾干。"
+      },
+      {
+        "en": "extreme",
+        "phonetic": "/ɪkˈstriːm/",
+        "pos": "adj./n.",
+        "meaning": "adj. 极端的、极度的",
+        "example": "The weather here is extreme in summer.",
+        "root": "extremus(最外面的) → 离正常范围最远的 → 极端的",
+        "exampleZh": "这里夏天天气极端。"
+      },
+      {
+        "en": "secret",
+        "phonetic": "/ˈsiːkrət/",
+        "pos": "adj./n.",
+        "meaning": "❶ adj. 秘密的、机密的（只有少数人知道的） ❷ n. 秘密、内情 ❸ n. 诀窍、秘诀（成功的最佳方法）",
+        "example": "Can you keep a secret?",
+        "root": "se(分开)+cernere(筛选) → 筛选出来单独藏着 → 秘密的",
+        "exampleZh": "你能保守秘密吗？"
+      },
+      {
+        "en": "right",
+        "phonetic": "/raɪt/",
+        "pos": "adj./adv./n.",
+        "meaning": "❶adj. 正确的 ❷adj. 右边的 ❸adv. 恰好、正好 ❹n. 权利 ❺adv. 立刻、马上",
+        "example": "You're absolutely right.",
+        "root": "古英语riht → 正直/正确 → 正确的/右边的/权利",
+        "exampleZh": "你完全正确。"
+      },
+      {
+        "en": "brief",
+        "phonetic": "/briːf/",
+        "pos": "adj./n./v.",
+        "meaning": "❶adj. 简短的、短暂的 ❷n. 简报、摘要 ❸v. 向…作简报",
+        "example": "Keep it brief, please.",
+        "root": "brevis(短的) → 时间或内容上短的 → 简短",
+        "exampleZh": "请简短一点。"
+      },
+      {
+        "en": "more",
+        "phonetic": "/mɔːr/",
+        "pos": "adj./adv./pron.",
+        "meaning": "❶adj./adv. 更多的/更 ❷pron. 更多的人/物",
+        "example": "I need more time.",
+        "root": "古英语māra → 数量上更大的 → 更多",
+        "exampleZh": "我需要更多时间。"
+      },
+      {
+        "en": "important",
+        "phonetic": "/ɪmˈpɔːrtənt/",
+        "pos": "adj.",
+        "meaning": "❶ 重要的、重大的 ❷ 有势力的、有地位的",
+        "example": "This is an important decision.",
+        "root": "in(进入)+portare(携带) → 带入重要性的 → 重要的",
+        "exampleZh": "这是一个重要的决定。"
+      },
+      {
+        "en": "quick",
+        "phonetic": "/kwɪk/",
+        "pos": "adj./adv.",
+        "meaning": "❶adj. 快的、迅速的 ❷adj. 聪明的、机灵的 ❸adv. 快地（口语）",
+        "example": "She gave a quick answer.",
+        "root": "古英语cwic → 活的/有活力的 → 动作快的 → 快的",
+        "exampleZh": "她迅速回答了。"
+      },
+      {
+        "en": "hungry",
+        "phonetic": "/ˈhʌŋɡri/",
+        "pos": "adj.",
+        "meaning": "❶ 饥饿的 ❷ 渴望的（hungry for success/knowledge）",
+        "example": "I'm so hungry I could eat a horse.",
+        "root": "hunger(饥饿)+y → 觉得饿的 → 饥饿的",
+        "exampleZh": "我饿得能吃下一匹马。"
+      },
+      {
+        "en": "really",
+        "phonetic": "/ˈriːəli/",
+        "pos": "adv.",
+        "meaning": "❶ 真正地、确实 ❷ 非常、很 ❸ 真的吗？（表惊讶）",
+        "example": "I really like this song.",
+        "root": "real(真实的)+ly → 真实地 → 确实",
+        "exampleZh": "我真的很喜欢这首歌。"
+      },
+      {
+        "en": "just",
+        "phonetic": "/dʒʌst/",
+        "pos": "adv./adj.",
+        "meaning": "❶adv. 刚刚 ❷adv. 只是、仅仅 ❸adv. 正好、恰好 ❹adj. 公正的、合理的",
+        "example": "I just finished my homework.",
+        "root": "拉丁语justus(公正的) → 精确/公正 → 刚刚/只是/公正的",
+        "exampleZh": "我刚做完作业。"
+      },
+      {
+        "en": "probably",
+        "phonetic": "/ˈprɑːbəbli/",
+        "pos": "adv.",
+        "meaning": "很可能、大概（比maybe更确定）",
+        "example": "It'll probably rain tomorrow.",
+        "root": "prob(证明)+able(可能)+ly → 可以被证明的 → 很可能",
+        "exampleZh": "明天很可能下雨。"
+      },
+      {
+        "en": "definitely",
+        "phonetic": "/ˈdɛfənətli/",
+        "pos": "adv.",
+        "meaning": "❶ 肯定地、毫无疑问地 ❷ 确实、当然（加强语气）",
+        "example": "I definitely want to go.",
+        "root": "de(完全)+finire(限定)+ly → 完全限定死了 → 肯定地",
+        "exampleZh": "我肯定要去。"
+      },
+      {
+        "en": "quite",
+        "phonetic": "/kwaɪt/",
+        "pos": "adv.",
+        "meaning": "❶ 相当、挺 ❷ 完全地、彻底地（quite sure/impossible）",
+        "example": "It's quite cold today.",
+        "root": "古法语quit → 完全/自由 → 相当/完全",
+        "exampleZh": "今天相当冷。",
+        "noAudio": true
+      },
+      {
+        "en": "maybe",
+        "phonetic": "/ˈmeɪbi/",
+        "pos": "adv.",
+        "meaning": "❶ 也许、大概 ❷ 可能、有可能",
+        "example": "Maybe we'll go to the beach tomorrow.",
+        "root": "may(可能)+be(是) → 可能是 → 也许",
+        "exampleZh": "也许我们明天去海滩。"
+      },
+      {
+        "en": "always",
+        "phonetic": "/ˈɔːlweɪz/",
+        "pos": "adv.",
+        "meaning": "❶ 总是、一直 ❷ 永远 ❸ 老是（抱怨，always doing）",
+        "example": "She always arrives at 7:30.",
+        "root": "all+ways → 所有的方式 → 每一次 → 总是",
+        "exampleZh": "她总是7:30到。"
+      },
+      {
+        "en": "actually",
+        "phonetic": "/ˈæktʃuəli/",
+        "pos": "adv.",
+        "meaning": "❶ 实际上、事实上 ❷ 居然（表意外） ❸ 说真的（礼貌纠正） ❹ 不好意思（引入新话题）",
+        "example": "It's not actually raining now.",
+        "root": "act(做)+ual(的)+ly → 实际做的 → 实际上",
+        "exampleZh": "其实现在没下雨。"
+      },
+      {
+        "en": "often",
+        "phonetic": "/ˈɔːfn/",
+        "pos": "adv.",
+        "meaning": "❶ 经常、常常 ❷ 在很多情况下",
+        "example": "We often go there.",
+        "root": "oft(经常)+en → 频繁地 → 经常",
+        "exampleZh": "我们经常去那里。"
+      },
+      {
+        "en": "sometime",
+        "phonetic": "/ˈsʌmtaɪm/",
+        "pos": "adv.",
+        "meaning": "❶ 某个时候（时间不确定或未定）",
+        "example": "We must get together sometime.",
+        "root": "some+time → 某个时间 → 某时",
+        "exampleZh": "我们改天一定要聚一聚。"
+      },
+      {
+        "en": "never",
+        "phonetic": "/ˈnɛvər/",
+        "pos": "adv.",
+        "meaning": "❶ 从不、绝不 ❷ 并不（强调否定，替代not）",
+        "example": "He has never been abroad.",
+        "root": "ne(不)+ever(曾经) → 任何时候都不 → 从不",
+        "exampleZh": "他从未出过国。"
+      },
+      {
+        "en": "especially",
+        "phonetic": "/ɪˈspeʃəli/",
+        "pos": "adv.",
+        "meaning": "❶ 尤其、特别 ❷ 专门地、特意地",
+        "example": "I love fruit, especially mangoes.",
+        "root": "es(出)+special(特别) → 特别地从中突出 → 尤其",
+        "exampleZh": "我喜欢水果，尤其是芒果。"
+      },
+      {
+        "en": "completely",
+        "phonetic": "/kəmˈpliːtli/",
+        "pos": "adv.",
+        "meaning": "完全地、彻底地（百分之百，毫无保留）",
+        "example": "I completely forgot about the meeting.",
+        "root": "com(完全)+plere(填满)+ly → 一点空隙都不留 → 完全地",
+        "exampleZh": "我完全忘了那个会议。"
+      },
+      {
+        "en": "quickly",
+        "phonetic": "/ˈkwɪkli/",
+        "pos": "adv.",
+        "meaning": "快速地、迅速地",
+        "example": "Please finish this quickly.",
+        "root": "quick(快的)+ly → 以快的方式 → 快速地",
+        "exampleZh": "请快点完成这个。"
+      },
+      {
+        "en": "next to",
+        "phonetic": "/nɛkst tuː/",
+        "pos": "prep.",
+        "meaning": "❶ 紧挨着、在…旁边 ❷ 仅次于",
+        "example": "The bank is next to the post office.",
+        "root": "next(紧邻的)+to(到) → 紧挨到 → 在…旁边",
+        "exampleZh": "银行就在邮局旁边。",
+        "noAudio": true
+      },
+      {
+        "en": "between",
+        "phonetic": "/bɪˈtwiːn/",
+        "pos": "prep.",
+        "meaning": "❶ 在…之间（两者之间） ❷ 在…中间（共享/合作）",
+        "example": "The house is between the park and the river.",
+        "root": "by(旁)+twain(两个) → 在两个之间 → 之间",
+        "exampleZh": "房子在公园和河之间。"
+      },
+      {
+        "en": "under",
+        "phonetic": "/ˈʌndər/",
+        "pos": "prep.",
+        "meaning": "❶ 在…下面 ❷ 低于、少于 ❸ 在…管辖下 ❹ 在…过程中",
+        "example": "The cat is under the table.",
+        "root": "古英语under → 在更低位置 → 下面",
+        "exampleZh": "猫在桌子下面。"
+      },
+      {
+        "en": "over",
+        "phonetic": "/ˈoʊvər/",
+        "pos": "prep./adv.",
+        "meaning": "❶prep. 在…上方 ❷prep. 超过、多于 ❸adv. 结束了 ❹adv. 翻转",
+        "example": "The plane flew over the mountains.",
+        "root": "古英语ofer → 在更高位置 → 上方/超过",
+        "exampleZh": "飞机飞越了山脉。"
+      },
+      {
+        "en": "without",
+        "phonetic": "/wɪˈðaʊt/",
+        "pos": "prep.",
+        "meaning": "prep. 没有、不带",
+        "example": "He left without saying goodbye.",
+        "root": "with(有)+out(外) → 在有的范围之外 → 没有",
+        "exampleZh": "他没说再见就走了。"
+      },
+      {
+        "en": "at",
+        "phonetic": "/ət/",
+        "pos": "prep.",
+        "meaning": "❶ 在某处（地点） ❷ 在某时（时间） ❸ 朝向某方向 ❹ 处于某种状态 ❺ 以某种速度/价格 ❻ 在某方面（good at）",
+        "example": "We left at 2 o'clock.",
+        "root": "古英语æt，表示位置/时间的指向点 → 在",
+        "exampleZh": "我们两点出发的。",
+        "noAudio": true
+      },
+      {
+        "en": "through",
+        "phonetic": "/θruː/",
+        "pos": "prep./adv.",
+        "meaning": "❶prep. 穿过、通过 ❷prep. 经历、度过 ❸adv. 彻底地、完全地",
+        "example": "We drove through the tunnel.",
+        "root": "古英语þurh → 从一端到另一端 → 穿过",
+        "exampleZh": "我们开车穿过了隧道。"
+      },
+      {
+        "en": "whether",
+        "phonetic": "/ˈweðər/",
+        "pos": "conj.",
+        "meaning": "❶ 是否（引导间接疑问句或条件句） ❷ 不管…还是…（whether...or...）",
+        "example": "Whether you go or stay is up to you.",
+        "root": "古英语hwæther(两者中哪个) → 二选一 → 是否/不管…还是",
+        "exampleZh": "去还是留由你决定。"
+      },
+      {
+        "en": "than",
+        "phonetic": "/ðæn/",
+        "pos": "conj./prep.",
+        "meaning": "❶conj. 比（用于比较） ❷prep. 除…外（other than）",
+        "example": "She's taller than me.",
+        "root": "古英语þanne → 比较时用的 → 比",
+        "exampleZh": "她比我高。",
+        "noAudio": true
+      },
+      {
+        "en": "set up",
+        "phonetic": "/set ʌp/",
+        "pos": "phrasal v.",
+        "meaning": "❶建立、创办 ❷搭建、安装",
+        "example": "They set up a stall at the market.",
+        "root": "set(放置)+up(立起来) → 把东西立起来准备好 → 建立/搭建",
+        "exampleZh": "他们在市场搭了一个摊位。",
+        "irr": "过去:set /set/ up|过分:set /set/ up",
+        "noAudio": true
+      },
+      {
+        "en": "stick around",
+        "phonetic": "/stɪk əˈraʊnd/",
+        "pos": "phrasal v.",
+        "meaning": "留在原地、待着不走（口语）",
+        "example": "Stick around until you reach your goals.",
+        "root": "stick(粘住)+around(在周围) → 粘在附近不走 → 待着",
+        "exampleZh": "坚持下去，直到实现你的目标。",
+        "noAudio": true
+      },
+      {
+        "en": "fill up",
+        "phonetic": "/fɪl ʌp/",
+        "pos": "phrasal v.",
+        "meaning": "❶加满、装满 ❷填写（表格）",
+        "example": "I need to fill up the car with gas.",
+        "root": "fill(填满)+up(到顶) → 填到最上面 → 加满",
+        "exampleZh": "我需要给车加满油。",
+        "noAudio": true
+      },
+      {
+        "en": "come down",
+        "phonetic": "/kʌm daʊn/",
+        "pos": "phrasal v.",
+        "meaning": "❶下来、降落 ❷下跌、降价",
+        "example": "The rain is coming down hard.",
+        "root": "come(来)+down(下) → 从高处下来 → 下来/下跌",
+        "exampleZh": "雨下得很大。",
+        "irr": "过去:came /keɪm/ down|过分:come /kʌm/ down",
+        "noAudio": true
+      },
+      {
+        "en": "check out",
+        "phonetic": "/tʃek aʊt/",
+        "pos": "phrasal v.",
+        "meaning": "❶查看、了解（口语：去试试/看看） ❷退房（酒店）",
+        "example": "You should check out that new restaurant.",
+        "root": "check(核实)+out(出去) → 核实完离开 → 退房/查看",
+        "exampleZh": "你应该去看看那家新餐厅。",
+        "noAudio": true
+      },
+      {
+        "en": "cut up",
+        "phonetic": "/kʌt ʌp/",
+        "pos": "phrasal v.",
+        "meaning": "❶ 切碎、切成小块 ❷ 伤心、难受（口语：cut up about）",
+        "example": "Cut up the vegetables before putting them in the soup.",
+        "root": "cut(切)+up(彻底) → 彻底切成碎块 → 切碎",
+        "exampleZh": "把蔬菜切碎再放进汤里。",
+        "irr": "过去:cut /kʌt/ up|过分:cut /kʌt/ up",
+        "noAudio": true
+      },
+      {
+        "en": "put down",
+        "phonetic": "/pʊt daʊn/",
+        "pos": "phrasal v.",
+        "meaning": "❶ 放下 ❷ 写下、记下 ❸ 镇压 ❹ 贬低（口语）",
+        "example": "Put down your pen and listen.",
+        "root": "put(放)+down(下) → 往下放 → 放下/记下",
+        "exampleZh": "放下笔听我说。",
+        "noAudio": true
+      },
+      {
+        "en": "in between",
+        "phonetic": "/ɪn bɪˈtwiːn/",
+        "pos": "phrase",
+        "meaning": "在中间、夹在中间（强调两者之间的位置或状态）",
+        "example": "I'm caught in between two choices.",
+        "root": "in(在)+between(之间) → 夹在中间 → 介于两者之间",
+        "exampleZh": "我被夹在两个选择之间。",
+        "noAudio": true
+      },
+      {
+        "en": "on top of that",
+        "phonetic": "/ɑːn tɑːp əv ðæt/",
+        "pos": "phrase",
+        "meaning": "而且、更何况（在已有不好的事情上再加一层）",
+        "example": "I lost my wallet, and on top of that, my phone died.",
+        "root": "在已经有的(top)上面再加一层 → 而且/更何况",
+        "exampleZh": "我丢了钱包，更糟的是，手机也没电了。",
+        "noAudio": true
+      },
+      {
+        "en": "different path than normal",
+        "phonetic": "/ˈdɪfrənt pæθ ðæn ˈnɔːrml/",
+        "pos": "phrase",
+        "meaning": "不同于平常的路（走了另外一条）",
+        "example": "We took a different path than normal to avoid traffic.",
+        "root": "不是平常(normal)走的那条路(path) → 绕道",
+        "exampleZh": "我们走了不同于平常的路来避开堵车。",
+        "noAudio": true
+      },
+      {
+        "en": "sharp drop",
+        "phonetic": "/ʃɑːrp drɑːp/",
+        "pos": "phrase",
+        "meaning": "骤降、暴跌（温度/价格/数量等急剧下降）",
+        "example": "There was a sharp drop in temperature overnight.",
+        "root": "sharp(陡峭的)+drop(掉落) → 像悬崖一样垂直掉下去 → 骤降",
+        "exampleZh": "一夜之间气温骤降。",
+        "compound": true
+      },
+      {
+        "en": "main park",
+        "phonetic": "/meɪn pɑːrk/",
+        "pos": "phrase",
+        "meaning": "主公园（城里最大或最主要的公园）",
+        "example": "Let's meet at the main park downtown.",
+        "root": "main(主要的)+park(公园) → 城里最重要的公园 → 主公园",
+        "exampleZh": "我们在市中心的主公园见面吧。",
+        "compound": true
+      },
+      {
+        "en": "got it",
+        "phonetic": "/ɡɑːt ɪt/",
+        "pos": "phrase",
+        "meaning": "❶ 明白了、懂了 ❷ 收到了 ❸ 搞定了",
+        "example": "— The meeting is at 3. — Got it!",
+        "root": "get(得到/理解)+it → 抓住了要点 → 明白了",
+        "exampleZh": "— 会议三点。— 明白了！",
+        "noAudio": true
+      },
+      {
+        "en": "must be",
+        "phonetic": "/mʌst biː/",
+        "pos": "phrase",
+        "meaning": "❶ 一定是、肯定是（表强烈推测） ❷ 必须是（表义务）",
+        "example": "She must be tired after the long trip.",
+        "root": "must(必须)+be(是) → 一定是/必须是",
+        "exampleZh": "长途旅行后她一定很累。",
+        "noAudio": true
+      },
+      {
+        "en": "might be",
+        "phonetic": "/maɪt biː/",
+        "pos": "phrase",
+        "meaning": "可能是、也许是（表不确定推测）",
+        "example": "It might be too late to go now.",
+        "root": "might(可能)+be(是) → 可能是",
+        "exampleZh": "现在去可能太晚了。",
+        "noAudio": true
+      },
+      {
+        "en": "failed to",
+        "phonetic": "/feɪld tuː/",
+        "pos": "phrase",
+        "meaning": "未能、没有（做某事，强调本该做但没做）",
+        "example": "He failed to show up on time.",
+        "root": "fail(失败)+to → 没能做到 → 未能",
+        "exampleZh": "他没能按时出现。",
+        "noAudio": true
+      },
+      {
+        "en": "could be",
+        "phonetic": "/kʊd biː/",
+        "pos": "phrase",
+        "meaning": "可能是、有可能是（比might be更弱的可能性）",
+        "example": "That could be a problem.",
+        "root": "could(能够)+be(是) → 有可能是",
+        "exampleZh": "那可能是个问题。",
+        "noAudio": true
+      },
+      {
+        "en": "not great so far",
+        "phonetic": "/nɑːt ɡreɪt soʊ fɑːr/",
+        "pos": "phrase",
+        "meaning": "❶ 到目前为止不太好 ❷ 目前不太行",
+        "example": "The food's not great so far.",
+        "root": "not+great+so+far → 到此时为止不够好",
+        "exampleZh": "到目前为止食物不太好。",
+        "noAudio": true
+      }
     ]
   }
 ]
