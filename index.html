@@ -1155,7 +1155,13 @@ function getAllWords() {
 function getWordsByRange(range) {
   if (range === 'all') return getAllWords();
   const sec = getMergedData().find(s => s.date === range);
-  return sec ? sec.words : getAllWords();
+  if (!sec) return getAllWords();
+  // Support nouns500 sub-group filtering
+  if (sec.isNouns500 && quizState.nounsGroup) {
+    const g = NOUNS500_QUIZ_GROUPS.find(g => g.name === quizState.nounsGroup);
+    if (g) return sec.words.filter(w => g.subcats.includes(w.subcategory));
+  }
+  return sec.words;
 }
 
 // 洗牌
@@ -1286,6 +1292,27 @@ function renderQuizSetup() {
   const mode = QUIZ_MODES.find(m => m.id === quizState.mode);
   const total = getWordsByRange(quizState.range).length;
   const maxQ = Math.min(total, 50);
+  
+  // Build nouns500 sub-group buttons if nouns500 is selected
+  const data = getMergedData();
+  const n500sec = data.find(s => s.isNouns500);
+  let nounsSubHtml = '';
+  if (n500sec && (quizState.range === n500sec.date || quizState.nounsGroup)) {
+    const n500words = n500sec.words;
+    // Reset nounsGroup if range changed away from nouns500
+    if (quizState.range !== n500sec.date && quizState.nounsGroup) {
+      // keep it if user selected a sub-group
+    }
+    nounsSubHtml = '<h3>名词500分类</h3><div class="quiz-range">';
+    nounsSubHtml += '<button class="quiz-range-btn ' + (!quizState.nounsGroup ? 'selected' : '') + '" onclick="setNounsGroup(null,this)">全部分类 (' + n500words.length + ')</button>';
+    NOUNS500_QUIZ_GROUPS.forEach(g => {
+      const count = n500words.filter(w => g.subcats.includes(w.subcategory)).length;
+      const sel = quizState.nounsGroup === g.name ? 'selected' : '';
+      nounsSubHtml += '<button class="quiz-range-btn ' + sel + '" onclick="setNounsGroup(\'' + g.name + '\',this)">' + g.name + ' (' + count + ')</button>';
+    });
+    nounsSubHtml += '</div>';
+  }
+
   const el = document.getElementById('quizInner');
   el.innerHTML = `
     <div class="quiz-top">
@@ -1297,11 +1324,13 @@ function renderQuizSetup() {
       <h3>选择范围</h3>
       <div class="quiz-range">
         <button class="quiz-range-btn ${quizState.range==='all'?'selected':''}" onclick="setQuizRange('all',this)">全部 (${getAllWords().length})</button>
-        ${getMergedData().map((s,i) => {
+        ${data.filter(s => !s.isNouns500).map((s,i) => {
           const dateStr = s.date.replace(/📅\s*/,'').replace(/（.*）/,'');
           return `<button class="quiz-range-btn ${quizState.range===s.date?'selected':''}" onclick="setQuizRange('${s.date}',this)">${dateStr} (${s.words.length})</button>`;
         }).join('')}
+        ${n500sec ? '<button class="quiz-range-btn ' + (quizState.range===n500sec.date?'selected':'') + '" onclick="setQuizRange(\''+n500sec.date+'\',this)" style="border-color:#ff9800;color:#ff9800">📚 名词500 (' + n500sec.words.length + ')</button>' : ''}
       </div>
+      ${nounsSubHtml}
       <h3>题目数量</h3>
       <div class="quiz-count-row">
         <label>5</label>
@@ -1313,8 +1342,23 @@ function renderQuizSetup() {
   `;
 }
 
+
+function setNounsGroup(group, btn) {
+  quizState.nounsGroup = group;
+  if (btn) {
+    btn.parentElement.querySelectorAll('.quiz-range-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  }
+  // Update slider
+  const total = getWordsByRange(quizState.range).length;
+  const maxQ = Math.min(total, 50);
+  const slider = document.querySelector('.quiz-count-row input[type=range]');
+  if (slider) { slider.max = maxQ; if (+slider.value > maxQ) slider.value = maxQ; quizState.count = +slider.value; slider.nextElementSibling.textContent = slider.value; }
+}
+
 function setQuizRange(range, btn) {
   quizState.range = range;
+  quizState.nounsGroup = null;
   document.querySelectorAll('.quiz-range-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   // 更新slider上限
