@@ -1454,8 +1454,7 @@ const VOCAB_DATA = [
         "meaning": "❶ 在某处（地点） ❷ 在某时（时间） ❸ 朝向某方向 ❹ 处于某种状态 ❺ 以某种速度/价格 ❻ 在某方面（good at）",
         "example": "We left at 2 o'clock.",
         "root": "古英语æt，表示位置/时间的指向点 → 在",
-        "exampleZh": "我们两点出发的。",
-        "noAudio": true
+        "exampleZh": "我们两点出发的。"
       }
     ]
   },
@@ -1901,8 +1900,7 @@ const VOCAB_DATA = [
         "meaning": "❶ 相当、挺 ❷ 完全地、彻底地（quite sure/impossible）",
         "example": "It's quite cold today.",
         "root": "古法语quit → 完全/自由 → 相当/完全",
-        "exampleZh": "今天相当冷。",
-        "noAudio": true
+        "exampleZh": "今天相当冷。"
       },
       {
         "en": "maybe",
@@ -2020,8 +2018,7 @@ const VOCAB_DATA = [
         "meaning": "❶conj. 比（用于比较） ❷prep. 除…外（other than）",
         "example": "She's taller than me.",
         "root": "古英语þanne → 比较时用的 → 比",
-        "exampleZh": "她比我高。",
-        "noAudio": true
+        "exampleZh": "她比我高。"
       },
       {
         "en": "put down",
