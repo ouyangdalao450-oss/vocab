@@ -289,55 +289,11 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 
 
 
-/* 例句发音 */
-function speakExample(text, btn) {
-  if (!text || !text.trim()) return;
-  const synth = window.speechSynthesis;
-  if (!synth) return;
-  synth.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = 'en-US';
-  utter.rate = 0.85;
-  utter.pitch = 1.0;
-  // Try to pick a natural English voice
-  const voices = synth.getVoices();
-  const preferred = voices.find(v => v.lang === 'en-US' && v.name.includes('Natural')) ||
-    voices.find(v => v.lang === 'en-US' && v.name.includes('Enhanced')) ||
-    voices.find(v => v.lang === 'en-US' && !v.localService) ||
-    voices.find(v => v.lang === 'en-US') ||
-    voices.find(v => v.lang.startsWith('en'));
-  if (preferred) utter.voice = preferred;
-  if (btn) {
-    btn.classList.add('playing');
-    utter.onend = () => btn.classList.remove('playing');
-    utter.onerror = () => btn.classList.remove('playing');
-  }
-  synth.speak(utter);
-}
 
 
 
-/* Add example speak buttons after rendering */
-function addExampleSpeakButtons() {
-  // Desktop: .example divs and .example-zh divs
-  document.querySelectorAll('.example:not([data-speak]), .card-example:not([data-speak])').forEach(function(el) {
-    el.setAttribute('data-speak', '1');
-    const text = el.textContent.replace(/[中英]$/, '').trim();
-    if (!text) return;
-    const btn = document.createElement('button');
-    btn.className = el.classList.contains('card-example') ? 'card-ex-speak' : 'ex-speak-btn';
-    btn.textContent = '🔊';
-    btn.title = '朗读例句';
-    btn.onclick = function() { speakExample(text, btn); };
-    // Insert before toggle button
-    const toggleBtn = el.querySelector('.toggle-zh-btn, .card-toggle-zh');
-    if (toggleBtn) {
-      el.insertBefore(btn, toggleBtn);
-    } else {
-      el.appendChild(btn);
-    }
-  });
-}
+
+
 
 /* ===== 名词500 独立视图 ===== */
 .nouns-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #ff9800; border-radius:20px; background:#fff; color:#ff9800; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
@@ -404,6 +360,58 @@ function addExampleSpeakButtons() {
 
 <script src="vocab-data.js?v=20260523f"></script>
 <script>
+
+/* 例句发音 */
+function speakExample(text, btn) {
+  if (!text || !text.trim()) return;
+  const synth = window.speechSynthesis;
+  if (!synth) return;
+  synth.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'en-US';
+  utter.rate = 0.85;
+  utter.pitch = 1.0;
+  // Try to pick a natural English voice
+  const voices = synth.getVoices();
+  const preferred = voices.find(v => v.lang === 'en-US' && v.name.includes('Natural')) ||
+    voices.find(v => v.lang === 'en-US' && v.name.includes('Enhanced')) ||
+    voices.find(v => v.lang === 'en-US' && !v.localService) ||
+    voices.find(v => v.lang === 'en-US') ||
+    voices.find(v => v.lang.startsWith('en'));
+  if (preferred) utter.voice = preferred;
+  if (btn) {
+    btn.classList.add('playing');
+    utter.onend = () => btn.classList.remove('playing');
+    utter.onerror = () => btn.classList.remove('playing');
+  }
+  synth.speak(utter);
+}
+
+/* Add example speak buttons after rendering */
+function addExampleSpeakButtons() {
+  document.querySelectorAll('.example:not([data-speak]), .card-example:not([data-speak])').forEach(function(el) {
+    el.setAttribute('data-speak', '1');
+    // Get text content excluding button text
+    const text = Array.from(el.childNodes)
+      .filter(n => n.nodeType === 3) // text nodes only
+      .map(n => n.textContent.trim())
+      .join(' ')
+      .trim();
+    if (!text) return;
+    const btn = document.createElement('button');
+    btn.className = el.classList.contains('card-example') ? 'card-ex-speak' : 'ex-speak-btn';
+    btn.textContent = '\u{1F50A}';
+    btn.title = '朗读例句';
+    btn.onclick = function() { speakExample(text, btn); };
+    const toggleBtn = el.querySelector('.toggle-zh-btn, .card-toggle-zh');
+    if (toggleBtn) {
+      el.insertBefore(btn, toggleBtn);
+    } else {
+      el.appendChild(btn);
+    }
+  });
+}
+
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const bufferCache = {};   // wordKey → AudioBuffer
