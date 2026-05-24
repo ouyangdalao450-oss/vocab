@@ -1,5 +1,5 @@
 // sw.js — Service Worker for offline vocab
-const CACHE = 'vocab-v40';
+const CACHE = 'vocab-v41';
 const ASSETS = [
   './',
   './index.html',
