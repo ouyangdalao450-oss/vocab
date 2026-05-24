@@ -21,12 +21,12 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 .stats { text-align:center; font-size:0.78em; color:#999; margin-top:6px; }
 
 /* ===== 遮罩 + 日历弹窗 ===== */
-.overlay { display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.45); opacity:0; transition:opacity 0.25s; }
+.overlay { display:none; position:fixed; inset:0; z-index:100; background:rgba(0,0,0,0.45); opacity:0; transition:opacity 0.2s; }
 .overlay.show { display:flex; align-items:flex-end; justify-content:center; opacity:1; }
 @media (min-width:600px) { .overlay.show { align-items:center; } }
-.calendar-sheet { width:100%; max-width:480px; max-height:85vh; background:#fff; border-radius:20px 20px 0 0; padding:20px 16px 24px; overflow-y:auto; transform:translateY(100%); transition:transform 0.35s cubic-bezier(0.32,0.72,0,1); }
-@media (min-width:600px) { .calendar-sheet { border-radius:20px; transform:translateY(0) scale(0.9); transition:transform 0.3s, opacity 0.3s; } .overlay.show .calendar-sheet { transform:translateY(0) scale(1); } }
-.overlay.show .calendar-sheet { transform:translateY(0); }
+.calendar-sheet { width:100%; max-width:480px; max-height:85vh; background:#fff; border-radius:20px 20px 0 0; padding:20px 16px 24px; overflow-y:auto; transform:translateY(100%); transition:transform 0.3s cubic-bezier(0.32,0.72,0,1), opacity 0.2s; opacity:0; }
+@media (min-width:600px) { .calendar-sheet { border-radius:20px; transform:translateY(0) scale(0.9); transition:transform 0.3s, opacity 0.3s; } .overlay.show .calendar-sheet { transform:translateY(0) scale(1); opacity:1; } }
+.overlay.show .calendar-sheet { transform:translateY(0); opacity:1; }
 .cal-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
 .cal-header h2 { font-size:1.1em; color:#2d1b69; }
 .cal-close { width:32px; height:32px; border-radius:50%; border:none; background:#f0e6ff; color:#764ba2; font-size:1.2em; cursor:pointer; display:flex; align-items:center; justify-content:center; }
@@ -406,9 +406,6 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
   .nouns500-card { padding: 8px 4px; font-size: 13px; }
 }
 
-/* ===== 按钮组 ===== */
-.top-btns { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:8px 0 4px; }
-
 /* ===== 动画 ===== */
 @keyframes scorePop { 0%{transform:scale(0.5);opacity:0} 60%{transform:scale(1.1)} 100%{transform:scale(1);opacity:1} }
 @keyframes fadeInUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
@@ -440,12 +437,10 @@ html { scroll-behavior:smooth; }
     <span class="search-icon">🔍</span>
     <input type="text" id="searchInput" placeholder="搜索单词或含义..." inputmode="search">
   </div>
-  <div class="top-btns">
     <button class="date-btn" id="dateBtn">📅 选择日期</button>
-    <button class="quiz-btn" id="quizBtn">🧠 测验</button>
-    <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加</button>
-    <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
-  </div>
+  <button class="quiz-btn" id="quizBtn">🧠 测验</button>
+  <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加单词</button>
+  <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
   <div class="stats" id="stats">加载中…</div>
 </div>
 
@@ -974,14 +969,14 @@ function buildCalendar() {
   getMergedData().filter(sec => !sec.isNouns500).forEach((sec, idx) => {
     const card = document.createElement('div');
     card.className = 'cal-card';
-    const dateStr = sec.date.replace(/[📅📚]\s*/,'').replace(/（.*）/,'');
+    const dateStr = sec.date.replace(/^[^\d]*/, '').replace(/（.*）/, '');
     const icon = '📅';
     // 取前3个词做预览
     const preview = sec.words.slice(0,3).map(w => w.en).join(', ');
     card.innerHTML = `<div class="cal-date">${icon} ${dateStr}</div>
       <div class="cal-count">${sec.words.length} 词</div>
       <div class="cal-words">${preview}…</div>`;
-    card.onclick = () => { closeCalendar(); jumpToDate(idx); };
+    card.onclick = () => { closeCalendarFast(); jumpToDate(idx); };
     grid.appendChild(card);
   });
 }
@@ -995,7 +990,12 @@ function openCalendar() {
 function closeCalendar() {
   const ov = document.getElementById('overlay');
   ov.classList.remove('show');
-  setTimeout(() => { ov.style.display = 'none'; }, 350);
+  setTimeout(() => { ov.style.display = 'none'; }, 300);
+}
+function closeCalendarFast() {
+  const ov = document.getElementById('overlay');
+  ov.classList.remove('show');
+  ov.style.display = 'none';
 }
 
 document.getElementById('dateBtn').onclick = openCalendar;
