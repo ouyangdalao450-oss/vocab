@@ -323,6 +323,82 @@ h1 { text-align:center; font-size:1.35em; color:#2d1b69; letter-spacing:1px; mar
 .card-ex-speak:active { transform:scale(0.85); }
 .card-ex-speak.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
 
+
+/* ===== 名词500单元选择面板 ===== */
+.nouns500-panel {
+  margin: 10px 0;
+  border-radius: 12px;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.nouns500-panel.active {
+  border-color: #ff9800;
+  box-shadow: 0 2px 8px rgba(255,152,0,0.15);
+}
+.nouns500-header {
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+.nouns500-header:hover { background: #f0f0f0; }
+.nouns500-arrow {
+  margin-left: auto;
+  font-size: 12px;
+  color: #888;
+}
+.nouns500-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 0 10px 10px;
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s, opacity 0.3s;
+}
+.nouns500-grid.collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+.nouns500-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 6px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  gap: 2px;
+}
+.nouns500-card:hover {
+  border-color: #ff9800;
+  background: #fff8f0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.nouns500-card.selected {
+  border-color: #ff9800;
+  background: linear-gradient(135deg, #fff8f0, #ffe0b2);
+  box-shadow: 0 2px 8px rgba(255,152,0,0.2);
+}
+.nouns500-icon { font-size: 20px; }
+.nouns500-name { font-weight: 600; white-space: nowrap; }
+.nouns500-count { font-size: 12px; color: #888; }
+@media (max-width: 400px) {
+  .nouns500-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .nouns500-card { padding: 8px 4px; font-size: 13px; }
+}
 </style>
 </head>
 <body>
@@ -1316,20 +1392,19 @@ function renderQuizSetup() {
   const data = getMergedData();
   const n500sec = data.find(s => s.isNouns500);
   let nounsSubHtml = '';
-  if (n500sec && (quizState.range === n500sec.date || quizState.nounsGroup)) {
+  if (n500sec) {
     const n500words = n500sec.words;
-    // Reset nounsGroup if range changed away from nouns500
-    if (quizState.range !== n500sec.date && quizState.nounsGroup) {
-      // keep it if user selected a sub-group
-    }
-    nounsSubHtml = '<h3>名词500分类</h3><div class="quiz-range">';
-    nounsSubHtml += '<button class="quiz-range-btn ' + (!quizState.nounsGroup ? 'selected' : '') + '" onclick="setNounsGroup(null,this)">全部分类 (' + n500words.length + ')</button>';
+    var isN500Active = quizState.range === n500sec.date || quizState.nounsGroup;
+    nounsSubHtml = '<div class="nouns500-panel' + (isN500Active ? ' active' : '') + '">';
+    nounsSubHtml += '<div class="nouns500-header" onclick="toggleNounsPanel()">📚 名词500 · 选择单元 <span class="nouns500-arrow">' + (isN500Active ? '▲' : '▼') + '</span></div>';
+    nounsSubHtml += '<div class="nouns500-grid' + (isN500Active ? '' : ' collapsed') + '">';
+    nounsSubHtml += '<button class="nouns500-card' + (!quizState.nounsGroup && isN500Active ? ' selected' : '') + '" onclick="selectNounsGroup(null,this)"><span class="nouns500-name">📚 全部分类</span><span class="nouns500-count">' + n500words.length + '词</span></button>';
     NOUNS500_QUIZ_GROUPS.forEach(g => {
       const count = n500words.filter(w => g.subcats.includes(w.subcategory)).length;
-      const sel = quizState.nounsGroup === g.name ? 'selected' : '';
-      nounsSubHtml += '<button class="quiz-range-btn ' + sel + '" onclick="setNounsGroup(\'' + g.name + '\',this)">' + g.name + ' (' + count + ')</button>';
+      const sel = quizState.nounsGroup === g.name ? ' selected' : '';
+      nounsSubHtml += '<button class="nouns500-card' + sel + '" onclick="selectNounsGroup(\'' + g.name + '\',this)"><span class="nouns500-name">' + g.name + '</span><span class="nouns500-count">' + count + '词</span></button>';
     });
-    nounsSubHtml += '</div>';
+    nounsSubHtml += '</div></div>';
   }
 
   const el = document.getElementById('quizInner');
@@ -1375,16 +1450,28 @@ function setNounsGroup(group, btn) {
   if (slider) { slider.max = maxQ; if (+slider.value > maxQ) slider.value = maxQ; quizState.count = +slider.value; slider.nextElementSibling.textContent = slider.value; }
 }
 
+
+
+function toggleNounsPanel() {
+  var grid = document.querySelector('.nouns500-grid');
+  var arrow = document.querySelector('.nouns500-arrow');
+  var panel = document.querySelector('.nouns500-panel');
+  if (!grid) return;
+  var collapsed = grid.classList.contains('collapsed');
+  grid.classList.toggle('collapsed');
+  arrow.textContent = collapsed ? '▲' : '▼';
+  panel.classList.toggle('active', collapsed);
+}
+
+function selectNounsGroup(group, btn) {
+  quizState.nounsGroup = group;
+  quizState.range = getMergedData().find(s => s.isNouns500).date;
+  renderQuizSetup();
+}
 function setQuizRange(range, btn) {
   quizState.range = range;
   quizState.nounsGroup = null;
-  document.querySelectorAll('.quiz-range-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  // 更新slider上限
-  const total = getWordsByRange(range).length;
-  const maxQ = Math.min(total, 50);
-  const slider = document.querySelector('.quiz-count-row input[type=range]');
-  if (slider) { slider.max = maxQ; if (+slider.value > maxQ) slider.value = maxQ; quizState.count = +slider.value; slider.nextElementSibling.textContent = slider.value; }
+  renderQuizSetup();
 }
 
 function startQuiz() {
