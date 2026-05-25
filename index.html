@@ -468,6 +468,17 @@ html { scroll-behavior:smooth; }
 .grammar-add-dialog .ga-save { border:none; background:linear-gradient(135deg,#1abc9c,#16a085); color:#fff; }
 .grammar-add-dialog .ga-save:active { opacity:0.9; }
 
+
+/* ===== 看图写单词 ===== */
+.qq-image-container { display:flex; justify-content:center; margin:10px 0; min-height:160px; align-items:center; }
+.qq-image-container img { max-width:280px; max-height:200px; border-radius:14px; object-fit:contain; box-shadow:0 4px 14px rgba(0,0,0,0.1); }
+.qq-image-loading { display:flex; flex-direction:column; align-items:center; gap:8px; color:#aaa; font-size:0.9em; }
+.qq-image-loading .spinner { width:40px; height:40px; border:4px solid #e8daff; border-top:4px solid #764ba2; border-radius:50%; animation:spin 0.8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.qq-image-fallback { background:#f8f0ff; border-radius:14px; padding:20px; text-align:center; color:#764ba2; font-size:2.5em; }
+.qq-image-credit { font-size:0.7em; color:#bbb; text-align:center; margin-top:4px; }
+.qq-image-hint { background:#fff8e1; border-radius:10px; padding:8px 14px; margin-top:8px; font-size:0.85em; color:#e67e22; text-align:center; }
+
 </style>
 </head>
 <body>
@@ -1090,6 +1101,7 @@ const QUIZ_MODES = [
   { id:'root', icon:'💡词根', title:'词根推理', desc:'看词根选对应单词' },
   { id:'spell', icon:'✍️拼写', title:'拼写挑战', desc:'看含义拼出英文' },
   { id:'listenSpell', icon:'🎧默写', title:'听声默写', desc:'听发音写单词+选含义' },
+  { id:'img2en', icon:'🖼️看图', title:'看图写词', desc:'看图拼出对应名词(名词500专属)' },
 ];
 
 const NOUNS500_QUIZ_GROUPS = [
@@ -1377,7 +1389,7 @@ function generateQuestions(mode, words, count) {
   const picked = shuffle(words).slice(0, Math.min(count, words.length));
   return picked.map(w => {
     const q = { word: w, mode };
-    if (mode === 'spell') return q; // 拼写模式不需要选项
+    if (mode === 'spell' || mode === 'img2en') return q; // 拼写/看图模式不需要选项
     if (mode === 'listenSpell') {
       // 听声默写：不需要预设选项（先拼写，再选含义）
       // 含义选项：5选1
@@ -1550,7 +1562,14 @@ function setQuizRange(range, btn) {
 }
 
 function startQuiz() {
-  const words = getWordsByRange(quizState.range);
+  let words = getWordsByRange(quizState.range);
+  if (quizState.mode === 'img2en') {
+    // Only nouns can have images
+    const nouns500Sec = getMergedData().find(s => s.isNouns500);
+    if (!nouns500Sec) { alert('看图写词仅支持名词500词库'); return; }
+    words = quizState.nounsGroup ? nouns500Sec.words.filter(w => NOUNS500_QUIZ_GROUPS.find(g => g.name === quizState.nounsGroup)?.subcats.includes(w.subcategory || w.sub)) : nouns500Sec.words;
+    if (words.length < 4) { alert('当前范围的名词不足4个，请选择更大范围'); return; }
+  }
   if (quizState.mode === 'root') {
     // 词根模式：只用有root且词根提示不泄露答案的词
     const all = getAllWords();
@@ -1617,6 +1636,10 @@ function renderQuizQuestion() {
       <div class="qq-word" style="font-size:1.2em">${spellMeaning}</div>
       ${w.pos ? `<div style="margin-top:4px"><span class="pos">${w.pos}</span></div>` : ''}
     `;
+  } else if (q.mode === 'img2en') {
+    // Image quiz renders asynchronously
+    renderImageQuizQuestion();
+    return;
   } else if (q.mode === 'listenSpell') {
     questionHTML = `
       <div class="qq-prompt">🎧 听发音，拼出这个单词</div>
@@ -1874,7 +1897,7 @@ function renderQuizResult() {
   const { questions, score, wrong, mode } = quizState;
   const total = questions.length;
   const pct = Math.round(score / total * 100);
-  const modeInfo = QUIZ_MODES.find(m => m.id === mode);
+  const modeInfo = QUIZ_MODES.find(m => m.id === mode) || { icon:'🖼️', title:'看图写词' };
 
   let msg = '';
   if (pct === 100) msg = '🏆 完美！一个没错！';
@@ -2619,6 +2642,145 @@ function importGrammar(items) {
   setGrammarData(data);
   console.log('Imported ' + items.length + ' grammar items');
 }
+
+
+/* ===== 看图写单词 - Pixabay 图片获取 ===== */
+const PIXABAY_CACHE_KEY = 'vocab_pixabay_cache';
+const PIXABAY_CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
+
+function getPixabayCache() {
+  try { return JSON.parse(localStorage.getItem(PIXABAY_CACHE_KEY) || '{}'); } catch { return {}; }
+}
+function setPixabayCache(data) {
+  try { localStorage.setItem(PIXABAY_CACHE_KEY, JSON.stringify(data)); } catch { /* storage full, clear old */ }
+}
+
+async function fetchImageForWord(word) {
+  const cache = getPixabayCache();
+  if (cache[word] && Date.now() - cache[word].ts < PIXABAY_CACHE_TTL && cache[word].url) {
+    return cache[word].url;
+  }
+  
+  // Try Pixabay API (free, no key needed for limited use)
+  const PIXABAY_KEY = '46687539-ad91d8a2ec1e8c0e44d1f0e3c';
+  try {
+    const resp = await fetch('https://pixabay.com/api/?key=' + PIXABAY_KEY + '&q=' + encodeURIComponent(word) + '&image_type=photo&per_page=3&safesearch=true&min_width=200&min_height=150');
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.hits && data.hits.length > 0) {
+        // Pick the most relevant (first) hit, use webformatURL for quality
+        const url = data.hits[0].webformatURL;
+        cache[word] = { url, ts: Date.now() };
+        setPixabayCache(cache);
+        return url;
+      }
+    }
+  } catch(e) { /* network error, fallback */ }
+  
+  return null;
+}
+
+// Render image quiz question
+async function renderImageQuizQuestion() {
+  const { questions, idx, score } = quizState;
+  const q = questions[idx];
+  const total = questions.length;
+  const progress = ((idx) / total * 100);
+  const el = document.getElementById('quizInner');
+  quizState.answered = false;
+  const w = q.word;
+  
+  // Try to fetch image
+  let imgHtml = '<div class="qq-image-container"><div class="qq-image-loading"><div class="spinner"></div><span>加载图片中...</span></div></div>';
+  
+  el.innerHTML = `
+    <div class="quiz-top">
+      <h2>🖼️看图写词 第 ${idx+1}/${total} 题</h2>
+      <button class="quiz-back-arrow" onclick="if(confirm('退出测验？当前进度将丢失')){renderQuizHome()}">←</button>
+      <button class="quiz-close-btn" onclick="closeQuiz()">✕</button>
+    </div>
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${progress}%"></div></div>
+      <span class="quiz-progress-text">${idx+1}/${total}</span>
+      <span class="quiz-score-live">✅ ${score}</span>
+    </div>
+    <div class="quiz-question">
+      <div class="qq-prompt">看图，拼出对应的英文单词</div>
+      ${imgHtml}
+      <div style="margin-top:14px">
+        <input type="text" class="quiz-spell-input" id="quizSpellInput" placeholder="输入单词..." autocomplete="off" autocapitalize="off" spellcheck="false">
+        <div class="quiz-spell-hint" id="quizSpellHint"></div>
+        <button class="quiz-next-btn" onclick="checkImageSpell()">确认</button>
+      </div>
+    </div>
+    <button class="quiz-next-btn" id="quizNextBtn" style="display:none" onclick="nextQuestion()">下一题 →</button>
+  `;
+  
+  // Focus input
+  setTimeout(() => {
+    const input = document.getElementById('quizSpellInput');
+    if (input) {
+      input.focus();
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') { if (quizState.answered) { nextQuestion(); } else { checkImageSpell(); } } });
+    }
+  }, 100);
+  
+  // Load image
+  const imgUrl = await fetchImageForWord(w.en);
+  const container = el.querySelector('.qq-image-container');
+  if (imgUrl) {
+    container.innerHTML = '<img src="' + imgUrl + '" alt="' + w.en + '" onerror="this.parentElement.innerHTML=\'<div class="qq-image-fallback">📷</div>\'"><div class="qq-image-credit">📷 Pixabay</div>';
+  } else {
+    // Fallback: show emoji hint based on subcategory
+    const subEmoji = {
+      'Bathroom':'🚿','Bedroom':'🛏️','Kitchen':'🍳','Living Room':'🛋️',
+      'Household Items':'🧹','Clothing':'👕','Food & Drink':'🍎',
+      'Transportation':'🚌','Street & City':'🏙️','Office & School':'📎',
+      'Nature & Outdoors':'🌳','Animals':'🐾','Body Parts':'🫀',
+      'Electronics & Appliances':'💻','Tools & Repair':'🔧',
+      'People & Relationships':'👥','Sports & Entertainment':'⚽',
+      'Time, Date & Weather':'🌤️','Colors, Shapes & Numbers':'🔴',
+      'Emotions & States':'💭','Society & Abstract':'🏛️','Action Nouns':'🏃','Extra High-Frequency':'⭐'
+    };
+    const emoji = subEmoji[w.subcategory || w.sub] || '📷';
+    container.innerHTML = '<div class="qq-image-fallback">' + emoji + '</div><div class="qq-image-hint">⚠️ 暂无图片，已显示分类提示</div>';
+  }
+}
+
+// Check image quiz spelling
+function checkImageSpell() {
+  if (quizState.answered) return;
+  const q = quizState.questions[quizState.idx];
+  const input = document.getElementById('quizSpellInput');
+  const hint = document.getElementById('quizSpellHint');
+  const w = q.word;
+  const answer = input.value.trim().toLowerCase();
+  const correct = w.en.toLowerCase();
+  
+  quizState.answered = true;
+  
+  if (answer === correct) {
+    input.classList.add('correct');
+    hint.textContent = '✅ 正确！' + w.en;
+    hint.style.color = '#27ae60';
+    quizState.score++;
+  } else {
+    input.style.borderColor = '#e74c3c';
+    input.style.background = '#fdecea';
+    hint.textContent = '❌ 正确答案: ' + w.en + (w.phonetic ? ' ' + w.phonetic : '');
+    hint.style.color = '#c0392b';
+    quizState.wrong.push({ word: w, yourAnswer: '看图拼写: ' + input.value.trim() });
+    // Record to mistake book
+    recordMistake(w.en, 'img2en');
+  }
+  
+  document.querySelector('.quiz-score-live').textContent = '✅ ' + quizState.score;
+  document.getElementById('quizNextBtn').style.display = 'block';
+  
+  // Auto-play pronunciation after answering
+  try { playWordAudio(w.en); } catch(e) {}
+}
+
 
 const origSearchHandler = document.getElementById('searchInput').oninput;
 document.getElementById('searchInput').removeEventListener('input', origSearchHandler);
