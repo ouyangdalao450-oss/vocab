@@ -1564,11 +1564,13 @@ function setQuizRange(range, btn) {
 function startQuiz() {
   let words = getWordsByRange(quizState.range);
   if (quizState.mode === 'img2en') {
-    // Only nouns can have images
+    // Only nouns can have images - filter to those with local images
     const nouns500Sec = getMergedData().find(s => s.isNouns500);
     if (!nouns500Sec) { alert('看图写词仅支持名词500词库'); return; }
     words = quizState.nounsGroup ? nouns500Sec.words.filter(w => NOUNS500_QUIZ_GROUPS.find(g => g.name === quizState.nounsGroup)?.subcats.includes(w.subcategory || w.sub)) : nouns500Sec.words;
-    if (words.length < 4) { alert('当前范围的名词不足4个，请选择更大范围'); return; }
+    // Only include words that have a local image file
+    words = words.filter(w => hasLocalImage(w.en));
+    if (words.length < 4) { alert('当前范围的名词图片不足4个，请选择更大范围'); return; }
   }
   if (quizState.mode === 'root') {
     // 词根模式：只用有root且词根提示不泄露答案的词
@@ -2644,43 +2646,19 @@ function importGrammar(items) {
 }
 
 
-/* ===== 看图写单词 - Pixabay 图片获取 ===== */
-const PIXABAY_CACHE_KEY = 'vocab_pixabay_cache';
-const PIXABAY_CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
-
-function getPixabayCache() {
-  try { return JSON.parse(localStorage.getItem(PIXABAY_CACHE_KEY) || '{}'); } catch { return {}; }
+/* ===== 看图写单词 - 本地图片 (GitHub Pages) ===== */
+const IMG_BASE_URL = 'https://ouyangdalao450-oss.github.io/vocab/vocab-images/';
+// Set of word names (lowercase, spaces→underscores) that have local images
+const IMG_AVAILABLE = new Set(['address','afternoon','air','air_conditioner','air_purifier','alarm_clock','answer','ant','apple','arm','attic','axe','baby','back','balcony','ball','banana','bank','basement','basketball','bathroom','bathtub','battery','bear','bed','bedroom','bee','beef','beer','belt','bicycle','bird','birthday','black','blanket','bleach','blender','blue','boat','bone','book','bookshelf','boots','bowl','boy','brake','bread','breakfast','bridge','broom','brother','brown','brush','bucket','building','bus','butter','butterfly','cake','calculator','camera','candle','candy','car','carpet','carrot','cat','ceiling','chain','chair','charger','cheese','chest','chicken','child','chocolate','cinema','circle','city','closet','cloud','coaster','coffee','coffee_table','comb','company','computer','cookie','cotton_swab','couch','country','cow','cup','curtain','cushion','cutting_board','dance','day','death','deodorant','desk','detergent','dinner','dishwasher','doctor','dog','doll','door','drawer','dream','dress','drill','drink','drum','dryer','duck','duvet','ear','egg','elbow','elephant','elevator','end','engine','eraser','evening','eye','face','factory','failure','fan','father','faucet','finger','fire','fire_station','fish','flashlight','floor','flower','folder','food','foot','football','forest','fork','fridge','friend','frog','fruit','game','garage','garden','gas_station','gift','girl','glass','gloves','glue','grape','grass','gray','green','guitar','hair','hair_dryer','hammer','hand','hanger','hat','head','headphone','heart','heater','helmet','highlighter','holiday','home','horse','hospital','hotel','hour','house','hundred','husband','ice_cream','insect','iron','jacket','jeans','job','juice','kettle','key','keyboard','kitchen','knee','knife','ladder','ladle','lake','lamp','laptop','laundry','leaf','leg','letter','library','light','light_bulb','lighter','line','lion','lock','lotion','lunch','mall','man','map','market','match','mattress','meal','meat','microwave','milk','minute','mirror','monday','money','monitor','monkey','month','moon','mop','morning','mother','motorcycle','mountain','mouse','mouth','movie','museum','music','nail','nail_clipper','neck','neighbor','news','night','nightstand','noodle','nose','notebook','number','nurse','office','one','onion','orange','oven','paint','painting','pajamas','pan','pants','paper','parent','park','party','pen','pencil','people','pepper','phone','photo','piano','pie','pig','pillow','pink','place','plane','plate','point','police','police_station','pork','post_office','pot','potato','price','printer','purple','quilt','rabbit','rain','razor','red','refrigerator','remote_control','restaurant','rice','river','road','rock','roof','room','rope','rug','ruler','run','salad','salt','sand','sandals','sauce','saw','scarf','school','scissors','screw','screwdriver','season','seatbelt','second','shampoo','sheep','sheet','ship','shirt','shoes','shop','shorts','shoulder','shovel','shower','shrimp','sidewalk','sink','sister','skin','skirt','sky','slippers','snack','snake','snow','soap','socks','sofa','song','soup','spatula','speaker','spider','spoon','square','stair','stapler','star','steering_wheel','stomach','store','stove','street','student','subway','sugar','suit','sun','sweater','swim','table','tablet','tape','tape_measure','taxi','tea','teacher','ten','tennis','thing','three','ticket','tiger','time','tire','tissue','toaster','today','toe','toilet','toilet_paper','tomato','tomorrow','tongue','tooth','toothbrush','toothpaste','towel','toy','traffic_light','train','trash_can','tree','triangle','truck','t-shirt','tv','two','underwear','vacuum_cleaner','vase','vegetable','village','walk','wall','wardrobe','washing_machine','water','way','week','weekend','wheel','white','wife','wind','window','wine','woman','world','wrench','year','yellow','yesterday','yogurt']);
+function getLocalImageUrl(word) {
+  const fname = word.toLowerCase().replace(/\s+/g, '_') + '.jpg';
+  return IMG_BASE_URL + fname;
 }
-function setPixabayCache(data) {
-  try { localStorage.setItem(PIXABAY_CACHE_KEY, JSON.stringify(data)); } catch { /* storage full, clear old */ }
-}
-
-async function fetchImageForWord(word) {
-  const cache = getPixabayCache();
-  if (cache[word] && Date.now() - cache[word].ts < PIXABAY_CACHE_TTL && cache[word].url) {
-    return cache[word].url;
-  }
-  
-  // Try Pixabay API (free, no key needed for limited use)
-  const PIXABAY_KEY = '46687539-ad91d8a2ec1e8c0e44d1f0e3c';
-  try {
-    const resp = await fetch('https://pixabay.com/api/?key=' + PIXABAY_KEY + '&q=' + encodeURIComponent(word) + '&image_type=photo&per_page=3&safesearch=true&min_width=200&min_height=150');
-    if (resp.ok) {
-      const data = await resp.json();
-      if (data.hits && data.hits.length > 0) {
-        // Pick the most relevant (first) hit, use webformatURL for quality
-        const url = data.hits[0].webformatURL;
-        cache[word] = { url, ts: Date.now() };
-        setPixabayCache(cache);
-        return url;
-      }
-    }
-  } catch(e) { /* network error, fallback */ }
-  
-  return null;
+function hasLocalImage(word) {
+  return IMG_AVAILABLE.has(word.toLowerCase().replace(/\s+/g, '_'));
 }
 
-// Render image quiz question
+// Render image quiz question - uses local images from GitHub Pages
 async function renderImageQuizQuestion() {
   const { questions, idx, score } = quizState;
   const q = questions[idx];
@@ -2690,8 +2668,9 @@ async function renderImageQuizQuestion() {
   quizState.answered = false;
   const w = q.word;
   
-  // Try to fetch image
-  let imgHtml = '<div class="qq-image-container"><div class="qq-image-loading"><div class="spinner"></div><span>加载图片中...</span></div></div>';
+  // Build image URL from local repo
+  const imgUrl = getLocalImageUrl(w.en);
+  const imgHtml = '<div class="qq-image-container"><img src="' + imgUrl + '" alt="' + w.en + '" onerror="this.parentElement.innerHTML=\'<div class=&quot;qq-image-fallback&quot;>📷</div>\'"><div class="qq-image-credit">📷 Wikipedia</div></div>';
   
   el.innerHTML = `
     <div class="quiz-top">
@@ -2724,27 +2703,6 @@ async function renderImageQuizQuestion() {
       input.addEventListener('keydown', e => { if (e.key === 'Enter') { if (quizState.answered) { nextQuestion(); } else { checkImageSpell(); } } });
     }
   }, 100);
-  
-  // Load image
-  const imgUrl = await fetchImageForWord(w.en);
-  const container = el.querySelector('.qq-image-container');
-  if (imgUrl) {
-    container.innerHTML = '<img src="' + imgUrl + '" alt="' + w.en + '" onerror="this.parentElement.innerHTML=\'<div class="qq-image-fallback">📷</div>\'"><div class="qq-image-credit">📷 Pixabay</div>';
-  } else {
-    // Fallback: show emoji hint based on subcategory
-    const subEmoji = {
-      'Bathroom':'🚿','Bedroom':'🛏️','Kitchen':'🍳','Living Room':'🛋️',
-      'Household Items':'🧹','Clothing':'👕','Food & Drink':'🍎',
-      'Transportation':'🚌','Street & City':'🏙️','Office & School':'📎',
-      'Nature & Outdoors':'🌳','Animals':'🐾','Body Parts':'🫀',
-      'Electronics & Appliances':'💻','Tools & Repair':'🔧',
-      'People & Relationships':'👥','Sports & Entertainment':'⚽',
-      'Time, Date & Weather':'🌤️','Colors, Shapes & Numbers':'🔴',
-      'Emotions & States':'💭','Society & Abstract':'🏛️','Action Nouns':'🏃','Extra High-Frequency':'⭐'
-    };
-    const emoji = subEmoji[w.subcategory || w.sub] || '📷';
-    container.innerHTML = '<div class="qq-image-fallback">' + emoji + '</div><div class="qq-image-hint">⚠️ 暂无图片，已显示分类提示</div>';
-  }
 }
 
 // Check image quiz spelling
