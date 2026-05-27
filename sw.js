@@ -1,5 +1,5 @@
 // sw.js — Service Worker for offline vocab
-const CACHE = 'vocab-v47';
+const CACHE = 'vocab-v48';
 const ASSETS = [
   './',
   './index.html',
@@ -29,17 +29,7 @@ self.addEventListener('fetch', e => {
     );
     return;
   }
-  // 图片文件：从Pexels/Wikimedia CDN在线加载，缓存优先
-  if (url.hostname.includes('pexels.com') || url.hostname.includes('wikimedia.org')) {
-    e.respondWith(
-      caches.match(e.request).then(r => r || fetch(e.request, {mode:'cors'}).then(resp => {
-        const clone = resp.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
-        return resp;
-      }).catch(() => new Response('Image unavailable', {status: 404})))
-    );
-    return;
-  }
+
   // 其他：网络优先
   e.respondWith(
     fetch(e.request).catch(() => caches.match(e.request))
