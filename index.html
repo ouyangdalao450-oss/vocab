@@ -494,6 +494,10 @@ html { scroll-behavior:smooth; }
 .shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:0 1px; border-radius:3px; }
 .shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; transform:scale(1.05); }
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
+.shadow-zh.hidden { display:none; }
+.shadow-zh-btn { padding:2px 10px; border:1px solid #ccc; border-radius:12px; background:#f8f8f8; color:#888; font-size:0.72em; cursor:pointer; margin-bottom:6px; margin-left:36px; transition:all 0.15s; }
+.shadow-zh-btn:hover { border-color:#e67e22; color:#e67e22; }
+.shadow-zh-btn.shown { background:#e67e22; color:#fff; border-color:#e67e22; }
 .shadow-controls { display:flex; align-items:center; gap:8px; padding-left:36px; flex-wrap:wrap; }
 .shadow-play-btn { background:none; border:2px solid #e74c3c; border-radius:50%; width:42px; height:42px; font-size:1.3em; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#e74c3c; transition:all 0.15s; flex-shrink:0; }
 .shadow-play-btn:hover { background:#fdecea; }
@@ -2983,6 +2987,15 @@ function playPopupWord(btn, audioUrl) {
   });
 }
 
+function toggleShadowZh(btn, idx) {
+  const zhEl = document.getElementById('szh-' + idx);
+  if (!zhEl) return;
+  const isHidden = zhEl.classList.contains('hidden');
+  zhEl.classList.toggle('hidden', !isHidden);
+  btn.classList.toggle('shown', isHidden);
+  btn.textContent = isHidden ? '🇨🇳 隐藏' : '🇨🇳 译文';
+}
+
 function openShadowing() {
   const overlay = document.getElementById('shadowOverlay');
   overlay.classList.add('active');
@@ -3030,7 +3043,8 @@ function renderShadowing(filter) {
 
       html += '<div class="shadow-card" id="sc-' + s.idx + '">';
       html += '<div class="shadow-en"><span class="shadow-num">' + (s.idx + 1) + '</span>' + wordSpans + '</div>';
-      html += '<div class="shadow-zh">' + s.zh + '</div>';
+      html += '<button class="shadow-zh-btn" onclick="toggleShadowZh(this,' + s.idx + ')">🇨🇳 译文</button>';
+      html += '<div class="shadow-zh hidden" id="szh-' + s.idx + '">' + s.zh + '</div>';
       html += '<div class="shadow-controls">';
       html += '<button class="shadow-play-btn" id="sp-' + s.idx + '" onclick="playShadow(' + s.idx + ')" title="播放">▶</button>';
       html += '<button class="shadow-slow-btn' + (shadowSlowMode ? ' active' : '') + '" onclick="toggleShadowSlow(' + s.idx + ')" title="慢速">🐢 慢</button>';
