@@ -404,6 +404,7 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 @media (max-width: 400px) {
   .nouns500-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
   .nouns500-card { padding: 8px 4px; font-size: 13px; }
+  .shadow-en .se-word { padding:1px 2px; margin:0; }
 }
 
 /* ===== 动画 ===== */
@@ -2884,7 +2885,12 @@ function closeWordPopup() {
     try { shadowPopupAudio.pause(); } catch(e) {}
     shadowPopupAudio = null;
   }
+  // Remove any dangling scroll/click handlers
+  document.removeEventListener('scroll', _popupScrollHandler, true);
+  document.removeEventListener('click', _popupClickHandler);
 }
+let _popupScrollHandler = null;
+let _popupClickHandler = null;
 
 async function showWordPopup(spanEl) {
   closeWordPopup();
@@ -2911,14 +2917,19 @@ async function showWordPopup(spanEl) {
   popup.style.top = top + 'px';
   popup.style.left = left + 'px';
 
-  // Close on click outside
-  const closeHandler = (e) => {
+  // Close on click outside or scroll
+  _popupClickHandler = (e) => {
     if (!popup.contains(e.target) && e.target !== spanEl) {
       closeWordPopup();
-      document.removeEventListener('click', closeHandler);
     }
   };
-  setTimeout(() => document.addEventListener('click', closeHandler), 50);
+  _popupScrollHandler = () => {
+    closeWordPopup();
+  };
+  setTimeout(() => {
+    document.addEventListener('click', _popupClickHandler);
+    document.addEventListener('scroll', _popupScrollHandler, true);
+  }, 50);
 
   // Check cache first
   if (shadowPopupCache[word]) {
@@ -2939,16 +2950,11 @@ async function showWordPopup(spanEl) {
       phonetic: localWord.phonetic || '',
       audioUrl: '', // will try to find from API lazily
       meanings: [],
+      enMeanings: [],
       zhMeaning: localWord.meaning || '',
       zhPos: localWord.pos || '',
       hasLocal: true
     };
-    // Parse meaning into structured defs if it has ❶❷❸
-    const meaning = localWord.meaning || '';
-    const parts = meaning.split(/[❶❷❸]/).filter(Boolean);
-    if (parts.length > 0) {
-      info.meanings = [{ pos: localWord.pos || '', defs: parts.map(p => p.trim()) }];
-    }
     shadowPopupCache[word] = info;
     renderWordPopup(popup, info);
     // Still fetch API in background for English defs + audio
@@ -3004,20 +3010,18 @@ function renderWordPopup(popup, info) {
   let html = '<div class="swp-head">';
   html += '<span class="swp-word">' + word + '</span>';
   if (phonetic) html += '<span class="swp-phonetic">' + phonetic + '</span>';
-  // Play pronunciation button
   if (audioUrl) {
     html += '<button class="swp-play" onclick="playPopupWord(this,\'' + audioUrl.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   } else {
-    // TTS fallback
     html += '<button class="swp-play" onclick="playPopupTTS(\'' + word.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   }
   html += '</div>';
   
-  // English definitions (from Free Dictionary API)
   const enDefs = enMeanings || [];
   const hasZh = !!(zhMeaning);
   const hasEn = enDefs.length > 0;
   
+  // English definitions (from Free Dictionary API)
   if (hasEn) {
     html += '<div class="swp-en-meanings">';
     const nums = ['❶','❷','❸'];
@@ -3031,20 +3035,20 @@ function renderWordPopup(popup, info) {
     html += '</div>';
   }
   
-  // Chinese section: toggle button + hidden area
+  // Chinese section
   if (hasZh) {
     if (hasEn) {
-      // Has both en+zh: zh hidden behind button
+      // Has both: zh hidden behind toggle button
       html += '<button class="swp-zh-toggle" onclick="togglePopupZh(this)">🇨🇳 中文</button>';
       html += '<div class="swp-zh-area hidden">';
     } else {
-      // Only zh (no en defs yet): show zh directly
+      // Only zh: show directly
       html += '<div class="swp-zh-area">';
     }
     html += '<div class="swp-m zh">' + (zhPos ? '<span class="swp-m-pos">' + zhPos + '</span> ' : '') + zhMeaning + '</div>';
     html += '</div>';
   } else if (!hasEn && meanings && meanings.length > 0) {
-    // No en, no zh, show whatever we have
+    // No en, no zh: show whatever we have
     html += '<div class="swp-zh-area">';
     meanings.forEach(m => {
       m.defs.forEach((d) => {
