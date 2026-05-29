@@ -491,7 +491,7 @@ html { scroll-behavior:smooth; }
 @keyframes recPulse { 0%,100%{box-shadow:0 4px 20px rgba(231,76,60,0.2)} 50%{box-shadow:0 4px 30px rgba(231,76,60,0.4)} }
 .shadow-num { display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; background:#fdecea; color:#e74c3c; font-weight:700; font-size:0.82em; border-radius:50%; margin-right:8px; flex-shrink:0; }
 .shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
-.shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:0 3px; border-radius:3px; margin:0 1px; }
+.shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:2px 4px; border-radius:3px; margin:0 2px; }
 .shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; transform:scale(1.05); }
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
 .shadow-zh.hidden { display:none; }
@@ -3007,15 +3007,18 @@ function renderWordPopup(popup, info) {
   // Play pronunciation button
   if (audioUrl) {
     html += '<button class="swp-play" onclick="playPopupWord(this,\'' + audioUrl.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
-  } else if (!hasLocal) {
-    // No audio yet, TTS fallback
+  } else {
+    // TTS fallback
     html += '<button class="swp-play" onclick="playPopupTTS(\'' + word.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   }
   html += '</div>';
   
-  // Show English definitions first (from API)
+  // English definitions (from Free Dictionary API)
   const enDefs = enMeanings || [];
-  if (enDefs.length > 0) {
+  const hasZh = !!(zhMeaning);
+  const hasEn = enDefs.length > 0;
+  
+  if (hasEn) {
     html += '<div class="swp-en-meanings">';
     const nums = ['❶','❷','❸'];
     enDefs.forEach(m => {
@@ -3026,32 +3029,37 @@ function renderWordPopup(popup, info) {
       });
     });
     html += '</div>';
-    // Chinese toggle button
-    html += '<button class="swp-zh-toggle" onclick="togglePopupZh(this)">🇨🇳 中文</button>';
-    html += '<div class="swp-zh-area hidden" id="swp-zh-area">';
-  } else {
-    html += '<div class="swp-zh-area" id="swp-zh-area">';
   }
   
-  // Chinese meaning (always available if hasLocal or fallback)
-  if (zhMeaning) {
+  // Chinese section: toggle button + hidden area
+  if (hasZh) {
+    if (hasEn) {
+      // Has both en+zh: zh hidden behind button
+      html += '<button class="swp-zh-toggle" onclick="togglePopupZh(this)">🇨🇳 中文</button>';
+      html += '<div class="swp-zh-area hidden">';
+    } else {
+      // Only zh (no en defs yet): show zh directly
+      html += '<div class="swp-zh-area">';
+    }
     html += '<div class="swp-m zh">' + (zhPos ? '<span class="swp-m-pos">' + zhPos + '</span> ' : '') + zhMeaning + '</div>';
-  } else if (meanings && meanings.length > 0) {
-    // Fallback: show what we have
+    html += '</div>';
+  } else if (!hasEn && meanings && meanings.length > 0) {
+    // No en, no zh, show whatever we have
+    html += '<div class="swp-zh-area">';
     meanings.forEach(m => {
-      m.defs.forEach((d, di) => {
+      m.defs.forEach((d) => {
         html += '<div class="swp-m">' + d + '</div>';
       });
     });
+    html += '</div>';
   }
-  html += '</div>';
   
   popup.innerHTML = html;
 }
 
 function togglePopupZh(btn) {
-  const area = btn.parentElement.querySelector('#swp-zh-area');
-  if (!area) return;
+  const area = btn.nextElementSibling;
+  if (!area || !area.classList.contains('swp-zh-area')) return;
   popupShowZh = !popupShowZh;
   area.classList.toggle('hidden', !popupShowZh);
   btn.classList.toggle('active', popupShowZh);
@@ -3210,14 +3218,23 @@ function playShadow(idx) {
   function startHighlight(durationMs) {
     clearHighlightTimers();
     if (words.length === 0) return;
-    const perWord = durationMs / words.length;
+    // Weight by character length for better sync with real speech
+    const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
+    const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
+    // Add small gaps between words (~60ms each)
+    const gapMs = 60;
+    const totalGaps = (words.length - 1) * gapMs;
+    const speechMs = Math.max(1, durationMs - totalGaps);
+    let offset = 0;
     words.forEach((w, wi) => {
+      const wordMs = (charLens[wi] / totalChars) * speechMs;
       const t = setTimeout(() => {
         document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
         const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
         if (wordEl) wordEl.classList.add('highlight');
-      }, perWord * wi);
+      }, offset);
       highlightTimers.push(t);
+      offset += wordMs + gapMs;
     });
   }
   
@@ -3275,16 +3292,26 @@ function playShadow(idx) {
       voices.find(v => v.lang.startsWith('en'));
     if (preferred) utt.voice = preferred;
     const wordDuration = (utt.rate > 0.7 ? 280 : 450);
+    const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
+    const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
+    const gapMs = 60;
+    const totalGaps = (words.length - 1) * gapMs;
+    const speechMs = Math.max(1, words.length * wordDuration - totalGaps);
     let fi = 0;
-    const fbTimer = setInterval(() => {
-      if (fi >= words.length) { clearInterval(fbTimer); return; }
-      document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-      const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + fi + '"]');
-      if (wordEl) wordEl.classList.add('highlight');
-      fi++;
-    }, wordDuration);
-    utt.onend = () => { onPlayEnd(); clearInterval(fbTimer); };
-    utt.onerror = () => { onPlayEnd(); clearInterval(fbTimer); };
+    let tOffset = 0;
+    const fbTimers = [];
+    words.forEach((w, wi) => {
+      const wMs = (charLens[wi] / totalChars) * speechMs;
+      const t = setTimeout(() => {
+        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
+        if (wordEl) wordEl.classList.add('highlight');
+      }, tOffset);
+      fbTimers.push(t);
+      tOffset += wMs + gapMs;
+    });
+    utt.onend = () => { onPlayEnd(); fbTimers.forEach(t => clearTimeout(t)); };
+    utt.onerror = () => { onPlayEnd(); fbTimers.forEach(t => clearTimeout(t)); };
     synth.speak(utt);
   });
 }
