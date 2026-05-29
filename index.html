@@ -231,7 +231,7 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 }
 
 /* 回到顶端 */
-.back-top { position:fixed; right:16px; bottom:24px; width:52px; height:52px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.4em; cursor:pointer; box-shadow:0 4px 18px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:all 0.3s; z-index:9999; display:flex; align-items:center; justify-content:center; touch-action:manipulation; }
+.back-top { position:fixed; right:16px; bottom:24px; width:52px; height:52px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.4em; cursor:pointer; box-shadow:0 4px 18px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:all 0.3s; z-index:10001; display:flex; align-items:center; justify-content:center; touch-action:manipulation; }
 .back-top.visible { opacity:1; pointer-events:auto; }
 .back-top:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(118,75,162,0.5); }
 .back-top:active { transform:scale(0.9); }
@@ -404,7 +404,6 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 @media (max-width: 400px) {
   .nouns500-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
   .nouns500-card { padding: 8px 4px; font-size: 13px; }
-  .shadow-en .se-word { padding:1px 2px; margin:0; }
 }
 
 /* ===== 动画 ===== */
@@ -494,6 +493,9 @@ html { scroll-behavior:smooth; }
 .shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
 .shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:2px 4px; border-radius:3px; margin:0 2px; }
 .shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; transform:scale(1.05); }
+@media (max-width:768px) {
+  .shadow-en .se-word { padding:0 1px; margin:0; font-size:0.95em; }
+}
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
 .shadow-zh.hidden { display:none; }
 .shadow-zh-btn { padding:2px 10px; border:1px solid #ccc; border-radius:12px; background:#f8f8f8; color:#888; font-size:0.72em; cursor:pointer; margin-bottom:6px; margin-left:36px; transition:all 0.15s; }
@@ -522,7 +524,9 @@ html { scroll-behavior:smooth; }
 /* Word popup tooltip for shadow sentences */
 .shadow-en .se-word.lookupable { cursor:pointer; }
 .shadow-en .se-word.lookupable:hover { background:#e8f4fd; color:#2980b9; }
-.shadow-word-popup { position:fixed; z-index:10000; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.18); padding:14px 16px; min-width:200px; max-width:320px; font-family:inherit; animation:popIn 0.15s ease; }
+.shadow-word-popup-backdrop { position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.25); animation:fadeIn 0.12s ease; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.shadow-word-popup { position:fixed; z-index:10000; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.18); padding:14px 16px; min-width:200px; max-width:320px; font-family:inherit; animation:popIn 0.15s ease; top:50%; left:50%; transform:translate(-50%,-50%); }
 .shadow-word-popup .swp-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
 .shadow-word-popup .swp-word { font-size:1.2em; font-weight:700; color:#2c3e50; }
 .shadow-word-popup .swp-pos { font-size:0.75em; color:#999; background:#f0f0f0; padding:2px 8px; border-radius:10px; }
@@ -1138,12 +1142,26 @@ function jumpToDate(idx) {
 // Search handler moved to nouns500 section (handles both views)
 
 /* ===== 回到顶端 ===== */
+const backTopBtn = document.getElementById('backTop');
 window.addEventListener('scroll', () => {
-  document.getElementById('backTop').classList.toggle('visible', window.scrollY > window.innerHeight * 0.4);
+  backTopBtn.classList.toggle('visible', window.scrollY > window.innerHeight * 0.4);
 });
-document.getElementById('backTop').addEventListener('click', e => {
+// Also handle scroll inside overlays (quiz, grammar, shadow)
+['quizOverlay','grammarOverlay','shadowOverlay'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('scroll', () => {
+    backTopBtn.classList.toggle('visible', el.scrollTop > el.clientHeight * 0.4);
+  });
+});
+backTopBtn.addEventListener('click', e => {
   e.preventDefault();
-  window.scrollTo({ top:0, behavior:'smooth' });
+  // Check if an overlay is active and scroll that instead
+  const activeOverlay = document.querySelector('.quiz-overlay.active, .grammar-overlay.active, .shadow-overlay.active');
+  if (activeOverlay) {
+    activeOverlay.scrollTo({ top:0, behavior:'smooth' });
+  } else {
+    window.scrollTo({ top:0, behavior:'smooth' });
+  }
 });
 
 /* ===== resize 重渲染 ===== */
@@ -2881,11 +2899,12 @@ function closeWordPopup() {
     shadowPopupEl.remove();
     shadowPopupEl = null;
   }
+  const bd = document.getElementById('swp-backdrop');
+  if (bd) bd.remove();
   if (shadowPopupAudio) {
     try { shadowPopupAudio.pause(); } catch(e) {}
     shadowPopupAudio = null;
   }
-  // Remove any dangling scroll/click handlers
   document.removeEventListener('scroll', _popupScrollHandler, true);
   document.removeEventListener('click', _popupClickHandler);
 }
@@ -2901,21 +2920,15 @@ async function showWordPopup(spanEl) {
   buildLocalVocabMap();
 
   // Create popup
+  const backdrop = document.createElement('div');
+  backdrop.id = 'swp-backdrop';
+  backdrop.className = 'shadow-word-popup-backdrop';
+  document.body.appendChild(backdrop);
   const popup = document.createElement('div');
   popup.className = 'shadow-word-popup';
   popup.innerHTML = '<div class="swp-loading">⚡ 加载中...</div>';
   document.body.appendChild(popup);
   shadowPopupEl = popup;
-
-  // Position near the word
-  const rect = spanEl.getBoundingClientRect();
-  let top = rect.bottom + 6;
-  let left = rect.left;
-  if (top + 200 > window.innerHeight) top = rect.top - 200;
-  if (left + 300 > window.innerWidth) left = window.innerWidth - 310;
-  if (left < 10) left = 10;
-  popup.style.top = top + 'px';
-  popup.style.left = left + 'px';
 
   // Close on click outside or scroll
   _popupClickHandler = (e) => {
@@ -2926,6 +2939,7 @@ async function showWordPopup(spanEl) {
   _popupScrollHandler = () => {
     closeWordPopup();
   };
+  backdrop.addEventListener('click', () => closeWordPopup());
   setTimeout(() => {
     document.addEventListener('click', _popupClickHandler);
     document.addEventListener('scroll', _popupScrollHandler, true);
@@ -3038,17 +3052,17 @@ function renderWordPopup(popup, info) {
   // Chinese section
   if (hasZh) {
     if (hasEn) {
-      // Has both: zh hidden behind toggle button
       html += '<button class="swp-zh-toggle" onclick="togglePopupZh(this)">🇨🇳 中文</button>';
       html += '<div class="swp-zh-area hidden">';
     } else {
-      // Only zh: show directly
       html += '<div class="swp-zh-area">';
     }
     html += '<div class="swp-m zh">' + (zhPos ? '<span class="swp-m-pos">' + zhPos + '</span> ' : '') + zhMeaning + '</div>';
     html += '</div>';
-  } else if (!hasEn && meanings && meanings.length > 0) {
-    // No en, no zh: show whatever we have
+  } else if (hasEn) {
+    // Has English but no Chinese — show hint
+    html += '<div class="swp-zh-area" style="margin-top:6px;"><div style="font-size:0.72em;color:#aaa;">💡 词库暂无中文释义</div></div>';
+  } else if (meanings && meanings.length > 0) {
     html += '<div class="swp-zh-area">';
     meanings.forEach(m => {
       m.defs.forEach((d) => {
