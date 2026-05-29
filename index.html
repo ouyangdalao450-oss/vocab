@@ -514,6 +514,23 @@ html { scroll-behavior:smooth; }
 .shadow-replay-my { padding:3px 10px; border:1px solid #3498db; border-radius:12px; background:#fff; color:#3498db; font-size:0.75em; cursor:pointer; font-weight:600; }
 .shadow-replay-my:active { background:#ebf5fb; }
 
+/* Word popup tooltip for shadow sentences */
+.shadow-en .se-word.lookupable { cursor:pointer; }
+.shadow-en .se-word.lookupable:hover { background:#e8f4fd; color:#2980b9; }
+.shadow-word-popup { position:fixed; z-index:10000; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.18); padding:14px 16px; min-width:200px; max-width:320px; font-family:inherit; animation:popIn 0.15s ease; }
+.shadow-word-popup .swp-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.shadow-word-popup .swp-word { font-size:1.2em; font-weight:700; color:#2c3e50; }
+.shadow-word-popup .swp-pos { font-size:0.75em; color:#999; background:#f0f0f0; padding:2px 8px; border-radius:10px; }
+.shadow-word-popup .swp-phonetic { font-size:0.85em; color:#7f8c8d; }
+.shadow-word-popup .swp-play { background:none; border:2px solid #3498db; border-radius:50%; width:32px; height:32px; font-size:1.1em; cursor:pointer; color:#3498db; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.15s; }
+.shadow-word-popup .swp-play:hover { background:#ebf5fb; }
+.shadow-word-popup .swp-play.playing { background:#3498db; color:#fff; }
+.shadow-word-popup .swp-meanings { font-size:0.88em; color:#444; line-height:1.6; }
+.shadow-word-popup .swp-meanings .swp-m { padding:2px 0; }
+.shadow-word-popup .swp-meanings .swp-m-pos { color:#e67e22; font-weight:600; font-size:0.82em; margin-right:4px; }
+.shadow-word-popup .swp-loading { text-align:center; color:#999; padding:10px; font-size:0.9em; }
+@keyframes popIn { from { opacity:0; transform:scale(0.9) translateY(4px); } to { opacity:1; transform:scale(1) translateY(0); } }
+
 </style>
 </head>
 <body>
@@ -2791,6 +2808,36 @@ const SHADOW_SENTENCES = [
   { en:"How much is the deposit?", zh:'押金是多少？', cat:'住宿' },
   { en:"I'm looking for a place to rent.", zh:'我在找房子租。', cat:'住宿' },
   { en:"Can I have friends over?", zh:'我可以带朋友来吗？', cat:'住宿' },
+  // 复杂长句 Complex Sentences
+  { en:"Whose blue cup is the one sitting on the table?", zh:'那个放在桌子上的蓝色杯子是谁的？', cat:'复杂长句' },
+  { en:"I was wondering if you could help me move this weekend since I can't do it alone.", zh:'我想知道你这个周末能不能帮我搬家，因为我一个人搬不了。', cat:'复杂长句' },
+  { en:"The restaurant that we went to last time had the best pasta I've ever tasted.", zh:'我们上次去的那家餐厅有我吃过最好吃的意面。', cat:'复杂长句' },
+  { en:"Even though it was raining heavily, she still decided to walk to work.", zh:'尽管下着大雨，她还是决定走路去上班。', cat:'复杂长句' },
+  { en:"I wouldn't have missed the flight if I had left home ten minutes earlier.", zh:'如果我早出门十分钟，就不会错过航班了。', cat:'复杂长句' },
+  { en:"Could you tell me where the nearest pharmacy is? I need to pick up a prescription.", zh:'你能告诉我最近的药房在哪吗？我需要去拿药。', cat:'复杂长句' },
+  { en:"The reason I didn't call you back is that my phone ran out of battery.", zh:'我没回你电话的原因是我的手机没电了。', cat:'复杂长句' },
+  { en:"It's been so long since I last saw you that I almost didn't recognize you.", zh:'我好久没见到你了，差点没认出来。', cat:'复杂长句' },
+  { en:"I'm looking for a book that I read when I was a kid, but I can't remember the title.", zh:'我在找一本我小时候读过的书，但我不记得书名了。', cat:'复杂长句' },
+  { en:"She suggested that we should leave early in order to avoid the traffic.", zh:'她建议我们早点出发以避开交通拥堵。', cat:'复杂长句' },
+  { en:"Not only did he finish the project on time, but he also did an excellent job.", zh:'他不仅按时完成了项目，而且做得非常出色。', cat:'复杂长句' },
+  { en:"I'd rather stay home and watch a movie than go out in this freezing weather.", zh:'我宁愿待在家里看电影，也不想在这么冷的天气出门。', cat:'复杂长句' },
+  { en:"The meeting has been postponed until next Wednesday because the manager is out of town.", zh:'会议推迟到了下周三，因为经理出差了。', cat:'复杂长句' },
+  { en:"If I were you, I would definitely take that job offer — it's a once-in-a-lifetime opportunity.", zh:'如果我是你，我肯定会接受那份工作——这是千载难逢的机会。', cat:'复杂长句' },
+  { en:"I've been meaning to tell you that the deadline for the application has been moved up.", zh:'我一直想告诉你，申请的截止日期提前了。', cat:'复杂长句' },
+  { en:"By the time we got to the station, the train had already left.", zh:'我们到车站的时候，火车已经开走了。', cat:'复杂长句' },
+  { en:"It took me a while to figure out how to assemble the furniture, but I finally got it done.", zh:'我花了好一会儿才弄明白怎么组装这件家具，但最终还是搞定了。', cat:'复杂长句' },
+  { en:"The more I think about it, the more I realize that I made the right decision.", zh:'我越想越觉得我做了一个正确的决定。', cat:'复杂长句' },
+  { en:"I can't stand people who are always late — it shows a lack of respect for other people's time.", zh:'我受不了总是迟到的人——这是对别人时间的不尊重。', cat:'复杂长句' },
+  { en:"As far as I know, the new policy will take effect starting from next month.", zh:'据我所知，新政策将从下个月起生效。', cat:'复杂长句' },
+  { en:"What I really want to know is whether they're going to cover the repair costs or not.", zh:'我真正想知道的是他们是否会承担维修费用。', cat:'复杂长句' },
+  { en:"I had no idea that she had been working here for over ten years until she told me yesterday.", zh:'直到她昨天告诉我，我才知道她已经在这里工作十多年了。', cat:'复杂长句' },
+  { en:"Given the current situation, I think it would be better if we postponed the trip.", zh:'考虑到目前的情况，我觉得我们最好推迟这次旅行。', cat:'复杂长句' },
+  { en:"There's no point in arguing about it now — what's done is done.", zh:'现在争论这件事没有意义——木已成舟。', cat:'复杂长句' },
+  { en:"I was about to leave the house when I realized I had forgotten my wallet.", zh:'我正要出门的时候，突然发现忘带钱包了。', cat:'复杂长句' },
+  { en:"It wasn't until I moved abroad that I realized how much I took my family for granted.", zh:'直到我移居海外，我才意识到我把家人视为理所当然。', cat:'复杂长句' },
+  { en:"The fact that she speaks three languages fluently gives her a huge advantage in job interviews.", zh:'她能流利说三种语言，这让她在面试中有巨大优势。', cat:'复杂长句' },
+  { en:"I'm not sure whether I should accept the offer or wait for something better to come along.", zh:'我不确定是应该接受这个录用还是等更好的机会。', cat:'复杂长句' },
+  { en:"The last thing I want to do is let you down, so I'll make sure everything is ready on time.", zh:'我最不想做的就是让你失望，所以我会确保一切按时准备好。', cat:'复杂长句' },
 ];
 
 let shadowSlowMode = false;
@@ -2799,6 +2846,142 @@ let shadowRecording = null; // index of currently recording
 let shadowRecognition = null; // SpeechRecognition instance
 let shadowRecordingBlob = null;
 let shadowRecordingUrl = null;
+
+// === Word popup for shadow sentences ===
+let shadowPopupEl = null;
+let shadowPopupAudio = null;
+let shadowPopupCache = {}; // cache word lookups
+
+function closeWordPopup() {
+  if (shadowPopupEl) {
+    shadowPopupEl.remove();
+    shadowPopupEl = null;
+  }
+  if (shadowPopupAudio) {
+    try { shadowPopupAudio.pause(); } catch(e) {}
+    shadowPopupAudio = null;
+  }
+}
+
+async function showWordPopup(spanEl) {
+  closeWordPopup();
+  const rawWord = spanEl.getAttribute('data-word') || spanEl.textContent;
+  const word = rawWord.replace(/[^a-zA-Z'-]/g, '').toLowerCase();
+  if (!word || word.length < 2) return;
+
+  // Create popup
+  const popup = document.createElement('div');
+  popup.className = 'shadow-word-popup';
+  popup.innerHTML = '<div class="swp-loading">🔍 查询中...</div>';
+  document.body.appendChild(popup);
+  shadowPopupEl = popup;
+
+  // Position near the word
+  const rect = spanEl.getBoundingClientRect();
+  let top = rect.bottom + 6;
+  let left = rect.left;
+  if (top + 200 > window.innerHeight) top = rect.top - 200;
+  if (left + 280 > window.innerWidth) left = window.innerWidth - 290;
+  if (left < 10) left = 10;
+  popup.style.top = top + 'px';
+  popup.style.left = left + 'px';
+
+  // Close on click outside
+  const closeHandler = (e) => {
+    if (!popup.contains(e.target) && e.target !== spanEl) {
+      closeWordPopup();
+      document.removeEventListener('click', closeHandler);
+    }
+  };
+  setTimeout(() => document.addEventListener('click', closeHandler), 50);
+
+  // Check cache
+  if (shadowPopupCache[word]) {
+    renderWordPopup(popup, shadowPopupCache[word]);
+    return;
+  }
+
+  // Fetch from Free Dictionary API
+  try {
+    const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
+    if (!resp.ok) {
+      popup.innerHTML = '<div style="color:#999;font-size:0.88em;padding:8px;">未找到 "' + word + '" 的释义</div>';
+      return;
+    }
+    const data = await resp.json();
+    const entry = data[0];
+    
+    // Extract info
+    const phonetic = entry.phonetic || (entry.phonetics && entry.phonetics.find(p => p.text)?.text) || '';
+    
+    // Get audio URL
+    let audioUrl = '';
+    const phonetics = entry.phonetics || [];
+    const usAudio = phonetics.find(p => p.audio && p.audio.includes('-us'));
+    const anyAudio = phonetics.find(p => p.audio);
+    audioUrl = (usAudio || anyAudio)?.audio || '';
+    // Free Dictionary returns relative URLs sometimes
+    if (audioUrl && !audioUrl.startsWith('http')) audioUrl = 'https:' + audioUrl;
+    
+    // Extract meanings
+    const meanings = (entry.meanings || []).map(m => ({
+      pos: m.partOfSpeech || '',
+      defs: (m.definitions || []).slice(0, 3).map(d => d.definition || '')
+    }));
+
+    const info = { word, phonetic, audioUrl, meanings };
+    shadowPopupCache[word] = info;
+    renderWordPopup(popup, info);
+  } catch(e) {
+    popup.innerHTML = '<div style="color:#e74c3c;font-size:0.88em;padding:8px;">查询失败，请重试</div>';
+  }
+}
+
+function renderWordPopup(popup, info) {
+  const { word, phonetic, audioUrl, meanings } = info;
+  let html = '<div class="swp-head">';
+  html += '<span class="swp-word">' + word + '</span>';
+  if (phonetic) html += '<span class="swp-phonetic">' + phonetic + '</span>';
+  if (audioUrl) {
+    html += '<button class="swp-play" onclick="playPopupWord(this,\'' + audioUrl.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
+  }
+  html += '</div>';
+  
+  if (meanings.length > 0) {
+    html += '<div class="swp-meanings">';
+    const nums = ['❶','❷','❸'];
+    meanings.forEach(m => {
+      m.defs.forEach((d, di) => {
+        html += '<div class="swp-m">';
+        if (di === 0 && m.pos) html += '<span class="swp-m-pos">' + m.pos + '</span> ';
+        html += nums[di] + ' ' + d + '</div>';
+      });
+    });
+    html += '</div>';
+  }
+  
+  popup.innerHTML = html;
+}
+
+function playPopupWord(btn, audioUrl) {
+  // Use Web Audio API (same engine as word pronunciation)
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  btn.classList.add('playing');
+  fetch(audioUrl).then(r => r.arrayBuffer()).then(buf => audioCtx.decodeAudioData(buf)).then(audioBuf => {
+    const source = audioCtx.createBufferSource();
+    source.buffer = audioBuf;
+    source.connect(audioCtx.destination);
+    source.onended = () => btn.classList.remove('playing');
+    source.start(0);
+  }).catch(() => {
+    btn.classList.remove('playing');
+    // Fallback: TTS
+    const utt = new SpeechSynthesisUtterance(btn.closest('.shadow-word-popup').querySelector('.swp-word')?.textContent || '');
+    utt.lang = 'en-US';
+    utt.onend = () => btn.classList.remove('playing');
+    speechSynthesis.speak(utt);
+  });
+}
 
 function openShadowing() {
   const overlay = document.getElementById('shadowOverlay');
@@ -2831,7 +3014,7 @@ function renderShadowing(filter) {
   const catIcons = {
     '问候寒暄': '👋', '日常生活': '🏠', '饮食': '🍽️', '出行': '🚌',
     '购物': '🛒', '工作职场': '💼', '社交': '🎉', '健康': '🏥',
-    '情感表达': '💭', '请求帮助': '🤝', '住宿': '🏡'
+    '情感表达': '💭', '请求帮助': '🤝', '住宿': '🏡', '复杂长句': '🧠'
   };
 
   for (const [cat, sentences] of Object.entries(cats)) {
@@ -2841,7 +3024,8 @@ function renderShadowing(filter) {
       const words = s.en.split(/(\s+|[.,!?;:'"\-—])/);
       const wordSpans = words.map((w, wi) => {
         if (/^\s+$/.test(w)) return ' ';
-        return '<span class="se-word" data-idx="' + s.idx + '-' + wi + '">' + w + '</span>';
+        if (/^[.,!?;:'"\-—]$/.test(w)) return '<span class="se-word se-punct" data-idx="' + s.idx + '-' + wi + '">' + w + '</span>';
+        return '<span class="se-word lookupable" data-idx="' + s.idx + '-' + wi + '" data-word="' + w.replace(/[.,!?;:'"\-—]/g, '') + '" onclick="showWordPopup(this)">' + w + '</span>';
       }).join('');
 
       html += '<div class="shadow-card" id="sc-' + s.idx + '">';
