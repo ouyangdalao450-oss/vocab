@@ -470,6 +470,50 @@ html { scroll-behavior:smooth; }
 
 
 
+
+/* ===== 例句跟读 ===== */
+.shadow-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #e74c3c; border-radius:20px; background:#fff; color:#e74c3c; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
+.shadow-btn:active { background:#fdecea; }
+.shadow-overlay { display:none; position:fixed; inset:0; z-index:200; background:#f5f0ff; overflow-y:auto; }
+.shadow-overlay.active { display:block; }
+.shadow-overlay .shadow-inner { max-width:640px; margin:0 auto; padding:16px; min-height:100vh; }
+.shadow-top { display:flex; align-items:center; justify-content:space-between; padding:8px 0 12px; border-bottom:2px solid #f5c6cb; margin-bottom:16px; }
+.shadow-top h2 { font-size:1.2em; color:#c0392b; }
+.shadow-close-btn { width:36px; height:36px; border-radius:50%; border:none; background:#fdecea; color:#e74c3c; font-size:1.3em; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.shadow-close-btn:active { background:#f5c6cb; }
+.shadow-stats { text-align:center; font-size:0.85em; color:#999; margin-bottom:16px; }
+.shadow-category { margin-bottom:20px; }
+.shadow-category-title { font-size:1em; font-weight:700; color:#c0392b; padding:8px 14px; margin-bottom:10px; background:linear-gradient(90deg,#fdecea,#fff5f5); border-left:4px solid #e74c3c; border-radius:0 10px 10px 0; display:flex; align-items:center; gap:8px; }
+.shadow-card { background:rgba(255,255,255,0.97); border-radius:16px; padding:16px 18px; margin-bottom:12px; box-shadow:0 3px 12px rgba(231,76,60,0.06); border-left:4px solid #e74c3c; transition:all 0.2s; }
+.shadow-card:hover { box-shadow:0 5px 18px rgba(231,76,60,0.1); transform:translateY(-1px); }
+.shadow-card.sc-playing { border-left-color:#e74c3c; box-shadow:0 4px 20px rgba(231,76,60,0.15); }
+.shadow-card.sc-recording { border-left-color:#e74c3c; box-shadow:0 4px 20px rgba(231,76,60,0.2); animation:recPulse 1s ease infinite; }
+@keyframes recPulse { 0%,100%{box-shadow:0 4px 20px rgba(231,76,60,0.2)} 50%{box-shadow:0 4px 30px rgba(231,76,60,0.4)} }
+.shadow-num { display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; background:#fdecea; color:#e74c3c; font-weight:700; font-size:0.82em; border-radius:50%; margin-right:8px; flex-shrink:0; }
+.shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
+.shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:0 1px; border-radius:3px; }
+.shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; transform:scale(1.05); }
+.shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
+.shadow-controls { display:flex; align-items:center; gap:8px; padding-left:36px; flex-wrap:wrap; }
+.shadow-play-btn { background:none; border:2px solid #e74c3c; border-radius:50%; width:42px; height:42px; font-size:1.3em; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#e74c3c; transition:all 0.15s; flex-shrink:0; }
+.shadow-play-btn:hover { background:#fdecea; }
+.shadow-play-btn:active { transform:scale(0.9); }
+.shadow-play-btn.playing { background:#e74c3c; color:#fff; animation:pulse 0.8s ease infinite; }
+.shadow-slow-btn { padding:4px 12px; border:2px solid #ddd; border-radius:16px; background:#fff; color:#999; font-size:0.78em; cursor:pointer; font-weight:600; transition:all 0.15s; }
+.shadow-slow-btn:hover { border-color:#e74c3c; color:#e74c3c; }
+.shadow-slow-btn.active { background:#e74c3c; color:#fff; border-color:#e74c3c; }
+.shadow-record-btn { padding:4px 12px; border:2px solid #27ae60; border-radius:16px; background:#fff; color:#27ae60; font-size:0.78em; cursor:pointer; font-weight:600; transition:all 0.15s; display:flex; align-items:center; gap:4px; }
+.shadow-record-btn:hover { background:#eafaf1; }
+.shadow-record-btn.recording { background:#e74c3c; color:#fff; border-color:#e74c3c; animation:recPulse 1s ease infinite; }
+.shadow-record-btn.disabled { opacity:0.3; cursor:not-allowed; }
+.shadow-result { margin-top:8px; padding-left:36px; }
+.shadow-result-text { font-size:0.82em; color:#555; line-height:1.4; }
+.shadow-result-text.sr-good { color:#27ae60; font-weight:600; }
+.shadow-result-text.sr-ok { color:#e67e22; font-weight:600; }
+.shadow-result-text.sr-bad { color:#e74c3c; font-weight:600; }
+.shadow-replay-my { padding:3px 10px; border:1px solid #3498db; border-radius:12px; background:#fff; color:#3498db; font-size:0.75em; cursor:pointer; font-weight:600; }
+.shadow-replay-my:active { background:#ebf5fb; }
+
 </style>
 </head>
 <body>
@@ -485,6 +529,7 @@ html { scroll-behavior:smooth; }
   <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加单词</button>
   <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
   <button class="grammar-btn" id="grammarBtn" onclick="openGrammar()">📝 语法</button>
+  <button class="shadow-btn" id="shadowBtn" onclick="openShadowing()">🗣️ 跟读</button>
   <div class="stats" id="stats">加载中…</div>
 </div>
 
@@ -2628,6 +2673,404 @@ function importGrammar(items) {
 
 
 
+
+
+/* ===== 例句跟读 - 100句日常英语 ===== */
+const SHADOW_SENTENCES = [
+  // 问候与寒暄 Greetings
+  { en:"How's it going?", zh:'最近怎么样？', cat:'问候寒暄' },
+  { en:"What have you been up to?", zh:'你最近在忙什么？', cat:'问候寒暄' },
+  { en:"Long time no see!", zh:'好久不见！', cat:'问候寒暄' },
+  { en:"Nice to meet you.", zh:'很高兴认识你。', cat:'问候寒暄' },
+  { en:"How's everything?", zh:'一切都好吗？', cat:'问候寒暄' },
+  { en:"I haven't seen you in ages!", zh:'我好久没见到你了！', cat:'问候寒暄' },
+  { en:"What's new?", zh:'有什么新鲜事吗？', cat:'问候寒暄' },
+  { en:"How are things with you?", zh:'你最近怎么样？', cat:'问候寒暄' },
+  // 日常生活 Daily Life
+  { en:"I need to do the laundry today.", zh:'我今天需要洗衣服。', cat:'日常生活' },
+  { en:"Can you take out the trash?", zh:'你能把垃圾拿出去吗？', cat:'日常生活' },
+  { en:"I'm running out of milk.", zh:'我的牛奶快喝完了。', cat:'日常生活' },
+  { en:"Let me check the fridge.", zh:'让我看看冰箱里有什么。', cat:'日常生活' },
+  { en:"I need to charge my phone.", zh:'我需要给手机充电。', cat:'日常生活' },
+  { en:"Can you turn off the lights?", zh:'你能把灯关了吗？', cat:'日常生活' },
+  { en:"I forgot to set my alarm.", zh:'我忘了设闹钟了。', cat:'日常生活' },
+  { en:"The hot water isn't working.", zh:'热水用不了。', cat:'日常生活' },
+  { en:"I need to take a shower.", zh:'我需要洗个澡。', cat:'日常生活' },
+  { en:"Let me grab my keys.", zh:'让我拿一下钥匙。', cat:'日常生活' },
+  { en:"I'll be right there.", zh:'我马上就来。', cat:'日常生活' },
+  // 饮食 Eating & Drinking
+  { en:"I'm starving. Let's grab something to eat.", zh:'我饿死了，我们去吃点东西吧。', cat:'饮食' },
+  { en:"What do you feel like having?", zh:'你想吃什么？', cat:'饮食' },
+  { en:"I'll have the same.", zh:'我要一样的。', cat:'饮食' },
+  { en:"Can I get the check, please?", zh:'请给我账单。', cat:'饮食' },
+  { en:"This tastes amazing!", zh:'这个太好吃了！', cat:'饮食' },
+  { en:"I'm full. I can't eat another bite.", zh:'我饱了，一口都吃不下了。', cat:'饮食' },
+  { en:"Do you want to split the bill?", zh:'你想AA制吗？', cat:'饮食' },
+  { en:"I'll have a coffee to go.", zh:'我要一杯外带咖啡。', cat:'饮食' },
+  { en:"Is there anything vegetarian?", zh:'有素食吗？', cat:'饮食' },
+  { en:"Could I get a glass of water?", zh:'能给我一杯水吗？', cat:'饮食' },
+  // 出行 Transportation
+  { en:"Which bus should I take?", zh:'我该坐哪路公交？', cat:'出行' },
+  { en:"How far is the train station?", zh:'火车站有多远？', cat:'出行' },
+  { en:"Can you call a taxi for me?", zh:'你能帮我叫辆出租车吗？', cat:'出行' },
+  { en:"I need to catch the 8 o'clock train.", zh:'我需要赶8点的火车。', cat:'出行' },
+  { en:"Is there a subway nearby?", zh:'附近有地铁吗？', cat:'出行' },
+  { en:"How long does it take to get there?", zh:'到那里要多久？', cat:'出行' },
+  { en:"Turn left at the next intersection.", zh:'在下一个路口左转。', cat:'出行' },
+  { en:"I think we're going the wrong way.", zh:'我觉得我们走错路了。', cat:'出行' },
+  { en:"Can you drop me off here?", zh:'你能在这里放我下车吗？', cat:'出行' },
+  { en:"I'll walk. It's not that far.", zh:'我走路去，没那么远。', cat:'出行' },
+  // 购物 Shopping
+  { en:"How much is this?", zh:'这个多少钱？', cat:'购物' },
+  { en:"Do you have a smaller size?", zh:'有小一号的吗？', cat:'购物' },
+  { en:"Can I try this on?", zh:'我可以试穿吗？', cat:'购物' },
+  { en:"I'm just looking, thanks.", zh:'我只是看看，谢谢。', cat:'购物' },
+  { en:"Is this on sale?", zh:'这个打折吗？', cat:'购物' },
+  { en:"Do you take credit cards?", zh:'你们收信用卡吗？', cat:'购物' },
+  { en:"I'll take it.", zh:'我要了。', cat:'购物' },
+  { en:"That's too expensive.", zh:'那太贵了。', cat:'购物' },
+  { en:"Can I get a discount?", zh:'能打折吗？', cat:'购物' },
+  { en:"Do you have anything cheaper?", zh:'有便宜一点的吗？', cat:'购物' },
+  // 工作职场 Work
+  { en:"I have a meeting at 10.", zh:'我10点有个会议。', cat:'工作职场' },
+  { en:"Can you send me the report by Friday?", zh:'你能在周五前把报告发给我吗？', cat:'工作职场' },
+  { en:"I'll get back to you on that.", zh:'这件事我回头再答复你。', cat:'工作职场' },
+  { en:"Let's schedule a call for tomorrow.", zh:'我们约明天打个电话吧。', cat:'工作职场' },
+  { en:"I'm running behind schedule.", zh:'我的进度落后了。', cat:'工作职场' },
+  { en:"Could you review this for me?", zh:'你能帮我审阅一下吗？', cat:'工作职场' },
+  { en:"I need to take a day off.", zh:'我需要请一天假。', cat:'工作职场' },
+  { en:"The deadline is next Monday.", zh:'截止日期是下周一。', cat:'工作职场' },
+  { en:"I'll follow up with an email.", zh:'我会发邮件跟进。', cat:'工作职场' },
+  { en:"Let me double-check that.", zh:'让我再确认一下。', cat:'工作职场' },
+  // 社交 Social
+  { en:"Do you want to hang out this weekend?", zh:'这个周末想一起玩吗？', cat:'社交' },
+  { en:"Sounds like a plan!", zh:'听起来不错！', cat:'社交' },
+  { en:"I'm sorry, I can't make it.", zh:'抱歉，我来不了。', cat:'社交' },
+  { en:"Let's catch up over coffee.", zh:'我们喝杯咖啡叙叙旧吧。', cat:'社交' },
+  { en:"It was nice talking to you.", zh:'和你聊天很开心。', cat:'社交' },
+  { en:"I'll text you later.", zh:'我晚点给你发消息。', cat:'社交' },
+  { en:"Are you free tonight?", zh:'你今晚有空吗？', cat:'社交' },
+  { en:"Count me in!", zh:'算我一个！', cat:'社交' },
+  { en:"Maybe next time.", zh:'下次吧。', cat:'社交' },
+  { en:"Thanks for inviting me.", zh:'谢谢你邀请我。', cat:'社交' },
+  // 健康与身体 Health
+  { en:"I'm not feeling well today.", zh:'我今天不太舒服。', cat:'健康' },
+  { en:"I think I'm coming down with something.", zh:'我觉得我好像生病了。', cat:'健康' },
+  { en:"I need to make a doctor's appointment.", zh:'我需要预约看医生。', cat:'健康' },
+  { en:"Take this medicine twice a day.", zh:'这药一天吃两次。', cat:'健康' },
+  { en:"I've got a headache.", zh:'我头疼。', cat:'健康' },
+  { en:"You should get some rest.", zh:'你应该休息一下。', cat:'健康' },
+  { en:"I'm allergic to peanuts.", zh:'我对花生过敏。', cat:'健康' },
+  { en:"Do you have any painkillers?", zh:'你有止痛药吗？', cat:'健康' },
+  // 情感表达 Emotions
+  { en:"That's so frustrating!", zh:'太令人沮丧了！', cat:'情感表达' },
+  { en:"I can't believe it!", zh:'我简直不敢相信！', cat:'情感表达' },
+  { en:"What a relief!", zh:'太让人松了口气！', cat:'情感表达' },
+  { en:"I'm so proud of you.", zh:'我为你感到骄傲。', cat:'情感表达' },
+  { en:"Don't worry about it.", zh:'别担心。', cat:'情感表达' },
+  { en:"I really appreciate your help.", zh:'我真的很感谢你的帮助。', cat:'情感表达' },
+  { en:"That makes sense.", zh:'有道理。', cat:'情感表达' },
+  { en:"I couldn't agree more.", zh:'我完全同意。', cat:'情感表达' },
+  { en:"No way!", zh:'不可能！', cat:'情感表达' },
+  { en:"That's exactly what I was thinking.", zh:'我就是这么想的。', cat:'情感表达' },
+  // 请求与帮助 Requests
+  { en:"Could you give me a hand?", zh:'你能帮我一把吗？', cat:'请求帮助' },
+  { en:"Would you mind opening the window?", zh:'你介意开一下窗户吗？', cat:'请求帮助' },
+  { en:"Can you repeat that, please?", zh:'请你再说一遍好吗？', cat:'请求帮助' },
+  { en:"I need your advice on something.", zh:'我需要你在一件事上给我建议。', cat:'请求帮助' },
+  { en:"Can you speak a little slower?", zh:'你能说慢一点吗？', cat:'请求帮助' },
+  { en:"Could you help me move this?", zh:'你能帮我搬这个吗？', cat:'请求帮助' },
+  { en:"I don't understand. Can you explain again?", zh:'我不明白，你能再解释一下吗？', cat:'请求帮助' },
+  { en:"What do you mean by that?", zh:'你那样说是什么意思？', cat:'请求帮助' },
+  // 住宿与租房 Housing
+  { en:"Is the rent inclusive of bills?", zh:'房租包含水电费吗？', cat:'住宿' },
+  { en:"When is the rent due?", zh:'房租什么时候到期？', cat:'住宿' },
+  { en:"The air conditioning is broken.", zh:'空调坏了。', cat:'住宿' },
+  { en:"I need to renew my lease.", zh:'我需要续签租约。', cat:'住宿' },
+  { en:"Is there parking available?", zh:'有停车位吗？', cat:'住宿' },
+  { en:"How much is the deposit?", zh:'押金是多少？', cat:'住宿' },
+  { en:"I'm looking for a place to rent.", zh:'我在找房子租。', cat:'住宿' },
+  { en:"Can I have friends over?", zh:'我可以带朋友来吗？', cat:'住宿' },
+];
+
+let shadowSlowMode = false;
+let shadowCurrentPlaying = null; // index of currently playing sentence
+let shadowRecording = null; // index of currently recording
+let shadowRecognition = null; // SpeechRecognition instance
+let shadowRecordingBlob = null;
+let shadowRecordingUrl = null;
+
+function openShadowing() {
+  const overlay = document.getElementById('shadowOverlay');
+  overlay.classList.add('active');
+  renderShadowing();
+}
+
+function closeShadowing() {
+  stopShadowPlayback();
+  stopShadowRecording();
+  document.getElementById('shadowOverlay').classList.remove('active');
+}
+
+function renderShadowing(filter) {
+  const inner = document.getElementById('shadowInner');
+  // Group by category
+  const cats = {};
+  SHADOW_SENTENCES.forEach((s, i) => {
+    if (!cats[s.cat]) cats[s.cat] = [];
+    cats[s.cat].push({ ...s, idx: i });
+  });
+
+  let html = '';
+  html += '<div class="shadow-top">';
+  html += '<h2>🗣️ 例句跟读</h2>';
+  html += '<button class="shadow-close-btn" onclick="closeShadowing()">✕</button>';
+  html += '</div>';
+  html += '<div class="shadow-stats">共 ' + SHADOW_SENTENCES.length + ' 句日常英语 · 点击 ▶ 播放 · 点击 🎤 跟读</div>';
+
+  const catIcons = {
+    '问候寒暄': '👋', '日常生活': '🏠', '饮食': '🍽️', '出行': '🚌',
+    '购物': '🛒', '工作职场': '💼', '社交': '🎉', '健康': '🏥',
+    '情感表达': '💭', '请求帮助': '🤝', '住宿': '🏡'
+  };
+
+  for (const [cat, sentences] of Object.entries(cats)) {
+    html += '<div class="shadow-category">';
+    html += '<div class="shadow-category-title">' + (catIcons[cat] || '📌') + ' ' + cat + ' (' + sentences.length + '句)</div>';
+    sentences.forEach(s => {
+      const words = s.en.split(/(\s+|[.,!?;:'"\-—])/);
+      const wordSpans = words.map((w, wi) => {
+        if (/^\s+$/.test(w)) return ' ';
+        return '<span class="se-word" data-idx="' + s.idx + '-' + wi + '">' + w + '</span>';
+      }).join('');
+
+      html += '<div class="shadow-card" id="sc-' + s.idx + '">';
+      html += '<div class="shadow-en"><span class="shadow-num">' + (s.idx + 1) + '</span>' + wordSpans + '</div>';
+      html += '<div class="shadow-zh">' + s.zh + '</div>';
+      html += '<div class="shadow-controls">';
+      html += '<button class="shadow-play-btn" id="sp-' + s.idx + '" onclick="playShadow(' + s.idx + ')" title="播放">▶</button>';
+      html += '<button class="shadow-slow-btn' + (shadowSlowMode ? ' active' : '') + '" onclick="toggleShadowSlow(' + s.idx + ')" title="慢速">🐢 慢</button>';
+      html += '<button class="shadow-record-btn' + (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) ? ' disabled' : '') + '" id="sr-' + s.idx + '" onclick="startShadowRecording(' + s.idx + ')" title="跟读">🎤 跟读</button>';
+      html += '</div>';
+      html += '<div class="shadow-result" id="sres-' + s.idx + '"></div>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+
+  inner.innerHTML = html;
+}
+
+function stopShadowPlayback() {
+  if (shadowCurrentPlaying !== null) {
+    speechSynthesis.cancel();
+    const btn = document.getElementById('sp-' + shadowCurrentPlaying);
+    if (btn) { btn.classList.remove('playing'); btn.textContent = '▶'; }
+    const card = document.getElementById('sc-' + shadowCurrentPlaying);
+    if (card) card.classList.remove('sc-playing');
+    // Clear highlights
+    document.querySelectorAll('.se-word.highlight[data-idx^="' + shadowCurrentPlaying + '-"]').forEach(el => el.classList.remove('highlight'));
+    shadowCurrentPlaying = null;
+  }
+}
+
+function playShadow(idx) {
+  // If same sentence playing, stop
+  if (shadowCurrentPlaying === idx) {
+    stopShadowPlayback();
+    return;
+  }
+  stopShadowPlayback();
+  stopShadowRecording();
+
+  const s = SHADOW_SENTENCES[idx];
+  const btn = document.getElementById('sp-' + idx);
+  const card = document.getElementById('sc-' + idx);
+  if (!btn || !s) return;
+
+  shadowCurrentPlaying = idx;
+  btn.classList.add('playing');
+  btn.textContent = '⏹';
+  card.classList.add('sc-playing');
+
+  const synth = window.speechSynthesis;
+  synth.cancel();
+
+  const utt = new SpeechSynthesisUtterance(s.en);
+  utt.lang = 'en-US';
+  utt.rate = shadowSlowMode ? 0.55 : 0.9;
+  utt.pitch = 1.0;
+
+  // Try to use best available voice
+  const voices = synth.getVoices();
+  const preferred = voices.find(v => v.lang === 'en-US' && (v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Natural') || v.name.includes('Enhanced'))) ||
+    voices.find(v => v.lang === 'en-US' && !v.localService) ||
+    voices.find(v => v.lang === 'en-US') ||
+    voices.find(v => v.lang.startsWith('en'));
+  if (preferred) utt.voice = preferred;
+
+  // Word-by-word highlight
+  const words = s.en.split(/\s+/).filter(w => w.length > 0);
+  let wordIdx = 0;
+  const wordDuration = (utt.rate > 0.7 ? 280 : 450); // ms per word approx
+
+  utt.onboundary = function(event) {
+    if (event.name === 'word') {
+      // Highlight current word
+      document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+      const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wordIdx + '"]');
+      if (wordEl) wordEl.classList.add('highlight');
+      wordIdx++;
+    }
+  };
+
+  // Fallback highlight if onboundary doesn't fire (some browsers)
+  let fallbackTimer = null;
+  if (!('onboundary' in utt)) {
+    let fi = 0;
+    fallbackTimer = setInterval(() => {
+      if (fi >= words.length) { clearInterval(fallbackTimer); return; }
+      document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+      const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + fi + '"]');
+      if (wordEl) wordEl.classList.add('highlight');
+      fi++;
+    }, wordDuration);
+  }
+
+  utt.onend = function() {
+    btn.classList.remove('playing');
+    btn.textContent = '▶';
+    card.classList.remove('sc-playing');
+    document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+    shadowCurrentPlaying = null;
+    if (fallbackTimer) clearInterval(fallbackTimer);
+  };
+  utt.onerror = function() {
+    btn.classList.remove('playing');
+    btn.textContent = '▶';
+    card.classList.remove('sc-playing');
+    shadowCurrentPlaying = null;
+    if (fallbackTimer) clearInterval(fallbackTimer);
+  };
+
+  synth.speak(utt);
+}
+
+function toggleShadowSlow(idx) {
+  shadowSlowMode = !shadowSlowMode;
+  // Update all slow buttons
+  document.querySelectorAll('.shadow-slow-btn').forEach(b => {
+    b.classList.toggle('active', shadowSlowMode);
+  });
+}
+
+function stopShadowRecording() {
+  if (shadowRecognition) {
+    shadowRecognition.abort();
+    shadowRecognition = null;
+  }
+  if (shadowRecording !== null) {
+    const btn = document.getElementById('sr-' + shadowRecording);
+    if (btn) { btn.classList.remove('recording'); btn.innerHTML = '🎤 跟读'; }
+    const card = document.getElementById('sc-' + shadowRecording);
+    if (card) card.classList.remove('sc-recording');
+    shadowRecording = null;
+  }
+}
+
+function startShadowRecording(idx) {
+  if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+    alert('您的浏览器不支持语音识别，请使用Chrome浏览器');
+    return;
+  }
+
+  // If already recording same one, stop
+  if (shadowRecording === idx) {
+    stopShadowRecording();
+    return;
+  }
+  stopShadowRecording();
+  stopShadowPlayback();
+
+  const s = SHADOW_SENTENCES[idx];
+  const btn = document.getElementById('sr-' + idx);
+  const card = document.getElementById('sc-' + idx);
+  const resultDiv = document.getElementById('sres-' + idx);
+
+  shadowRecording = idx;
+  btn.classList.add('recording');
+  btn.innerHTML = '⏹ 停止';
+  card.classList.add('sc-recording');
+
+  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  shadowRecognition = new SpeechRec();
+  shadowRecognition.lang = 'en-US';
+  shadowRecognition.interimResults = true;
+  shadowRecognition.continuous = false;
+  shadowRecognition.maxAlternatives = 3;
+
+  let finalTranscript = '';
+
+  shadowRecognition.onresult = function(event) {
+    let interim = '';
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      if (event.results[i].isFinal) {
+        finalTranscript += event.results[i][0].transcript;
+      } else {
+        interim += event.results[i][0].transcript;
+      }
+    }
+    const spoken = (finalTranscript || interim).trim();
+    if (spoken && resultDiv) {
+      const similarity = calcSimilarity(spoken.toLowerCase(), s.en.toLowerCase());
+      let level, cls;
+      if (similarity >= 0.8) { level = '✅ 很棒！发音准确'; cls = 'sr-good'; }
+      else if (similarity >= 0.5) { level = '⚠️ 还不错，继续加油'; cls = 'sr-ok'; }
+      else { level = '❌ 再听几遍试试'; cls = 'sr-bad'; }
+      resultDiv.innerHTML = '<div class="shadow-result-text ' + cls + '">' + level + ' (' + Math.round(similarity * 100) + '%)</div>' +
+        '<div class="shadow-result-text" style="color:#999">你说: ' + spoken + '</div>';
+    }
+  };
+
+  shadowRecognition.onerror = function(event) {
+    btn.classList.remove('recording');
+    btn.innerHTML = '🎤 跟读';
+    card.classList.remove('sc-recording');
+    shadowRecording = null;
+    if (resultDiv && event.error !== 'aborted') {
+      resultDiv.innerHTML = '<div class="shadow-result-text sr-bad">语音识别出错: ' + event.error + '</div>';
+    }
+  };
+
+  shadowRecognition.onend = function() {
+    btn.classList.remove('recording');
+    btn.innerHTML = '🎤 跟读';
+    card.classList.remove('sc-recording');
+    shadowRecording = null;
+  };
+
+  shadowRecognition.start();
+}
+
+// Simple word-level similarity
+function calcSimilarity(a, b) {
+  // Remove punctuation
+  const clean = s => s.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 0);
+  const wa = clean(a);
+  const wb = clean(b);
+  if (wb.length === 0) return 0;
+  let matches = 0;
+  wa.forEach(w => {
+    if (wb.includes(w)) matches++;
+  });
+  // Also check reverse
+  wb.forEach(w => {
+    if (wa.includes(w)) matches++;
+  });
+  return matches / (wa.length + wb.length);
+}
+
+
 const origSearchHandler = document.getElementById('searchInput').oninput;
 document.getElementById('searchInput').removeEventListener('input', origSearchHandler);
 document.getElementById('searchInput').addEventListener('input', function() {
@@ -2696,6 +3139,12 @@ document.getElementById('searchInput').addEventListener('input', function() {
       <button class="ga-save" onclick="saveGrammarItem()">保存</button>
     </div>
   </div>
+</div>
+
+
+<!-- 例句跟读全屏页面 -->
+<div class="shadow-overlay" id="shadowOverlay">
+  <div class="shadow-inner" id="shadowInner"></div>
 </div>
 
 </body>
