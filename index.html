@@ -491,7 +491,7 @@ html { scroll-behavior:smooth; }
 @keyframes recPulse { 0%,100%{box-shadow:0 4px 20px rgba(231,76,60,0.2)} 50%{box-shadow:0 4px 30px rgba(231,76,60,0.4)} }
 .shadow-num { display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; background:#fdecea; color:#e74c3c; font-weight:700; font-size:0.82em; border-radius:50%; margin-right:8px; flex-shrink:0; }
 .shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
-.shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:0 1px; border-radius:3px; }
+.shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:0 3px; border-radius:3px; margin:0 1px; }
 .shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; transform:scale(1.05); }
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
 .shadow-zh.hidden { display:none; }
@@ -533,6 +533,13 @@ html { scroll-behavior:smooth; }
 .shadow-word-popup .swp-meanings .swp-m { padding:2px 0; }
 .shadow-word-popup .swp-meanings .swp-m-pos { color:#e67e22; font-weight:600; font-size:0.82em; margin-right:4px; }
 .shadow-word-popup .swp-loading { text-align:center; color:#999; padding:10px; font-size:0.9em; }
+.shadow-word-popup .swp-zh-toggle { display:block; margin:6px 0 0; padding:2px 10px; border:1px solid #ddd; border-radius:10px; background:#fafafa; color:#888; font-size:0.72em; cursor:pointer; transition:all 0.15s; }
+.shadow-word-popup .swp-zh-toggle:hover { border-color:#e67e22; color:#e67e22; }
+.shadow-word-popup .swp-zh-toggle.active { background:#e67e22; color:#fff; border-color:#e67e22; }
+.shadow-word-popup .swp-en-meanings { margin-bottom:2px; }
+.shadow-word-popup .swp-zh-area { font-size:0.85em; color:#666; border-top:1px dashed #e0e0e0; margin-top:4px; padding-top:4px; }
+.shadow-word-popup .swp-zh-area.hidden { display:none; }
+.shadow-word-popup .swp-m.zh { color:#c0392b; }
 @keyframes popIn { from { opacity:0; transform:scale(0.9) translateY(4px); } to { opacity:1; transform:scale(1) translateY(0); } }
 
 </style>
@@ -2855,6 +2862,18 @@ let shadowRecordingUrl = null;
 let shadowPopupEl = null;
 let shadowPopupAudio = null;
 let shadowPopupCache = {}; // cache word lookups
+let localVocabMap = null; // en->wordObj from vocab-data.js
+
+function buildLocalVocabMap() {
+  if (localVocabMap) return;
+  localVocabMap = {};
+  try {
+    getAllWords().forEach(w => {
+      const key = w.en.toLowerCase().replace(/[^a-z]/g, '');
+      if (!localVocabMap[key]) localVocabMap[key] = w;
+    });
+  } catch(e) {}
+}
 
 function closeWordPopup() {
   if (shadowPopupEl) {
@@ -2873,10 +2892,12 @@ async function showWordPopup(spanEl) {
   const word = rawWord.replace(/[^a-zA-Z'-]/g, '').toLowerCase();
   if (!word || word.length < 2) return;
 
+  buildLocalVocabMap();
+
   // Create popup
   const popup = document.createElement('div');
   popup.className = 'shadow-word-popup';
-  popup.innerHTML = '<div class="swp-loading">🔍 查询中...</div>';
+  popup.innerHTML = '<div class="swp-loading">⚡ 加载中...</div>';
   document.body.appendChild(popup);
   shadowPopupEl = popup;
 
@@ -2885,7 +2906,7 @@ async function showWordPopup(spanEl) {
   let top = rect.bottom + 6;
   let left = rect.left;
   if (top + 200 > window.innerHeight) top = rect.top - 200;
-  if (left + 280 > window.innerWidth) left = window.innerWidth - 290;
+  if (left + 300 > window.innerWidth) left = window.innerWidth - 310;
   if (left < 10) left = 10;
   popup.style.top = top + 'px';
   popup.style.left = left + 'px';
@@ -2899,72 +2920,148 @@ async function showWordPopup(spanEl) {
   };
   setTimeout(() => document.addEventListener('click', closeHandler), 50);
 
-  // Check cache
+  // Check cache first
   if (shadowPopupCache[word]) {
     renderWordPopup(popup, shadowPopupCache[word]);
     return;
   }
 
-  // Fetch from Free Dictionary API
+  // Try local vocab data first (instant, no network)
+  const localKey = word.replace(/[^a-z]/g, '');
+  const localWord = localVocabMap[localKey];
+
+  // Build info object
+  let info;
+  if (localWord) {
+    // We have local data — use it immediately
+    info = {
+      word: localWord.en || word,
+      phonetic: localWord.phonetic || '',
+      audioUrl: '', // will try to find from API lazily
+      meanings: [],
+      zhMeaning: localWord.meaning || '',
+      zhPos: localWord.pos || '',
+      hasLocal: true
+    };
+    // Parse meaning into structured defs if it has ❶❷❸
+    const meaning = localWord.meaning || '';
+    const parts = meaning.split(/[❶❷❸]/).filter(Boolean);
+    if (parts.length > 0) {
+      info.meanings = [{ pos: localWord.pos || '', defs: parts.map(p => p.trim()) }];
+    }
+    shadowPopupCache[word] = info;
+    renderWordPopup(popup, info);
+    // Still fetch API in background for English defs + audio
+    fetchPopupApiData(word, popup, info);
+  } else {
+    // No local data — must fetch from API
+    await fetchPopupApiData(word, popup, null);
+  }
+}
+
+async function fetchPopupApiData(word, popup, existingInfo) {
   try {
     const resp = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word));
     if (!resp.ok) {
-      popup.innerHTML = '<div style="color:#999;font-size:0.88em;padding:8px;">未找到 "' + word + '" 的释义</div>';
+      if (!existingInfo) {
+        popup.innerHTML = '<div style="color:#999;font-size:0.88em;padding:8px;">未找到 "' + word + '" 的释义</div>';
+      }
       return;
     }
     const data = await resp.json();
     const entry = data[0];
-    
-    // Extract info
     const phonetic = entry.phonetic || (entry.phonetics && entry.phonetics.find(p => p.text)?.text) || '';
-    
-    // Get audio URL
     let audioUrl = '';
     const phonetics = entry.phonetics || [];
     const usAudio = phonetics.find(p => p.audio && p.audio.includes('-us'));
     const anyAudio = phonetics.find(p => p.audio);
     audioUrl = (usAudio || anyAudio)?.audio || '';
-    // Free Dictionary returns relative URLs sometimes
     if (audioUrl && !audioUrl.startsWith('http')) audioUrl = 'https:' + audioUrl;
-    
-    // Extract meanings
-    const meanings = (entry.meanings || []).map(m => ({
+    const enMeanings = (entry.meanings || []).map(m => ({
       pos: m.partOfSpeech || '',
       defs: (m.definitions || []).slice(0, 3).map(d => d.definition || '')
     }));
 
-    const info = { word, phonetic, audioUrl, meanings };
+    const info = existingInfo || { word, phonetic: '', audioUrl: '', meanings: [], zhMeaning: '', zhPos: '', hasLocal: false };
+    info.phonetic = info.phonetic || phonetic;
+    info.audioUrl = info.audioUrl || audioUrl;
+    info.enMeanings = enMeanings;
     shadowPopupCache[word] = info;
-    renderWordPopup(popup, info);
+    // Re-render if popup is still open for this word
+    if (shadowPopupEl === popup) renderWordPopup(popup, info);
   } catch(e) {
-    popup.innerHTML = '<div style="color:#e74c3c;font-size:0.88em;padding:8px;">查询失败，请重试</div>';
+    if (!existingInfo) {
+      popup.innerHTML = '<div style="color:#e74c3c;font-size:0.88em;padding:8px;">查询失败，请重试</div>';
+    }
   }
 }
 
+let popupShowZh = false; // track zh toggle state per popup
+
 function renderWordPopup(popup, info) {
-  const { word, phonetic, audioUrl, meanings } = info;
+  const { word, phonetic, audioUrl, meanings, enMeanings, zhMeaning, zhPos, hasLocal } = info;
+  popupShowZh = false;
   let html = '<div class="swp-head">';
   html += '<span class="swp-word">' + word + '</span>';
   if (phonetic) html += '<span class="swp-phonetic">' + phonetic + '</span>';
+  // Play pronunciation button
   if (audioUrl) {
     html += '<button class="swp-play" onclick="playPopupWord(this,\'' + audioUrl.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
+  } else if (!hasLocal) {
+    // No audio yet, TTS fallback
+    html += '<button class="swp-play" onclick="playPopupTTS(\'' + word.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   }
   html += '</div>';
   
-  if (meanings.length > 0) {
-    html += '<div class="swp-meanings">';
+  // Show English definitions first (from API)
+  const enDefs = enMeanings || [];
+  if (enDefs.length > 0) {
+    html += '<div class="swp-en-meanings">';
     const nums = ['❶','❷','❸'];
-    meanings.forEach(m => {
+    enDefs.forEach(m => {
       m.defs.forEach((d, di) => {
         html += '<div class="swp-m">';
         if (di === 0 && m.pos) html += '<span class="swp-m-pos">' + m.pos + '</span> ';
-        html += nums[di] + ' ' + d + '</div>';
+        html += nums[Math.min(di,2)] + ' ' + d + '</div>';
       });
     });
     html += '</div>';
+    // Chinese toggle button
+    html += '<button class="swp-zh-toggle" onclick="togglePopupZh(this)">🇨🇳 中文</button>';
+    html += '<div class="swp-zh-area hidden" id="swp-zh-area">';
+  } else {
+    html += '<div class="swp-zh-area" id="swp-zh-area">';
   }
   
+  // Chinese meaning (always available if hasLocal or fallback)
+  if (zhMeaning) {
+    html += '<div class="swp-m zh">' + (zhPos ? '<span class="swp-m-pos">' + zhPos + '</span> ' : '') + zhMeaning + '</div>';
+  } else if (meanings && meanings.length > 0) {
+    // Fallback: show what we have
+    meanings.forEach(m => {
+      m.defs.forEach((d, di) => {
+        html += '<div class="swp-m">' + d + '</div>';
+      });
+    });
+  }
+  html += '</div>';
+  
   popup.innerHTML = html;
+}
+
+function togglePopupZh(btn) {
+  const area = btn.parentElement.querySelector('#swp-zh-area');
+  if (!area) return;
+  popupShowZh = !popupShowZh;
+  area.classList.toggle('hidden', !popupShowZh);
+  btn.classList.toggle('active', popupShowZh);
+  btn.textContent = popupShowZh ? '🇨🇳 英文' : '🇨🇳 中文';
+}
+
+function playPopupTTS(word) {
+  const utt = new SpeechSynthesisUtterance(word);
+  utt.lang = 'en-US';
+  speechSynthesis.speak(utt);
 }
 
 function playPopupWord(btn, audioUrl) {
