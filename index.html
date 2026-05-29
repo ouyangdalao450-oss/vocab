@@ -2864,8 +2864,14 @@ function renderShadowing(filter) {
 function stopShadowPlayback() {
   if (shadowCurrentPlaying !== null) {
     speechSynthesis.cancel();
+    // Stop Web Audio source if playing
+    if (currentSource && currentKey === 'shadow-' + shadowCurrentPlaying) {
+      try { currentSource.stop(); } catch(e) {}
+      currentSource = null;
+      currentKey = null;
+    }
     const btn = document.getElementById('sp-' + shadowCurrentPlaying);
-    if (btn) { btn.classList.remove('playing'); btn.textContent = '▶'; }
+    if (btn) { btn.classList.remove('playing'); btn.textContent = '▶'; btn.classList.remove('loading'); }
     const card = document.getElementById('sc-' + shadowCurrentPlaying);
     if (card) card.classList.remove('sc-playing');
     // Clear highlights
@@ -2893,67 +2899,99 @@ function playShadow(idx) {
   btn.textContent = '⏹';
   card.classList.add('sc-playing');
 
-  const synth = window.speechSynthesis;
-  synth.cancel();
-
-  const utt = new SpeechSynthesisUtterance(s.en);
-  utt.lang = 'en-US';
-  utt.rate = shadowSlowMode ? 0.55 : 0.9;
-  utt.pitch = 1.0;
-
-  // Try to use best available voice
-  const voices = synth.getVoices();
-  const preferred = voices.find(v => v.lang === 'en-US' && (v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Natural') || v.name.includes('Enhanced'))) ||
-    voices.find(v => v.lang === 'en-US' && !v.localService) ||
-    voices.find(v => v.lang === 'en-US') ||
-    voices.find(v => v.lang.startsWith('en'));
-  if (preferred) utt.voice = preferred;
-
-  // Word-by-word highlight
+  // Try real human audio first (Google Translate TTS mp3)
+  const audioKey = 's' + String(idx).padStart(3, '0');
+  const audioUrl = 'shadow-audio/' + audioKey + '.mp3';
+  
+  // Word-by-word highlight timing
   const words = s.en.split(/\s+/).filter(w => w.length > 0);
-  let wordIdx = 0;
-  const wordDuration = (utt.rate > 0.7 ? 280 : 450); // ms per word approx
-
-  utt.onboundary = function(event) {
-    if (event.name === 'word') {
-      // Highlight current word
-      document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-      const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wordIdx + '"]');
-      if (wordEl) wordEl.classList.add('highlight');
-      wordIdx++;
-    }
-  };
-
-  // Fallback highlight if onboundary doesn't fire (some browsers)
-  let fallbackTimer = null;
-  if (!('onboundary' in utt)) {
-    let fi = 0;
-    fallbackTimer = setInterval(() => {
-      if (fi >= words.length) { clearInterval(fallbackTimer); return; }
-      document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-      const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + fi + '"]');
-      if (wordEl) wordEl.classList.add('highlight');
-      fi++;
-    }, wordDuration);
+  let highlightTimers = [];
+  
+  function clearHighlightTimers() {
+    highlightTimers.forEach(t => clearTimeout(t));
+    highlightTimers = [];
   }
-
-  utt.onend = function() {
+  
+  function startHighlight(durationMs) {
+    clearHighlightTimers();
+    if (words.length === 0) return;
+    const perWord = durationMs / words.length;
+    words.forEach((w, wi) => {
+      const t = setTimeout(() => {
+        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
+        if (wordEl) wordEl.classList.add('highlight');
+      }, perWord * wi);
+      highlightTimers.push(t);
+    });
+  }
+  
+  function onPlayEnd() {
     btn.classList.remove('playing');
     btn.textContent = '▶';
     card.classList.remove('sc-playing');
     document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
     shadowCurrentPlaying = null;
-    if (fallbackTimer) clearInterval(fallbackTimer);
-  };
-  utt.onerror = function() {
-    btn.classList.remove('playing');
-    btn.textContent = '▶';
-    card.classList.remove('sc-playing');
-    shadowCurrentPlaying = null;
-    if (fallbackTimer) clearInterval(fallbackTimer);
-  };
-
-  synth.speak(utt);
+    clearHighlightTimers();
+  }
+  
+  // Use Web Audio API for real audio (same engine as word pronunciation)
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  
+  btn.classList.add('loading');
+  fetch(audioUrl).then(resp => {
+    if (!resp.ok) throw new Error('no audio');
+    return resp.arrayBuffer();
+  }).then(arrayBuf => {
+    btn.classList.remove('loading');
+    return audioCtx.decodeAudioData(arrayBuf);
+  }).then(audioBuf => {
+    const source = audioCtx.createBufferSource();
+    source.buffer = audioBuf;
+    
+    // Slow mode: reduce playback rate
+    if (shadowSlowMode) {
+      source.playbackRate.value = 0.6;
+    }
+    
+    source.connect(audioCtx.destination);
+    const durationMs = (audioBuf.duration / (shadowSlowMode ? 0.6 : 1)) * 1000;
+    startHighlight(durationMs);
+    
+    source.onended = () => {
+      if (shadowCurrentPlaying === idx) onPlayEnd();
+    };
+    source.start(0);
+    currentSource = source;
+    currentKey = 'shadow-' + idx;
+  }).catch(e => {
+    btn.classList.remove('loading');
+    // Fallback to browser TTS
+    console.log('Shadow audio not found, falling back to TTS for', idx);
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    const utt = new SpeechSynthesisUtterance(s.en);
+    utt.lang = 'en-US';
+    utt.rate = shadowSlowMode ? 0.55 : 0.9;
+    utt.pitch = 1.0;
+    const voices = synth.getVoices();
+    const preferred = voices.find(v => v.lang === 'en-US' && !v.localService) ||
+      voices.find(v => v.lang === 'en-US') ||
+      voices.find(v => v.lang.startsWith('en'));
+    if (preferred) utt.voice = preferred;
+    const wordDuration = (utt.rate > 0.7 ? 280 : 450);
+    let fi = 0;
+    const fbTimer = setInterval(() => {
+      if (fi >= words.length) { clearInterval(fbTimer); return; }
+      document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+      const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + fi + '"]');
+      if (wordEl) wordEl.classList.add('highlight');
+      fi++;
+    }, wordDuration);
+    utt.onend = () => { onPlayEnd(); clearInterval(fbTimer); };
+    utt.onerror = () => { onPlayEnd(); clearInterval(fbTimer); };
+    synth.speak(utt);
+  });
 }
 
 function toggleShadowSlow(idx) {
