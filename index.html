@@ -491,11 +491,8 @@ html { scroll-behavior:smooth; }
 @keyframes recPulse { 0%,100%{box-shadow:0 4px 20px rgba(231,76,60,0.2)} 50%{box-shadow:0 4px 30px rgba(231,76,60,0.4)} }
 .shadow-num { display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; background:#fdecea; color:#e74c3c; font-weight:700; font-size:0.82em; border-radius:50%; margin-right:8px; flex-shrink:0; }
 .shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
-.shadow-en .se-word { display:inline-block; transition:all 0.15s; padding:2px 4px; border-radius:3px; margin:0 2px; }
-.shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; transform:scale(1.05); }
-@media (max-width:768px) {
-  .shadow-en .se-word { padding:0 1px; margin:0; font-size:0.95em; }
-}
+.shadow-en .se-word { display:inline; transition:background 0.1s,color 0.1s; padding:0 1px; border-radius:3px; margin:0; }
+.shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; }
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
 .shadow-zh.hidden { display:none; }
 .shadow-zh-btn { padding:2px 10px; border:1px solid #ccc; border-radius:12px; background:#f8f8f8; color:#888; font-size:0.72em; cursor:pointer; margin-bottom:6px; margin-left:36px; transition:all 0.15s; }
@@ -3233,14 +3230,85 @@ function playShadow(idx) {
     highlightTimers = [];
   }
   
+  // Analyze audio to find word boundaries via silence detection
+  function findWordBoundaries(audioBuf, wordCount) {
+    const data = audioBuf.getChannelData(0);
+    const sr = audioBuf.sampleRate;
+    const frameMs = 10; // 10ms frames
+    const frameSize = Math.round(sr * frameMs / 1000);
+    const silenceThreshold = 0.015;
+    const minSilenceMs = 80;
+    const minSilenceFrames = Math.round(minSilenceMs / frameMs);
+    
+    // Compute RMS energy per frame
+    const energies = [];
+    for (let i = 0; i < data.length; i += frameSize) {
+      let sum = 0;
+      const end = Math.min(i + frameSize, data.length);
+      for (let j = i; j < end; j++) sum += data[j] * data[j];
+      energies.push(Math.sqrt(sum / (end - i)));
+    }
+    
+    // Find silence regions (consecutive low-energy frames)
+    const silences = [];
+    let inSil = false, silStart = 0;
+    for (let i = 0; i < energies.length; i++) {
+      if (energies[i] < silenceThreshold) {
+        if (!inSil) { inSil = true; silStart = i; }
+      } else {
+        if (inSil) {
+          inSil = false;
+          if (i - silStart >= minSilenceFrames) {
+            const startMs = silStart * frameMs;
+            const endMs = i * frameMs;
+            silences.push({ start: startMs, end: endMs, mid: (startMs + endMs) / 2, len: endMs - startMs });
+          }
+        }
+      }
+    }
+    if (inSil && energies.length - silStart >= minSilenceFrames) {
+      const startMs = silStart * frameMs;
+      const endMs = energies.length * frameMs;
+      silences.push({ start: startMs, end: endMs, mid: (startMs + endMs) / 2, len: endMs - startMs });
+    }
+    
+    if (silences.length === 0) return null;
+    
+    // Pick the best N-1 silences for word boundaries
+    const needed = Math.max(1, wordCount - 1);
+    const audioMs = (data.length / sr) * 1000;
+    const margin = audioMs * 0.05;
+    // Prefer interior silences (not leading/trailing)
+    const interior = silences.filter(s => s.start > margin && s.end < audioMs - margin);
+    const pool = interior.length >= needed ? interior : silences;
+    // Sort by length desc, pick top N-1, then re-sort by time
+    const chosen = pool.sort((a, b) => b.len - a.len).slice(0, needed).sort((a, b) => a.start - b.start);
+    
+    // Build word start times
+    const boundaries = [0]; // first word starts at 0
+    chosen.forEach(s => boundaries.push(s.mid));
+    return boundaries;
+  }
+  
+  function startHighlightFromBoundaries(boundaries, totalDurationMs) {
+    clearHighlightTimers();
+    for (let wi = 0; wi < words.length; wi++) {
+      const startTime = (wi < boundaries.length) ? boundaries[wi] : (totalDurationMs * wi / words.length);
+      const t = setTimeout(() => {
+        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
+        if (wordEl) wordEl.classList.add('highlight');
+      }, startTime);
+      highlightTimers.push(t);
+    }
+  }
+  
   function startHighlight(durationMs) {
     clearHighlightTimers();
     if (words.length === 0) return;
-    // Weight by character length for better sync with real speech
     const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
     const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
-    // Add small gaps between words (~60ms each)
-    const gapMs = 60;
+    const gapMs = 40;
     const totalGaps = (words.length - 1) * gapMs;
     const speechMs = Math.max(1, durationMs - totalGaps);
     let offset = 0;
@@ -3286,7 +3354,13 @@ function playShadow(idx) {
     
     source.connect(audioCtx.destination);
     const durationMs = (audioBuf.duration / (shadowSlowMode ? 0.6 : 1)) * 1000;
-    startHighlight(durationMs);
+    // Try silence-based word boundary detection for accurate highlight sync
+    const boundaries = findWordBoundaries(audioBuf, words.length);
+    if (boundaries && boundaries.length === words.length) {
+      startHighlightFromBoundaries(boundaries, durationMs);
+    } else {
+      startHighlight(durationMs);
+    }
     
     source.onended = () => {
       if (shadowCurrentPlaying === idx) onPlayEnd();
@@ -3312,18 +3386,38 @@ function playShadow(idx) {
     const wordDuration = (utt.rate > 0.7 ? 280 : 450);
     const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
     const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
-    const gapMs = 60;
+    const gapMs = 40;
     const totalGaps = (words.length - 1) * gapMs;
     const speechMs = Math.max(1, words.length * wordDuration - totalGaps);
-    let fi = 0;
     let tOffset = 0;
     const fbTimers = [];
+    // Use onboundary for precise word tracking (Chrome/Edge support it)
+    let boundaryIdx = 0;
+    utt.onboundary = (ev) => {
+      if (ev.name === 'word') {
+        // Clear previous highlights
+        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+        // Find which word this boundary corresponds to
+        const spokenWord = s.en.substring(ev.charIndex, ev.charIndex + ev.charLength).trim().toLowerCase();
+        for (let wi = boundaryIdx; wi < words.length; wi++) {
+          if (words[wi].toLowerCase().replace(/[^a-z]/g, '') === spokenWord.replace(/[^a-z]/g, '')) {
+            const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
+            if (wordEl) wordEl.classList.add('highlight');
+            boundaryIdx = wi + 1;
+            break;
+          }
+        }
+      }
+    };
+    // Fallback timers in case onboundary doesn't fire
     words.forEach((w, wi) => {
       const wMs = (charLens[wi] / totalChars) * speechMs;
       const t = setTimeout(() => {
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-        if (wordEl) wordEl.classList.add('highlight');
+        if (boundaryIdx === 0) { // onboundary never fired, use estimate
+          document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+          const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
+          if (wordEl) wordEl.classList.add('highlight');
+        }
       }, tOffset);
       fbTimers.push(t);
       tOffset += wMs + gapMs;
