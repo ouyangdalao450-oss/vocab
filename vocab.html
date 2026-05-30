@@ -657,6 +657,7 @@ function addExampleSpeakButtons() {
 }
 
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
+const CACHE_NAME = 'vocab-v62';
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const bufferCache = {};   // wordKey → AudioBuffer
 const loadingSet = new Set(); // 正在加载的
@@ -1193,6 +1194,8 @@ window.addEventListener('resize', () => {
 
 /* ===== 启动 ===== */
 renderAll('');
+// Preload shadow audio in background after page loads (5s delay to not block initial render)
+setTimeout(() => { if (typeof preloadShadowAudio === 'function') preloadShadowAudio(); }, 5000);
 
 /* ===== Quiz 测验系统 ===== */
 const QUIZ_MODES = [
@@ -2436,7 +2439,7 @@ function getMergedData() {
 
 /* ===== Service Worker（可选离线）===== */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=61').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=62').catch(()=>{});
 // 快捷键：Enter下一题 + ABCD选择选项
 document.addEventListener('keydown', function(e) {
   // 排除输入框内的按键
@@ -3288,10 +3291,33 @@ function toggleShadowZh(btn, idx) {
   btn.textContent = isHidden ? '🇨🇳 隐藏' : '🇨🇳 译文';
 }
 
+// Preload all shadow audio files into cache
+let shadowPreloaded = false;
+function preloadShadowAudio() {
+  if (shadowPreloaded) return;
+  shadowPreloaded = true;
+  if (!('caches' in window)) return;
+  caches.open(CACHE_NAME || 'vocab-v61').then(cache => {
+    SHADOW_SENTENCES.forEach((s, i) => {
+      const file = s.audio || ('s' + String(i).padStart(3, '0') + '.mp3');
+      const url = 'shadow-audio-v2/' + file;
+      // Only fetch if not already cached
+      cache.match(url).then(matched => {
+        if (!matched) {
+          fetch(url).then(resp => {
+            if (resp.ok) cache.put(url, resp);
+          }).catch(() => {});
+        }
+      });
+    });
+  }).catch(() => {});
+}
+
 function openShadowing() {
   const overlay = document.getElementById('shadowOverlay');
   overlay.classList.add('active');
   renderShadowing();
+  preloadShadowAudio();
   // Back-to-top visibility inside shadow overlay
   const sbt = document.getElementById('shadowBackTop');
   if (sbt) {
