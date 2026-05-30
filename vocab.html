@@ -476,6 +476,10 @@ html { scroll-behavior:smooth; }
 .shadow-btn:active { background:#fdecea; }
 .shadow-overlay { display:none; position:fixed; inset:0; z-index:200; background:#f5f0ff; overflow-y:auto; }
 .shadow-overlay.active { display:block; }
+.shadow-back-top { position:fixed; right:16px; bottom:24px; width:48px; height:48px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.2em; cursor:pointer; box-shadow:0 4px 18px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:all 0.3s; z-index:210; display:flex; align-items:center; justify-content:center; }
+.shadow-overlay.active .shadow-back-top { opacity:0; pointer-events:none; }
+.shadow-overlay.active .shadow-back-top.visible { opacity:1; pointer-events:auto; }
+
 .shadow-overlay .shadow-inner { max-width:640px; margin:0 auto; padding:16px; min-height:100vh; }
 .shadow-top { display:flex; align-items:center; justify-content:space-between; padding:8px 0 12px; border-bottom:2px solid #f5c6cb; margin-bottom:16px; }
 .shadow-top h2 { font-size:1.2em; color:#c0392b; }
@@ -484,6 +488,24 @@ html { scroll-behavior:smooth; }
 .shadow-stats { text-align:center; font-size:0.85em; color:#999; margin-bottom:16px; }
 .shadow-category { margin-bottom:20px; }
 .shadow-category-title { font-size:1em; font-weight:700; color:#c0392b; padding:8px 14px; margin-bottom:10px; background:linear-gradient(90deg,#fdecea,#fff5f5); border-left:4px solid #e74c3c; border-radius:0 10px 10px 0; display:flex; align-items:center; gap:8px; }
+/* Shadow jump bar */
+.shadow-jump-bar { display:flex; gap:8px; justify-content:center; margin:8px 0 4px; flex-wrap:wrap; }
+.shadow-jump-btn { padding:6px 14px; border-radius:20px; border:2px solid #ddd; background:#fff; font-size:0.88em; cursor:pointer; transition:all 0.2s; font-weight:600; }
+.shadow-jump-btn:hover { transform:translateY(-1px); box-shadow:0 3px 12px rgba(0,0,0,0.1); }
+.shadow-jump-btn:active { transform:scale(0.96); }
+
+/* Whole sentence highlight */
+.sen-highlight { background:rgba(231,76,60,0.08) !important; border-radius:8px; transition:background 0.3s; }
+
+/* Inline word zh */
+.shadow-en .se-word { display:inline; cursor:pointer; position:relative; transition:background 0.1s,color 0.1s; padding:0 2px; border-radius:3px; }
+.shadow-en .se-word:hover { background:rgba(231,76,60,0.06); }
+.shadow-en .se-word.se-punct { cursor:default; padding:0; }
+.shadow-en .se-word.se-punct:hover { background:transparent; }
+.word-zh-dot { font-size:0.5em; color:#e67e22; margin-left:1px; vertical-align:super; }
+.word-zh-text { font-size:0.72em; color:#e67e22; background:rgba(230,126,34,0.1); padding:1px 5px; border-radius:8px; margin-left:2px; vertical-align:baseline; font-weight:500; }
+.se-word.word-zh-showing { background:rgba(230,126,34,0.08); }
+
 .shadow-card { background:rgba(255,255,255,0.97); border-radius:16px; padding:16px 18px; margin-bottom:12px; box-shadow:0 3px 12px rgba(231,76,60,0.06); border-left:4px solid #e74c3c; transition:all 0.2s; }
 .shadow-card:hover { box-shadow:0 5px 18px rgba(231,76,60,0.1); transform:translateY(-1px); }
 .shadow-card.sc-playing { border-left-color:#e74c3c; box-shadow:0 4px 20px rgba(231,76,60,0.15); }
@@ -491,8 +513,7 @@ html { scroll-behavior:smooth; }
 @keyframes recPulse { 0%,100%{box-shadow:0 4px 20px rgba(231,76,60,0.2)} 50%{box-shadow:0 4px 30px rgba(231,76,60,0.4)} }
 .shadow-num { display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; background:#fdecea; color:#e74c3c; font-weight:700; font-size:0.82em; border-radius:50%; margin-right:8px; flex-shrink:0; }
 .shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
-.shadow-en .se-word { display:inline; transition:background 0.1s,color 0.1s; padding:0 1px; border-radius:3px; margin:0; }
-.shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; }
+.shadow-en .se-word { display:inline; cursor:pointer; position:relative; transition:background 0.1s,color 0.1s; padding:0 2px; border-radius:3px; }
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
 .shadow-zh.hidden { display:none; }
 .shadow-zh-btn { padding:2px 10px; border:1px solid #ccc; border-radius:12px; background:#f8f8f8; color:#888; font-size:0.72em; cursor:pointer; margin-bottom:6px; margin-left:36px; transition:all 0.15s; }
@@ -2415,7 +2436,7 @@ function getMergedData() {
 
 /* ===== Service Worker（可选离线）===== */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=60').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=61').catch(()=>{});
 // 快捷键：Enter下一题 + ABCD选择选项
 document.addEventListener('keydown', function(e) {
   // 排除输入框内的按键
@@ -3271,6 +3292,13 @@ function openShadowing() {
   const overlay = document.getElementById('shadowOverlay');
   overlay.classList.add('active');
   renderShadowing();
+  // Back-to-top visibility inside shadow overlay
+  const sbt = document.getElementById('shadowBackTop');
+  if (sbt) {
+    overlay.addEventListener('scroll', () => {
+      sbt.classList.toggle('visible', overlay.scrollTop > overlay.clientHeight * 0.4);
+    });
+  }
 }
 
 function closeShadowing() {
@@ -3281,10 +3309,14 @@ function closeShadowing() {
 
 function renderShadowing(filter) {
   const inner = document.getElementById('shadowInner');
+  // Build a word→zh map for inline Chinese tooltips
+  buildLocalVocabMap();
+  
   // Group by category
   const cats = {};
+  const catOrder = ['简单句', '中级句', '进阶句'];
   SHADOW_SENTENCES.forEach((s, i) => {
-    if (!s.cat || /^\[/.test(s.en)) return; // Skip [music] etc
+    if (!s.cat || /^\[/.test(s.en)) return;
     if (!cats[s.cat]) cats[s.cat] = [];
     cats[s.cat].push({ ...s, idx: i });
   });
@@ -3294,28 +3326,39 @@ function renderShadowing(filter) {
   html += '<h2>🗣️ 例句跟读</h2>';
   html += '<button class="shadow-close-btn" onclick="closeShadowing()">✕</button>';
   html += '</div>';
+  
+  // Category jump buttons
+  const catAnchors = { '简单句': 'sjump-easy', '中级句': 'sjump-mid', '进阶句': 'sjump-hard' };
+  html += '<div class="shadow-jump-bar">';
+  for (const cat of catOrder) {
+    if (!cats[cat]) continue;
+    const icons = { '简单句': '🟢', '中级句': '🟡', '进阶句': '🔴' };
+    html += '<button class="shadow-jump-btn" onclick="document.getElementById(\''+catAnchors[cat]+'\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' + (icons[cat]||'📌') + ' ' + cat + ' (' + cats[cat].length + ')</button>';
+  }
+  html += '</div>';
+  
   html += '<div class="shadow-stats">共 ' + SHADOW_SENTENCES.length + ' 句 · YouTube真人发音 · 点击 ▶ 播放 · 点击 🎤 跟读</div>';
 
-  const catIcons = {
-    '简单句': '🟢', '中级句': '🟡', '进阶句': '🔴',
-    '问候寒暄': '👋', '日常生活': '🏠', '饮食': '🍽️', '出行': '🚌',
-    '购物': '🛒', '工作职场': '💼', '社交': '🎉', '健康': '🏥',
-    '情感表达': '💭', '请求帮助': '🤝', '住宿': '🏡', '复杂长句': '🧠'
-  };
-
-  for (const [cat, sentences] of Object.entries(cats)) {
-    html += '<div class="shadow-category">';
+  for (const cat of catOrder) {
+    if (!cats[cat]) continue;
+    const sentences = cats[cat];
+    const catIcons = { '简单句': '🟢', '中级句': '🟡', '进阶句': '🔴' };
+    html += '<div class="shadow-category" id="' + (catAnchors[cat]||'') + '">';
     html += '<div class="shadow-category-title">' + (catIcons[cat] || '📌') + ' ' + cat + ' (' + sentences.length + '句)</div>';
     sentences.forEach(s => {
+      // Parse words - each word gets an inline zh button
       const words = s.en.split(/(\s+|[.,!?;:'"\-—])/);
       const wordSpans = words.map((w, wi) => {
         if (/^\s+$/.test(w)) return ' ';
-        if (/^[.,!?;:'"\-—]$/.test(w)) return '<span class="se-word se-punct" data-idx="' + s.idx + '-' + wi + '">' + w + '</span>';
-        return '<span class="se-word lookupable" data-idx="' + s.idx + '-' + wi + '" data-word="' + w.replace(/[.,!?;:'"\-—]/g, '') + '" onclick="showWordPopup(this)">' + w + '</span>';
+        if (/^[.,!?;:'"\-—]$/.test(w)) return '<span class="se-word se-punct">' + w + '</span>';
+        const clean = w.replace(/[.,!?;:'"\-—]/g, '').toLowerCase().replace(/[^a-z]/g, '');
+        const localW = localVocabMap[clean];
+        const zhText = localW ? (localW.meaning || '').split('❶')[0].split(';')[0].split('；')[0].trim() : (INLINE_ZH[clean] || '');
+        return '<span class="se-word" data-word="' + w.replace(/[.,!?;:'"\-—]/g, '') + '" data-zh="' + zhText.replace(/"/g, '&quot;') + '" onclick="toggleWordZh(this)">' + w + '<sup class="word-zh-dot">·</sup></span>';
       }).join('');
 
       html += '<div class="shadow-card" id="sc-' + s.idx + '">';
-      html += '<div class="shadow-en"><span class="shadow-num">' + (s.idx + 1) + '</span>' + wordSpans + '</div>';
+      html += '<div class="shadow-en" id="sen-' + s.idx + '"><span class="shadow-num">' + (s.idx + 1) + '</span>' + wordSpans + '</div>';
       html += (s.zh ? '<button class="shadow-zh-btn" onclick="toggleShadowZh(this,' + s.idx + ')">🇨🇳 译文</button><div class="shadow-zh hidden" id="szh-' + s.idx + '">' + s.zh + '</div>' : '');
       html += '<div class="shadow-controls">';
       html += '<button class="shadow-play-btn" id="sp-' + s.idx + '" onclick="playShadow(' + s.idx + ')" title="播放">▶</button>';
@@ -3328,8 +3371,175 @@ function renderShadowing(filter) {
     html += '</div>';
   }
 
+  html += '<button class="shadow-back-top" id="shadowBackTop" onclick="document.getElementById(\'shadowOverlay\').scrollTo({top:0,behavior:\'smooth\'})">⬆</button>';
   inner.innerHTML = html;
 }
+
+// Toggle inline word Chinese meaning
+function toggleWordZh(spanEl) {
+  const zh = spanEl.getAttribute('data-zh');
+  const word = spanEl.getAttribute('data-word');
+  if (!zh && !word) return;
+  
+  // Toggle zh display
+  let zhSpan = spanEl.querySelector('.word-zh-text');
+  if (zhSpan) {
+    zhSpan.remove();
+    spanEl.classList.remove('word-zh-showing');
+  } else {
+    zhSpan = document.createElement('span');
+    zhSpan.className = 'word-zh-text';
+    zhSpan.textContent = zh || '(暂无)';
+    spanEl.appendChild(zhSpan);
+    spanEl.classList.add('word-zh-showing');
+  }
+}
+
+// Inline Chinese dictionary for common words not in vocab-data.js
+const INLINE_ZH = {
+  'the':'这/那','a':'一个','an':'一个','i':'我','me':'我(宾)','my':'我的','you':'你','your':'你的',
+  'he':'他','him':'他(宾)','his':'他的','she':'她','her':'她/她的','it':'它','its':'它的',
+  'we':'我们','us':'我们(宾)','our':'我们的','they':'他们','them':'他们(宾)','their':'他们的',
+  'is':'是','am':'是','are':'是','was':'是(过)','were':'是(过)','be':'是','been':'是(过完)','being':'是(进行)',
+  'have':'有','has':'有','had':'有(过)','do':'做','does':'做','did':'做(过)','done':'做完',
+  'will':'将','would':'会','can':'能','could':'能(过)','may':'可能','might':'可能','shall':'将',
+  'should':'应该','must':'必须','need':'需要','ought':'应该',
+  'not':'不','no':'不/没','yes':'是','and':'和','or':'或','but':'但','so':'所以',
+  'if':'如果','when':'当...时','where':'哪里','what':'什么','who':'谁','how':'如何','why':'为什么',
+  'this':'这个','that':'那个','these':'这些','those':'那些',
+  'here':'这里','there':'那里','now':'现在','then':'然后','just':'仅仅/刚刚','very':'非常',
+  'also':'也','too':'也/太','only':'只','even':'甚至','still':'仍然','already':'已经',
+  'never':'从不','always':'总是','often':'经常','sometimes':'有时','usually':'通常',
+  'about':'关于','after':'之后','before':'之前','between':'之间','through':'通过','during':'在...期间',
+  'with':'和/用','without':'没有','from':'从','into':'进入','onto':'到...上','upon':'在...上',
+  'for':'为了','of':'的','at':'在','in':'在...里','on':'在...上','to':'到/向','by':'被/通过',
+  'up':'上','down':'下','out':'出','off':'离开','over':'在...上方','under':'在...下方',
+  'again':'再次','more':'更多','most':'最','much':'很多','many':'许多','some':'一些','any':'任何',
+  'all':'所有','each':'每个','every':'每个','few':'少数','several':'几个',
+  'one':'一','two':'二','three':'三','four':'四','five':'五','six':'六','seven':'七',
+  'eight':'八','nine':'九','ten':'十','first':'第一','last':'最后','next':'下一个',
+  'new':'新的','old':'旧的','good':'好的','bad':'坏的','big':'大的','small':'小的',
+  'long':'长的','short':'短的','high':'高的','low':'低的','right':'右/对','left':'左',
+  'same':'相同','different':'不同','other':'其他','another':'另一个','such':'这样的',
+  'get':'得到','got':'得到(过)','make':'制作','made':'制作(过)','take':'拿','took':'拿(过)',
+  'give':'给','gave':'给(过)','go':'去','went':'去(过)','gone':'去(过完)',
+  'come':'来','came':'来(过)','see':'看','saw':'看(过)','know':'知道','knew':'知道(过)',
+  'think':'想','thought':'想(过)','say':'说','said':'说(过)','tell':'告诉','told':'告诉(过)',
+  'ask':'问','asked':'问了','find':'找到','found':'找到(过)','want':'想要','put':'放',
+  'keep':'保持','kept':'保持(过)','let':'让','begin':'开始','began':'开始(过)',
+  'seem':'似乎','help':'帮助','show':'展示','showed':'展示(过)','hear':'听到','heard':'听到(过)',
+  'play':'玩','run':'跑','ran':'跑(过)','move':'移动','live':'住/活','believe':'相信',
+  'happen':'发生','happened':'发生了','write':'写','wrote':'写(过)','sit':'坐','sat':'坐(过)',
+  'stand':'站','stood':'站(过)','lose':'失去','lost':'失去(过)','pay':'付钱','paid':'付了',
+  'meet':'遇见','met':'遇见(过)','include':'包括','continue':'继续','set':'设置',
+  'learn':'学习','change':'改变','lead':'领导','led':'领导(过)',
+  'understand':'理解','understood':'理解(过)','watch':'观看','bring':'带来','brought':'带来(过)',
+  'try':'尝试','tried':'尝试(过)','leave':'离开','left':'离开(过)','feel':'感觉','felt':'感觉(过)',
+  'talk':'说话','turn':'转','start':'开始','might':'可能','use':'使用','used':'使用(过)',
+  'look':'看','looked':'看了','call':'打电话','called':'叫了','work':'工作','worked':'工作了',
+  'need':'需要','should':'应该','while':'当...时','because':'因为','since':'自从/因为',
+  'well':'好','really':'真的','quite':'相当','pretty':'相当','enough':'足够',
+  'around':'周围','along':'沿着','away':'远离','back':'回来','together':'一起',
+  'once':'一次','twice':'两次','half':'一半','part':'部分',
+  'day':'天','night':'晚上','time':'时间','year':'年','week':'周','month':'月',
+  'today':'今天','tomorrow':'明天','yesterday':'昨天','morning':'早上','evening':'晚上',
+  'man':'男人','woman':'女人','people':'人们','person':'人','child':'孩子','children':'孩子们',
+  'world':'世界','life':'生活','way':'方式','thing':'东西','place':'地方','home':'家',
+  'hand':'手','head':'头','eye':'眼睛','face':'脸','door':'门','room':'房间',
+  'water':'水','food':'食物','house':'房子','car':'车','book':'书','word':'词/字',
+  'side':'边','end':'结束','point':'点','fact':'事实','problem':'问题','power':'力量',
+  'love':'爱','heart':'心','mind':'头脑','body':'身体','name':'名字','school':'学校',
+  'city':'城市','country':'国家','family':'家庭','friend':'朋友','money':'钱',
+  'hour':'小时','minute':'分钟','moment':'片刻','kind':'种类','sort':'类型',
+  'great':'伟大的','important':'重要的','possible':'可能的','real':'真的','sure':'确定',
+  'true':'真的','free':'自由的/免费的','full':'满的','sure':'确定的','nice':'好的',
+  'hard':'困难的/硬的','simple':'简单的','easy':'容易的','close':'近的','open':'开放的',
+  'own':'自己的','whole':'整个','able':'能够','afraid':'害怕','sorry':'抱歉',
+  'going':'去(进行)','getting':'得到(进行)','trying':'尝试(进行)','looking':'看(进行)',
+  'doing':'做(进行)','saying':'说(进行)','knowing':'知道(进行)','feeling':'感觉(进行)',
+  'thinking':'想(进行)','coming':'来(进行)','making':'制作(进行)','taking':'拿(进行)',
+  'been':'是(过完)','does':'做(三单)','done':'做完','having':'有(进行)',
+  'better':'更好的','best':'最好的','less':'更少','least':'最少',
+  'going':'去','getting':'得到','making':'制作','taking':'拿','looking':'看',
+  'being':'是(进行)','having':'有(进行)','doing':'做(进行)',
+  'oh':'哦','yeah':'是','hey':'嘿','wow':'哇','ok':'好的','okay':'好的',
+  'please':'请','thank':'谢谢','thanks':'谢谢','sorry':'抱歉','hello':'你好',
+  'goodbye':'再见','hi':'嗨','bye':'再见','welcome':'欢迎',
+  'really':'真的','actually':'实际上','probably':'可能','maybe':'也许',
+  'something':'某事','nothing':'没有','everything':'一切','anything':'任何事',
+  'someone':'某人','nobody':'没人','everyone':'每个人','anyone':'任何人',
+  'everywhere':'到处','somewhere':'某处','nowhere':'无处','anywhere':'任何地方',
+  'else':'其他','much':'很多','little':'少的','lot':'很多','bit':'一点',
+  'quite':'相当','rather':'相当','almost':'几乎','especially':'特别',
+  'perhaps':'也许','certainly':'当然','simply':'简单地','exactly':'确切地',
+  'instead':'代替','else':'其他','though':'虽然','whether':'是否',
+  'unless':'除非','until':'直到','except':'除了','among':'在...之中',
+  'toward':'朝向','towards':'朝向','against':'反对','behind':'在...后面',
+  'above':'在...上方','below':'在...下方','beside':'在...旁边','beyond':'超出',
+  'within':'在...之内','without':'没有','among':'在...之中',
+  'let':'让','got':'得到','said':'说了','went':'去了','came':'来了',
+  'saw':'看了','knew':'知道','thought':'想了','took':'拿了',
+  'gave':'给了','told':'告诉了','found':'找到了','kept':'保持了',
+  'felt':'感觉了','left':'离开了','put':'放','ran':'跑了',
+  'sat':'坐了','stood':'站了','heard':'听到了','brought':'带来了',
+  'bought':'买了','paid':'付了','met':'遇见了','won':'赢了',
+  'lost':'失去了','sent':'发送了','built':'建造了','caught':'抓住了',
+  'drove':'开了(车)','drew':'画了','drank':'喝了','fell':'摔了',
+  'flew':'飞了','forgot':'忘了','grew':'长了','hung':'挂了',
+  'held':'拿着','hit':'打','hurt':'伤了','laid':'放','led':'领导了',
+  'lent':'借出','lit':'点燃','meant':'意味着','rode':'骑了',
+  'rose':'升起','shook':'摇了','shut':'关','sang':'唱了','slept':'睡了',
+  'spoke':'说了','spent':'花了','spun':'转了','stuck':'卡住',
+  'swam':'游了','taught':'教了','tore':'撕了','threw':'扔了',
+  'woke':'醒了','wore':'穿了','began':'开始了','broke':'打破了',
+  'chose':'选择了','ate':'吃了','blew':'吹了','bit':'咬',
+  'bound':'绑定','bred':'繁殖','came':'来了','dealt':'处理',
+  'dug':'挖了','fed':'喂了','fled':'逃了','ground':'磨',
+  'knelt':'跪了','laid':'放','leaned':'靠了','leapt':'跳了',
+  'knit':'编织','overcame':'克服了','rid':'摆脱','shrank':'缩小了',
+  'slew':'杀了','slung':'投掷','slit':'切开','spoke':'说了',
+  'strove':'努力','strode':'大步走','strung':'串起','swore':'发誓了',
+  'swept':'扫了','swung':'摇摆','wrung':'拧','clung':' clinging',
+  'spun':'旋转','dove':'潜水','leaned':'倚靠','knelt':'跪下',
+  'gotten':'得到(过完)','spoken':'说(过完)','written':'写(过完)',
+  'broken':'打破(过完)','chosen':'选择(过完)','driven':'驾驶(过完)',
+  'eaten':'吃(过完)','fallen':'掉(过完)','given':'给(过完)',
+  'grown':'成长(过完)','hidden':'藏(过完)','known':'知道(过完)',
+  'lying':'躺着','tied':'绑','rose':'升起','risen':'升起(过完)',
+  'worn':'穿(过完)','thrown':'扔(过完)','sworn':'发誓(过完)',
+  'stolen':'偷(过完)','spoken':'说(过完)','shaken':'摇(过完)',
+  'seen':'看(过完)','sought':'寻求(过完)','sent':'发送(过完)',
+  'set':'设置','shut':'关','spread':'传播','stuck':'卡住(过完)',
+  'struck':'打(过完)','sung':'唱(过完)','swum':'游(过完)',
+  'taken':'拿(过完)','torn':'撕(过完)','told':'告诉(过完)',
+  'thought':'想(过完)','woken':'醒(过完)','won':'赢(过完)',
+  'bought':'买(过完)','brought':'带来(过完)','caught':'抓(过完)',
+  'taught':'教(过完)','fought':'战斗(过完)','sought':'寻找(过完)',
+  'meant':'意味着','dealt':'处理','fed':'喂','fled':'逃跑',
+  'hung':'挂','held':'拿着','lent':'借出','paid':'付款',
+  'sold':'卖','shone':'发光','shot':'射击','spat':'吐',
+  'spelt':'拼写','spilled':'溢出','spilt':'溢出','spoilt':'宠坏',
+  'stank':'发臭','stole':'偷','stuck':'粘住','stung':'刺',
+  'stank':'发臭','sweated':'流汗','wept':'哭泣','bred':'繁殖',
+  'bleed':'流血','blew':'吹','bound':'绑定','burst':'爆发',
+  'cast':'投','cost':'花费','cut':'切','dug':'挖',
+  'forecast':'预测','hit':'打','hurt':'伤害','knit':'编织',
+  'lay':'躺','let':'让','rid':'摆脱','shed':'脱落',
+  'spit':'吐','split':'劈开','thrust':'推','upset':'使不安',
+  'wet':'弄湿','quit':'退出','read':'读','put':'放',
+  'could':'能够(过)','would':'会(过)','should':'应该','might':'可能',
+  'must':'必须','ought':'应该','shall':'将','need':'需要',
+  'was':'是(过)','were':'是(过)','am':'是','is':'是','are':'是',
+  'been':'是(过完)','being':'是(进行)',
+  'having':'有(进行)','does':'做(三单)','did':'做(过)','doing':'做(进行)',
+  'cannot':'不能','can':'能','will':'将','would':'会',
+  'onto':'到...上','upon':'在...上','into':'进入','onto':'到...上',
+  'somethings':'某些事','nothingness':'虚无','anythings':'任何事物',
+  'don':'穿上','doesn':'不做','didn':'没做','isn':'不是',
+  'aren':'不是','wasn':'不是','weren':'不是','won':'赢/将不',
+  'wouldn':'不会','couldn':'不能','shouldn':'不应该','hasn':'没有',
+  'haven':'港口/没有','hadn':'没有'
+};
 
 function stopShadowPlayback() {
   if (shadowCurrentPlaying !== null) {
@@ -3345,7 +3555,7 @@ function stopShadowPlayback() {
     const card = document.getElementById('sc-' + shadowCurrentPlaying);
     if (card) card.classList.remove('sc-playing');
     // Clear highlights
-    document.querySelectorAll('.se-word.highlight[data-idx^="' + shadowCurrentPlaying + '-"]').forEach(el => el.classList.remove('highlight'));
+    { const el = document.getElementById('sen-' + shadowCurrentPlaying); if (el) el.classList.remove('sen-highlight'); }
     shadowCurrentPlaying = null;
   }
 }
@@ -3362,130 +3572,27 @@ function playShadow(idx) {
   const s = SHADOW_SENTENCES[idx];
   const btn = document.getElementById('sp-' + idx);
   const card = document.getElementById('sc-' + idx);
+  const enEl = document.getElementById('sen-' + idx);
   if (!btn || !s) return;
 
   shadowCurrentPlaying = idx;
   btn.classList.add('playing');
   btn.textContent = '⏹';
   card.classList.add('sc-playing');
+  // Whole sentence highlight
+  if (enEl) enEl.classList.add('sen-highlight');
 
-  // Try real human audio first (YouTube native audio)
   const audioFile = s.audio || ('s' + String(idx).padStart(3, '0') + '.mp3');
   const audioUrl = 'shadow-audio-v2/' + audioFile;
-  
-  // Word-by-word highlight timing
-  const words = s.en.split(/\s+/).filter(w => w.length > 0);
-  let highlightTimers = [];
-  
-  function clearHighlightTimers() {
-    highlightTimers.forEach(t => clearTimeout(t));
-    highlightTimers = [];
-  }
-  
-  // Analyze audio to find word boundaries via silence detection
-  function findWordBoundaries(audioBuf, wordCount) {
-    const data = audioBuf.getChannelData(0);
-    const sr = audioBuf.sampleRate;
-    const frameMs = 10; // 10ms frames
-    const frameSize = Math.round(sr * frameMs / 1000);
-    const silenceThreshold = 0.015;
-    const minSilenceMs = 80;
-    const minSilenceFrames = Math.round(minSilenceMs / frameMs);
-    
-    // Compute RMS energy per frame
-    const energies = [];
-    for (let i = 0; i < data.length; i += frameSize) {
-      let sum = 0;
-      const end = Math.min(i + frameSize, data.length);
-      for (let j = i; j < end; j++) sum += data[j] * data[j];
-      energies.push(Math.sqrt(sum / (end - i)));
-    }
-    
-    // Find silence regions (consecutive low-energy frames)
-    const silences = [];
-    let inSil = false, silStart = 0;
-    for (let i = 0; i < energies.length; i++) {
-      if (energies[i] < silenceThreshold) {
-        if (!inSil) { inSil = true; silStart = i; }
-      } else {
-        if (inSil) {
-          inSil = false;
-          if (i - silStart >= minSilenceFrames) {
-            const startMs = silStart * frameMs;
-            const endMs = i * frameMs;
-            silences.push({ start: startMs, end: endMs, mid: (startMs + endMs) / 2, len: endMs - startMs });
-          }
-        }
-      }
-    }
-    if (inSil && energies.length - silStart >= minSilenceFrames) {
-      const startMs = silStart * frameMs;
-      const endMs = energies.length * frameMs;
-      silences.push({ start: startMs, end: endMs, mid: (startMs + endMs) / 2, len: endMs - startMs });
-    }
-    
-    if (silences.length === 0) return null;
-    
-    // Pick the best N-1 silences for word boundaries
-    const needed = Math.max(1, wordCount - 1);
-    const audioMs = (data.length / sr) * 1000;
-    const margin = audioMs * 0.05;
-    // Prefer interior silences (not leading/trailing)
-    const interior = silences.filter(s => s.start > margin && s.end < audioMs - margin);
-    const pool = interior.length >= needed ? interior : silences;
-    // Sort by length desc, pick top N-1, then re-sort by time
-    const chosen = pool.sort((a, b) => b.len - a.len).slice(0, needed).sort((a, b) => a.start - b.start);
-    
-    // Build word start times
-    const boundaries = [0]; // first word starts at 0
-    chosen.forEach(s => boundaries.push(s.mid));
-    return boundaries;
-  }
-  
-  function startHighlightFromBoundaries(boundaries, totalDurationMs) {
-    clearHighlightTimers();
-    for (let wi = 0; wi < words.length; wi++) {
-      const startTime = (wi < boundaries.length) ? boundaries[wi] : (totalDurationMs * wi / words.length);
-      const t = setTimeout(() => {
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-        if (wordEl) wordEl.classList.add('highlight');
-      }, startTime);
-      highlightTimers.push(t);
-    }
-  }
-  
-  function startHighlight(durationMs) {
-    clearHighlightTimers();
-    if (words.length === 0) return;
-    const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
-    const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
-    const gapMs = 40;
-    const totalGaps = (words.length - 1) * gapMs;
-    const speechMs = Math.max(1, durationMs - totalGaps);
-    let offset = 0;
-    words.forEach((w, wi) => {
-      const wordMs = (charLens[wi] / totalChars) * speechMs;
-      const t = setTimeout(() => {
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-        if (wordEl) wordEl.classList.add('highlight');
-      }, offset);
-      highlightTimers.push(t);
-      offset += wordMs + gapMs;
-    });
-  }
-  
+
   function onPlayEnd() {
     btn.classList.remove('playing');
     btn.textContent = '▶';
     card.classList.remove('sc-playing');
-    document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+    if (enEl) enEl.classList.remove('sen-highlight');
     shadowCurrentPlaying = null;
-    clearHighlightTimers();
   }
-  
-  // Use Web Audio API for real audio (same engine as word pronunciation)
+
   if (audioCtx.state === 'suspended') audioCtx.resume();
   
   btn.classList.add('loading');
@@ -3498,31 +3605,14 @@ function playShadow(idx) {
   }).then(audioBuf => {
     const source = audioCtx.createBufferSource();
     source.buffer = audioBuf;
-    
-    // Slow mode: reduce playback rate
-    if (shadowSlowMode) {
-      source.playbackRate.value = 0.6;
-    }
-    
+    if (shadowSlowMode) source.playbackRate.value = 0.6;
     source.connect(audioCtx.destination);
-    const durationMs = (audioBuf.duration / (shadowSlowMode ? 0.6 : 1)) * 1000;
-    // Try silence-based word boundary detection for accurate highlight sync
-    const boundaries = findWordBoundaries(audioBuf, words.length);
-    if (boundaries && boundaries.length === words.length) {
-      startHighlightFromBoundaries(boundaries, durationMs);
-    } else {
-      startHighlight(durationMs);
-    }
-    
-    source.onended = () => {
-      if (shadowCurrentPlaying === idx) onPlayEnd();
-    };
+    source.onended = () => { if (shadowCurrentPlaying === idx) onPlayEnd(); };
     source.start(0);
     currentSource = source;
     currentKey = 'shadow-' + idx;
   }).catch(e => {
     btn.classList.remove('loading');
-    // Fallback to browser TTS
     console.log('Shadow audio not found, falling back to TTS for', idx);
     const synth = window.speechSynthesis;
     synth.cancel();
@@ -3532,50 +3622,10 @@ function playShadow(idx) {
     utt.pitch = 1.0;
     const voices = synth.getVoices();
     const preferred = voices.find(v => v.lang === 'en-US' && !v.localService) ||
-      voices.find(v => v.lang === 'en-US') ||
-      voices.find(v => v.lang.startsWith('en'));
+      voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
     if (preferred) utt.voice = preferred;
-    const wordDuration = (utt.rate > 0.7 ? 280 : 450);
-    const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
-    const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
-    const gapMs = 40;
-    const totalGaps = (words.length - 1) * gapMs;
-    const speechMs = Math.max(1, words.length * wordDuration - totalGaps);
-    let tOffset = 0;
-    const fbTimers = [];
-    // Use onboundary for precise word tracking (Chrome/Edge support it)
-    let boundaryIdx = 0;
-    utt.onboundary = (ev) => {
-      if (ev.name === 'word') {
-        // Clear previous highlights
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        // Find which word this boundary corresponds to
-        const spokenWord = s.en.substring(ev.charIndex, ev.charIndex + ev.charLength).trim().toLowerCase();
-        for (let wi = boundaryIdx; wi < words.length; wi++) {
-          if (words[wi].toLowerCase().replace(/[^a-z]/g, '') === spokenWord.replace(/[^a-z]/g, '')) {
-            const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-            if (wordEl) wordEl.classList.add('highlight');
-            boundaryIdx = wi + 1;
-            break;
-          }
-        }
-      }
-    };
-    // Fallback timers in case onboundary doesn't fire
-    words.forEach((w, wi) => {
-      const wMs = (charLens[wi] / totalChars) * speechMs;
-      const t = setTimeout(() => {
-        if (boundaryIdx === 0) { // onboundary never fired, use estimate
-          document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-          const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-          if (wordEl) wordEl.classList.add('highlight');
-        }
-      }, tOffset);
-      fbTimers.push(t);
-      tOffset += wMs + gapMs;
-    });
-    utt.onend = () => { onPlayEnd(); fbTimers.forEach(t => clearTimeout(t)); };
-    utt.onerror = () => { onPlayEnd(); fbTimers.forEach(t => clearTimeout(t)); };
+    utt.onend = () => { onPlayEnd(); };
+    utt.onerror = () => { onPlayEnd(); };
     synth.speak(utt);
   });
 }
