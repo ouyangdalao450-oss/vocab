@@ -476,6 +476,10 @@ html { scroll-behavior:smooth; }
 .shadow-btn:active { background:#fdecea; }
 .shadow-overlay { display:none; position:fixed; inset:0; z-index:200; background:#f5f0ff; overflow-y:auto; }
 .shadow-overlay.active { display:block; }
+.shadow-back-top { position:fixed; right:16px; bottom:24px; width:48px; height:48px; border-radius:50%; border:none; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; font-size:1.2em; cursor:pointer; box-shadow:0 4px 18px rgba(118,75,162,0.4); opacity:0; pointer-events:none; transition:all 0.3s; z-index:210; display:flex; align-items:center; justify-content:center; }
+.shadow-overlay.active .shadow-back-top { opacity:0; pointer-events:none; }
+.shadow-overlay.active .shadow-back-top.visible { opacity:1; pointer-events:auto; }
+
 .shadow-overlay .shadow-inner { max-width:640px; margin:0 auto; padding:16px; min-height:100vh; }
 .shadow-top { display:flex; align-items:center; justify-content:space-between; padding:8px 0 12px; border-bottom:2px solid #f5c6cb; margin-bottom:16px; }
 .shadow-top h2 { font-size:1.2em; color:#c0392b; }
@@ -484,6 +488,24 @@ html { scroll-behavior:smooth; }
 .shadow-stats { text-align:center; font-size:0.85em; color:#999; margin-bottom:16px; }
 .shadow-category { margin-bottom:20px; }
 .shadow-category-title { font-size:1em; font-weight:700; color:#c0392b; padding:8px 14px; margin-bottom:10px; background:linear-gradient(90deg,#fdecea,#fff5f5); border-left:4px solid #e74c3c; border-radius:0 10px 10px 0; display:flex; align-items:center; gap:8px; }
+/* Shadow jump bar */
+.shadow-jump-bar { display:flex; gap:8px; justify-content:center; margin:8px 0 4px; flex-wrap:wrap; }
+.shadow-jump-btn { padding:6px 14px; border-radius:20px; border:2px solid #ddd; background:#fff; font-size:0.88em; cursor:pointer; transition:all 0.2s; font-weight:600; }
+.shadow-jump-btn:hover { transform:translateY(-1px); box-shadow:0 3px 12px rgba(0,0,0,0.1); }
+.shadow-jump-btn:active { transform:scale(0.96); }
+
+/* Whole sentence highlight */
+.sen-highlight { background:rgba(231,76,60,0.08) !important; border-radius:8px; transition:background 0.3s; }
+
+/* Inline word zh */
+.shadow-en .se-word { display:inline; cursor:pointer; position:relative; transition:background 0.1s,color 0.1s; padding:0 2px; border-radius:3px; }
+.shadow-en .se-word:hover { background:rgba(231,76,60,0.06); }
+.shadow-en .se-word.se-punct { cursor:default; padding:0; }
+.shadow-en .se-word.se-punct:hover { background:transparent; }
+.word-zh-dot { font-size:0.5em; color:#e67e22; margin-left:1px; vertical-align:super; }
+.word-zh-text { font-size:0.72em; color:#e67e22; background:rgba(230,126,34,0.1); padding:1px 5px; border-radius:8px; margin-left:2px; vertical-align:baseline; font-weight:500; }
+.se-word.word-zh-showing { background:rgba(230,126,34,0.08); }
+
 .shadow-card { background:rgba(255,255,255,0.97); border-radius:16px; padding:16px 18px; margin-bottom:12px; box-shadow:0 3px 12px rgba(231,76,60,0.06); border-left:4px solid #e74c3c; transition:all 0.2s; }
 .shadow-card:hover { box-shadow:0 5px 18px rgba(231,76,60,0.1); transform:translateY(-1px); }
 .shadow-card.sc-playing { border-left-color:#e74c3c; box-shadow:0 4px 20px rgba(231,76,60,0.15); }
@@ -491,8 +513,7 @@ html { scroll-behavior:smooth; }
 @keyframes recPulse { 0%,100%{box-shadow:0 4px 20px rgba(231,76,60,0.2)} 50%{box-shadow:0 4px 30px rgba(231,76,60,0.4)} }
 .shadow-num { display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; background:#fdecea; color:#e74c3c; font-weight:700; font-size:0.82em; border-radius:50%; margin-right:8px; flex-shrink:0; }
 .shadow-en { font-size:1.1em; font-weight:700; color:#2c3e50; line-height:1.5; margin:6px 0 4px; display:flex; align-items:flex-start; gap:0; flex-wrap:wrap; }
-.shadow-en .se-word { display:inline; transition:background 0.1s,color 0.1s; padding:0 1px; border-radius:3px; margin:0; }
-.shadow-en .se-word.highlight { background:#fdecea; color:#c0392b; }
+.shadow-en .se-word { display:inline; cursor:pointer; position:relative; transition:background 0.1s,color 0.1s; padding:0 2px; border-radius:3px; }
 .shadow-zh { font-size:0.88em; color:#888; line-height:1.4; margin-bottom:8px; padding-left:36px; }
 .shadow-zh.hidden { display:none; }
 .shadow-zh-btn { padding:2px 10px; border:1px solid #ccc; border-radius:12px; background:#f8f8f8; color:#888; font-size:0.72em; cursor:pointer; margin-bottom:6px; margin-left:36px; transition:all 0.15s; }
@@ -636,6 +657,7 @@ function addExampleSpeakButtons() {
 }
 
 /* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
+const CACHE_NAME = 'vocab-v62';
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const bufferCache = {};   // wordKey → AudioBuffer
 const loadingSet = new Set(); // 正在加载的
@@ -1172,6 +1194,8 @@ window.addEventListener('resize', () => {
 
 /* ===== 启动 ===== */
 renderAll('');
+// Preload shadow audio in background after page loads (5s delay to not block initial render)
+setTimeout(() => { if (typeof preloadShadowAudio === 'function') preloadShadowAudio(); }, 5000);
 
 /* ===== Quiz 测验系统 ===== */
 const QUIZ_MODES = [
@@ -2415,7 +2439,7 @@ function getMergedData() {
 
 /* ===== Service Worker（可选离线）===== */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=62').catch(()=>{});
 // 快捷键：Enter下一题 + ABCD选择选项
 document.addEventListener('keydown', function(e) {
   // 排除输入框内的按键
@@ -2720,329 +2744,302 @@ function importGrammar(items) {
 
 
 // ===== 例句跟读 - YouTube 300句真人发音 =====
-const SHADOW_SENTENCES = [
-  { en:"Time to get up.", cat:'简单句', audio:'s000.mp3' },
-  { en:"I'm still sleepy.", cat:'简单句', audio:'s001.mp3' },
-  { en:"I go to the bathroom.", cat:'简单句', audio:'s002.mp3' },
-  { en:"I brush my teeth.", cat:'简单句', audio:'s003.mp3' },
-  { en:"I comb my hair.", cat:'简单句', audio:'s004.mp3' },
-  { en:"I get dressed quickly.", cat:'简单句', audio:'s005.mp3' },
-  { en:"I make my bed.", cat:'简单句', audio:'s006.mp3' },
-  { en:"I boil some water.", cat:'简单句', audio:'s007.mp3' },
-  { en:"I pour a glass of milk.", cat:'简单句', audio:'s008.mp3' },
-  { en:"I make some coffee.", cat:'简单句', audio:'s009.mp3' },
-  { en:"Can you fry me an egg?", cat:'简单句', audio:'s010.mp3' },
-  { en:"Breakfast is ready.", cat:'简单句', audio:'s011.mp3' },
-  { en:"I have toast and eggs.", cat:'简单句', audio:'s012.mp3' },
-  { en:"I check my phone.", cat:'简单句', audio:'s013.mp3' },
-  { en:"What time is it?", cat:'简单句', audio:'s014.mp3' },
-  { en:"I'm running late.", cat:'简单句', audio:'s015.mp3' },
-  { en:"I put on my shoes.", cat:'简单句', audio:'s016.mp3' },
-  { en:"I leave the house.", cat:'简单句', audio:'s017.mp3' },
-  { en:"The weather is nice.", cat:'简单句', audio:'s018.mp3' },
-  { en:"It might rain today.", cat:'简单句', audio:'s019.mp3' },
-  { en:"I forgot my umbrella.", cat:'简单句', audio:'s020.mp3' },
-  { en:"I get on the bus.", cat:'简单句', audio:'s021.mp3' },
-  { en:"I'm stuck in traffic.", cat:'简单句', audio:'s022.mp3' },
-  { en:"I arrive at work.", cat:'简单句', audio:'s023.mp3' },
-  { en:"Sorry, I'm late.", cat:'简单句', audio:'s024.mp3' },
-  { en:"It won't happen again.", cat:'简单句', audio:'s025.mp3' },
-  { en:"Don't worry about it.", cat:'简单句', audio:'s026.mp3' },
-  { en:"I appreciate it.", cat:'简单句', audio:'s027.mp3' },
-  { en:"That's very kind.", cat:'简单句', audio:'s028.mp3' },
-  { en:"How are you today?", cat:'简单句', audio:'s029.mp3' },
-  { en:"I'm pretty good.", cat:'简单句', audio:'s030.mp3' },
-  { en:"Good to see you.", cat:'简单句', audio:'s031.mp3' },
-  { en:"I check my emails.", cat:'简单句', audio:'s032.mp3' },
-  { en:"I answer the phone.", cat:'简单句', audio:'s033.mp3' },
-  { en:"I have a meeting soon.", cat:'简单句', audio:'s034.mp3' },
-  { en:"I'll call you later.", cat:'简单句', audio:'s035.mp3' },
-  { en:"I'm working on it.", cat:'简单句', audio:'s036.mp3' },
-  { en:"Give me a minute.", cat:'简单句', audio:'s037.mp3' },
-  { en:"What do you think?", cat:'简单句', audio:'s038.mp3' },
-  { en:"I agree with you.", cat:'简单句', audio:'s039.mp3' },
-  { en:"That's a good idea.", cat:'简单句', audio:'s040.mp3' },
-  { en:"I don't think so.", cat:'简单句', audio:'s041.mp3' },
-  { en:"I see your point.", cat:'简单句', audio:'s042.mp3' },
-  { en:"Let me think about it.", cat:'简单句', audio:'s043.mp3' },
-  { en:"I take a break.", cat:'简单句', audio:'s044.mp3' },
-  { en:"It's time for lunch.", cat:'简单句', audio:'s045.mp3' },
-  { en:"Let's eat out.", cat:'简单句', audio:'s046.mp3' },
-  { en:"I'm ready to go.", cat:'简单句', audio:'s047.mp3' },
-  { en:"What should we eat?", cat:'简单句', audio:'s048.mp3' },
-  { en:"I'll have the pizza.", cat:'简单句', audio:'s049.mp3' },
-  { en:"I like it spicy.", cat:'简单句', audio:'s050.mp3' },
-  { en:"I'll get the same.", cat:'简单句', audio:'s051.mp3' },
-  { en:"I need more napkins.", cat:'简单句', audio:'s052.mp3' },
-  { en:"It's really delicious.", cat:'简单句', audio:'s053.mp3' },
-  { en:"I'm full now.", cat:'简单句', audio:'s054.mp3' },
-  { en:"Let's split the bill.", cat:'简单句', audio:'s055.mp3' },
-  { en:"I'll pay in cash.", cat:'简单句', audio:'s056.mp3' },
-  { en:"I finish my work.", cat:'简单句', audio:'s057.mp3' },
-  { en:"I shut down my computer.", cat:'简单句', audio:'s058.mp3' },
-  { en:"I get off work at 6:00.", cat:'简单句', audio:'s059.mp3' },
-  { en:"I got to go now.", cat:'简单句', audio:'s060.mp3' },
-  { en:"See you tomorrow.", cat:'简单句', audio:'s061.mp3' },
-  { en:"I leave the office.", cat:'简单句', audio:'s062.mp3' },
-  { en:"I feel so tired.", cat:'简单句', audio:'s063.mp3' },
-  { en:"Are you feeling okay?", cat:'简单句', audio:'s064.mp3' },
-  { en:"I didn't sleep well.", cat:'简单句', audio:'s065.mp3' },
-  { en:"Do you have a minute?", cat:'简单句', audio:'s066.mp3' },
-  { en:"Let's go grocery shopping.", cat:'简单句', audio:'s067.mp3' },
-  { en:"Can you help me?", cat:'简单句', audio:'s068.mp3' },
-  { en:"Is this in stock?", cat:'简单句', audio:'s069.mp3' },
-  { en:"Thank you for the help.", cat:'简单句', audio:'s070.mp3' },
-  { en:"Are you in line?", cat:'简单句', audio:'s071.mp3' },
-  { en:"Can I sit here?", cat:'简单句', audio:'s072.mp3' },
-  { en:"Where is the restroom?", cat:'简单句', audio:'s073.mp3' },
-  { en:"It's over there.", cat:'简单句', audio:'s074.mp3' },
-  { en:"Can you show me?", cat:'简单句', audio:'s075.mp3' },
-  { en:"I didn't catch that.", cat:'简单句', audio:'s076.mp3' },
-  { en:"Please speak slowly.", cat:'简单句', audio:'s077.mp3' },
-  { en:"I walk home today.", cat:'简单句', audio:'s078.mp3' },
-  { en:"I'm on my way.", cat:'简单句', audio:'s079.mp3' },
-  { en:"I finally get home.", cat:'简单句', audio:'s080.mp3' },
-  { en:"You're early today.", cat:'简单句', audio:'s081.mp3' },
-  { en:"I take off my shoes.", cat:'简单句', audio:'s082.mp3' },
-  { en:"I sit on the couch.", cat:'简单句', audio:'s083.mp3' },
-  { en:"Did you see my phone?", cat:'简单句', audio:'s084.mp3' },
-  { en:"I haven't seen it.", cat:'简单句', audio:'s085.mp3' },
-  { en:"What are you doing?", cat:'简单句', audio:'s086.mp3' },
-  { en:"I'm watching TV.", cat:'简单句', audio:'s087.mp3' },
-  { en:"How was your day?", cat:'简单句', audio:'s088.mp3' },
-  { en:"I had a busy day.", cat:'简单句', audio:'s089.mp3' },
-  { en:"You free on Saturday?", cat:'简单句', audio:'s090.mp3' },
-  { en:"Let's meet this weekend.", cat:'简单句', audio:'s091.mp3' },
-  { en:"Sounds good to me.", cat:'简单句', audio:'s092.mp3' },
-  { en:"What's for dinner?", cat:'简单句', audio:'s093.mp3' },
-  { en:"Let's eat together.", cat:'简单句', audio:'s094.mp3' },
-  { en:"Please pass the salt.", cat:'简单句', audio:'s095.mp3' },
-  { en:"I'll wash the dishes.", cat:'简单句', audio:'s096.mp3' },
-  { en:"I feel sleepy.", cat:'简单句', audio:'s097.mp3' },
-  { en:"I set my alarm.", cat:'简单句', audio:'s098.mp3' },
-  { en:"I fall asleep slowly.", cat:'简单句', audio:'s099.mp3' },
-  { en:"How have you been lately?", cat:'中级句', audio:'s100.mp3' },
-  { en:"You look awesome today.", cat:'中级句', audio:'s101.mp3' },
-  { en:"It's been a long time.", cat:'中级句', audio:'s102.mp3' },
-  { en:"You haven't changed at all.", cat:'中级句', audio:'s103.mp3' },
-  { en:"Let's hang out more often.", cat:'中级句', audio:'s104.mp3' },
-  { en:"What day is it today?", cat:'中级句', audio:'s105.mp3' },
-  { en:"I can't believe it's Friday.", cat:'中级句', audio:'s106.mp3' },
-  { en:"I'm in a good mood.", cat:'中级句', audio:'s107.mp3' },
-  { en:"How's the weather today?", cat:'中级句', audio:'s108.mp3' },
-  { en:"It's freezing cold today.", cat:'中级句', audio:'s109.mp3' },
-  { en:"It's raining heavily outside.", cat:'中级句', audio:'s110.mp3' },
-  { en:"It's finally clearing up today.", cat:'中级句', audio:'s111.mp3' },
-  { en:"You look so familiar.", cat:'中级句', audio:'s112.mp3' },
-  { en:"Have we met before?", cat:'中级句', audio:'s113.mp3' },
-  { en:"Do you live around here?", cat:'中级句', audio:'s114.mp3' },
-  { en:"What do you do for a living?", cat:'中级句', audio:'s115.mp3' },
-  { en:"I work in marketing.", cat:'中级句', audio:'s116.mp3' },
-  { en:"I plan to change my job.", cat:'中级句', audio:'s117.mp3' },
-  { en:"I've heard a lot about you.", cat:'中级句', audio:'s118.mp3' },
-  { en:"I think we have mutual friends.", cat:'中级句', audio:'s119.mp3' },
-  { en:"How many siblings do you have?", cat:'中级句', audio:'s120.mp3' },
-  { en:"I am the only son in my family.", cat:'中级句', audio:'s121.mp3' },
-  { en:"I am the only son", cat:'中级句', audio:'s122.mp3' },
-  { en:"in my family.", cat:'中级句', audio:'s123.mp3' },
-  { en:"Did you stay up late last night?", cat:'中级句', audio:'s124.mp3' },
-  { en:"I sleep 8 hours usually.", cat:'中级句', audio:'s125.mp3' },
-  { en:"I gained 5 pounds recently.", cat:'中级句', audio:'s126.mp3' },
-  { en:"I want to lose weight.", cat:'中级句', audio:'s127.mp3' },
-  { en:"How much do you weigh?", cat:'中级句', audio:'s128.mp3' },
-  { en:"I'm trying to stay fit.", cat:'中级句', audio:'s129.mp3' },
-  { en:"How often do you exercise?", cat:'中级句', audio:'s130.mp3' },
-  { en:"I do yoga in the morning.", cat:'中级句', audio:'s131.mp3' },
-  { en:"I skip lunch sometimes.", cat:'中级句', audio:'s132.mp3' },
-  { en:"I'm getting used to it.", cat:'中级句', audio:'s133.mp3' },
-  { en:"Let's go for a walk.", cat:'中级句', audio:'s134.mp3' },
-  { en:"How tall are you exactly?", cat:'中级句', audio:'s135.mp3' },
-  { en:"I'm 5 ft 8 in.", cat:'中级句', audio:'s136.mp3' },
-  { en:"I'm shorter than average.", cat:'中级句', audio:'s137.mp3' },
-  { en:"How old are you turning?", cat:'中级句', audio:'s138.mp3' },
-  { en:"I just turned 21.", cat:'中级句', audio:'s139.mp3' },
-  { en:"How old do I look?", cat:'中级句', audio:'s140.mp3' },
-  { en:"I'm younger than you think.", cat:'中级句', audio:'s141.mp3' },
-  { en:"We are about the same age.", cat:'中级句', audio:'s142.mp3' },
-  { en:"Come over for dinner tonight.", cat:'中级句', audio:'s143.mp3' },
-  { en:"Thanks for having me over.", cat:'中级句', audio:'s144.mp3' },
-  { en:"What would you like to drink?", cat:'中级句', audio:'s145.mp3' },
-  { en:"Make yourself at home.", cat:'中级句', audio:'s146.mp3' },
-  { en:"I'm thinking of taking a trip.", cat:'中级句', audio:'s147.mp3' },
-  { en:"Do you want to join us?", cat:'中级句', audio:'s148.mp3' },
-  { en:"Let me check the schedule.", cat:'中级句', audio:'s149.mp3' },
-  { en:"I'm looking forward to it.", cat:'中级句', audio:'s150.mp3' },
-  { en:"Did you get my email?", cat:'中级句', audio:'s151.mp3' },
-  { en:"I'm waiting for a reply.", cat:'中级句', audio:'s152.mp3' },
-  { en:"I'm not sure what to do.", cat:'中级句', audio:'s153.mp3' },
-  { en:"Let's find a solution together.", cat:'中级句', audio:'s154.mp3' },
-  { en:"Should I change my mind?", cat:'中级句', audio:'s155.mp3' },
-  { en:"Your opinion matters to me.", cat:'中级句', audio:'s156.mp3' },
-  { en:"You've already done your best.", cat:'中级句', audio:'s157.mp3' },
-  { en:"I'm sorry to disturb you.", cat:'中级句', audio:'s158.mp3' },
-  { en:"Can I use your phone?", cat:'中级句', audio:'s159.mp3' },
-  { en:"My battery is dying.", cat:'中级句', audio:'s160.mp3' },
-  { en:"Is this a good time?", cat:'中级句', audio:'s161.mp3' },
-  { en:"You're breaking up.", cat:'中级句', audio:'s162.mp3' },
-  { en:"I'll text you instead.", cat:'中级句', audio:'s163.mp3' },
-  { en:"I see what you mean.", cat:'中级句', audio:'s164.mp3' },
-  { en:"Let's talk about it later.", cat:'中级句', audio:'s165.mp3' },
-  { en:"I'm not feeling well today.", cat:'中级句', audio:'s166.mp3' },
-  { en:"I have a terrible headache.", cat:'中级句', audio:'s167.mp3' },
-  { en:"I can't stop sneezing.", cat:'中级句', audio:'s168.mp3' },
-  { en:"I'm allergic to peanuts.", cat:'中级句', audio:'s169.mp3' },
-  { en:"I'm worried about you.", cat:'中级句', audio:'s170.mp3' },
-  { en:"I feel much better now.", cat:'中级句', audio:'s171.mp3' },
-  { en:"I'm grateful for your support.", cat:'中级句', audio:'s172.mp3' },
-  { en:"May I have a menu?", cat:'中级句', audio:'s173.mp3' },
-  { en:"What do you recommend?", cat:'中级句', audio:'s174.mp3' },
-  { en:"I need a few more minutes.", cat:'中级句', audio:'s175.mp3' },
-  { en:"We're ready to order.", cat:'中级句', audio:'s176.mp3' },
-  { en:"I prefer tea to coffee.", cat:'中级句', audio:'s177.mp3' },
-  { en:"Can we have some water?", cat:'中级句', audio:'s178.mp3' },
-  { en:"This isn't what I ordered.", cat:'中级句', audio:'s179.mp3' },
-  { en:"Does this taste too salty?", cat:'中级句', audio:'s180.mp3' },
-  { en:"Any plans for the weekend?", cat:'中级句', audio:'s181.mp3' },
-  { en:"What time should we meet?", cat:'中级句', audio:'s182.mp3' },
-  { en:"I'll pick you up at 7:00.", cat:'中级句', audio:'s183.mp3' },
-  { en:"It's getting late already.", cat:'中级句', audio:'s184.mp3' },
-  { en:"I had a great time today.", cat:'中级句', audio:'s185.mp3' },
-  { en:"I'd love to see you soon.", cat:'中级句', audio:'s186.mp3' },
-  { en:"Did you get a haircut?", cat:'中级句', audio:'s187.mp3' },
-  { en:"What's your favorite movie?", cat:'中级句', audio:'s188.mp3' },
-  { en:"Can I try this on?", cat:'中级句', audio:'s189.mp3' },
-  { en:"Do you have a smaller size?", cat:'中级句', audio:'s190.mp3' },
-  { en:"This is a bit too expensive.", cat:'中级句', audio:'s191.mp3' },
-  { en:"Should I buy this shirt?", cat:'中级句', audio:'s192.mp3' },
-  { en:"Which color do you prefer?", cat:'中级句', audio:'s193.mp3' },
-  { en:"This color fits you better.", cat:'中级句', audio:'s194.mp3' },
-  { en:"Do you accept credit cards?", cat:'中级句', audio:'s195.mp3' },
-  { en:"I need to return this shirt.", cat:'中级句', audio:'s196.mp3' },
-  { en:"Can you help with laundry?", cat:'中级句', audio:'s197.mp3' },
-  { en:"I vacuum twice a week.", cat:'中级句', audio:'s198.mp3' },
-  { en:"What time will you be back?", cat:'中级句', audio:'s199.mp3' },
-  { en:"I have a ton of work today.", cat:'中级句', audio:'s200.mp3' },
-  { en:"I'm taking a day off tomorrow.", cat:'中级句', audio:'s201.mp3' },
-  { en:"repeat after me.", cat:'中级句', audio:'s202.mp3' },
-  { en:"It's been raining all day long.", cat:'进阶句', audio:'s203.mp3' },
-  { en:"You'd better bring an umbrella with you.", cat:'进阶句', audio:'s204.mp3' },
-  { en:"Excuse me, how do I get to the mall?", cat:'进阶句', audio:'s205.mp3' },
-  { en:"Go straight and turn left at the corner.", cat:'进阶句', audio:'s206.mp3' },
-  { en:"We've known each other for a long time.", cat:'进阶句', audio:'s207.mp3' },
-  { en:"Thanks for always having my back.", cat:'进阶句', audio:'s208.mp3' },
-  { en:"It's getting dark much earlier these days.", cat:'进阶句', audio:'s209.mp3' },
-  { en:"Do you mind if I open the window?", cat:'进阶句', audio:'s210.mp3' },
-  { en:"I think you have the wrong number.", cat:'进阶句', audio:'s211.mp3' },
-  { en:"There's no one here by that name.", cat:'进阶句', audio:'s212.mp3' },
-  { en:"Could you please turn down the music?", cat:'进阶句', audio:'s213.mp3' },
-  { en:"Keep your temper under control.", cat:'进阶句', audio:'s214.mp3' },
-  { en:"I'm so stressed out these days.", cat:'进阶句', audio:'s215.mp3' },
-  { en:"Have you been sleeping enough?", cat:'进阶句', audio:'s216.mp3' },
-  { en:"I couldn't sleep again last night.", cat:'进阶句', audio:'s217.mp3' },
-  { en:"Did you lose some weight recently?", cat:'进阶句', audio:'s218.mp3' },
-  { en:"Have you been exercising regularly?", cat:'进阶句', audio:'s219.mp3' },
-  { en:"I work out three times a week.", cat:'进阶句', audio:'s220.mp3' },
-  { en:"Do you want to join me at the gym?", cat:'进阶句', audio:'s221.mp3' },
-  { en:"The storm is finally moving out.", cat:'进阶句', audio:'s222.mp3' },
-  { en:"I still can't get used to the weather here. I still can't get used to the weather", cat:'进阶句', audio:'s223.mp3' },
-  { en:"here.", cat:'进阶句', audio:'s224.mp3' },
-  { en:"Are you seeing anyone right now?", cat:'进阶句', audio:'s225.mp3' },
-  { en:"I've been single for a while.", cat:'进阶句', audio:'s226.mp3' },
-  { en:"What do you feel like eating tonight?", cat:'进阶句', audio:'s227.mp3' },
-  { en:"I'm in the mood for something spicy.", cat:'进阶句', audio:'s228.mp3' },
-  { en:"Don't talk with your mouth full.", cat:'进阶句', audio:'s229.mp3' },
-  { en:"What do you call this in English?", cat:'进阶句', audio:'s230.mp3' },
-  { en:"How long does it take to walk there?", cat:'进阶句', audio:'s231.mp3' },
-  { en:"It's about a 10-minute walk from here.", cat:'进阶句', audio:'s232.mp3' },
-  { en:"I'd like a cappuccino with almond milk.", cat:'进阶句', audio:'s233.mp3' },
-  { en:"I'd like a cappuccino with almond", cat:'进阶句', audio:'s234.mp3' },
-  { en:"milk.", cat:'进阶句', audio:'s235.mp3' },
-  { en:"Can I get an extra shot of espresso?", cat:'进阶句', audio:'s236.mp3' },
-  { en:"You're wearing your shirt backwards.", cat:'进阶句', audio:'s237.mp3' },
-  { en:"That jacket looks great on you.", cat:'进阶句', audio:'s238.mp3' },
-  { en:"You look like a friend of mine.", cat:'进阶句', audio:'s239.mp3' },
-  { en:"Would you like to have a drink after work? Would you like to have a drink after", cat:'进阶句', audio:'s240.mp3' },
-  { en:"work?", cat:'进阶句', audio:'s241.mp3' },
-  { en:"I'm excited for the long weekend.", cat:'进阶句', audio:'s242.mp3' },
-  { en:"My brother drives me crazy sometimes.", cat:'进阶句', audio:'s243.mp3' },
-  { en:"He has a great sense of humor.", cat:'进阶句', audio:'s244.mp3' },
-  { en:"I couldn't get through to your phone.", cat:'进阶句', audio:'s245.mp3' },
-  { en:"Sorry for keeping you waiting.", cat:'进阶句', audio:'s246.mp3' },
-  { en:"I'm on another call right now.", cat:'进阶句', audio:'s247.mp3' },
-  { en:"I am on another call right now.", cat:'进阶句', audio:'s248.mp3' },
-  { en:"Why are you feeling so down today?", cat:'进阶句', audio:'s249.mp3' },
-  { en:"Let's take a walk and get some fresh air.", cat:'进阶句', audio:'s250.mp3' },
-  { en:"I've been coughing all night.", cat:'进阶句', audio:'s251.mp3' },
-  { en:"Make sure to drink plenty of water.", cat:'进阶句', audio:'s252.mp3' },
-  { en:"I should probably see a doctor soon.", cat:'进阶句', audio:'s253.mp3' },
-  { en:"How often do I need to take this medicine?", cat:'进阶句', audio:'s254.mp3' },
-  { en:"How often do I need to take this", cat:'进阶句', audio:'s255.mp3' },
-  { en:"medicine?", cat:'进阶句', audio:'s256.mp3' },
-  { en:"Are there any side effects?", cat:'进阶句', audio:'s257.mp3' },
-  { en:"Can I exchange this for a larger size?", cat:'进阶句', audio:'s258.mp3' },
-  { en:"Do you have this in another color?", cat:'进阶句', audio:'s259.mp3' },
-  { en:"I'm thinking about getting a dog.", cat:'进阶句', audio:'s260.mp3' },
-  { en:"Why don't you give it a try?", cat:'进阶句', audio:'s261.mp3' },
-  { en:"There's nothing to worry about.", cat:'进阶句', audio:'s262.mp3' },
-  { en:"Let's order takeout tonight instead.", cat:'进阶句', audio:'s263.mp3' },
-  { en:"That's exactly what I was thinking.", cat:'进阶句', audio:'s264.mp3' },
-  { en:"Would you mind taking a photo of us?", cat:'进阶句', audio:'s265.mp3' },
-  { en:"Have you backed up your photos recently?", cat:'进阶句', audio:'s266.mp3' },
-  { en:"My phone storage is completely full.", cat:'进阶句', audio:'s267.mp3' },
-  { en:"I'm having trouble with the connection.", cat:'进阶句', audio:'s268.mp3' },
-  { en:"I'm trying to cut back on sugar.", cat:'进阶句', audio:'s269.mp3' },
-  { en:"This is way too salty for me.", cat:'进阶句', audio:'s270.mp3' },
-  { en:"I am the youngest in my family.", cat:'进阶句', audio:'s271.mp3' },
-  { en:"I think there's a mistake on this bill.", cat:'进阶句', audio:'s272.mp3' },
-  { en:"Is service charge included?", cat:'进阶句', audio:'s273.mp3' },
-  { en:"Have you seen any good movies lately?", cat:'进阶句', audio:'s274.mp3' },
-  { en:"What kind of music do you like?", cat:'进阶句', audio:'s275.mp3' },
-  { en:"I spend too much time on social media.", cat:'进阶句', audio:'s276.mp3' },
-  { en:"Family means everything to me.", cat:'进阶句', audio:'s277.mp3' },
-  { en:"I take after my mother a lot.", cat:'进阶句', audio:'s278.mp3' },
-  { en:"I'm terrible at memorizing things.", cat:'进阶句', audio:'s279.mp3' },
-  { en:"Can you take out the trash tonight?", cat:'进阶句', audio:'s280.mp3' },
-  { en:"I'll do the dishes after dinner.", cat:'进阶句', audio:'s281.mp3' },
-  { en:"The air conditioner is not working.", cat:'进阶句', audio:'s282.mp3' },
-  { en:"Could you take a look at this for me?", cat:'进阶句', audio:'s283.mp3' },
-  { en:"How much is a one-way ticket?", cat:'进阶句', audio:'s284.mp3' },
-  { en:"Is there free parking nearby?", cat:'进阶句', audio:'s285.mp3' },
-  { en:"Did you hear what happened yesterday?", cat:'进阶句', audio:'s286.mp3' },
-  { en:"There seems to be a misunderstanding.", cat:'进阶句', audio:'s287.mp3' },
-  { en:"Are you free this coming weekend?", cat:'进阶句', audio:'s288.mp3' },
-  { en:"What time should I come over?", cat:'进阶句', audio:'s289.mp3' },
-  { en:"That's very kind of you to say.", cat:'进阶句', audio:'s290.mp3' },
-  { en:"You're so easy to talk to.", cat:'进阶句', audio:'s291.mp3' },
-  { en:"Have you ever been to Europe before?", cat:'进阶句', audio:'s292.mp3' },
-  { en:"Is there a shortcut I can take?", cat:'进阶句', audio:'s293.mp3' },
-  { en:"Do you need to work overtime tonight?", cat:'进阶句', audio:'s294.mp3' },
-  { en:"I spent way too much this month.", cat:'进阶句', audio:'s295.mp3' },
-  { en:"What time does the store close?", cat:'进阶句', audio:'s296.mp3' },
-  { en:"I'm hoping for a promotion soon.", cat:'进阶句', audio:'s297.mp3' },
-  { en:"Let's get started with the meeting.", cat:'进阶句', audio:'s298.mp3' },
-  { en:"I didn't receive your message somehow.", cat:'进阶句', audio:'s299.mp3' },
-  { en:"I have to talk to her in person.", cat:'进阶句', audio:'s300.mp3' },
-  { en:"We don't see eye to eye on everything.", cat:'进阶句', audio:'s301.mp3' },
-  { en:"What would you do in my situation?", cat:'进阶句', audio:'s302.mp3' },
-  { en:"I wouldn't recommend doing that.", cat:'进阶句', audio:'s303.mp3' },
-  { en:"The faucet in the kitchen is leaking.", cat:'进阶句', audio:'s304.mp3' },
-  { en:"I need to call a plumber tomorrow.", cat:'进阶句', audio:'s305.mp3' },
-  { en:"I'm learning to trust myself more.", cat:'进阶句', audio:'s306.mp3' },
-  { en:"It's never too late to learn something new.", cat:'进阶句', audio:'s307.mp3' },
-  { en:"I should probably get going now.", cat:'进阶句', audio:'s308.mp3' },
-  { en:"It was so great seeing you again.", cat:'进阶句', audio:'s309.mp3' },
-  { en:"was not easy, but you made it. That's really impressive. You should feel proud", cat:'进阶句', audio:'s310.mp3' },
-  { en:"of yourself. Now, keep this progress going. Go over these sentences again", cat:'进阶句', audio:'s311.mp3' },
-  { en:"tomorrow and the next day. The more you practice, the more natural your English", cat:'进阶句', audio:'s312.mp3' },
-  { en:"becomes. Learning English is just like working out. You only see real results when you", cat:'进阶句', audio:'s313.mp3' },
-  { en:"practice often. If this video helped", cat:'进阶句', audio:'s314.mp3' },
-  { en:"you, make sure to hit the like button.", cat:'进阶句', audio:'s315.mp3' },
-  { en:"It really supports the channel and helps us make more lessons for you.", cat:'进阶句', audio:'s316.mp3' },
-  { en:"And don't forget to subscribe and turn on the bell. Share this video with", cat:'进阶句', audio:'s317.mp3' },
-  { en:"friends who are learning English, too.", cat:'进阶句', audio:'s318.mp3' },
-  { en:"Tell me in the comments which part helped you most. Keep learning, keep", cat:'进阶句', audio:'s319.mp3' },
-  { en:"improving, and keep believing in yourself. Thanks so much for practicing", cat:'进阶句', audio:'s320.mp3' },
-  { en:"with me today. I'll see you again in the next episode.", cat:'进阶句', audio:'s321.mp3' },
+﻿const SHADOW_SENTENCES = [
+  { en:"Time to get up.", cat:"简单句", audio:"s000.mp3", zh:"该起床了。" },
+  { en:"I'm still sleepy.", cat:"简单句", audio:"s001.mp3", zh:"我还困着呢。" },
+  { en:"I go to the bathroom.", cat:"简单句", audio:"s002.mp3", zh:"我去洗手间。" },
+  { en:"I brush my teeth.", cat:"简单句", audio:"s003.mp3", zh:"我刷牙。" },
+  { en:"I comb my hair.", cat:"简单句", audio:"s004.mp3", zh:"我梳头。" },
+  { en:"I get dressed quickly.", cat:"简单句", audio:"s005.mp3", zh:"我快速穿好衣服。" },
+  { en:"I make my bed.", cat:"简单句", audio:"s006.mp3", zh:"我整理床铺。" },
+  { en:"I boil some water.", cat:"简单句", audio:"s007.mp3", zh:"我烧点水。" },
+  { en:"I pour a glass of milk.", cat:"简单句", audio:"s008.mp3", zh:"我倒一杯牛奶。" },
+  { en:"I make some coffee.", cat:"简单句", audio:"s009.mp3", zh:"我泡咖啡。" },
+  { en:"Can you fry me an egg?", cat:"简单句", audio:"s010.mp3", zh:"你能给我煎个蛋吗？" },
+  { en:"Breakfast is ready.", cat:"简单句", audio:"s011.mp3", zh:"早餐准备好了。" },
+  { en:"I have toast and eggs.", cat:"简单句", audio:"s012.mp3", zh:"我吃吐司和鸡蛋。" },
+  { en:"I check my phone.", cat:"简单句", audio:"s013.mp3", zh:"我看看手机。" },
+  { en:"What time is it?", cat:"简单句", audio:"s014.mp3", zh:"几点了？" },
+  { en:"I'm running late.", cat:"简单句", audio:"s015.mp3", zh:"我要迟到了。" },
+  { en:"I put on my shoes.", cat:"简单句", audio:"s016.mp3", zh:"我穿上鞋子。" },
+  { en:"I leave the house.", cat:"简单句", audio:"s017.mp3", zh:"我离开家。" },
+  { en:"The weather is nice.", cat:"简单句", audio:"s018.mp3", zh:"天气不错。" },
+  { en:"It might rain today.", cat:"简单句", audio:"s019.mp3", zh:"今天可能会下雨。" },
+  { en:"I forgot my umbrella.", cat:"简单句", audio:"s020.mp3", zh:"我忘带伞了。" },
+  { en:"I get on the bus.", cat:"简单句", audio:"s021.mp3", zh:"我上了公交车。" },
+  { en:"I'm stuck in traffic.", cat:"简单句", audio:"s022.mp3", zh:"我堵车了。" },
+  { en:"I arrive at work.", cat:"简单句", audio:"s023.mp3", zh:"我到公司了。" },
+  { en:"Sorry, I'm late.", cat:"简单句", audio:"s024.mp3", zh:"抱歉，我迟到了。" },
+  { en:"It won't happen again.", cat:"简单句", audio:"s025.mp3", zh:"不会再发生了。" },
+  { en:"Don't worry about it.", cat:"简单句", audio:"s026.mp3", zh:"别担心。" },
+  { en:"I appreciate it.", cat:"简单句", audio:"s027.mp3", zh:"我很感激。" },
+  { en:"That's very kind.", cat:"简单句", audio:"s028.mp3", zh:"你太好了。" },
+  { en:"How are you today?", cat:"简单句", audio:"s029.mp3", zh:"你今天好吗？" },
+  { en:"I'm pretty good.", cat:"简单句", audio:"s030.mp3", zh:"我挺好的。" },
+  { en:"I check my emails.", cat:"简单句", audio:"s031.mp3", zh:"我查看邮件。" },
+  { en:"I answer the phone.", cat:"简单句", audio:"s032.mp3", zh:"我接电话。" },
+  { en:"I have a meeting soon.", cat:"简单句", audio:"s033.mp3", zh:"我马上有个会议。" },
+  { en:"I'll call you later.", cat:"简单句", audio:"s034.mp3", zh:"我稍后打给你。" },
+  { en:"I'm working on it.", cat:"简单句", audio:"s035.mp3", zh:"我正在处理。" },
+  { en:"Give me a minute.", cat:"简单句", audio:"s036.mp3", zh:"给我一分钟。" },
+  { en:"What do you think?", cat:"简单句", audio:"s037.mp3", zh:"你怎么看？" },
+  { en:"I agree with you.", cat:"简单句", audio:"s038.mp3", zh:"我同意你的看法。" },
+  { en:"That's a good idea.", cat:"简单句", audio:"s039.mp3", zh:"好主意。" },
+  { en:"I don't think so.", cat:"简单句", audio:"s040.mp3", zh:"我不这么认为。" },
+  { en:"I see your point.", cat:"简单句", audio:"s041.mp3", zh:"我明白你的意思。" },
+  { en:"Let me think about it.", cat:"简单句", audio:"s042.mp3", zh:"让我想想。" },
+  { en:"I take a break.", cat:"简单句", audio:"s043.mp3", zh:"我休息一下。" },
+  { en:"It's time for lunch.", cat:"简单句", audio:"s044.mp3", zh:"该吃午饭了。" },
+  { en:"Let's eat out.", cat:"简单句", audio:"s045.mp3", zh:"我们出去吃吧。" },
+  { en:"I'm ready to go.", cat:"简单句", audio:"s046.mp3", zh:"我准备好出发了。" },
+  { en:"What should we eat?", cat:"简单句", audio:"s047.mp3", zh:"我们吃什么？" },
+  { en:"I'll have the pizza.", cat:"简单句", audio:"s048.mp3", zh:"我要披萨。" },
+  { en:"I like it spicy.", cat:"简单句", audio:"s049.mp3", zh:"我喜欢辣的。" },
+  { en:"I'll get the same.", cat:"简单句", audio:"s050.mp3", zh:"我也要一样的。" },
+  { en:"I need more napkins.", cat:"简单句", audio:"s051.mp3", zh:"我需要更多纸巾。" },
+  { en:"It's really delicious.", cat:"简单句", audio:"s052.mp3", zh:"真的很好吃。" },
+  { en:"I'm full now.", cat:"简单句", audio:"s053.mp3", zh:"我吃饱了。" },
+  { en:"Let's split the bill.", cat:"简单句", audio:"s054.mp3", zh:"我们AA制吧。" },
+  { en:"I'll pay in cash.", cat:"简单句", audio:"s055.mp3", zh:"我付现金。" },
+  { en:"I finish my work.", cat:"简单句", audio:"s056.mp3", zh:"我完成工作了。" },
+  { en:"I shut down my computer.", cat:"简单句", audio:"s057.mp3", zh:"我关电脑。" },
+  { en:"I get off work at 6:00.", cat:"简单句", audio:"s058.mp3", zh:"我六点下班。" },
+  { en:"I got to go now.", cat:"简单句", audio:"s059.mp3", zh:"我现在得走了。" },
+  { en:"See you tomorrow.", cat:"简单句", audio:"s060.mp3", zh:"明天见。" },
+  { en:"I leave the office.", cat:"简单句", audio:"s061.mp3", zh:"我离开办公室。" },
+  { en:"I feel so tired.", cat:"简单句", audio:"s062.mp3", zh:"我好累。" },
+  { en:"Are you feeling okay?", cat:"简单句", audio:"s063.mp3", zh:"你感觉还好吗？" },
+  { en:"I didn't sleep well.", cat:"简单句", audio:"s064.mp3", zh:"我没睡好。" },
+  { en:"Do you have a minute?", cat:"简单句", audio:"s065.mp3", zh:"你有空吗？" },
+  { en:"Let's go grocery shopping.", cat:"简单句", audio:"s066.mp3", zh:"我们去买日用品吧。" },
+  { en:"Can you help me?", cat:"简单句", audio:"s067.mp3", zh:"你能帮帮我吗？" },
+  { en:"Is this in stock?", cat:"简单句", audio:"s068.mp3", zh:"这个有货吗？" },
+  { en:"Thank you for the help.", cat:"简单句", audio:"s069.mp3", zh:"谢谢你的帮忙。" },
+  { en:"Are you in line?", cat:"简单句", audio:"s070.mp3", zh:"你在排队吗？" },
+  { en:"Can I sit here?", cat:"简单句", audio:"s071.mp3", zh:"我可以坐这里吗？" },
+  { en:"Where is the restroom?", cat:"简单句", audio:"s072.mp3", zh:"洗手间在哪？" },
+  { en:"It's over there.", cat:"简单句", audio:"s073.mp3", zh:"在那边。" },
+  { en:"Can you show me?", cat:"简单句", audio:"s074.mp3", zh:"你能给我看看吗？" },
+  { en:"I didn't catch that.", cat:"简单句", audio:"s075.mp3", zh:"我没听清。" },
+  { en:"Please speak slowly.", cat:"简单句", audio:"s076.mp3", zh:"请说慢一点。" },
+  { en:"I walk home today.", cat:"简单句", audio:"s077.mp3", zh:"我今天走回家。" },
+  { en:"I'm on my way.", cat:"简单句", audio:"s078.mp3", zh:"我在路上了。" },
+  { en:"I finally get home.", cat:"简单句", audio:"s079.mp3", zh:"我终于到家了。" },
+  { en:"You're early today.", cat:"简单句", audio:"s080.mp3", zh:"你今天回来得早。" },
+  { en:"I take off my shoes.", cat:"简单句", audio:"s081.mp3", zh:"我脱下鞋子。" },
+  { en:"I sit on the couch.", cat:"简单句", audio:"s082.mp3", zh:"我坐在沙发上。" },
+  { en:"Did you see my phone?", cat:"简单句", audio:"s083.mp3", zh:"你看到我的手机了吗？" },
+  { en:"I haven't seen it.", cat:"简单句", audio:"s084.mp3", zh:"我没看到。" },
+  { en:"What are you doing?", cat:"简单句", audio:"s085.mp3", zh:"你在做什么？" },
+  { en:"I'm watching TV.", cat:"简单句", audio:"s086.mp3", zh:"我在看电视。" },
+  { en:"How was your day?", cat:"简单句", audio:"s087.mp3", zh:"你今天过得怎么样？" },
+  { en:"I had a busy day.", cat:"简单句", audio:"s088.mp3", zh:"我今天很忙。" },
+  { en:"You free on Saturday?", cat:"简单句", audio:"s089.mp3", zh:"你周六有空吗？" },
+  { en:"Let's meet this weekend.", cat:"简单句", audio:"s090.mp3", zh:"我们这周末见面吧。" },
+  { en:"Sounds good to me.", cat:"简单句", audio:"s091.mp3", zh:"听起来不错。" },
+  { en:"What's for dinner?", cat:"简单句", audio:"s092.mp3", zh:"晚饭吃什么？" },
+  { en:"Let's eat together.", cat:"简单句", audio:"s093.mp3", zh:"我们一起吃吧。" },
+  { en:"Please pass the salt.", cat:"简单句", audio:"s094.mp3", zh:"请把盐递给我。" },
+  { en:"I'll wash the dishes.", cat:"简单句", audio:"s095.mp3", zh:"我来洗碗。" },
+  { en:"I feel sleepy.", cat:"简单句", audio:"s096.mp3", zh:"我犯困了。" },
+  { en:"I set my alarm.", cat:"简单句", audio:"s097.mp3", zh:"我设好闹钟。" },
+  { en:"I fall asleep slowly.", cat:"简单句", audio:"s098.mp3", zh:"我慢慢入睡。" },
+  { en:"You look awesome today.", cat:"中级句", audio:"s100.mp3", zh:"你今天看起来棒极了。" },
+  { en:"It's been a long time.", cat:"中级句", audio:"s101.mp3", zh:"好久不见。" },
+  { en:"You haven't changed at all.", cat:"中级句", audio:"s102.mp3", zh:"你一点都没变。" },
+  { en:"Let's hang out more often.", cat:"中级句", audio:"s103.mp3", zh:"我们多聚聚吧。" },
+  { en:"What day is it today?", cat:"中级句", audio:"s104.mp3", zh:"今天星期几？" },
+  { en:"I can't believe it's Friday.", cat:"中级句", audio:"s105.mp3", zh:"真不敢相信已经是周五了。" },
+  { en:"I'm in a good mood.", cat:"中级句", audio:"s106.mp3", zh:"我心情很好。" },
+  { en:"How's the weather today?", cat:"中级句", audio:"s107.mp3", zh:"今天天气怎么样？" },
+  { en:"It's freezing cold today.", cat:"中级句", audio:"s108.mp3", zh:"今天冷得要命。" },
+  { en:"It's raining heavily outside.", cat:"中级句", audio:"s109.mp3", zh:"外面雨下得很大。" },
+  { en:"It's finally clearing up today.", cat:"中级句", audio:"s110.mp3", zh:"今天终于放晴了。" },
+  { en:"You look so familiar.", cat:"中级句", audio:"s111.mp3", zh:"你看起来好面熟。" },
+  { en:"Have we met before?", cat:"中级句", audio:"s112.mp3", zh:"我们以前见过吗？" },
+  { en:"Do you live around here?", cat:"中级句", audio:"s113.mp3", zh:"你住这附近吗？" },
+  { en:"What do you do for a living?", cat:"中级句", audio:"s114.mp3", zh:"你是做什么工作的？" },
+  { en:"I work in marketing.", cat:"中级句", audio:"s115.mp3", zh:"我做市场营销。" },
+  { en:"I plan to change my job.", cat:"中级句", audio:"s116.mp3", zh:"我打算换工作。" },
+  { en:"I've heard a lot about you.", cat:"中级句", audio:"s117.mp3", zh:"我听说过很多关于你的事。" },
+  { en:"I think we have mutual friends.", cat:"中级句", audio:"s118.mp3", zh:"我觉得我们有共同的朋友。" },
+  { en:"How many siblings do you have?", cat:"中级句", audio:"s119.mp3", zh:"你有几个兄弟姐妹？" },
+  { en:"I am the only son in my family.", cat:"中级句", audio:"s120.mp3", zh:"我是家里的独子。" },
+  { en:"Did you stay up late last night?", cat:"中级句", audio:"s121.mp3", zh:"你昨晚熬夜了吗？" },
+  { en:"I sleep 8 hours usually.", cat:"中级句", audio:"s122.mp3", zh:"我通常睡8个小时。" },
+  { en:"I gained 5 pounds recently.", cat:"中级句", audio:"s123.mp3", zh:"我最近胖了5磅。" },
+  { en:"I want to lose weight.", cat:"中级句", audio:"s124.mp3", zh:"我想减肥。" },
+  { en:"How much do you weigh?", cat:"中级句", audio:"s125.mp3", zh:"你多重？" },
+  { en:"I'm trying to stay fit.", cat:"中级句", audio:"s126.mp3", zh:"我在努力保持身材。" },
+  { en:"How often do you exercise?", cat:"中级句", audio:"s127.mp3", zh:"你多久锻炼一次？" },
+  { en:"I do yoga in the morning.", cat:"中级句", audio:"s128.mp3", zh:"我早上做瑜伽。" },
+  { en:"I skip lunch sometimes.", cat:"中级句", audio:"s129.mp3", zh:"我有时不吃午饭。" },
+  { en:"I'm getting used to it.", cat:"中级句", audio:"s130.mp3", zh:"我正在适应。" },
+  { en:"Let's go for a walk.", cat:"中级句", audio:"s131.mp3", zh:"我们去散步吧。" },
+  { en:"How tall are you exactly?", cat:"中级句", audio:"s132.mp3", zh:"你到底多高？" },
+  { en:"I'm 5 ft 8 in.", cat:"中级句", audio:"s133.mp3", zh:"我5英尺8英寸。" },
+  { en:"I'm shorter than average.", cat:"中级句", audio:"s134.mp3", zh:"我比一般人矮。" },
+  { en:"How old are you turning?", cat:"中级句", audio:"s135.mp3", zh:"你今年要过几岁生日？" },
+  { en:"I just turned 21.", cat:"中级句", audio:"s136.mp3", zh:"我刚满21岁。" },
+  { en:"How old do I look?", cat:"中级句", audio:"s137.mp3", zh:"我看起来多大？" },
+  { en:"I'm younger than you think.", cat:"中级句", audio:"s138.mp3", zh:"我比你想象的年轻。" },
+  { en:"We are about the same age.", cat:"中级句", audio:"s139.mp3", zh:"我们差不多大。" },
+  { en:"Come over for dinner tonight.", cat:"中级句", audio:"s140.mp3", zh:"今晚过来吃晚饭吧。" },
+  { en:"What would you like to drink?", cat:"中级句", audio:"s141.mp3", zh:"你想喝点什么？" },
+  { en:"Make yourself at home.", cat:"中级句", audio:"s142.mp3", zh:"别客气，当自己家一样。" },
+  { en:"I'm thinking of taking a trip.", cat:"中级句", audio:"s143.mp3", zh:"我在考虑去旅行。" },
+  { en:"Do you want to join us?", cat:"中级句", audio:"s144.mp3", zh:"你想加入我们吗？" },
+  { en:"Let me check the schedule.", cat:"中级句", audio:"s145.mp3", zh:"让我查一下日程。" },
+  { en:"I'm looking forward to it.", cat:"中级句", audio:"s146.mp3", zh:"我很期待。" },
+  { en:"Did you get my email?", cat:"中级句", audio:"s147.mp3", zh:"你收到我的邮件了吗？" },
+  { en:"I'm waiting for a reply.", cat:"中级句", audio:"s148.mp3", zh:"我在等回复。" },
+  { en:"I'm not sure what to do.", cat:"中级句", audio:"s149.mp3", zh:"我不确定该怎么办。" },
+  { en:"Let's find a solution together.", cat:"中级句", audio:"s150.mp3", zh:"我们一起想办法吧。" },
+  { en:"Should I change my mind?", cat:"中级句", audio:"s151.mp3", zh:"我应该改变主意吗？" },
+  { en:"Your opinion matters to me.", cat:"中级句", audio:"s152.mp3", zh:"你的意见对我很重要。" },
+  { en:"You've already done your best.", cat:"中级句", audio:"s153.mp3", zh:"你已经尽力了。" },
+  { en:"I'm sorry to disturb you.", cat:"中级句", audio:"s154.mp3", zh:"抱歉打扰你了。" },
+  { en:"Can I use your phone?", cat:"中级句", audio:"s155.mp3", zh:"我能用一下你的手机吗？" },
+  { en:"My battery is dying.", cat:"中级句", audio:"s156.mp3", zh:"我的手机快没电了。" },
+  { en:"Is this a good time?", cat:"中级句", audio:"s157.mp3", zh:"现在方便吗？" },
+  { en:"You're breaking up.", cat:"中级句", audio:"s158.mp3", zh:"你的信号不好。" },
+  { en:"I'll text you instead.", cat:"中级句", audio:"s159.mp3", zh:"我改发短信给你吧。" },
+  { en:"I see what you mean.", cat:"中级句", audio:"s160.mp3", zh:"我明白你的意思。" },
+  { en:"Let's talk about it later.", cat:"中级句", audio:"s161.mp3", zh:"我们晚点再说吧。" },
+  { en:"I'm not feeling well today.", cat:"中级句", audio:"s162.mp3", zh:"我今天不太舒服。" },
+  { en:"I have a terrible headache.", cat:"中级句", audio:"s163.mp3", zh:"我头痛得厉害。" },
+  { en:"I can't stop sneezing.", cat:"中级句", audio:"s164.mp3", zh:"我打喷嚏停不下来。" },
+  { en:"I'm allergic to peanuts.", cat:"中级句", audio:"s165.mp3", zh:"我对花生过敏。" },
+  { en:"I'm worried about you.", cat:"中级句", audio:"s166.mp3", zh:"我很担心你。" },
+  { en:"I feel much better now.", cat:"中级句", audio:"s167.mp3", zh:"我现在好多了。" },
+  { en:"I'm grateful for your support.", cat:"中级句", audio:"s168.mp3", zh:"我很感激你的支持。" },
+  { en:"May I have a menu?", cat:"中级句", audio:"s169.mp3", zh:"能给我菜单吗？" },
+  { en:"What do you recommend?", cat:"中级句", audio:"s170.mp3", zh:"你推荐什么？" },
+  { en:"I need a few more minutes.", cat:"中级句", audio:"s171.mp3", zh:"我再需要几分钟。" },
+  { en:"We're ready to order.", cat:"中级句", audio:"s172.mp3", zh:"我们可以点餐了。" },
+  { en:"I prefer tea to coffee.", cat:"中级句", audio:"s173.mp3", zh:"比起咖啡我更喜欢茶。" },
+  { en:"Can we have some water?", cat:"中级句", audio:"s174.mp3", zh:"能给我们一些水吗？" },
+  { en:"This isn't what I ordered.", cat:"中级句", audio:"s175.mp3", zh:"这不是我点的。" },
+  { en:"Does this taste too salty?", cat:"中级句", audio:"s176.mp3", zh:"这个是不是太咸了？" },
+  { en:"Any plans for the weekend?", cat:"中级句", audio:"s177.mp3", zh:"周末有什么计划吗？" },
+  { en:"What time should we meet?", cat:"中级句", audio:"s178.mp3", zh:"我们几点见面？" },
+  { en:"I'll pick you up at 7:00.", cat:"中级句", audio:"s179.mp3", zh:"我7点来接你。" },
+  { en:"It's getting late already.", cat:"中级句", audio:"s180.mp3", zh:"已经不早了。" },
+  { en:"I had a great time today.", cat:"中级句", audio:"s181.mp3", zh:"我今天玩得很开心。" },
+  { en:"I'd love to see you soon.", cat:"中级句", audio:"s182.mp3", zh:"我想尽快再见到你。" },
+  { en:"Did you get a haircut?", cat:"中级句", audio:"s183.mp3", zh:"你剪头发了？" },
+  { en:"What's your favorite movie?", cat:"中级句", audio:"s184.mp3", zh:"你最喜欢的电影是什么？" },
+  { en:"Can I try this on?", cat:"中级句", audio:"s185.mp3", zh:"我可以试穿吗？" },
+  { en:"Do you have a smaller size?", cat:"中级句", audio:"s186.mp3", zh:"有小一号的吗？" },
+  { en:"This is a bit too expensive.", cat:"中级句", audio:"s187.mp3", zh:"这有点太贵了。" },
+  { en:"Should I buy this shirt?", cat:"中级句", audio:"s188.mp3", zh:"我应该买这件衬衫吗？" },
+  { en:"Which color do you prefer?", cat:"中级句", audio:"s189.mp3", zh:"你更喜欢哪个颜色？" },
+  { en:"Do you accept credit cards?", cat:"中级句", audio:"s190.mp3", zh:"你们收信用卡吗？" },
+  { en:"I need to return this shirt.", cat:"中级句", audio:"s191.mp3", zh:"我需要退这件衬衫。" },
+  { en:"Can you help with laundry?", cat:"中级句", audio:"s192.mp3", zh:"你能帮忙洗衣服吗？" },
+  { en:"I vacuum twice a week.", cat:"中级句", audio:"s193.mp3", zh:"我每周吸尘两次。" },
+  { en:"What time will you be back?", cat:"中级句", audio:"s194.mp3", zh:"你几点回来？" },
+  { en:"I have a ton of work today.", cat:"中级句", audio:"s195.mp3", zh:"我今天有一大堆工作。" },
+  { en:"I'm taking a day off tomorrow.", cat:"中级句", audio:"s196.mp3", zh:"我明天请假。" },
+  { en:"You'd better bring an umbrella with you.", cat:"进阶句", audio:"s198.mp3", zh:"你最好带把伞。" },
+  { en:"Excuse me, how do I get to the mall?", cat:"进阶句", audio:"s199.mp3", zh:"请问，去商场怎么走？" },
+  { en:"Go straight and turn left at the corner.", cat:"进阶句", audio:"s200.mp3", zh:"直走，在拐角处左转。" },
+  { en:"We've known each other for a long time.", cat:"进阶句", audio:"s201.mp3", zh:"我们认识很久了。" },
+  { en:"Thanks for always having my back.", cat:"进阶句", audio:"s202.mp3", zh:"谢谢你一直支持我。" },
+  { en:"It's getting dark much earlier these days.", cat:"进阶句", audio:"s203.mp3", zh:"最近天黑得越来越早了。" },
+  { en:"Do you mind if I open the window?", cat:"进阶句", audio:"s204.mp3", zh:"你介意我开窗吗？" },
+  { en:"I think you have the wrong number.", cat:"进阶句", audio:"s205.mp3", zh:"我想你打错电话了。" },
+  { en:"There's no one here by that name.", cat:"进阶句", audio:"s206.mp3", zh:"这里没有叫那个名字的人。" },
+  { en:"Could you please turn down the music?", cat:"进阶句", audio:"s207.mp3", zh:"你能把音乐调小一点吗？" },
+  { en:"Keep your temper under control.", cat:"进阶句", audio:"s208.mp3", zh:"控制住你的脾气。" },
+  { en:"I'm so stressed out these days.", cat:"进阶句", audio:"s209.mp3", zh:"我最近压力好大。" },
+  { en:"Have you been sleeping enough?", cat:"进阶句", audio:"s210.mp3", zh:"你睡眠够吗？" },
+  { en:"I couldn't sleep again last night.", cat:"进阶句", audio:"s211.mp3", zh:"我昨晚又失眠了。" },
+  { en:"Did you lose some weight recently?", cat:"进阶句", audio:"s212.mp3", zh:"你最近瘦了吗？" },
+  { en:"Have you been exercising regularly?", cat:"进阶句", audio:"s213.mp3", zh:"你有规律地锻炼吗？" },
+  { en:"I work out three times a week.", cat:"进阶句", audio:"s214.mp3", zh:"我每周锻炼三次。" },
+  { en:"Do you want to join me at the gym?", cat:"进阶句", audio:"s215.mp3", zh:"你想和我一起去健身房吗？" },
+  { en:"The storm is finally moving out.", cat:"进阶句", audio:"s216.mp3", zh:"暴风雨终于过去了。" },
+  { en:"I still can't get used to the weather here.", cat:"进阶句", audio:"s217.mp3", zh:"我还是适应不了这里的天气。" },
+  { en:"Are you seeing anyone right now?", cat:"进阶句", audio:"s218.mp3", zh:"你现在有对象吗？" },
+  { en:"I've been single for a while.", cat:"进阶句", audio:"s219.mp3", zh:"我单身有一阵子了。" },
+  { en:"What do you feel like eating tonight?", cat:"进阶句", audio:"s220.mp3", zh:"你今晚想吃什么？" },
+  { en:"I'm in the mood for something spicy.", cat:"进阶句", audio:"s221.mp3", zh:"我想吃点辣的。" },
+  { en:"Don't talk with your mouth full.", cat:"进阶句", audio:"s222.mp3", zh:"嘴里有东西时别说话。" },
+  { en:"What do you call this in English?", cat:"进阶句", audio:"s223.mp3", zh:"这个英语怎么说？" },
+  { en:"How long does it take to walk there?", cat:"进阶句", audio:"s224.mp3", zh:"走路去那里要多久？" },
+  { en:"It's about a 10-minute walk from here.", cat:"进阶句", audio:"s225.mp3", zh:"从这里走过去大概10分钟。" },
+  { en:"I'd like a cappuccino with almond milk.", cat:"进阶句", audio:"s226.mp3", zh:"我要一杯加杏仁奶的卡布奇诺。" },
+  { en:"Can I get an extra shot of espresso?", cat:"进阶句", audio:"s227.mp3", zh:"可以多加一份浓缩咖啡吗？" },
+  { en:"You're wearing your shirt backwards.", cat:"进阶句", audio:"s228.mp3", zh:"你衬衫穿反了。" },
+  { en:"That jacket looks great on you.", cat:"进阶句", audio:"s229.mp3", zh:"那件夹克你穿很好看。" },
+  { en:"You look like a friend of mine.", cat:"进阶句", audio:"s230.mp3", zh:"你长得像我的一个朋友。" },
+  { en:"Would you like to have a drink after work?", cat:"进阶句", audio:"s231.mp3", zh:"下班后想喝一杯吗？" },
+  { en:"I'm excited for the long weekend.", cat:"进阶句", audio:"s232.mp3", zh:"我对长周末很期待。" },
+  { en:"My brother drives me crazy sometimes.", cat:"进阶句", audio:"s233.mp3", zh:"我哥有时候快把我逼疯了。" },
+  { en:"He has a great sense of humor.", cat:"进阶句", audio:"s234.mp3", zh:"他很有幽默感。" },
+  { en:"I couldn't get through to your phone.", cat:"进阶句", audio:"s235.mp3", zh:"我打不通你的电话。" },
+  { en:"Sorry for keeping you waiting.", cat:"进阶句", audio:"s236.mp3", zh:"抱歉让你久等了。" },
+  { en:"I'm on another call right now.", cat:"进阶句", audio:"s237.mp3" },
+  { en:"Why are you feeling so down today?", cat:"进阶句", audio:"s238.mp3", zh:"你今天怎么这么低落？" },
+  { en:"Let's take a walk and get some fresh air.", cat:"进阶句", audio:"s239.mp3", zh:"我们散散步呼吸点新鲜空气吧。" },
+  { en:"I've been coughing all night.", cat:"进阶句", audio:"s240.mp3", zh:"我咳了一整晚。" },
+  { en:"Make sure to drink plenty of water.", cat:"进阶句", audio:"s241.mp3", zh:"一定要多喝水。" },
+  { en:"I should probably see a doctor soon.", cat:"进阶句", audio:"s242.mp3", zh:"我可能得尽快去看医生。" },
+  { en:"How often do I need to take this medicine?", cat:"进阶句", audio:"s243.mp3", zh:"这药我需要多久吃一次？" },
+  { en:"Are there any side effects?", cat:"进阶句", audio:"s244.mp3", zh:"有什么副作用吗？" },
+  { en:"Can I exchange this for a larger size?", cat:"进阶句", audio:"s245.mp3", zh:"我能换大一号的吗？" },
+  { en:"Do you have this in another color?", cat:"进阶句", audio:"s246.mp3", zh:"这个有别的颜色吗？" },
+  { en:"I'm thinking about getting a dog.", cat:"进阶句", audio:"s247.mp3", zh:"我在考虑养只狗。" },
+  { en:"Why don't you give it a try?", cat:"进阶句", audio:"s248.mp3", zh:"你为什么不试试呢？" },
+  { en:"There's nothing to worry about.", cat:"进阶句", audio:"s249.mp3", zh:"没什么好担心的。" },
+  { en:"Let's order takeout tonight instead.", cat:"进阶句", audio:"s250.mp3", zh:"今晚改点外卖吧。" },
+  { en:"That's exactly what I was thinking.", cat:"进阶句", audio:"s251.mp3", zh:"这正是我所想的。" },
+  { en:"Would you mind taking a photo of us?", cat:"进阶句", audio:"s252.mp3", zh:"介意帮我们拍张照吗？" },
+  { en:"Have you backed up your photos recently?", cat:"进阶句", audio:"s253.mp3", zh:"你最近备份照片了吗？" },
+  { en:"My phone storage is completely full.", cat:"进阶句", audio:"s254.mp3", zh:"我手机存储完全满了。" },
+  { en:"I'm having trouble with the connection.", cat:"进阶句", audio:"s255.mp3", zh:"我的网络连接有问题。" },
+  { en:"I'm trying to cut back on sugar.", cat:"进阶句", audio:"s256.mp3", zh:"我在努力减少糖的摄入。" },
+  { en:"This is way too salty for me.", cat:"进阶句", audio:"s257.mp3", zh:"这对我来说太咸了。" },
+  { en:"I am the youngest in my family.", cat:"进阶句", audio:"s258.mp3", zh:"我是家里最小的。" },
+  { en:"I think there's a mistake on this bill.", cat:"进阶句", audio:"s259.mp3", zh:"我觉得这张账单有问题。" },
+  { en:"Is service charge included?", cat:"进阶句", audio:"s260.mp3", zh:"含服务费吗？" },
+  { en:"Have you seen any good movies lately?", cat:"进阶句", audio:"s261.mp3", zh:"你最近看过什么好电影吗？" },
+  { en:"What kind of music do you like?", cat:"进阶句", audio:"s262.mp3", zh:"你喜欢什么类型的音乐？" },
+  { en:"I spend too much time on social media.", cat:"进阶句", audio:"s263.mp3", zh:"我在社交媒体上花太多时间了。" },
+  { en:"Family means everything to me.", cat:"进阶句", audio:"s264.mp3", zh:"家庭对我来说就是一切。" },
+  { en:"I take after my mother a lot.", cat:"进阶句", audio:"s265.mp3", zh:"我很像我妈妈。" },
+  { en:"I'm terrible at memorizing things.", cat:"进阶句", audio:"s266.mp3", zh:"我很不擅长记东西。" },
+  { en:"Can you take out the trash tonight?", cat:"进阶句", audio:"s267.mp3", zh:"你今晚能把垃圾扔了吗？" },
+  { en:"I'll do the dishes after dinner.", cat:"进阶句", audio:"s268.mp3", zh:"晚饭后我来洗碗。" },
+  { en:"The air conditioner is not working.", cat:"进阶句", audio:"s269.mp3", zh:"空调坏了。" },
+  { en:"Could you take a look at this for me?", cat:"进阶句", audio:"s270.mp3", zh:"你能帮我看看这个吗？" },
+  { en:"How much is a one-way ticket?", cat:"进阶句", audio:"s271.mp3", zh:"单程票多少钱？" },
+  { en:"Is there free parking nearby?", cat:"进阶句", audio:"s272.mp3", zh:"附近有免费停车吗？" },
+  { en:"Did you hear what happened yesterday?", cat:"进阶句", audio:"s273.mp3", zh:"你听说昨天发生什么事了吗？" },
+  { en:"There seems to be a misunderstanding.", cat:"进阶句", audio:"s274.mp3", zh:"似乎有个误会。" },
+  { en:"Are you free this coming weekend?", cat:"进阶句", audio:"s275.mp3", zh:"你下周末有空吗？" },
+  { en:"What time should I come over?", cat:"进阶句", audio:"s276.mp3", zh:"我几点过去？" },
+  { en:"That's very kind of you to say.", cat:"进阶句", audio:"s277.mp3", zh:"你这么说太客气了。" },
+  { en:"You're so easy to talk to.", cat:"进阶句", audio:"s278.mp3", zh:"和你说话真轻松。" },
+  { en:"Have you ever been to Europe before?", cat:"进阶句", audio:"s279.mp3", zh:"你去过欧洲吗？" },
+  { en:"Is there a shortcut I can take?", cat:"进阶句", audio:"s280.mp3", zh:"有近路可走吗？" },
+  { en:"Do you need to work overtime tonight?", cat:"进阶句", audio:"s281.mp3", zh:"你今晚需要加班吗？" },
+  { en:"I spent way too much this month.", cat:"进阶句", audio:"s282.mp3", zh:"我这个月花太多了。" },
+  { en:"What time does the store close?", cat:"进阶句", audio:"s283.mp3", zh:"商店几点关门？" },
+  { en:"I'm hoping for a promotion soon.", cat:"进阶句", audio:"s284.mp3", zh:"我希望很快能升职。" },
+  { en:"Let's get started with the meeting.", cat:"进阶句", audio:"s285.mp3", zh:"我们开始开会吧。" },
+  { en:"I didn't receive your message somehow.", cat:"进阶句", audio:"s286.mp3", zh:"我不知怎么的没收到你的消息。" },
+  { en:"I have to talk to her in person.", cat:"进阶句", audio:"s287.mp3", zh:"我必须当面跟她说。" },
+  { en:"We don't see eye to eye on everything.", cat:"进阶句", audio:"s288.mp3", zh:"我们在所有事情上意见并不一致。" },
+  { en:"What would you do in my situation?", cat:"进阶句", audio:"s289.mp3", zh:"你处在我的位置会怎么做？" },
+  { en:"I wouldn't recommend doing that.", cat:"进阶句", audio:"s290.mp3", zh:"我不建议那样做。" },
+  { en:"The faucet in the kitchen is leaking.", cat:"进阶句", audio:"s291.mp3", zh:"厨房的水龙头漏水了。" },
+  { en:"I need to call a plumber tomorrow.", cat:"进阶句", audio:"s292.mp3", zh:"我明天得叫个水管工。" },
+  { en:"I'm learning to trust myself more.", cat:"进阶句", audio:"s293.mp3", zh:"我在学着更相信自己。" },
+  { en:"It's never too late to learn something new.", cat:"进阶句", audio:"s294.mp3", zh:"学习新东西永远不嫌晚。" },
+  { en:"I should probably get going now.", cat:"进阶句", audio:"s295.mp3", zh:"我现在大概该走了。" },
+  { en:"It was so great seeing you again.", cat:"进阶句", audio:"s296.mp3", zh:"再次见到你太好了。" }
 ];
 
 let shadowSlowMode = false;
@@ -3294,10 +3291,40 @@ function toggleShadowZh(btn, idx) {
   btn.textContent = isHidden ? '🇨🇳 隐藏' : '🇨🇳 译文';
 }
 
+// Preload all shadow audio files into cache
+let shadowPreloaded = false;
+function preloadShadowAudio() {
+  if (shadowPreloaded) return;
+  shadowPreloaded = true;
+  if (!('caches' in window)) return;
+  caches.open(CACHE_NAME || 'vocab-v61').then(cache => {
+    SHADOW_SENTENCES.forEach((s, i) => {
+      const file = s.audio || ('s' + String(i).padStart(3, '0') + '.mp3');
+      const url = 'shadow-audio-v2/' + file;
+      // Only fetch if not already cached
+      cache.match(url).then(matched => {
+        if (!matched) {
+          fetch(url).then(resp => {
+            if (resp.ok) cache.put(url, resp);
+          }).catch(() => {});
+        }
+      });
+    });
+  }).catch(() => {});
+}
+
 function openShadowing() {
   const overlay = document.getElementById('shadowOverlay');
   overlay.classList.add('active');
   renderShadowing();
+  preloadShadowAudio();
+  // Back-to-top visibility inside shadow overlay
+  const sbt = document.getElementById('shadowBackTop');
+  if (sbt) {
+    overlay.addEventListener('scroll', () => {
+      sbt.classList.toggle('visible', overlay.scrollTop > overlay.clientHeight * 0.4);
+    });
+  }
 }
 
 function closeShadowing() {
@@ -3308,9 +3335,14 @@ function closeShadowing() {
 
 function renderShadowing(filter) {
   const inner = document.getElementById('shadowInner');
+  // Build a word→zh map for inline Chinese tooltips
+  buildLocalVocabMap();
+  
   // Group by category
   const cats = {};
+  const catOrder = ['简单句', '中级句', '进阶句'];
   SHADOW_SENTENCES.forEach((s, i) => {
+    if (!s.cat || /^\[/.test(s.en)) return;
     if (!cats[s.cat]) cats[s.cat] = [];
     cats[s.cat].push({ ...s, idx: i });
   });
@@ -3320,28 +3352,39 @@ function renderShadowing(filter) {
   html += '<h2>🗣️ 例句跟读</h2>';
   html += '<button class="shadow-close-btn" onclick="closeShadowing()">✕</button>';
   html += '</div>';
+  
+  // Category jump buttons
+  const catAnchors = { '简单句': 'sjump-easy', '中级句': 'sjump-mid', '进阶句': 'sjump-hard' };
+  html += '<div class="shadow-jump-bar">';
+  for (const cat of catOrder) {
+    if (!cats[cat]) continue;
+    const icons = { '简单句': '🟢', '中级句': '🟡', '进阶句': '🔴' };
+    html += '<button class="shadow-jump-btn" onclick="document.getElementById(\''+catAnchors[cat]+'\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' + (icons[cat]||'📌') + ' ' + cat + ' (' + cats[cat].length + ')</button>';
+  }
+  html += '</div>';
+  
   html += '<div class="shadow-stats">共 ' + SHADOW_SENTENCES.length + ' 句 · YouTube真人发音 · 点击 ▶ 播放 · 点击 🎤 跟读</div>';
 
-  const catIcons = {
-    '简单句': '🟢', '中级句': '🟡', '进阶句': '🔴',
-    '问候寒暄': '👋', '日常生活': '🏠', '饮食': '🍽️', '出行': '🚌',
-    '购物': '🛒', '工作职场': '💼', '社交': '🎉', '健康': '🏥',
-    '情感表达': '💭', '请求帮助': '🤝', '住宿': '🏡', '复杂长句': '🧠'
-  };
-
-  for (const [cat, sentences] of Object.entries(cats)) {
-    html += '<div class="shadow-category">';
+  for (const cat of catOrder) {
+    if (!cats[cat]) continue;
+    const sentences = cats[cat];
+    const catIcons = { '简单句': '🟢', '中级句': '🟡', '进阶句': '🔴' };
+    html += '<div class="shadow-category" id="' + (catAnchors[cat]||'') + '">';
     html += '<div class="shadow-category-title">' + (catIcons[cat] || '📌') + ' ' + cat + ' (' + sentences.length + '句)</div>';
     sentences.forEach(s => {
+      // Parse words - each word gets an inline zh button
       const words = s.en.split(/(\s+|[.,!?;:'"\-—])/);
       const wordSpans = words.map((w, wi) => {
         if (/^\s+$/.test(w)) return ' ';
-        if (/^[.,!?;:'"\-—]$/.test(w)) return '<span class="se-word se-punct" data-idx="' + s.idx + '-' + wi + '">' + w + '</span>';
-        return '<span class="se-word lookupable" data-idx="' + s.idx + '-' + wi + '" data-word="' + w.replace(/[.,!?;:'"\-—]/g, '') + '" onclick="showWordPopup(this)">' + w + '</span>';
+        if (/^[.,!?;:'"\-—]$/.test(w)) return '<span class="se-word se-punct">' + w + '</span>';
+        const clean = w.replace(/[.,!?;:'"\-—]/g, '').toLowerCase().replace(/[^a-z]/g, '');
+        const localW = localVocabMap[clean];
+        const zhText = localW ? (localW.meaning || '').split('❶')[0].split(';')[0].split('；')[0].trim() : (INLINE_ZH[clean] || '');
+        return '<span class="se-word" data-word="' + w.replace(/[.,!?;:'"\-—]/g, '') + '" data-zh="' + zhText.replace(/"/g, '&quot;') + '" onclick="toggleWordZh(this)">' + w + '<sup class="word-zh-dot">·</sup></span>';
       }).join('');
 
       html += '<div class="shadow-card" id="sc-' + s.idx + '">';
-      html += '<div class="shadow-en"><span class="shadow-num">' + (s.idx + 1) + '</span>' + wordSpans + '</div>';
+      html += '<div class="shadow-en" id="sen-' + s.idx + '"><span class="shadow-num">' + (s.idx + 1) + '</span>' + wordSpans + '</div>';
       html += (s.zh ? '<button class="shadow-zh-btn" onclick="toggleShadowZh(this,' + s.idx + ')">🇨🇳 译文</button><div class="shadow-zh hidden" id="szh-' + s.idx + '">' + s.zh + '</div>' : '');
       html += '<div class="shadow-controls">';
       html += '<button class="shadow-play-btn" id="sp-' + s.idx + '" onclick="playShadow(' + s.idx + ')" title="播放">▶</button>';
@@ -3354,8 +3397,175 @@ function renderShadowing(filter) {
     html += '</div>';
   }
 
+  html += '<button class="shadow-back-top" id="shadowBackTop" onclick="document.getElementById(\'shadowOverlay\').scrollTo({top:0,behavior:\'smooth\'})">⬆</button>';
   inner.innerHTML = html;
 }
+
+// Toggle inline word Chinese meaning
+function toggleWordZh(spanEl) {
+  const zh = spanEl.getAttribute('data-zh');
+  const word = spanEl.getAttribute('data-word');
+  if (!zh && !word) return;
+  
+  // Toggle zh display
+  let zhSpan = spanEl.querySelector('.word-zh-text');
+  if (zhSpan) {
+    zhSpan.remove();
+    spanEl.classList.remove('word-zh-showing');
+  } else {
+    zhSpan = document.createElement('span');
+    zhSpan.className = 'word-zh-text';
+    zhSpan.textContent = zh || '(暂无)';
+    spanEl.appendChild(zhSpan);
+    spanEl.classList.add('word-zh-showing');
+  }
+}
+
+// Inline Chinese dictionary for common words not in vocab-data.js
+const INLINE_ZH = {
+  'the':'这/那','a':'一个','an':'一个','i':'我','me':'我(宾)','my':'我的','you':'你','your':'你的',
+  'he':'他','him':'他(宾)','his':'他的','she':'她','her':'她/她的','it':'它','its':'它的',
+  'we':'我们','us':'我们(宾)','our':'我们的','they':'他们','them':'他们(宾)','their':'他们的',
+  'is':'是','am':'是','are':'是','was':'是(过)','were':'是(过)','be':'是','been':'是(过完)','being':'是(进行)',
+  'have':'有','has':'有','had':'有(过)','do':'做','does':'做','did':'做(过)','done':'做完',
+  'will':'将','would':'会','can':'能','could':'能(过)','may':'可能','might':'可能','shall':'将',
+  'should':'应该','must':'必须','need':'需要','ought':'应该',
+  'not':'不','no':'不/没','yes':'是','and':'和','or':'或','but':'但','so':'所以',
+  'if':'如果','when':'当...时','where':'哪里','what':'什么','who':'谁','how':'如何','why':'为什么',
+  'this':'这个','that':'那个','these':'这些','those':'那些',
+  'here':'这里','there':'那里','now':'现在','then':'然后','just':'仅仅/刚刚','very':'非常',
+  'also':'也','too':'也/太','only':'只','even':'甚至','still':'仍然','already':'已经',
+  'never':'从不','always':'总是','often':'经常','sometimes':'有时','usually':'通常',
+  'about':'关于','after':'之后','before':'之前','between':'之间','through':'通过','during':'在...期间',
+  'with':'和/用','without':'没有','from':'从','into':'进入','onto':'到...上','upon':'在...上',
+  'for':'为了','of':'的','at':'在','in':'在...里','on':'在...上','to':'到/向','by':'被/通过',
+  'up':'上','down':'下','out':'出','off':'离开','over':'在...上方','under':'在...下方',
+  'again':'再次','more':'更多','most':'最','much':'很多','many':'许多','some':'一些','any':'任何',
+  'all':'所有','each':'每个','every':'每个','few':'少数','several':'几个',
+  'one':'一','two':'二','three':'三','four':'四','five':'五','six':'六','seven':'七',
+  'eight':'八','nine':'九','ten':'十','first':'第一','last':'最后','next':'下一个',
+  'new':'新的','old':'旧的','good':'好的','bad':'坏的','big':'大的','small':'小的',
+  'long':'长的','short':'短的','high':'高的','low':'低的','right':'右/对','left':'左',
+  'same':'相同','different':'不同','other':'其他','another':'另一个','such':'这样的',
+  'get':'得到','got':'得到(过)','make':'制作','made':'制作(过)','take':'拿','took':'拿(过)',
+  'give':'给','gave':'给(过)','go':'去','went':'去(过)','gone':'去(过完)',
+  'come':'来','came':'来(过)','see':'看','saw':'看(过)','know':'知道','knew':'知道(过)',
+  'think':'想','thought':'想(过)','say':'说','said':'说(过)','tell':'告诉','told':'告诉(过)',
+  'ask':'问','asked':'问了','find':'找到','found':'找到(过)','want':'想要','put':'放',
+  'keep':'保持','kept':'保持(过)','let':'让','begin':'开始','began':'开始(过)',
+  'seem':'似乎','help':'帮助','show':'展示','showed':'展示(过)','hear':'听到','heard':'听到(过)',
+  'play':'玩','run':'跑','ran':'跑(过)','move':'移动','live':'住/活','believe':'相信',
+  'happen':'发生','happened':'发生了','write':'写','wrote':'写(过)','sit':'坐','sat':'坐(过)',
+  'stand':'站','stood':'站(过)','lose':'失去','lost':'失去(过)','pay':'付钱','paid':'付了',
+  'meet':'遇见','met':'遇见(过)','include':'包括','continue':'继续','set':'设置',
+  'learn':'学习','change':'改变','lead':'领导','led':'领导(过)',
+  'understand':'理解','understood':'理解(过)','watch':'观看','bring':'带来','brought':'带来(过)',
+  'try':'尝试','tried':'尝试(过)','leave':'离开','left':'离开(过)','feel':'感觉','felt':'感觉(过)',
+  'talk':'说话','turn':'转','start':'开始','might':'可能','use':'使用','used':'使用(过)',
+  'look':'看','looked':'看了','call':'打电话','called':'叫了','work':'工作','worked':'工作了',
+  'need':'需要','should':'应该','while':'当...时','because':'因为','since':'自从/因为',
+  'well':'好','really':'真的','quite':'相当','pretty':'相当','enough':'足够',
+  'around':'周围','along':'沿着','away':'远离','back':'回来','together':'一起',
+  'once':'一次','twice':'两次','half':'一半','part':'部分',
+  'day':'天','night':'晚上','time':'时间','year':'年','week':'周','month':'月',
+  'today':'今天','tomorrow':'明天','yesterday':'昨天','morning':'早上','evening':'晚上',
+  'man':'男人','woman':'女人','people':'人们','person':'人','child':'孩子','children':'孩子们',
+  'world':'世界','life':'生活','way':'方式','thing':'东西','place':'地方','home':'家',
+  'hand':'手','head':'头','eye':'眼睛','face':'脸','door':'门','room':'房间',
+  'water':'水','food':'食物','house':'房子','car':'车','book':'书','word':'词/字',
+  'side':'边','end':'结束','point':'点','fact':'事实','problem':'问题','power':'力量',
+  'love':'爱','heart':'心','mind':'头脑','body':'身体','name':'名字','school':'学校',
+  'city':'城市','country':'国家','family':'家庭','friend':'朋友','money':'钱',
+  'hour':'小时','minute':'分钟','moment':'片刻','kind':'种类','sort':'类型',
+  'great':'伟大的','important':'重要的','possible':'可能的','real':'真的','sure':'确定',
+  'true':'真的','free':'自由的/免费的','full':'满的','sure':'确定的','nice':'好的',
+  'hard':'困难的/硬的','simple':'简单的','easy':'容易的','close':'近的','open':'开放的',
+  'own':'自己的','whole':'整个','able':'能够','afraid':'害怕','sorry':'抱歉',
+  'going':'去(进行)','getting':'得到(进行)','trying':'尝试(进行)','looking':'看(进行)',
+  'doing':'做(进行)','saying':'说(进行)','knowing':'知道(进行)','feeling':'感觉(进行)',
+  'thinking':'想(进行)','coming':'来(进行)','making':'制作(进行)','taking':'拿(进行)',
+  'been':'是(过完)','does':'做(三单)','done':'做完','having':'有(进行)',
+  'better':'更好的','best':'最好的','less':'更少','least':'最少',
+  'going':'去','getting':'得到','making':'制作','taking':'拿','looking':'看',
+  'being':'是(进行)','having':'有(进行)','doing':'做(进行)',
+  'oh':'哦','yeah':'是','hey':'嘿','wow':'哇','ok':'好的','okay':'好的',
+  'please':'请','thank':'谢谢','thanks':'谢谢','sorry':'抱歉','hello':'你好',
+  'goodbye':'再见','hi':'嗨','bye':'再见','welcome':'欢迎',
+  'really':'真的','actually':'实际上','probably':'可能','maybe':'也许',
+  'something':'某事','nothing':'没有','everything':'一切','anything':'任何事',
+  'someone':'某人','nobody':'没人','everyone':'每个人','anyone':'任何人',
+  'everywhere':'到处','somewhere':'某处','nowhere':'无处','anywhere':'任何地方',
+  'else':'其他','much':'很多','little':'少的','lot':'很多','bit':'一点',
+  'quite':'相当','rather':'相当','almost':'几乎','especially':'特别',
+  'perhaps':'也许','certainly':'当然','simply':'简单地','exactly':'确切地',
+  'instead':'代替','else':'其他','though':'虽然','whether':'是否',
+  'unless':'除非','until':'直到','except':'除了','among':'在...之中',
+  'toward':'朝向','towards':'朝向','against':'反对','behind':'在...后面',
+  'above':'在...上方','below':'在...下方','beside':'在...旁边','beyond':'超出',
+  'within':'在...之内','without':'没有','among':'在...之中',
+  'let':'让','got':'得到','said':'说了','went':'去了','came':'来了',
+  'saw':'看了','knew':'知道','thought':'想了','took':'拿了',
+  'gave':'给了','told':'告诉了','found':'找到了','kept':'保持了',
+  'felt':'感觉了','left':'离开了','put':'放','ran':'跑了',
+  'sat':'坐了','stood':'站了','heard':'听到了','brought':'带来了',
+  'bought':'买了','paid':'付了','met':'遇见了','won':'赢了',
+  'lost':'失去了','sent':'发送了','built':'建造了','caught':'抓住了',
+  'drove':'开了(车)','drew':'画了','drank':'喝了','fell':'摔了',
+  'flew':'飞了','forgot':'忘了','grew':'长了','hung':'挂了',
+  'held':'拿着','hit':'打','hurt':'伤了','laid':'放','led':'领导了',
+  'lent':'借出','lit':'点燃','meant':'意味着','rode':'骑了',
+  'rose':'升起','shook':'摇了','shut':'关','sang':'唱了','slept':'睡了',
+  'spoke':'说了','spent':'花了','spun':'转了','stuck':'卡住',
+  'swam':'游了','taught':'教了','tore':'撕了','threw':'扔了',
+  'woke':'醒了','wore':'穿了','began':'开始了','broke':'打破了',
+  'chose':'选择了','ate':'吃了','blew':'吹了','bit':'咬',
+  'bound':'绑定','bred':'繁殖','came':'来了','dealt':'处理',
+  'dug':'挖了','fed':'喂了','fled':'逃了','ground':'磨',
+  'knelt':'跪了','laid':'放','leaned':'靠了','leapt':'跳了',
+  'knit':'编织','overcame':'克服了','rid':'摆脱','shrank':'缩小了',
+  'slew':'杀了','slung':'投掷','slit':'切开','spoke':'说了',
+  'strove':'努力','strode':'大步走','strung':'串起','swore':'发誓了',
+  'swept':'扫了','swung':'摇摆','wrung':'拧','clung':' clinging',
+  'spun':'旋转','dove':'潜水','leaned':'倚靠','knelt':'跪下',
+  'gotten':'得到(过完)','spoken':'说(过完)','written':'写(过完)',
+  'broken':'打破(过完)','chosen':'选择(过完)','driven':'驾驶(过完)',
+  'eaten':'吃(过完)','fallen':'掉(过完)','given':'给(过完)',
+  'grown':'成长(过完)','hidden':'藏(过完)','known':'知道(过完)',
+  'lying':'躺着','tied':'绑','rose':'升起','risen':'升起(过完)',
+  'worn':'穿(过完)','thrown':'扔(过完)','sworn':'发誓(过完)',
+  'stolen':'偷(过完)','spoken':'说(过完)','shaken':'摇(过完)',
+  'seen':'看(过完)','sought':'寻求(过完)','sent':'发送(过完)',
+  'set':'设置','shut':'关','spread':'传播','stuck':'卡住(过完)',
+  'struck':'打(过完)','sung':'唱(过完)','swum':'游(过完)',
+  'taken':'拿(过完)','torn':'撕(过完)','told':'告诉(过完)',
+  'thought':'想(过完)','woken':'醒(过完)','won':'赢(过完)',
+  'bought':'买(过完)','brought':'带来(过完)','caught':'抓(过完)',
+  'taught':'教(过完)','fought':'战斗(过完)','sought':'寻找(过完)',
+  'meant':'意味着','dealt':'处理','fed':'喂','fled':'逃跑',
+  'hung':'挂','held':'拿着','lent':'借出','paid':'付款',
+  'sold':'卖','shone':'发光','shot':'射击','spat':'吐',
+  'spelt':'拼写','spilled':'溢出','spilt':'溢出','spoilt':'宠坏',
+  'stank':'发臭','stole':'偷','stuck':'粘住','stung':'刺',
+  'stank':'发臭','sweated':'流汗','wept':'哭泣','bred':'繁殖',
+  'bleed':'流血','blew':'吹','bound':'绑定','burst':'爆发',
+  'cast':'投','cost':'花费','cut':'切','dug':'挖',
+  'forecast':'预测','hit':'打','hurt':'伤害','knit':'编织',
+  'lay':'躺','let':'让','rid':'摆脱','shed':'脱落',
+  'spit':'吐','split':'劈开','thrust':'推','upset':'使不安',
+  'wet':'弄湿','quit':'退出','read':'读','put':'放',
+  'could':'能够(过)','would':'会(过)','should':'应该','might':'可能',
+  'must':'必须','ought':'应该','shall':'将','need':'需要',
+  'was':'是(过)','were':'是(过)','am':'是','is':'是','are':'是',
+  'been':'是(过完)','being':'是(进行)',
+  'having':'有(进行)','does':'做(三单)','did':'做(过)','doing':'做(进行)',
+  'cannot':'不能','can':'能','will':'将','would':'会',
+  'onto':'到...上','upon':'在...上','into':'进入','onto':'到...上',
+  'somethings':'某些事','nothingness':'虚无','anythings':'任何事物',
+  'don':'穿上','doesn':'不做','didn':'没做','isn':'不是',
+  'aren':'不是','wasn':'不是','weren':'不是','won':'赢/将不',
+  'wouldn':'不会','couldn':'不能','shouldn':'不应该','hasn':'没有',
+  'haven':'港口/没有','hadn':'没有'
+};
 
 function stopShadowPlayback() {
   if (shadowCurrentPlaying !== null) {
@@ -3371,7 +3581,7 @@ function stopShadowPlayback() {
     const card = document.getElementById('sc-' + shadowCurrentPlaying);
     if (card) card.classList.remove('sc-playing');
     // Clear highlights
-    document.querySelectorAll('.se-word.highlight[data-idx^="' + shadowCurrentPlaying + '-"]').forEach(el => el.classList.remove('highlight'));
+    { const el = document.getElementById('sen-' + shadowCurrentPlaying); if (el) el.classList.remove('sen-highlight'); }
     shadowCurrentPlaying = null;
   }
 }
@@ -3388,130 +3598,27 @@ function playShadow(idx) {
   const s = SHADOW_SENTENCES[idx];
   const btn = document.getElementById('sp-' + idx);
   const card = document.getElementById('sc-' + idx);
+  const enEl = document.getElementById('sen-' + idx);
   if (!btn || !s) return;
 
   shadowCurrentPlaying = idx;
   btn.classList.add('playing');
   btn.textContent = '⏹';
   card.classList.add('sc-playing');
+  // Whole sentence highlight
+  if (enEl) enEl.classList.add('sen-highlight');
 
-  // Try real human audio first (YouTube native audio)
   const audioFile = s.audio || ('s' + String(idx).padStart(3, '0') + '.mp3');
   const audioUrl = 'shadow-audio-v2/' + audioFile;
-  
-  // Word-by-word highlight timing
-  const words = s.en.split(/\s+/).filter(w => w.length > 0);
-  let highlightTimers = [];
-  
-  function clearHighlightTimers() {
-    highlightTimers.forEach(t => clearTimeout(t));
-    highlightTimers = [];
-  }
-  
-  // Analyze audio to find word boundaries via silence detection
-  function findWordBoundaries(audioBuf, wordCount) {
-    const data = audioBuf.getChannelData(0);
-    const sr = audioBuf.sampleRate;
-    const frameMs = 10; // 10ms frames
-    const frameSize = Math.round(sr * frameMs / 1000);
-    const silenceThreshold = 0.015;
-    const minSilenceMs = 80;
-    const minSilenceFrames = Math.round(minSilenceMs / frameMs);
-    
-    // Compute RMS energy per frame
-    const energies = [];
-    for (let i = 0; i < data.length; i += frameSize) {
-      let sum = 0;
-      const end = Math.min(i + frameSize, data.length);
-      for (let j = i; j < end; j++) sum += data[j] * data[j];
-      energies.push(Math.sqrt(sum / (end - i)));
-    }
-    
-    // Find silence regions (consecutive low-energy frames)
-    const silences = [];
-    let inSil = false, silStart = 0;
-    for (let i = 0; i < energies.length; i++) {
-      if (energies[i] < silenceThreshold) {
-        if (!inSil) { inSil = true; silStart = i; }
-      } else {
-        if (inSil) {
-          inSil = false;
-          if (i - silStart >= minSilenceFrames) {
-            const startMs = silStart * frameMs;
-            const endMs = i * frameMs;
-            silences.push({ start: startMs, end: endMs, mid: (startMs + endMs) / 2, len: endMs - startMs });
-          }
-        }
-      }
-    }
-    if (inSil && energies.length - silStart >= minSilenceFrames) {
-      const startMs = silStart * frameMs;
-      const endMs = energies.length * frameMs;
-      silences.push({ start: startMs, end: endMs, mid: (startMs + endMs) / 2, len: endMs - startMs });
-    }
-    
-    if (silences.length === 0) return null;
-    
-    // Pick the best N-1 silences for word boundaries
-    const needed = Math.max(1, wordCount - 1);
-    const audioMs = (data.length / sr) * 1000;
-    const margin = audioMs * 0.05;
-    // Prefer interior silences (not leading/trailing)
-    const interior = silences.filter(s => s.start > margin && s.end < audioMs - margin);
-    const pool = interior.length >= needed ? interior : silences;
-    // Sort by length desc, pick top N-1, then re-sort by time
-    const chosen = pool.sort((a, b) => b.len - a.len).slice(0, needed).sort((a, b) => a.start - b.start);
-    
-    // Build word start times
-    const boundaries = [0]; // first word starts at 0
-    chosen.forEach(s => boundaries.push(s.mid));
-    return boundaries;
-  }
-  
-  function startHighlightFromBoundaries(boundaries, totalDurationMs) {
-    clearHighlightTimers();
-    for (let wi = 0; wi < words.length; wi++) {
-      const startTime = (wi < boundaries.length) ? boundaries[wi] : (totalDurationMs * wi / words.length);
-      const t = setTimeout(() => {
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-        if (wordEl) wordEl.classList.add('highlight');
-      }, startTime);
-      highlightTimers.push(t);
-    }
-  }
-  
-  function startHighlight(durationMs) {
-    clearHighlightTimers();
-    if (words.length === 0) return;
-    const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
-    const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
-    const gapMs = 40;
-    const totalGaps = (words.length - 1) * gapMs;
-    const speechMs = Math.max(1, durationMs - totalGaps);
-    let offset = 0;
-    words.forEach((w, wi) => {
-      const wordMs = (charLens[wi] / totalChars) * speechMs;
-      const t = setTimeout(() => {
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-        if (wordEl) wordEl.classList.add('highlight');
-      }, offset);
-      highlightTimers.push(t);
-      offset += wordMs + gapMs;
-    });
-  }
-  
+
   function onPlayEnd() {
     btn.classList.remove('playing');
     btn.textContent = '▶';
     card.classList.remove('sc-playing');
-    document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
+    if (enEl) enEl.classList.remove('sen-highlight');
     shadowCurrentPlaying = null;
-    clearHighlightTimers();
   }
-  
-  // Use Web Audio API for real audio (same engine as word pronunciation)
+
   if (audioCtx.state === 'suspended') audioCtx.resume();
   
   btn.classList.add('loading');
@@ -3524,31 +3631,14 @@ function playShadow(idx) {
   }).then(audioBuf => {
     const source = audioCtx.createBufferSource();
     source.buffer = audioBuf;
-    
-    // Slow mode: reduce playback rate
-    if (shadowSlowMode) {
-      source.playbackRate.value = 0.6;
-    }
-    
+    if (shadowSlowMode) source.playbackRate.value = 0.6;
     source.connect(audioCtx.destination);
-    const durationMs = (audioBuf.duration / (shadowSlowMode ? 0.6 : 1)) * 1000;
-    // Try silence-based word boundary detection for accurate highlight sync
-    const boundaries = findWordBoundaries(audioBuf, words.length);
-    if (boundaries && boundaries.length === words.length) {
-      startHighlightFromBoundaries(boundaries, durationMs);
-    } else {
-      startHighlight(durationMs);
-    }
-    
-    source.onended = () => {
-      if (shadowCurrentPlaying === idx) onPlayEnd();
-    };
+    source.onended = () => { if (shadowCurrentPlaying === idx) onPlayEnd(); };
     source.start(0);
     currentSource = source;
     currentKey = 'shadow-' + idx;
   }).catch(e => {
     btn.classList.remove('loading');
-    // Fallback to browser TTS
     console.log('Shadow audio not found, falling back to TTS for', idx);
     const synth = window.speechSynthesis;
     synth.cancel();
@@ -3558,50 +3648,10 @@ function playShadow(idx) {
     utt.pitch = 1.0;
     const voices = synth.getVoices();
     const preferred = voices.find(v => v.lang === 'en-US' && !v.localService) ||
-      voices.find(v => v.lang === 'en-US') ||
-      voices.find(v => v.lang.startsWith('en'));
+      voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
     if (preferred) utt.voice = preferred;
-    const wordDuration = (utt.rate > 0.7 ? 280 : 450);
-    const charLens = words.map(w => w.replace(/[^a-zA-Z]/g, '').length);
-    const totalChars = charLens.reduce((a, b) => a + b, 0) || 1;
-    const gapMs = 40;
-    const totalGaps = (words.length - 1) * gapMs;
-    const speechMs = Math.max(1, words.length * wordDuration - totalGaps);
-    let tOffset = 0;
-    const fbTimers = [];
-    // Use onboundary for precise word tracking (Chrome/Edge support it)
-    let boundaryIdx = 0;
-    utt.onboundary = (ev) => {
-      if (ev.name === 'word') {
-        // Clear previous highlights
-        document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-        // Find which word this boundary corresponds to
-        const spokenWord = s.en.substring(ev.charIndex, ev.charIndex + ev.charLength).trim().toLowerCase();
-        for (let wi = boundaryIdx; wi < words.length; wi++) {
-          if (words[wi].toLowerCase().replace(/[^a-z]/g, '') === spokenWord.replace(/[^a-z]/g, '')) {
-            const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-            if (wordEl) wordEl.classList.add('highlight');
-            boundaryIdx = wi + 1;
-            break;
-          }
-        }
-      }
-    };
-    // Fallback timers in case onboundary doesn't fire
-    words.forEach((w, wi) => {
-      const wMs = (charLens[wi] / totalChars) * speechMs;
-      const t = setTimeout(() => {
-        if (boundaryIdx === 0) { // onboundary never fired, use estimate
-          document.querySelectorAll('.se-word[data-idx^="' + idx + '-"]').forEach(el => el.classList.remove('highlight'));
-          const wordEl = document.querySelector('.se-word[data-idx="' + idx + '-' + wi + '"]');
-          if (wordEl) wordEl.classList.add('highlight');
-        }
-      }, tOffset);
-      fbTimers.push(t);
-      tOffset += wMs + gapMs;
-    });
-    utt.onend = () => { onPlayEnd(); fbTimers.forEach(t => clearTimeout(t)); };
-    utt.onerror = () => { onPlayEnd(); fbTimers.forEach(t => clearTimeout(t)); };
+    utt.onend = () => { onPlayEnd(); };
+    utt.onerror = () => { onPlayEnd(); };
     synth.speak(utt);
   });
 }
