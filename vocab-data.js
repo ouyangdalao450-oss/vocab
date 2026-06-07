@@ -7294,5 +7294,366 @@ const VOCAB_DATA = [
         "subcategoryZh": "补充高频名词"
       }
     ]
-  }
+  },
+  {
+  "date": "📅 2026-06-08（40词）",
+  "words": [
+    {
+      "en": "version",
+      "phonetic": "/ˈvɜːrʒən/",
+      "pos": "n.",
+      "meaning": "❶ 版本（某物的特定形式） ❷ 说法（某人对事件的描述）",
+      "example": "What version of the software are you using?",
+      "root": "vers(转)+ion → 转变后的形态 → 版本",
+      "exampleZh": "你在用哪个版本的软件？"
+    },
+    {
+      "en": "website",
+      "phonetic": "/ˈwebsaɪt/",
+      "pos": "n.",
+      "meaning": "❶ 网站（互联网上的网页集合）",
+      "example": "I found the information on their website.",
+      "root": "web(网)+site(地点) → 网上的地点 → 网站",
+      "exampleZh": "我在他们的网站上找到了信息。"
+    },
+    {
+      "en": "video version",
+      "phonetic": "/ˈvɪdioʊ ˈvɜːrʒən/",
+      "pos": "短语",
+      "meaning": "视频版本",
+      "example": "I prefer the video version over the audio.",
+      "compound": "🔗",
+      "exampleZh": "比起音频版我更喜欢视频版本。"
+    },
+    {
+      "en": "subtitle",
+      "phonetic": "/ˈsʌbˌtaɪtəl/",
+      "pos": "n.",
+      "meaning": "❶ 字幕（影视中对白的文字显示） ❷ 副标题（标题下面的补充标题）",
+      "example": "Turn on the subtitles so I can understand better.",
+      "root": "sub(下面)+title(标题) → 标题下面的文字 → 字幕/副标题",
+      "exampleZh": "打开字幕让我能更好地理解。"
+    },
+    {
+      "en": "come up",
+      "phonetic": "/kʌm ʌp/",
+      "pos": "短语动词",
+      "meaning": "❶ 即将到来（事件快要发生） ❷ 出现（问题、话题被提起） ❸ 走近、走上前来",
+      "example": "Something came up at the last minute.",
+      "exampleZh": "最后一刻出了点事。"
+    },
+    {
+      "en": "touch",
+      "phonetic": "/tʌtʃ/",
+      "pos": "v.",
+      "meaning": "❶ 触摸、碰（用手接触） ❷ 联系（与某人保持/取得联络）",
+      "example": "Don't touch the hot stove!",
+      "exampleZh": "别碰热的炉子！"
+    },
+    {
+      "en": "move away",
+      "phonetic": "/muːv əˈweɪ/",
+      "pos": "短语动词",
+      "meaning": "❶ 搬走（离开原来住的地方） ❷ 远离（退后、移开）",
+      "example": "They moved away to another city.",
+      "compound": "🔗",
+      "exampleZh": "他们搬去了另一个城市。"
+    },
+    {
+      "en": "contact",
+      "phonetic": "/ˈkɑːntækt/",
+      "pos": "n.",
+      "meaning": "❶ 联系、联络（与某人沟通） ❷ 接触（物理上的碰触） ❸ 联系人（可以联络的人）",
+      "example": "I lost contact with my old friends.",
+      "root": "con(共同)+tact(触) → 互相触碰 → 接触/联系",
+      "exampleZh": "我和老朋友们失去了联系。"
+    },
+    {
+      "en": "a couple of",
+      "phonetic": "/ə ˈkʌpəl əv/",
+      "pos": "短语",
+      "meaning": "❶ 两个、一对 ❷ 几个、少量（非精确数量）",
+      "example": "I'll be there in a couple of minutes.",
+      "compound": "🔗",
+      "exampleZh": "我几分钟后就到。"
+    },
+    {
+      "en": "friendship",
+      "phonetic": "/ˈfrendʃɪp/",
+      "pos": "n.",
+      "meaning": "❶ 友谊、友情（朋友之间的关系）",
+      "example": "Their friendship has lasted for years.",
+      "root": "friend(朋友)+ship(状态) → 朋友之间的状态 → 友谊",
+      "exampleZh": "他们的友谊持续了很多年。"
+    },
+    {
+      "en": "ship",
+      "phonetic": "/ʃɪp/",
+      "pos": "n.",
+      "meaning": "❶ 船、舰（大型水上交通工具） ❷ 运输、寄送（用船/飞机运送货物）",
+      "example": "The ship sailed across the ocean.",
+      "exampleZh": "那艘船航行穿越了大洋。"
+    },
+    {
+      "en": "spaceship",
+      "phonetic": "/ˈspeɪsʃɪp/",
+      "pos": "n.",
+      "meaning": "❶ 宇宙飞船（太空中的飞行器）",
+      "example": "The spaceship returned to Earth safely.",
+      "root": "space(太空)+ship(船) → 太空中的船 → 宇宙飞船",
+      "compound": "🔗",
+      "exampleZh": "宇宙飞船安全返回了地球。"
+    },
+    {
+      "en": "advance",
+      "phonetic": "/ədˈvæns/",
+      "pos": "v.",
+      "meaning": "❶ 前进、推进（向前移动） ❷ 提前（使时间更早） ❸ 进步、进展（取得发展）",
+      "example": "Technology has advanced rapidly in recent years.",
+      "root": "ad(向前)+vance(走) → 向前走 → 前进/进步",
+      "exampleZh": "近年来技术进步飞速。"
+    },
+    {
+      "en": "how often",
+      "phonetic": "/haʊ ˈɔːfən/",
+      "pos": "短语",
+      "meaning": "多久一次；多频繁（询问频率）",
+      "example": "How often do you go to the gym?",
+      "compound": "🔗",
+      "exampleZh": "你多久去一次健身房？"
+    },
+    {
+      "en": "quite",
+      "phonetic": "/kwaɪt/",
+      "pos": "adv.",
+      "meaning": "❶ 相当、挺（程度较大但不到极端） ❷ 完全、十分（表示程度彻底）",
+      "example": "The movie was quite good, actually.",
+      "exampleZh": "那部电影其实挺不错的。"
+    },
+    {
+      "en": "quite good",
+      "phonetic": "/kwaɪt ɡʊd/",
+      "pos": "短语",
+      "meaning": "挺不错；相当好（程度较大但未到excellent）",
+      "example": "The food here is quite good.",
+      "compound": "🔗",
+      "exampleZh": "这里的食物挺不错的。"
+    },
+    {
+      "en": "quite a lot",
+      "phonetic": "/kwaɪt ə lɑːt/",
+      "pos": "短语",
+      "meaning": "相当多；不少（数量比预期大）",
+      "example": "There were quite a lot of people at the party.",
+      "compound": "🔗",
+      "exampleZh": "派对上人相当多。"
+    },
+    {
+      "en": "social media",
+      "phonetic": "/ˈsoʊʃəl ˈmiːdiə/",
+      "pos": "短语",
+      "meaning": "社交媒体（如Facebook、Twitter、微信等）",
+      "example": "She spends too much time on social media.",
+      "compound": "🔗",
+      "exampleZh": "她在社交媒体上花太多时间了。"
+    },
+    {
+      "en": "little",
+      "phonetic": "/ˈlɪtəl/",
+      "pos": "adj.",
+      "meaning": "❶ 少的、不多的（量小） ❷ 小的（体型小）",
+      "example": "There's little time left before the deadline.",
+      "exampleZh": "离截止时间只剩很少的时间了。"
+    },
+    {
+      "en": "lose",
+      "phonetic": "/luːz/",
+      "pos": "v.",
+      "meaning": "❶ 失去、丢失（不再拥有） ❷ 输掉（比赛、争论中失败）",
+      "example": "I don't want to lose this opportunity.",
+      "irr": "lose→lost→lost",
+      "exampleZh": "我不想失去这个机会。"
+    },
+    {
+      "en": "argument",
+      "phonetic": "/ˈɑːrɡjʊmənt/",
+      "pos": "n.",
+      "meaning": "❶ 争论、争吵（口头上的分歧） ❷ 论点、论据（支持观点的理由）",
+      "example": "They had an argument about money.",
+      "root": "argu(争论)+ment(名词) → 争论的行为/内容 → 争吵/论点",
+      "exampleZh": "他们因为钱吵了一架。"
+    },
+    {
+      "en": "decide",
+      "phonetic": "/dɪˈsaɪd/",
+      "pos": "v.",
+      "meaning": "❶ 决定（做出选择） ❷ 下决心（经过考虑后做判断）",
+      "example": "I can't decide what to eat for dinner.",
+      "root": "de(离开)+cide(切) → 切断其他选项 → 决定",
+      "exampleZh": "我决定不了晚饭吃什么。"
+    },
+    {
+      "en": "definitely",
+      "phonetic": "/ˈdefənətli/",
+      "pos": "adv.",
+      "meaning": "❶ 肯定地、一定（毫无疑问地）",
+      "example": "I will definitely be there tomorrow.",
+      "root": "de(向下)+fin(界限)+ite+ly → 明确划界地 → 肯定地",
+      "exampleZh": "我明天一定会到。"
+    },
+    {
+      "en": "new",
+      "phonetic": "/njuː/",
+      "pos": "adj.",
+      "meaning": "❶ 新的（刚出现/刚获得的）",
+      "example": "She bought a new phone last week.",
+      "exampleZh": "她上周买了一部新手机。"
+    },
+    {
+      "en": "common",
+      "phonetic": "/ˈkɑːmən/",
+      "pos": "adj.",
+      "meaning": "❶ 常见的、普遍的（频繁发生/存在的） ❷ 共同的、共有的（多人共享的）",
+      "example": "It's a common mistake among beginners.",
+      "root": "com(共同)+mon(公共) → 大家共有的 → 常见的/共同的",
+      "exampleZh": "这是初学者常犯的错误。"
+    },
+    {
+      "en": "so much in common",
+      "phonetic": "/soʊ mʌtʃ ɪn ˈkɑːmən/",
+      "pos": "短语",
+      "meaning": "有很多共同点（彼此非常相似）",
+      "example": "We have so much in common, it's surprising.",
+      "compound": "🔗",
+      "exampleZh": "我们有这么多共同点，真令人惊讶。"
+    },
+    {
+      "en": "situation",
+      "phonetic": "/ˌsɪtʃuˈeɪʃən/",
+      "pos": "n.",
+      "meaning": "❶ 情况、处境（某时的综合状况） ❷ 位置、位置状况（某物所处的环境）",
+      "example": "The situation is getting better now.",
+      "root": "situ(位置)+ation(状态) → 处于某个位置的状态 → 处境/情况",
+      "exampleZh": "现在情况正在好转。"
+    },
+    {
+      "en": "stay in touch",
+      "phonetic": "/steɪ ɪn tʌtʃ/",
+      "pos": "短语",
+      "meaning": "保持联系（持续与某人联络）",
+      "example": "Let's stay in touch after you move.",
+      "compound": "🔗",
+      "exampleZh": "你搬走后我们保持联系。"
+    },
+    {
+      "en": "keep in touch",
+      "phonetic": "/kiːp ɪn tʌtʃ/",
+      "pos": "短语",
+      "meaning": "保持联系（与stay in touch同义）",
+      "example": "Please keep in touch with me.",
+      "compound": "🔗",
+      "exampleZh": "请和我保持联系。"
+    },
+    {
+      "en": "lose touch",
+      "phonetic": "/luːz tʌtʃ/",
+      "pos": "短语",
+      "meaning": "失去联系（不再与某人联络）",
+      "example": "We lost touch after graduation.",
+      "compound": "🔗",
+      "exampleZh": "毕业后我们就失去了联系。"
+    },
+    {
+      "en": "have something in common",
+      "phonetic": "/hæv ˈsʌmθɪŋ ɪn ˈkɑːmən/",
+      "pos": "短语",
+      "meaning": "有共同点（在某些方面相似）",
+      "example": "We have something in common — we both love music.",
+      "compound": "🔗",
+      "exampleZh": "我们有共同点——我们都热爱音乐。"
+    },
+    {
+      "en": "have a lot in common",
+      "phonetic": "/hæv ə lɑːt ɪn ˈkɑːmən/",
+      "pos": "短语",
+      "meaning": "有很多共同点",
+      "example": "They have a lot in common and get along well.",
+      "compound": "🔗",
+      "exampleZh": "他们有很多共同点，相处得很好。"
+    },
+    {
+      "en": "have so much in common",
+      "phonetic": "/hæv soʊ mʌtʃ ɪn ˈkɑːmən/",
+      "pos": "短语",
+      "meaning": "有非常多共同点（程度比a lot更强）",
+      "example": "We have so much in common that it feels like we've known each other forever.",
+      "compound": "🔗",
+      "exampleZh": "我们有这么多共同点，感觉像认识了一辈子。"
+    },
+    {
+      "en": "get on well with",
+      "phonetic": "/ɡet ɒn wel wɪð/",
+      "pos": "短语",
+      "meaning": "和……相处得好（与某人关系融洽）",
+      "example": "She gets on well with all her colleagues.",
+      "compound": "🔗",
+      "exampleZh": "她和所有同事都相处得很好。"
+    },
+    {
+      "en": "get on very well together",
+      "phonetic": "/ɡet ɒn ˈveri wel təˈɡeðər/",
+      "pos": "短语",
+      "meaning": "相处得非常好（关系特别融洽）",
+      "example": "They get on very well together despite their differences.",
+      "compound": "🔗",
+      "exampleZh": "尽管有分歧，他们相处得非常好。"
+    },
+    {
+      "en": "in advance",
+      "phonetic": "/ɪn ədˈvæns/",
+      "pos": "短语",
+      "meaning": "提前、预先（在某个时间之前）",
+      "example": "Please let me know in advance if you can't come.",
+      "compound": "🔗",
+      "exampleZh": "如果你不能来请提前告诉我。"
+    },
+    {
+      "en": "at least",
+      "phonetic": "/æt liːst/",
+      "pos": "短语",
+      "meaning": "❶ 至少（表示最低限度） ❷ 起码（表示安慰语气）",
+      "example": "At least we tried our best.",
+      "compound": "🔗",
+      "exampleZh": "至少我们尽力了。"
+    },
+    {
+      "en": "used to",
+      "phonetic": "/ˈjuːst tuː/",
+      "pos": "短语",
+      "meaning": "过去经常；曾经（表示过去习惯性动作或状态，现在已不如此）",
+      "example": "I used to play basketball every day.",
+      "compound": "🔗",
+      "exampleZh": "我过去每天都打篮球。"
+    },
+    {
+      "en": "once every month",
+      "phonetic": "/wʌns ˈevri mʌnθ/",
+      "pos": "短语",
+      "meaning": "每月一次",
+      "example": "We meet once every month to discuss progress.",
+      "compound": "🔗",
+      "exampleZh": "我们每月见一次面讨论进展。"
+    },
+    {
+      "en": "once every couple of months",
+      "phonetic": "/wʌns ˈevri ˈkʌpəl əv mʌnθs/",
+      "pos": "短语",
+      "meaning": "每隔几个月一次",
+      "example": "I visit my grandparents once every couple of months.",
+      "compound": "🔗",
+      "exampleZh": "我每隔几个月去看一次爷爷奶奶。"
+    }
+  ]
+}
+
 ];
