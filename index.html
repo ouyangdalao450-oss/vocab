@@ -329,6 +329,8 @@ window.onerror = function(msg, src, line, col, err) {
   document.body.prepend(d);
   setTimeout(() => d.remove(), 8000);
 };
+/* VERSION CHECK - if you see v67 in console, you have the latest */
+console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
 /* 例句发音 */
 .ex-speak-btn { background:none; border:none; font-size:1.05em; padding:1px 5px; border-radius:6px; cursor:pointer; vertical-align:middle; transition:transform 0.1s; opacity:0.7; }
 .ex-speak-btn:hover { opacity:1; }
@@ -2447,8 +2449,24 @@ function getMergedData() {
 
 
 /* ===== Service Worker（可选离线）===== */
+
+/* NUCLEAR CACHE BUST: force unregister all old SWs */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=67').catch(()=>{});
+  navigator.serviceWorker.getRegistrations().then(function(regs) {
+    regs.forEach(function(reg) {
+      var swUrl = reg.active && reg.active.scriptURL || '';
+      if (!swUrl.includes('v=67') && !swUrl.includes('v=68')) {
+        console.log('[VOCAB] Unregistering old SW:', swUrl);
+        reg.unregister().then(function() {
+          console.log('[VOCAB] Old SW unregistered, reloading...');
+          window.location.reload();
+        });
+      }
+    });
+  });
+}
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js?v=68').catch(()=>{});
 }
 // 快捷键：Enter下一题 + ABCD选择选项
 document.addEventListener('keydown', function(e) {
