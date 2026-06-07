@@ -577,8 +577,12 @@ html { scroll-behavior:smooth; }
 @keyframes popIn { from { opacity:0; transform:scale(0.9) translateY(4px); } to { opacity:1; transform:scale(1) translateY(0); } }
 
 </style>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 </head>
-<body>
+<body><div id="verBanner" style="position:fixed;top:0;left:0;right:0;background:#27ae60;color:#fff;padding:8px 16px;z-index:999999;font-size:14px;text-align:center;cursor:pointer" onclick="this.remove()">✅ 词汇网站 v68 已加载 — 点击关闭此提示</div>
+
 
 <div class="top">
   <h1>欧神的专属英语学习网</h1>
@@ -613,7 +617,7 @@ html { scroll-behavior:smooth; }
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260608c"></script>
+<script src="vocab-data.js?v=20260608d_nocache"></script>
 <script>
 
 /* 例句发音 */
@@ -2466,7 +2470,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=68').catch(()=>{});
+  // SW temporarily disabled for cache fix // navigator.serviceWorker.register('sw.js?v=68').catch(()=>{});
 }
 // 快捷键：Enter下一题 + ABCD选择选项
 document.addEventListener('keydown', function(e) {
