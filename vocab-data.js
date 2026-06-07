@@ -7672,5 +7672,4 @@ const VOCAB_DATA = [
     }
   ]
 }
-
 ];
