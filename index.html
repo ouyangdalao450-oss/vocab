@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -331,6 +331,21 @@ window.onerror = function(msg, src, line, col, err) {
 };
 /* VERSION CHECK - if you see v67 in console, you have the latest */
 console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
+/* ===== ONE-TIME CACHE CLEANUP (runs once per session) ===== */
+(function oneTimeCleanup() {
+  if (!('serviceWorker' in navigator)) return;
+  if (sessionStorage.getItem('_vc_cleaned')) return;
+  sessionStorage.setItem('_vc_cleaned', '1');
+  (async function() {
+    try {
+      var didClean = false;
+      var cacheKeys = await caches.keys();
+      for (var i = 0; i < cacheKeys.length; i++) {
+        if (cacheKeys[i] !== 'vocab-v69') { await caches.delete(cacheKeys[i]); didClean = true; console.log('[VOCAB] Deleted old cache:', cacheKeys[i]); }
+      }
+      if (didClean) { console.log('[VOCAB] Cleared old caches, reloading...'); window.location.reload(); }
+    } catch(e) { console.error('[VOCAB] Cleanup error:', e); }
+  })();
 })();
 /* 例句发音 */
 .ex-speak-btn { background:none; border:none; font-size:1.05em; padding:1px 5px; border-radius:6px; cursor:pointer; vertical-align:middle; transition:transform 0.1s; opacity:0.7; }
@@ -579,7 +594,7 @@ html { scroll-behavior:smooth; }
 
 </style>
 </head>
-<body>
+<body><div id="verBanner" style="position:fixed;top:0;left:0;right:0;background:#27ae60;color:#fff;padding:8px 16px;z-index:999999;font-size:14px;text-align:center;cursor:pointer" onclick="this.remove()">✅ 词汇网站 v69 — 点击关闭</div>
 
 
 <div class="top">
@@ -615,7 +630,7 @@ html { scroll-behavior:smooth; }
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=70"></script>
+<script src="vocab-data.js?v=20260609"></script>
 <script>
 
 /* 例句发音 */
@@ -1678,9 +1693,9 @@ function setQuizRange(range, btn) {
 }
 
 function startQuiz() {
+  const words = getWordsByRange(quizState.range);
   if (quizState.mode === 'root') {
     // 词根模式：只用有root且词根提示不泄露答案的词
-    const all = getAllWords();
     const rootWords = words.filter(w => {
       if (!w.root) return false;
       const firstArrow = w.root.indexOf('\u2192');
@@ -1693,6 +1708,7 @@ function startQuiz() {
   } else {
     quizState.questions = generateQuestions(quizState.mode, words, quizState.count);
   }
+  if (quizState.questions.length === 0) { alert('没有可用的测验题目，请检查选择范围'); return; }
   quizState.idx = 0;
   quizState.score = 0;
   quizState.wrong = [];
@@ -2450,7 +2466,11 @@ function getMergedData() {
 }
 
 
-/* ===== Service Worker — 已移除 ===== */
+/* ===== Service Worker（可选离线）===== */
+
+);
+
+}
 
 
 /* ===== 名词500 独立视图 ===== */
