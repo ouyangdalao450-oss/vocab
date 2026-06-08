@@ -331,6 +331,17 @@ window.onerror = function(msg, src, line, col, err) {
 };
 /* VERSION CHECK - if you see v67 in console, you have the latest */
 console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
+/* ===== AGGRESSIVE CACHE CLEANUP ===== */
+(async function cleanOldCaches() {
+  if (!('serviceWorker' in navigator)) return;
+  try {
+    const regs = await navigator.serviceWorker.getRegistrations();
+    for (const reg of regs) { await reg.unregister(); console.log('[VOCAB] Unregistered old SW'); }
+    const cacheKeys = await caches.keys();
+    for (const key of cacheKeys) { await caches.delete(key); console.log('[VOCAB] Deleted cache:', key); }
+    if (regs.length > 0 || cacheKeys.length > 0) { console.log('[VOCAB] Cleared stale data, reloading...'); window.location.reload(); }
+  } catch(e) { console.error('[VOCAB] Cleanup error:', e); }
+})();
 /* 例句发音 */
 .ex-speak-btn { background:none; border:none; font-size:1.05em; padding:1px 5px; border-radius:6px; cursor:pointer; vertical-align:middle; transition:transform 0.1s; opacity:0.7; }
 .ex-speak-btn:hover { opacity:1; }
@@ -578,7 +589,8 @@ html { scroll-behavior:smooth; }
 
 </style>
 </head>
-<body>
+<body><div id="verBanner" style="position:fixed;top:0;left:0;right:0;background:#27ae60;color:#fff;padding:8px 16px;z-index:999999;font-size:14px;text-align:center;cursor:pointer" onclick="this.remove()">✅ 词汇网站 v69 — 点击关闭</div>
+
 
 <div class="top">
   <h1>欧神的专属英语学习网</h1>
@@ -613,7 +625,7 @@ html { scroll-behavior:smooth; }
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260608c"></script>
+<script src="vocab-data.js?v=20260609"></script>
 <script>
 
 /* 例句发音 */
@@ -2455,7 +2467,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function(regs) {
     regs.forEach(function(reg) {
       var swUrl = reg.active && reg.active.scriptURL || '';
-      if (!swUrl.includes('v=67') && !swUrl.includes('v=68')) {
+      if (!swUrl.includes('v=69') && !swUrl.includes('v=69')) {
         console.log('[VOCAB] Unregistering old SW:', swUrl);
         reg.unregister().then(function() {
           console.log('[VOCAB] Old SW unregistered, reloading...');
@@ -2466,7 +2478,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=68').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=69').catch(()=>{});
 }
 // 快捷键：Enter下一题 + ABCD选择选项
 document.addEventListener('keydown', function(e) {
