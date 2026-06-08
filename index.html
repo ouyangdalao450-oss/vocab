@@ -1547,11 +1547,13 @@ function generateQuestions(mode, words, count) {
       options = shuffle([w, ...rootDist, ...fill].slice(0,4).map(x => ({ display: x.en, key: x.en })));
     }
     // 检查词根提示是否泄露答案：提示中包含单词本身的就不适合出题
-    const firstArrow = w.root.indexOf('\u2192');
-    const rootHint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
-    const wordParts = w.en.toLowerCase().split(/\s+/).filter(sw => sw.length > 2);
-    const rootLeaks = wordParts.some(sw => rootHint.toLowerCase().includes(sw));
-    if (rootLeaks && mode === 'root') { q._rootLeaks = true; }
+    if (w.root) {
+      const firstArrow = w.root.indexOf('\u2192');
+      const rootHint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
+      const wordParts = w.en.toLowerCase().split(/\s+/).filter(sw => sw.length > 2);
+      const rootLeaks = wordParts.some(sw => rootHint.toLowerCase().includes(sw));
+      if (rootLeaks && mode === 'root') { q._rootLeaks = true; }
+    }
     q.options = options;
     return q;
   });
