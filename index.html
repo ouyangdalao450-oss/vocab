@@ -331,16 +331,21 @@ window.onerror = function(msg, src, line, col, err) {
 };
 /* VERSION CHECK - if you see v67 in console, you have the latest */
 console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
-/* ===== AGGRESSIVE CACHE CLEANUP ===== */
-(async function cleanOldCaches() {
+/* ===== ONE-TIME CACHE CLEANUP (runs once per session) ===== */
+(function oneTimeCleanup() {
   if (!('serviceWorker' in navigator)) return;
-  try {
-    const regs = await navigator.serviceWorker.getRegistrations();
-    for (const reg of regs) { await reg.unregister(); console.log('[VOCAB] Unregistered old SW'); }
-    const cacheKeys = await caches.keys();
-    for (const key of cacheKeys) { await caches.delete(key); console.log('[VOCAB] Deleted cache:', key); }
-    if (regs.length > 0 || cacheKeys.length > 0) { console.log('[VOCAB] Cleared stale data, reloading...'); window.location.reload(); }
-  } catch(e) { console.error('[VOCAB] Cleanup error:', e); }
+  if (sessionStorage.getItem('_vc_cleaned')) return;
+  sessionStorage.setItem('_vc_cleaned', '1');
+  (async function() {
+    try {
+      var didClean = false;
+      var cacheKeys = await caches.keys();
+      for (var i = 0; i < cacheKeys.length; i++) {
+        if (cacheKeys[i] !== 'vocab-v69') { await caches.delete(cacheKeys[i]); didClean = true; console.log('[VOCAB] Deleted old cache:', cacheKeys[i]); }
+      }
+      if (didClean) { console.log('[VOCAB] Cleared old caches, reloading...'); window.location.reload(); }
+    } catch(e) { console.error('[VOCAB] Cleanup error:', e); }
+  })();
 })();
 /* 例句发音 */
 .ex-speak-btn { background:none; border:none; font-size:1.05em; padding:1px 5px; border-radius:6px; cursor:pointer; vertical-align:middle; transition:transform 0.1s; opacity:0.7; }
@@ -2462,55 +2467,7 @@ function getMergedData() {
 
 /* ===== Service Worker（可选离线）===== */
 
-/* NUCLEAR CACHE BUST: force unregister all old SWs */
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(regs) {
-    regs.forEach(function(reg) {
-      var swUrl = reg.active && reg.active.scriptURL || '';
-      if (!swUrl.includes('v=69') && !swUrl.includes('v=69')) {
-        console.log('[VOCAB] Unregistering old SW:', swUrl);
-        reg.unregister().then(function() {
-          console.log('[VOCAB] Old SW unregistered, reloading...');
-          window.location.reload();
-        });
-      }
-    });
-  });
-}
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=69').catch(()=>{});
-}
-// 快捷键：Enter下一题 + ABCD选择选项
-document.addEventListener('keydown', function(e) {
-  // 排除输入框内的按键
-  if (e.target && e.target.tagName === 'INPUT') {
-    // 输入框内只处理Enter
-    return;
-  }
-  // Enter → 下一题
-  if (e.key === 'Enter') {
-    const btn = document.getElementById('quizNextBtn');
-    if (btn && btn.style.display !== 'none' && quizState.answered) {
-      e.preventDefault();
-      nextQuestion();
-    }
-    return;
-  }
-  // A-Z → 选择对应选项（支持任意数量选项）
-  if (!quizState.answered && /^[a-zA-Z]$/.test(e.key)) {
-    const idx = e.key.toUpperCase().charCodeAt(0) - 65;
-    const opts = document.querySelectorAll('.quiz-opt');
-    if (idx < opts.length) {
-      e.preventDefault();
-      if (opts[idx].getAttribute('onclick')?.includes('selectListenSpellMeaning')) {
-        selectListenSpellMeaning(opts[idx], false);
-      } else {
-        selectOption(opts[idx]);
-      }
-    }
-    return;
-  }
-});
+);
 
 }
 
