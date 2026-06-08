@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -1859,27 +1859,29 @@ function quizPlayAudio(word, btn) {
 
 /* ===== 测验键盘快捷键 ===== */
 document.addEventListener('keydown', function(e) {
-  // 只在测验进行中生效（quizInner 可见时）
-  const qi = document.getElementById('quizInner');
-  if (!qi || !qi.offsetParent) return;
+  // 只在测验进行中生效（quizOverlay 激活时）
+  const overlay = document.getElementById('quizOverlay');
+  if (!overlay || !overlay.classList.contains('active')) return;
   // 拼写模式跳过，由 input 自己处理
   const q = quizState.questions && quizState.questions[quizState.idx];
   if (q && (q.mode === 'spell' || q.mode === 'listenSpell')) return;
   // 如果焦点在 input/textarea 里，跳过
   const tag = document.activeElement && document.activeElement.tagName;
   if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+  // 输入法合成中跳过
+  if (e.isComposing || e.keyCode === 229) return;
 
-  const key = e.key.toUpperCase();
-  // ABCD 选择选项
-  if (['A','B','C','D'].includes(key) && !quizState.answered) {
+  // 用 e.code 检测物理按键（不受输入法影响）
+  const codeMap = { 'KeyA':0, 'KeyB':1, 'KeyC':2, 'KeyD':3 };
+  if (codeMap[e.code] !== undefined && !quizState.answered) {
     e.preventDefault();
-    const idx = key.charCodeAt(0) - 65;
+    const idx = codeMap[e.code];
     const opts = document.querySelectorAll('.quiz-opt');
     if (opts[idx]) selectOption(opts[idx]);
     return;
   }
   // Enter / 空格 → 下一题（已答题时）
-  if ((e.key === 'Enter' || e.key === ' ') && quizState.answered) {
+  if ((e.key === 'Enter' || e.code === 'Space') && quizState.answered) {
     e.preventDefault();
     nextQuestion();
     return;
