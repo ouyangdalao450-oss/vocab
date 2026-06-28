@@ -308,7 +308,7 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 .nouns-view { display:none; padding-bottom:80px; }
 .nouns-view.active { display:block; }
 .content.nouns-active { display:none; }
-.verbs-active { display:none; }
+.content.verbs-active { display:none; }
 .subcat-nav { display:flex; flex-wrap:wrap; gap:6px; padding:10px 12px; margin-bottom:10px; background:linear-gradient(90deg,#fff8e1,#fff3e0); border-radius:12px; position:sticky; top:56px; z-index:5; }
 .subcat-btn { padding:5px 12px; border-radius:14px; border:1.5px solid #ffb74d; background:#fff; color:#e65100; font-size:0.76em; font-weight:600; cursor:pointer; white-space:nowrap; transition:all 0.15s; }
 .subcat-btn:hover, .subcat-btn:active { background:#ff9800; color:#fff; }
@@ -437,9 +437,9 @@ console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
 
 
 /* ===== 动词200视图 ===== */
-.verbs-btn { background:#2196F3; color:#fff; border:none; padding:8px 14px; border-radius:8px; font-size:14px; cursor:pointer; }
-.verbs-btn:hover { background:#1976D2; }
-.verbs-btn:active { background:#0D47A1; }
+.verbs-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #2196F3; border-radius:20px; background:#fff; color:#2196F3; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
+.verbs-btn:hover { background:#2196F3; color:#fff; }
+.verbs-btn:active { background:#e3f2fd; }
 .verbs-view { display:none; padding-bottom:80px; }
 .verbs-view.active { display:block; }
 .verbs-top { display:flex; align-items:center; justify-content:space-between; padding:8px 0 12px; }
@@ -626,9 +626,7 @@ html { scroll-behavior:smooth; }
 
 </style>
 </head>
-<body><div id="verBanner" style="position:fixed;top:0;left:0;right:0;background:#27ae60;color:#fff;padding:8px 16px;z-index:999999;font-size:14px;text-align:center;cursor:pointer" onclick="this.remove()">✅ 词汇网站 v69 — 点击关闭</div>
-
-
+<body>
 <div class="top">
   <h1>欧神的专属英语学习网</h1>
   <div class="search-wrap">
