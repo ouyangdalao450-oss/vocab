@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -82,6 +82,7 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 .speak-btn.playing { background:#c8a8ff; animation:pulse 0.8s ease infinite; }
 .speak-btn.loading { opacity:0.5; }
 .speak-btn.error { background:#ffe0e0; }
+.irr-tag { font-size:11px; color:#2196F3; background:#e3f2fd; padding:1px 5px; border-radius:4px; margin-left:4px; display:inline-block; }
 .compound-tag { font-size:0.7em; margin-left:4px; vertical-align:middle; }
 .tts-mark { font-size:0.65em; color:#764ba2; margin-left:2px; vertical-align:middle; }
 .root-meaning { color:#8b6fc0; font-size:0.82em; line-height:1.4; margin-top:3px; font-style:italic; }
@@ -307,6 +308,7 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 .nouns-view { display:none; padding-bottom:80px; }
 .nouns-view.active { display:block; }
 .content.nouns-active { display:none; }
+.verbs-active { display:none; }
 .subcat-nav { display:flex; flex-wrap:wrap; gap:6px; padding:10px 12px; margin-bottom:10px; background:linear-gradient(90deg,#fff8e1,#fff3e0); border-radius:12px; position:sticky; top:56px; z-index:5; }
 .subcat-btn { padding:5px 12px; border-radius:14px; border:1.5px solid #ffb74d; background:#fff; color:#e65100; font-size:0.76em; font-weight:600; cursor:pointer; white-space:nowrap; transition:all 0.15s; }
 .subcat-btn:hover, .subcat-btn:active { background:#ff9800; color:#fff; }
@@ -431,6 +433,36 @@ console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
 @media (max-width: 400px) {
   .nouns500-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
   .nouns500-card { padding: 8px 4px; font-size: 13px; }
+}
+
+
+/* ===== 动词200视图 ===== */
+.verbs-btn { background:#2196F3; color:#fff; border:none; padding:8px 14px; border-radius:8px; font-size:14px; cursor:pointer; }
+.verbs-btn:hover { background:#1976D2; }
+.verbs-btn:active { background:#0D47A1; }
+.verbs-view { display:none; padding-bottom:80px; }
+.verbs-view.active { display:block; }
+.verbs-top { display:flex; align-items:center; justify-content:space-between; padding:8px 0 12px; }
+.verbs-top h2 { font-size:1.2em; color:#1565C0; }
+.verbs-close-btn { width:36px; height:36px; border-radius:50%; border:none; background:#e3f2fd; color:#2196F3; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.verbs-close-btn:active { background:#bbdefb; }
+.verbs-stats { text-align:center; font-size:0.78em; color:#999; margin-top:4px; }
+.verbs500-panel { margin:10px 0; border-radius:12px; background:#f8f9fa; border:1px solid #e0e0e0; overflow:hidden; transition:all 0.3s; }
+.verbs500-panel.active { border-color:#2196F3; box-shadow:0 2px 8px rgba(33,150,243,0.15); }
+.verbs500-header { padding:10px 14px; font-weight:600; font-size:15px; cursor:pointer; display:flex; align-items:center; gap:6px; user-select:none; }
+.verbs500-header:hover { background:#f0f0f0; }
+.verbs500-arrow { margin-left:auto; font-size:12px; color:#888; }
+.verbs500-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; padding:0 10px 10px; max-height:500px; overflow:hidden; transition:max-height 0.3s,padding 0.3s,opacity 0.3s; }
+.verbs500-grid.collapsed { max-height:0; padding-top:0; padding-bottom:0; opacity:0; }
+.verbs500-card { display:flex; flex-direction:column; align-items:center; padding:10px 6px; border-radius:10px; border:2px solid #e0e0e0; background:#fff; cursor:pointer; transition:all 0.2s; font-size:14px; gap:2px; }
+.verbs500-card:hover { border-color:#2196F3; background:#e3f2fd; transform:translateY(-1px); box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+.verbs500-card.selected { border-color:#2196F3; background:linear-gradient(135deg,#e3f2fd,#bbdefb); box-shadow:0 2px 8px rgba(33,150,243,0.2); }
+.verbs500-icon { font-size:20px; }
+.verbs500-name { font-weight:600; white-space:nowrap; }
+.verbs500-count { font-size:12px; color:#888; }
+@media (max-width:400px) {
+  .verbs500-grid { grid-template-columns:repeat(2,1fr); gap:6px; }
+  .verbs500-card { padding:8px 4px; font-size:13px; }
 }
 
 /* ===== 动画 ===== */
@@ -607,6 +639,7 @@ html { scroll-behavior:smooth; }
   <button class="quiz-btn" id="quizBtn">🧠 测验</button>
   <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加单词</button>
   <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
+  <button class="verbs-btn" id="verbsBtn" onclick="openVerbs200()">📝 动词200</button>
   <button class="grammar-btn" id="grammarBtn" onclick="openGrammar()">📝 语法</button>
   <button class="shadow-btn" id="shadowBtn" onclick="openShadowing()">🗣️ 跟读</button>
   <div class="stats" id="stats">加载中…</div>
@@ -625,6 +658,7 @@ html { scroll-behavior:smooth; }
 
 <div class="content" id="content"></div>
 <div class="nouns-view" id="nounsView"></div>
+<div class="verbs-view" id="verbsView"></div>
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
@@ -969,7 +1003,7 @@ function renderAll(filter) {
   let total = 0, shown = 0;
   const mobile = isMobile();
 
-  getMergedData().filter(sec => !sec.isNouns500).forEach((sec, secIdx) => {
+  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200).forEach((sec, secIdx) => {
     let m = sec.words.filter(w =>
       !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
     );
@@ -1246,6 +1280,22 @@ const NOUNS500_QUIZ_GROUPS = [
   { name: '💭 思维抽象', subcats: ['Emotions & States', 'Society & Abstract', 'Action Nouns', 'Extra High-Frequency'] },
 ];
 
+
+const VERBS200_QUIZ_GROUPS = [
+  { name: '日常动作', subcats: ['Daily Actions'] },
+  { name: '移动与位置', subcats: ['Movement & Position'] },
+  { name: '交流表达', subcats: ['Communication'] },
+  { name: '思考与情感', subcats: ['Thinking & Feeling'] },
+  { name: '创造与改变', subcats: ['Creating & Changing'] },
+  { name: '社交关系', subcats: ['Social & Relationship'] },
+  { name: '身体与健康', subcats: ['Body & Health'] },
+  { name: '家务与日常生活', subcats: ['Household & Daily Life'] },
+  { name: '工作与学习', subcats: ['Work & Study'] },
+  { name: '金钱与商业', subcats: ['Money & Business'] },
+  { name: '旅行与交通', subcats: ['Travel & Transport'] },
+  { name: '法律与规则', subcats: ['Law & Rules'] },
+];
+
 /* ===== 测验音效（Web Audio API 合成）===== */
 function playCorrectSound() {
   try {
@@ -1380,7 +1430,7 @@ function analyzeMistakes() {
   return results;
 }
 
-let quizState = { mode:null, range:'all', count:15, questions:[], idx:0, score:0, wrong:[], answered:false };
+let quizState = { mode:null, range:'all', count:15, questions:[], idx:0, score:0, wrong:[], answered:false, nounsGroup:null, verbsGroup:null };
 
 function renderMistakeBook() {
   const analysis = analyzeMistakes();
@@ -1472,6 +1522,11 @@ function getWordsByRange(range) {
   // Support nouns500 sub-group filtering
   if (sec.isNouns500 && quizState.nounsGroup) {
     const g = NOUNS500_QUIZ_GROUPS.find(g => g.name === quizState.nounsGroup);
+    if (g) return sec.words.filter(w => g.subcats.includes(w.subcategory));
+  }
+  // Support verbs200 sub-group filtering
+  if (sec.isVerbs200 && quizState.verbsGroup) {
+    const g = VERBS200_QUIZ_GROUPS.find(g => g.name === quizState.verbsGroup);
     if (g) return sec.words.filter(w => g.subcats.includes(w.subcategory));
   }
   return sec.words;
@@ -1627,6 +1682,24 @@ function renderQuizSetup() {
     nounsSubHtml += '</div></div>';
   }
 
+  // Build verbs200 sub-group buttons
+  const v200sec = data.find(s => s.isVerbs200);
+  let verbsSubHtml = '';
+  if (v200sec) {
+    const v200words = v200sec.words;
+    var isV200Active = quizState.range === v200sec.date || quizState.verbsGroup;
+    verbsSubHtml = '<div class="verbs500-panel' + (isV200Active ? ' active' : '') + '">';
+    verbsSubHtml += '<div class="verbs500-header" onclick="toggleVerbsPanel()">📝 动词200 · 选择单元 <span class="verbs500-arrow">' + (isV200Active ? '▲' : '▼') + '</span></div>';
+    verbsSubHtml += '<div class="verbs500-grid' + (isV200Active ? '' : ' collapsed') + '">';
+    verbsSubHtml += '<button class="verbs500-card' + (!quizState.verbsGroup && isV200Active ? ' selected' : '') + '" onclick="selectVerbsGroup(null,this)"><span class="verbs500-name">📝 全部分类</span><span class="verbs500-count">' + v200words.length + '词</span></button>';
+    VERBS200_QUIZ_GROUPS.forEach(g => {
+      const count = v200words.filter(w => g.subcats.includes(w.subcategory)).length;
+      const sel = quizState.verbsGroup === g.name ? ' selected' : '';
+      verbsSubHtml += '<button class="verbs500-card' + sel + '" onclick="selectVerbsGroup(\'' + g.name + '\',this)"><span class="verbs500-name">' + g.name + '</span><span class="verbs500-count">' + count + '词</span></button>';
+    });
+    verbsSubHtml += '</div></div>';
+  }
+
   const el = document.getElementById('quizInner');
   el.innerHTML = `
     <div class="quiz-top">
@@ -1643,8 +1716,10 @@ function renderQuizSetup() {
           return `<button class="quiz-range-btn ${quizState.range===s.date?'selected':''}" onclick="setQuizRange('${s.date}',this)">${dateStr} (${s.words.length})</button>`;
         }).join('')}
         ${n500sec ? '<button class="quiz-range-btn ' + (quizState.range===n500sec.date?'selected':'') + '" onclick="setQuizRange(\''+n500sec.date+'\',this)" style="border-color:#ff9800;color:#ff9800">📚 名词500 (' + n500sec.words.length + ')</button>' : ''}
+        ${v200sec ? '<button class="quiz-range-btn ' + (quizState.range===v200sec.date?'selected':'') + '" onclick="setQuizRange(\''+v200sec.date+'\',this)" style="border-color:#2196F3;color:#2196F3">📝 动词200 (' + v200sec.words.length + ')</button>' : ''}
       </div>
       ${nounsSubHtml}
+      ${verbsSubHtml}
       <h3>题目数量</h3>
       <div class="quiz-count-row">
         <label>5</label>
@@ -1691,6 +1766,7 @@ function selectNounsGroup(group, btn) {
 function setQuizRange(range, btn) {
   quizState.range = range;
   quizState.nounsGroup = null;
+  quizState.verbsGroup = null;
   renderQuizSetup();
 }
 
@@ -2623,6 +2699,125 @@ function jumpSubcat(ci) {
     }
   }
 }
+
+
+function openVerbs200() {
+  const vv = document.getElementById('verbsView');
+  const content = document.getElementById('content');
+  content.classList.add('verbs-active');
+  vv.classList.add('active');
+  renderVerbs200('');
+  document.getElementById('searchInput').value = '';
+  window.scrollTo({ top: 0 });
+}
+function closeVerbs200() {
+  const vv = document.getElementById('verbsView');
+  const content = document.getElementById('content');
+  vv.classList.remove('active');
+  content.classList.remove('verbs-active');
+  vv.innerHTML = '';
+  renderAll(document.getElementById('searchInput').value);
+}
+
+function renderVerbs200(filter) {
+  const q = (filter || '').toLowerCase();
+  const vv = document.getElementById('verbsView');
+  const mobile = isMobile();
+  const data = getMergedData();
+  const sec = data.find(s => s.isVerbs200);
+  if (!sec) return;
+
+  let words = sec.words.filter(w =>
+    !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || (w.example || '').toLowerCase().includes(q)
+  );
+
+  let html = '<div class="verbs-top"><h2>📝 高频动词200</h2><button class="verbs-close-btn" onclick="closeVerbs200()">✕</button></div>';
+  html += '<div class="verbs-stats" id="verbsStats"></div>';
+
+  // Sub-category nav
+  if (sec.categories) {
+    html += '<div class="subcat-nav" id="subcatNavV">';
+    sec.categories.forEach((cat, ci) => {
+      const count = words.filter(w => w.subcategory === cat.name).length;
+      if (count > 0) {
+        html += '<button class="subcat-btn" onclick="jumpVerbsSubcat(' + ci + ')">' + cat.nameZh + '</button>';
+      }
+    });
+    html += '</div>';
+  }
+
+  // Group words by subcategory
+  const catGroups = {};
+  words.forEach(w => {
+    const key = w.subcategory || 'other';
+    if (!catGroups[key]) catGroups[key] = [];
+    catGroups[key].push(w);
+  });
+
+  if (sec.categories) {
+    sec.categories.forEach((cat, ci) => {
+      const catWords = catGroups[cat.name] || [];
+      if (!catWords.length) return;
+
+      html += '<div class="subcat-header" id="vsubcat-' + ci + '">' + cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '词</span></div>';
+
+      if (mobile) {
+        html += '<div class="mobile-cards">';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\\'");
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const irrTag = w.irr ? '<span class="irr-tag">' + w.irr + '</span>' : '';
+          const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
+          const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
+          const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
+          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + irrTag + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>不规则</th><th>例句</th></tr></thead><tbody>';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\\'");
+          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const irrHtml = w.irr ? '<span class="irr-tag">' + w.irr + '</span>' : '';
+          const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
+          const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
+          const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + irrHtml + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + irrHtml + '</td><td>' + exHtml + '</td></tr>';
+        });
+        html += '</tbody></table>';
+      }
+    });
+  }
+
+  vv.innerHTML = html;
+  addExampleSpeakButtons();
+  document.getElementById('verbsStats').textContent = q ? '共 ' + sec.words.length + ' 词，匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词，' + (sec.categories ? sec.categories.length + ' 个分类' : '');
+}
+
+function jumpVerbsSubcat(ci) {
+  const el = document.getElementById('vsubcat-' + ci);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function toggleVerbsPanel() {
+  var grid = document.querySelector('.verbs500-grid');
+  var arrow = document.querySelector('.verbs500-arrow');
+  var panel = document.querySelector('.verbs500-panel');
+  if (!grid) return;
+  var collapsed = grid.classList.contains('collapsed');
+  grid.classList.toggle('collapsed');
+  arrow.textContent = collapsed ? '▲' : '▼';
+  panel.classList.toggle('active', collapsed);
+}
+
+function selectVerbsGroup(group, btn) {
+  quizState.verbsGroup = group;
+  quizState.range = getMergedData().find(s => s.isVerbs200).date;
+  renderQuizSetup();
+}
+
 
 // Search in nouns500 view when active
 
@@ -3802,8 +3997,11 @@ const origSearchHandler = document.getElementById('searchInput').oninput;
 document.getElementById('searchInput').removeEventListener('input', origSearchHandler);
 document.getElementById('searchInput').addEventListener('input', function() {
   const nv = document.getElementById('nounsView');
+  const vv = document.getElementById('verbsView');
   if (nv.classList.contains('active')) {
     renderNouns500(this.value);
+  } else if (vv.classList.contains('active')) {
+    renderVerbs200(this.value);
   } else {
     renderAll(this.value);
   }
