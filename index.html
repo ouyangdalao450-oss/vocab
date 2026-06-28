@@ -2578,6 +2578,13 @@ function getMergedData() {
 
 /* ===== 名词500 独立视图 ===== */
 function openNouns500() {
+  // Close other views first
+  const vv = document.getElementById('verbsView');
+  if (vv.classList.contains('active')) {
+    vv.classList.remove('active');
+    vv.innerHTML = '';
+    document.getElementById('content').classList.remove('verbs-active');
+  }
   const nv = document.getElementById('nounsView');
   const content = document.getElementById('content');
   content.classList.add('nouns-active');
@@ -2700,6 +2707,13 @@ function jumpSubcat(ci) {
 
 
 function openVerbs200() {
+  // Close other views first
+  const nv = document.getElementById('nounsView');
+  if (nv.classList.contains('active')) {
+    nv.classList.remove('active');
+    nv.innerHTML = '';
+    document.getElementById('content').classList.remove('nouns-active');
+  }
   const vv = document.getElementById('verbsView');
   const content = document.getElementById('content');
   content.classList.add('verbs-active');
