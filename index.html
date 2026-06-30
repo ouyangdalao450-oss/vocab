@@ -676,20 +676,36 @@ html { scroll-behavior:smooth; }
 
 <script src="vocab-data.js?v=20260609">
 /* 名词500-第二波 */
-function openNouns500V2() {
-  // Close other views first
+
+function closeAllViews() {
+  // Close all special views and overlays
+  const content = document.getElementById('content');
+  content.classList.remove('nouns-active', 'verbs-active', 'nouns2-active');
+  // Clear nouns view
   const nv = document.getElementById('nounsView');
-  if (nv.classList.contains('active')) {
-    nv.classList.remove('active');
-    nv.innerHTML = '';
-    document.getElementById('content').classList.remove('nouns-active');
-  }
+  if (nv) { nv.classList.remove('active'); nv.innerHTML = ''; }
+  // Clear verbs view
   const vv = document.getElementById('verbsView');
-  if (vv.classList.contains('active')) {
-    vv.classList.remove('active');
-    vv.innerHTML = '';
-    document.getElementById('content').classList.remove('verbs-active');
-  }
+  if (vv) { vv.classList.remove('active'); vv.innerHTML = ''; }
+  // Clear nouns2 view
+  const n2v = document.getElementById('nouns2View');
+  if (n2v) { n2v.classList.remove('active'); n2v.innerHTML = ''; }
+  // Close grammar overlay
+  const go = document.getElementById('grammarOverlay');
+  if (go && go.classList.contains('active')) { go.classList.remove('active'); document.body.style.overflow = ''; }
+  // Close shadowing overlay
+  const so = document.getElementById('shadowOverlay');
+  if (so && so.classList.contains('active')) { so.classList.remove('active'); }
+  // Close calendar overlay
+  const ov = document.getElementById('overlay');
+  if (ov) ov.classList.remove('active');
+  // Stop shadow playback/recording if active
+  if (typeof stopShadowPlayback === 'function') stopShadowPlayback();
+  if (typeof stopShadowRecording === 'function') stopShadowRecording();
+}
+
+function openNouns500V2() {
+  closeAllViews();
   const n2v = document.getElementById('nouns2View');
   const content = document.getElementById('content');
   content.classList.add('nouns2-active');
@@ -699,11 +715,7 @@ function openNouns500V2() {
   window.scrollTo({ top: 0 });
 }
 function closeNouns500V2() {
-  const n2v = document.getElementById('nouns2View');
-  const content = document.getElementById('content');
-  n2v.classList.remove('active');
-  content.classList.remove('nouns2-active');
-  n2v.innerHTML = '';
+  closeAllViews();
   renderAll(document.getElementById('searchInput').value);
 }
 
@@ -2703,19 +2715,7 @@ function getMergedData() {
 
 /* ===== 名词500 独立视图 ===== */
 function openNouns500() {
-  // Close other views first
-  const vv = document.getElementById('verbsView');
-  if (vv.classList.contains('active')) {
-    vv.classList.remove('active');
-    vv.innerHTML = '';
-    document.getElementById('content').classList.remove('verbs-active');
-  }
-  const n2v = document.getElementById('nouns2View');
-  if (n2v.classList.contains('active')) {
-    n2v.classList.remove('active');
-    n2v.innerHTML = '';
-    document.getElementById('content').classList.remove('nouns2-active');
-  }
+  closeAllViews();
   const nv = document.getElementById('nounsView');
   const content = document.getElementById('content');
   content.classList.add('nouns-active');
@@ -2725,11 +2725,7 @@ function openNouns500() {
   window.scrollTo({ top: 0 });
 }
 function closeNouns500() {
-  const nv = document.getElementById('nounsView');
-  const content = document.getElementById('content');
-  nv.classList.remove('active');
-  content.classList.remove('nouns-active');
-  nv.innerHTML = '';
+  closeAllViews();
   renderAll(document.getElementById('searchInput').value);
 }
 
@@ -2838,19 +2834,7 @@ function jumpSubcat(ci) {
 
 
 function openVerbs200() {
-  // Close other views first
-  const nv = document.getElementById('nounsView');
-  if (nv.classList.contains('active')) {
-    nv.classList.remove('active');
-    nv.innerHTML = '';
-    document.getElementById('content').classList.remove('nouns-active');
-  }
-  const n2v = document.getElementById('nouns2View');
-  if (n2v.classList.contains('active')) {
-    n2v.classList.remove('active');
-    n2v.innerHTML = '';
-    document.getElementById('content').classList.remove('nouns2-active');
-  }
+  closeAllViews();
   const vv = document.getElementById('verbsView');
   const content = document.getElementById('content');
   content.classList.add('verbs-active');
@@ -2860,11 +2844,7 @@ function openVerbs200() {
   window.scrollTo({ top: 0 });
 }
 function closeVerbs200() {
-  const vv = document.getElementById('verbsView');
-  const content = document.getElementById('content');
-  vv.classList.remove('active');
-  content.classList.remove('verbs-active');
-  vv.innerHTML = '';
+  closeAllViews();
   renderAll(document.getElementById('searchInput').value);
 }
 
@@ -2981,6 +2961,7 @@ function setGrammarData(data) {
 }
 
 function openGrammar() {
+  closeAllViews();
   document.getElementById('grammarOverlay').classList.add('active');
   document.body.style.overflow = 'hidden';
   renderGrammarList();
@@ -3685,6 +3666,7 @@ function preloadShadowAudio() {
 }
 
 function openShadowing() {
+  closeAllViews();
   const overlay = document.getElementById('shadowOverlay');
   overlay.classList.add('active');
   renderShadowing();
