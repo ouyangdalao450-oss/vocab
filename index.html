@@ -699,9 +699,20 @@ function closeAllViews() {
   // Close calendar overlay
   const ov = document.getElementById('overlay');
   if (ov) ov.classList.remove('active');
+  // Close quiz overlay
+  const qo = document.getElementById('quizOverlay');
+  if (qo && qo.classList.contains('active')) { qo.classList.remove('active'); }
+  // Close add-word overlay
+  const awo = document.getElementById('addWordOverlay');
+  if (awo && awo.classList.contains('active')) { awo.classList.remove('active'); }
+  // Close grammar-add overlay
+  const gao = document.getElementById('grammarAddOverlay');
+  if (gao && gao.classList.contains('active')) { gao.classList.remove('active'); }
   // Stop shadow playback/recording if active
   if (typeof stopShadowPlayback === 'function') stopShadowPlayback();
   if (typeof stopShadowRecording === 'function') stopShadowRecording();
+  // Restore body scroll
+  document.body.style.overflow = '';
 }
 
 function openNouns500V2() {
@@ -4129,10 +4140,13 @@ document.getElementById('searchInput').removeEventListener('input', origSearchHa
 document.getElementById('searchInput').addEventListener('input', function() {
   const nv = document.getElementById('nounsView');
   const vv = document.getElementById('verbsView');
+  const n2v = document.getElementById('nouns2View');
   if (nv.classList.contains('active')) {
     renderNouns500(this.value);
   } else if (vv.classList.contains('active')) {
     renderVerbs200(this.value);
+  } else if (n2v.classList.contains('active')) {
+    renderNouns500V2(this.value);
   } else {
     renderAll(this.value);
   }
