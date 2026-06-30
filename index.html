@@ -308,6 +308,7 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 .nouns-view { display:none; padding-bottom:80px; }
 .nouns-view.active { display:block; }
 .content.nouns-active { display:none; }
+.content.nouns2-active { display:none; }
 .content.verbs-active { display:none; }
 .subcat-nav { display:flex; flex-wrap:wrap; gap:6px; padding:10px 12px; margin-bottom:10px; background:linear-gradient(90deg,#fff8e1,#fff3e0); border-radius:12px; position:sticky; top:56px; z-index:5; }
 .subcat-btn { padding:5px 12px; border-radius:14px; border:1.5px solid #ffb74d; background:#fff; color:#e65100; font-size:0.76em; font-weight:600; cursor:pointer; white-space:nowrap; transition:all 0.15s; }
@@ -438,14 +439,23 @@ console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
 
 /* ===== 动词200视图 ===== */
 .verbs-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #2196F3; border-radius:20px; background:#fff; color:#2196F3; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
-.verbs-btn:hover { background:#2196F3; color:#fff; }
+.nouns2-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #9c27b0; border-radius:20px; background:#fff; color:#9c27b0; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
+.nouns2-btn:hover { background:#9c27b0; color:#fff; }
+.nouns2-btn:active { background:#f3e5f5; }
 .verbs-btn:active { background:#e3f2fd; }
 .verbs-view { display:none; padding-bottom:80px; }
+.nouns2-view { display:none; padding-bottom:80px; }
 .verbs-view.active { display:block; }
+.nouns2-view.active { display:block; }
 .verbs-top { display:flex; align-items:center; justify-content:space-between; padding:8px 0 12px; }
 .verbs-top h2 { font-size:1.2em; color:#1565C0; }
 .verbs-close-btn { width:36px; height:36px; border-radius:50%; border:none; background:#e3f2fd; color:#2196F3; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 .verbs-close-btn:active { background:#bbdefb; }
+.nouns2-close-btn { width:36px; height:36px; border-radius:50%; border:none; background:#f3e5f5; color:#9c27b0; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.nouns2-close-btn:active { background:#e1bee7; }
+.nouns2-stats { text-align:center; font-size:0.78em; color:#999; margin-top:4px; }
+.nouns2-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.nouns2-top h2 { margin:0; }
 .verbs-stats { text-align:center; font-size:0.78em; color:#999; margin-top:4px; }
 .verbs500-panel { margin:10px 0; border-radius:12px; background:#f8f9fa; border:1px solid #e0e0e0; overflow:hidden; transition:all 0.3s; }
 .verbs500-panel.active { border-color:#2196F3; box-shadow:0 2px 8px rgba(33,150,243,0.15); }
@@ -638,6 +648,7 @@ html { scroll-behavior:smooth; }
   <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加单词</button>
   <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
   <button class="verbs-btn" id="verbsBtn" onclick="openVerbs200()">📝 动词200</button>
+  <button class="nouns2-btn" id="nouns2Btn" onclick="openNouns500V2()">📖 名词500-第二波</button>
   <button class="grammar-btn" id="grammarBtn" onclick="openGrammar()">📝 语法</button>
   <button class="shadow-btn" id="shadowBtn" onclick="openShadowing()">🗣️ 跟读</button>
   <div class="stats" id="stats">加载中…</div>
@@ -657,12 +668,126 @@ html { scroll-behavior:smooth; }
 <div class="content" id="content"></div>
 <div class="nouns-view" id="nounsView"></div>
 <div class="verbs-view" id="verbsView"></div>
+<div class="nouns2-view" id="nouns2View"></div>
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
 <div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
-<script src="vocab-data.js?v=20260609"></script>
+<script src="vocab-data.js?v=20260609">
+/* 名词500-第二波 */
+function openNouns500V2() {
+  // Close other views first
+  const nv = document.getElementById('nounsView');
+  if (nv.classList.contains('active')) {
+    nv.classList.remove('active');
+    nv.innerHTML = '';
+    document.getElementById('content').classList.remove('nouns-active');
+  }
+  const vv = document.getElementById('verbsView');
+  if (vv.classList.contains('active')) {
+    vv.classList.remove('active');
+    vv.innerHTML = '';
+    document.getElementById('content').classList.remove('verbs-active');
+  }
+  const n2v = document.getElementById('nouns2View');
+  const content = document.getElementById('content');
+  content.classList.add('nouns2-active');
+  n2v.classList.add('active');
+  renderNouns500V2('');
+  document.getElementById('searchInput').value = '';
+  window.scrollTo({ top: 0 });
+}
+function closeNouns500V2() {
+  const n2v = document.getElementById('nouns2View');
+  const content = document.getElementById('content');
+  n2v.classList.remove('active');
+  content.classList.remove('nouns2-active');
+  n2v.innerHTML = '';
+  renderAll(document.getElementById('searchInput').value);
+}
+
+function renderNouns500V2(filter) {
+  const q = (filter || '').toLowerCase();
+  const n2v = document.getElementById('nouns2View');
+  const mobile = isMobile();
+  const data = getMergedData();
+  const sec = data.find(s => s.isNouns500V2);
+  if (!sec) return;
+
+  let words = sec.words.filter(w =>
+    !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || (w.example || '').toLowerCase().includes(q)
+  );
+
+  let html = '<div class="nouns2-top"><h2>📖 名词500-第二波</h2><button class="nouns2-close-btn" onclick="closeNouns500V2()">✕</button></div>';
+  html += '<div class="nouns2-stats" id="nouns2Stats"></div>';
+
+  if (sec.categories) {
+    html += '<div class="subcat-nav" id="subcatNavN2">';
+    sec.categories.forEach((cat, ci) => {
+      const count = words.filter(w => w.subcategory === cat.name).length;
+      if (count > 0) {
+        html += '<button class="subcat-btn" onclick="jumpN2Subcat(' + ci + ')">' + cat.nameZh + '</button>';
+      }
+    });
+    html += '</div>';
+  }
+
+  const catGroups = {};
+  words.forEach(w => {
+    const key = w.subcategory || 'other';
+    if (!catGroups[key]) catGroups[key] = [];
+    catGroups[key].push(w);
+  });
+
+  if (sec.categories) {
+    sec.categories.forEach((cat, ci) => {
+      const catWords = catGroups[cat.name] || [];
+      if (!catWords.length) return;
+
+      html += '<div class="subcat-header" id="n2subcat-' + ci + '">' + cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '词</span></div>';
+
+      if (mobile) {
+        html += '<div class="mobile-cards">';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\\'");
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
+          const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
+          const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
+          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
+        });
+        html += '</div>';
+      } else {
+        html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\\'");
+          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
+          const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
+          const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + exHtml + '</td></tr>';
+        });
+        html += '</tbody></table>';
+      }
+    });
+  }
+
+  n2v.innerHTML = html;
+  addExampleSpeakButtons();
+  document.getElementById('nouns2Stats').textContent = q ? '共 ' + sec.words.length + ' 词，匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词，' + (sec.categories ? sec.categories.length + ' 个分类' : '');
+}
+
+function jumpN2Subcat(ci) {
+  const el = document.getElementById('n2subcat-' + ci);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+</script>
 <script>
 
 /* 例句发音 */
@@ -1001,7 +1126,7 @@ function renderAll(filter) {
   let total = 0, shown = 0;
   const mobile = isMobile();
 
-  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200).forEach((sec, secIdx) => {
+  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2).forEach((sec, secIdx) => {
     let m = sec.words.filter(w =>
       !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
     );
@@ -2585,6 +2710,12 @@ function openNouns500() {
     vv.innerHTML = '';
     document.getElementById('content').classList.remove('verbs-active');
   }
+  const n2v = document.getElementById('nouns2View');
+  if (n2v.classList.contains('active')) {
+    n2v.classList.remove('active');
+    n2v.innerHTML = '';
+    document.getElementById('content').classList.remove('nouns2-active');
+  }
   const nv = document.getElementById('nounsView');
   const content = document.getElementById('content');
   content.classList.add('nouns-active');
@@ -2713,6 +2844,12 @@ function openVerbs200() {
     nv.classList.remove('active');
     nv.innerHTML = '';
     document.getElementById('content').classList.remove('nouns-active');
+  }
+  const n2v = document.getElementById('nouns2View');
+  if (n2v.classList.contains('active')) {
+    n2v.classList.remove('active');
+    n2v.innerHTML = '';
+    document.getElementById('content').classList.remove('nouns2-active');
   }
   const vv = document.getElementById('verbsView');
   const content = document.getElementById('content');
