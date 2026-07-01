@@ -2878,11 +2878,11 @@ function renderVerbs200(filter) {
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
           const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-          const irrTag = w.irr ? '<span class="irr-tag">' + w.irr + '</span>' : '';
+          const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
           const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
           const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + irrTag + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
+          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span><span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + irrHtml + rootHtml + exHtml + '</div>';
         });
         html += '</div>';
       } else {
@@ -2890,11 +2890,11 @@ function renderVerbs200(filter) {
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
           const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-          const irrHtml = w.irr ? '<span class="irr-tag">' + w.irr + '</span>' : '';
+          const irrHtml = w.irr ? `<div class="irr-row">${formatIrrTag(w.irr)}</div>` : '';
           const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
           const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + irrHtml + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + irrHtml + '</td><td>' + exHtml + '</td></tr>';
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + irrHtml + '</td><td>' + exHtml + '</td></tr>';
         });
         html += '</tbody></table>';
       }
