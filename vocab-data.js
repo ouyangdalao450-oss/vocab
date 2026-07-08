@@ -10146,29 +10146,127 @@ var VOCAB_DATA = [
     "isNouns500V2": true,
     "wordCount": 500,
     "categories": [
-      {"name": "High-Frequency Deep", "nameZh": "高频核心", "count": 43},
-      {"name": "Food & Drink Deep", "nameZh": "饮食", "count": 35},
-      {"name": "Nature Deep", "nameZh": "自然", "count": 32},
-      {"name": "Office & School Deep", "nameZh": "办公学习", "count": 27},
-      {"name": "Body Deep", "nameZh": "身体", "count": 26},
-      {"name": "Medicine & Health", "nameZh": "医药健康", "count": 25},
-      {"name": "Animals Deep", "nameZh": "动物", "count": 23},
-      {"name": "People Deep", "nameZh": "人物", "count": 23},
-      {"name": "Finance Daily", "nameZh": "金融日常", "count": 23},
-      {"name": "Sports & Fun Deep", "nameZh": "运动娱乐", "count": 22},
-      {"name": "Digital Life", "nameZh": "数字生活", "count": 21},
-      {"name": "Action Nouns Deep", "nameZh": "行为名词", "count": 22},
-      {"name": "Transport Deep", "nameZh": "交通", "count": 21},
-      {"name": "Society Deep", "nameZh": "社会", "count": 20},
-      {"name": "Emotions Deep", "nameZh": "情感", "count": 19},
-      {"name": "Street & City Deep", "nameZh": "街道城市", "count": 18},
-      {"name": "Shopping", "nameZh": "购物", "count": 18},
-      {"name": "Kitchen Deep", "nameZh": "厨房", "count": 17},
-      {"name": "Household Deep", "nameZh": "家居", "count": 17},
-      {"name": "Personal Items", "nameZh": "个人物品", "count": 17},
-      {"name": "Clothing Deep", "nameZh": "服装", "count": 16},
-      {"name": "Weather Details", "nameZh": "天气细节", "count": 8},
-      {"name": "Living Room Deep", "nameZh": "客厅", "count": 7}
+      {
+        "name": "High-Frequency Deep",
+        "nameZh": "高频核心",
+        "count": 43
+      },
+      {
+        "name": "Food & Drink Deep",
+        "nameZh": "饮食",
+        "count": 35
+      },
+      {
+        "name": "Nature Deep",
+        "nameZh": "自然",
+        "count": 32
+      },
+      {
+        "name": "Office & School Deep",
+        "nameZh": "办公学习",
+        "count": 27
+      },
+      {
+        "name": "Body Deep",
+        "nameZh": "身体",
+        "count": 26
+      },
+      {
+        "name": "Medicine & Health",
+        "nameZh": "医药健康",
+        "count": 25
+      },
+      {
+        "name": "Animals Deep",
+        "nameZh": "动物",
+        "count": 23
+      },
+      {
+        "name": "People Deep",
+        "nameZh": "人物",
+        "count": 23
+      },
+      {
+        "name": "Finance Daily",
+        "nameZh": "金融日常",
+        "count": 23
+      },
+      {
+        "name": "Sports & Fun Deep",
+        "nameZh": "运动娱乐",
+        "count": 22
+      },
+      {
+        "name": "Digital Life",
+        "nameZh": "数字生活",
+        "count": 21
+      },
+      {
+        "name": "Action Nouns Deep",
+        "nameZh": "行为名词",
+        "count": 22
+      },
+      {
+        "name": "Transport Deep",
+        "nameZh": "交通",
+        "count": 21
+      },
+      {
+        "name": "Society Deep",
+        "nameZh": "社会",
+        "count": 20
+      },
+      {
+        "name": "Emotions Deep",
+        "nameZh": "情感",
+        "count": 19
+      },
+      {
+        "name": "Street & City Deep",
+        "nameZh": "街道城市",
+        "count": 18
+      },
+      {
+        "name": "Shopping",
+        "nameZh": "购物",
+        "count": 18
+      },
+      {
+        "name": "Kitchen Deep",
+        "nameZh": "厨房",
+        "count": 17
+      },
+      {
+        "name": "Household Deep",
+        "nameZh": "家居",
+        "count": 17
+      },
+      {
+        "name": "Personal Items",
+        "nameZh": "个人物品",
+        "count": 17
+      },
+      {
+        "name": "Clothing Deep",
+        "nameZh": "服装",
+        "count": 16
+      },
+      {
+        "name": "Weather Details",
+        "nameZh": "天气细节",
+        "count": 8
+      },
+      {
+        "name": "Living Room Deep",
+        "nameZh": "客厅",
+        "count": 7
+      },
+      {
+        "name": "Abstract Nouns",
+        "nameZh": "抽象名词",
+        "count": 114,
+        "isAbstractCategory": true
+      }
     ],
     "words": [
       {
@@ -10180,7 +10278,22 @@ var VOCAB_DATA = [
         "root": "fact(做) → 已经做成的事 → 事实",
         "exampleZh": "那是事实，不是观点。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something that is known to be true or has really happened",
+          "zh": "已知为真或确实发生过的事情",
+          "examples": [
+            {
+              "en": "It's a fact that the Earth orbits the Sun.",
+              "zh": "地球绕太阳公转是一个事实。"
+            },
+            {
+              "en": "The facts show that he was innocent.",
+              "zh": "事实表明他是无辜的。"
+            }
+          ]
+        }
       },
       {
         "en": "opinion",
@@ -10191,7 +10304,22 @@ var VOCAB_DATA = [
         "root": "opin(认为)+ion → 认为的 → 观点",
         "exampleZh": "每个人都有自己的看法。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "what you think or believe about something, not based on proof",
+          "zh": "你对某事的看法或信念，不基于证据",
+          "examples": [
+            {
+              "en": "In my opinion, this movie is boring.",
+              "zh": "在我看来，这部电影很无聊。"
+            },
+            {
+              "en": "Everyone has different opinions on this issue.",
+              "zh": "每个人对这个问题有不同的看法。"
+            }
+          ]
+        }
       },
       {
         "en": "belief",
@@ -10202,7 +10330,22 @@ var VOCAB_DATA = [
         "root": "be(存在)+lief(爱) → 因爱而存在 → 信念",
         "exampleZh": "我相信努力会有回报。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a strong feeling that something is true or real, even without proof",
+          "zh": "一种强烈的感觉，认为某事是真的或真实的，即使没有证据",
+          "examples": [
+            {
+              "en": "She has a strong belief in God.",
+              "zh": "她有强烈的宗教信仰。"
+            },
+            {
+              "en": "It's my belief that hard work pays off.",
+              "zh": "我相信努力会有回报。"
+            }
+          ]
+        }
       },
       {
         "en": "theory",
@@ -10213,7 +10356,22 @@ var VOCAB_DATA = [
         "root": "theor(看)+y → 观看思考的结果 → 理论",
         "exampleZh": "那只是理论，没有证实。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an idea or set of ideas that explains why something happens",
+          "zh": "解释某事为什么发生的想法或一系列想法",
+          "examples": [
+            {
+              "en": "The theory of evolution explains how species change.",
+              "zh": "进化论解释了物种如何变化。"
+            },
+            {
+              "en": "That's just a theory — we need more evidence.",
+              "zh": "那只是一个理论——我们需要更多证据。"
+            }
+          ]
+        }
       },
       {
         "en": "concept",
@@ -10224,7 +10382,22 @@ var VOCAB_DATA = [
         "root": "con(共同)+cept(抓) → 共同抓住的 → 概念",
         "exampleZh": "概念很容易理解。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an idea or general understanding of how something works or what it means",
+          "zh": "关于某事如何运作或意味着什么的想法或普遍理解",
+          "examples": [
+            {
+              "en": "The concept of freedom means different things to different people.",
+              "zh": "自由的概念对不同的人意味着不同的东西。"
+            },
+            {
+              "en": "This is a new concept in modern education.",
+              "zh": "这是现代教育中的一个新概念。"
+            }
+          ]
+        }
       },
       {
         "en": "detail",
@@ -10235,7 +10408,8 @@ var VOCAB_DATA = [
         "root": "de(分开)+tail(切) → 切分开的 → 细节",
         "exampleZh": "签字前检查细节。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "evidence",
@@ -10246,7 +10420,22 @@ var VOCAB_DATA = [
         "root": "e(出)+vid(看)+ence → 看出来的 → 证据",
         "exampleZh": "我们需要更多证据来证明。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "facts or signs that show something is true or has happened",
+          "zh": "证明某事真实或发生过的事实或迹象",
+          "examples": [
+            {
+              "en": "There is no evidence to support his claim.",
+              "zh": "没有证据支持他的说法。"
+            },
+            {
+              "en": "The police found enough evidence to arrest him.",
+              "zh": "警方找到了足够的证据逮捕他。"
+            }
+          ]
+        }
       },
       {
         "en": "pattern",
@@ -10257,7 +10446,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "注意数据中的规律。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a regular or repeated way that something happens or is arranged",
+          "zh": "某事发生或被安排的规律性或重复性方式",
+          "examples": [
+            {
+              "en": "I noticed a pattern in his behavior.",
+              "zh": "我注意到他的行为有规律。"
+            },
+            {
+              "en": "Weather patterns are changing due to global warming.",
+              "zh": "由于全球变暖，天气模式正在改变。"
+            }
+          ]
+        }
       },
       {
         "en": "source",
@@ -10268,7 +10472,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这条信息的来源是什么？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "where something comes from or where you get information from",
+          "zh": "某事物的来源或你获取信息的地方",
+          "examples": [
+            {
+              "en": "What's the source of this information?",
+              "zh": "这个信息的来源是什么？"
+            },
+            {
+              "en": "The river has its source in the mountains.",
+              "zh": "这条河发源于山区。"
+            }
+          ]
+        }
       },
       {
         "en": "standard",
@@ -10279,7 +10498,22 @@ var VOCAB_DATA = [
         "root": "stand(站)+ard → 站在那里衡量的 → 标准",
         "exampleZh": "这符合安全标准。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a level of quality or achievement that is considered acceptable or normal",
+          "zh": "被认为可接受或正常的质量或成就水平",
+          "examples": [
+            {
+              "en": "This hotel meets high standards of cleanliness.",
+              "zh": "这家酒店达到了高标准的清洁度。"
+            },
+            {
+              "en": "The standard of living has improved.",
+              "zh": "生活水平已经提高。"
+            }
+          ]
+        }
       },
       {
         "en": "quality",
@@ -10290,7 +10524,22 @@ var VOCAB_DATA = [
         "root": "qual(什么样的)+ity → 什么样的 → 质量",
         "exampleZh": "这个产品质量很好。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "how good or bad something is; also a characteristic of a person or thing",
+          "zh": "某事物的好坏程度；也是人或事物的特征",
+          "examples": [
+            {
+              "en": "The quality of this product is excellent.",
+              "zh": "这个产品的质量非常好。"
+            },
+            {
+              "en": "Patience is a good quality in a teacher.",
+              "zh": "耐心是老师的好品质。"
+            }
+          ]
+        }
       },
       {
         "en": "quantity",
@@ -10301,7 +10550,22 @@ var VOCAB_DATA = [
         "root": "quant(多少)+ity → 多少 → 数量",
         "exampleZh": "我们需要大量纸张。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "how much of something there is — the amount, not the quality",
+          "zh": "某事物有多少——是数量，不是质量",
+          "examples": [
+            {
+              "en": "We need a large quantity of water.",
+              "zh": "我们需要大量的水。"
+            },
+            {
+              "en": "Quality matters more than quantity.",
+              "zh": "质量比数量更重要。"
+            }
+          ]
+        }
       },
       {
         "en": "feature",
@@ -10312,7 +10576,22 @@ var VOCAB_DATA = [
         "root": "feat(做)+ure → 做出来的特点 → 特征",
         "exampleZh": "这款手机有很棒的拍照功能。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a noticeable part or characteristic of something that makes it stand out",
+          "zh": "使某事物突出的明显部分或特征",
+          "examples": [
+            {
+              "en": "This phone has many useful features.",
+              "zh": "这款手机有很多实用功能。"
+            },
+            {
+              "en": "The garden's main feature is a large fountain.",
+              "zh": "花园的主要特征是一个大喷泉。"
+            }
+          ]
+        }
       },
       {
         "en": "advantage",
@@ -10323,7 +10602,22 @@ var VOCAB_DATA = [
         "root": "advant(在前)+age → 在前面的 → 优势",
         "exampleZh": "这个方法的优势是速度快。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something that makes one option better than another; a benefit",
+          "zh": "使一个选择比另一个更好的东西；好处",
+          "examples": [
+            {
+              "en": "Living close to work is a big advantage.",
+              "zh": "住在离工作近的地方是一个很大的优势。"
+            },
+            {
+              "en": "What are the advantages of studying abroad?",
+              "zh": "出国留学有什么好处？"
+            }
+          ]
+        }
       },
       {
         "en": "disadvantage",
@@ -10334,7 +10628,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "劣势是成本。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something that makes a situation or option worse or less desirable",
+          "zh": "使情况或选择更糟或不太理想的东西",
+          "examples": [
+            {
+              "en": "One disadvantage of the job is the long hours.",
+              "zh": "这份工作的一个缺点是工作时间长。"
+            },
+            {
+              "en": "The main disadvantage is the cost.",
+              "zh": "主要的缺点是费用。"
+            }
+          ]
+        }
       },
       {
         "en": "function",
@@ -10345,7 +10654,22 @@ var VOCAB_DATA = [
         "root": "funct(做)+ion → 做的事 → 功能",
         "exampleZh": "这个按钮有什么功能？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "what something is designed to do; its purpose or role",
+          "zh": "某事物被设计用来做什么；其目的或角色",
+          "examples": [
+            {
+              "en": "The function of a heart is to pump blood.",
+              "zh": "心脏的功能是泵血。"
+            },
+            {
+              "en": "What's the main function of this tool?",
+              "zh": "这个工具的主要功能是什么？"
+            }
+          ]
+        }
       },
       {
         "en": "system",
@@ -10356,7 +10680,22 @@ var VOCAB_DATA = [
         "root": "sys(一起)+stem(站立) → 一起站立的 → 系统",
         "exampleZh": "供暖系统需要修。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a set of parts that work together as a whole to achieve something",
+          "zh": "一组共同运作以实现某事的部分",
+          "examples": [
+            {
+              "en": "The education system needs improvement.",
+              "zh": "教育系统需要改进。"
+            },
+            {
+              "en": "Our heating system is not working properly.",
+              "zh": "我们的供暖系统运行不正常。"
+            }
+          ]
+        }
       },
       {
         "en": "principle",
@@ -10367,7 +10706,22 @@ var VOCAB_DATA = [
         "root": "prince(首要)+iple → 首要的规则 → 原则",
         "exampleZh": "坚持你的原则。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a basic rule or belief that guides how you think or act",
+          "zh": "指导你思考或行动的基本规则或信念",
+          "examples": [
+            {
+              "en": "He refuses to lie — that's his principle.",
+              "zh": "他拒绝撒谎——那是他的原则。"
+            },
+            {
+              "en": "The principle of fairness applies here.",
+              "zh": "公平的原则适用于这里。"
+            }
+          ]
+        }
       },
       {
         "en": "category",
@@ -10378,7 +10732,22 @@ var VOCAB_DATA = [
         "root": "cata(向下)+gory(聚集) → 按类向下聚集 → 分类",
         "exampleZh": "这个属于哪个类别？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a group of things that share the same type or characteristics",
+          "zh": "共享相同类型或特征的一组事物",
+          "examples": [
+            {
+              "en": "Books are divided into different categories.",
+              "zh": "书被分成不同的类别。"
+            },
+            {
+              "en": "Which category does this belong to?",
+              "zh": "这属于哪个类别？"
+            }
+          ]
+        }
       },
       {
         "en": "sample",
@@ -10389,7 +10758,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "试试产品的免费样品。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "option",
@@ -10400,7 +10770,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们有什么选项？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "one of the choices you can make in a situation",
+          "zh": "在某种情况下你可以做出的选择之一",
+          "examples": [
+            {
+              "en": "We have three options: stay, leave, or wait.",
+              "zh": "我们有三个选项：留下、离开或等待。"
+            },
+            {
+              "en": "What options do we have?",
+              "zh": "我们有什么选择？"
+            }
+          ]
+        }
       },
       {
         "en": "alternative",
@@ -10411,7 +10796,22 @@ var VOCAB_DATA = [
         "root": "alter(其他)+native → 其他的 → 替代方案",
         "exampleZh": "有没有替代路线？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something you can choose instead of the usual or original option",
+          "zh": "你可以选择代替通常或原选项的东西",
+          "examples": [
+            {
+              "en": "If you don't like coffee, tea is an alternative.",
+              "zh": "如果你不喜欢咖啡，茶是一个替代选择。"
+            },
+            {
+              "en": "We need to find an alternative solution.",
+              "zh": "我们需要找到一个替代方案。"
+            }
+          ]
+        }
       },
       {
         "en": "reference",
@@ -10422,7 +10822,22 @@ var VOCAB_DATA = [
         "root": "refer(指向)+ence → 指向的东西 → 参考",
         "exampleZh": "用这本书做参考。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something you mention or look at to get information or prove something",
+          "zh": "你提及或查看以获取信息或证明某事的东西",
+          "examples": [
+            {
+              "en": "Can you give me a reference for this claim?",
+              "zh": "你能给我这个说法的参考来源吗？"
+            },
+            {
+              "en": "She listed three references on her resume.",
+              "zh": "她在简历上列了三个推荐人。"
+            }
+          ]
+        }
       },
       {
         "en": "surface",
@@ -10433,7 +10848,8 @@ var VOCAB_DATA = [
         "root": "sur(上)+face(面) → 上面的面 → 表面",
         "exampleZh": "桌子表面很光滑。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "layer",
@@ -10444,7 +10860,8 @@ var VOCAB_DATA = [
         "root": "lay(放)+er → 放上去的 → 层",
         "exampleZh": "再加一层漆。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "angle",
@@ -10455,7 +10872,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "从不同角度看这个问题。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "position",
@@ -10466,7 +10884,8 @@ var VOCAB_DATA = [
         "root": "pos(放)+ition → 放的地方 → 位置/职位",
         "exampleZh": "你申请什么职位？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "level",
@@ -10477,7 +10896,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "你英语什么水平？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "how high, deep, or advanced something is; a position on a scale",
+          "zh": "某事物有多高、多深或多先进；量表上的位置",
+          "examples": [
+            {
+              "en": "The water level in the river is rising.",
+              "zh": "河里的水位正在上升。"
+            },
+            {
+              "en": "Her English level is intermediate.",
+              "zh": "她的英语水平是中级。"
+            }
+          ]
+        }
       },
       {
         "en": "range",
@@ -10488,7 +10922,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "价格范围10到50美元。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the area or limits within which something varies or operates",
+          "zh": "某事物变化或运作的区域或限制范围",
+          "examples": [
+            {
+              "en": "The price range is $10 to $50.",
+              "zh": "价格范围是10到50美元。"
+            },
+            {
+              "en": "This store offers a wide range of products.",
+              "zh": "这家店提供种类丰富的产品。"
+            }
+          ]
+        }
       },
       {
         "en": "limit",
@@ -10499,7 +10948,22 @@ var VOCAB_DATA = [
         "root": "limit(边界) → 不能超过的线 → 限制",
         "exampleZh": "测试有时间限制。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the greatest amount, number, or degree that is allowed or possible",
+          "zh": "被允许或可能的最大的数量、数目或程度",
+          "examples": [
+            {
+              "en": "There's a limit of 3 items per customer.",
+              "zh": "每位顾客限购3件。"
+            },
+            {
+              "en": "I've reached my limit — I can't take anymore.",
+              "zh": "我已经到了极限——我再也受不了了。"
+            }
+          ]
+        }
       },
       {
         "en": "gap",
@@ -10510,7 +10974,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "两张桌子之间有间隙。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a space or difference between two things; also a lack of something needed",
+          "zh": "两物之间的空间或差异；也是缺乏某种需要的东西",
+          "examples": [
+            {
+              "en": "There's a big gap between rich and poor.",
+              "zh": "贫富之间有很大的差距。"
+            },
+            {
+              "en": "Fill in the gaps in your knowledge.",
+              "zh": "填补你知识中的空白。"
+            }
+          ]
+        }
       },
       {
         "en": "spot",
@@ -10521,7 +11000,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这是个露营的好地方。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "area",
@@ -10532,7 +11012,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "停车区在那边。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "zone",
@@ -10543,7 +11024,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这是禁止停车区域。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "district",
@@ -10554,7 +11036,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我住在市中心区。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "border",
@@ -10565,7 +11048,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在检查站过边境。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "territory",
@@ -10576,7 +11060,8 @@ var VOCAB_DATA = [
         "root": "terr(地)+itory → 土地的 → 领土",
         "exampleZh": "这片领土属于国家。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "resource",
@@ -10587,7 +11072,22 @@ var VOCAB_DATA = [
         "root": "re(回)+source(来源) → 回到来源 → 资源",
         "exampleZh": "利用在线资源学习更多。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something useful that you can use to achieve a goal, like money, tools, or information",
+          "zh": "你可以用来实现目标的有用东西，如金钱、工具或信息",
+          "examples": [
+            {
+              "en": "We don't have enough resources to finish the project.",
+              "zh": "我们没有足够的资源完成这个项目。"
+            },
+            {
+              "en": "Natural resources like oil and water are limited.",
+              "zh": "像石油和水这样的自然资源是有限的。"
+            }
+          ]
+        }
       },
       {
         "en": "material",
@@ -10598,7 +11098,8 @@ var VOCAB_DATA = [
         "root": "mater(物质)+ial → 物质的 → 材料",
         "exampleZh": "这是什么材料做的？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "equipment",
@@ -10609,7 +11110,8 @@ var VOCAB_DATA = [
         "root": "equip(装备)+ment → 装备的东西 → 设备",
         "exampleZh": "我们需要新的健身设备。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "tool",
@@ -10620,7 +11122,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我需要什么工具来做这个？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "instrument",
@@ -10631,7 +11134,8 @@ var VOCAB_DATA = [
         "root": "in(内)+stru(建造)+ment → 内部建造的 → 仪器/乐器",
         "exampleZh": "你演奏什么乐器？",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "step",
@@ -10642,7 +11146,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "一步一步来。",
         "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充"
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
       },
       {
         "en": "mushroom",
@@ -10653,7 +11158,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我喜欢蘑菇汤。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "lemon",
@@ -10664,7 +11170,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在沙拉里加些柠檬汁。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "peach",
@@ -10675,7 +11182,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这桃子真的很甜。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "melon",
@@ -10686,7 +11194,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们在市场买了个大甜瓜。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "strawberry",
@@ -10697,7 +11206,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "草莓是我最喜欢的水果。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "blueberry",
@@ -10708,7 +11218,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在燕麦里加些蓝莓。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "mango",
@@ -10719,7 +11230,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "芒果冰沙太清爽了。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "pineapple",
@@ -10730,7 +11242,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "新鲜菠萝味道好极了。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "cherry",
@@ -10741,7 +11254,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她从树上摘了一颗樱桃。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "coconut",
@@ -10752,7 +11266,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "椰子水在这里很受欢迎。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "oatmeal",
@@ -10763,7 +11278,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我每天早餐吃燕麦片。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "cereal",
@@ -10774,7 +11290,8 @@ var VOCAB_DATA = [
         "root": "cere(谷)+al → 谷物的 → 麦片",
         "exampleZh": "你早餐喜欢吃什么麦片？",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "jam",
@@ -10785,7 +11302,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在吐司上涂些果酱。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "honey",
@@ -10796,7 +11314,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我可以加蜂蜜代替糖吗？",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "mustard",
@@ -10807,7 +11326,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "你的三明治要加芥末酱吗？",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "ketchup",
@@ -10818,7 +11338,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在薯条上加些番茄酱。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "vinegar",
@@ -10829,7 +11350,8 @@ var VOCAB_DATA = [
         "root": "vin(酒)+aigre(酸) → 酒变酸 → 醋",
         "exampleZh": "在调料汁里加点醋。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "oil",
@@ -10840,7 +11362,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "先在锅里热些油。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "flour",
@@ -10851,7 +11374,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把面粉和水混合做面团。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "dough",
@@ -10862,7 +11386,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "让面团静置30分钟。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "crust",
@@ -10873,7 +11398,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这面包的皮真的很脆。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "saucepan",
@@ -10884,7 +11410,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用小煮锅加热牛奶。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "waffle",
@@ -10895,7 +11422,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们早餐做华夫饼吧。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "pancake",
@@ -10906,7 +11434,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她给孩子们做了煎饼。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "toast",
@@ -10917,7 +11446,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我早餐就吃吐司。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "bacon",
@@ -10928,7 +11458,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我喜欢培根鸡蛋当早餐。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "steak",
@@ -10939,7 +11470,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "点一份三分熟的牛排。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "pasta",
@@ -10950,7 +11482,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "昨晚我们吃了意面。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "sandwich",
@@ -10961,7 +11494,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我带了三明治当午餐。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "burger",
@@ -10972,7 +11506,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "下班后去吃个汉堡吧。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "pizza",
@@ -10983,7 +11518,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们订了一份大披萨。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "wrap",
@@ -10994,7 +11530,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我午餐吃了鸡肉卷饼。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "dip",
@@ -11005,7 +11542,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "试试这个鳄梨蘸酱。",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "beverage",
@@ -11016,7 +11554,8 @@ var VOCAB_DATA = [
         "root": "bever(喝)+age → 可喝的东西 → 饮料",
         "exampleZh": "有什么饮料可选？",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "soda",
@@ -11027,7 +11566,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我可以配一杯汽水吗？",
         "subcategory": "Food & Drink Deep",
-        "subcategoryZh": "饮食深入"
+        "subcategoryZh": "饮食深入",
+        "wordType": "concrete"
       },
       {
         "en": "shore",
@@ -11038,7 +11578,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "日落时沿着海岸走。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "beach",
@@ -11049,7 +11590,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这周末去海滩吧。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "coast",
@@ -11060,7 +11602,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "海岸景色很美。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "island",
@@ -11071,7 +11614,8 @@ var VOCAB_DATA = [
         "root": "is(岛)+land(地) → 水中之地 → 岛屿",
         "exampleZh": "他们在小岛上度假。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "desert",
@@ -11082,7 +11626,8 @@ var VOCAB_DATA = [
         "root": "des(失去)+ert → 被失去的地方 → 沙漠",
         "exampleZh": "沙漠夏天非常热。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "valley",
@@ -11093,7 +11638,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "山谷翠绿美丽。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "cliff",
@@ -11104,7 +11650,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "不要太靠近悬崖。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "cave",
@@ -11115,7 +11662,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们一起探索了洞穴。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "pond",
@@ -11126,7 +11674,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "池塘里有鸭子。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "stream",
@@ -11137,7 +11686,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们坐在溪边放松。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a small narrow river; also a continuous flow of something",
+          "zh": "一条小窄河；也是某事物的持续流动",
+          "examples": [
+            {
+              "en": "We sat by the stream and relaxed.",
+              "zh": "我们坐在小溪旁边放松。"
+            },
+            {
+              "en": "A stream of people entered the building.",
+              "zh": "一股人流进入了大楼。"
+            }
+          ]
+        }
       },
       {
         "en": "swamp",
@@ -11148,7 +11712,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "不要走进沼泽。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "mud",
@@ -11159,7 +11724,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我的鞋沾满了泥。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "dust",
@@ -11170,7 +11736,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "架子上有灰尘。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "fog",
@@ -11181,7 +11748,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "雾天开车要小心。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "mist",
@@ -11192,7 +11760,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "晨雾笼罩着山丘。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "hail",
@@ -11203,7 +11772,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "冰雹损坏了车。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "frost",
@@ -11214,7 +11784,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "今早窗户上结了霜。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "breeze",
@@ -11225,7 +11796,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "一阵凉爽的微风从窗户吹进来。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "drought",
@@ -11236,7 +11808,8 @@ var VOCAB_DATA = [
         "root": "dry(干)+ought → 干的状态 → 干旱",
         "exampleZh": "干旱持续了三个月。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "earthquake",
@@ -11247,7 +11820,8 @@ var VOCAB_DATA = [
         "root": "earth(地)+quake(震动) → 地面震动 → 地震",
         "exampleZh": "地震震动了整座城市。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "volcano",
@@ -11258,7 +11832,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "去年火山爆发了。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "weed",
@@ -11269,7 +11844,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把花园里的杂草拔掉。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "bush",
@@ -11280,7 +11856,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "猫躲在灌木丛后面。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "branch",
@@ -11291,7 +11868,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "坐在树枝下乘凉。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "seed",
@@ -11302,7 +11880,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "春天播种。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "petal",
@@ -11313,7 +11892,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "玫瑰花瓣掉了。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "bud",
@@ -11324,7 +11904,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "花蕾开始绽放了。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "soil",
@@ -11335,7 +11916,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这土壤很适合种番茄。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "pebble",
@@ -11346,7 +11928,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "孩子们喜欢在海滩捡鹅卵石。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "dawn",
@@ -11357,7 +11940,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们黎明醒来赶航班。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "twilight",
@@ -11368,7 +11952,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "黄昏时天空很美。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "concrete"
       },
       {
         "en": "horizon",
@@ -11379,7 +11964,22 @@ var VOCAB_DATA = [
         "root": "horiz(边界)+on → 天地交界线 → 地平线",
         "exampleZh": "太阳落到地平线以下。",
         "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入"
+        "subcategoryZh": "自然深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the line where the earth or sea seems to meet the sky; also the limit of what you can see or know",
+          "zh": "大地或海洋似乎与天空相接的线；也是你能看到或知道的极限",
+          "examples": [
+            {
+              "en": "The sun set below the horizon.",
+              "zh": "太阳落到了地平线以下。"
+            },
+            {
+              "en": "Travel broadens your horizons.",
+              "zh": "旅行拓宽你的视野。"
+            }
+          ]
+        }
       },
       {
         "en": "clipboard",
@@ -11390,7 +11990,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她在办公室拿着写字板。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "whiteboard",
@@ -11401,7 +12002,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把答案写在白板上。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "projector",
@@ -11412,7 +12014,8 @@ var VOCAB_DATA = [
         "root": "project(投射)+or → 投射画面的设备 → 投影仪",
         "exampleZh": "打开投影仪准备演示。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "marker",
@@ -11423,7 +12026,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用红色标记笔标出这个。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "binder",
@@ -11434,7 +12038,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把笔记放进活页夹。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "envelope",
@@ -11445,7 +12050,8 @@ var VOCAB_DATA = [
         "root": "en(在内)+velop(包裹) → 包在里面 → 信封",
         "exampleZh": "把信放进信封。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "stamp",
@@ -11456,7 +12062,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这封信需要邮票。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "calendar",
@@ -11467,7 +12074,8 @@ var VOCAB_DATA = [
         "root": "calen(月)+dar → 按月记录 → 日历",
         "exampleZh": "在日历上标出会议。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "schedule",
@@ -11478,7 +12086,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "查看明天的日程表。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a plan that lists when events or tasks will happen",
+          "zh": "列出事件或任务何时发生的计划",
+          "examples": [
+            {
+              "en": "My schedule is very busy this week.",
+              "zh": "我这周的日程很忙。"
+            },
+            {
+              "en": "The flight was delayed, so the schedule changed.",
+              "zh": "航班延误了，所以日程改变了。"
+            }
+          ]
+        }
       },
       {
         "en": "timetable",
@@ -11489,7 +12112,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "时间表上列出了所有课程。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "syllabus",
@@ -11500,7 +12124,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "第一节课前先看课程大纲。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a document that lists what will be taught in a course",
+          "zh": "列出课程中将教授什么内容的文件",
+          "examples": [
+            {
+              "en": "Check the syllabus to see what topics we'll cover.",
+              "zh": "查看课程大纲看看我们会涵盖哪些主题。"
+            },
+            {
+              "en": "The syllabus says the exam is on Friday.",
+              "zh": "大纲上说考试在周五。"
+            }
+          ]
+        }
       },
       {
         "en": "assignment",
@@ -11511,7 +12150,8 @@ var VOCAB_DATA = [
         "root": "as(向)+sign(标记)+ment → 分配标记 → 任务/作业",
         "exampleZh": "作业周五截止。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "deadline",
@@ -11522,7 +12162,8 @@ var VOCAB_DATA = [
         "root": "dead(死)+line(线) → 死线 → 截止日期",
         "exampleZh": "项目截止日期是下周一。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "presentation",
@@ -11533,7 +12174,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她做了一个很棒的演示。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a talk or display given to an audience to share information or ideas",
+          "zh": "向听众分享信息或想法的演讲或展示",
+          "examples": [
+            {
+              "en": "She gave a great presentation at the meeting.",
+              "zh": "她在会议上做了一个精彩的演讲。"
+            },
+            {
+              "en": "I need to prepare a presentation for tomorrow.",
+              "zh": "我需要为明天准备一个演示。"
+            }
+          ]
+        }
       },
       {
         "en": "lecture",
@@ -11544,7 +12200,8 @@ var VOCAB_DATA = [
         "root": "lect(读)+ure → 读出来的内容 → 讲座",
         "exampleZh": "讲座10点开始。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "coursework",
@@ -11555,7 +12212,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这学期我有很多课程作业。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "textbook",
@@ -11566,7 +12224,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "上课前买好教科书。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "handout",
@@ -11577,7 +12236,8 @@ var VOCAB_DATA = [
         "root": "hand(手)+out(出) → 手递出的材料 → 讲义",
         "exampleZh": "老师给了我们一份讲义。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "worksheet",
@@ -11588,7 +12248,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "明天前完成练习单。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "flashcard",
@@ -11599,7 +12260,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "做闪卡复习词汇。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "index card",
@@ -11610,7 +12272,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在索引卡上写笔记。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "attendance",
@@ -11621,7 +12284,8 @@ var VOCAB_DATA = [
         "root": "at(向)+tend(伸展)+ance → 向目标伸展 → 出勤",
         "exampleZh": "所有课程要求出勤。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "faculty",
@@ -11632,7 +12296,8 @@ var VOCAB_DATA = [
         "root": "fac(做)+ult+y → 做事的人 → 教职员工",
         "exampleZh": "教职员工会议在周三。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "locker",
@@ -11643,7 +12308,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把书放在储物柜里。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "bulletin board",
@@ -11654,7 +12320,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "查看公告栏获取更新。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "inbox",
@@ -11665,7 +12332,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我的收件箱有50封邮件。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "concrete"
       },
       {
         "en": "document",
@@ -11676,7 +12344,22 @@ var VOCAB_DATA = [
         "root": "doc(教)+ment → 教导的记录 → 文件",
         "exampleZh": "关闭前保存文档。",
         "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入"
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a piece of writing or record that provides information or proof",
+          "zh": "提供信息或证明的文字或记录",
+          "examples": [
+            {
+              "en": "Please sign this document.",
+              "zh": "请签署这份文件。"
+            },
+            {
+              "en": "All important documents should be kept safe.",
+              "zh": "所有重要文件应该妥善保管。"
+            }
+          ]
+        }
       },
       {
         "en": "brain",
@@ -11687,7 +12370,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "动动脑子解决这个问题。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "lung",
@@ -11698,7 +12382,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "吸烟损伤肺部。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "liver",
@@ -11709,7 +12394,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "酒精会损伤肝脏。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "kidney",
@@ -11720,7 +12406,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她做了肾脏移植。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "muscle",
@@ -11731,7 +12418,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "跑步前拉伸肌肉。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "joint",
@@ -11742,7 +12430,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "慢跑后我膝盖关节疼。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "vein",
@@ -11753,7 +12442,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "护士找到了注射的静脉。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "nerve",
@@ -11764,7 +12454,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "做那事需要胆量。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "wrist",
@@ -11775,7 +12466,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她手腕上戴了手表。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "ankle",
@@ -11786,7 +12478,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "打篮球时我扭了脚踝。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "hip",
@@ -11797,7 +12490,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她摔倒伤了髋部。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "palm",
@@ -11808,7 +12502,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他把硬币握在手掌里。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "thumb",
@@ -11819,7 +12514,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "那个主意太棒了！👍",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "rib",
@@ -11830,7 +12526,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他打橄榄球时伤了肋骨。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "spine",
@@ -11841,7 +12538,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "好的姿势保护脊柱。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "waist",
@@ -11852,7 +12550,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "腰带系在腰部。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "chin",
@@ -11863,7 +12562,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他用手托着下巴。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "forehead",
@@ -11874,7 +12574,8 @@ var VOCAB_DATA = [
         "root": "fore(前)+head(头) → 头的前部 → 前额",
         "exampleZh": "她前额上有淤青。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "cheek",
@@ -11885,7 +12586,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她亲吻了他的脸颊。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "eyebrow",
@@ -11896,7 +12598,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她惊讶地抬了一下眉毛。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "eyelash",
@@ -11907,7 +12610,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她的睫毛很长。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "lip",
@@ -11918,7 +12622,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "紧张的话咬一下嘴唇。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "throat",
@@ -11929,7 +12634,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "今天我喉咙痛。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "pulse",
@@ -11940,7 +12646,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "护士检查了我的脉搏。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "blood",
@@ -11951,7 +12658,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "伤口上有血。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "tear",
@@ -11962,7 +12670,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "一滴眼泪顺着脸颊流下来。",
         "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入"
+        "subcategoryZh": "身体深入",
+        "wordType": "concrete"
       },
       {
         "en": "pill",
@@ -11973,7 +12682,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "每次饭后吃两片药。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "capsule",
@@ -11984,7 +12694,8 @@ var VOCAB_DATA = [
         "root": "caps(箱)+ule → 小箱子 → 装药的小箱 → 胶囊",
         "exampleZh": "用水吞服胶囊。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "syrup",
@@ -11995,7 +12706,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "给孩子喝点止咳糖浆。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "antibiotic",
@@ -12006,7 +12718,8 @@ var VOCAB_DATA = [
         "root": "anti(反)+bio(生物)+tic → 反细菌 → 抗生素",
         "exampleZh": "医生开了抗生素。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "painkiller",
@@ -12017,7 +12730,8 @@ var VOCAB_DATA = [
         "root": "pain(痛)+killer(杀手) → 杀死疼痛 → 止痛药",
         "exampleZh": "我需要止痛药治头痛。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "bandage",
@@ -12028,7 +12742,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用绷带包扎伤口。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "ointment",
@@ -12039,7 +12754,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在烧伤处涂药膏。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "prescription",
@@ -12050,7 +12766,8 @@ var VOCAB_DATA = [
         "root": "pre(预先)+script(写)+ion → 预先写好的药单 → 处方",
         "exampleZh": "这个药需要处方。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "dose",
@@ -12061,7 +12778,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "按正确剂量服药。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a measured amount of medicine taken at one time",
+          "zh": "一次服用的定量药物",
+          "examples": [
+            {
+              "en": "Take one dose every eight hours.",
+              "zh": "每八小时服用一剂。"
+            },
+            {
+              "en": "A high dose can be dangerous.",
+              "zh": "高剂量可能有危险。"
+            }
+          ]
+        }
       },
       {
         "en": "symptom",
@@ -12072,7 +12804,22 @@ var VOCAB_DATA = [
         "root": "sym(共同)+ptom(落下) → 与疾病一起出现的 → 症状",
         "exampleZh": "你有什么症状？",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a sign that shows you have a disease or condition",
+          "zh": "表明你有疾病或状况的迹象",
+          "examples": [
+            {
+              "en": "Fever is a common symptom of flu.",
+              "zh": "发烧是流感的常见症状。"
+            },
+            {
+              "en": "What are the symptoms of this illness?",
+              "zh": "这种疾病的症状是什么？"
+            }
+          ]
+        }
       },
       {
         "en": "fever",
@@ -12083,7 +12830,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她发烧温度很高。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a condition where your body temperature is higher than normal, usually because of illness",
+          "zh": "你的体温比正常高的状况，通常因为生病",
+          "examples": [
+            {
+              "en": "She has a high fever and needs to rest.",
+              "zh": "她发高烧，需要休息。"
+            },
+            {
+              "en": "The fever went down after taking medicine.",
+              "zh": "吃药后烧退了。"
+            }
+          ]
+        }
       },
       {
         "en": "cold",
@@ -12094,7 +12856,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "上周我感冒了。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a common mild illness that makes you sneeze, cough, and feel unwell",
+          "zh": "一种常见的轻微疾病，让你打喷嚏、咳嗽和感觉不舒服",
+          "examples": [
+            {
+              "en": "I caught a cold last week.",
+              "zh": "我上周感冒了。"
+            },
+            {
+              "en": "She stayed home because of a bad cold.",
+              "zh": "她因为重感冒待在家里。"
+            }
+          ]
+        }
       },
       {
         "en": "cough",
@@ -12105,7 +12882,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我整晚都在咳嗽。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "sneeze",
@@ -12116,7 +12894,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "打喷嚏时捂住嘴。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "bruise",
@@ -12127,7 +12906,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她手臂上有淤青。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "wound",
@@ -12138,7 +12918,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "包扎前先清洗伤口。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "allergy",
@@ -12149,7 +12930,22 @@ var VOCAB_DATA = [
         "root": "all(其他)+ergy(反应) → 对其他东西的反应 → 过敏",
         "exampleZh": "我对花生过敏。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a condition where your body reacts badly to something that is harmless to most people",
+          "zh": "你的身体对大多数人都无害的东西产生不良反应的状况",
+          "examples": [
+            {
+              "en": "He has an allergy to peanuts.",
+              "zh": "他对花生过敏。"
+            },
+            {
+              "en": "My allergy gets worse in spring.",
+              "zh": "我的过敏在春天加重。"
+            }
+          ]
+        }
       },
       {
         "en": "infection",
@@ -12160,7 +12956,22 @@ var VOCAB_DATA = [
         "root": "in(入)+fect(做)+ion → 有害物进入身体 → 感染",
         "exampleZh": "伤口感染了。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a condition where harmful germs enter your body and cause disease",
+          "zh": "有害细菌进入你身体并引起疾病的状况",
+          "examples": [
+            {
+              "en": "The wound got an infection.",
+              "zh": "伤口感染了。"
+            },
+            {
+              "en": "Ear infections are common in children.",
+              "zh": "耳部感染在儿童中很常见。"
+            }
+          ]
+        }
       },
       {
         "en": "vaccine",
@@ -12171,7 +12982,8 @@ var VOCAB_DATA = [
         "root": "vacca(牛) → 从牛痘发展而来 → 疫苗",
         "exampleZh": "每年打流感疫苗。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "clinic",
@@ -12182,7 +12994,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "去诊所做个检查。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "ambulance",
@@ -12193,7 +13006,8 @@ var VOCAB_DATA = [
         "root": "ambul(行走)+ance → 行走中的医院 → 救护车",
         "exampleZh": "马上叫救护车！",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "pharmacy",
@@ -12204,7 +13018,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "从药房取药。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "therapist",
@@ -12215,7 +13030,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我的治疗师帮我应对压力。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "surgeon",
@@ -12226,7 +13042,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "外科医生做了手术。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "patient",
@@ -12237,7 +13054,8 @@ var VOCAB_DATA = [
         "root": "pati(忍受)+ent → 忍受痛苦的人 → 病人/耐心",
         "exampleZh": "病人在等医生。",
         "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康"
+        "subcategoryZh": "医疗健康",
+        "wordType": "concrete"
       },
       {
         "en": "puppy",
@@ -12248,7 +13066,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "小狗很爱玩。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "kitten",
@@ -12259,7 +13078,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "小猫蜷缩在沙发上。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "whale",
@@ -12270,7 +13090,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们在海岸附近看到了鲸鱼。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "dolphin",
@@ -12281,7 +13102,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "海豚是很聪明的动物。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "shark",
@@ -12292,7 +13114,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "游泳时小心鲨鱼。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "parrot",
@@ -12303,7 +13126,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "鹦鹉能说几个词。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "eagle",
@@ -12314,7 +13138,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "一只鹰在山上翱翔。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "penguin",
@@ -12325,7 +13150,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "企鹅生活在寒冷的地方。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "turtle",
@@ -12336,7 +13162,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "乌龟移动得很慢。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "fox",
@@ -12347,7 +13174,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "一只狐狸跑过了田野。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "deer",
@@ -12358,7 +13186,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们在森林里看到了鹿。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "wolf",
@@ -12369,7 +13198,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "狼群猎食。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "bat",
@@ -12380,7 +13210,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "蝙蝠在夜间飞行。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "crab",
@@ -12391,7 +13222,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们在海滩抓螃蟹。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "octopus",
@@ -12402,7 +13234,8 @@ var VOCAB_DATA = [
         "root": "octo(八)+pus(脚) → 八只脚 → 章鱼",
         "exampleZh": "章鱼有八条腕。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "seagull",
@@ -12413,7 +13246,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "海鸥在海上飞翔。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "pigeon",
@@ -12424,7 +13258,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "鸽子聚集在公园里。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "mosquito",
@@ -12435,7 +13270,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "蚊子晚上很烦人。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "cockroach",
@@ -12446,7 +13282,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我讨厌厨房里的蟑螂。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "worm",
@@ -12457,7 +13294,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "鸟抓到了一条虫。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "pet",
@@ -12468,7 +13306,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们养了一只狗当宠物。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "vet",
@@ -12479,7 +13318,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "带猫去看兽医。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "cage",
@@ -12490,7 +13330,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "鸟在笼子里。",
         "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入"
+        "subcategoryZh": "动物深入",
+        "wordType": "concrete"
       },
       {
         "en": "adult",
@@ -12501,7 +13342,8 @@ var VOCAB_DATA = [
         "root": "adult(成长) → 长大的人 → 成年人",
         "exampleZh": "只有成年人能看这部电影。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "teenager",
@@ -12512,7 +13354,8 @@ var VOCAB_DATA = [
         "root": "teen(十几)+age(年龄)+er → 十几岁的人 → 青少年",
         "exampleZh": "大多数青少年喜欢社交媒体。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "senior",
@@ -12523,7 +13366,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "老年人在商店有折扣。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "citizen",
@@ -12534,7 +13378,8 @@ var VOCAB_DATA = [
         "root": "civ(城市)+izen → 城市的人 → 公民",
         "exampleZh": "每个公民都有投票权。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "stranger",
@@ -12545,7 +13390,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "不要跟陌生人说话。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "guest",
@@ -12556,7 +13402,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这周末有客人住我们家。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "host",
@@ -12567,7 +13414,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她在聚会上是个好主人。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "couple",
@@ -12578,7 +13426,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他们是一对可爱的夫妻。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "boss",
@@ -12589,7 +13438,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我的老板要周五交报告。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "colleague",
@@ -12600,7 +13450,8 @@ var VOCAB_DATA = [
         "root": "col(共同)+league(盟) → 一起工作的人 → 同事",
         "exampleZh": "我的同事帮我做项目。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "client",
@@ -12611,7 +13462,8 @@ var VOCAB_DATA = [
         "root": "cli(倾斜)+ent → 依赖某人的人 → 客户",
         "exampleZh": "客户想要快速回复。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "customer",
@@ -12622,7 +13474,8 @@ var VOCAB_DATA = [
         "root": "custom(习惯)+er → 消费习惯的人 → 顾客",
         "exampleZh": "顾客要求退款。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "crowd",
@@ -12633,7 +13486,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "演唱会有一大群人。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "audience",
@@ -12644,7 +13498,8 @@ var VOCAB_DATA = [
         "root": "audi(听)+ence → 听的人 → 观众",
         "exampleZh": "观众很喜欢这场表演。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "crew",
@@ -12655,7 +13510,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "机组人员很友好。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "volunteer",
@@ -12666,7 +13522,8 @@ var VOCAB_DATA = [
         "root": "vol(意愿)+unteer → 出自意愿 → 志愿者",
         "exampleZh": "周末我在收容所做志愿者。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "relative",
@@ -12677,7 +13534,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "假期我们去拜访了亲戚。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "acquaintance",
@@ -12688,7 +13546,8 @@ var VOCAB_DATA = [
         "root": "ac(向)+quaint(知道)+ance → 知道的人 → 熟人",
         "exampleZh": "她是熟人，不是密友。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "passenger",
@@ -12699,7 +13558,8 @@ var VOCAB_DATA = [
         "root": "pass(通过)+enger → 通过交通工具的人 → 乘客",
         "exampleZh": "所有乘客必须系安全带。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "resident",
@@ -12710,7 +13570,8 @@ var VOCAB_DATA = [
         "root": "resid(居住)+ent → 居住的人 → 居民",
         "exampleZh": "当地居民喜欢这个公园。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "official",
@@ -12721,7 +13582,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "官员宣布了新政策。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "hero",
@@ -12732,7 +13594,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "那个消防员是真正的英雄。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "criminal",
@@ -12743,7 +13606,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "罪犯昨晚被逮捕了。",
         "subcategory": "People Deep",
-        "subcategoryZh": "人物深入"
+        "subcategoryZh": "人物深入",
+        "wordType": "concrete"
       },
       {
         "en": "salary",
@@ -12754,7 +13618,22 @@ var VOCAB_DATA = [
         "root": "sal(盐)+ary → 古罗马用盐付工资 → 薪水",
         "exampleZh": "我的工资15号发。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the fixed amount of money you receive regularly for your work",
+          "zh": "你因工作而定期收到的固定金额",
+          "examples": [
+            {
+              "en": "His monthly salary is $5,000.",
+              "zh": "他的月薪是5000美元。"
+            },
+            {
+              "en": "They offered me a higher salary.",
+              "zh": "他们给了我更高的工资。"
+            }
+          ]
+        }
       },
       {
         "en": "wage",
@@ -12765,7 +13644,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他小时工资15美元。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the money you earn for work, usually paid by the hour or day",
+          "zh": "你因工作赚的钱，通常按小时或天支付",
+          "examples": [
+            {
+              "en": "The minimum wage is $15 per hour.",
+              "zh": "最低工资是每小时15美元。"
+            },
+            {
+              "en": "He earns a daily wage as a construction worker.",
+              "zh": "他作为建筑工人赚取日薪。"
+            }
+          ]
+        }
       },
       {
         "en": "income",
@@ -12776,7 +13670,22 @@ var VOCAB_DATA = [
         "root": "in(入)+come(来) → 进来的钱 → 收入",
         "exampleZh": "我的收入覆盖基本开支。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "all the money you receive from work, investments, or other sources",
+          "zh": "你从工作、投资或其他来源收到的所有钱",
+          "examples": [
+            {
+              "en": "Their household income is about $80,000 a year.",
+              "zh": "他们的家庭年收入大约8万美元。"
+            },
+            {
+              "en": "Income from rent helps pay the bills.",
+              "zh": "租金收入帮助支付账单。"
+            }
+          ]
+        }
       },
       {
         "en": "expense",
@@ -12787,7 +13696,22 @@ var VOCAB_DATA = [
         "root": "ex(出)+pend(花) → 钱花出去 → 支出",
         "exampleZh": "追踪你的月度支出。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that you spend on something; the cost of living or doing business",
+          "zh": "你在某事上花的钱；生活或做生意的成本",
+          "examples": [
+            {
+              "en": "Living expenses are high in this city.",
+              "zh": "这个城市的生活费用很高。"
+            },
+            {
+              "en": "The company cut expenses to save money.",
+              "zh": "公司削减开支来省钱。"
+            }
+          ]
+        }
       },
       {
         "en": "budget",
@@ -12798,7 +13722,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这个月要守住预算。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a plan for how to spend your money, based on how much you have",
+          "zh": "基于你有多少钱来规划如何花钱的计划",
+          "examples": [
+            {
+              "en": "We need to stick to our budget this month.",
+              "zh": "这个月我们需要遵守预算。"
+            },
+            {
+              "en": "The government's budget for education increased.",
+              "zh": "政府的教育预算增加了。"
+            }
+          ]
+        }
       },
       {
         "en": "debt",
@@ -12809,7 +13748,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我需要还清学生贷款。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that you owe to someone and must pay back",
+          "zh": "你欠别人的必须偿还的钱",
+          "examples": [
+            {
+              "en": "He's in debt because of his credit cards.",
+              "zh": "他因为信用卡欠了债。"
+            },
+            {
+              "en": "It took her five years to pay off the debt.",
+              "zh": "她花了五年才还清债务。"
+            }
+          ]
+        }
       },
       {
         "en": "loan",
@@ -12820,7 +13774,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我贷了款买车。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that you borrow and agree to pay back, usually with interest",
+          "zh": "你借来并同意偿还的钱，通常带利息",
+          "examples": [
+            {
+              "en": "She took out a loan to buy a car.",
+              "zh": "她贷款买了一辆车。"
+            },
+            {
+              "en": "The bank approved my loan application.",
+              "zh": "银行批准了我的贷款申请。"
+            }
+          ]
+        }
       },
       {
         "en": "interest",
@@ -12831,7 +13800,22 @@ var VOCAB_DATA = [
         "root": "inter(之间)+est → 在其中 → 利息/兴趣",
         "exampleZh": "贷款利率5%。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "extra money you pay when borrowing, or earn when saving; also, curiosity about something",
+          "zh": "借钱时付的或存钱时赚的额外钱；也是对某事的好奇",
+          "examples": [
+            {
+              "en": "The interest rate on this loan is 5%.",
+              "zh": "这笔贷款的利率是5%。"
+            },
+            {
+              "en": "She showed great interest in science.",
+              "zh": "她对科学表现出极大的兴趣。"
+            }
+          ]
+        }
       },
       {
         "en": "tax",
@@ -12842,7 +13826,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "截止日期前报税。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that the government requires you to pay based on your income or purchases",
+          "zh": "政府根据你的收入或购买要求你付的钱",
+          "examples": [
+            {
+              "en": "I pay income tax every year.",
+              "zh": "我每年付所得税。"
+            },
+            {
+              "en": "The sales tax here is 8%.",
+              "zh": "这里的销售税是8%。"
+            }
+          ]
+        }
       },
       {
         "en": "bill",
@@ -12853,7 +13852,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这周交电费账单。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "invoice",
@@ -12864,7 +13864,8 @@ var VOCAB_DATA = [
         "root": "in(入)+voice(声音) → 声明的账 → 发票",
         "exampleZh": "把发票发给客户。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "profit",
@@ -12875,7 +13876,22 @@ var VOCAB_DATA = [
         "root": "pro(前)+fit(做) → 向前做得好 → 利润",
         "exampleZh": "这季度利润更高。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the money you gain after subtracting all costs from your revenue",
+          "zh": "从收入中减去所有成本后你赚的钱",
+          "examples": [
+            {
+              "en": "The business made a profit of $10,000.",
+              "zh": "这家企业赚了1万美元的利润。"
+            },
+            {
+              "en": "We need to increase our profit margin.",
+              "zh": "我们需要提高利润率。"
+            }
+          ]
+        }
       },
       {
         "en": "credit card",
@@ -12886,7 +13902,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用信用卡还是现金付？",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "cash",
@@ -12897,7 +13914,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我只有现金，没有卡。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "ATM",
@@ -12908,7 +13926,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我需要找附近的ATM。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "insurance",
@@ -12919,7 +13938,22 @@ var VOCAB_DATA = [
         "root": "in(入)+sure(确定)+ance → 使确定 → 保险",
         "exampleZh": "你有健康保险吗？",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a system where you pay regular amounts so that you'll be covered if something bad happens",
+          "zh": "你定期付钱以便在坏事发生时得到赔付的系统",
+          "examples": [
+            {
+              "en": "You should have health insurance.",
+              "zh": "你应该有医疗保险。"
+            },
+            {
+              "en": "Car insurance is required by law.",
+              "zh": "法律要求买车险。"
+            }
+          ]
+        }
       },
       {
         "en": "mortgage",
@@ -12930,7 +13964,22 @@ var VOCAB_DATA = [
         "root": "mort(死)+gage(质押) → 死质押 → 还完才解押 → 房贷",
         "exampleZh": "我们的房贷下周到期。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a loan you get to buy a house, which you pay back over many years",
+          "zh": "你用来买房的贷款，在多年内偿还",
+          "examples": [
+            {
+              "en": "They took out a 30-year mortgage.",
+              "zh": "他们贷了30年房贷。"
+            },
+            {
+              "en": "Our monthly mortgage payment is $2,000.",
+              "zh": "我们的月房贷还款是2000美元。"
+            }
+          ]
+        }
       },
       {
         "en": "rent",
@@ -12941,7 +13990,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这套公寓租金800美元。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "deposit",
@@ -12952,7 +14002,8 @@ var VOCAB_DATA = [
         "root": "de(下)+posit(放) → 放下去 → 存入/押金",
         "exampleZh": "我付了公寓押金。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "balance",
@@ -12963,7 +14014,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在网上查看账户余额。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "transfer",
@@ -12974,7 +14026,8 @@ var VOCAB_DATA = [
         "root": "trans(跨越)+fer(带) → 带过去 → 转移/转账",
         "exampleZh": "转到我的储蓄账户。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "tip",
@@ -12985,7 +14038,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "给服务员留小费。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "fee",
@@ -12996,7 +14050,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "逾期付款有手续费。",
         "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融"
+        "subcategoryZh": "日常金融",
+        "wordType": "concrete"
       },
       {
         "en": "goalpost",
@@ -13007,7 +14062,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "球打在了球门柱上。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "net",
@@ -13018,7 +14074,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "网球网太高了。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "racket",
@@ -13029,7 +14086,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我需要新网球拍。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "paddle",
@@ -13040,7 +14098,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用桨划船。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "pool",
@@ -13051,7 +14110,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们去游泳池游泳吧。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "court",
@@ -13062,7 +14122,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "网球场现在空了。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "pitch",
@@ -13073,7 +14134,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "球场因雨变湿了。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "medal",
@@ -13084,7 +14146,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她获得了金牌。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "trophy",
@@ -13095,7 +14158,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他们在办公室展示了奖杯。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "score",
@@ -13106,7 +14170,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "目前比分多少？",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "inning",
@@ -13117,7 +14182,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "现在是第九局。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "halftime",
@@ -13128,7 +14194,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "半场休息时去买零食。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "yoga mat",
@@ -13139,7 +14206,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "带瑜伽垫去上课。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "treadmill",
@@ -13150,7 +14218,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我每天早上在跑步机上跑。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "dumbbell",
@@ -13161,7 +14230,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "双手举哑铃。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "board game",
@@ -13172,7 +14242,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "昨晚我们玩了桌游。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "puzzle",
@@ -13183,7 +14254,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "孩子们花了几个小时拼拼图。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "comic",
@@ -13194,7 +14266,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我每周末看漫画。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "novel",
@@ -13205,7 +14278,8 @@ var VOCAB_DATA = [
         "root": "nov(新)+el → 新的故事 → 小说",
         "exampleZh": "我正在读一本很棒的小说。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "magazine",
@@ -13216,7 +14290,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我订阅了一本烹饪杂志。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "hobby",
@@ -13227,7 +14302,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "摄影是我的爱好。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "playlist",
@@ -13238,7 +14314,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我为自驾游做了播放列表。",
         "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入"
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "concrete"
       },
       {
         "en": "app",
@@ -13249,7 +14326,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "从商店下载APP。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "account",
@@ -13260,7 +14338,22 @@ var VOCAB_DATA = [
         "root": "ac(向)+count(计算) → 计算的记录 → 账户",
         "exampleZh": "创建账号登录。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a record of money you keep at a bank; also a description of an event",
+          "zh": "你在银行保存的钱的记录；也是对事件的描述",
+          "examples": [
+            {
+              "en": "I opened a new bank account.",
+              "zh": "我开了一个新的银行账户。"
+            },
+            {
+              "en": "He gave a detailed account of what happened.",
+              "zh": "他详细描述了发生了什么。"
+            }
+          ]
+        }
       },
       {
         "en": "password",
@@ -13271,7 +14364,22 @@ var VOCAB_DATA = [
         "root": "pass(通过)+word(词) → 通过的词 → 密码",
         "exampleZh": "定期更换密码。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a secret word or code you type to prove you are allowed to access something",
+          "zh": "你输入以证明你有权访问某物的秘密词语或代码",
+          "examples": [
+            {
+              "en": "Don't share your password with anyone.",
+              "zh": "不要和任何人分享你的密码。"
+            },
+            {
+              "en": "I forgot my password and had to reset it.",
+              "zh": "我忘了密码，不得不重置。"
+            }
+          ]
+        }
       },
       {
         "en": "username",
@@ -13282,7 +14390,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "你在网站的用户名是什么？",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "profile",
@@ -13293,7 +14402,8 @@ var VOCAB_DATA = [
         "root": "pro(前)+file(线) → 前面的轮廓 → 侧影/资料",
         "exampleZh": "更新你的个人资料头像。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "notification",
@@ -13304,7 +14414,22 @@ var VOCAB_DATA = [
         "root": "noti(注意)+fication → 让人注意 → 通知",
         "exampleZh": "我收到了配送通知。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a message or alert that tells you something has happened or needs your attention",
+          "zh": "告诉你某事发生了或需要你关注的消息或提醒",
+          "examples": [
+            {
+              "en": "I got a notification about a new email.",
+              "zh": "我收到了一个新邮件的通知。"
+            },
+            {
+              "en": "Turn off notifications when you're sleeping.",
+              "zh": "睡觉时关掉通知。"
+            }
+          ]
+        }
       },
       {
         "en": "download",
@@ -13315,7 +14440,22 @@ var VOCAB_DATA = [
         "root": "down(下)+load(载) → 从上往下载 → 下载",
         "exampleZh": "使用前先下载更新。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of copying data from the internet to your device",
+          "zh": "从互联网复制数据到你的设备的动作",
+          "examples": [
+            {
+              "en": "The download took only a few seconds.",
+              "zh": "下载只花了几秒钟。"
+            },
+            {
+              "en": "This app has over a million downloads.",
+              "zh": "这个应用有超过一百万次下载。"
+            }
+          ]
+        }
       },
       {
         "en": "upload",
@@ -13326,7 +14466,22 @@ var VOCAB_DATA = [
         "root": "up(上)+load(载) → 往上载 → 上传",
         "exampleZh": "把照片上传到你的资料。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of sending data from your device to the internet",
+          "zh": "从你的设备发送数据到互联网的动作",
+          "examples": [
+            {
+              "en": "The upload speed is very slow today.",
+              "zh": "今天上传速度很慢。"
+            },
+            {
+              "en": "I uploaded the photos to my cloud storage.",
+              "zh": "我把照片上传到了云存储。"
+            }
+          ]
+        }
       },
       {
         "en": "link",
@@ -13337,7 +14492,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "点击链接打开页面。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a connection between two things; on the internet, a clickable address",
+          "zh": "两事物之间的连接；在互联网上，可点击的地址",
+          "examples": [
+            {
+              "en": "Click this link to open the website.",
+              "zh": "点击这个链接打开网站。"
+            },
+            {
+              "en": "There's a link between diet and health.",
+              "zh": "饮食和健康之间有联系。"
+            }
+          ]
+        }
       },
       {
         "en": "search engine",
@@ -13348,7 +14518,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "Google是最流行的搜索引擎。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "browser",
@@ -13359,7 +14530,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在浏览器里打开新标签。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "tab",
@@ -13370,7 +14542,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "关掉不用的标签页。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "icon",
@@ -13381,7 +14554,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "点击图标启动应用。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "cursor",
@@ -13392,7 +14566,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把光标移到按钮上。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "file",
@@ -13403,7 +14578,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把文件保存到桌面。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "backup",
@@ -13414,7 +14590,22 @@ var VOCAB_DATA = [
         "root": "back(后)+up(上) → 后面支撑 → 备份",
         "exampleZh": "给重要文件做备份。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a copy of data you keep in case the original gets lost or damaged",
+          "zh": "你保存的数据副本，以防原件丢失或损坏",
+          "examples": [
+            {
+              "en": "Always make a backup of important files.",
+              "zh": "总是备份重要文件。"
+            },
+            {
+              "en": "The backup saved all my data.",
+              "zh": "备份保存了我的所有数据。"
+            }
+          ]
+        }
       },
       {
         "en": "storage",
@@ -13425,7 +14616,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "检查手机存储空间。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "space where you keep things or save data for later use",
+          "zh": "你存放东西或保存数据以备后用的空间",
+          "examples": [
+            {
+              "en": "This phone has 128GB of storage.",
+              "zh": "这款手机有128GB存储空间。"
+            },
+            {
+              "en": "We need more storage space in the garage.",
+              "zh": "我们需要车库更多的存储空间。"
+            }
+          ]
+        }
       },
       {
         "en": "screen",
@@ -13436,7 +14642,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "屏幕真的很亮。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "network",
@@ -13447,7 +14654,22 @@ var VOCAB_DATA = [
         "root": "net(网)+work(工作) → 网状运作 → 网络",
         "exampleZh": "网络现在断了。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a group of things or people that are connected to each other",
+          "zh": "一组相互连接的事物或人",
+          "examples": [
+            {
+              "en": "My social network helps me find jobs.",
+              "zh": "我的社交网络帮助我找工作。"
+            },
+            {
+              "en": "The Wi-Fi network is not working.",
+              "zh": "WiFi网络不工作。"
+            }
+          ]
+        }
       },
       {
         "en": "wifi",
@@ -13458,7 +14680,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这里的WiFi密码是什么？",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "server",
@@ -13469,7 +14692,8 @@ var VOCAB_DATA = [
         "root": "serv(服务)+er → 提供服务的设备 → 服务器",
         "exampleZh": "今天服务器很慢。",
         "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活"
+        "subcategoryZh": "数字生活",
+        "wordType": "concrete"
       },
       {
         "en": "habit",
@@ -13480,7 +14704,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "阅读是好习惯。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something you do regularly, often without thinking about it",
+          "zh": "你经常做的事，通常不经过思考",
+          "examples": [
+            {
+              "en": "Reading before bed is a good habit.",
+              "zh": "睡前阅读是一个好习惯。"
+            },
+            {
+              "en": "He has a habit of checking his phone too often.",
+              "zh": "他有经常看手机的坏习惯。"
+            }
+          ]
+        }
       },
       {
         "en": "process",
@@ -13491,7 +14730,22 @@ var VOCAB_DATA = [
         "root": "pro(前)+cess(走) → 向前走的过程 → 流程",
         "exampleZh": "招聘流程需要两周。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a series of actions or steps that lead to a result",
+          "zh": "导致结果的一系列行动或步骤",
+          "examples": [
+            {
+              "en": "The hiring process takes about two weeks.",
+              "zh": "招聘流程大约需要两周。"
+            },
+            {
+              "en": "Learning is a slow process.",
+              "zh": "学习是一个缓慢的过程。"
+            }
+          ]
+        }
       },
       {
         "en": "procedure",
@@ -13502,7 +14756,22 @@ var VOCAB_DATA = [
         "root": "pro(前)+cedure(走) → 向前走的方式 → 程序",
         "exampleZh": "按步骤执行程序。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the official or correct way of doing something, step by step",
+          "zh": "做某事的官方或正确方式，一步一步",
+          "examples": [
+            {
+              "en": "Follow the safety procedure carefully.",
+              "zh": "仔细遵循安全程序。"
+            },
+            {
+              "en": "The procedure for applying is quite simple.",
+              "zh": "申请的程序很简单。"
+            }
+          ]
+        }
       },
       {
         "en": "task",
@@ -13513,7 +14782,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "午饭前完成任务。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "duty",
@@ -13524,7 +14794,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "帮团队是我的职责。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "effort",
@@ -13535,7 +14806,22 @@ var VOCAB_DATA = [
         "root": "ex(出)+fort(力量) → 出力 → 努力",
         "exampleZh": "在学习上多花点努力。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the physical or mental energy you use to try to do something",
+          "zh": "你用来尝试做某事的身体或精神能量",
+          "examples": [
+            {
+              "en": "She put a lot of effort into her project.",
+              "zh": "她在项目上投入了很多努力。"
+            },
+            {
+              "en": "With more effort, you can achieve your goals.",
+              "zh": "付出更多努力，你能实现目标。"
+            }
+          ]
+        }
       },
       {
         "en": "progress",
@@ -13546,7 +14832,22 @@ var VOCAB_DATA = [
         "root": "pro(前)+gress(走) → 向前走 → 进步",
         "exampleZh": "这周我们进步很大。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the process of improving or moving forward toward a goal",
+          "zh": "改进或向目标前进的过程",
+          "examples": [
+            {
+              "en": "The students are making good progress.",
+              "zh": "学生们在取得良好进步。"
+            },
+            {
+              "en": "We've made progress on the project.",
+              "zh": "我们在项目上有了进展。"
+            }
+          ]
+        }
       },
       {
         "en": "result",
@@ -13557,7 +14858,22 @@ var VOCAB_DATA = [
         "root": "re(回)+sult(跳) → 回跳出来 → 结果",
         "exampleZh": "测试结果是什么？",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "what happens because of an action or situation; the outcome",
+          "zh": "因为某个行动或情况而发生的事情；结果",
+          "examples": [
+            {
+              "en": "The result of the test was positive.",
+              "zh": "测试结果是阳性。"
+            },
+            {
+              "en": "Hard work usually leads to good results.",
+              "zh": "努力通常带来好结果。"
+            }
+          ]
+        }
       },
       {
         "en": "effect",
@@ -13568,7 +14884,22 @@ var VOCAB_DATA = [
         "root": "ef(出)+fect(做) → 做出来的 → 效果",
         "exampleZh": "效果立竿见影。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a change that happens because of something else; how one thing influences another",
+          "zh": "因为其他事情而发生的变化；一件事如何影响另一件事",
+          "examples": [
+            {
+              "en": "The medicine had a positive effect.",
+              "zh": "药物有了积极的效果。"
+            },
+            {
+              "en": "What are the effects of pollution?",
+              "zh": "污染的影响是什么？"
+            }
+          ]
+        }
       },
       {
         "en": "impact",
@@ -13579,7 +14910,22 @@ var VOCAB_DATA = [
         "root": "im(入)+pact(压) → 压进去 → 冲击/影响",
         "exampleZh": "政策的影响还不明确。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the strong effect or influence that something has on a situation or person",
+          "zh": "某事对情况或人的强烈影响或冲击",
+          "examples": [
+            {
+              "en": "Climate change has a huge impact on wildlife.",
+              "zh": "气候变化对野生动物有巨大影响。"
+            },
+            {
+              "en": "The impact of the decision was immediate.",
+              "zh": "决定的影响是立即的。"
+            }
+          ]
+        }
       },
       {
         "en": "movement",
@@ -13590,7 +14936,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "加入健身运动。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a change of position; also a group of people working together for a cause",
+          "zh": "位置的变化；也是一群人为了某个目标共同行动",
+          "examples": [
+            {
+              "en": "The civil rights movement changed many laws.",
+              "zh": "民权运动改变了许多法律。"
+            },
+            {
+              "en": "I watched the movement of the clouds.",
+              "zh": "我观察云的运动。"
+            }
+          ]
+        }
       },
       {
         "en": "operation",
@@ -13601,7 +14962,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "手术很顺利。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a planned activity or process; also a medical procedure",
+          "zh": "计划好的活动或过程；也是医疗手术",
+          "examples": [
+            {
+              "en": "He had an operation on his knee.",
+              "zh": "他做了膝盖手术。"
+            },
+            {
+              "en": "The company's daily operations are running smoothly.",
+              "zh": "公司的日常运营顺利进行。"
+            }
+          ]
+        }
       },
       {
         "en": "transaction",
@@ -13612,7 +14988,8 @@ var VOCAB_DATA = [
         "root": "trans(跨越)+action(行动) → 跨越的行动 → 交易",
         "exampleZh": "交易在线完成。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "activity",
@@ -13623,7 +15000,8 @@ var VOCAB_DATA = [
         "root": "act(做)+ivity → 做的事 → 活动",
         "exampleZh": "今天有什么活动？",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "experience",
@@ -13634,7 +15012,22 @@ var VOCAB_DATA = [
         "root": "ex(出)+peri(尝试)+ence → 尝试出来的 → 经验",
         "exampleZh": "她有很多工作经验。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something that happens to you and affects you; also, knowledge gained by doing something",
+          "zh": "发生在你身上并影响你的事；也是通过做某事获得的知识",
+          "examples": [
+            {
+              "en": "That was a great experience.",
+              "zh": "那是一次很棒的经历。"
+            },
+            {
+              "en": "She has five years of work experience.",
+              "zh": "她有五年的工作经验。"
+            }
+          ]
+        }
       },
       {
         "en": "journey",
@@ -13645,7 +15038,8 @@ var VOCAB_DATA = [
         "root": "journ(天)+ey → 每天的行程 → 旅程",
         "exampleZh": "坐火车旅程需要三小时。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "shipment",
@@ -13656,7 +15050,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "货运周四到达。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "delivery",
@@ -13667,7 +15062,22 @@ var VOCAB_DATA = [
         "root": "de(离开)+liver(自由) → 释放送达 → 投递",
         "exampleZh": "快递预计明天到达。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of bringing something to a place; also the package that is brought",
+          "zh": "把东西送到某地的行为；也是被送达的包裹",
+          "examples": [
+            {
+              "en": "The delivery arrived this morning.",
+              "zh": "快递今天早上到了。"
+            },
+            {
+              "en": "Free delivery on orders over $50.",
+              "zh": "订单超过50美元免费送货。"
+            }
+          ]
+        }
       },
       {
         "en": "appointment",
@@ -13678,7 +15088,8 @@ var VOCAB_DATA = [
         "root": "ap(向)+point(指)+ment → 指定的时间 → 预约",
         "exampleZh": "明天我有医生预约。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "concrete"
       },
       {
         "en": "purpose",
@@ -13689,7 +15100,22 @@ var VOCAB_DATA = [
         "root": "pro(前)+pose(放) → 放在前面的 → 目的",
         "exampleZh": "这个会议的目的是什么？",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the reason why something is done or exists; the goal",
+          "zh": "某事被做或存在的理由；目标",
+          "examples": [
+            {
+              "en": "What's the purpose of this meeting?",
+              "zh": "这个会议的目的是什么？"
+            },
+            {
+              "en": "She found her purpose in helping others.",
+              "zh": "她在帮助他人中找到了人生目的。"
+            }
+          ]
+        }
       },
       {
         "en": "opportunity",
@@ -13700,7 +15126,22 @@ var VOCAB_DATA = [
         "root": "opport(适合)+unity → 适合的时候 → 机会",
         "exampleZh": "这是一个好机会。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a chance to do something, especially something good or useful",
+          "zh": "做某事的机会，尤其是做好的或有用的事",
+          "examples": [
+            {
+              "en": "This is a great opportunity to learn.",
+              "zh": "这是一个学习的好机会。"
+            },
+            {
+              "en": "Don't miss this opportunity.",
+              "zh": "不要错过这个机会。"
+            }
+          ]
+        }
       },
       {
         "en": "permission",
@@ -13711,7 +15152,22 @@ var VOCAB_DATA = [
         "root": "per(通过)+miss(送)+ion → 让通过 → 许可",
         "exampleZh": "进入前请获得许可。",
         "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入"
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of allowing someone to do something; official approval",
+          "zh": "允许某人做某事的行为；正式批准",
+          "examples": [
+            {
+              "en": "You need permission to enter this area.",
+              "zh": "你需要许可才能进入这个区域。"
+            },
+            {
+              "en": "She asked her parents' permission to go out.",
+              "zh": "她征求父母的允许出去。"
+            }
+          ]
+        }
       },
       {
         "en": "cab",
@@ -13722,7 +15178,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们打车去机场吧。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "van",
@@ -13733,7 +15190,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们租了一辆面包车去自驾游。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "trailer",
@@ -13744,7 +15202,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把拖车挂到卡车后面。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "ferry",
@@ -13755,7 +15214,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "坐渡轮过河。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "yacht",
@@ -13766,7 +15226,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他们坐豪华游艇出海。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "carriage",
@@ -13777,7 +15238,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "哪个车厢是头等舱？",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "terminal",
@@ -13788,7 +15250,8 @@ var VOCAB_DATA = [
         "root": "termin(终点)+al → 终点 → 航站楼",
         "exampleZh": "我们到了3号航站楼。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "platform",
@@ -13799,7 +15262,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "火车从5号站台出发。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a raised surface you stand on; also, a system or technology that other things are built on",
+          "zh": "你站立的升高表面；也是其他事物构建在其上的系统或技术",
+          "examples": [
+            {
+              "en": "Wait on the platform for the train.",
+              "zh": "在站台上等火车。"
+            },
+            {
+              "en": "YouTube is a video-sharing platform.",
+              "zh": "YouTube是一个视频分享平台。"
+            }
+          ]
+        }
       },
       {
         "en": "fare",
@@ -13810,7 +15288,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "公交车票价两美元。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the money you pay to travel on a bus, train, or other transport",
+          "zh": "你付钱坐公交、火车或其他交通工具的费用",
+          "examples": [
+            {
+              "en": "The bus fare is $2.",
+              "zh": "公交车费是2美元。"
+            },
+            {
+              "en": "Air fares have increased this year.",
+              "zh": "今年机票价格上涨了。"
+            }
+          ]
+        }
       },
       {
         "en": "passport",
@@ -13821,7 +15314,8 @@ var VOCAB_DATA = [
         "root": "pass(通过)+port(港口) → 通过港口的凭证 → 护照",
         "exampleZh": "别在机场忘了护照。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "visa",
@@ -13832,7 +15326,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我需要申请旅游签证。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "luggage",
@@ -13843,7 +15338,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "你有多少件行李？",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "suitcase",
@@ -13854,7 +15350,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把所有东西装进行李箱。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "backpack",
@@ -13865,7 +15362,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她背着背包去上学。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "baggage claim",
@@ -13876,7 +15374,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "去行李提取处取行李。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "departure",
@@ -13887,7 +15386,8 @@ var VOCAB_DATA = [
         "root": "de(离开)+part(部分) → 从整体分离 → 出发",
         "exampleZh": "查看公告板上的出发时间。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "arrival",
@@ -13898,7 +15398,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "到达口是12号门。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "layover",
@@ -13909,7 +15410,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们在东京有3小时转机等候。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "commute",
@@ -13920,7 +15422,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我的通勤大约需要40分钟。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "route",
@@ -13931,7 +15434,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "去机场最快的路线是什么？",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the way or path that you take to get from one place to another",
+          "zh": "你从一个地方到另一个地方所走的路或路径",
+          "examples": [
+            {
+              "en": "We took a different route to avoid traffic.",
+              "zh": "我们走了一条不同的路线以避开交通拥堵。"
+            },
+            {
+              "en": "What's the fastest route to the airport?",
+              "zh": "去机场最快的路线是什么？"
+            }
+          ]
+        }
       },
       {
         "en": "mileage",
@@ -13942,7 +15460,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这车里程数很低。",
         "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入"
+        "subcategoryZh": "交通深入",
+        "wordType": "concrete"
       },
       {
         "en": "government",
@@ -13953,7 +15472,8 @@ var VOCAB_DATA = [
         "root": "govern(统治)+ment → 统治机构 → 政府",
         "exampleZh": "政府宣布了新规定。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "policy",
@@ -13964,7 +15484,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "新政策下月开始。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a set of rules or principles that guide decisions, especially in government or business",
+          "zh": "指导决策的一套规则或原则，特别是在政府或企业中",
+          "examples": [
+            {
+              "en": "The company's policy is to hire locally.",
+              "zh": "公司的政策是本地招聘。"
+            },
+            {
+              "en": "Government policy affects everyone.",
+              "zh": "政府政策影响每个人。"
+            }
+          ]
+        }
       },
       {
         "en": "culture",
@@ -13975,7 +15510,22 @@ var VOCAB_DATA = [
         "root": "cult(耕种)+ure → 耕作培养 → 文化",
         "exampleZh": "了解当地文化。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the ideas, customs, and way of life of a particular group or society",
+          "zh": "特定群体或社会的思想、习俗和生活方式",
+          "examples": [
+            {
+              "en": "Chinese culture values family.",
+              "zh": "中国文化重视家庭。"
+            },
+            {
+              "en": "Learning about other cultures is important.",
+              "zh": "了解其他文化很重要。"
+            }
+          ]
+        }
       },
       {
         "en": "tradition",
@@ -13986,7 +15536,22 @@ var VOCAB_DATA = [
         "root": "trad(传递)+ition → 传递下来的 → 传统",
         "exampleZh": "这是我们家传统。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a custom or belief that has been passed down through generations",
+          "zh": "通过世代传承下来的习俗或信念",
+          "examples": [
+            {
+              "en": "It's a tradition to eat turkey on Thanksgiving.",
+              "zh": "感恩节吃火鸡是一个传统。"
+            },
+            {
+              "en": "Many traditions are slowly disappearing.",
+              "zh": "许多传统正在慢慢消失。"
+            }
+          ]
+        }
       },
       {
         "en": "custom",
@@ -13997,7 +15562,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "握手是当地习俗。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a traditional way of behaving or doing something that is specific to a society",
+          "zh": "特定社会中传统的行为或做事方式",
+          "examples": [
+            {
+              "en": "It is a local custom to greet with a bow.",
+              "zh": "鞠躬问候是当地习俗。"
+            },
+            {
+              "en": "Customs differ from country to country.",
+              "zh": "习俗因国而异。"
+            }
+          ]
+        }
       },
       {
         "en": "religion",
@@ -14008,7 +15588,8 @@ var VOCAB_DATA = [
         "root": "re(再)+lig(绑定)+ion → 绑在一起的 → 宗教",
         "exampleZh": "宗教在许多文化中有影响。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "election",
@@ -14019,7 +15600,22 @@ var VOCAB_DATA = [
         "root": "e(出)+lect(选)+ion → 选出来 → 选举",
         "exampleZh": "选举下个月举行。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the process of choosing someone by voting",
+          "zh": "通过投票选择某人的过程",
+          "examples": [
+            {
+              "en": "The election will be held next month.",
+              "zh": "选举将在下月举行。"
+            },
+            {
+              "en": "Who won the last election?",
+              "zh": "谁赢得了上次选举？"
+            }
+          ]
+        }
       },
       {
         "en": "vote",
@@ -14030,7 +15626,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "明天别忘了投票。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "crime",
@@ -14041,7 +15638,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "今年犯罪率下降了。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an illegal action that can be punished by law",
+          "zh": "可以被法律惩罚的非法行为",
+          "examples": [
+            {
+              "en": "Crime rates have gone down in this area.",
+              "zh": "这个地区的犯罪率下降了。"
+            },
+            {
+              "en": "Stealing is a crime.",
+              "zh": "盗窃是犯罪。"
+            }
+          ]
+        }
       },
       {
         "en": "punishment",
@@ -14052,7 +15664,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "惩罚是罚款。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something done to a person who has broken a rule or law, to make them suffer or learn",
+          "zh": "对违反规则或法律的人所做的使其受苦或学习的事",
+          "examples": [
+            {
+              "en": "The punishment for this crime is five years in prison.",
+              "zh": "这项犯罪的处罚是五年监禁。"
+            },
+            {
+              "en": "Fair punishment helps maintain order.",
+              "zh": "公正的处罚有助于维持秩序。"
+            }
+          ]
+        }
       },
       {
         "en": "freedom",
@@ -14063,7 +15690,22 @@ var VOCAB_DATA = [
         "root": "free(自由)+dom → 自由的状态 → 自由",
         "exampleZh": "言论自由很重要。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the state of being able to do what you want without being controlled or limited",
+          "zh": "能够做自己想做的事而不受控制或限制的状态",
+          "examples": [
+            {
+              "en": "Freedom of speech is a basic right.",
+              "zh": "言论自由是一项基本权利。"
+            },
+            {
+              "en": "He fought for freedom from oppression.",
+              "zh": "他为摆脱压迫的自由而战斗。"
+            }
+          ]
+        }
       },
       {
         "en": "equality",
@@ -14074,7 +15716,22 @@ var VOCAB_DATA = [
         "root": "equal(相等)+ity → 相等的状态 → 平等",
         "exampleZh": "每个人都应该平等。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the principle that all people should have the same rights and opportunities",
+          "zh": "所有人都应该有相同权利和机会的原则",
+          "examples": [
+            {
+              "en": "Gender equality is still a challenge in many places.",
+              "zh": "性别平等在许多地方仍是一个挑战。"
+            },
+            {
+              "en": "They promote equality in the workplace.",
+              "zh": "他们在工作场所促进平等。"
+            }
+          ]
+        }
       },
       {
         "en": "justice",
@@ -14085,7 +15742,22 @@ var VOCAB_DATA = [
         "root": "just(公正)+ice → 公正 → 正义",
         "exampleZh": "正义对每个人都应该公平。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the quality of being fair and treating people equally; also the system of law",
+          "zh": "公正和公平对待人的品质；也是法律系统",
+          "examples": [
+            {
+              "en": "We demand justice for the victims.",
+              "zh": "我们要求为受害者伸张正义。"
+            },
+            {
+              "en": "The justice system must be fair.",
+              "zh": "司法系统必须公正。"
+            }
+          ]
+        }
       },
       {
         "en": "community",
@@ -14096,7 +15768,22 @@ var VOCAB_DATA = [
         "root": "commun(共同)+ity → 共同体 → 社区",
         "exampleZh": "我们的社区很友好。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a group of people who live in the same area or share common interests",
+          "zh": "住在同一地区或共享共同利益的一群人",
+          "examples": [
+            {
+              "en": "Our community has a strong sense of support.",
+              "zh": "我们的社区有很强的互助意识。"
+            },
+            {
+              "en": "The online community is very active.",
+              "zh": "在线社区非常活跃。"
+            }
+          ]
+        }
       },
       {
         "en": "neighborhood",
@@ -14107,7 +15794,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这个街区很安静。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "society",
@@ -14118,7 +15806,8 @@ var VOCAB_DATA = [
         "root": "soci(伙伴)+ety → 伙伴关系 → 社会",
         "exampleZh": "社会变化很快。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "population",
@@ -14129,7 +15818,8 @@ var VOCAB_DATA = [
         "root": "popul(人民)+ation → 人民总数 → 人口",
         "exampleZh": "这座城市的人口在增长。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "economy",
@@ -14140,7 +15830,22 @@ var VOCAB_DATA = [
         "root": "eco(家)+nomy(管理) → 家政管理 → 经济",
         "exampleZh": "今年经济状况不错。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the system of how money is made, spent, and managed in a country or region",
+          "zh": "一个国家或地区中金钱制造、花费和管理的系统",
+          "examples": [
+            {
+              "en": "The economy is growing this year.",
+              "zh": "经济今年在增长。"
+            },
+            {
+              "en": "A strong economy means more jobs.",
+              "zh": "强劲的经济意味着更多就业。"
+            }
+          ]
+        }
       },
       {
         "en": "industry",
@@ -14151,7 +15856,8 @@ var VOCAB_DATA = [
         "root": "indu(在内)+stry → 在里面做事 → 工业/产业",
         "exampleZh": "科技在这里是大产业。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "concrete"
       },
       {
         "en": "education",
@@ -14162,7 +15868,22 @@ var VOCAB_DATA = [
         "root": "e(出)+duc(引导)+ation → 引导出来 → 教育",
         "exampleZh": "教育是成功的关键。",
         "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入"
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the process of learning and gaining knowledge, especially in schools",
+          "zh": "学习和获取知识的过程，特别是在学校中",
+          "examples": [
+            {
+              "en": "Education is important for everyone.",
+              "zh": "教育对每个人都很重要。"
+            },
+            {
+              "en": "She received a good education.",
+              "zh": "她接受了良好的教育。"
+            }
+          ]
+        }
       },
       {
         "en": "guilt",
@@ -14173,7 +15894,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我对她撒谎感到内疚。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of having done something wrong or bad",
+          "zh": "做了错事或坏事的感觉",
+          "examples": [
+            {
+              "en": "He felt guilt after lying to his friend.",
+              "zh": "他对朋友撒谎后感到内疚。"
+            },
+            {
+              "en": "Guilt can be a heavy burden.",
+              "zh": "内疚感可以是沉重的负担。"
+            }
+          ]
+        }
       },
       {
         "en": "shame",
@@ -14184,7 +15920,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他为自己的错误感到羞愧。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the painful feeling of having done something wrong or embarrassing",
+          "zh": "做了错事或令人尴尬的事的痛苦感觉",
+          "examples": [
+            {
+              "en": "He felt shame when he was caught cheating.",
+              "zh": "他被发现作弊时感到羞耻。"
+            },
+            {
+              "en": "There's no shame in asking for help.",
+              "zh": "寻求帮助并不丢人。"
+            }
+          ]
+        }
       },
       {
         "en": "pride",
@@ -14195,7 +15946,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她为自己的工作感到自豪。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a feeling of satisfaction and pleasure in what you or others have achieved",
+          "zh": "对你或他人所取得的成就感到满意和高兴的感觉",
+          "examples": [
+            {
+              "en": "She takes pride in her work.",
+              "zh": "她对自己的工作感到自豪。"
+            },
+            {
+              "en": "National pride is strong during the Olympics.",
+              "zh": "奥运期间民族自豪感很强。"
+            }
+          ]
+        }
       },
       {
         "en": "jealousy",
@@ -14206,7 +15972,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "嫉妒会破坏关系。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the unhappy feeling when you want what someone else has",
+          "zh": "当你想要别人拥有的东西时的不愉快感觉",
+          "examples": [
+            {
+              "en": "Jealousy can destroy friendships.",
+              "zh": "嫉妒可以毁掉友谊。"
+            },
+            {
+              "en": "He felt jealousy when his friend got the promotion.",
+              "zh": "当朋友得到晋升时他感到嫉妒。"
+            }
+          ]
+        }
       },
       {
         "en": "embarrassment",
@@ -14217,7 +15998,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "那是个尴尬的时刻。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the uncomfortable feeling when you've done something that makes you look foolish",
+          "zh": "当你做了让自己显得愚蠢的事时的不舒服感觉",
+          "examples": [
+            {
+              "en": "She hid her embarrassment with a smile.",
+              "zh": "她用微笑掩饰尴尬。"
+            },
+            {
+              "en": "To my embarrassment, I forgot his name.",
+              "zh": "令我尴尬的是，我忘了他的名字。"
+            }
+          ]
+        }
       },
       {
         "en": "gratitude",
@@ -14228,7 +16024,22 @@ var VOCAB_DATA = [
         "root": "grat(高兴)+itude → 让人高兴的状态 → 感恩",
         "exampleZh": "我向她表达了感激。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being thankful and wanting to show appreciation",
+          "zh": "感到感谢并想要表达感激的感觉",
+          "examples": [
+            {
+              "en": "I want to express my gratitude to you.",
+              "zh": "我想向你表达我的感激之情。"
+            },
+            {
+              "en": "She showed gratitude by writing a thank-you letter.",
+              "zh": "她通过写感谢信表达感激。"
+            }
+          ]
+        }
       },
       {
         "en": "sympathy",
@@ -14239,7 +16050,22 @@ var VOCAB_DATA = [
         "root": "sym(共同)+pathy(感情) → 共同的感情 → 同情",
         "exampleZh": "我对无家可归者感到同情。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "understanding and caring about someone else's suffering or sadness",
+          "zh": "理解和关心他人的痛苦或悲伤",
+          "examples": [
+            {
+              "en": "I feel sympathy for people who lost their homes.",
+              "zh": "我对失去家园的人感到同情。"
+            },
+            {
+              "en": "She expressed sympathy for the victim.",
+              "zh": "她对受害者表达了同情。"
+            }
+          ]
+        }
       },
       {
         "en": "curiosity",
@@ -14250,7 +16076,22 @@ var VOCAB_DATA = [
         "root": "curi(关心)+osity → 关心的程度 → 好奇心",
         "exampleZh": "好奇心驱使孩子学习。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the desire to know or learn about something",
+          "zh": "想要知道或学习某事的欲望",
+          "examples": [
+            {
+              "en": "Curiosity drives scientific discovery.",
+              "zh": "好奇心推动科学发现。"
+            },
+            {
+              "en": "Children have natural curiosity about the world.",
+              "zh": "孩子们对世界有天然的好奇心。"
+            }
+          ]
+        }
       },
       {
         "en": "patience",
@@ -14261,7 +16102,22 @@ var VOCAB_DATA = [
         "root": "pati(忍受)+ence → 忍受等待 → 耐心",
         "exampleZh": "教孩子需要耐心。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the ability to wait calmly without getting angry or frustrated",
+          "zh": "平静等待而不生气或沮丧的能力",
+          "examples": [
+            {
+              "en": "You need patience when learning a new language.",
+              "zh": "学新语言需要耐心。"
+            },
+            {
+              "en": "Patience is key to good teaching.",
+              "zh": "耐心是好教学的关键。"
+            }
+          ]
+        }
       },
       {
         "en": "stress",
@@ -14272,7 +16128,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "工作压力有时真的很难。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "concrete"
       },
       {
         "en": "comfort",
@@ -14283,7 +16140,22 @@ var VOCAB_DATA = [
         "root": "com(加强)+fort(力量) → 给予力量 → 安慰",
         "exampleZh": "她现在需要安慰。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a feeling of being relaxed and free from pain or worry; also something that makes you feel this way",
+          "zh": "感到放松和免于痛苦或担忧的感觉；也是让你有这种感觉的东西",
+          "examples": [
+            {
+              "en": "These shoes provide great comfort.",
+              "zh": "这些鞋子提供了极大的舒适感。"
+            },
+            {
+              "en": "Her words gave me comfort.",
+              "zh": "她的话给了我安慰。"
+            }
+          ]
+        }
       },
       {
         "en": "relief",
@@ -14294,7 +16166,22 @@ var VOCAB_DATA = [
         "root": "re(再)+lief(升起) → 重担升起 → 解脱",
         "exampleZh": "考试结束了真是解脱！",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being freed from worry, pain, or a difficult situation",
+          "zh": "从担忧、痛苦或困难处境中被解脱的感觉",
+          "examples": [
+            {
+              "en": "It was such a relief when the exam ended.",
+              "zh": "考试结束时的解脱感真是太好了。"
+            },
+            {
+              "en": "Financial relief helped the family survive.",
+              "zh": "经济救济帮助了这个家庭度过难关。"
+            }
+          ]
+        }
       },
       {
         "en": "frustration",
@@ -14305,7 +16192,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "没法修好它让我感到挫败。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being upset because you cannot achieve what you want",
+          "zh": "因为你无法实现你想要的东西而感到烦恼的感觉",
+          "examples": [
+            {
+              "en": "He expressed frustration with the slow progress.",
+              "zh": "他对缓慢的进展表达了沮丧。"
+            },
+            {
+              "en": "Frustration is normal when learning something new.",
+              "zh": "学习新东西时感到挫败是正常的。"
+            }
+          ]
+        }
       },
       {
         "en": "loneliness",
@@ -14316,7 +16218,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "孤独真的很难熬。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the sad feeling of being alone or not having friends",
+          "zh": "独自一人或没有朋友的悲伤感觉",
+          "examples": [
+            {
+              "en": "Loneliness can affect your mental health.",
+              "zh": "孤独感会影响心理健康。"
+            },
+            {
+              "en": "She felt loneliness after moving to a new city.",
+              "zh": "搬到新城市后她感到孤独。"
+            }
+          ]
+        }
       },
       {
         "en": "excitement",
@@ -14327,7 +16244,22 @@ var VOCAB_DATA = [
         "root": "ex(出)+cite(唤起)+ment → 被唤出 → 兴奋",
         "exampleZh": "孩子们对旅行感到兴奋。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being very happy and enthusiastic about something",
+          "zh": "对某事感到非常高兴和热情的感觉",
+          "examples": [
+            {
+              "en": "The children showed excitement about the trip.",
+              "zh": "孩子们对旅行表现出兴奋。"
+            },
+            {
+              "en": "There was excitement in the crowd.",
+              "zh": "人群中有兴奋的情绪。"
+            }
+          ]
+        }
       },
       {
         "en": "boredom",
@@ -14338,7 +16270,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "无聊让你做奇怪的事。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being tired and unhappy because nothing interesting is happening",
+          "zh": "因为没有有趣的事情发生而感到疲倦和不快乐的感觉",
+          "examples": [
+            {
+              "en": "Boredom makes people seek new activities.",
+              "zh": "无聊让人寻找新活动。"
+            },
+            {
+              "en": "He quit his job out of boredom.",
+              "zh": "他因为无聊辞了职。"
+            }
+          ]
+        }
       },
       {
         "en": "despair",
@@ -14349,7 +16296,22 @@ var VOCAB_DATA = [
         "root": "de(去除)+spair(希望) → 没有希望 → 绝望",
         "exampleZh": "不要屈服于绝望。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a feeling that there is no hope and nothing can be done to improve the situation",
+          "zh": "一种没有希望、无法改善情况的感觉",
+          "examples": [
+            {
+              "en": "She was in despair after losing everything.",
+              "zh": "失去一切后她陷入了绝望。"
+            },
+            {
+              "en": "Never give in to despair.",
+              "zh": "永远不要屈服于绝望。"
+            }
+          ]
+        }
       },
       {
         "en": "contentment",
@@ -14360,7 +16322,8 @@ var VOCAB_DATA = [
         "root": "content(满足)+ment → 满足的状态 → 知足",
         "exampleZh": "满足来自简单的东西。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "concrete"
       },
       {
         "en": "joy",
@@ -14371,7 +16334,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "孩子们高兴地跳起来。",
         "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入"
+        "subcategoryZh": "情感深入",
+        "wordType": "concrete"
       },
       {
         "en": "crosswalk",
@@ -14382,7 +16346,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "走人行横道过马路。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "lane",
@@ -14393,7 +16358,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "保持在右车道。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "alley",
@@ -14404,7 +16370,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "餐厅在小巷里。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "avenue",
@@ -14415,7 +16382,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "办公室在第五大道上。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "boulevard",
@@ -14426,7 +16394,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "沿着林荫大道走到公园。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "highway",
@@ -14437,7 +16406,8 @@ var VOCAB_DATA = [
         "root": "high(高)+way(路) → 主要的大路 → 高速公路",
         "exampleZh": "走高速公路更快。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "freeway",
@@ -14448,7 +16418,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "高速公路现在堵车了。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "parking lot",
@@ -14459,7 +16430,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "今天停车场满了。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "subway station",
@@ -14470,7 +16442,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "从这里步行到地铁站。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "bus stop",
@@ -14481,7 +16454,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在那边的公交站等。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "taxi stand",
@@ -14492,7 +16466,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "酒店外面有出租车等候区。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "crossing",
@@ -14503,7 +16478,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在交叉口等绿灯。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "fountain",
@@ -14514,7 +16490,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "孩子们在喷泉附近玩。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "bench",
@@ -14525,7 +16502,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们坐长椅上歇一会儿吧。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "signpost",
@@ -14536,7 +16514,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "跟着路标走到海滩。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "lamppost",
@@ -14547,7 +16526,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "猫坐在路灯杆旁边。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "manhole",
@@ -14558,7 +16538,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "不要踩下水道井口盖。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "curb",
@@ -14569,7 +16550,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "靠近马路牙子停车。",
         "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入"
+        "subcategoryZh": "街道深入",
+        "wordType": "concrete"
       },
       {
         "en": "receipt",
@@ -14580,7 +16562,8 @@ var VOCAB_DATA = [
         "root": "re(回)+cept(拿) → 拿回来的凭证 → 收据",
         "exampleZh": "保留收据以便退货。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "cart",
@@ -14591,7 +16574,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "推着购物车走过货架通道。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "basket",
@@ -14602,7 +16586,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "买少量东西用购物篮。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "discount",
@@ -14613,7 +16598,22 @@ var VOCAB_DATA = [
         "root": "dis(去除)+count(计算) → 减少计算 → 折扣",
         "exampleZh": "学生有折扣吗？",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a reduction in the price of something",
+          "zh": "某物价格的减少",
+          "examples": [
+            {
+              "en": "I got a 20% discount on this shirt.",
+              "zh": "这件衬衫我得到了20%的折扣。"
+            },
+            {
+              "en": "Students get a discount at the museum.",
+              "zh": "学生在博物馆享受折扣。"
+            }
+          ]
+        }
       },
       {
         "en": "coupon",
@@ -14624,7 +16624,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我有一张八折优惠券。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "sale",
@@ -14635,7 +16636,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这周末有大促销。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an event where things are sold at lower prices; also the act of selling something",
+          "zh": "以较低价格出售东西的活动；也是出售某物的行为",
+          "examples": [
+            {
+              "en": "The summer sale starts tomorrow.",
+              "zh": "夏季促销明天开始。"
+            },
+            {
+              "en": "The sale of the house was completed.",
+              "zh": "房屋的出售已完成。"
+            }
+          ]
+        }
       },
       {
         "en": "promotion",
@@ -14646,7 +16662,22 @@ var VOCAB_DATA = [
         "root": "pro(前)+motion(移动) → 向前推 → 促销/晋升",
         "exampleZh": "促销明天结束。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an activity to increase sales or awareness; also, being moved to a higher position at work",
+          "zh": "增加销售或知名度的活动；也是在工作中升到更高职位",
+          "examples": [
+            {
+              "en": "The store is running a promotion this week.",
+              "zh": "商店这周在做促销。"
+            },
+            {
+              "en": "She got a promotion to manager.",
+              "zh": "她被晋升为经理。"
+            }
+          ]
+        }
       },
       {
         "en": "brand",
@@ -14657,7 +16688,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "你用什么品牌的洗发水？",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the name and image that identify a company's product and make it different from others",
+          "zh": "识别公司产品并使其与其他产品不同的名称和形象",
+          "examples": [
+            {
+              "en": "Nike is a well-known brand.",
+              "zh": "耐克是一个知名品牌。"
+            },
+            {
+              "en": "I don't care about brands — I just want good quality.",
+              "zh": "我不在乎品牌——我只想要好质量。"
+            }
+          ]
+        }
       },
       {
         "en": "label",
@@ -14668,7 +16714,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "看标签了解成分。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "barcode",
@@ -14679,7 +16726,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在收银台扫描条形码。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "price tag",
@@ -14690,7 +16738,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "价格标签写着25美元。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "refund",
@@ -14701,7 +16750,22 @@ var VOCAB_DATA = [
         "root": "re(回)+fund(资金) → 资金退回 → 退款",
         "exampleZh": "我想退这个商品。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that is given back to you when you return something you bought",
+          "zh": "当你退还购买的东西时给你退回的钱",
+          "examples": [
+            {
+              "en": "I asked for a refund because the product was defective.",
+              "zh": "我要求退款因为产品有缺陷。"
+            },
+            {
+              "en": "Full refund within 30 days.",
+              "zh": "30天内全额退款。"
+            }
+          ]
+        }
       },
       {
         "en": "exchange",
@@ -14712,7 +16776,8 @@ var VOCAB_DATA = [
         "root": "ex(出)+change(改变) → 改出 → 交换",
         "exampleZh": "能换一个不同尺码的吗？",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "checkout",
@@ -14723,7 +16788,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "准备好了去收银台。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "aisle",
@@ -14734,7 +16800,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "麦片在第3通道。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "display",
@@ -14745,7 +16812,8 @@ var VOCAB_DATA = [
         "root": "dis(分开)+play(玩) → 展开给人看 → 展示",
         "exampleZh": "陈列看起来很吸引人。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "wallet",
@@ -14756,7 +16824,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我把钱包忘在家里了。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "purse",
@@ -14767,7 +16836,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她把手机放进了手提包。",
         "subcategory": "Shopping",
-        "subcategoryZh": "购物"
+        "subcategoryZh": "购物",
+        "wordType": "concrete"
       },
       {
         "en": "mug",
@@ -14778,7 +16848,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我可以用马克杯喝咖啡吗？",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "teapot",
@@ -14789,7 +16860,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把茶壶装满热水。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "strainer",
@@ -14800,7 +16872,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用漏勺把意面滤干。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "colander",
@@ -14811,7 +16884,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在沥水盆里冲洗蔬菜。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "peeler",
@@ -14822,7 +16896,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用削皮器削土豆皮。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "grater",
@@ -14833,7 +16908,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用擦丝器把奶酪擦碎。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "whisk",
@@ -14844,7 +16920,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用打蛋器打鸡蛋。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "rolling pin",
@@ -14855,7 +16932,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用擀面杖擀面团。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "tray",
@@ -14866,7 +16944,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把杯子放在托盘上。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "oven mitt",
@@ -14877,7 +16956,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用隔热手套把锅拿出来。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "timer",
@@ -14888,7 +16968,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把计时器设为20分钟。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "thermometer",
@@ -14899,7 +16980,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用温度计检查肉的温度。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "can opener",
@@ -14910,7 +16992,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我需要开罐器来开这罐汤。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "measuring cup",
@@ -14921,7 +17004,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用量杯倒两杯水。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "sieve",
@@ -14932,7 +17016,8 @@ var VOCAB_DATA = [
         "root": "sieve(筛) → 筛子",
         "exampleZh": "用筛子筛面粉。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "stool",
@@ -14943,7 +17028,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "坐在吧台凳上。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "thermos",
@@ -14954,7 +17040,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "带一瓶热茶的保温瓶。",
         "subcategory": "Kitchen Deep",
-        "subcategoryZh": "厨房深入"
+        "subcategoryZh": "厨房深入",
+        "wordType": "concrete"
       },
       {
         "en": "plug",
@@ -14965,7 +17052,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把充电器插头插进插座。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "socket",
@@ -14976,7 +17064,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "床旁边的插座坏了。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "switch",
@@ -14987,7 +17076,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "离开前关掉开关。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "thermostat",
@@ -14998,7 +17088,8 @@ var VOCAB_DATA = [
         "root": "therm(热)+stat(稳定) → 让温度稳定 → 恒温器",
         "exampleZh": "把恒温器设到72度。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "doorknob",
@@ -15009,7 +17100,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "门把手又卡住了。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "doorbell",
@@ -15020,7 +17112,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "有人按了门铃。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "mailbox",
@@ -15031,7 +17124,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "检查信箱有没有信。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "trash bag",
@@ -15042,7 +17136,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在垃圾桶里放个新垃圾袋。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "recycling bin",
@@ -15053,7 +17148,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把纸放进回收箱。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "sponge",
@@ -15064,7 +17160,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用海绵擦台面。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "cloth",
@@ -15075,7 +17172,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "用湿抹布擦桌子。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "rack",
@@ -15086,7 +17184,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把外套挂在架子上。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "bin",
@@ -15097,7 +17196,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把那个扔进垃圾桶。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "crate",
@@ -15108,7 +17208,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把工具放在板条箱里。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "vent",
@@ -15119,7 +17220,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "确保通风口没有被堵住。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "pipe",
@@ -15130,7 +17232,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "昨晚水管爆了。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "wire",
@@ -15141,7 +17244,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "不要碰裸露的电线。",
         "subcategory": "Household Deep",
-        "subcategoryZh": "家居深入"
+        "subcategoryZh": "家居深入",
+        "wordType": "concrete"
       },
       {
         "en": "license",
@@ -15152,7 +17256,22 @@ var VOCAB_DATA = [
         "root": "lic(允许)+ense → 允许的凭证 → 执照",
         "exampleZh": "你有驾照吗？",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an official document that gives you permission to do something, like drive or practice a profession",
+          "zh": "给你许可做某事的官方文件，比如开车或执业",
+          "examples": [
+            {
+              "en": "You need a license to drive a car.",
+              "zh": "你需要驾照才能开车。"
+            },
+            {
+              "en": "His medical license was revoked.",
+              "zh": "他的医疗执照被吊销了。"
+            }
+          ]
+        }
       },
       {
         "en": "keys",
@@ -15163,7 +17282,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我到处找不到钥匙。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "sunglasses",
@@ -15174,7 +17294,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在强光下戴太阳镜。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "watch",
@@ -15185,7 +17306,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "看手表上的时间。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "ring",
@@ -15196,7 +17318,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她戴了一枚钻石戒指。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "necklace",
@@ -15207,7 +17330,8 @@ var VOCAB_DATA = [
         "root": "neck(脖子)+lace(绳带) → 挂在脖子上的 → 项链",
         "exampleZh": "她生日收到了项链。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "bracelet",
@@ -15218,7 +17342,8 @@ var VOCAB_DATA = [
         "root": "brace(手臂)+let(小) → 小手臂饰品 → 手链",
         "exampleZh": "这条手链配我的穿搭。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "earring",
@@ -15229,7 +17354,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "昨天她丢了一个耳环。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "cosmetics",
@@ -15240,7 +17366,8 @@ var VOCAB_DATA = [
         "root": "cosm(装饰)+etics → 装饰用品 → 化妆品",
         "exampleZh": "她把化妆品装在包里。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "lipstick",
@@ -15251,7 +17378,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "出门前她涂了口红。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "perfume",
@@ -15262,7 +17390,8 @@ var VOCAB_DATA = [
         "root": "per(穿过)+fume(烟雾) → 穿过的香气 → 香水",
         "exampleZh": "这款香水味道真好。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "handkerchief",
@@ -15273,7 +17402,8 @@ var VOCAB_DATA = [
         "root": "hand(手)+kerchief(头巾) → 手里的布 → 手帕",
         "exampleZh": "他用手帕擦脸。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "umbrella",
@@ -15284,7 +17414,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "带把伞，可能下雨。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "journal",
@@ -15295,7 +17426,8 @@ var VOCAB_DATA = [
         "root": "journ(天)+al → 每天的记录 → 日记",
         "exampleZh": "我每晚写日记。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "diary",
@@ -15306,7 +17438,8 @@ var VOCAB_DATA = [
         "root": "di(日)+ary → 每日记录 → 日记本",
         "exampleZh": "她从10岁起就写日记。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "ID card",
@@ -15317,7 +17450,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "在门口出示身份证。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "contact lens",
@@ -15328,7 +17462,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我戴隐形眼镜不戴框架眼镜。",
         "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品"
+        "subcategoryZh": "个人物品",
+        "wordType": "concrete"
       },
       {
         "en": "tie",
@@ -15339,7 +17474,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他面试时戴了领带。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "hoodie",
@@ -15350,7 +17486,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我就穿件连帽卫衣去健身房。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "raincoat",
@@ -15361,7 +17498,8 @@ var VOCAB_DATA = [
         "root": "rain(雨)+coat(外套) → 防雨的外套 → 雨衣",
         "exampleZh": "带上雨衣，可能下雨。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "pajama",
@@ -15372,7 +17510,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她换上了睡衣上衣。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "gown",
@@ -15383,7 +17522,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "她穿了一件漂亮的礼服去聚会。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "uniform",
@@ -15394,7 +17534,8 @@ var VOCAB_DATA = [
         "root": "uni(统一)+form(形式) → 统一的形式 → 制服",
         "exampleZh": "所有学生必须穿校服。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "swimsuit",
@@ -15405,7 +17546,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "带上泳衣去海滩。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "tracksuit",
@@ -15416,7 +17558,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "他穿运动套装去慢跑。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "cape",
@@ -15427,7 +17570,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "那个超级英雄穿了红色披风。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "veil",
@@ -15438,7 +17582,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "新娘戴着白色头纱。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "collar",
@@ -15449,7 +17594,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这件衬衫领子很硬。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "pocket",
@@ -15460,7 +17606,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "检查一下口袋里的钥匙。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "zipper",
@@ -15471,7 +17618,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我外套的拉链坏了。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "button",
@@ -15482,7 +17630,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我衬衫上的纽扣掉了。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "sleeve",
@@ -15493,7 +17642,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "做饭前把袖子卷起来。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "hem",
@@ -15504,7 +17654,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "裙子下摆需要修一下。",
         "subcategory": "Clothing Deep",
-        "subcategoryZh": "衣物深入"
+        "subcategoryZh": "衣物深入",
+        "wordType": "concrete"
       },
       {
         "en": "temperature",
@@ -15515,7 +17666,22 @@ var VOCAB_DATA = [
         "root": "temper(调节)+ature → 调节的热量 → 温度",
         "exampleZh": "温度降到零度以下了。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a measure of how hot or cold something is",
+          "zh": "衡量某物有多热或多冷的指标",
+          "examples": [
+            {
+              "en": "The temperature today is 30°C.",
+              "zh": "今天的温度是30度。"
+            },
+            {
+              "en": "Take your temperature if you feel sick.",
+              "zh": "如果觉得不舒服就量体温。"
+            }
+          ]
+        }
       },
       {
         "en": "humidity",
@@ -15526,7 +17692,22 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "今天湿度很高。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the amount of water vapor in the air; how moist the air feels",
+          "zh": "空气中水蒸气的量；空气感觉有多潮湿",
+          "examples": [
+            {
+              "en": "The humidity is very high today — it feels sticky.",
+              "zh": "今天湿度很高——感觉很黏。"
+            },
+            {
+              "en": "High humidity makes hot weather worse.",
+              "zh": "高湿度让炎热的天气更难受。"
+            }
+          ]
+        }
       },
       {
         "en": "storm",
@@ -15537,7 +17718,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "暴风雨吹倒了一棵树。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "concrete"
       },
       {
         "en": "thunder",
@@ -15548,7 +17730,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "雷声吓到了狗。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "concrete"
       },
       {
         "en": "lightning",
@@ -15559,7 +17742,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "闪电照亮了天空。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "concrete"
       },
       {
         "en": "tornado",
@@ -15570,7 +17754,8 @@ var VOCAB_DATA = [
         "root": "torn(旋转)+ado → 旋转的风 → 龙卷风",
         "exampleZh": "昨晚龙卷风袭击了小镇。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "concrete"
       },
       {
         "en": "blizzard",
@@ -15581,7 +17766,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "暴风雪封闭了所有道路。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "concrete"
       },
       {
         "en": "drizzle",
@@ -15592,7 +17778,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "只是毛毛雨，不算真下雨。",
         "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节"
+        "subcategoryZh": "天气细节",
+        "wordType": "concrete"
       },
       {
         "en": "ottoman",
@@ -15603,7 +17790,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把脚搁在脚凳上。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       },
       {
         "en": "recliner",
@@ -15614,7 +17802,8 @@ var VOCAB_DATA = [
         "root": "recline(后仰)+er → 可以后仰的椅 → 躺椅",
         "exampleZh": "爸爸喜欢坐在躺椅上。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       },
       {
         "en": "side table",
@@ -15625,7 +17814,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "把灯放在边桌上。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       },
       {
         "en": "shelf unit",
@@ -15636,7 +17826,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们需要一个组合搁架放书。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       },
       {
         "en": "mantel",
@@ -15647,7 +17838,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "我们把照片放在壁炉台上。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       },
       {
         "en": "fireplace",
@@ -15658,7 +17850,8 @@ var VOCAB_DATA = [
         "root": "fire(火)+place(地方) → 有火的地方 → 壁炉",
         "exampleZh": "今晚我们把壁炉点上。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       },
       {
         "en": "cushion cover",
@@ -15669,7 +17862,8 @@ var VOCAB_DATA = [
         "root": "",
         "exampleZh": "这些靠垫套真的很软。",
         "subcategory": "Living Room Deep",
-        "subcategoryZh": "客厅深入"
+        "subcategoryZh": "客厅深入",
+        "wordType": "concrete"
       }
     ]
   }
