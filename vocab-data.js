@@ -13310,7 +13310,7 @@ var VOCAB_DATA = [
         "exampleZh": "签字前检查细节。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "sample",
@@ -13322,7 +13322,7 @@ var VOCAB_DATA = [
         "exampleZh": "试试产品的免费样品。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "surface",
@@ -13334,7 +13334,7 @@ var VOCAB_DATA = [
         "exampleZh": "桌子表面很光滑。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "layer",
@@ -13346,7 +13346,7 @@ var VOCAB_DATA = [
         "exampleZh": "再加一层漆。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "angle",
@@ -13358,7 +13358,7 @@ var VOCAB_DATA = [
         "exampleZh": "从不同角度看这个问题。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "position",
@@ -13370,7 +13370,7 @@ var VOCAB_DATA = [
         "exampleZh": "你申请什么职位？",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "spot",
@@ -13382,7 +13382,7 @@ var VOCAB_DATA = [
         "exampleZh": "这是个露营的好地方。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "area",
@@ -13394,7 +13394,7 @@ var VOCAB_DATA = [
         "exampleZh": "停车区在那边。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "zone",
@@ -13406,7 +13406,7 @@ var VOCAB_DATA = [
         "exampleZh": "这是禁止停车区域。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "district",
@@ -13418,7 +13418,7 @@ var VOCAB_DATA = [
         "exampleZh": "我住在市中心区。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "border",
@@ -13430,7 +13430,7 @@ var VOCAB_DATA = [
         "exampleZh": "在检查站过边境。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "territory",
@@ -13442,7 +13442,7 @@ var VOCAB_DATA = [
         "exampleZh": "这片领土属于国家。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "material",
@@ -13454,7 +13454,7 @@ var VOCAB_DATA = [
         "exampleZh": "这是什么材料做的？",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "equipment",
@@ -13466,7 +13466,7 @@ var VOCAB_DATA = [
         "exampleZh": "我们需要新的健身设备。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "tool",
@@ -13478,7 +13478,7 @@ var VOCAB_DATA = [
         "exampleZh": "我需要什么工具来做这个？",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "instrument",
@@ -13490,7 +13490,7 @@ var VOCAB_DATA = [
         "exampleZh": "你演奏什么乐器？",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "step",
@@ -13502,7 +13502,7 @@ var VOCAB_DATA = [
         "exampleZh": "一步一步来。",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "mushroom",
@@ -14330,7 +14330,7 @@ var VOCAB_DATA = [
         "exampleZh": "用红色标记笔标出这个。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "binder",
@@ -14402,7 +14402,7 @@ var VOCAB_DATA = [
         "exampleZh": "作业周五截止。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "deadline",
@@ -14414,7 +14414,7 @@ var VOCAB_DATA = [
         "exampleZh": "项目截止日期是下周一。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "lecture",
@@ -14426,7 +14426,7 @@ var VOCAB_DATA = [
         "exampleZh": "讲座10点开始。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "coursework",
@@ -14438,7 +14438,7 @@ var VOCAB_DATA = [
         "exampleZh": "这学期我有很多课程作业。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "textbook",
@@ -14510,7 +14510,7 @@ var VOCAB_DATA = [
         "exampleZh": "所有课程要求出勤。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "faculty",
@@ -14522,7 +14522,7 @@ var VOCAB_DATA = [
         "exampleZh": "教职员工会议在周三。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "locker",
@@ -14846,7 +14846,7 @@ var VOCAB_DATA = [
         "exampleZh": "护士检查了我的脉搏。",
         "subcategory": "Body Deep",
         "subcategoryZh": "身体深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "blood",
@@ -14978,7 +14978,7 @@ var VOCAB_DATA = [
         "exampleZh": "我整晚都在咳嗽。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "sneeze",
@@ -14990,7 +14990,7 @@ var VOCAB_DATA = [
         "exampleZh": "打喷嚏时捂住嘴。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "bruise",
@@ -15014,7 +15014,7 @@ var VOCAB_DATA = [
         "exampleZh": "包扎前先清洗伤口。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "vaccine",
@@ -15026,7 +15026,7 @@ var VOCAB_DATA = [
         "exampleZh": "每年打流感疫苗。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "clinic",
@@ -15074,7 +15074,7 @@ var VOCAB_DATA = [
         "exampleZh": "我的治疗师帮我应对压力。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "surgeon",
@@ -15086,7 +15086,7 @@ var VOCAB_DATA = [
         "exampleZh": "外科医生做了手术。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "patient",
@@ -15098,7 +15098,7 @@ var VOCAB_DATA = [
         "exampleZh": "病人在等医生。",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "puppy",
@@ -15350,7 +15350,7 @@ var VOCAB_DATA = [
         "exampleZh": "我们养了一只狗当宠物。",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "vet",
@@ -15386,7 +15386,7 @@ var VOCAB_DATA = [
         "exampleZh": "只有成年人能看这部电影。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "teenager",
@@ -15398,7 +15398,7 @@ var VOCAB_DATA = [
         "exampleZh": "大多数青少年喜欢社交媒体。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "senior",
@@ -15410,7 +15410,7 @@ var VOCAB_DATA = [
         "exampleZh": "老年人在商店有折扣。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "citizen",
@@ -15422,7 +15422,7 @@ var VOCAB_DATA = [
         "exampleZh": "每个公民都有投票权。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "stranger",
@@ -15434,7 +15434,7 @@ var VOCAB_DATA = [
         "exampleZh": "不要跟陌生人说话。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "guest",
@@ -15446,7 +15446,7 @@ var VOCAB_DATA = [
         "exampleZh": "这周末有客人住我们家。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "host",
@@ -15458,7 +15458,7 @@ var VOCAB_DATA = [
         "exampleZh": "她在聚会上是个好主人。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "couple",
@@ -15470,7 +15470,7 @@ var VOCAB_DATA = [
         "exampleZh": "他们是一对可爱的夫妻。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "boss",
@@ -15482,7 +15482,7 @@ var VOCAB_DATA = [
         "exampleZh": "我的老板要周五交报告。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "colleague",
@@ -15494,7 +15494,7 @@ var VOCAB_DATA = [
         "exampleZh": "我的同事帮我做项目。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "client",
@@ -15506,7 +15506,7 @@ var VOCAB_DATA = [
         "exampleZh": "客户想要快速回复。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "customer",
@@ -15518,7 +15518,7 @@ var VOCAB_DATA = [
         "exampleZh": "顾客要求退款。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "crowd",
@@ -15530,7 +15530,7 @@ var VOCAB_DATA = [
         "exampleZh": "演唱会有一大群人。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "audience",
@@ -15542,7 +15542,7 @@ var VOCAB_DATA = [
         "exampleZh": "观众很喜欢这场表演。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "crew",
@@ -15554,7 +15554,7 @@ var VOCAB_DATA = [
         "exampleZh": "机组人员很友好。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "volunteer",
@@ -15566,7 +15566,7 @@ var VOCAB_DATA = [
         "exampleZh": "周末我在收容所做志愿者。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "relative",
@@ -15578,7 +15578,7 @@ var VOCAB_DATA = [
         "exampleZh": "假期我们去拜访了亲戚。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "acquaintance",
@@ -15590,7 +15590,7 @@ var VOCAB_DATA = [
         "exampleZh": "她是熟人，不是密友。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "passenger",
@@ -15602,7 +15602,7 @@ var VOCAB_DATA = [
         "exampleZh": "所有乘客必须系安全带。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "resident",
@@ -15614,7 +15614,7 @@ var VOCAB_DATA = [
         "exampleZh": "当地居民喜欢这个公园。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "official",
@@ -15626,7 +15626,7 @@ var VOCAB_DATA = [
         "exampleZh": "官员宣布了新政策。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "hero",
@@ -15638,7 +15638,7 @@ var VOCAB_DATA = [
         "exampleZh": "那个消防员是真正的英雄。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "criminal",
@@ -15650,7 +15650,7 @@ var VOCAB_DATA = [
         "exampleZh": "罪犯昨晚被逮捕了。",
         "subcategory": "People Deep",
         "subcategoryZh": "人物深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "bill",
@@ -15662,7 +15662,7 @@ var VOCAB_DATA = [
         "exampleZh": "这周交电费账单。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "invoice",
@@ -15698,7 +15698,7 @@ var VOCAB_DATA = [
         "exampleZh": "我只有现金，没有卡。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "ATM",
@@ -15734,7 +15734,7 @@ var VOCAB_DATA = [
         "exampleZh": "我付了公寓押金。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "balance",
@@ -15746,7 +15746,7 @@ var VOCAB_DATA = [
         "exampleZh": "在网上查看账户余额。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "transfer",
@@ -15758,7 +15758,7 @@ var VOCAB_DATA = [
         "exampleZh": "转到我的储蓄账户。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "tip",
@@ -15770,7 +15770,7 @@ var VOCAB_DATA = [
         "exampleZh": "给服务员留小费。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "fee",
@@ -15782,7 +15782,7 @@ var VOCAB_DATA = [
         "exampleZh": "逾期付款有手续费。",
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "goalpost",
@@ -15854,7 +15854,7 @@ var VOCAB_DATA = [
         "exampleZh": "网球场现在空了。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "pitch",
@@ -15866,7 +15866,7 @@ var VOCAB_DATA = [
         "exampleZh": "球场因雨变湿了。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "medal",
@@ -15902,7 +15902,7 @@ var VOCAB_DATA = [
         "exampleZh": "目前比分多少？",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "inning",
@@ -15914,7 +15914,7 @@ var VOCAB_DATA = [
         "exampleZh": "现在是第九局。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "halftime",
@@ -15926,7 +15926,7 @@ var VOCAB_DATA = [
         "exampleZh": "半场休息时去买零食。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "yoga mat",
@@ -16046,7 +16046,7 @@ var VOCAB_DATA = [
         "exampleZh": "我为自驾游做了播放列表。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "app",
@@ -16058,7 +16058,7 @@ var VOCAB_DATA = [
         "exampleZh": "从商店下载APP。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "username",
@@ -16070,7 +16070,7 @@ var VOCAB_DATA = [
         "exampleZh": "你在网站的用户名是什么？",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "profile",
@@ -16082,7 +16082,7 @@ var VOCAB_DATA = [
         "exampleZh": "更新你的个人资料头像。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "search engine",
@@ -16106,7 +16106,7 @@ var VOCAB_DATA = [
         "exampleZh": "在浏览器里打开新标签。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "tab",
@@ -16118,7 +16118,7 @@ var VOCAB_DATA = [
         "exampleZh": "关掉不用的标签页。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "icon",
@@ -16130,7 +16130,7 @@ var VOCAB_DATA = [
         "exampleZh": "点击图标启动应用。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "cursor",
@@ -16142,7 +16142,7 @@ var VOCAB_DATA = [
         "exampleZh": "把光标移到按钮上。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "file",
@@ -16154,7 +16154,7 @@ var VOCAB_DATA = [
         "exampleZh": "把文件保存到桌面。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "screen",
@@ -16178,7 +16178,7 @@ var VOCAB_DATA = [
         "exampleZh": "这里的WiFi密码是什么？",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "server",
@@ -16190,7 +16190,7 @@ var VOCAB_DATA = [
         "exampleZh": "今天服务器很慢。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "task",
@@ -16202,7 +16202,7 @@ var VOCAB_DATA = [
         "exampleZh": "午饭前完成任务。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "duty",
@@ -16214,7 +16214,7 @@ var VOCAB_DATA = [
         "exampleZh": "帮团队是我的职责。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "transaction",
@@ -16226,7 +16226,7 @@ var VOCAB_DATA = [
         "exampleZh": "交易在线完成。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "activity",
@@ -16238,7 +16238,7 @@ var VOCAB_DATA = [
         "exampleZh": "今天有什么活动？",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "journey",
@@ -16250,7 +16250,7 @@ var VOCAB_DATA = [
         "exampleZh": "坐火车旅程需要三小时。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "shipment",
@@ -16262,7 +16262,7 @@ var VOCAB_DATA = [
         "exampleZh": "货运周四到达。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "appointment",
@@ -16274,7 +16274,7 @@ var VOCAB_DATA = [
         "exampleZh": "明天我有医生预约。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "cab",
@@ -16442,7 +16442,7 @@ var VOCAB_DATA = [
         "exampleZh": "查看公告板上的出发时间。",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "arrival",
@@ -16454,7 +16454,7 @@ var VOCAB_DATA = [
         "exampleZh": "到达口是12号门。",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "layover",
@@ -16466,7 +16466,7 @@ var VOCAB_DATA = [
         "exampleZh": "我们在东京有3小时转机等候。",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "commute",
@@ -16478,7 +16478,7 @@ var VOCAB_DATA = [
         "exampleZh": "我的通勤大约需要40分钟。",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "mileage",
@@ -16490,7 +16490,7 @@ var VOCAB_DATA = [
         "exampleZh": "这车里程数很低。",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "government",
@@ -16502,7 +16502,7 @@ var VOCAB_DATA = [
         "exampleZh": "政府宣布了新规定。",
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "religion",
@@ -16526,7 +16526,7 @@ var VOCAB_DATA = [
         "exampleZh": "明天别忘了投票。",
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "neighborhood",
@@ -16538,7 +16538,7 @@ var VOCAB_DATA = [
         "exampleZh": "这个街区很安静。",
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "society",
@@ -16550,7 +16550,7 @@ var VOCAB_DATA = [
         "exampleZh": "社会变化很快。",
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "population",
@@ -16562,7 +16562,7 @@ var VOCAB_DATA = [
         "exampleZh": "这座城市的人口在增长。",
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "industry",
@@ -16574,7 +16574,7 @@ var VOCAB_DATA = [
         "exampleZh": "科技在这里是大产业。",
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "stress",
@@ -16634,7 +16634,7 @@ var VOCAB_DATA = [
         "exampleZh": "保持在右车道。",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道深入",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "alley",
@@ -16922,7 +16922,7 @@ var VOCAB_DATA = [
         "exampleZh": "能换一个不同尺码的吗？",
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "checkout",
@@ -16958,7 +16958,7 @@ var VOCAB_DATA = [
         "exampleZh": "陈列看起来很吸引人。",
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "wallet",
@@ -17952,7 +17952,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "mark",
@@ -17963,7 +17963,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "piece",
@@ -17974,7 +17974,7 @@ var VOCAB_DATA = [
         "root": "pett(小片) → 一小片 → piece",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "group",
@@ -17985,7 +17985,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "set",
@@ -17996,7 +17996,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "patch",
@@ -18007,7 +18007,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "stain",
@@ -18018,7 +18018,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "scratch",
@@ -18029,7 +18029,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "crack",
@@ -18040,7 +18040,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "hole",
@@ -18051,7 +18051,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "bolt",
@@ -18733,7 +18733,7 @@ var VOCAB_DATA = [
         "root": "sceadu(遮蔽) → 遮蔽光线 → 影子",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "magnet",
@@ -18898,7 +18898,7 @@ var VOCAB_DATA = [
         "root": "contain(包含)+er → 包含东西的 → 容器",
         "subcategory": "Shopping",
         "subcategoryZh": "购物补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "needle",
@@ -19008,7 +19008,7 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "hoop",
@@ -19041,7 +19041,7 @@ var VOCAB_DATA = [
         "root": "targ(边界) → 边界上的标志 → 靶子",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "jersey",
@@ -19162,7 +19162,7 @@ var VOCAB_DATA = [
         "root": "stoc(树干) → 存储的基础 → 库存/股票",
         "subcategory": "Finance Daily",
         "subcategoryZh": "金融补充",
-        "wordType": "concrete"
+        "wordType": "semi-concrete"
       },
       {
         "en": "mortar",
