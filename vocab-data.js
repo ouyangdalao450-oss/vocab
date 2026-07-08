@@ -1,4 +1,4 @@
-var VOCAB_DATA = [
+const VOCAB_DATA = [
   {
     "date": "📅 2026-05-17（47词）",
     "words": [
@@ -13186,22 +13186,22 @@ var VOCAB_DATA = [
       {
         "name": "High-Frequency Deep",
         "nameZh": "高频核心",
-        "count": 43
+        "count": 4
       },
       {
         "name": "Food & Drink Deep",
         "nameZh": "饮食",
-        "count": 35
+        "count": 41
       },
       {
         "name": "Nature Deep",
         "nameZh": "自然",
-        "count": 32
+        "count": 36
       },
       {
         "name": "Office & School Deep",
         "nameZh": "办公学习",
-        "count": 27
+        "count": 25
       },
       {
         "name": "Body Deep",
@@ -13211,299 +13211,85 @@ var VOCAB_DATA = [
       {
         "name": "Medicine & Health",
         "nameZh": "医药健康",
-        "count": 25
+        "count": 16
       },
       {
         "name": "Animals Deep",
         "nameZh": "动物",
-        "count": 23
-      },
-      {
-        "name": "People Deep",
-        "nameZh": "人物",
-        "count": 23
+        "count": 33
       },
       {
         "name": "Finance Daily",
         "nameZh": "金融日常",
-        "count": 23
+        "count": 4
       },
       {
         "name": "Sports & Fun Deep",
         "nameZh": "运动娱乐",
-        "count": 22
+        "count": 19
       },
       {
         "name": "Digital Life",
         "nameZh": "数字生活",
-        "count": 21
-      },
-      {
-        "name": "Action Nouns Deep",
-        "nameZh": "行为名词",
-        "count": 22
+        "count": 8
       },
       {
         "name": "Transport Deep",
         "nameZh": "交通",
-        "count": 21
+        "count": 17
       },
       {
         "name": "Society Deep",
         "nameZh": "社会",
-        "count": 20
+        "count": 1
       },
       {
         "name": "Emotions Deep",
         "nameZh": "情感",
-        "count": 19
+        "count": 3
       },
       {
         "name": "Street & City Deep",
         "nameZh": "街道城市",
-        "count": 18
+        "count": 25
       },
       {
         "name": "Shopping",
         "nameZh": "购物",
-        "count": 18
+        "count": 14
       },
       {
         "name": "Kitchen Deep",
         "nameZh": "厨房",
-        "count": 17
+        "count": 23
       },
       {
         "name": "Household Deep",
         "nameZh": "家居",
-        "count": 17
+        "count": 29
       },
       {
         "name": "Personal Items",
         "nameZh": "个人物品",
-        "count": 17
+        "count": 21
       },
       {
         "name": "Clothing Deep",
         "nameZh": "服装",
-        "count": 16
+        "count": 24
       },
       {
         "name": "Weather Details",
         "nameZh": "天气细节",
-        "count": 8
+        "count": 7
       },
       {
         "name": "Living Room Deep",
         "nameZh": "客厅",
-        "count": 7
+        "count": 9
       }
     ],
     "words": [
-      {
-        "en": "detail",
-        "phonetic": "/ˈdiːteɪl/",
-        "pos": "n.",
-        "meaning": "细节、详情",
-        "example": "Check the details before signing.",
-        "root": "de(分开)+tail(切) → 切分开的 → 细节",
-        "exampleZh": "签字前检查细节。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "sample",
-        "phonetic": "/ˈsæmpəl/",
-        "pos": "n.",
-        "meaning": "样品、样本",
-        "example": "Try a free sample of the product.",
-        "root": "",
-        "exampleZh": "试试产品的免费样品。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "surface",
-        "phonetic": "/ˈsɜːrfɪs/",
-        "pos": "n.",
-        "meaning": "表面、表层",
-        "example": "The surface of the table is smooth.",
-        "root": "sur(上)+face(面) → 上面的面 → 表面",
-        "exampleZh": "桌子表面很光滑。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "layer",
-        "phonetic": "/ˈleɪər/",
-        "pos": "n.",
-        "meaning": "层、层次",
-        "example": "Add another layer of paint.",
-        "root": "lay(放)+er → 放上去的 → 层",
-        "exampleZh": "再加一层漆。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "angle",
-        "phonetic": "/ˈæŋɡəl/",
-        "pos": "n.",
-        "meaning": "❶角度 ❷视角",
-        "example": "Look at it from a different angle.",
-        "root": "",
-        "exampleZh": "从不同角度看这个问题。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "position",
-        "phonetic": "/pəˈzɪʃən/",
-        "pos": "n.",
-        "meaning": "❶位置 ❷职位 ❸立场",
-        "example": "What position are you applying for?",
-        "root": "pos(放)+ition → 放的地方 → 位置/职位",
-        "exampleZh": "你申请什么职位？",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "spot",
-        "phonetic": "/spɒt/",
-        "pos": "n.",
-        "meaning": "❶地点、位置 ❷斑点",
-        "example": "This is a good spot for camping.",
-        "root": "",
-        "exampleZh": "这是个露营的好地方。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "area",
-        "phonetic": "/ˈeəriə/",
-        "pos": "n.",
-        "meaning": "❶区域 ❷面积",
-        "example": "The parking area is over there.",
-        "root": "",
-        "exampleZh": "停车区在那边。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "zone",
-        "phonetic": "/zoʊn/",
-        "pos": "n.",
-        "meaning": "地带、区域",
-        "example": "This is a no-parking zone.",
-        "root": "",
-        "exampleZh": "这是禁止停车区域。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "district",
-        "phonetic": "/ˈdɪstrɪkt/",
-        "pos": "n.",
-        "meaning": "行政区、区域",
-        "example": "I live in the downtown district.",
-        "root": "",
-        "exampleZh": "我住在市中心区。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "border",
-        "phonetic": "/ˈbɔːrdər/",
-        "pos": "n.",
-        "meaning": "边界、边境",
-        "example": "Cross the border at the checkpoint.",
-        "root": "",
-        "exampleZh": "在检查站过边境。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "territory",
-        "phonetic": "/ˈterɪtɒri/",
-        "pos": "n.",
-        "meaning": "领土、领地",
-        "example": "This territory belongs to the country.",
-        "root": "terr(地)+itory → 土地的 → 领土",
-        "exampleZh": "这片领土属于国家。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "material",
-        "phonetic": "/məˈtɪriəl/",
-        "pos": "n./adj.",
-        "meaning": "❶n.材料 ❷adj.物质的",
-        "example": "What material is this made of?",
-        "root": "mater(物质)+ial → 物质的 → 材料",
-        "exampleZh": "这是什么材料做的？",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "equipment",
-        "phonetic": "/ɪˈkwɪpmənt/",
-        "pos": "n.",
-        "meaning": "设备、装备",
-        "example": "We need new gym equipment.",
-        "root": "equip(装备)+ment → 装备的东西 → 设备",
-        "exampleZh": "我们需要新的健身设备。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "tool",
-        "phonetic": "/tuːl/",
-        "pos": "n.",
-        "meaning": "工具",
-        "example": "What tool do I need for this?",
-        "root": "",
-        "exampleZh": "我需要什么工具来做这个？",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "instrument",
-        "phonetic": "/ˈɪnstrʊmənt/",
-        "pos": "n.",
-        "meaning": "❶仪器 ❷乐器",
-        "example": "What instrument do you play?",
-        "root": "in(内)+stru(建造)+ment → 内部建造的 → 仪器/乐器",
-        "exampleZh": "你演奏什么乐器？",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "step",
-        "phonetic": "/step/",
-        "pos": "n.",
-        "meaning": "❶步骤 ❷脚步",
-        "example": "Take it one step at a time.",
-        "root": "",
-        "exampleZh": "一步一步来。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
       {
         "en": "mushroom",
         "phonetic": "/ˈmʌʃruːm/",
@@ -14321,18 +14107,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "marker",
-        "phonetic": "/ˈmɑːrkər/",
-        "pos": "n.",
-        "meaning": "❶标记笔 ❷标记",
-        "example": "Use a red marker to highlight this.",
-        "root": "",
-        "exampleZh": "用红色标记笔标出这个。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "binder",
         "phonetic": "/ˈbaɪndər/",
         "pos": "n.",
@@ -14393,54 +14167,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "assignment",
-        "phonetic": "/əˈsaɪnmənt/",
-        "pos": "n.",
-        "meaning": "作业、任务",
-        "example": "The assignment is due on Friday.",
-        "root": "as(向)+sign(标记)+ment → 分配标记 → 任务/作业",
-        "exampleZh": "作业周五截止。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "deadline",
-        "phonetic": "/ˈdedlaɪn/",
-        "pos": "n.",
-        "meaning": "截止日期",
-        "example": "The deadline for the project is next Monday.",
-        "root": "dead(死)+line(线) → 死线 → 截止日期",
-        "exampleZh": "项目截止日期是下周一。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "lecture",
-        "phonetic": "/ˈlektʃər/",
-        "pos": "n./v.",
-        "meaning": "❶n.讲座、讲课 ❷v.训斥",
-        "example": "The lecture starts at 10 a.m.",
-        "root": "lect(读)+ure → 读出来的内容 → 讲座",
-        "exampleZh": "讲座10点开始。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "coursework",
-        "phonetic": "/ˈkɔːrswɜːrk/",
-        "pos": "n.",
-        "meaning": "课程作业",
-        "example": "I have a lot of coursework this semester.",
-        "root": "",
-        "exampleZh": "这学期我有很多课程作业。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "textbook",
         "phonetic": "/ˈtekstbʊk/",
         "pos": "n.",
@@ -14499,30 +14225,6 @@ var VOCAB_DATA = [
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "attendance",
-        "phonetic": "/əˈtendəns/",
-        "pos": "n.",
-        "meaning": "出勤、出席率",
-        "example": "Attendance is required for all classes.",
-        "root": "at(向)+tend(伸展)+ance → 向目标伸展 → 出勤",
-        "exampleZh": "所有课程要求出勤。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "faculty",
-        "phonetic": "/ˈfækəlti/",
-        "pos": "n.",
-        "meaning": "❶教职员工 ❷系、学院",
-        "example": "The faculty meeting is on Wednesday.",
-        "root": "fac(做)+ult+y → 做事的人 → 教职员工",
-        "exampleZh": "教职员工会议在周三。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "semi-concrete"
       },
       {
         "en": "locker",
@@ -14837,18 +14539,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "pulse",
-        "phonetic": "/pʌls/",
-        "pos": "n.",
-        "meaning": "❶脉搏 ❷脉冲",
-        "example": "The nurse checked my pulse.",
-        "root": "",
-        "exampleZh": "护士检查了我的脉搏。",
-        "subcategory": "Body Deep",
-        "subcategoryZh": "身体深入",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "blood",
         "phonetic": "/blʌd/",
         "pos": "n.",
@@ -14969,30 +14659,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "cough",
-        "phonetic": "/kɒf/",
-        "pos": "n./v.",
-        "meaning": "❶n.咳嗽 ❷v.咳嗽",
-        "example": "I've been coughing all night.",
-        "root": "",
-        "exampleZh": "我整晚都在咳嗽。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "sneeze",
-        "phonetic": "/sniːz/",
-        "pos": "n./v.",
-        "meaning": "打喷嚏",
-        "example": "Cover your mouth when you sneeze.",
-        "root": "",
-        "exampleZh": "打喷嚏时捂住嘴。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "bruise",
         "phonetic": "/bruːz/",
         "pos": "n./v.",
@@ -15003,30 +14669,6 @@ var VOCAB_DATA = [
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
         "wordType": "concrete"
-      },
-      {
-        "en": "wound",
-        "phonetic": "/wuːnd/",
-        "pos": "n.",
-        "meaning": "伤口、创伤",
-        "example": "Clean the wound before bandaging.",
-        "root": "",
-        "exampleZh": "包扎前先清洗伤口。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "vaccine",
-        "phonetic": "/ˈvæksiːn/",
-        "pos": "n.",
-        "meaning": "疫苗",
-        "example": "Get your flu vaccine every year.",
-        "root": "vacca(牛) → 从牛痘发展而来 → 疫苗",
-        "exampleZh": "每年打流感疫苗。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
       },
       {
         "en": "clinic",
@@ -15063,42 +14705,6 @@ var VOCAB_DATA = [
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
         "wordType": "concrete"
-      },
-      {
-        "en": "therapist",
-        "phonetic": "/ˈθerəpɪst/",
-        "pos": "n.",
-        "meaning": "治疗师",
-        "example": "My therapist helps me with stress.",
-        "root": "",
-        "exampleZh": "我的治疗师帮我应对压力。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "surgeon",
-        "phonetic": "/ˈsɜːrdʒən/",
-        "pos": "n.",
-        "meaning": "外科医生",
-        "example": "The surgeon performed the operation.",
-        "root": "",
-        "exampleZh": "外科医生做了手术。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "patient",
-        "phonetic": "/ˈpeɪʃənt/",
-        "pos": "n./adj.",
-        "meaning": "❶n.病人 ❷adj.耐心的",
-        "example": "The patient is waiting for the doctor.",
-        "root": "pati(忍受)+ent → 忍受痛苦的人 → 病人/耐心",
-        "exampleZh": "病人在等医生。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "semi-concrete"
       },
       {
         "en": "puppy",
@@ -15341,18 +14947,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "pet",
-        "phonetic": "/pet/",
-        "pos": "n./v.",
-        "meaning": "❶n.宠物 ❷v.抚摸",
-        "example": "We have a dog as a pet.",
-        "root": "",
-        "exampleZh": "我们养了一只狗当宠物。",
-        "subcategory": "Animals Deep",
-        "subcategoryZh": "动物深入",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "vet",
         "phonetic": "/vet/",
         "pos": "n.",
@@ -15375,294 +14969,6 @@ var VOCAB_DATA = [
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "adult",
-        "phonetic": "/ˈædʌlt/",
-        "pos": "n./adj.",
-        "meaning": "❶n.成年人 ❷adj.成人的",
-        "example": "Only adults can watch this movie.",
-        "root": "adult(成长) → 长大的人 → 成年人",
-        "exampleZh": "只有成年人能看这部电影。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "teenager",
-        "phonetic": "/ˈtiːneɪdʒər/",
-        "pos": "n.",
-        "meaning": "青少年（13-19岁）",
-        "example": "Most teenagers love social media.",
-        "root": "teen(十几)+age(年龄)+er → 十几岁的人 → 青少年",
-        "exampleZh": "大多数青少年喜欢社交媒体。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "senior",
-        "phonetic": "/ˈsiːniər/",
-        "pos": "n./adj.",
-        "meaning": "❶n.老年人 ❷n.前辈 ❸adj.高级的",
-        "example": "Seniors get a discount at the store.",
-        "root": "",
-        "exampleZh": "老年人在商店有折扣。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "citizen",
-        "phonetic": "/ˈsɪtɪzən/",
-        "pos": "n.",
-        "meaning": "公民、市民",
-        "example": "Every citizen has the right to vote.",
-        "root": "civ(城市)+izen → 城市的人 → 公民",
-        "exampleZh": "每个公民都有投票权。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "stranger",
-        "phonetic": "/ˈstreɪndʒər/",
-        "pos": "n.",
-        "meaning": "陌生人",
-        "example": "Don't talk to strangers.",
-        "root": "",
-        "exampleZh": "不要跟陌生人说话。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "guest",
-        "phonetic": "/ɡest/",
-        "pos": "n.",
-        "meaning": "❶客人、宾客 ❷嘉宾",
-        "example": "We have a guest staying this weekend.",
-        "root": "",
-        "exampleZh": "这周末有客人住我们家。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "host",
-        "phonetic": "/hoʊst/",
-        "pos": "n./v.",
-        "meaning": "❶n.主人、主持人 ❷v.主办、主持",
-        "example": "She was a great host at the party.",
-        "root": "",
-        "exampleZh": "她在聚会上是个好主人。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "couple",
-        "phonetic": "/ˈkʌpəl/",
-        "pos": "n.",
-        "meaning": "❶夫妻、情侣 ❷几个、两三个",
-        "example": "They're a lovely couple.",
-        "root": "",
-        "exampleZh": "他们是一对可爱的夫妻。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "boss",
-        "phonetic": "/bɒs/",
-        "pos": "n.",
-        "meaning": "老板、上司",
-        "example": "My boss wants the report by Friday.",
-        "root": "",
-        "exampleZh": "我的老板要周五交报告。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "colleague",
-        "phonetic": "/ˈkɒliːɡ/",
-        "pos": "n.",
-        "meaning": "同事",
-        "example": "My colleague helped me with the project.",
-        "root": "col(共同)+league(盟) → 一起工作的人 → 同事",
-        "exampleZh": "我的同事帮我做项目。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "client",
-        "phonetic": "/ˈklaɪənt/",
-        "pos": "n.",
-        "meaning": "客户",
-        "example": "The client wants a quick response.",
-        "root": "cli(倾斜)+ent → 依赖某人的人 → 客户",
-        "exampleZh": "客户想要快速回复。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "customer",
-        "phonetic": "/ˈkʌstəmər/",
-        "pos": "n.",
-        "meaning": "顾客、消费者",
-        "example": "The customer asked for a refund.",
-        "root": "custom(习惯)+er → 消费习惯的人 → 顾客",
-        "exampleZh": "顾客要求退款。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "crowd",
-        "phonetic": "/kraʊd/",
-        "pos": "n.",
-        "meaning": "人群、群众",
-        "example": "There was a big crowd at the concert.",
-        "root": "",
-        "exampleZh": "演唱会有一大群人。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "audience",
-        "phonetic": "/ˈɔːdiəns/",
-        "pos": "n.",
-        "meaning": "观众、听众",
-        "example": "The audience loved the performance.",
-        "root": "audi(听)+ence → 听的人 → 观众",
-        "exampleZh": "观众很喜欢这场表演。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "crew",
-        "phonetic": "/kruː/",
-        "pos": "n.",
-        "meaning": "❶船员、机组人员 ❷团队",
-        "example": "The flight crew was very friendly.",
-        "root": "",
-        "exampleZh": "机组人员很友好。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "volunteer",
-        "phonetic": "/ˌvɒlənˈtɪər/",
-        "pos": "n./v.",
-        "meaning": "❶n.志愿者 ❷v.自愿做",
-        "example": "I volunteer at the shelter on weekends.",
-        "root": "vol(意愿)+unteer → 出自意愿 → 志愿者",
-        "exampleZh": "周末我在收容所做志愿者。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "relative",
-        "phonetic": "/ˈrelətɪv/",
-        "pos": "n.",
-        "meaning": "亲属、亲戚",
-        "example": "We visited relatives for the holidays.",
-        "root": "",
-        "exampleZh": "假期我们去拜访了亲戚。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "acquaintance",
-        "phonetic": "/əˈkweɪntəns/",
-        "pos": "n.",
-        "meaning": "认识的人、熟人",
-        "example": "She's an acquaintance, not a close friend.",
-        "root": "ac(向)+quaint(知道)+ance → 知道的人 → 熟人",
-        "exampleZh": "她是熟人，不是密友。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "passenger",
-        "phonetic": "/ˈpæsɪndʒər/",
-        "pos": "n.",
-        "meaning": "乘客",
-        "example": "All passengers must wear seatbelts.",
-        "root": "pass(通过)+enger → 通过交通工具的人 → 乘客",
-        "exampleZh": "所有乘客必须系安全带。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "resident",
-        "phonetic": "/ˈrezɪdənt/",
-        "pos": "n.",
-        "meaning": "居民",
-        "example": "Local residents love this park.",
-        "root": "resid(居住)+ent → 居住的人 → 居民",
-        "exampleZh": "当地居民喜欢这个公园。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "official",
-        "phonetic": "/əˈfɪʃəl/",
-        "pos": "n./adj.",
-        "meaning": "❶n.官员 ❷adj.官方的、正式的",
-        "example": "The official announced the new policy.",
-        "root": "",
-        "exampleZh": "官员宣布了新政策。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "hero",
-        "phonetic": "/ˈhɪroʊ/",
-        "pos": "n.",
-        "meaning": "英雄",
-        "example": "The firefighter was a real hero.",
-        "root": "",
-        "exampleZh": "那个消防员是真正的英雄。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "criminal",
-        "phonetic": "/ˈkrɪmɪnəl/",
-        "pos": "n./adj.",
-        "meaning": "❶n.罪犯 ❷adj.犯罪的",
-        "example": "The criminal was arrested last night.",
-        "root": "",
-        "exampleZh": "罪犯昨晚被逮捕了。",
-        "subcategory": "People Deep",
-        "subcategoryZh": "人物深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "bill",
-        "phonetic": "/bɪl/",
-        "pos": "n.",
-        "meaning": "❶账单 ❷法案 ❸纸币",
-        "example": "Pay the electricity bill this week.",
-        "root": "",
-        "exampleZh": "这周交电费账单。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
       },
       {
         "en": "invoice",
@@ -15689,18 +14995,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "cash",
-        "phonetic": "/kæʃ/",
-        "pos": "n.",
-        "meaning": "现金",
-        "example": "I only have cash, no cards.",
-        "root": "",
-        "exampleZh": "我只有现金，没有卡。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "ATM",
         "phonetic": "/ˌeɪtiːˈem/",
         "pos": "n.",
@@ -15723,66 +15017,6 @@ var VOCAB_DATA = [
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
         "wordType": "concrete"
-      },
-      {
-        "en": "deposit",
-        "phonetic": "/dɪˈpɒzɪt/",
-        "pos": "n./v.",
-        "meaning": "❶n.存款、押金 ❷v.存入",
-        "example": "I paid a deposit for the apartment.",
-        "root": "de(下)+posit(放) → 放下去 → 存入/押金",
-        "exampleZh": "我付了公寓押金。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "balance",
-        "phonetic": "/ˈbæləns/",
-        "pos": "n.",
-        "meaning": "❶余额 ❷平衡",
-        "example": "Check your account balance online.",
-        "root": "",
-        "exampleZh": "在网上查看账户余额。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "transfer",
-        "phonetic": "/ˈtrænsfɜːr/",
-        "pos": "n./v.",
-        "meaning": "❶n.转账 ❷v.转移",
-        "example": "Make a transfer to my savings account.",
-        "root": "trans(跨越)+fer(带) → 带过去 → 转移/转账",
-        "exampleZh": "转到我的储蓄账户。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "tip",
-        "phonetic": "/tɪp/",
-        "pos": "n.",
-        "meaning": "❶小费 ❷提示 ❸尖端",
-        "example": "Leave a tip for the waiter.",
-        "root": "",
-        "exampleZh": "给服务员留小费。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "fee",
-        "phonetic": "/fiː/",
-        "pos": "n.",
-        "meaning": "费用、手续费",
-        "example": "There's a fee for late payment.",
-        "root": "",
-        "exampleZh": "逾期付款有手续费。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "semi-concrete"
       },
       {
         "en": "goalpost",
@@ -15845,30 +15079,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "court",
-        "phonetic": "/kɔːrt/",
-        "pos": "n.",
-        "meaning": "❶球场 ❷法庭",
-        "example": "The tennis court is free now.",
-        "root": "",
-        "exampleZh": "网球场现在空了。",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "pitch",
-        "phonetic": "/pɪtʃ/",
-        "pos": "n./v.",
-        "meaning": "❶n.足球场 ❷v.投球",
-        "example": "The pitch was wet from the rain.",
-        "root": "",
-        "exampleZh": "球场因雨变湿了。",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "medal",
         "phonetic": "/ˈmedəl/",
         "pos": "n.",
@@ -15891,42 +15101,6 @@ var VOCAB_DATA = [
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "score",
-        "phonetic": "/skɔːr/",
-        "pos": "n./v.",
-        "meaning": "❶n.比分、分数 ❷v.得分",
-        "example": "What's the score so far?",
-        "root": "",
-        "exampleZh": "目前比分多少？",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "inning",
-        "phonetic": "/ˈɪnɪŋ/",
-        "pos": "n.",
-        "meaning": "局、回合（棒球）",
-        "example": "It's the ninth inning.",
-        "root": "",
-        "exampleZh": "现在是第九局。",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "halftime",
-        "phonetic": "/ˈhæftaɪm/",
-        "pos": "n.",
-        "meaning": "半场休息",
-        "example": "Let's grab snacks at halftime.",
-        "root": "",
-        "exampleZh": "半场休息时去买零食。",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入",
-        "wordType": "semi-concrete"
       },
       {
         "en": "yoga mat",
@@ -16037,54 +15211,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "playlist",
-        "phonetic": "/ˈpleɪlɪst/",
-        "pos": "n.",
-        "meaning": "播放列表",
-        "example": "I made a playlist for the road trip.",
-        "root": "",
-        "exampleZh": "我为自驾游做了播放列表。",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动娱乐深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "app",
-        "phonetic": "/æp/",
-        "pos": "n.",
-        "meaning": "应用程序、APP",
-        "example": "Download the app from the store.",
-        "root": "",
-        "exampleZh": "从商店下载APP。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "username",
-        "phonetic": "/ˈjuːzərneɪm/",
-        "pos": "n.",
-        "meaning": "用户名",
-        "example": "What's your username for the site?",
-        "root": "",
-        "exampleZh": "你在网站的用户名是什么？",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "profile",
-        "phonetic": "/ˈproʊfaɪl/",
-        "pos": "n.",
-        "meaning": "❶个人资料页 ❷侧影",
-        "example": "Update your profile with a new photo.",
-        "root": "pro(前)+file(线) → 前面的轮廓 → 侧影/资料",
-        "exampleZh": "更新你的个人资料头像。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "search engine",
         "phonetic": "/sɜːrtʃ ˈendʒɪn/",
         "pos": "n.",
@@ -16097,66 +15223,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "browser",
-        "phonetic": "/ˈbraʊzər/",
-        "pos": "n.",
-        "meaning": "浏览器",
-        "example": "Open a new tab in the browser.",
-        "root": "",
-        "exampleZh": "在浏览器里打开新标签。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "tab",
-        "phonetic": "/tæb/",
-        "pos": "n.",
-        "meaning": "❶标签页 ❷标签、小卡片",
-        "example": "Close the tab you're not using.",
-        "root": "",
-        "exampleZh": "关掉不用的标签页。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "icon",
-        "phonetic": "/ˈaɪkɒn/",
-        "pos": "n.",
-        "meaning": "图标",
-        "example": "Click the icon to start the app.",
-        "root": "",
-        "exampleZh": "点击图标启动应用。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "cursor",
-        "phonetic": "/ˈkɜːrsər/",
-        "pos": "n.",
-        "meaning": "光标、鼠标指针",
-        "example": "Move the cursor to the button.",
-        "root": "",
-        "exampleZh": "把光标移到按钮上。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "file",
-        "phonetic": "/faɪl/",
-        "pos": "n.",
-        "meaning": "❶文件 ❷文件夹 ❸锉刀",
-        "example": "Save the file to your desktop.",
-        "root": "",
-        "exampleZh": "把文件保存到桌面。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "screen",
         "phonetic": "/skriːn/",
         "pos": "n.",
@@ -16167,114 +15233,6 @@ var VOCAB_DATA = [
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
         "wordType": "concrete"
-      },
-      {
-        "en": "wifi",
-        "phonetic": "/ˈwaɪfaɪ/",
-        "pos": "n.",
-        "meaning": "无线网络、WiFi",
-        "example": "What's the wifi password here?",
-        "root": "",
-        "exampleZh": "这里的WiFi密码是什么？",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "server",
-        "phonetic": "/ˈsɜːrvər/",
-        "pos": "n.",
-        "meaning": "服务器",
-        "example": "The server is slow today.",
-        "root": "serv(服务)+er → 提供服务的设备 → 服务器",
-        "exampleZh": "今天服务器很慢。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "task",
-        "phonetic": "/tæsk/",
-        "pos": "n.",
-        "meaning": "任务、工作",
-        "example": "Finish the task before lunch.",
-        "root": "",
-        "exampleZh": "午饭前完成任务。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "duty",
-        "phonetic": "/ˈdjuːti/",
-        "pos": "n.",
-        "meaning": "❶职责、义务 ❷责任",
-        "example": "It's my duty to help the team.",
-        "root": "",
-        "exampleZh": "帮团队是我的职责。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "transaction",
-        "phonetic": "/trænˈzækʃən/",
-        "pos": "n.",
-        "meaning": "交易、事务",
-        "example": "The transaction was completed online.",
-        "root": "trans(跨越)+action(行动) → 跨越的行动 → 交易",
-        "exampleZh": "交易在线完成。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "activity",
-        "phonetic": "/ækˈtɪvɪti/",
-        "pos": "n.",
-        "meaning": "活动",
-        "example": "What activities are planned for today?",
-        "root": "act(做)+ivity → 做的事 → 活动",
-        "exampleZh": "今天有什么活动？",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "journey",
-        "phonetic": "/ˈdʒɜːrni/",
-        "pos": "n.",
-        "meaning": "旅程、旅行",
-        "example": "The journey takes three hours by train.",
-        "root": "journ(天)+ey → 每天的行程 → 旅程",
-        "exampleZh": "坐火车旅程需要三小时。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "shipment",
-        "phonetic": "/ˈʃɪpmənt/",
-        "pos": "n.",
-        "meaning": "货运、装运",
-        "example": "The shipment arrives on Thursday.",
-        "root": "",
-        "exampleZh": "货运周四到达。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "appointment",
-        "phonetic": "/əˈpɔɪntmənt/",
-        "pos": "n.",
-        "meaning": "预约、约定",
-        "example": "I have a doctor's appointment tomorrow.",
-        "root": "ap(向)+point(指)+ment → 指定的时间 → 预约",
-        "exampleZh": "明天我有医生预约。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "semi-concrete"
       },
       {
         "en": "cab",
@@ -16433,78 +15391,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "departure",
-        "phonetic": "/dɪˈpɑːrtʃər/",
-        "pos": "n.",
-        "meaning": "出发、离开",
-        "example": "Check the departure time on the board.",
-        "root": "de(离开)+part(部分) → 从整体分离 → 出发",
-        "exampleZh": "查看公告板上的出发时间。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "arrival",
-        "phonetic": "/əˈraɪvəl/",
-        "pos": "n.",
-        "meaning": "到达、抵达",
-        "example": "The arrival gate is Gate 12.",
-        "root": "",
-        "exampleZh": "到达口是12号门。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "layover",
-        "phonetic": "/ˈleɪoʊvər/",
-        "pos": "n.",
-        "meaning": "中途停留、转机等候",
-        "example": "We have a three-hour layover in Tokyo.",
-        "root": "",
-        "exampleZh": "我们在东京有3小时转机等候。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "commute",
-        "phonetic": "/kəˈmjuːt/",
-        "pos": "n./v.",
-        "meaning": "❶n.通勤 ❷v.通勤、减刑",
-        "example": "My commute takes about 40 minutes.",
-        "root": "",
-        "exampleZh": "我的通勤大约需要40分钟。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "mileage",
-        "phonetic": "/ˈmaɪlɪdʒ/",
-        "pos": "n.",
-        "meaning": "里程、里程数",
-        "example": "The car has low mileage.",
-        "root": "",
-        "exampleZh": "这车里程数很低。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "government",
-        "phonetic": "/ˈɡʌvərnmənt/",
-        "pos": "n.",
-        "meaning": "政府",
-        "example": "The government announced new rules.",
-        "root": "govern(统治)+ment → 统治机构 → 政府",
-        "exampleZh": "政府宣布了新规定。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "religion",
         "phonetic": "/rɪˈlɪdʒən/",
         "pos": "n.",
@@ -16515,66 +15401,6 @@ var VOCAB_DATA = [
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "vote",
-        "phonetic": "/voʊt/",
-        "pos": "n./v.",
-        "meaning": "❶n.投票 ❷v.投票",
-        "example": "Don't forget to vote tomorrow.",
-        "root": "",
-        "exampleZh": "明天别忘了投票。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "neighborhood",
-        "phonetic": "/ˈneɪbərhʊd/",
-        "pos": "n.",
-        "meaning": "街区、附近地区",
-        "example": "This neighborhood is really quiet.",
-        "root": "",
-        "exampleZh": "这个街区很安静。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "society",
-        "phonetic": "/səˈsaɪəti/",
-        "pos": "n.",
-        "meaning": "社会",
-        "example": "Society is changing fast.",
-        "root": "soci(伙伴)+ety → 伙伴关系 → 社会",
-        "exampleZh": "社会变化很快。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "population",
-        "phonetic": "/ˌpɒpjʊˈleɪʃən/",
-        "pos": "n.",
-        "meaning": "人口",
-        "example": "The population of this city is growing.",
-        "root": "popul(人民)+ation → 人民总数 → 人口",
-        "exampleZh": "这座城市的人口在增长。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "industry",
-        "phonetic": "/ˈɪndəstri/",
-        "pos": "n.",
-        "meaning": "❶工业、产业 ❷勤劳",
-        "example": "Tech is a big industry here.",
-        "root": "indu(在内)+stry → 在里面做事 → 工业/产业",
-        "exampleZh": "科技在这里是大产业。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "semi-concrete"
       },
       {
         "en": "stress",
@@ -16623,18 +15449,6 @@ var VOCAB_DATA = [
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "lane",
-        "phonetic": "/leɪn/",
-        "pos": "n.",
-        "meaning": "❶车道 ❷小巷 ❸泳道",
-        "example": "Stay in the right lane.",
-        "root": "",
-        "exampleZh": "保持在右车道。",
-        "subcategory": "Street & City Deep",
-        "subcategoryZh": "街道深入",
-        "wordType": "semi-concrete"
       },
       {
         "en": "alley",
@@ -16913,18 +15727,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "exchange",
-        "phonetic": "/ɪksˈtʃeɪndʒ/",
-        "pos": "n./v.",
-        "meaning": "❶n.交换 ❷n.兑换 ❸v.交换",
-        "example": "Can I exchange this for a different size?",
-        "root": "ex(出)+change(改变) → 改出 → 交换",
-        "exampleZh": "能换一个不同尺码的吗？",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "checkout",
         "phonetic": "/ˈtʃekaʊt/",
         "pos": "n.",
@@ -16947,18 +15749,6 @@ var VOCAB_DATA = [
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
         "wordType": "concrete"
-      },
-      {
-        "en": "display",
-        "phonetic": "/dɪˈspleɪ/",
-        "pos": "n./v.",
-        "meaning": "❶n.展示、陈列 ❷v.展示",
-        "example": "The display looks really attractive.",
-        "root": "dis(分开)+play(玩) → 展开给人看 → 展示",
-        "exampleZh": "陈列看起来很吸引人。",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "semi-concrete"
       },
       {
         "en": "wallet",
@@ -17944,116 +16734,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "edge",
-        "phonetic": "/edʒ/",
-        "pos": "n.",
-        "meaning": "❶ 边、边缘 ❷ 优势",
-        "example": "Sit on the edge of the bed.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "mark",
-        "phonetic": "/mɑːrk/",
-        "pos": "n.",
-        "meaning": "❶ 标记、痕迹 ❷ 分数",
-        "example": "There's a mark on the wall.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "piece",
-        "phonetic": "/piːs/",
-        "pos": "n.",
-        "meaning": "❶ 片、块 ❷ 碎片",
-        "example": "Give me a piece of cake.",
-        "root": "pett(小片) → 一小片 → piece",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "group",
-        "phonetic": "/ɡruːp/",
-        "pos": "n.",
-        "meaning": "❶ 群、组 ❷ 团体",
-        "example": "A group of students walked by.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "set",
-        "phonetic": "/set/",
-        "pos": "n.",
-        "meaning": "❶ 套、组 ❷ 装置",
-        "example": "I bought a new set of tools.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "patch",
-        "phonetic": "/pætʃ/",
-        "pos": "n.",
-        "meaning": "❶ 补丁 ❷ 一小块地",
-        "example": "There's a patch of grass here.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "stain",
-        "phonetic": "/steɪn/",
-        "pos": "n.",
-        "meaning": "污渍、污点",
-        "example": "There's a stain on my shirt.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "scratch",
-        "phonetic": "/skrætʃ/",
-        "pos": "n.",
-        "meaning": "❶ 刮痕 ❷ 抓",
-        "example": "The car has a scratch on the door.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "crack",
-        "phonetic": "/kræk/",
-        "pos": "n.",
-        "meaning": "❶ 裂缝 ❷ 破裂声",
-        "example": "There's a crack in the window.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
-        "en": "hole",
-        "phonetic": "/hoʊl/",
-        "pos": "n.",
-        "meaning": "洞、孔",
-        "example": "There's a hole in my sock.",
-        "root": "",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "bolt",
         "phonetic": "/boʊlt/",
         "pos": "n.",
@@ -18725,17 +17405,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "shadow",
-        "phonetic": "/ˈʃædoʊ/",
-        "pos": "n.",
-        "meaning": "❶ 影子 ❷ 阴暗处",
-        "example": "My shadow follows me.",
-        "root": "sceadu(遮蔽) → 遮蔽光线 → 影子",
-        "subcategory": "Nature Deep",
-        "subcategoryZh": "自然补充",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "magnet",
         "phonetic": "/ˈmæɡnɪt/",
         "pos": "n.",
@@ -18890,17 +17559,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "container",
-        "phonetic": "/kənˈteɪnər/",
-        "pos": "n.",
-        "meaning": "容器",
-        "example": "Store food in a container.",
-        "root": "contain(包含)+er → 包含东西的 → 容器",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物补充",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "needle",
         "phonetic": "/ˈniːdəl/",
         "pos": "n.",
@@ -19000,17 +17658,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "field",
-        "phonetic": "/fiːld/",
-        "pos": "n.",
-        "meaning": "❶ 田地 ❷ 场地",
-        "example": "The kids play on the field.",
-        "root": "",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动补充",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "hoop",
         "phonetic": "/huːp/",
         "pos": "n.",
@@ -19031,17 +17678,6 @@ var VOCAB_DATA = [
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
         "wordType": "concrete"
-      },
-      {
-        "en": "target",
-        "phonetic": "/ˈtɑːrgɪt/",
-        "pos": "n.",
-        "meaning": "靶子、目标",
-        "example": "Aim at the target.",
-        "root": "targ(边界) → 边界上的标志 → 靶子",
-        "subcategory": "Sports & Fun Deep",
-        "subcategoryZh": "运动补充",
-        "wordType": "semi-concrete"
       },
       {
         "en": "jersey",
@@ -19154,17 +17790,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "stock",
-        "phonetic": "/stɒk/",
-        "pos": "n.",
-        "meaning": "❶ 股票 ❷ 库存",
-        "example": "She bought some tech stocks.",
-        "root": "stoc(树干) → 存储的基础 → 库存/股票",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "金融补充",
-        "wordType": "semi-concrete"
-      },
-      {
         "en": "mortar",
         "phonetic": "/ˈmɔːrtər/",
         "pos": "n.",
@@ -19187,6 +17812,1455 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       }
     ],
-    "name": "📖 名词500-第二波"
+    "name": "📖 名词500-第二波（具体385）"
+  },
+  {
+    "date": "2026-07-09",
+    "name": "🔀 半具体名词115",
+    "isSemiConcrete": true,
+    "categories": [
+      {
+        "name": "High-Frequency Deep",
+        "nameZh": "High-Frequency Deep",
+        "count": 27
+      },
+      {
+        "name": "Office & School Deep",
+        "nameZh": "Office & School Deep",
+        "count": 7
+      },
+      {
+        "name": "Body Deep",
+        "nameZh": "Body Deep",
+        "count": 1
+      },
+      {
+        "name": "Medicine & Health",
+        "nameZh": "Medicine & Health",
+        "count": 7
+      },
+      {
+        "name": "Animals Deep",
+        "nameZh": "Animals Deep",
+        "count": 1
+      },
+      {
+        "name": "People Deep",
+        "nameZh": "People Deep",
+        "count": 23
+      },
+      {
+        "name": "Finance Daily",
+        "nameZh": "Finance Daily",
+        "count": 8
+      },
+      {
+        "name": "Sports & Fun Deep",
+        "nameZh": "Sports & Fun Deep",
+        "count": 8
+      },
+      {
+        "name": "Digital Life",
+        "nameZh": "Digital Life",
+        "count": 10
+      },
+      {
+        "name": "Action Nouns Deep",
+        "nameZh": "Action Nouns Deep",
+        "count": 7
+      },
+      {
+        "name": "Transport Deep",
+        "nameZh": "Transport Deep",
+        "count": 5
+      },
+      {
+        "name": "Society Deep",
+        "nameZh": "Society Deep",
+        "count": 6
+      },
+      {
+        "name": "Street & City Deep",
+        "nameZh": "Street & City Deep",
+        "count": 1
+      },
+      {
+        "name": "Shopping",
+        "nameZh": "Shopping",
+        "count": 3
+      },
+      {
+        "name": "Nature Deep",
+        "nameZh": "Nature Deep",
+        "count": 1
+      }
+    ],
+    "words": [
+      {
+        "en": "detail",
+        "phonetic": "/ˈdiːteɪl/",
+        "pos": "n.",
+        "meaning": "细节、详情",
+        "example": "Check the details before signing.",
+        "root": "de(分开)+tail(切) → 切分开的 → 细节",
+        "exampleZh": "签字前检查细节。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "sample",
+        "phonetic": "/ˈsæmpəl/",
+        "pos": "n.",
+        "meaning": "样品、样本",
+        "example": "Try a free sample of the product.",
+        "root": "",
+        "exampleZh": "试试产品的免费样品。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "surface",
+        "phonetic": "/ˈsɜːrfɪs/",
+        "pos": "n.",
+        "meaning": "表面、表层",
+        "example": "The surface of the table is smooth.",
+        "root": "sur(上)+face(面) → 上面的面 → 表面",
+        "exampleZh": "桌子表面很光滑。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "layer",
+        "phonetic": "/ˈleɪər/",
+        "pos": "n.",
+        "meaning": "层、层次",
+        "example": "Add another layer of paint.",
+        "root": "lay(放)+er → 放上去的 → 层",
+        "exampleZh": "再加一层漆。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "angle",
+        "phonetic": "/ˈæŋɡəl/",
+        "pos": "n.",
+        "meaning": "❶角度 ❷视角",
+        "example": "Look at it from a different angle.",
+        "root": "",
+        "exampleZh": "从不同角度看这个问题。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "position",
+        "phonetic": "/pəˈzɪʃən/",
+        "pos": "n.",
+        "meaning": "❶位置 ❷职位 ❸立场",
+        "example": "What position are you applying for?",
+        "root": "pos(放)+ition → 放的地方 → 位置/职位",
+        "exampleZh": "你申请什么职位？",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "spot",
+        "phonetic": "/spɒt/",
+        "pos": "n.",
+        "meaning": "❶地点、位置 ❷斑点",
+        "example": "This is a good spot for camping.",
+        "root": "",
+        "exampleZh": "这是个露营的好地方。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "area",
+        "phonetic": "/ˈeəriə/",
+        "pos": "n.",
+        "meaning": "❶区域 ❷面积",
+        "example": "The parking area is over there.",
+        "root": "",
+        "exampleZh": "停车区在那边。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "zone",
+        "phonetic": "/zoʊn/",
+        "pos": "n.",
+        "meaning": "地带、区域",
+        "example": "This is a no-parking zone.",
+        "root": "",
+        "exampleZh": "这是禁止停车区域。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "district",
+        "phonetic": "/ˈdɪstrɪkt/",
+        "pos": "n.",
+        "meaning": "行政区、区域",
+        "example": "I live in the downtown district.",
+        "root": "",
+        "exampleZh": "我住在市中心区。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "border",
+        "phonetic": "/ˈbɔːrdər/",
+        "pos": "n.",
+        "meaning": "边界、边境",
+        "example": "Cross the border at the checkpoint.",
+        "root": "",
+        "exampleZh": "在检查站过边境。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "territory",
+        "phonetic": "/ˈterɪtɒri/",
+        "pos": "n.",
+        "meaning": "领土、领地",
+        "example": "This territory belongs to the country.",
+        "root": "terr(地)+itory → 土地的 → 领土",
+        "exampleZh": "这片领土属于国家。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "material",
+        "phonetic": "/məˈtɪriəl/",
+        "pos": "n./adj.",
+        "meaning": "❶n.材料 ❷adj.物质的",
+        "example": "What material is this made of?",
+        "root": "mater(物质)+ial → 物质的 → 材料",
+        "exampleZh": "这是什么材料做的？",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "equipment",
+        "phonetic": "/ɪˈkwɪpmənt/",
+        "pos": "n.",
+        "meaning": "设备、装备",
+        "example": "We need new gym equipment.",
+        "root": "equip(装备)+ment → 装备的东西 → 设备",
+        "exampleZh": "我们需要新的健身设备。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "tool",
+        "phonetic": "/tuːl/",
+        "pos": "n.",
+        "meaning": "工具",
+        "example": "What tool do I need for this?",
+        "root": "",
+        "exampleZh": "我需要什么工具来做这个？",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "instrument",
+        "phonetic": "/ˈɪnstrʊmənt/",
+        "pos": "n.",
+        "meaning": "❶仪器 ❷乐器",
+        "example": "What instrument do you play?",
+        "root": "in(内)+stru(建造)+ment → 内部建造的 → 仪器/乐器",
+        "exampleZh": "你演奏什么乐器？",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "step",
+        "phonetic": "/step/",
+        "pos": "n.",
+        "meaning": "❶步骤 ❷脚步",
+        "example": "Take it one step at a time.",
+        "root": "",
+        "exampleZh": "一步一步来。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "marker",
+        "phonetic": "/ˈmɑːrkər/",
+        "pos": "n.",
+        "meaning": "❶标记笔 ❷标记",
+        "example": "Use a red marker to highlight this.",
+        "root": "",
+        "exampleZh": "用红色标记笔标出这个。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "assignment",
+        "phonetic": "/əˈsaɪnmənt/",
+        "pos": "n.",
+        "meaning": "作业、任务",
+        "example": "The assignment is due on Friday.",
+        "root": "as(向)+sign(标记)+ment → 分配标记 → 任务/作业",
+        "exampleZh": "作业周五截止。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "deadline",
+        "phonetic": "/ˈdedlaɪn/",
+        "pos": "n.",
+        "meaning": "截止日期",
+        "example": "The deadline for the project is next Monday.",
+        "root": "dead(死)+line(线) → 死线 → 截止日期",
+        "exampleZh": "项目截止日期是下周一。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "lecture",
+        "phonetic": "/ˈlektʃər/",
+        "pos": "n./v.",
+        "meaning": "❶n.讲座、讲课 ❷v.训斥",
+        "example": "The lecture starts at 10 a.m.",
+        "root": "lect(读)+ure → 读出来的内容 → 讲座",
+        "exampleZh": "讲座10点开始。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "coursework",
+        "phonetic": "/ˈkɔːrswɜːrk/",
+        "pos": "n.",
+        "meaning": "课程作业",
+        "example": "I have a lot of coursework this semester.",
+        "root": "",
+        "exampleZh": "这学期我有很多课程作业。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "attendance",
+        "phonetic": "/əˈtendəns/",
+        "pos": "n.",
+        "meaning": "出勤、出席率",
+        "example": "Attendance is required for all classes.",
+        "root": "at(向)+tend(伸展)+ance → 向目标伸展 → 出勤",
+        "exampleZh": "所有课程要求出勤。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "faculty",
+        "phonetic": "/ˈfækəlti/",
+        "pos": "n.",
+        "meaning": "❶教职员工 ❷系、学院",
+        "example": "The faculty meeting is on Wednesday.",
+        "root": "fac(做)+ult+y → 做事的人 → 教职员工",
+        "exampleZh": "教职员工会议在周三。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "pulse",
+        "phonetic": "/pʌls/",
+        "pos": "n.",
+        "meaning": "❶脉搏 ❷脉冲",
+        "example": "The nurse checked my pulse.",
+        "root": "",
+        "exampleZh": "护士检查了我的脉搏。",
+        "subcategory": "Body Deep",
+        "subcategoryZh": "身体深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "cough",
+        "phonetic": "/kɒf/",
+        "pos": "n./v.",
+        "meaning": "❶n.咳嗽 ❷v.咳嗽",
+        "example": "I've been coughing all night.",
+        "root": "",
+        "exampleZh": "我整晚都在咳嗽。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "sneeze",
+        "phonetic": "/sniːz/",
+        "pos": "n./v.",
+        "meaning": "打喷嚏",
+        "example": "Cover your mouth when you sneeze.",
+        "root": "",
+        "exampleZh": "打喷嚏时捂住嘴。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "wound",
+        "phonetic": "/wuːnd/",
+        "pos": "n.",
+        "meaning": "伤口、创伤",
+        "example": "Clean the wound before bandaging.",
+        "root": "",
+        "exampleZh": "包扎前先清洗伤口。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "vaccine",
+        "phonetic": "/ˈvæksiːn/",
+        "pos": "n.",
+        "meaning": "疫苗",
+        "example": "Get your flu vaccine every year.",
+        "root": "vacca(牛) → 从牛痘发展而来 → 疫苗",
+        "exampleZh": "每年打流感疫苗。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "therapist",
+        "phonetic": "/ˈθerəpɪst/",
+        "pos": "n.",
+        "meaning": "治疗师",
+        "example": "My therapist helps me with stress.",
+        "root": "",
+        "exampleZh": "我的治疗师帮我应对压力。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "surgeon",
+        "phonetic": "/ˈsɜːrdʒən/",
+        "pos": "n.",
+        "meaning": "外科医生",
+        "example": "The surgeon performed the operation.",
+        "root": "",
+        "exampleZh": "外科医生做了手术。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "patient",
+        "phonetic": "/ˈpeɪʃənt/",
+        "pos": "n./adj.",
+        "meaning": "❶n.病人 ❷adj.耐心的",
+        "example": "The patient is waiting for the doctor.",
+        "root": "pati(忍受)+ent → 忍受痛苦的人 → 病人/耐心",
+        "exampleZh": "病人在等医生。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "pet",
+        "phonetic": "/pet/",
+        "pos": "n./v.",
+        "meaning": "❶n.宠物 ❷v.抚摸",
+        "example": "We have a dog as a pet.",
+        "root": "",
+        "exampleZh": "我们养了一只狗当宠物。",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "adult",
+        "phonetic": "/ˈædʌlt/",
+        "pos": "n./adj.",
+        "meaning": "❶n.成年人 ❷adj.成人的",
+        "example": "Only adults can watch this movie.",
+        "root": "adult(成长) → 长大的人 → 成年人",
+        "exampleZh": "只有成年人能看这部电影。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "teenager",
+        "phonetic": "/ˈtiːneɪdʒər/",
+        "pos": "n.",
+        "meaning": "青少年（13-19岁）",
+        "example": "Most teenagers love social media.",
+        "root": "teen(十几)+age(年龄)+er → 十几岁的人 → 青少年",
+        "exampleZh": "大多数青少年喜欢社交媒体。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "senior",
+        "phonetic": "/ˈsiːniər/",
+        "pos": "n./adj.",
+        "meaning": "❶n.老年人 ❷n.前辈 ❸adj.高级的",
+        "example": "Seniors get a discount at the store.",
+        "root": "",
+        "exampleZh": "老年人在商店有折扣。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "citizen",
+        "phonetic": "/ˈsɪtɪzən/",
+        "pos": "n.",
+        "meaning": "公民、市民",
+        "example": "Every citizen has the right to vote.",
+        "root": "civ(城市)+izen → 城市的人 → 公民",
+        "exampleZh": "每个公民都有投票权。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "stranger",
+        "phonetic": "/ˈstreɪndʒər/",
+        "pos": "n.",
+        "meaning": "陌生人",
+        "example": "Don't talk to strangers.",
+        "root": "",
+        "exampleZh": "不要跟陌生人说话。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "guest",
+        "phonetic": "/ɡest/",
+        "pos": "n.",
+        "meaning": "❶客人、宾客 ❷嘉宾",
+        "example": "We have a guest staying this weekend.",
+        "root": "",
+        "exampleZh": "这周末有客人住我们家。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "host",
+        "phonetic": "/hoʊst/",
+        "pos": "n./v.",
+        "meaning": "❶n.主人、主持人 ❷v.主办、主持",
+        "example": "She was a great host at the party.",
+        "root": "",
+        "exampleZh": "她在聚会上是个好主人。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "couple",
+        "phonetic": "/ˈkʌpəl/",
+        "pos": "n.",
+        "meaning": "❶夫妻、情侣 ❷几个、两三个",
+        "example": "They're a lovely couple.",
+        "root": "",
+        "exampleZh": "他们是一对可爱的夫妻。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "boss",
+        "phonetic": "/bɒs/",
+        "pos": "n.",
+        "meaning": "老板、上司",
+        "example": "My boss wants the report by Friday.",
+        "root": "",
+        "exampleZh": "我的老板要周五交报告。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "colleague",
+        "phonetic": "/ˈkɒliːɡ/",
+        "pos": "n.",
+        "meaning": "同事",
+        "example": "My colleague helped me with the project.",
+        "root": "col(共同)+league(盟) → 一起工作的人 → 同事",
+        "exampleZh": "我的同事帮我做项目。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "client",
+        "phonetic": "/ˈklaɪənt/",
+        "pos": "n.",
+        "meaning": "客户",
+        "example": "The client wants a quick response.",
+        "root": "cli(倾斜)+ent → 依赖某人的人 → 客户",
+        "exampleZh": "客户想要快速回复。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "customer",
+        "phonetic": "/ˈkʌstəmər/",
+        "pos": "n.",
+        "meaning": "顾客、消费者",
+        "example": "The customer asked for a refund.",
+        "root": "custom(习惯)+er → 消费习惯的人 → 顾客",
+        "exampleZh": "顾客要求退款。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "crowd",
+        "phonetic": "/kraʊd/",
+        "pos": "n.",
+        "meaning": "人群、群众",
+        "example": "There was a big crowd at the concert.",
+        "root": "",
+        "exampleZh": "演唱会有一大群人。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "audience",
+        "phonetic": "/ˈɔːdiəns/",
+        "pos": "n.",
+        "meaning": "观众、听众",
+        "example": "The audience loved the performance.",
+        "root": "audi(听)+ence → 听的人 → 观众",
+        "exampleZh": "观众很喜欢这场表演。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "crew",
+        "phonetic": "/kruː/",
+        "pos": "n.",
+        "meaning": "❶船员、机组人员 ❷团队",
+        "example": "The flight crew was very friendly.",
+        "root": "",
+        "exampleZh": "机组人员很友好。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "volunteer",
+        "phonetic": "/ˌvɒlənˈtɪər/",
+        "pos": "n./v.",
+        "meaning": "❶n.志愿者 ❷v.自愿做",
+        "example": "I volunteer at the shelter on weekends.",
+        "root": "vol(意愿)+unteer → 出自意愿 → 志愿者",
+        "exampleZh": "周末我在收容所做志愿者。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "relative",
+        "phonetic": "/ˈrelətɪv/",
+        "pos": "n.",
+        "meaning": "亲属、亲戚",
+        "example": "We visited relatives for the holidays.",
+        "root": "",
+        "exampleZh": "假期我们去拜访了亲戚。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "acquaintance",
+        "phonetic": "/əˈkweɪntəns/",
+        "pos": "n.",
+        "meaning": "认识的人、熟人",
+        "example": "She's an acquaintance, not a close friend.",
+        "root": "ac(向)+quaint(知道)+ance → 知道的人 → 熟人",
+        "exampleZh": "她是熟人，不是密友。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "passenger",
+        "phonetic": "/ˈpæsɪndʒər/",
+        "pos": "n.",
+        "meaning": "乘客",
+        "example": "All passengers must wear seatbelts.",
+        "root": "pass(通过)+enger → 通过交通工具的人 → 乘客",
+        "exampleZh": "所有乘客必须系安全带。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "resident",
+        "phonetic": "/ˈrezɪdənt/",
+        "pos": "n.",
+        "meaning": "居民",
+        "example": "Local residents love this park.",
+        "root": "resid(居住)+ent → 居住的人 → 居民",
+        "exampleZh": "当地居民喜欢这个公园。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "official",
+        "phonetic": "/əˈfɪʃəl/",
+        "pos": "n./adj.",
+        "meaning": "❶n.官员 ❷adj.官方的、正式的",
+        "example": "The official announced the new policy.",
+        "root": "",
+        "exampleZh": "官员宣布了新政策。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "hero",
+        "phonetic": "/ˈhɪroʊ/",
+        "pos": "n.",
+        "meaning": "英雄",
+        "example": "The firefighter was a real hero.",
+        "root": "",
+        "exampleZh": "那个消防员是真正的英雄。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "criminal",
+        "phonetic": "/ˈkrɪmɪnəl/",
+        "pos": "n./adj.",
+        "meaning": "❶n.罪犯 ❷adj.犯罪的",
+        "example": "The criminal was arrested last night.",
+        "root": "",
+        "exampleZh": "罪犯昨晚被逮捕了。",
+        "subcategory": "People Deep",
+        "subcategoryZh": "人物深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "bill",
+        "phonetic": "/bɪl/",
+        "pos": "n.",
+        "meaning": "❶账单 ❷法案 ❸纸币",
+        "example": "Pay the electricity bill this week.",
+        "root": "",
+        "exampleZh": "这周交电费账单。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "cash",
+        "phonetic": "/kæʃ/",
+        "pos": "n.",
+        "meaning": "现金",
+        "example": "I only have cash, no cards.",
+        "root": "",
+        "exampleZh": "我只有现金，没有卡。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "deposit",
+        "phonetic": "/dɪˈpɒzɪt/",
+        "pos": "n./v.",
+        "meaning": "❶n.存款、押金 ❷v.存入",
+        "example": "I paid a deposit for the apartment.",
+        "root": "de(下)+posit(放) → 放下去 → 存入/押金",
+        "exampleZh": "我付了公寓押金。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "balance",
+        "phonetic": "/ˈbæləns/",
+        "pos": "n.",
+        "meaning": "❶余额 ❷平衡",
+        "example": "Check your account balance online.",
+        "root": "",
+        "exampleZh": "在网上查看账户余额。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "transfer",
+        "phonetic": "/ˈtrænsfɜːr/",
+        "pos": "n./v.",
+        "meaning": "❶n.转账 ❷v.转移",
+        "example": "Make a transfer to my savings account.",
+        "root": "trans(跨越)+fer(带) → 带过去 → 转移/转账",
+        "exampleZh": "转到我的储蓄账户。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "tip",
+        "phonetic": "/tɪp/",
+        "pos": "n.",
+        "meaning": "❶小费 ❷提示 ❸尖端",
+        "example": "Leave a tip for the waiter.",
+        "root": "",
+        "exampleZh": "给服务员留小费。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "fee",
+        "phonetic": "/fiː/",
+        "pos": "n.",
+        "meaning": "费用、手续费",
+        "example": "There's a fee for late payment.",
+        "root": "",
+        "exampleZh": "逾期付款有手续费。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "court",
+        "phonetic": "/kɔːrt/",
+        "pos": "n.",
+        "meaning": "❶球场 ❷法庭",
+        "example": "The tennis court is free now.",
+        "root": "",
+        "exampleZh": "网球场现在空了。",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "pitch",
+        "phonetic": "/pɪtʃ/",
+        "pos": "n./v.",
+        "meaning": "❶n.足球场 ❷v.投球",
+        "example": "The pitch was wet from the rain.",
+        "root": "",
+        "exampleZh": "球场因雨变湿了。",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "score",
+        "phonetic": "/skɔːr/",
+        "pos": "n./v.",
+        "meaning": "❶n.比分、分数 ❷v.得分",
+        "example": "What's the score so far?",
+        "root": "",
+        "exampleZh": "目前比分多少？",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "inning",
+        "phonetic": "/ˈɪnɪŋ/",
+        "pos": "n.",
+        "meaning": "局、回合（棒球）",
+        "example": "It's the ninth inning.",
+        "root": "",
+        "exampleZh": "现在是第九局。",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "halftime",
+        "phonetic": "/ˈhæftaɪm/",
+        "pos": "n.",
+        "meaning": "半场休息",
+        "example": "Let's grab snacks at halftime.",
+        "root": "",
+        "exampleZh": "半场休息时去买零食。",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "playlist",
+        "phonetic": "/ˈpleɪlɪst/",
+        "pos": "n.",
+        "meaning": "播放列表",
+        "example": "I made a playlist for the road trip.",
+        "root": "",
+        "exampleZh": "我为自驾游做了播放列表。",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动娱乐深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "app",
+        "phonetic": "/æp/",
+        "pos": "n.",
+        "meaning": "应用程序、APP",
+        "example": "Download the app from the store.",
+        "root": "",
+        "exampleZh": "从商店下载APP。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "username",
+        "phonetic": "/ˈjuːzərneɪm/",
+        "pos": "n.",
+        "meaning": "用户名",
+        "example": "What's your username for the site?",
+        "root": "",
+        "exampleZh": "你在网站的用户名是什么？",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "profile",
+        "phonetic": "/ˈproʊfaɪl/",
+        "pos": "n.",
+        "meaning": "❶个人资料页 ❷侧影",
+        "example": "Update your profile with a new photo.",
+        "root": "pro(前)+file(线) → 前面的轮廓 → 侧影/资料",
+        "exampleZh": "更新你的个人资料头像。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "browser",
+        "phonetic": "/ˈbraʊzər/",
+        "pos": "n.",
+        "meaning": "浏览器",
+        "example": "Open a new tab in the browser.",
+        "root": "",
+        "exampleZh": "在浏览器里打开新标签。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "tab",
+        "phonetic": "/tæb/",
+        "pos": "n.",
+        "meaning": "❶标签页 ❷标签、小卡片",
+        "example": "Close the tab you're not using.",
+        "root": "",
+        "exampleZh": "关掉不用的标签页。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "icon",
+        "phonetic": "/ˈaɪkɒn/",
+        "pos": "n.",
+        "meaning": "图标",
+        "example": "Click the icon to start the app.",
+        "root": "",
+        "exampleZh": "点击图标启动应用。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "cursor",
+        "phonetic": "/ˈkɜːrsər/",
+        "pos": "n.",
+        "meaning": "光标、鼠标指针",
+        "example": "Move the cursor to the button.",
+        "root": "",
+        "exampleZh": "把光标移到按钮上。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "file",
+        "phonetic": "/faɪl/",
+        "pos": "n.",
+        "meaning": "❶文件 ❷文件夹 ❸锉刀",
+        "example": "Save the file to your desktop.",
+        "root": "",
+        "exampleZh": "把文件保存到桌面。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "wifi",
+        "phonetic": "/ˈwaɪfaɪ/",
+        "pos": "n.",
+        "meaning": "无线网络、WiFi",
+        "example": "What's the wifi password here?",
+        "root": "",
+        "exampleZh": "这里的WiFi密码是什么？",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "server",
+        "phonetic": "/ˈsɜːrvər/",
+        "pos": "n.",
+        "meaning": "服务器",
+        "example": "The server is slow today.",
+        "root": "serv(服务)+er → 提供服务的设备 → 服务器",
+        "exampleZh": "今天服务器很慢。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "task",
+        "phonetic": "/tæsk/",
+        "pos": "n.",
+        "meaning": "任务、工作",
+        "example": "Finish the task before lunch.",
+        "root": "",
+        "exampleZh": "午饭前完成任务。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "duty",
+        "phonetic": "/ˈdjuːti/",
+        "pos": "n.",
+        "meaning": "❶职责、义务 ❷责任",
+        "example": "It's my duty to help the team.",
+        "root": "",
+        "exampleZh": "帮团队是我的职责。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "transaction",
+        "phonetic": "/trænˈzækʃən/",
+        "pos": "n.",
+        "meaning": "交易、事务",
+        "example": "The transaction was completed online.",
+        "root": "trans(跨越)+action(行动) → 跨越的行动 → 交易",
+        "exampleZh": "交易在线完成。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "activity",
+        "phonetic": "/ækˈtɪvɪti/",
+        "pos": "n.",
+        "meaning": "活动",
+        "example": "What activities are planned for today?",
+        "root": "act(做)+ivity → 做的事 → 活动",
+        "exampleZh": "今天有什么活动？",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "journey",
+        "phonetic": "/ˈdʒɜːrni/",
+        "pos": "n.",
+        "meaning": "旅程、旅行",
+        "example": "The journey takes three hours by train.",
+        "root": "journ(天)+ey → 每天的行程 → 旅程",
+        "exampleZh": "坐火车旅程需要三小时。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "shipment",
+        "phonetic": "/ˈʃɪpmənt/",
+        "pos": "n.",
+        "meaning": "货运、装运",
+        "example": "The shipment arrives on Thursday.",
+        "root": "",
+        "exampleZh": "货运周四到达。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "appointment",
+        "phonetic": "/əˈpɔɪntmənt/",
+        "pos": "n.",
+        "meaning": "预约、约定",
+        "example": "I have a doctor's appointment tomorrow.",
+        "root": "ap(向)+point(指)+ment → 指定的时间 → 预约",
+        "exampleZh": "明天我有医生预约。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "departure",
+        "phonetic": "/dɪˈpɑːrtʃər/",
+        "pos": "n.",
+        "meaning": "出发、离开",
+        "example": "Check the departure time on the board.",
+        "root": "de(离开)+part(部分) → 从整体分离 → 出发",
+        "exampleZh": "查看公告板上的出发时间。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "arrival",
+        "phonetic": "/əˈraɪvəl/",
+        "pos": "n.",
+        "meaning": "到达、抵达",
+        "example": "The arrival gate is Gate 12.",
+        "root": "",
+        "exampleZh": "到达口是12号门。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "layover",
+        "phonetic": "/ˈleɪoʊvər/",
+        "pos": "n.",
+        "meaning": "中途停留、转机等候",
+        "example": "We have a three-hour layover in Tokyo.",
+        "root": "",
+        "exampleZh": "我们在东京有3小时转机等候。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "commute",
+        "phonetic": "/kəˈmjuːt/",
+        "pos": "n./v.",
+        "meaning": "❶n.通勤 ❷v.通勤、减刑",
+        "example": "My commute takes about 40 minutes.",
+        "root": "",
+        "exampleZh": "我的通勤大约需要40分钟。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "mileage",
+        "phonetic": "/ˈmaɪlɪdʒ/",
+        "pos": "n.",
+        "meaning": "里程、里程数",
+        "example": "The car has low mileage.",
+        "root": "",
+        "exampleZh": "这车里程数很低。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "government",
+        "phonetic": "/ˈɡʌvərnmənt/",
+        "pos": "n.",
+        "meaning": "政府",
+        "example": "The government announced new rules.",
+        "root": "govern(统治)+ment → 统治机构 → 政府",
+        "exampleZh": "政府宣布了新规定。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "vote",
+        "phonetic": "/voʊt/",
+        "pos": "n./v.",
+        "meaning": "❶n.投票 ❷v.投票",
+        "example": "Don't forget to vote tomorrow.",
+        "root": "",
+        "exampleZh": "明天别忘了投票。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "neighborhood",
+        "phonetic": "/ˈneɪbərhʊd/",
+        "pos": "n.",
+        "meaning": "街区、附近地区",
+        "example": "This neighborhood is really quiet.",
+        "root": "",
+        "exampleZh": "这个街区很安静。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "society",
+        "phonetic": "/səˈsaɪəti/",
+        "pos": "n.",
+        "meaning": "社会",
+        "example": "Society is changing fast.",
+        "root": "soci(伙伴)+ety → 伙伴关系 → 社会",
+        "exampleZh": "社会变化很快。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "population",
+        "phonetic": "/ˌpɒpjʊˈleɪʃən/",
+        "pos": "n.",
+        "meaning": "人口",
+        "example": "The population of this city is growing.",
+        "root": "popul(人民)+ation → 人民总数 → 人口",
+        "exampleZh": "这座城市的人口在增长。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "industry",
+        "phonetic": "/ˈɪndəstri/",
+        "pos": "n.",
+        "meaning": "❶工业、产业 ❷勤劳",
+        "example": "Tech is a big industry here.",
+        "root": "indu(在内)+stry → 在里面做事 → 工业/产业",
+        "exampleZh": "科技在这里是大产业。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "lane",
+        "phonetic": "/leɪn/",
+        "pos": "n.",
+        "meaning": "❶车道 ❷小巷 ❸泳道",
+        "example": "Stay in the right lane.",
+        "root": "",
+        "exampleZh": "保持在右车道。",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道深入",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "exchange",
+        "phonetic": "/ɪksˈtʃeɪndʒ/",
+        "pos": "n./v.",
+        "meaning": "❶n.交换 ❷n.兑换 ❸v.交换",
+        "example": "Can I exchange this for a different size?",
+        "root": "ex(出)+change(改变) → 改出 → 交换",
+        "exampleZh": "能换一个不同尺码的吗？",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "display",
+        "phonetic": "/dɪˈspleɪ/",
+        "pos": "n./v.",
+        "meaning": "❶n.展示、陈列 ❷v.展示",
+        "example": "The display looks really attractive.",
+        "root": "dis(分开)+play(玩) → 展开给人看 → 展示",
+        "exampleZh": "陈列看起来很吸引人。",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "edge",
+        "phonetic": "/edʒ/",
+        "pos": "n.",
+        "meaning": "❶ 边、边缘 ❷ 优势",
+        "example": "Sit on the edge of the bed.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "mark",
+        "phonetic": "/mɑːrk/",
+        "pos": "n.",
+        "meaning": "❶ 标记、痕迹 ❷ 分数",
+        "example": "There's a mark on the wall.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "piece",
+        "phonetic": "/piːs/",
+        "pos": "n.",
+        "meaning": "❶ 片、块 ❷ 碎片",
+        "example": "Give me a piece of cake.",
+        "root": "pett(小片) → 一小片 → piece",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "group",
+        "phonetic": "/ɡruːp/",
+        "pos": "n.",
+        "meaning": "❶ 群、组 ❷ 团体",
+        "example": "A group of students walked by.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "set",
+        "phonetic": "/set/",
+        "pos": "n.",
+        "meaning": "❶ 套、组 ❷ 装置",
+        "example": "I bought a new set of tools.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "patch",
+        "phonetic": "/pætʃ/",
+        "pos": "n.",
+        "meaning": "❶ 补丁 ❷ 一小块地",
+        "example": "There's a patch of grass here.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "stain",
+        "phonetic": "/steɪn/",
+        "pos": "n.",
+        "meaning": "污渍、污点",
+        "example": "There's a stain on my shirt.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "scratch",
+        "phonetic": "/skrætʃ/",
+        "pos": "n.",
+        "meaning": "❶ 刮痕 ❷ 抓",
+        "example": "The car has a scratch on the door.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "crack",
+        "phonetic": "/kræk/",
+        "pos": "n.",
+        "meaning": "❶ 裂缝 ❷ 破裂声",
+        "example": "There's a crack in the window.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "hole",
+        "phonetic": "/hoʊl/",
+        "pos": "n.",
+        "meaning": "洞、孔",
+        "example": "There's a hole in my sock.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "shadow",
+        "phonetic": "/ˈʃædoʊ/",
+        "pos": "n.",
+        "meaning": "❶ 影子 ❷ 阴暗处",
+        "example": "My shadow follows me.",
+        "root": "sceadu(遮蔽) → 遮蔽光线 → 影子",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "container",
+        "phonetic": "/kənˈteɪnər/",
+        "pos": "n.",
+        "meaning": "容器",
+        "example": "Store food in a container.",
+        "root": "contain(包含)+er → 包含东西的 → 容器",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "field",
+        "phonetic": "/fiːld/",
+        "pos": "n.",
+        "meaning": "❶ 田地 ❷ 场地",
+        "example": "The kids play on the field.",
+        "root": "",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "target",
+        "phonetic": "/ˈtɑːrgɪt/",
+        "pos": "n.",
+        "meaning": "靶子、目标",
+        "example": "Aim at the target.",
+        "root": "targ(边界) → 边界上的标志 → 靶子",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "semi-concrete"
+      },
+      {
+        "en": "stock",
+        "phonetic": "/stɒk/",
+        "pos": "n.",
+        "meaning": "❶ 股票 ❷ 库存",
+        "example": "She bought some tech stocks.",
+        "root": "stoc(树干) → 存储的基础 → 库存/股票",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "金融补充",
+        "wordType": "semi-concrete"
+      }
+    ]
   }
 ];
