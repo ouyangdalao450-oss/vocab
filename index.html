@@ -686,7 +686,7 @@ html { scroll-behavior:smooth; }
   <button class="nouns2-btn" id="nouns2Btn" onclick="openNouns500V2()">📖 名词500-第二波</button>
   <button class="grammar-btn" id="grammarBtn" onclick="openGrammar()">📝 语法</button>
   <button class="shadow-btn" id="shadowBtn" onclick="openShadowing()">🗣️ 跟读</button>
-  <div class="stats" id="stats">加载中…</div>
+  <div class="stats" id="stats">加载中...</div>
 </div>
 
 <!-- 日历弹窗 -->
@@ -709,14 +709,14 @@ html { scroll-behavior:smooth; }
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
-<div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词（发音取自组成部分）| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
+<div class="footer">🔊 Cambridge 美式真人录音 | 🤖 浏览器TTS发音 | 🔗 复合词(发音取自组成部分)| 💡 根意 | ⚡ 不规则变化 | 中 例句切换中文</div>
 
 <script src="vocab-data.js?v=20260609"></script>
 <script>
 /* 名词500-第二波 */
 
 function closeAllViews() {
-  // Show main content, hide all special views — use style.display directly (no CSS class tricks)
+  // Show main content, hide all special views - use style.display directly (no CSS class tricks)
   document.getElementById('content').style.display = '';
   document.getElementById('nounsView').style.display = 'none';
   document.getElementById('nounsView').innerHTML = '';
@@ -857,7 +857,7 @@ function renderSemiConcreteNouns(filter) {
   if (statsEl) {
     const concreteInSec = words.filter(w => w.wordType === 'concrete').length;
     const semiInSec = words.filter(w => w.wordType === 'semi-concrete').length;
-    statsEl.innerHTML = '<span class="stats-text">共 <b>' + words.length + '</b> 个半具体名词</span>';  
+    statsEl.innerHTML = '<span class="stats-text">共 <b>' + words.length + '</b> 个半具体名词</span>';
   }
 }
 
@@ -1025,11 +1025,6 @@ function renderNouns500V2(filter) {
   let html = '<div class="nouns2-top"><h2>📖 名词500-第二波</h2><button class="nouns2-close-btn" onclick="closeNouns500V2()">✕</button></div>';
   html += '<div class="nouns2-stats" id="nouns2Stats"></div>';
 
-  // Type toggle: All / Abstract / Concrete
-  // Stats: all concrete words
-  html += '<div class="nouns2-stats" id="nouns2Stats"></div>';
-  ;
-
   // Subcategory nav (only in 'all' and 'concrete' modes)
   if ((_n2ViewMode === 'all' || _n2ViewMode === 'concrete') && sec.categories) {
     html += '<div class="subcat-nav" id="subcatNavN2">';
@@ -1175,7 +1170,7 @@ function renderNouns500V2(filter) {
 
   n2v.innerHTML = html;
   addExampleSpeakButtons();
-  document.getElementById('nouns2Stats').textContent = q ? '共 ' + sec.words.length + ' 词，匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词，' + (sec.categories ? sec.categories.length + ' 个分类' : '');
+  document.getElementById('nouns2Stats').textContent = q ? '共 ' + sec.words.length + ' 词,匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词,' + (sec.categories ? sec.categories.length + ' 个分类' : '');
 }
 
 function jumpN2Subcat(ci) {
@@ -1236,7 +1231,7 @@ function addExampleSpeakButtons() {
   });
 }
 
-/* ===== 音频引擎（Web Audio API + 缓存池 + TTS 兜底）===== */
+/* ===== 音频引擎(Web Audio API + 缓存池 + TTS 兜底)===== */
 const CACHE_NAME = 'vocab-v62';
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 const bufferCache = {};   // wordKey → AudioBuffer
@@ -1288,7 +1283,7 @@ function preloadAll() {
   keys.reduce((p, k) => p.then(() => loadBuffer(k)), Promise.resolve());
 }
 
-// TTS 播放（浏览器语音合成）
+// TTS 播放(浏览器语音合成)
 function speakTTS(word, btn) {
   if (!('speechSynthesis' in window)) return false;
   const key = word.toLowerCase().replace(/\s+/g, '_');
@@ -1333,7 +1328,7 @@ function speakTTS(word, btn) {
   return true;
 }
 
-// 核心：播放/停止（优先真人音频 → TTS兜底）
+// 核心:播放/停止(优先真人音频 → TTS兜底)
 async function speak(word, btn) {
   if (audioCtx.state === 'suspended') audioCtx.resume();
   const key = word.toLowerCase().replace(/\s+/g, '_');
@@ -1416,7 +1411,7 @@ async function speak(word, btn) {
   }
 }
 
-// 变形词发音（优先真人音频，TTS兜底）
+// 变形词发音(优先真人音频,TTS兜底)
 async function speakIrr(word, btn) {
   if (audioCtx.state === 'suspended') audioCtx.resume();
   const key = word.toLowerCase().replace(/\s+/g, '_');
@@ -1695,7 +1690,7 @@ function renderAll(filter) {
   });
 
   document.getElementById('stats').textContent =
-    q ? `共 ${total} 词，匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词`;
+    q ? `共 ${total} 词,匹配 "${filter}" 显示 ${shown} 词` : `共 ${total} 词`;
   if (!shown) c.innerHTML = '<div class="no-results">没有找到匹配的单词 😢</div>';
   addExampleSpeakButtons();
 }
@@ -1707,13 +1702,13 @@ function buildCalendar() {
   getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns && !sec.isSemiConcrete).forEach((sec, idx) => {
     const card = document.createElement('div');
     card.className = 'cal-card';
-    const dateStr = sec.date.replace(/^[^\d]*/, '').replace(/（.*）/, '');
+    const dateStr = sec.date.replace(/^[^\d]*/, '').replace(/(.*)/, '');
     const icon = '📅';
     // 取前3个词做预览
     const preview = sec.words.slice(0,3).map(w => w.en).join(', ');
     card.innerHTML = `<div class="cal-date">${icon} ${dateStr}</div>
       <div class="cal-count">${sec.words.length} 词</div>
-      <div class="cal-words">${preview}…</div>`;
+      <div class="cal-words">${preview}...</div>`;
     card.onclick = () => { closeCalendarFast(); jumpToDate(idx); };
     grid.appendChild(card);
   });
@@ -1831,7 +1826,7 @@ const VERBS200_QUIZ_GROUPS = [
   { name: '法律与规则', subcats: ['Law & Rules'] },
 ];
 
-/* ===== 测验音效（Web Audio API 合成）===== */
+/* ===== 测验音效(Web Audio API 合成)===== */
 function playCorrectSound() {
   try {
     if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -1870,7 +1865,7 @@ function playWrongSound() {
   } catch(e) {}
 }
 
-/* ===== 错题记录本（localStorage 持久化）===== */
+/* ===== 错题记录本(localStorage 持久化)===== */
 const MISTAKE_KEY = 'vocab_mistakes_v1';
 
 function loadMistakes() {
@@ -1893,7 +1888,7 @@ function recordMistake(wordEn) {
   saveMistakes(data);
 }
 
-// 记录一次正确（连续正确计数，用于判断是否"已掌握"）
+// 记录一次正确(连续正确计数,用于判断是否"已掌握")
 function recordCorrect(wordEn) {
   const data = loadMistakes();
   if (data[wordEn]) {
@@ -1903,7 +1898,7 @@ function recordCorrect(wordEn) {
   }
 }
 
-// 艾宾浩斯遗忘曲线分析：返回需要复习的词，按紧急程度排序
+// 艾宾浩斯遗忘曲线分析:返回需要复习的词,按紧急程度排序
 function analyzeMistakes() {
   const data = loadMistakes();
   const allWords = getAllWords();
@@ -1915,7 +1910,7 @@ function analyzeMistakes() {
     const word = allWords.find(w => w.en === en);
     if (!word) return;
 
-    // 遗忘曲线复习间隔（小时）：1h, 8h, 1d, 2d, 4d, 7d, 15d, 30d
+    // 遗忘曲线复习间隔(小时):1h, 8h, 1d, 2d, 4d, 7d, 15d, 30d
     const intervals = [1, 8, 24, 48, 96, 168, 360, 720];
     const stage = Math.min(m.correctAfterWrong || 0, intervals.length - 1);
     const reviewInterval = intervals[stage] * 3600000; // 转毫秒
@@ -1924,21 +1919,21 @@ function analyzeMistakes() {
     const timeSinceLastMistake = now - m.lastAt;
     const overdue = timeSinceLastMistake > reviewInterval;
 
-    // 熟练度评分 0-100（越高越熟练）
+    // 熟练度评分 0-100(越高越熟练)
     let mastery = 0;
     if (m.count === 0) { mastery = 100; }
     else {
-      // 基础分：错误越多分越低
+      // 基础分:错误越多分越低
       const errorPenalty = Math.min(m.count * 15, 60);
       // 连续正确加分
       const streakBonus = Math.min((m.correctAfterWrong || 0) * 12, 36);
-      // 时间衰减：上次错误越久，稍微恢复
+      // 时间衰减:上次错误越久,稍微恢复
       const hoursSince = timeSinceLastMistake / 3600000;
       const decayRecovery = Math.min(hoursSince * 0.3, 10);
       mastery = Math.max(0, Math.min(100, 100 - errorPenalty + streakBonus + decayRecovery));
     }
 
-    // 紧急度：需要复习的程度（0-100）
+    // 紧急度:需要复习的程度(0-100)
     let urgency = 0;
     if (m.count > 0) {
       if (overdue || !m.lastCorrectAt) {
@@ -1978,7 +1973,7 @@ function renderMistakeBook() {
 
   let listHTML = '';
   if (analysis.length === 0) {
-    listHTML = '<div style="text-align:center;color:#aaa;padding:40px 0;font-size:1.1em">🎉 还没有错题记录！<br>去做一次测验吧</div>';
+    listHTML = '<div style="text-align:center;color:#aaa;padding:40px 0;font-size:1.1em">🎉 还没有错题记录!<br>去做一次测验吧</div>';
   } else {
     listHTML = analysis.map(r => {
       const urgencyColor = r.urgency >= 70 ? '#e74c3c' : r.urgency >= 40 ? '#e67e22' : '#27ae60';
@@ -2023,18 +2018,18 @@ function renderMistakeBook() {
     ${struggling.length > 0 ? `<div style="background:#fff0f0;border-radius:12px;padding:12px;margin-bottom:12px;border:1px solid #ffcccc">
       <div style="font-weight:700;color:#c0392b;margin-bottom:6px">🔴 最需要加强的词</div>
       <div style="font-size:0.88em;color:#555">${struggling.map(r => '<strong>' + r.word.en + '</strong>(' + r.mistakes.count + '次)').join('、')}</div>
-      <div style="font-size:0.78em;color:#999;margin-top:4px">💡 建议：多次重复测试这些词，每次间隔1-2天</div>
+      <div style="font-size:0.78em;color:#999;margin-top:4px">💡 建议:多次重复测试这些词,每次间隔1-2天</div>
     </div>` : ''}
     ${needReview.length >= 4 ? `<button class="quiz-start-btn" style="margin-bottom:14px" onclick="startMistakeQuiz()">🔄 复习错题 (${Math.min(needReview.length, 15)}题)</button>` : ''}
-    <div style="margin-bottom:8px;font-weight:700;color:#2d1b69;font-size:0.95em">所有错词（按紧急度排序）</div>
+    <div style="margin-bottom:8px;font-weight:700;color:#2d1b69;font-size:0.95em">所有错词(按紧急度排序)</div>
     ${listHTML}
-    ${analysis.length > 0 ? `<button style="margin-top:16px;padding:10px 20px;border:2px solid #e74c3c;border-radius:12px;background:#fff;color:#e74c3c;font-weight:700;cursor:pointer" onclick="if(confirm('确定清空所有错题记录？')){localStorage.removeItem('${MISTAKE_KEY}');renderMistakeBook();}">🗑️ 清空记录</button>` : ''}
+    ${analysis.length > 0 ? `<button style="margin-top:16px;padding:10px 20px;border:2px solid #e74c3c;border-radius:12px;background:#fff;color:#e74c3c;font-weight:700;cursor:pointer" onclick="if(confirm('确定清空所有错题记录?')){localStorage.removeItem('${MISTAKE_KEY}');renderMistakeBook();}">🗑️ 清空记录</button>` : ''}
   `;
 }
 
 function startMistakeQuiz() {
   const analysis = analyzeMistakes().filter(r => r.urgency >= 50);
-  if (analysis.length < 4) { alert('需要复习的词不足4个，先去做普通测验吧'); return; }
+  if (analysis.length < 4) { alert('需要复习的词不足4个,先去做普通测验吧'); return; }
   const words = analysis.map(r => r.word);
   quizState.mode = 'en2zh';
   quizState.range = 'all';
@@ -2081,7 +2076,7 @@ function pickDistractors(allWords, correctWord, n) {
 }
 
 
-// 从含义中移除单词本身（防泄露）
+// 从含义中移除单词本身(防泄露)
 function cleanMeaningForQuiz(meaning, wordEn) {
   let clean = meaning;
   const parts = wordEn.toLowerCase().split(/\s+/);
@@ -2112,8 +2107,8 @@ function generateQuestions(mode, words, count) {
     const q = { word: w, mode };
     if (mode === 'spell') return q; // 拼写模式不需要选项
     if (mode === 'listenSpell') {
-      // 听声默写：不需要预设选项（先拼写，再选含义）
-      // 含义选项：5选1
+      // 听声默写:不需要预设选项(先拼写,再选含义)
+      // 含义选项:5选1
       const meaningDistractors = pickDistractors(all, w, 4);
       q.meaningOptions = shuffle([w, ...meaningDistractors].map(x => ({
         display: cleanMeaningForQuiz(x.meaning.replace(/[❶❷❸❹❺]/g, '').trim(), x.en),
@@ -2130,13 +2125,13 @@ function generateQuestions(mode, words, count) {
     } else if (mode === 'listen') {
       options = shuffle([w, ...distractors].map(x => ({ display: x.en, key: x.en })));
     } else if (mode === 'root') {
-      // 词根模式：干扰项也需要有root
+      // 词根模式:干扰项也需要有root
       const rootPool = all.filter(x => x.root && x.en !== w.en);
       const rootDist = shuffle(rootPool).slice(0, 3);
       const fill = rootDist.length < 3 ? [...distractors.slice(0, 3-rootDist.length)] : [];
       options = shuffle([w, ...rootDist, ...fill].slice(0,4).map(x => ({ display: x.en, key: x.en })));
     }
-    // 检查词根提示是否泄露答案：提示中包含单词本身的就不适合出题
+    // 检查词根提示是否泄露答案:提示中包含单词本身的就不适合出题
     if (w.root) {
       const firstArrow = w.root.indexOf('\u2192');
       const rootHint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
@@ -2197,7 +2192,7 @@ function renderQuizSetup() {
   const mode = QUIZ_MODES.find(m => m.id === quizState.mode);
   const total = getWordsByRange(quizState.range).length;
   const maxQ = Math.min(total, 50);
-  
+
   // Build nouns500 sub-group buttons if nouns500 is selected
   const data = getMergedData();
   const n500sec = data.find(s => s.isNouns500);
@@ -2219,6 +2214,9 @@ function renderQuizSetup() {
 
   // Build verbs200 sub-group buttons
   const v200sec = data.find(s => s.isVerbs200);
+  const absSec = data.find(s => s.isAbstractNouns);
+  const semiSec = data.find(s => s.isSemiConcrete);
+  const n2sec = data.find(s => s.isNouns500V2);
   let verbsSubHtml = '';
   if (v200sec) {
     const v200words = v200sec.words;
@@ -2246,12 +2244,15 @@ function renderQuizSetup() {
       <h3>选择范围</h3>
       <div class="quiz-range">
         <button class="quiz-range-btn ${quizState.range==='all'?'selected':''}" onclick="setQuizRange('all',this)">全部 (${getAllWords().length})</button>
-        ${data.filter(s => !s.isNouns500).map((s,i) => {
-          const dateStr = s.date.replace(/📅\s*/,'').replace(/（.*）/,'');
+        ${data.filter(s => !s.isNouns500 && !s.isVerbs200 && !s.isNouns500V2 && !s.isAbstractNouns && !s.isSemiConcrete).map((s,i) => {
+          const dateStr = s.date.replace(/📅\s*/,'');
           return `<button class="quiz-range-btn ${quizState.range===s.date?'selected':''}" onclick="setQuizRange('${s.date}',this)">${dateStr} (${s.words.length})</button>`;
         }).join('')}
         ${n500sec ? '<button class="quiz-range-btn ' + (quizState.range===n500sec.date?'selected':'') + '" onclick="setQuizRange(\''+n500sec.date+'\',this)" style="border-color:#ff9800;color:#ff9800">📚 名词500 (' + n500sec.words.length + ')</button>' : ''}
         ${v200sec ? '<button class="quiz-range-btn ' + (quizState.range===v200sec.date?'selected':'') + '" onclick="setQuizRange(\''+v200sec.date+'\',this)" style="border-color:#2196F3;color:#2196F3">📝 动词200 (' + v200sec.words.length + ')</button>' : ''}
+        ${absSec ? '<button class="quiz-range-btn ' + (quizState.range===absSec.date?'selected':'') + '" onclick="setQuizRange(\''+absSec.date+'\',this)" style="border-color:#ff9800;color:#e65100">🧠 抽象名词 (' + absSec.words.length + ')</button>' : ''}
+        ${semiSec ? '<button class="quiz-range-btn ' + (quizState.range===semiSec.date?'selected':'') + '" onclick="setQuizRange(\''+semiSec.date+'\',this)" style="border-color:#29b6f6;color:#0277bd">🔀 半具体名词 (' + semiSec.words.length + ')</button>' : ''}
+        ${n2sec ? '<button class="quiz-range-btn ' + (quizState.range===n2sec.date?'selected':'') + '" onclick="setQuizRange(\''+n2sec.date+'\',this)" style="border-color:#9c27b0;color:#9c27b0">📖 名词500-第二波 (' + n2sec.words.length + ')</button>' : ''}
       </div>
       ${nounsSubHtml}
       ${verbsSubHtml}
@@ -2308,7 +2309,7 @@ function setQuizRange(range, btn) {
 function startQuiz() {
   const words = getWordsByRange(quizState.range);
   if (quizState.mode === 'root') {
-    // 词根模式：只用有root且词根提示不泄露答案的词
+    // 词根模式:只用有root且词根提示不泄露答案的词
     const rootWords = words.filter(w => {
       if (!w.root) return false;
       const firstArrow = w.root.indexOf('\u2192');
@@ -2316,12 +2317,12 @@ function startQuiz() {
       const wordParts = w.en.toLowerCase().split(/\s+/).filter(sw => sw.length > 2);
       return !wordParts.some(sw => hint.toLowerCase().includes(sw));
     });
-    if (rootWords.length < 4) { alert('适合词根测验的词不足4个，请选择更多范围'); return; }
+    if (rootWords.length < 4) { alert('适合词根测验的词不足4个,请选择更多范围'); return; }
     quizState.questions = generateQuestions(quizState.mode, rootWords, quizState.count);
   } else {
     quizState.questions = generateQuestions(quizState.mode, words, quizState.count);
   }
-  if (quizState.questions.length === 0) { alert('没有可用的测验题目，请检查选择范围'); return; }
+  if (quizState.questions.length === 0) { alert('没有可用的测验题目,请检查选择范围'); return; }
   quizState.idx = 0;
   quizState.score = 0;
   quizState.wrong = [];
@@ -2342,28 +2343,28 @@ function renderQuizQuestion() {
 
   if (q.mode === 'en2zh') {
     questionHTML = `
-      <div class="qq-prompt">这个单词的含义是？</div>
+      <div class="qq-prompt">这个单词的含义是?</div>
       <div class="qq-word">${w.en}</div>
       ${w.pos ? `<div style="margin-top:4px"><span class="pos">${w.pos}</span></div>` : ''}
     `;
   } else if (q.mode === 'zh2en') {
     const cleanMeaning = w.meaning.replace(/[❶❷❸❹❺]/g, '').trim();
     questionHTML = `
-      <div class="qq-prompt">哪个单词是这个含义？</div>
+      <div class="qq-prompt">哪个单词是这个含义?</div>
       <div class="qq-word" style="font-size:1.3em">${cleanMeaning}</div>
     `;
   } else if (q.mode === 'listen') {
     questionHTML = `
-      <div class="qq-prompt">听发音，选出对应单词</div>
+      <div class="qq-prompt">听发音,选出对应单词</div>
       <button class="qq-listen-btn" id="quizListenBtn" data-word="${w.en.replace(/"/g,'&quot;')}" onclick="quizPlayAudio(this.dataset.word,this)">🔊</button>
       <div class="qq-phonetic" style="visibility:hidden">${w.phonetic}</div>
     `;
   } else if (q.mode === 'root') {
-    // 只取词根拆解部分（第一个→之前），避免推理过程和含义泄露答案
+    // 只取词根拆解部分(第一个→之前),避免推理过程和含义泄露答案
     const firstArrow = w.root.indexOf('\u2192');
     const rootHint = firstArrow > 0 ? w.root.substring(0, firstArrow).trimEnd() : w.root;
     questionHTML = `
-      <div class="qq-prompt">根据词根拆解，这是哪个单词？</div>
+      <div class="qq-prompt">根据词根拆解,这是哪个单词?</div>
       <div class="qq-hint" style="font-size:1.15em;color:#764ba2;font-style:normal;font-weight:700;margin:8px 0">${rootHint}</div>
     `;
   } else if (q.mode === 'spell') {
@@ -2375,7 +2376,7 @@ function renderQuizQuestion() {
     `;
   } else if (q.mode === 'listenSpell') {
     questionHTML = `
-      <div class="qq-prompt">🎧 听发音，拼出这个单词</div>
+      <div class="qq-prompt">🎧 听发音,拼出这个单词</div>
       <button class="qq-listen-btn" id="quizListenBtn" onclick="quizPlayAudio('${w.en.replace(/'/g,"\\\\'")}',this)">🔊</button>
       <div style="margin-top:10px">
         <input type="text" class="quiz-spell-input" id="quizSpellInput" placeholder="输入单词..." autocomplete="off" autocapitalize="off" spellcheck="false">
@@ -2409,7 +2410,7 @@ function renderQuizQuestion() {
   el.innerHTML = `
     <div class="quiz-top">
       <h2>${QUIZ_MODES.find(m=>m.id===q.mode).icon} 第 ${idx+1}/${total} 题</h2>
-      <button class="quiz-back-arrow" onclick="if(confirm('退出测验？当前进度将丢失')){renderQuizHome()}">←</button>
+      <button class="quiz-back-arrow" onclick="if(confirm('退出测验?当前进度将丢失')){renderQuizHome()}">←</button>
 <button class="quiz-close-btn" onclick="closeQuiz()">✕</button>
     </div>
     <div class="quiz-progress">
@@ -2435,7 +2436,7 @@ function renderQuizQuestion() {
     }, 100);
   }
 
-  // 听声默写模式：自动播放+聚焦+回车
+  // 听声默写模式:自动播放+聚焦+回车
   if (q.mode === 'listenSpell') {
     setTimeout(() => {
       const input = document.getElementById('quizSpellInput');
@@ -2470,19 +2471,19 @@ function quizPlayAudio(word, btn) {
 
 /* ===== 测验键盘快捷键 ===== */
 document.addEventListener('keydown', function(e) {
-  // 只在测验进行中生效（quizOverlay 激活时）
+  // 只在测验进行中生效(quizOverlay 激活时)
   const overlay = document.getElementById('quizOverlay');
   if (!overlay || !overlay.classList.contains('active')) return;
-  // 拼写模式跳过，由 input 自己处理
+  // 拼写模式跳过,由 input 自己处理
   const q = quizState.questions && quizState.questions[quizState.idx];
   if (q && (q.mode === 'spell' || q.mode === 'listenSpell')) return;
-  // 如果焦点在 input/textarea 里，跳过
+  // 如果焦点在 input/textarea 里,跳过
   const tag = document.activeElement && document.activeElement.tagName;
   if (tag === 'INPUT' || tag === 'TEXTAREA') return;
   // 输入法合成中跳过
   if (e.isComposing || e.keyCode === 229) return;
 
-  // 用 e.code 检测物理按键（不受输入法影响）
+  // 用 e.code 检测物理按键(不受输入法影响)
   const codeMap = { 'KeyA':0, 'KeyB':1, 'KeyC':2, 'KeyD':3 };
   if (codeMap[e.code] !== undefined && !quizState.answered) {
     e.preventDefault();
@@ -2491,7 +2492,7 @@ document.addEventListener('keydown', function(e) {
     if (opts[idx]) selectOption(opts[idx]);
     return;
   }
-  // Enter / 空格 → 下一题（已答题时）
+  // Enter / 空格 → 下一题(已答题时)
   if ((e.key === 'Enter' || e.code === 'Space') && quizState.answered) {
     e.preventDefault();
     nextQuestion();
@@ -2527,7 +2528,7 @@ function selectOption(el) {
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
   // 记录答题结果到错题本
   if (selected === correct) { recordCorrect(q.word.en); } else { recordMistake(q.word.en); }
-  // 不自动跳转，需手动点击
+  // 不自动跳转,需手动点击
 }
 
 function checkSpell() {
@@ -2542,7 +2543,7 @@ function checkSpell() {
   quizState.answered = true;
   if (answer === correct) {
     input.classList.add('correct');
-    hint.textContent = '✅ 正确！';
+    hint.textContent = '✅ 正确!';
     hint.className = 'quiz-spell-hint correct';
     quizState.score++;
     playCorrectSound();
@@ -2559,10 +2560,10 @@ function checkSpell() {
   document.querySelector('.quiz-score-live').textContent = `✅ ${quizState.score}`;
   // 记录答题结果到错题本
   if (answer === correct) { recordCorrect(q.word.en); } else { recordMistake(q.word.en); }
-  // 不自动跳转，需手动点击
+  // 不自动跳转,需手动点击
 }
 
-// 听声默写：先拼写，再选含义
+// 听声默写:先拼写,再选含义
 function checkListenSpell() {
   if (quizState.answered) return;
   const input = document.getElementById('quizSpellInput');
@@ -2572,7 +2573,7 @@ function checkListenSpell() {
   const correct = q.word.en.toLowerCase();
 
   if (answer !== correct) {
-    // 拼写错误：显示正确拼写，不出现含义选项，Enter直接下一题
+    // 拼写错误:显示正确拼写,不出现含义选项,Enter直接下一题
     quizState.answered = true;
     input.classList.add('wrong');
     input.disabled = true;
@@ -2596,7 +2597,7 @@ function checkListenSpell() {
     return;
   }
 
-  // 拼写正确，进入第二阶段：选含义
+  // 拼写正确,进入第二阶段:选含义
   input.classList.add('correct');
   input.disabled = true;
   playCorrectSound();
@@ -2613,7 +2614,7 @@ function showListenSpellMeaningOptions(q, alreadyWrong) {
 
   const container = document.getElementById('listenSpellMeanings');
   if (container) {
-    container.innerHTML = '<div class="qq-prompt" style="margin-top:14px;margin-bottom:8px">选择正确的含义：</div><div class="quiz-options">' + optionsHTML + '</div>';
+    container.innerHTML = '<div class="qq-prompt" style="margin-top:14px;margin-bottom:8px">选择正确的含义:</div><div class="quiz-options">' + optionsHTML + '</div>';
   }
 }
 
@@ -2664,10 +2665,10 @@ function renderQuizResult() {
   const modeInfo = QUIZ_MODES.find(m => m.id === mode) || { icon:'📝', title:'测验' };
 
   let msg = '';
-  if (pct === 100) msg = '🏆 完美！一个没错！';
-  else if (pct >= 90) msg = '🌟 太棒了！几乎全对！';
-  else if (pct >= 70) msg = '👍 不错，继续加油！';
-  else if (pct >= 50) msg = '💪 还需努力，多复习错词！';
+  if (pct === 100) msg = '🏆 完美!一个没错!';
+  else if (pct >= 90) msg = '🌟 太棒了!几乎全对!';
+  else if (pct >= 70) msg = '👍 不错,继续加油!';
+  else if (pct >= 50) msg = '💪 还需努力,多复习错词!';
   else msg = '📖 建议回看单词表再测一次';
 
   const el = document.getElementById('quizInner');
@@ -2937,7 +2938,7 @@ async function searchAndAdd() {
       // Cambridge CDN audio has no CORS, skip
       // audioUrl already from Free Dictionary API (has CORS *)
     } else {
-      // Cambridge无结果，降级Free Dictionary API + MyMemory翻译
+      // Cambridge无结果,降级Free Dictionary API + MyMemory翻译
       let meaningEnParts = [];
       for (const m of meanings) {
         let pos = m.partOfSpeech || '';
@@ -3070,7 +3071,7 @@ function confirmAddWord() {
   pendingWord = null;
 
   const status = document.getElementById('awStatus');
-  status.textContent = '✅ 已添加！';
+  status.textContent = '✅ 已添加!';
   status.className = 'aw-status success';
   document.getElementById('awAddBtn').classList.remove('show');
   document.getElementById('awResult').classList.remove('show');
@@ -3104,13 +3105,13 @@ function getMergedData() {
   // Check if "my words" section already exists
   let merged = VOCAB_DATA.filter(s => !s.date.includes('📋 我添加的'));
   if (myWords.length > 0) {
-    merged.push({ date: '📋 我添加的（' + myWords.length + '词）', words: myWords });
+    merged.push({ date: '📋 我添加的(' + myWords.length + '词)', words: myWords });
   }
   return merged;
 }
 
 
-/* ===== Service Worker（可选离线）已移除 ===== */
+/* ===== Service Worker(可选离线)已移除 ===== */
 
 
 /* ===== 名词500 独立视图 ===== */
@@ -3201,7 +3202,7 @@ function renderNouns500(filter) {
 
   nv.innerHTML = html;
   addExampleSpeakButtons();
-  document.getElementById('nounsStats').textContent = q ? '共 ' + sec.words.length + ' 词，匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词，' + (sec.categories ? sec.categories.length + ' 个分类' : '');
+  document.getElementById('nounsStats').textContent = q ? '共 ' + sec.words.length + ' 词,匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词,' + (sec.categories ? sec.categories.length + ' 个分类' : '');
 }
 
 function jumpSubcat(ci) {
@@ -3316,7 +3317,7 @@ function renderVerbs200(filter) {
 
   vv.innerHTML = html;
   addExampleSpeakButtons();
-  document.getElementById('verbsStats').textContent = q ? '共 ' + sec.words.length + ' 词，匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词，' + (sec.categories ? sec.categories.length + ' 个分类' : '');
+  document.getElementById('verbsStats').textContent = q ? '共 ' + sec.words.length + ' 词,匹配 "' + filter + '" 显示 ' + words.length + ' 词' : '共 ' + sec.words.length + ' 词,' + (sec.categories ? sec.categories.length + ' 个分类' : '');
 }
 
 function jumpVerbsSubcat(ci) {
@@ -3370,13 +3371,13 @@ function closeGrammar() {
 function renderGrammarList() {
   const data = getGrammarData();
   const container = document.getElementById('grammarInner');
-  
+
   let html = '<div class="grammar-top"><h2>📝 语法记录</h2>';
   html += '<div style="display:flex;gap:8px;align-items:center">';
   html += '<button class="grammar-add-btn" onclick="openGrammarAdd()">➕ 添加</button>';
   html += '<button class="grammar-close-btn" onclick="closeGrammar()">✕</button>';
   html += '</div></div>';
-  
+
   if (data.length === 0) {
     html += '<div class="grammar-empty">📝 还没有语法记录<br><span style="font-size:0.85em;color:#bbb">点击 ➕ 添加 或让AI帮你录入</span></div>';
   } else {
@@ -3400,7 +3401,7 @@ function renderGrammarList() {
       html += '</div>';
     });
   }
-  
+
   html += '<div style="text-align:center;color:#aaa;font-size:0.78em;margin-top:20px">共 ' + data.length + ' 条语法记录 | 数据保存在本地</div>';
   container.innerHTML = html;
 }
@@ -3414,7 +3415,7 @@ function speakGrammar(btn, index) {
   const data = getGrammarData();
   const item = data[index];
   if (!item || !item.exampleEn) return;
-  
+
   const u = new SpeechSynthesisUtterance(item.exampleEn);
   u.lang = 'en-US'; u.rate = 0.85;
   u.onstart = () => { btn.classList.add('playing'); };
@@ -3443,28 +3444,28 @@ function saveGrammarItem() {
   const exampleEn = document.getElementById('gaExampleEn').value.trim();
   const exampleZh = document.getElementById('gaExampleZh').value.trim();
   const tagsStr = document.getElementById('gaTags').value.trim();
-  
+
   if (!title) { alert('请输入语法标题'); return; }
   if (!exampleEn) { alert('请输入例句'); return; }
-  
-  const tags = tagsStr ? tagsStr.split(/[,，]/).map(t=>t.trim()).filter(Boolean) : [];
+
+  const tags = tagsStr ? tagsStr.split(/[,,]/).map(t=>t.trim()).filter(Boolean) : [];
   const data = getGrammarData();
   data.push({ title, desc, exampleEn, exampleZh, tags, addedAt: Date.now() });
   setGrammarData(data);
-  
+
   closeGrammarAdd();
   renderGrammarList();
 }
 
 function deleteGrammarItem(index) {
-  if (!confirm('确定删除这条语法记录？')) return;
+  if (!confirm('确定删除这条语法记录?')) return;
   const data = getGrammarData();
   data.splice(index, 1);
   setGrammarData(data);
   renderGrammarList();
 }
 
-// AI批量导入语法（从控制台或外部调用）
+// AI批量导入语法(从控制台或外部调用)
 function importGrammar(items) {
   // items: [{title, desc, exampleEn, exampleZh, tags}]
   const data = getGrammarData();
@@ -3503,11 +3504,11 @@ function importGrammar(items) {
   { en:"I boil some water.", cat:"简单句", audio:"s007.mp3", zh:"我烧点水。" },
   { en:"I pour a glass of milk.", cat:"简单句", audio:"s008.mp3", zh:"我倒一杯牛奶。" },
   { en:"I make some coffee.", cat:"简单句", audio:"s009.mp3", zh:"我泡咖啡。" },
-  { en:"Can you fry me an egg?", cat:"简单句", audio:"s010.mp3", zh:"你能给我煎个蛋吗？" },
+  { en:"Can you fry me an egg?", cat:"简单句", audio:"s010.mp3", zh:"你能给我煎个蛋吗?" },
   { en:"Breakfast is ready.", cat:"简单句", audio:"s011.mp3", zh:"早餐准备好了。" },
   { en:"I have toast and eggs.", cat:"简单句", audio:"s012.mp3", zh:"我吃吐司和鸡蛋。" },
   { en:"I check my phone.", cat:"简单句", audio:"s013.mp3", zh:"我看看手机。" },
-  { en:"What time is it?", cat:"简单句", audio:"s014.mp3", zh:"几点了？" },
+  { en:"What time is it?", cat:"简单句", audio:"s014.mp3", zh:"几点了?" },
   { en:"I'm running late.", cat:"简单句", audio:"s015.mp3", zh:"我要迟到了。" },
   { en:"I put on my shoes.", cat:"简单句", audio:"s016.mp3", zh:"我穿上鞋子。" },
   { en:"I leave the house.", cat:"简单句", audio:"s017.mp3", zh:"我离开家。" },
@@ -3517,12 +3518,12 @@ function importGrammar(items) {
   { en:"I get on the bus.", cat:"简单句", audio:"s021.mp3", zh:"我上了公交车。" },
   { en:"I'm stuck in traffic.", cat:"简单句", audio:"s022.mp3", zh:"我堵车了。" },
   { en:"I arrive at work.", cat:"简单句", audio:"s023.mp3", zh:"我到公司了。" },
-  { en:"Sorry, I'm late.", cat:"简单句", audio:"s024.mp3", zh:"抱歉，我迟到了。" },
+  { en:"Sorry, I'm late.", cat:"简单句", audio:"s024.mp3", zh:"抱歉,我迟到了。" },
   { en:"It won't happen again.", cat:"简单句", audio:"s025.mp3", zh:"不会再发生了。" },
   { en:"Don't worry about it.", cat:"简单句", audio:"s026.mp3", zh:"别担心。" },
   { en:"I appreciate it.", cat:"简单句", audio:"s027.mp3", zh:"我很感激。" },
   { en:"That's very kind.", cat:"简单句", audio:"s028.mp3", zh:"你太好了。" },
-  { en:"How are you today?", cat:"简单句", audio:"s029.mp3", zh:"你今天好吗？" },
+  { en:"How are you today?", cat:"简单句", audio:"s029.mp3", zh:"你今天好吗?" },
   { en:"I'm pretty good.", cat:"简单句", audio:"s030.mp3", zh:"我挺好的。" },
   { en:"I check my emails.", cat:"简单句", audio:"s031.mp3", zh:"我查看邮件。" },
   { en:"I answer the phone.", cat:"简单句", audio:"s032.mp3", zh:"我接电话。" },
@@ -3530,7 +3531,7 @@ function importGrammar(items) {
   { en:"I'll call you later.", cat:"简单句", audio:"s034.mp3", zh:"我稍后打给你。" },
   { en:"I'm working on it.", cat:"简单句", audio:"s035.mp3", zh:"我正在处理。" },
   { en:"Give me a minute.", cat:"简单句", audio:"s036.mp3", zh:"给我一分钟。" },
-  { en:"What do you think?", cat:"简单句", audio:"s037.mp3", zh:"你怎么看？" },
+  { en:"What do you think?", cat:"简单句", audio:"s037.mp3", zh:"你怎么看?" },
   { en:"I agree with you.", cat:"简单句", audio:"s038.mp3", zh:"我同意你的看法。" },
   { en:"That's a good idea.", cat:"简单句", audio:"s039.mp3", zh:"好主意。" },
   { en:"I don't think so.", cat:"简单句", audio:"s040.mp3", zh:"我不这么认为。" },
@@ -3540,7 +3541,7 @@ function importGrammar(items) {
   { en:"It's time for lunch.", cat:"简单句", audio:"s044.mp3", zh:"该吃午饭了。" },
   { en:"Let's eat out.", cat:"简单句", audio:"s045.mp3", zh:"我们出去吃吧。" },
   { en:"I'm ready to go.", cat:"简单句", audio:"s046.mp3", zh:"我准备好出发了。" },
-  { en:"What should we eat?", cat:"简单句", audio:"s047.mp3", zh:"我们吃什么？" },
+  { en:"What should we eat?", cat:"简单句", audio:"s047.mp3", zh:"我们吃什么?" },
   { en:"I'll have the pizza.", cat:"简单句", audio:"s048.mp3", zh:"我要披萨。" },
   { en:"I like it spicy.", cat:"简单句", audio:"s049.mp3", zh:"我喜欢辣的。" },
   { en:"I'll get the same.", cat:"简单句", audio:"s050.mp3", zh:"我也要一样的。" },
@@ -3556,18 +3557,18 @@ function importGrammar(items) {
   { en:"See you tomorrow.", cat:"简单句", audio:"s060.mp3", zh:"明天见。" },
   { en:"I leave the office.", cat:"简单句", audio:"s061.mp3", zh:"我离开办公室。" },
   { en:"I feel so tired.", cat:"简单句", audio:"s062.mp3", zh:"我好累。" },
-  { en:"Are you feeling okay?", cat:"简单句", audio:"s063.mp3", zh:"你感觉还好吗？" },
+  { en:"Are you feeling okay?", cat:"简单句", audio:"s063.mp3", zh:"你感觉还好吗?" },
   { en:"I didn't sleep well.", cat:"简单句", audio:"s064.mp3", zh:"我没睡好。" },
-  { en:"Do you have a minute?", cat:"简单句", audio:"s065.mp3", zh:"你有空吗？" },
+  { en:"Do you have a minute?", cat:"简单句", audio:"s065.mp3", zh:"你有空吗?" },
   { en:"Let's go grocery shopping.", cat:"简单句", audio:"s066.mp3", zh:"我们去买日用品吧。" },
-  { en:"Can you help me?", cat:"简单句", audio:"s067.mp3", zh:"你能帮帮我吗？" },
-  { en:"Is this in stock?", cat:"简单句", audio:"s068.mp3", zh:"这个有货吗？" },
+  { en:"Can you help me?", cat:"简单句", audio:"s067.mp3", zh:"你能帮帮我吗?" },
+  { en:"Is this in stock?", cat:"简单句", audio:"s068.mp3", zh:"这个有货吗?" },
   { en:"Thank you for the help.", cat:"简单句", audio:"s069.mp3", zh:"谢谢你的帮忙。" },
-  { en:"Are you in line?", cat:"简单句", audio:"s070.mp3", zh:"你在排队吗？" },
-  { en:"Can I sit here?", cat:"简单句", audio:"s071.mp3", zh:"我可以坐这里吗？" },
-  { en:"Where is the restroom?", cat:"简单句", audio:"s072.mp3", zh:"洗手间在哪？" },
+  { en:"Are you in line?", cat:"简单句", audio:"s070.mp3", zh:"你在排队吗?" },
+  { en:"Can I sit here?", cat:"简单句", audio:"s071.mp3", zh:"我可以坐这里吗?" },
+  { en:"Where is the restroom?", cat:"简单句", audio:"s072.mp3", zh:"洗手间在哪?" },
   { en:"It's over there.", cat:"简单句", audio:"s073.mp3", zh:"在那边。" },
-  { en:"Can you show me?", cat:"简单句", audio:"s074.mp3", zh:"你能给我看看吗？" },
+  { en:"Can you show me?", cat:"简单句", audio:"s074.mp3", zh:"你能给我看看吗?" },
   { en:"I didn't catch that.", cat:"简单句", audio:"s075.mp3", zh:"我没听清。" },
   { en:"Please speak slowly.", cat:"简单句", audio:"s076.mp3", zh:"请说慢一点。" },
   { en:"I walk home today.", cat:"简单句", audio:"s077.mp3", zh:"我今天走回家。" },
@@ -3576,16 +3577,16 @@ function importGrammar(items) {
   { en:"You're early today.", cat:"简单句", audio:"s080.mp3", zh:"你今天回来得早。" },
   { en:"I take off my shoes.", cat:"简单句", audio:"s081.mp3", zh:"我脱下鞋子。" },
   { en:"I sit on the couch.", cat:"简单句", audio:"s082.mp3", zh:"我坐在沙发上。" },
-  { en:"Did you see my phone?", cat:"简单句", audio:"s083.mp3", zh:"你看到我的手机了吗？" },
+  { en:"Did you see my phone?", cat:"简单句", audio:"s083.mp3", zh:"你看到我的手机了吗?" },
   { en:"I haven't seen it.", cat:"简单句", audio:"s084.mp3", zh:"我没看到。" },
-  { en:"What are you doing?", cat:"简单句", audio:"s085.mp3", zh:"你在做什么？" },
+  { en:"What are you doing?", cat:"简单句", audio:"s085.mp3", zh:"你在做什么?" },
   { en:"I'm watching TV.", cat:"简单句", audio:"s086.mp3", zh:"我在看电视。" },
-  { en:"How was your day?", cat:"简单句", audio:"s087.mp3", zh:"你今天过得怎么样？" },
+  { en:"How was your day?", cat:"简单句", audio:"s087.mp3", zh:"你今天过得怎么样?" },
   { en:"I had a busy day.", cat:"简单句", audio:"s088.mp3", zh:"我今天很忙。" },
-  { en:"You free on Saturday?", cat:"简单句", audio:"s089.mp3", zh:"你周六有空吗？" },
+  { en:"You free on Saturday?", cat:"简单句", audio:"s089.mp3", zh:"你周六有空吗?" },
   { en:"Let's meet this weekend.", cat:"简单句", audio:"s090.mp3", zh:"我们这周末见面吧。" },
   { en:"Sounds good to me.", cat:"简单句", audio:"s091.mp3", zh:"听起来不错。" },
-  { en:"What's for dinner?", cat:"简单句", audio:"s092.mp3", zh:"晚饭吃什么？" },
+  { en:"What's for dinner?", cat:"简单句", audio:"s092.mp3", zh:"晚饭吃什么?" },
   { en:"Let's eat together.", cat:"简单句", audio:"s093.mp3", zh:"我们一起吃吧。" },
   { en:"Please pass the salt.", cat:"简单句", audio:"s094.mp3", zh:"请把盐递给我。" },
   { en:"I'll wash the dishes.", cat:"简单句", audio:"s095.mp3", zh:"我来洗碗。" },
@@ -3596,60 +3597,60 @@ function importGrammar(items) {
   { en:"It's been a long time.", cat:"中级句", audio:"s101.mp3", zh:"好久不见。" },
   { en:"You haven't changed at all.", cat:"中级句", audio:"s102.mp3", zh:"你一点都没变。" },
   { en:"Let's hang out more often.", cat:"中级句", audio:"s103.mp3", zh:"我们多聚聚吧。" },
-  { en:"What day is it today?", cat:"中级句", audio:"s104.mp3", zh:"今天星期几？" },
+  { en:"What day is it today?", cat:"中级句", audio:"s104.mp3", zh:"今天星期几?" },
   { en:"I can't believe it's Friday.", cat:"中级句", audio:"s105.mp3", zh:"真不敢相信已经是周五了。" },
   { en:"I'm in a good mood.", cat:"中级句", audio:"s106.mp3", zh:"我心情很好。" },
-  { en:"How's the weather today?", cat:"中级句", audio:"s107.mp3", zh:"今天天气怎么样？" },
+  { en:"How's the weather today?", cat:"中级句", audio:"s107.mp3", zh:"今天天气怎么样?" },
   { en:"It's freezing cold today.", cat:"中级句", audio:"s108.mp3", zh:"今天冷得要命。" },
   { en:"It's raining heavily outside.", cat:"中级句", audio:"s109.mp3", zh:"外面雨下得很大。" },
   { en:"It's finally clearing up today.", cat:"中级句", audio:"s110.mp3", zh:"今天终于放晴了。" },
   { en:"You look so familiar.", cat:"中级句", audio:"s111.mp3", zh:"你看起来好面熟。" },
-  { en:"Have we met before?", cat:"中级句", audio:"s112.mp3", zh:"我们以前见过吗？" },
-  { en:"Do you live around here?", cat:"中级句", audio:"s113.mp3", zh:"你住这附近吗？" },
-  { en:"What do you do for a living?", cat:"中级句", audio:"s114.mp3", zh:"你是做什么工作的？" },
+  { en:"Have we met before?", cat:"中级句", audio:"s112.mp3", zh:"我们以前见过吗?" },
+  { en:"Do you live around here?", cat:"中级句", audio:"s113.mp3", zh:"你住这附近吗?" },
+  { en:"What do you do for a living?", cat:"中级句", audio:"s114.mp3", zh:"你是做什么工作的?" },
   { en:"I work in marketing.", cat:"中级句", audio:"s115.mp3", zh:"我做市场营销。" },
   { en:"I plan to change my job.", cat:"中级句", audio:"s116.mp3", zh:"我打算换工作。" },
   { en:"I've heard a lot about you.", cat:"中级句", audio:"s117.mp3", zh:"我听说过很多关于你的事。" },
   { en:"I think we have mutual friends.", cat:"中级句", audio:"s118.mp3", zh:"我觉得我们有共同的朋友。" },
-  { en:"How many siblings do you have?", cat:"中级句", audio:"s119.mp3", zh:"你有几个兄弟姐妹？" },
+  { en:"How many siblings do you have?", cat:"中级句", audio:"s119.mp3", zh:"你有几个兄弟姐妹?" },
   { en:"I am the only son in my family.", cat:"中级句", audio:"s120.mp3", zh:"我是家里的独子。" },
-  { en:"Did you stay up late last night?", cat:"中级句", audio:"s121.mp3", zh:"你昨晚熬夜了吗？" },
+  { en:"Did you stay up late last night?", cat:"中级句", audio:"s121.mp3", zh:"你昨晚熬夜了吗?" },
   { en:"I sleep 8 hours usually.", cat:"中级句", audio:"s122.mp3", zh:"我通常睡8个小时。" },
   { en:"I gained 5 pounds recently.", cat:"中级句", audio:"s123.mp3", zh:"我最近胖了5磅。" },
   { en:"I want to lose weight.", cat:"中级句", audio:"s124.mp3", zh:"我想减肥。" },
-  { en:"How much do you weigh?", cat:"中级句", audio:"s125.mp3", zh:"你多重？" },
+  { en:"How much do you weigh?", cat:"中级句", audio:"s125.mp3", zh:"你多重?" },
   { en:"I'm trying to stay fit.", cat:"中级句", audio:"s126.mp3", zh:"我在努力保持身材。" },
-  { en:"How often do you exercise?", cat:"中级句", audio:"s127.mp3", zh:"你多久锻炼一次？" },
+  { en:"How often do you exercise?", cat:"中级句", audio:"s127.mp3", zh:"你多久锻炼一次?" },
   { en:"I do yoga in the morning.", cat:"中级句", audio:"s128.mp3", zh:"我早上做瑜伽。" },
   { en:"I skip lunch sometimes.", cat:"中级句", audio:"s129.mp3", zh:"我有时不吃午饭。" },
   { en:"I'm getting used to it.", cat:"中级句", audio:"s130.mp3", zh:"我正在适应。" },
   { en:"Let's go for a walk.", cat:"中级句", audio:"s131.mp3", zh:"我们去散步吧。" },
-  { en:"How tall are you exactly?", cat:"中级句", audio:"s132.mp3", zh:"你到底多高？" },
+  { en:"How tall are you exactly?", cat:"中级句", audio:"s132.mp3", zh:"你到底多高?" },
   { en:"I'm 5 ft 8 in.", cat:"中级句", audio:"s133.mp3", zh:"我5英尺8英寸。" },
   { en:"I'm shorter than average.", cat:"中级句", audio:"s134.mp3", zh:"我比一般人矮。" },
-  { en:"How old are you turning?", cat:"中级句", audio:"s135.mp3", zh:"你今年要过几岁生日？" },
+  { en:"How old are you turning?", cat:"中级句", audio:"s135.mp3", zh:"你今年要过几岁生日?" },
   { en:"I just turned 21.", cat:"中级句", audio:"s136.mp3", zh:"我刚满21岁。" },
-  { en:"How old do I look?", cat:"中级句", audio:"s137.mp3", zh:"我看起来多大？" },
+  { en:"How old do I look?", cat:"中级句", audio:"s137.mp3", zh:"我看起来多大?" },
   { en:"I'm younger than you think.", cat:"中级句", audio:"s138.mp3", zh:"我比你想象的年轻。" },
   { en:"We are about the same age.", cat:"中级句", audio:"s139.mp3", zh:"我们差不多大。" },
   { en:"Come over for dinner tonight.", cat:"中级句", audio:"s140.mp3", zh:"今晚过来吃晚饭吧。" },
-  { en:"What would you like to drink?", cat:"中级句", audio:"s141.mp3", zh:"你想喝点什么？" },
-  { en:"Make yourself at home.", cat:"中级句", audio:"s142.mp3", zh:"别客气，当自己家一样。" },
+  { en:"What would you like to drink?", cat:"中级句", audio:"s141.mp3", zh:"你想喝点什么?" },
+  { en:"Make yourself at home.", cat:"中级句", audio:"s142.mp3", zh:"别客气,当自己家一样。" },
   { en:"I'm thinking of taking a trip.", cat:"中级句", audio:"s143.mp3", zh:"我在考虑去旅行。" },
-  { en:"Do you want to join us?", cat:"中级句", audio:"s144.mp3", zh:"你想加入我们吗？" },
+  { en:"Do you want to join us?", cat:"中级句", audio:"s144.mp3", zh:"你想加入我们吗?" },
   { en:"Let me check the schedule.", cat:"中级句", audio:"s145.mp3", zh:"让我查一下日程。" },
   { en:"I'm looking forward to it.", cat:"中级句", audio:"s146.mp3", zh:"我很期待。" },
-  { en:"Did you get my email?", cat:"中级句", audio:"s147.mp3", zh:"你收到我的邮件了吗？" },
+  { en:"Did you get my email?", cat:"中级句", audio:"s147.mp3", zh:"你收到我的邮件了吗?" },
   { en:"I'm waiting for a reply.", cat:"中级句", audio:"s148.mp3", zh:"我在等回复。" },
   { en:"I'm not sure what to do.", cat:"中级句", audio:"s149.mp3", zh:"我不确定该怎么办。" },
   { en:"Let's find a solution together.", cat:"中级句", audio:"s150.mp3", zh:"我们一起想办法吧。" },
-  { en:"Should I change my mind?", cat:"中级句", audio:"s151.mp3", zh:"我应该改变主意吗？" },
+  { en:"Should I change my mind?", cat:"中级句", audio:"s151.mp3", zh:"我应该改变主意吗?" },
   { en:"Your opinion matters to me.", cat:"中级句", audio:"s152.mp3", zh:"你的意见对我很重要。" },
   { en:"You've already done your best.", cat:"中级句", audio:"s153.mp3", zh:"你已经尽力了。" },
   { en:"I'm sorry to disturb you.", cat:"中级句", audio:"s154.mp3", zh:"抱歉打扰你了。" },
-  { en:"Can I use your phone?", cat:"中级句", audio:"s155.mp3", zh:"我能用一下你的手机吗？" },
+  { en:"Can I use your phone?", cat:"中级句", audio:"s155.mp3", zh:"我能用一下你的手机吗?" },
   { en:"My battery is dying.", cat:"中级句", audio:"s156.mp3", zh:"我的手机快没电了。" },
-  { en:"Is this a good time?", cat:"中级句", audio:"s157.mp3", zh:"现在方便吗？" },
+  { en:"Is this a good time?", cat:"中级句", audio:"s157.mp3", zh:"现在方便吗?" },
   { en:"You're breaking up.", cat:"中级句", audio:"s158.mp3", zh:"你的信号不好。" },
   { en:"I'll text you instead.", cat:"中级句", audio:"s159.mp3", zh:"我改发短信给你吧。" },
   { en:"I see what you mean.", cat:"中级句", audio:"s160.mp3", zh:"我明白你的意思。" },
@@ -3661,126 +3662,126 @@ function importGrammar(items) {
   { en:"I'm worried about you.", cat:"中级句", audio:"s166.mp3", zh:"我很担心你。" },
   { en:"I feel much better now.", cat:"中级句", audio:"s167.mp3", zh:"我现在好多了。" },
   { en:"I'm grateful for your support.", cat:"中级句", audio:"s168.mp3", zh:"我很感激你的支持。" },
-  { en:"May I have a menu?", cat:"中级句", audio:"s169.mp3", zh:"能给我菜单吗？" },
-  { en:"What do you recommend?", cat:"中级句", audio:"s170.mp3", zh:"你推荐什么？" },
+  { en:"May I have a menu?", cat:"中级句", audio:"s169.mp3", zh:"能给我菜单吗?" },
+  { en:"What do you recommend?", cat:"中级句", audio:"s170.mp3", zh:"你推荐什么?" },
   { en:"I need a few more minutes.", cat:"中级句", audio:"s171.mp3", zh:"我再需要几分钟。" },
   { en:"We're ready to order.", cat:"中级句", audio:"s172.mp3", zh:"我们可以点餐了。" },
   { en:"I prefer tea to coffee.", cat:"中级句", audio:"s173.mp3", zh:"比起咖啡我更喜欢茶。" },
-  { en:"Can we have some water?", cat:"中级句", audio:"s174.mp3", zh:"能给我们一些水吗？" },
+  { en:"Can we have some water?", cat:"中级句", audio:"s174.mp3", zh:"能给我们一些水吗?" },
   { en:"This isn't what I ordered.", cat:"中级句", audio:"s175.mp3", zh:"这不是我点的。" },
-  { en:"Does this taste too salty?", cat:"中级句", audio:"s176.mp3", zh:"这个是不是太咸了？" },
-  { en:"Any plans for the weekend?", cat:"中级句", audio:"s177.mp3", zh:"周末有什么计划吗？" },
-  { en:"What time should we meet?", cat:"中级句", audio:"s178.mp3", zh:"我们几点见面？" },
+  { en:"Does this taste too salty?", cat:"中级句", audio:"s176.mp3", zh:"这个是不是太咸了?" },
+  { en:"Any plans for the weekend?", cat:"中级句", audio:"s177.mp3", zh:"周末有什么计划吗?" },
+  { en:"What time should we meet?", cat:"中级句", audio:"s178.mp3", zh:"我们几点见面?" },
   { en:"I'll pick you up at 7:00.", cat:"中级句", audio:"s179.mp3", zh:"我7点来接你。" },
   { en:"It's getting late already.", cat:"中级句", audio:"s180.mp3", zh:"已经不早了。" },
   { en:"I had a great time today.", cat:"中级句", audio:"s181.mp3", zh:"我今天玩得很开心。" },
   { en:"I'd love to see you soon.", cat:"中级句", audio:"s182.mp3", zh:"我想尽快再见到你。" },
-  { en:"Did you get a haircut?", cat:"中级句", audio:"s183.mp3", zh:"你剪头发了？" },
-  { en:"What's your favorite movie?", cat:"中级句", audio:"s184.mp3", zh:"你最喜欢的电影是什么？" },
-  { en:"Can I try this on?", cat:"中级句", audio:"s185.mp3", zh:"我可以试穿吗？" },
-  { en:"Do you have a smaller size?", cat:"中级句", audio:"s186.mp3", zh:"有小一号的吗？" },
+  { en:"Did you get a haircut?", cat:"中级句", audio:"s183.mp3", zh:"你剪头发了?" },
+  { en:"What's your favorite movie?", cat:"中级句", audio:"s184.mp3", zh:"你最喜欢的电影是什么?" },
+  { en:"Can I try this on?", cat:"中级句", audio:"s185.mp3", zh:"我可以试穿吗?" },
+  { en:"Do you have a smaller size?", cat:"中级句", audio:"s186.mp3", zh:"有小一号的吗?" },
   { en:"This is a bit too expensive.", cat:"中级句", audio:"s187.mp3", zh:"这有点太贵了。" },
-  { en:"Should I buy this shirt?", cat:"中级句", audio:"s188.mp3", zh:"我应该买这件衬衫吗？" },
-  { en:"Which color do you prefer?", cat:"中级句", audio:"s189.mp3", zh:"你更喜欢哪个颜色？" },
-  { en:"Do you accept credit cards?", cat:"中级句", audio:"s190.mp3", zh:"你们收信用卡吗？" },
+  { en:"Should I buy this shirt?", cat:"中级句", audio:"s188.mp3", zh:"我应该买这件衬衫吗?" },
+  { en:"Which color do you prefer?", cat:"中级句", audio:"s189.mp3", zh:"你更喜欢哪个颜色?" },
+  { en:"Do you accept credit cards?", cat:"中级句", audio:"s190.mp3", zh:"你们收信用卡吗?" },
   { en:"I need to return this shirt.", cat:"中级句", audio:"s191.mp3", zh:"我需要退这件衬衫。" },
-  { en:"Can you help with laundry?", cat:"中级句", audio:"s192.mp3", zh:"你能帮忙洗衣服吗？" },
+  { en:"Can you help with laundry?", cat:"中级句", audio:"s192.mp3", zh:"你能帮忙洗衣服吗?" },
   { en:"I vacuum twice a week.", cat:"中级句", audio:"s193.mp3", zh:"我每周吸尘两次。" },
-  { en:"What time will you be back?", cat:"中级句", audio:"s194.mp3", zh:"你几点回来？" },
+  { en:"What time will you be back?", cat:"中级句", audio:"s194.mp3", zh:"你几点回来?" },
   { en:"I have a ton of work today.", cat:"中级句", audio:"s195.mp3", zh:"我今天有一大堆工作。" },
   { en:"I'm taking a day off tomorrow.", cat:"中级句", audio:"s196.mp3", zh:"我明天请假。" },
   { en:"You'd better bring an umbrella with you.", cat:"进阶句", audio:"s198.mp3", zh:"你最好带把伞。" },
-  { en:"Excuse me, how do I get to the mall?", cat:"进阶句", audio:"s199.mp3", zh:"请问，去商场怎么走？" },
-  { en:"Go straight and turn left at the corner.", cat:"进阶句", audio:"s200.mp3", zh:"直走，在拐角处左转。" },
+  { en:"Excuse me, how do I get to the mall?", cat:"进阶句", audio:"s199.mp3", zh:"请问,去商场怎么走?" },
+  { en:"Go straight and turn left at the corner.", cat:"进阶句", audio:"s200.mp3", zh:"直走,在拐角处左转。" },
   { en:"We've known each other for a long time.", cat:"进阶句", audio:"s201.mp3", zh:"我们认识很久了。" },
   { en:"Thanks for always having my back.", cat:"进阶句", audio:"s202.mp3", zh:"谢谢你一直支持我。" },
   { en:"It's getting dark much earlier these days.", cat:"进阶句", audio:"s203.mp3", zh:"最近天黑得越来越早了。" },
-  { en:"Do you mind if I open the window?", cat:"进阶句", audio:"s204.mp3", zh:"你介意我开窗吗？" },
+  { en:"Do you mind if I open the window?", cat:"进阶句", audio:"s204.mp3", zh:"你介意我开窗吗?" },
   { en:"I think you have the wrong number.", cat:"进阶句", audio:"s205.mp3", zh:"我想你打错电话了。" },
   { en:"There's no one here by that name.", cat:"进阶句", audio:"s206.mp3", zh:"这里没有叫那个名字的人。" },
-  { en:"Could you please turn down the music?", cat:"进阶句", audio:"s207.mp3", zh:"你能把音乐调小一点吗？" },
+  { en:"Could you please turn down the music?", cat:"进阶句", audio:"s207.mp3", zh:"你能把音乐调小一点吗?" },
   { en:"Keep your temper under control.", cat:"进阶句", audio:"s208.mp3", zh:"控制住你的脾气。" },
   { en:"I'm so stressed out these days.", cat:"进阶句", audio:"s209.mp3", zh:"我最近压力好大。" },
-  { en:"Have you been sleeping enough?", cat:"进阶句", audio:"s210.mp3", zh:"你睡眠够吗？" },
+  { en:"Have you been sleeping enough?", cat:"进阶句", audio:"s210.mp3", zh:"你睡眠够吗?" },
   { en:"I couldn't sleep again last night.", cat:"进阶句", audio:"s211.mp3", zh:"我昨晚又失眠了。" },
-  { en:"Did you lose some weight recently?", cat:"进阶句", audio:"s212.mp3", zh:"你最近瘦了吗？" },
-  { en:"Have you been exercising regularly?", cat:"进阶句", audio:"s213.mp3", zh:"你有规律地锻炼吗？" },
+  { en:"Did you lose some weight recently?", cat:"进阶句", audio:"s212.mp3", zh:"你最近瘦了吗?" },
+  { en:"Have you been exercising regularly?", cat:"进阶句", audio:"s213.mp3", zh:"你有规律地锻炼吗?" },
   { en:"I work out three times a week.", cat:"进阶句", audio:"s214.mp3", zh:"我每周锻炼三次。" },
-  { en:"Do you want to join me at the gym?", cat:"进阶句", audio:"s215.mp3", zh:"你想和我一起去健身房吗？" },
+  { en:"Do you want to join me at the gym?", cat:"进阶句", audio:"s215.mp3", zh:"你想和我一起去健身房吗?" },
   { en:"The storm is finally moving out.", cat:"进阶句", audio:"s216.mp3", zh:"暴风雨终于过去了。" },
   { en:"I still can't get used to the weather here.", cat:"进阶句", audio:"s217.mp3", zh:"我还是适应不了这里的天气。" },
-  { en:"Are you seeing anyone right now?", cat:"进阶句", audio:"s218.mp3", zh:"你现在有对象吗？" },
+  { en:"Are you seeing anyone right now?", cat:"进阶句", audio:"s218.mp3", zh:"你现在有对象吗?" },
   { en:"I've been single for a while.", cat:"进阶句", audio:"s219.mp3", zh:"我单身有一阵子了。" },
-  { en:"What do you feel like eating tonight?", cat:"进阶句", audio:"s220.mp3", zh:"你今晚想吃什么？" },
+  { en:"What do you feel like eating tonight?", cat:"进阶句", audio:"s220.mp3", zh:"你今晚想吃什么?" },
   { en:"I'm in the mood for something spicy.", cat:"进阶句", audio:"s221.mp3", zh:"我想吃点辣的。" },
   { en:"Don't talk with your mouth full.", cat:"进阶句", audio:"s222.mp3", zh:"嘴里有东西时别说话。" },
-  { en:"What do you call this in English?", cat:"进阶句", audio:"s223.mp3", zh:"这个英语怎么说？" },
-  { en:"How long does it take to walk there?", cat:"进阶句", audio:"s224.mp3", zh:"走路去那里要多久？" },
+  { en:"What do you call this in English?", cat:"进阶句", audio:"s223.mp3", zh:"这个英语怎么说?" },
+  { en:"How long does it take to walk there?", cat:"进阶句", audio:"s224.mp3", zh:"走路去那里要多久?" },
   { en:"It's about a 10-minute walk from here.", cat:"进阶句", audio:"s225.mp3", zh:"从这里走过去大概10分钟。" },
   { en:"I'd like a cappuccino with almond milk.", cat:"进阶句", audio:"s226.mp3", zh:"我要一杯加杏仁奶的卡布奇诺。" },
-  { en:"Can I get an extra shot of espresso?", cat:"进阶句", audio:"s227.mp3", zh:"可以多加一份浓缩咖啡吗？" },
+  { en:"Can I get an extra shot of espresso?", cat:"进阶句", audio:"s227.mp3", zh:"可以多加一份浓缩咖啡吗?" },
   { en:"You're wearing your shirt backwards.", cat:"进阶句", audio:"s228.mp3", zh:"你衬衫穿反了。" },
   { en:"That jacket looks great on you.", cat:"进阶句", audio:"s229.mp3", zh:"那件夹克你穿很好看。" },
   { en:"You look like a friend of mine.", cat:"进阶句", audio:"s230.mp3", zh:"你长得像我的一个朋友。" },
-  { en:"Would you like to have a drink after work?", cat:"进阶句", audio:"s231.mp3", zh:"下班后想喝一杯吗？" },
+  { en:"Would you like to have a drink after work?", cat:"进阶句", audio:"s231.mp3", zh:"下班后想喝一杯吗?" },
   { en:"I'm excited for the long weekend.", cat:"进阶句", audio:"s232.mp3", zh:"我对长周末很期待。" },
   { en:"My brother drives me crazy sometimes.", cat:"进阶句", audio:"s233.mp3", zh:"我哥有时候快把我逼疯了。" },
   { en:"He has a great sense of humor.", cat:"进阶句", audio:"s234.mp3", zh:"他很有幽默感。" },
   { en:"I couldn't get through to your phone.", cat:"进阶句", audio:"s235.mp3", zh:"我打不通你的电话。" },
   { en:"Sorry for keeping you waiting.", cat:"进阶句", audio:"s236.mp3", zh:"抱歉让你久等了。" },
   { en:"I'm on another call right now.", cat:"进阶句", audio:"s237.mp3" },
-  { en:"Why are you feeling so down today?", cat:"进阶句", audio:"s238.mp3", zh:"你今天怎么这么低落？" },
+  { en:"Why are you feeling so down today?", cat:"进阶句", audio:"s238.mp3", zh:"你今天怎么这么低落?" },
   { en:"Let's take a walk and get some fresh air.", cat:"进阶句", audio:"s239.mp3", zh:"我们散散步呼吸点新鲜空气吧。" },
   { en:"I've been coughing all night.", cat:"进阶句", audio:"s240.mp3", zh:"我咳了一整晚。" },
   { en:"Make sure to drink plenty of water.", cat:"进阶句", audio:"s241.mp3", zh:"一定要多喝水。" },
   { en:"I should probably see a doctor soon.", cat:"进阶句", audio:"s242.mp3", zh:"我可能得尽快去看医生。" },
-  { en:"How often do I need to take this medicine?", cat:"进阶句", audio:"s243.mp3", zh:"这药我需要多久吃一次？" },
-  { en:"Are there any side effects?", cat:"进阶句", audio:"s244.mp3", zh:"有什么副作用吗？" },
-  { en:"Can I exchange this for a larger size?", cat:"进阶句", audio:"s245.mp3", zh:"我能换大一号的吗？" },
-  { en:"Do you have this in another color?", cat:"进阶句", audio:"s246.mp3", zh:"这个有别的颜色吗？" },
+  { en:"How often do I need to take this medicine?", cat:"进阶句", audio:"s243.mp3", zh:"这药我需要多久吃一次?" },
+  { en:"Are there any side effects?", cat:"进阶句", audio:"s244.mp3", zh:"有什么副作用吗?" },
+  { en:"Can I exchange this for a larger size?", cat:"进阶句", audio:"s245.mp3", zh:"我能换大一号的吗?" },
+  { en:"Do you have this in another color?", cat:"进阶句", audio:"s246.mp3", zh:"这个有别的颜色吗?" },
   { en:"I'm thinking about getting a dog.", cat:"进阶句", audio:"s247.mp3", zh:"我在考虑养只狗。" },
-  { en:"Why don't you give it a try?", cat:"进阶句", audio:"s248.mp3", zh:"你为什么不试试呢？" },
+  { en:"Why don't you give it a try?", cat:"进阶句", audio:"s248.mp3", zh:"你为什么不试试呢?" },
   { en:"There's nothing to worry about.", cat:"进阶句", audio:"s249.mp3", zh:"没什么好担心的。" },
   { en:"Let's order takeout tonight instead.", cat:"进阶句", audio:"s250.mp3", zh:"今晚改点外卖吧。" },
   { en:"That's exactly what I was thinking.", cat:"进阶句", audio:"s251.mp3", zh:"这正是我所想的。" },
-  { en:"Would you mind taking a photo of us?", cat:"进阶句", audio:"s252.mp3", zh:"介意帮我们拍张照吗？" },
-  { en:"Have you backed up your photos recently?", cat:"进阶句", audio:"s253.mp3", zh:"你最近备份照片了吗？" },
+  { en:"Would you mind taking a photo of us?", cat:"进阶句", audio:"s252.mp3", zh:"介意帮我们拍张照吗?" },
+  { en:"Have you backed up your photos recently?", cat:"进阶句", audio:"s253.mp3", zh:"你最近备份照片了吗?" },
   { en:"My phone storage is completely full.", cat:"进阶句", audio:"s254.mp3", zh:"我手机存储完全满了。" },
   { en:"I'm having trouble with the connection.", cat:"进阶句", audio:"s255.mp3", zh:"我的网络连接有问题。" },
   { en:"I'm trying to cut back on sugar.", cat:"进阶句", audio:"s256.mp3", zh:"我在努力减少糖的摄入。" },
   { en:"This is way too salty for me.", cat:"进阶句", audio:"s257.mp3", zh:"这对我来说太咸了。" },
   { en:"I am the youngest in my family.", cat:"进阶句", audio:"s258.mp3", zh:"我是家里最小的。" },
   { en:"I think there's a mistake on this bill.", cat:"进阶句", audio:"s259.mp3", zh:"我觉得这张账单有问题。" },
-  { en:"Is service charge included?", cat:"进阶句", audio:"s260.mp3", zh:"含服务费吗？" },
-  { en:"Have you seen any good movies lately?", cat:"进阶句", audio:"s261.mp3", zh:"你最近看过什么好电影吗？" },
-  { en:"What kind of music do you like?", cat:"进阶句", audio:"s262.mp3", zh:"你喜欢什么类型的音乐？" },
+  { en:"Is service charge included?", cat:"进阶句", audio:"s260.mp3", zh:"含服务费吗?" },
+  { en:"Have you seen any good movies lately?", cat:"进阶句", audio:"s261.mp3", zh:"你最近看过什么好电影吗?" },
+  { en:"What kind of music do you like?", cat:"进阶句", audio:"s262.mp3", zh:"你喜欢什么类型的音乐?" },
   { en:"I spend too much time on social media.", cat:"进阶句", audio:"s263.mp3", zh:"我在社交媒体上花太多时间了。" },
   { en:"Family means everything to me.", cat:"进阶句", audio:"s264.mp3", zh:"家庭对我来说就是一切。" },
   { en:"I take after my mother a lot.", cat:"进阶句", audio:"s265.mp3", zh:"我很像我妈妈。" },
   { en:"I'm terrible at memorizing things.", cat:"进阶句", audio:"s266.mp3", zh:"我很不擅长记东西。" },
-  { en:"Can you take out the trash tonight?", cat:"进阶句", audio:"s267.mp3", zh:"你今晚能把垃圾扔了吗？" },
+  { en:"Can you take out the trash tonight?", cat:"进阶句", audio:"s267.mp3", zh:"你今晚能把垃圾扔了吗?" },
   { en:"I'll do the dishes after dinner.", cat:"进阶句", audio:"s268.mp3", zh:"晚饭后我来洗碗。" },
   { en:"The air conditioner is not working.", cat:"进阶句", audio:"s269.mp3", zh:"空调坏了。" },
-  { en:"Could you take a look at this for me?", cat:"进阶句", audio:"s270.mp3", zh:"你能帮我看看这个吗？" },
-  { en:"How much is a one-way ticket?", cat:"进阶句", audio:"s271.mp3", zh:"单程票多少钱？" },
-  { en:"Is there free parking nearby?", cat:"进阶句", audio:"s272.mp3", zh:"附近有免费停车吗？" },
-  { en:"Did you hear what happened yesterday?", cat:"进阶句", audio:"s273.mp3", zh:"你听说昨天发生什么事了吗？" },
+  { en:"Could you take a look at this for me?", cat:"进阶句", audio:"s270.mp3", zh:"你能帮我看看这个吗?" },
+  { en:"How much is a one-way ticket?", cat:"进阶句", audio:"s271.mp3", zh:"单程票多少钱?" },
+  { en:"Is there free parking nearby?", cat:"进阶句", audio:"s272.mp3", zh:"附近有免费停车吗?" },
+  { en:"Did you hear what happened yesterday?", cat:"进阶句", audio:"s273.mp3", zh:"你听说昨天发生什么事了吗?" },
   { en:"There seems to be a misunderstanding.", cat:"进阶句", audio:"s274.mp3", zh:"似乎有个误会。" },
-  { en:"Are you free this coming weekend?", cat:"进阶句", audio:"s275.mp3", zh:"你下周末有空吗？" },
-  { en:"What time should I come over?", cat:"进阶句", audio:"s276.mp3", zh:"我几点过去？" },
+  { en:"Are you free this coming weekend?", cat:"进阶句", audio:"s275.mp3", zh:"你下周末有空吗?" },
+  { en:"What time should I come over?", cat:"进阶句", audio:"s276.mp3", zh:"我几点过去?" },
   { en:"That's very kind of you to say.", cat:"进阶句", audio:"s277.mp3", zh:"你这么说太客气了。" },
   { en:"You're so easy to talk to.", cat:"进阶句", audio:"s278.mp3", zh:"和你说话真轻松。" },
-  { en:"Have you ever been to Europe before?", cat:"进阶句", audio:"s279.mp3", zh:"你去过欧洲吗？" },
-  { en:"Is there a shortcut I can take?", cat:"进阶句", audio:"s280.mp3", zh:"有近路可走吗？" },
-  { en:"Do you need to work overtime tonight?", cat:"进阶句", audio:"s281.mp3", zh:"你今晚需要加班吗？" },
+  { en:"Have you ever been to Europe before?", cat:"进阶句", audio:"s279.mp3", zh:"你去过欧洲吗?" },
+  { en:"Is there a shortcut I can take?", cat:"进阶句", audio:"s280.mp3", zh:"有近路可走吗?" },
+  { en:"Do you need to work overtime tonight?", cat:"进阶句", audio:"s281.mp3", zh:"你今晚需要加班吗?" },
   { en:"I spent way too much this month.", cat:"进阶句", audio:"s282.mp3", zh:"我这个月花太多了。" },
-  { en:"What time does the store close?", cat:"进阶句", audio:"s283.mp3", zh:"商店几点关门？" },
+  { en:"What time does the store close?", cat:"进阶句", audio:"s283.mp3", zh:"商店几点关门?" },
   { en:"I'm hoping for a promotion soon.", cat:"进阶句", audio:"s284.mp3", zh:"我希望很快能升职。" },
   { en:"Let's get started with the meeting.", cat:"进阶句", audio:"s285.mp3", zh:"我们开始开会吧。" },
   { en:"I didn't receive your message somehow.", cat:"进阶句", audio:"s286.mp3", zh:"我不知怎么的没收到你的消息。" },
   { en:"I have to talk to her in person.", cat:"进阶句", audio:"s287.mp3", zh:"我必须当面跟她说。" },
   { en:"We don't see eye to eye on everything.", cat:"进阶句", audio:"s288.mp3", zh:"我们在所有事情上意见并不一致。" },
-  { en:"What would you do in my situation?", cat:"进阶句", audio:"s289.mp3", zh:"你处在我的位置会怎么做？" },
+  { en:"What would you do in my situation?", cat:"进阶句", audio:"s289.mp3", zh:"你处在我的位置会怎么做?" },
   { en:"I wouldn't recommend doing that.", cat:"进阶句", audio:"s290.mp3", zh:"我不建议那样做。" },
   { en:"The faucet in the kitchen is leaking.", cat:"进阶句", audio:"s291.mp3", zh:"厨房的水龙头漏水了。" },
   { en:"I need to call a plumber tomorrow.", cat:"进阶句", audio:"s292.mp3", zh:"我明天得叫个水管工。" },
@@ -3878,7 +3879,7 @@ async function showWordPopup(spanEl) {
   // Build info object
   let info;
   if (localWord) {
-    // We have local data — use it immediately
+    // We have local data - use it immediately
     info = {
       word: localWord.en || word,
       phonetic: localWord.phonetic || '',
@@ -3894,7 +3895,7 @@ async function showWordPopup(spanEl) {
     // Still fetch API in background for English defs + audio
     fetchPopupApiData(word, popup, info);
   } else {
-    // No local data — must fetch from API
+    // No local data - must fetch from API
     await fetchPopupApiData(word, popup, null);
   }
 }
@@ -3931,7 +3932,7 @@ async function fetchPopupApiData(word, popup, existingInfo) {
     if (shadowPopupEl === popup) renderWordPopup(popup, info);
   } catch(e) {
     if (!existingInfo) {
-      popup.innerHTML = '<div style="color:#e74c3c;font-size:0.88em;padding:8px;">查询失败，请重试</div>';
+      popup.innerHTML = '<div style="color:#e74c3c;font-size:0.88em;padding:8px;">查询失败,请重试</div>';
     }
   }
 }
@@ -3950,11 +3951,11 @@ function renderWordPopup(popup, info) {
     html += '<button class="swp-play" onclick="playPopupTTS(\'' + word.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   }
   html += '</div>';
-  
+
   const enDefs = enMeanings || [];
   const hasZh = !!(zhMeaning);
   const hasEn = enDefs.length > 0;
-  
+
   // English definitions (from Free Dictionary API)
   if (hasEn) {
     html += '<div class="swp-en-meanings">';
@@ -3968,7 +3969,7 @@ function renderWordPopup(popup, info) {
     });
     html += '</div>';
   }
-  
+
   // Chinese section
   if (hasZh) {
     if (hasEn) {
@@ -3980,7 +3981,7 @@ function renderWordPopup(popup, info) {
     html += '<div class="swp-m zh">' + (zhPos ? '<span class="swp-m-pos">' + zhPos + '</span> ' : '') + zhMeaning + '</div>';
     html += '</div>';
   } else if (hasEn) {
-    // Has English but no Chinese — show hint
+    // Has English but no Chinese - show hint
     html += '<div class="swp-zh-area" style="margin-top:6px;"><div style="font-size:0.72em;color:#aaa;">💡 词库暂无中文释义</div></div>';
   } else if (meanings && meanings.length > 0) {
     html += '<div class="swp-zh-area">';
@@ -3991,7 +3992,7 @@ function renderWordPopup(popup, info) {
     });
     html += '</div>';
   }
-  
+
   popup.innerHTML = html;
 }
 
@@ -4086,7 +4087,7 @@ function renderShadowing(filter) {
   const inner = document.getElementById('shadowInner');
   // Build a word→zh map for inline Chinese tooltips
   buildLocalVocabMap();
-  
+
   // Group by category
   const cats = {};
   const catOrder = ['简单句', '中级句', '进阶句'];
@@ -4101,7 +4102,7 @@ function renderShadowing(filter) {
   html += '<h2>🗣️ 例句跟读</h2>';
   html += '<button class="shadow-close-btn" onclick="closeShadowing()">✕</button>';
   html += '</div>';
-  
+
   // Category jump buttons
   const catAnchors = { '简单句': 'sjump-easy', '中级句': 'sjump-mid', '进阶句': 'sjump-hard' };
   html += '<div class="shadow-jump-bar">';
@@ -4111,7 +4112,7 @@ function renderShadowing(filter) {
     html += '<button class="shadow-jump-btn" onclick="document.getElementById(\''+catAnchors[cat]+'\').scrollIntoView({behavior:\'smooth\',block:\'start\'})">' + (icons[cat]||'📌') + ' ' + cat + ' (' + cats[cat].length + ')</button>';
   }
   html += '</div>';
-  
+
   html += '<div class="shadow-stats">共 ' + SHADOW_SENTENCES.length + ' 句 · YouTube真人发音 · 点击 ▶ 播放 · 点击 🎤 跟读</div>';
 
   for (const cat of catOrder) {
@@ -4122,14 +4123,14 @@ function renderShadowing(filter) {
     html += '<div class="shadow-category-title">' + (catIcons[cat] || '📌') + ' ' + cat + ' (' + sentences.length + '句)</div>';
     sentences.forEach(s => {
       // Parse words - each word gets an inline zh button
-      const words = s.en.split(/(\s+|[.,!?;:'"\-—])/);
+      const words = s.en.split(/(\s+|[.,!?;:'"\--])/);
       const wordSpans = words.map((w, wi) => {
         if (/^\s+$/.test(w)) return ' ';
-        if (/^[.,!?;:'"\-—]$/.test(w)) return '<span class="se-word se-punct">' + w + '</span>';
-        const clean = w.replace(/[.,!?;:'"\-—]/g, '').toLowerCase().replace(/[^a-z]/g, '');
+        if (/^[.,!?;:'"\--]$/.test(w)) return '<span class="se-word se-punct">' + w + '</span>';
+        const clean = w.replace(/[.,!?;:'"\--]/g, '').toLowerCase().replace(/[^a-z]/g, '');
         const localW = localVocabMap[clean];
-        const zhText = localW ? (localW.meaning || '').split('❶')[0].split(';')[0].split('；')[0].trim() : (INLINE_ZH[clean] || '');
-        return '<span class="se-word" data-word="' + w.replace(/[.,!?;:'"\-—]/g, '') + '" data-zh="' + zhText.replace(/"/g, '&quot;') + '" onclick="toggleWordZh(this)">' + w + '<sup class="word-zh-dot">·</sup></span>';
+        const zhText = localW ? (localW.meaning || '').split('❶')[0].split(';')[0].split(';')[0].trim() : (INLINE_ZH[clean] || '');
+        return '<span class="se-word" data-word="' + w.replace(/[.,!?;:'"\--]/g, '') + '" data-zh="' + zhText.replace(/"/g, '&quot;') + '" onclick="toggleWordZh(this)">' + w + '<sup class="word-zh-dot">·</sup></span>';
       }).join('');
 
       html += '<div class="shadow-card" id="sc-' + s.idx + '">';
@@ -4155,7 +4156,7 @@ function toggleWordZh(spanEl) {
   const zh = spanEl.getAttribute('data-zh');
   const word = spanEl.getAttribute('data-word');
   if (!zh && !word) return;
-  
+
   // Toggle zh display
   let zhSpan = spanEl.querySelector('.word-zh-text');
   if (zhSpan) {
@@ -4369,7 +4370,7 @@ function playShadow(idx) {
   }
 
   if (audioCtx.state === 'suspended') audioCtx.resume();
-  
+
   btn.classList.add('loading');
   fetch(audioUrl).then(resp => {
     if (!resp.ok) throw new Error('no audio');
@@ -4429,7 +4430,7 @@ function stopShadowRecording() {
 
 function startShadowRecording(idx) {
   if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-    alert('您的浏览器不支持语音识别，请使用Chrome浏览器');
+    alert('您的浏览器不支持语音识别,请使用Chrome浏览器');
     return;
   }
 
@@ -4473,8 +4474,8 @@ function startShadowRecording(idx) {
     if (spoken && resultDiv) {
       const similarity = calcSimilarity(spoken.toLowerCase(), s.en.toLowerCase());
       let level, cls;
-      if (similarity >= 0.8) { level = '✅ 很棒！发音准确'; cls = 'sr-good'; }
-      else if (similarity >= 0.5) { level = '⚠️ 还不错，继续加油'; cls = 'sr-ok'; }
+      if (similarity >= 0.8) { level = '✅ 很棒!发音准确'; cls = 'sr-good'; }
+      else if (similarity >= 0.5) { level = '⚠️ 还不错,继续加油'; cls = 'sr-ok'; }
       else { level = '❌ 再听几遍试试'; cls = 'sr-bad'; }
       resultDiv.innerHTML = '<div class="shadow-result-text ' + cls + '">' + level + ' (' + Math.round(similarity * 100) + '%)</div>' +
         '<div class="shadow-result-text" style="color:#999">你说: ' + spoken + '</div>';
@@ -4586,14 +4587,14 @@ document.getElementById('searchInput').addEventListener('input', function() {
   <div class="grammar-add-dialog">
     <h3>📝 添加语法点</h3>
     <label>语法标题</label>
-    <input type="text" id="gaTitle" placeholder="如：现在完成时">
+    <input type="text" id="gaTitle" placeholder="如:现在完成时">
     <label>理解要点</label>
     <textarea id="gaDesc" placeholder="你对这个语法点的理解..."></textarea>
-    <label>例句（英文）</label>
+    <label>例句(英文)</label>
     <input type="text" id="gaExampleEn" placeholder="I have lived here for 10 years.">
-    <label>例句（中文）</label>
+    <label>例句(中文)</label>
     <input type="text" id="gaExampleZh" placeholder="我已经在这里住了10年。">
-    <label>标签（逗号分隔）</label>
+    <label>标签(逗号分隔)</label>
     <input type="text" id="gaTags" placeholder="时态, 完成">
     <div class="ga-btns">
       <button class="ga-cancel" onclick="closeGrammarAdd()">取消</button>
