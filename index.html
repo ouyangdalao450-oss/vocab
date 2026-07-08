@@ -640,6 +640,8 @@ html { scroll-behavior:smooth; }
 .type-btn { padding:7px 16px; border-radius:18px; border:2px solid #ddd; background:#fff; font-size:0.85em; font-weight:600; cursor:pointer; transition:all 0.2s; color:#555; }
 .type-btn.type-btn-abstract { border-color:#ff9800; color:#ff9800; }
 .type-btn.type-btn-abstract.type-btn-active { background:#ff9800; color:#fff; border-color:#ff9800; }
+.type-btn.type-btn-semi-concrete { border-color:#29b6f6; color:#0277bd; }
+.type-btn.type-btn-semi-concrete.type-btn-active { background:#29b6f6; color:#fff; border-color:#29b6f6; }
 .type-btn.type-btn-concrete { border-color:#4caf50; color:#4caf50; }
 .type-btn.type-btn-concrete.type-btn-active { background:#4caf50; color:#fff; border-color:#4caf50; }
 .type-btn.type-btn-active { background:#764ba2; color:#fff; border-color:#764ba2; }
@@ -660,6 +662,7 @@ html { scroll-behavior:smooth; }
 .abs-ex-zh { color:#5a8a5a; font-style:normal; }
 .abs-type-badge { display:inline-block; font-size:0.7em; padding:2px 7px; border-radius:8px; margin-right:4px; font-weight:600; vertical-align:middle; }
 .abs-type-badge.abstract { background:#fff3e0; color:#ff9800; border:1px solid #ffcc80; }
+.abs-type-badge.semi-concrete { background:#e1f5fe; color:#0277bd; border:1px solid #81d4fa; }
 .abs-type-badge.concrete { background:#e8f5e9; color:#4caf50; border:1px solid #a5d6a7; }
 </style>
 </head>
@@ -890,7 +893,7 @@ function closeNouns500V2() {
   renderAll(document.getElementById('searchInput').value);
 }
 
-let _n2ViewMode = 'all'; // 'all' | 'abstract' | 'concrete'
+let _n2ViewMode = 'all'; // 'all' | 'abstract' | 'semi-concrete' | 'concrete'
 
 function renderNouns500V2(filter) {
   const q = (filter || '').toLowerCase();
@@ -906,6 +909,7 @@ function renderNouns500V2(filter) {
 
   // Apply view mode filter
   if (_n2ViewMode === 'abstract') words = words.filter(w => w.wordType === 'abstract');
+  if (_n2ViewMode === 'semi-concrete') words = words.filter(w => w.wordType === 'semi-concrete');
   if (_n2ViewMode === 'concrete') words = words.filter(w => w.wordType === 'concrete');
 
   let html = '<div class="nouns2-top"><h2>📖 名词500-第二波</h2><button class="nouns2-close-btn" onclick="closeNouns500V2()">✕</button></div>';
@@ -913,10 +917,12 @@ function renderNouns500V2(filter) {
 
   // Type toggle: All / Abstract / Concrete
   const absCount = sec.words.filter(w => w.wordType === 'abstract').length;
+  const semiCount = sec.words.filter(w => w.wordType === 'semi-concrete').length;
   const conCount = sec.words.filter(w => w.wordType === 'concrete').length;
   html += '<div class="type-toggle-nav">';
   html += '<button class="type-btn' + (_n2ViewMode === 'all' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'all\';renderNouns500V2(document.getElementById(\'searchInput\').value)">全部 ' + sec.words.length + '</button>';
   html += '<button class="type-btn type-btn-abstract' + (_n2ViewMode === 'abstract' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'abstract\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🧠 抽象 ' + absCount + '</button>';
+  html += '<button class="type-btn type-btn-semi-concrete' + (_n2ViewMode === 'semi-concrete' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'semi-concrete\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🔀 半具体 ' + semiCount + '</button>';
   html += '<button class="type-btn type-btn-concrete' + (_n2ViewMode === 'concrete' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'concrete\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🧱 具体 ' + conCount + '</button>';
   html += '</div>';
 
@@ -1038,7 +1044,7 @@ function renderNouns500V2(filter) {
             const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
             const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
             // Show type badge for abstract words even in all/concrete mode
-            const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : '';
+            const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : w.wordType === 'semi-concrete' ? '<span class="abs-type-badge semi-concrete">半具体</span>' : '';
             const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
             const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
             html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
@@ -1052,7 +1058,7 @@ function renderNouns500V2(filter) {
             const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
             const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
             const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
-            const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : '';
+            const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : w.wordType === 'semi-concrete' ? '<span class="abs-type-badge semi-concrete">半具体</span>' : '';
             const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
             const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
             html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + exHtml + '</td></tr>';
