@@ -441,8 +441,11 @@ console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
 .nouns2-btn:hover { background:#9c27b0; color:#fff; }
 .abstract-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #ff9800; border-radius:20px; background:#fff3e0; color:#e65100; font-size:14px; cursor:pointer; transition:all .2s; }
 .abstract-btn:hover { background:#ff9800; color:#fff; }
+.semi-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #29b6f6; border-radius:20px; background:#e1f5fe; color:#0277bd; font-size:14px; cursor:pointer; transition:all .2s; }
+.semi-btn:hover { background:#29b6f6; color:#fff; }
 .abstract-btn:active { background:#ffe0b2; }
 .abstract-view { display:none; padding-bottom:80px; }
+.semi-view { display:none; padding-bottom:80px; }
 .nouns2-btn:active { background:#f3e5f5; }
 .verbs-btn:active { background:#e3f2fd; }
 .verbs-view { display:none; padding-bottom:80px; }
@@ -679,6 +682,7 @@ html { scroll-behavior:smooth; }
   <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
   <button class="verbs-btn" id="verbsBtn" onclick="openVerbs200()">📝 动词200</button>
   <button class="abstract-btn" onclick="openAbstractNouns()">🧠 抽象名词</button>
+  <button class="semi-btn" id="semiBtn" onclick="openSemiConcreteNouns()">🔀 半具体名词</button>
   <button class="nouns2-btn" id="nouns2Btn" onclick="openNouns500V2()">📖 名词500-第二波</button>
   <button class="grammar-btn" id="grammarBtn" onclick="openGrammar()">📝 语法</button>
   <button class="shadow-btn" id="shadowBtn" onclick="openShadowing()">🗣️ 跟读</button>
@@ -701,6 +705,7 @@ html { scroll-behavior:smooth; }
 <div class="verbs-view" id="verbsView" style="display:none"></div>
 <div class="nouns2-view" id="nouns2View" style="display:none"></div>
 <div class="abstract-view" id="abstractView" style="display:none"></div>
+<div class="semi-view" id="semiView" style="display:none"></div>
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
@@ -721,6 +726,8 @@ function closeAllViews() {
   document.getElementById('nouns2View').innerHTML = '';
   document.getElementById('abstractView').style.display = 'none';
   document.getElementById('abstractView').innerHTML = '';
+  document.getElementById('semiView').style.display = 'none';
+  document.getElementById('semiView').innerHTML = '';
   // Close all overlays
   const overlays = ['grammarOverlay','shadowOverlay','overlay','quizOverlay','addWordOverlay','grammarAddOverlay'];
   overlays.forEach(id => {
@@ -748,6 +755,110 @@ function openAbstractNouns() {
 function closeAbstractNouns() {
   closeAllViews();
   renderAll(document.getElementById('searchInput').value);
+}
+
+/* ===== 半具体名词 ===== */
+
+function openSemiConcreteNouns() {
+  closeAllViews();
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('semiView').style.display = 'block';
+  renderSemiConcreteNouns('');
+  document.getElementById('searchInput').value = '';
+  window.scrollTo({ top: 0 });
+}
+function closeSemiConcreteNouns() {
+  closeAllViews();
+  renderAll(document.getElementById('searchInput').value);
+}
+
+function renderSemiConcreteNouns(filter) {
+  const q = (filter || '').toLowerCase();
+  const sv = document.getElementById('semiView');
+  const mobile = isMobile();
+  const data = getMergedData();
+  const sec = data.find(s => s.isSemiConcrete);
+  if (!sec) return;
+
+  let words = sec.words.filter(w =>
+    !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || (w.example || '').toLowerCase().includes(q)
+  );
+
+  let html = '<div class="nouns2-top"><h2>🔀 半具体名词115</h2><button class="nouns2-close-btn" onclick="closeSemiConcreteNouns()">✕</button></div>';
+  html += '<div class="nouns2-stats" id="semiStats"></div>';
+
+  // Render by categories
+  const catGroups = {};
+  words.forEach(w => {
+    const key = w.subcategory || 'other';
+    if (!catGroups[key]) catGroups[key] = [];
+    catGroups[key].push(w);
+  });
+
+  if (sec.categories) {
+    sec.categories.forEach((cat, ci) => {
+      const catWords = catGroups[cat.name] || [];
+      if (!catWords.length) return;
+      html += '<div class="subcat-header" id="semisubcat-' + ci + '">' + cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '词</span></div>';
+      if (mobile) {
+        html += '<div class="mobile-cards">';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\'");
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const irrHtml = w.irr ? '<div class="card-irr"><span class="irr-badge">' + formatIrrTag(w) + '</span></div>' : '';
+          html += '<div class="vocab-card">';
+          html += '<div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div>';
+          html += '<span class="abs-type-badge semi-concrete">半具体</span> <span class="card-pos">' + w.pos + '</span>';
+          html += '<div class="card-meaning">' + w.meaning + '</div>';
+          if (w.example) html += '<div class="card-example">' + w.example + '</div>';
+          if (w.exampleZh) html += '<div class="card-example-zh">' + w.exampleZh + '</div>';
+          if (w.root) html += '<div class="card-root">' + w.root + '</div>';
+          html += irrHtml;
+          html += '</div>'; // vocab-card
+        });
+        html += '</div>'; // mobile-cards
+      } else {
+        // Desktop table
+        html += '<div class="desk-table"><table><thead><tr><th>🔊</th><th>单词</th><th>音标</th><th>词性</th><th>含义</th><th>根意</th><th>例句</th></tr></thead><tbody>';
+        catWords.forEach(w => {
+          const esc = w.en.replace(/'/g, "\'");
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const irrHtml = w.irr ? formatIrrTag(w) : '';
+          html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + irrHtml + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + w.meaning + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
+        });
+        html += '</tbody></table></div>'; // desk-table
+      }
+    });
+  } else {
+    // No categories - flat render
+    if (mobile) {
+      html += '<div class="mobile-cards">';
+      words.forEach(w => {
+        const esc = w.en.replace(/'/g, "\'");
+        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        html += '<div class="vocab-card"><div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div><span class="abs-type-badge semi-concrete">半具体</span> <span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div></div>';
+      });
+      html += '</div>';
+    } else {
+      html += '<div class="desk-table"><table><thead><tr><th>🔊</th><th>单词</th><th>音标</th><th>词性</th><th>含义</th><th>根意</th><th>例句</th></tr></thead><tbody>';
+      words.forEach(w => {
+        const esc = w.en.replace(/'/g, "\'");
+        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + w.meaning + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
+      });
+      html += '</tbody></table></div>';
+    }
+  }
+
+  sv.innerHTML = html;
+
+  // Stats
+  const statsEl = document.getElementById('semiStats');
+  if (statsEl) {
+    const concreteInSec = words.filter(w => w.wordType === 'concrete').length;
+    const semiInSec = words.filter(w => w.wordType === 'semi-concrete').length;
+    statsEl.innerHTML = '<span class="stats-text">共 <b>' + words.length + '</b> 个半具体名词</span>';  
+  }
 }
 
 function renderAbstractNouns(filter) {
@@ -908,23 +1019,16 @@ function renderNouns500V2(filter) {
   );
 
   // Apply view mode filter
-  if (_n2ViewMode === 'abstract') words = words.filter(w => w.wordType === 'abstract');
-  if (_n2ViewMode === 'semi-concrete') words = words.filter(w => w.wordType === 'semi-concrete');
+  // All words in n2 section are concrete now (semi-concrete & abstract extracted)
   if (_n2ViewMode === 'concrete') words = words.filter(w => w.wordType === 'concrete');
 
   let html = '<div class="nouns2-top"><h2>📖 名词500-第二波</h2><button class="nouns2-close-btn" onclick="closeNouns500V2()">✕</button></div>';
   html += '<div class="nouns2-stats" id="nouns2Stats"></div>';
 
   // Type toggle: All / Abstract / Concrete
-  const absCount = sec.words.filter(w => w.wordType === 'abstract').length;
-  const semiCount = sec.words.filter(w => w.wordType === 'semi-concrete').length;
-  const conCount = sec.words.filter(w => w.wordType === 'concrete').length;
-  html += '<div class="type-toggle-nav">';
-  html += '<button class="type-btn' + (_n2ViewMode === 'all' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'all\';renderNouns500V2(document.getElementById(\'searchInput\').value)">全部 ' + sec.words.length + '</button>';
-  html += '<button class="type-btn type-btn-abstract' + (_n2ViewMode === 'abstract' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'abstract\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🧠 抽象 ' + absCount + '</button>';
-  html += '<button class="type-btn type-btn-semi-concrete' + (_n2ViewMode === 'semi-concrete' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'semi-concrete\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🔀 半具体 ' + semiCount + '</button>';
-  html += '<button class="type-btn type-btn-concrete' + (_n2ViewMode === 'concrete' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'concrete\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🧱 具体 ' + conCount + '</button>';
-  html += '</div>';
+  // Stats: all concrete words
+  html += '<div class="nouns2-stats" id="nouns2Stats"></div>';
+  ;
 
   // Subcategory nav (only in 'all' and 'concrete' modes)
   if ((_n2ViewMode === 'all' || _n2ViewMode === 'concrete') && sec.categories) {
@@ -1434,7 +1538,7 @@ function renderAll(filter) {
   let total = 0, shown = 0;
   const mobile = isMobile();
 
-  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns).forEach((sec, secIdx) => {
+  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns && !sec.isSemiConcrete).forEach((sec, secIdx) => {
     let m = sec.words.filter(w =>
       !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
     );
@@ -1600,7 +1704,7 @@ function renderAll(filter) {
 function buildCalendar() {
   const grid = document.getElementById('calGrid');
   grid.innerHTML = '';
-  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns).forEach((sec, idx) => {
+  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns && !sec.isSemiConcrete).forEach((sec, idx) => {
     const card = document.createElement('div');
     card.className = 'cal-card';
     const dateStr = sec.date.replace(/^[^\d]*/, '').replace(/（.*）/, '');
@@ -4423,8 +4527,11 @@ document.getElementById('searchInput').addEventListener('input', function() {
   const vv = document.getElementById('verbsView');
   const n2v = document.getElementById('nouns2View');
   const abv = document.getElementById('abstractView');
+  const sv = document.getElementById('semiView');
   if (abv.style.display !== 'none' && abv.style.display) {
     renderAbstractNouns(this.value);
+  } else if (sv && sv.style.display !== 'none' && sv.style.display) {
+    renderSemiConcreteNouns(this.value);
   } else if (nv.style.display !== 'none' && nv.style.display) {
     renderNouns500(this.value);
   } else if (vv.style.display !== 'none' && vv.style.display) {
