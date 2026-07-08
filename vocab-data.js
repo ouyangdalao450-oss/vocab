@@ -62,9 +62,9 @@ var VOCAB_DATA = [
         "phonetic": "/tɜːrm/",
         "pos": "n./v.",
         "meaning": "❶n. 术语、措辞 ❷n. 学期 ❸n. 期限、任期 ❹n. 条款、条件（terms of agreement）",
-        "example": "What does this term mean?",
+        "example": "The teacher explained the key terms in the lesson.",
         "root": "terminus(边界/终点) → 划定范围的词 → 术语/期限",
-        "exampleZh": "这个术语是什么意思？"
+        "exampleZh": "老师讲解了课程中的关键术语。"
       },
       {
         "en": "conclusion",
@@ -126,9 +126,9 @@ var VOCAB_DATA = [
         "phonetic": "/tʃæns/",
         "pos": "n./v.",
         "meaning": "❶n. 机会（a chance to do） ❷n. 可能性（a chance of） ❸v. 碰巧、冒险（chance it = 冒险尝试）",
-        "example": "This is your chance to prove yourself.",
+        "example": "I got a chance to visit Japan last summer.",
         "root": "cadere(落下) → 像骰子落下一样 → 随机的可能性",
-        "exampleZh": "这是你证明自己的机会。"
+        "exampleZh": "去年夏天我有机会去了日本。"
       },
       {
         "en": "software",
@@ -162,9 +162,9 @@ var VOCAB_DATA = [
         "phonetic": "/pɑːrt/",
         "pos": "n./v.",
         "meaning": "❶n. 部分、组件 ❷n. 角色（戏剧中的） ❸v. 分开、分离（part ways = 分道扬镳）",
-        "example": "She is a part of our team.",
+        "example": "She's part of our team — we can't do this without her.",
         "root": "pars(部分) → 整体中的一块 → 部分",
-        "exampleZh": "她是我们的团队成员。"
+        "exampleZh": "她是我们的团队成员——没有她我们做不到。"
       },
       {
         "en": "study",
@@ -199,45 +199,45 @@ var VOCAB_DATA = [
         "phonetic": "/prɑːmpt/",
         "pos": "v./adj./n.",
         "meaning": "❶v. 提示、促使 ❷adj. 迅速的、及时的 ❸n. 提示词、提词（电脑/舞台）",
-        "example": "Write a better prompt for better results.",
+        "example": "The teacher prompted him to answer the question.",
         "root": "pro(向前)+emere(拿) → 把想法拿出来的 → 提示/促使",
-        "exampleZh": "写更好的提示词能得到更好的结果。"
+        "exampleZh": "老师提示他回答问题。"
       },
       {
         "en": "design",
         "phonetic": "/dɪˈzaɪn/",
         "pos": "v./n.",
         "meaning": "❶v. 设计 ❷n. 构思、设计",
-        "example": "The app is designed to help beginners.",
+        "example": "Who designed this building? It looks amazing.",
         "root": "de(出)+signare(标记) → 做出标记来规划 → 设计",
-        "exampleZh": "这个应用是为初学者设计的。"
+        "exampleZh": "谁设计了这个建筑？看起来太棒了。"
       },
       {
         "en": "reach",
         "phonetic": "/riːtʃ/",
         "pos": "v./n.",
         "meaning": "❶v. 到达、抵达 ❷v. 伸手够到 ❸n. 范围、影响力（within reach）",
-        "example": "We reached the summit at dawn.",
+        "example": "I can't reach the top shelf — can you help me?",
         "root": "古义: 伸展手臂 → 伸手够到的范围 → 到达",
-        "exampleZh": "我们在黎明时分到达山顶。"
+        "exampleZh": "我够不到最上面的架子——你能帮我吗？"
       },
       {
         "en": "allow",
         "phonetic": "/əˈlaʊ/",
         "pos": "v.",
         "meaning": "❶允许、准许（allow sb to do） ❷使能够、给…机会（allow access）",
-        "example": "Smoking is not allowed here.",
+        "example": "They don't allow dogs in this restaurant.",
         "root": "ad(向)+laudare(赞美) → 给予认可 → 允许",
-        "exampleZh": "这里不允许吸烟。"
+        "exampleZh": "这家餐厅不允许带狗。"
       },
       {
         "en": "reinforce",
         "phonetic": "/ˌriːɪnˈfɔːrs/",
         "pos": "v.",
         "meaning": "❶加强、强化（观点/行为等） ❷增援（军事）",
-        "example": "This data reinforces our conclusion.",
+        "example": "The new data reinforces what we already knew.",
         "root": "re(再)+in+force(力量) → 再次注入力量 → 加强",
-        "exampleZh": "这些数据强化了我们的结论。"
+        "exampleZh": "新数据印证了我们已有的认知。"
       },
       {
         "en": "explain",
@@ -253,9 +253,9 @@ var VOCAB_DATA = [
         "phonetic": "/ɪnˈʃʊr/",
         "pos": "v.",
         "meaning": "确保、保证（某事一定发生）",
-        "example": "Ensure that all doors are locked.",
+        "example": "Ensure all doors are locked before you leave.",
         "root": "en(使)+sure(确定) → 使之确定 → 确保",
-        "exampleZh": "确保所有门都锁好了。"
+        "exampleZh": "确保离开前所有门都锁好了。"
       },
       {
         "en": "solidify",
@@ -289,9 +289,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈpreznt/ /prɪˈzent/",
         "pos": "adj./n./v.",
         "meaning": "❶adj. 在场的、出席的（be present at） ❷adj. 当前的、现在的（at the present time） ❸n. 礼物、赠品 ❹v. 呈现、展示 ❺v. 颁发、赠送",
-        "example": "She presented her findings.",
+        "example": "She presented her project to the class.",
         "root": "pre(在前)+esse(存在) → 在眼前存在 → 出席/呈现/礼物",
-        "exampleZh": "她展示了她的研究发现。"
+        "exampleZh": "她向全班展示了她的项目。"
       },
       {
         "en": "fluent",
@@ -476,9 +476,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsaɪdwɔːk/",
         "pos": "n.",
         "meaning": "人行道（美式英语，英式为pavement）",
-        "example": "Walk on the sidewalk, not the road.",
+        "example": "Walk on the sidewalk — it's safer.",
         "root": "side(旁边)+walk(走道) → 路边用来走的 → 人行道",
-        "exampleZh": "走人行道，别走马路。"
+        "exampleZh": "走人行道——更安全。"
       },
       {
         "en": "plaza",
@@ -492,11 +492,11 @@ var VOCAB_DATA = [
       {
         "en": "square",
         "phonetic": "/skwer/",
-        "pos": "n./adj./v.",
+        "pos": "n./v./adj.",
         "meaning": "❶n. 正方形 ❷n. 广场 ❸v. 使成方形 ❹adj. 正方形的",
-        "example": "The hotel is near the town square.",
+        "example": "We met at the town square and walked to the cafe.",
         "root": "古法语esquarre → 四条边一样长的形状 → 正方形/广场",
-        "exampleZh": "酒店在城镇广场附近。"
+        "exampleZh": "我们在镇上的广场见面然后走到了咖啡馆。"
       },
       {
         "en": "deadbolt lock",
@@ -532,9 +532,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈʃoʊldər/",
         "pos": "n./v.",
         "meaning": "❶n. 肩膀 ❷n. 路肩（道路两侧的紧急停车带） ❸v. 承担、肩负（shoulder responsibility/responsibilities）",
-        "example": "He shouldered the responsibility for the team.",
+        "example": "He put his hand on her shoulder to comfort her.",
         "root": "古义: 承载重物的部位 → 肩膀 → 承担",
-        "exampleZh": "他肩负起了团队的责任。"
+        "exampleZh": "他把手放在她肩上安慰她。"
       },
       {
         "en": "path",
@@ -623,9 +623,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈnaɪtstænd/",
         "pos": "n.",
         "meaning": "床头柜（美式英语，英式为bedside table）",
-        "example": "Put the lamp on the nightstand.",
+        "example": "I put my phone on the nightstand before going to sleep.",
         "root": "night(夜晚)+stand(架子) → 床头夜间用的架子 → 床头柜",
-        "exampleZh": "把灯放在床头柜上。"
+        "exampleZh": "睡觉前我把手机放在床头柜上。"
       },
       {
         "en": "laundromat",
@@ -878,9 +878,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈstrʌktʃər/",
         "pos": "n./v.",
         "meaning": "❶n. 结构、构造 ❷n. 建筑物 ❸v. 组织、安排",
-        "example": "The structure of this building is impressive.",
+        "example": "The bridge's structure is really impressive — it's over 100 years old.",
         "root": "struere(建造) → 建造出来的框架 → 结构",
-        "exampleZh": "这座建筑的结构令人印象深刻。"
+        "exampleZh": "这座桥的结构令人惊叹——它超过100岁了。"
       },
       {
         "en": "center",
@@ -943,9 +943,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈblendər/",
         "pos": "n.",
         "meaning": "搅拌机、榨汁机（厨房电器，用于打碎和混合食物）",
-        "example": "She made a smoothie in the blender.",
+        "example": "Throw some fruit and yogurt in the blender and make a smoothie.",
         "root": "blend(混合)+er(器) → 把东西混在一起的机器 → 搅拌机",
-        "exampleZh": "她用搅拌机做了冰沙。"
+        "exampleZh": "把水果和酸奶扔进搅拌机做个冰沙。"
       },
       {
         "en": "sausage",
@@ -1016,9 +1016,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈpedl/",
         "pos": "n./v.",
         "meaning": "❶ n. 踏板（自行车/钢琴/汽车） ❷ v. 踩踏板、骑自行车",
-        "example": "She pedalled hard up the hill.",
+        "example": "She pedaled hard up the hill.",
         "root": "pes(脚) → 用脚踩的东西 → 踏板",
-        "exampleZh": "她使劲踩踏板上坡。"
+        "exampleZh": "她用力蹬踏板上坡。"
       },
       {
         "en": "bus",
@@ -1044,9 +1044,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtrænspɔːrt/",
         "pos": "n./v.",
         "meaning": "❶n. 交通系统、运输方式 ❷n. 交通工具 ❸v. 运输、运送",
-        "example": "Public transport is very convenient in this city.",
+        "example": "Public transport here is pretty good — buses run every 10 minutes.",
         "root": "trans(跨越)+portare(携带) → 把东西带过去 → 运输",
-        "exampleZh": "这个城市的公共交通很方便。"
+        "exampleZh": "这里的公共交通不错——公交车每10分钟一班。"
       },
       {
         "en": "farm",
@@ -1145,9 +1145,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkæmərə/ /ˈkæmrə/",
         "pos": "n.",
         "meaning": "❶照相机、摄像机 ❷监控摄像头",
-        "example": "Don't forget to bring your camera.",
+        "example": "Take a picture with the camera — this view is amazing.",
         "root": "camera(房间/暗室) → 暗箱拍照的装置 → 相机",
-        "exampleZh": "别忘了带相机。"
+        "exampleZh": "用相机拍张照——这景色太美了。"
       },
       {
         "en": "sign",
@@ -1471,9 +1471,9 @@ var VOCAB_DATA = [
         "phonetic": "/peɪnt/",
         "pos": "n./v.",
         "meaning": "❶n. 油漆、涂料 ❷n. 颜料（paints） ❸v. 刷漆 ❹v. 画画",
-        "example": "We've had the house painted.",
+        "example": "We're painting the bedroom this weekend.",
         "root": "拉丁语pingere → 涂抹颜色 → 油漆/绘画",
-        "exampleZh": "我们请人把房子刷了漆。"
+        "exampleZh": "这个周末我们刷卧室的油漆。"
       },
       {
         "en": "art",
@@ -1543,9 +1543,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈfɔːrkæst/",
         "pos": "n./v.",
         "meaning": "❶n. 预测、预报 ❷v. 预测、预报",
-        "example": "The weather forecast says it will rain tomorrow.",
+        "example": "The forecast says it'll rain this afternoon.",
         "root": "fore(提前)+cast(抛) → 提前抛出判断 → 预报",
-        "exampleZh": "天气预报说明天会下雨。"
+        "exampleZh": "天气预报说今天下午会下雨。"
       },
       {
         "en": "floor",
@@ -2224,9 +2224,9 @@ var VOCAB_DATA = [
         "phonetic": "/səʊp/",
         "pos": "n.",
         "meaning": "肥皂、香皂（清洁用品）",
-        "example": "I forgot to bring my soap to the bathroom.",
+        "example": "Wash your hands with soap and warm water.",
         "root": "",
-        "exampleZh": "我忘带香皂去浴室了。",
+        "exampleZh": "用肥皂和温水洗手。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2268,9 +2268,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtuːθpeɪst/",
         "pos": "n.",
         "meaning": "牙膏",
-        "example": "I forgot to bring my toothpaste to the bathroom.",
+        "example": "I ran out of toothpaste this morning.",
         "root": "",
-        "exampleZh": "我忘带牙膏去浴室了。",
+        "exampleZh": "我今天早上牙膏用完了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2279,9 +2279,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtɔɪ.lət/",
         "pos": "n.",
         "meaning": "马桶",
-        "example": "She cleaned the toilet thoroughly this morning.",
+        "example": "The toilet is clogged — can you fix it?",
         "root": "",
-        "exampleZh": "她今天早上把马桶彻底清洗了一遍。",
+        "exampleZh": "马桶堵了——你能修一下吗？",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2323,9 +2323,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbæθtʊb/",
         "pos": "n.",
         "meaning": "浴缸",
-        "example": "I forgot to bring my bathtub to the bathroom.",
+        "example": "The kids love playing in the bathtub.",
         "root": "",
-        "exampleZh": "我忘带浴缸去浴室了。",
+        "exampleZh": "孩子们喜欢在浴缸里玩。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2334,9 +2334,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈfɔːsɪt/",
         "pos": "n.",
         "meaning": "水龙头",
-        "example": "She cleaned the faucet thoroughly this morning.",
+        "example": "Turn off the faucet — you're wasting water.",
         "root": "",
-        "exampleZh": "她今天早上把水龙头彻底清洗了一遍。",
+        "exampleZh": "关掉水龙头——你在浪费水。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2357,9 +2357,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈɹeɪzə/",
         "pos": "n.",
         "meaning": "剃须刀",
-        "example": "She cleaned the razor thoroughly this morning.",
+        "example": "I need a new razor — this one is dull.",
         "root": "",
-        "exampleZh": "她今天早上把剃须刀彻底清洗了一遍。",
+        "exampleZh": "我需要一把新剃须刀——这把钝了。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2368,9 +2368,9 @@ var VOCAB_DATA = [
         "phonetic": "/kəʊm/",
         "pos": "n.",
         "meaning": "梳子",
-        "example": "I forgot to bring my comb to the bathroom.",
+        "example": "Can I borrow your comb for a second?",
         "root": "",
-        "exampleZh": "我忘带梳子去浴室了。",
+        "exampleZh": "能借你的梳子用一下吗？",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2402,9 +2402,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈləʊʃən/",
         "pos": "n.",
         "meaning": "乳液",
-        "example": "She cleaned the lotion thoroughly this morning.",
+        "example": "Put on some lotion — your hands are really dry.",
         "root": "",
-        "exampleZh": "她今天早上把乳液彻底清洗了一遍。",
+        "exampleZh": "抹点乳液——你的手很干。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2413,9 +2413,9 @@ var VOCAB_DATA = [
         "phonetic": "/diˈəʊdəɹənt/",
         "pos": "n.",
         "meaning": "除臭剂",
-        "example": "I forgot to bring my deodorant to the bathroom.",
+        "example": "Don't forget to put on deodorant before you leave.",
         "root": "",
-        "exampleZh": "我忘带除臭剂去浴室了。",
+        "exampleZh": "出门前别忘了涂除臭剂。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间"
       },
@@ -2424,9 +2424,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "棉签",
-        "example": "She cleaned the cotton swab thoroughly this morning.",
+        "example": "Don't use cotton swabs inside your ear — it's dangerous.",
         "root": "",
-        "exampleZh": "她今天早上把棉签彻底清洗了一遍。",
+        "exampleZh": "不要把棉签伸进耳朵里——很危险。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间",
         "compound": true
@@ -2436,9 +2436,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "指甲刀",
-        "example": "I forgot to bring my nail clipper to the bathroom.",
+        "example": "Where's the nail clipper? I need to trim my nails.",
         "root": "",
-        "exampleZh": "我忘带指甲刀去浴室了。",
+        "exampleZh": "指甲刀在哪？我要剪指甲。",
         "subcategory": "Bathroom",
         "subcategoryZh": "浴室 / 卫生间",
         "noAudio": true,
@@ -2526,9 +2526,9 @@ var VOCAB_DATA = [
         "phonetic": "/əˈlɑːm ˌklɒk/",
         "pos": "n.",
         "meaning": "闹钟",
-        "example": "She fluffed the alarm clock before going to sleep.",
+        "example": "I set my alarm clock for 6 a.m.",
         "root": "",
-        "exampleZh": "她睡前把闹钟拍松了。",
+        "exampleZh": "我把闹钟设在了早上6点。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室",
         "compound": true
@@ -2549,9 +2549,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkɜːtn̩/",
         "pos": "n.",
         "meaning": "窗帘",
-        "example": "She fluffed the curtain before going to sleep.",
+        "example": "Close the curtains — the sun's too bright.",
         "root": "",
-        "exampleZh": "她睡前把窗帘拍松了。",
+        "exampleZh": "拉上窗帘——阳光太刺眼了。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2615,9 +2615,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkʊʃ·ən/",
         "pos": "n.",
         "meaning": "靠垫",
-        "example": "She fluffed the cushion before going to sleep.",
+        "example": "This cushion is so comfortable — where did you get it?",
         "root": "",
-        "exampleZh": "她睡前把靠垫拍松了。",
+        "exampleZh": "这个靠垫太舒服了——你从哪买的？",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2626,9 +2626,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "床头柜",
-        "example": "The nightstand matches the color of the walls perfectly.",
+        "example": "I put my phone on the nightstand before going to sleep.",
         "root": "",
-        "exampleZh": "床头柜和墙壁的颜色很搭。",
+        "exampleZh": "睡觉前我把手机放在床头柜上。",
         "subcategory": "Bedroom",
         "subcategoryZh": "卧室"
       },
@@ -2659,9 +2659,9 @@ var VOCAB_DATA = [
         "phonetic": "/frɪdʒ/",
         "pos": "n.",
         "meaning": "冰箱",
-        "example": "She used the fridge to prepare dinner.",
+        "example": "There's nothing in the fridge — we need to go grocery shopping.",
         "root": "",
-        "exampleZh": "她用冰箱准备晚餐。",
+        "exampleZh": "冰箱里什么都没有——我们需要去买菜。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2692,9 +2692,9 @@ var VOCAB_DATA = [
         "phonetic": "/stəʊv/",
         "pos": "n.",
         "meaning": "炉灶",
-        "example": "She used the stove to prepare dinner.",
+        "example": "I left the stove on — can you check it?",
         "root": "",
-        "exampleZh": "她用炉灶准备晚餐。",
+        "exampleZh": "炉灶没关——你能看一下吗？",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2725,9 +2725,9 @@ var VOCAB_DATA = [
         "phonetic": "/spuːn/",
         "pos": "n.",
         "meaning": "勺子",
-        "example": "She used the spoon to prepare dinner.",
+        "example": "Grab a spoon — the soup's ready.",
         "root": "",
-        "exampleZh": "她用勺子准备晚餐。",
+        "exampleZh": "拿把勺子——汤好了。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2736,9 +2736,9 @@ var VOCAB_DATA = [
         "phonetic": "/pleɪt/",
         "pos": "n.",
         "meaning": "盘子",
-        "example": "She used the plate to prepare dinner.",
+        "example": "Can you put the plates on the table?",
         "root": "",
-        "exampleZh": "她用盘子准备晚餐。",
+        "exampleZh": "你能把盘子放到桌上吗？",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2780,9 +2780,9 @@ var VOCAB_DATA = [
         "phonetic": "/pæn/",
         "pos": "n.",
         "meaning": "平底锅",
-        "example": "She used the pan to prepare dinner.",
+        "example": "Heat up the pan before you add the oil.",
         "root": "",
-        "exampleZh": "她用平底锅准备晚餐。",
+        "exampleZh": "先把锅加热再加油。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房"
       },
@@ -2802,9 +2802,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkʌt.ɪŋ ˌbɔːd/",
         "pos": "n.",
         "meaning": "砧板",
-        "example": "She used the cutting board to prepare dinner.",
+        "example": "Use a separate cutting board for raw meat.",
         "root": "",
-        "exampleZh": "她用砧板准备晚餐。",
+        "exampleZh": "切生肉用单独的砧板。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房",
         "compound": true
@@ -2858,9 +2858,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtræʃ ˌkæn/",
         "pos": "n.",
         "meaning": "垃圾桶",
-        "example": "She used the trash can to prepare dinner.",
+        "example": "Take out the trash can before you leave.",
         "root": "",
-        "exampleZh": "她用垃圾桶准备晚餐。",
+        "exampleZh": "出门前把垃圾桶拿出去。",
         "subcategory": "Kitchen",
         "subcategoryZh": "厨房",
         "compound": true
@@ -2881,9 +2881,9 @@ var VOCAB_DATA = [
         "phonetic": "/kaʊtʃ/",
         "pos": "n.",
         "meaning": "长沙发",
-        "example": "Please don't put your feet on the couch.",
+        "example": "Let's just chill on the couch and watch a movie.",
         "root": "",
-        "exampleZh": "请不要把脚放在长沙发上。",
+        "exampleZh": "我们就在沙发上放松看个电影吧。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2892,9 +2892,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈteɪ·bəl/",
         "pos": "n.",
         "meaning": "桌子",
-        "example": "The cat is sleeping on the table again.",
+        "example": "Set the table — dinner's almost ready.",
         "root": "",
-        "exampleZh": "猫又趴在桌子上睡觉了。",
+        "exampleZh": "摆好桌子——晚饭快好了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2914,9 +2914,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˌtiːˈviː/",
         "pos": "n.",
         "meaning": "电视",
-        "example": "The cat is sleeping on the TV again.",
+        "example": "There's nothing good on TV tonight.",
         "root": "",
-        "exampleZh": "猫又趴在电视上睡觉了。",
+        "exampleZh": "今晚电视上没什么好看的。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2925,9 +2925,9 @@ var VOCAB_DATA = [
         "phonetic": "/rɪˌməʊt kənˈtrəʊl/",
         "pos": "n.",
         "meaning": "遥控器",
-        "example": "The cat is sleeping on the remote control again.",
+        "example": "Who has the remote? I want to change the channel.",
         "root": "",
-        "exampleZh": "猫又趴在遥控器上睡觉了。",
+        "exampleZh": "谁拿着遥控器？我想换频道。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅",
         "compound": true
@@ -2948,9 +2948,9 @@ var VOCAB_DATA = [
         "phonetic": "/rʌɡ/",
         "pos": "n.",
         "meaning": "地毯",
-        "example": "The cat is sleeping on the rug again.",
+        "example": "The rug in the living room really ties the room together.",
         "root": "",
-        "exampleZh": "猫又趴在地毯上睡觉了。",
+        "exampleZh": "客厅的地毯把整个房间搭配得很协调。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2959,9 +2959,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈwɪn.dəʊ/",
         "pos": "n.",
         "meaning": "窗户",
-        "example": "The cat is sleeping on the window again.",
+        "example": "Open the window — it's stuffy in here.",
         "root": "",
-        "exampleZh": "猫又趴在窗户上睡觉了。",
+        "exampleZh": "开窗吧——屋里太闷了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -2981,9 +2981,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈeər kənˌdɪʃ·ə·nər/",
         "pos": "n.",
         "meaning": "空调",
-        "example": "Please don't put your feet on the air conditioner.",
+        "example": "Can you turn on the AC? It's way too hot.",
         "root": "",
-        "exampleZh": "请不要把脚放在空调上。",
+        "exampleZh": "能把空调打开吗？太热了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅",
         "compound": true
@@ -2993,9 +2993,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈhiː.t̬ɚ/",
         "pos": "n.",
         "meaning": "取暖器",
-        "example": "Please don't put your feet on the heater.",
+        "example": "Turn on the heater — it's freezing in here.",
         "root": "",
-        "exampleZh": "请不要把脚放在取暖器上。",
+        "exampleZh": "开暖气——屋里冻死了。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅"
       },
@@ -3015,9 +3015,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkɔ·fi ˌteɪ·bəlcoɡ/",
         "pos": "n.",
         "meaning": "咖啡桌",
-        "example": "The cat is sleeping on the coffee table again.",
+        "example": "Don't put your drink on the coffee table — it'll stain.",
         "root": "",
-        "exampleZh": "猫又趴在咖啡桌上睡觉了。",
+        "exampleZh": "别把饮料放在咖啡桌上——会留印子。",
         "subcategory": "Living Room",
         "subcategoryZh": "客厅",
         "compound": true
@@ -3599,9 +3599,9 @@ var VOCAB_DATA = [
         "phonetic": "/kɑːr/",
         "pos": "n.",
         "meaning": "汽车",
-        "example": "We rented a car for our trip.",
+        "example": "I'll drive — my car's right outside.",
         "root": "",
-        "exampleZh": "我们旅行时租了一辆汽车。",
+        "exampleZh": "我来开——我的车就在外面。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3621,9 +3621,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtæk.si/",
         "pos": "n.",
         "meaning": "出租车",
-        "example": "We rented a taxi for our trip.",
+        "example": "Let's grab a taxi — it's too far to walk.",
         "root": "",
-        "exampleZh": "我们旅行时租了一辆出租车。",
+        "exampleZh": "叫辆出租车吧——太远了走不了。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3632,9 +3632,9 @@ var VOCAB_DATA = [
         "phonetic": "/treɪn/",
         "pos": "n.",
         "meaning": "火车",
-        "example": "The train was delayed by twenty minutes.",
+        "example": "The train to NYC leaves at 8:15.",
         "root": "",
-        "exampleZh": "火车晚点了二十分钟。",
+        "exampleZh": "去纽约的火车8:15出发。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3643,9 +3643,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsʌb.weɪ/",
         "pos": "n.",
         "meaning": "地铁",
-        "example": "She takes the subway to work every day.",
+        "example": "Take the subway — it's faster than driving.",
         "root": "",
-        "exampleZh": "她每天坐地铁去上班。",
+        "exampleZh": "坐地铁吧——比开车快。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3654,9 +3654,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbɑɪ·sɪ·kəl/",
         "pos": "n.",
         "meaning": "自行车",
-        "example": "We rented a bicycle for our trip.",
+        "example": "I ride my bicycle to work every morning.",
         "root": "",
-        "exampleZh": "我们旅行时租了一辆自行车。",
+        "exampleZh": "我每天早上骑自行车上班。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3665,9 +3665,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈmoʊ·t̬ərˌsɑɪ·kəl/",
         "pos": "n.",
         "meaning": "摩托车",
-        "example": "The motorcycle was delayed by twenty minutes.",
+        "example": "He rides a motorcycle — no helmet, which is crazy.",
         "root": "",
-        "exampleZh": "摩托车晚点了二十分钟。",
+        "exampleZh": "他骑摩托车——不戴头盔，太疯狂了。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3698,20 +3698,20 @@ var VOCAB_DATA = [
         "phonetic": "/bəʊt/",
         "pos": "n.",
         "meaning": "船",
-        "example": "We rented a boat for our trip.",
+        "example": "We took a boat across the lake.",
         "root": "",
-        "exampleZh": "我们旅行时租了一辆船。",
+        "exampleZh": "我们坐船穿过了湖。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
       {
         "en": "ship",
         "phonetic": "/ʃɪp/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶v. 运送 ❷n. 船",
-        "example": "The ship was delayed by twenty minutes.",
+        "example": "The ship sails tomorrow at dawn.",
         "root": "",
-        "exampleZh": "轮船晚点了二十分钟。",
+        "exampleZh": "船明天黎明出发。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3731,9 +3731,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsiːt ˌbelt/",
         "pos": "n.",
         "meaning": "安全带",
-        "example": "We rented a seatbelt for our trip.",
+        "example": "Buckle your seatbelt before we drive.",
         "root": "",
-        "exampleZh": "我们旅行时租了一辆安全带。",
+        "exampleZh": "开车前系好安全带。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3742,9 +3742,9 @@ var VOCAB_DATA = [
         "phonetic": "/wiːl/",
         "pos": "n.",
         "meaning": "❶轮子、车轮 ❷方向盘（steering wheel）",
-        "example": "The wheel was delayed by twenty minutes.",
+        "example": "The steering wheel was vibrating — I think the tires need balancing.",
         "root": "",
-        "exampleZh": "轮子晚点了二十分钟。",
+        "exampleZh": "方向盘在抖——我觉得轮胎需要平衡。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3753,9 +3753,9 @@ var VOCAB_DATA = [
         "phonetic": "/taɪr/",
         "pos": "n.",
         "meaning": "轮胎",
-        "example": "She takes the tire to work every day.",
+        "example": "I got a flat tire on the highway this morning.",
         "root": "",
-        "exampleZh": "她每天坐轮胎去上班。",
+        "exampleZh": "今天早上我在高速上爆胎了。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3764,9 +3764,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈen.dʒɪn/",
         "pos": "n.",
         "meaning": "发动机",
-        "example": "She takes the engine to work every day.",
+        "example": "The engine's making a weird noise — you should get it checked.",
         "root": "",
-        "exampleZh": "她每天坐发动机去上班。",
+        "exampleZh": "发动机发出怪声——你应该去检查一下。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3775,9 +3775,9 @@ var VOCAB_DATA = [
         "phonetic": "/breɪk/",
         "pos": "n.",
         "meaning": "刹车",
-        "example": "She takes the brake to work every day.",
+        "example": "Hit the brakes! There's a dog in the road!",
         "root": "",
-        "exampleZh": "她每天坐刹车去上班。",
+        "exampleZh": "踩刹车！路上有只狗！",
         "subcategory": "Transportation",
         "subcategoryZh": "交通"
       },
@@ -3786,9 +3786,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈstɪə.rɪŋ ˌwiːl/",
         "pos": "n.",
         "meaning": "方向盘",
-        "example": "She takes the steering wheel to work every day.",
+        "example": "Keep both hands on the steering wheel.",
         "root": "",
-        "exampleZh": "她每天坐方向盘去上班。",
+        "exampleZh": "双手握住方向盘。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通",
         "compound": true
@@ -3798,9 +3798,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtræf.ɪk ˌlaɪt/",
         "pos": "n.",
         "meaning": "红绿灯",
-        "example": "We rented a traffic light for our trip.",
+        "example": "We got stuck at every traffic light on the way home.",
         "root": "",
-        "exampleZh": "我们旅行时租了一辆红绿灯。",
+        "exampleZh": "回家的路上每个红绿灯都卡住了。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通",
         "compound": true
@@ -3810,9 +3810,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "加油站",
-        "example": "The gas station was delayed by twenty minutes.",
+        "example": "Pull over at the next gas station — we're almost empty.",
         "root": "",
-        "exampleZh": "加油站晚点了二十分钟。",
+        "exampleZh": "在下个加油站停车——油快没了。",
         "subcategory": "Transportation",
         "subcategoryZh": "交通",
         "compound": true
@@ -3998,9 +3998,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsɪz.əz/",
         "pos": "n.",
         "meaning": "剪刀",
-        "example": "The erroneous testimony was scissored from the record.",
+        "example": "Can you pass me the scissors? I need to cut this.",
         "root": "",
-        "exampleZh": "错误的证词是从记录中剪下来的。",
+        "exampleZh": "能把剪刀递给我吗？我要剪这个。",
         "subcategory": "Office & School",
         "subcategoryZh": "办公 / 学习"
       },
@@ -4139,11 +4139,11 @@ var VOCAB_DATA = [
       {
         "en": "shoulder",
         "phonetic": "/—/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶n. 肩膀 ❷n. 路肩（道路两侧的紧急停车带） ❸v. 承担、肩负（shoulder responsibility/responsibilities）",
-        "example": "She felt a sharp pain in her shoulder.",
+        "example": "He put his hand on her shoulder to comfort her.",
         "root": "",
-        "exampleZh": "她感到肩膀一阵剧痛。",
+        "exampleZh": "他把手放在她肩上安慰她。",
         "subcategory": "Body Parts",
         "subcategoryZh": "身体部位"
       },
@@ -4271,7 +4271,7 @@ var VOCAB_DATA = [
       {
         "en": "skin",
         "phonetic": "/—/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶n. 皮肤、表皮 ❷n. 外皮、外壳 ❸v. 剥皮、去皮",
         "example": "The doctor examined her skin carefully.",
         "root": "",
@@ -4581,9 +4581,9 @@ var VOCAB_DATA = [
         "phonetic": "/fəʊn/",
         "pos": "n.",
         "meaning": "手机",
-        "example": "She bought the latest phone last week.",
+        "example": "I left my phone at home — can I borrow yours?",
         "root": "",
-        "exampleZh": "她上周买了最新款的手机。",
+        "exampleZh": "我把手机忘在家里了——能借你的吗？",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4592,9 +4592,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "相机",
-        "example": "Can you pass me the camera?",
+        "example": "Take a picture with the camera — this view is amazing.",
         "root": "",
-        "exampleZh": "你能把相机递给我吗？",
+        "exampleZh": "用相机拍张照——这景色太美了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4614,9 +4614,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtæb.lət/",
         "pos": "n.",
         "meaning": "平板电脑",
-        "example": "She bought the latest tablet last week.",
+        "example": "I use my tablet mostly for reading.",
         "root": "",
-        "exampleZh": "她上周买了最新款的平板电脑。",
+        "exampleZh": "我的平板主要用来阅读。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4625,9 +4625,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtʃɑːr.dʒɚ/",
         "pos": "n.",
         "meaning": "充电器",
-        "example": "The charger is connected to the Wi-Fi.",
+        "example": "I always carry a charger in my bag.",
         "root": "",
-        "exampleZh": "充电器已经连上Wi-Fi了。",
+        "exampleZh": "我包里总带着充电器。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4636,9 +4636,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbæt̬.ɚ.i/",
         "pos": "n.",
         "meaning": "电池",
-        "example": "The battery is connected to the Wi-Fi.",
+        "example": "My battery's at 5% — I need to charge it ASAP.",
         "root": "",
-        "exampleZh": "电池已经连上Wi-Fi了。",
+        "exampleZh": "我的电池只剩5%——得马上充电。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4669,9 +4669,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈwɒʃ.ɪŋ məˌʃiːn/",
         "pos": "n.",
         "meaning": "洗衣机",
-        "example": "She bought the latest washing machine last week.",
+        "example": "The washing machine broke — I have to go to the laundromat.",
         "root": "",
-        "exampleZh": "她上周买了最新款的洗衣机。",
+        "exampleZh": "洗衣机坏了——我得去自助洗衣店。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "compound": true
@@ -4681,9 +4681,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈdraɪ.ɚ/",
         "pos": "n.",
         "meaning": "烘干机",
-        "example": "The sun and a northwesterly wind are great driers of the earth.",
+        "example": "Put the wet clothes in the dryer.",
         "root": "",
-        "exampleZh": "太阳和西北风是地球的干燥剂。",
+        "exampleZh": "把湿衣服放进烘干机里。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4692,9 +4692,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈvæk.juːm ˌkliː.nɚ/",
         "pos": "n.",
         "meaning": "吸尘器",
-        "example": "Can you pass me the vacuum cleaner?",
+        "example": "Can you vacuum the living room? It's covered in pet hair.",
         "root": "",
-        "exampleZh": "你能把吸尘器递给我吗？",
+        "exampleZh": "你能吸一下客厅吗？全是宠物毛。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "compound": true
@@ -4726,9 +4726,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "搅拌机",
-        "example": "Can you pass me the blender?",
+        "example": "Throw some fruit and yogurt in the blender and make a smoothie.",
         "root": "",
-        "exampleZh": "你能把搅拌机递给我吗？",
+        "exampleZh": "把水果和酸奶扔进搅拌机做个冰沙。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备"
       },
@@ -4748,9 +4748,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "空气净化器",
-        "example": "She bought the latest air purifier last week.",
+        "example": "The air purifier really helps with the dust.",
         "root": "",
-        "exampleZh": "她上周买了最新款的空气净化器。",
+        "exampleZh": "空气净化器对灰尘真的有帮助。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "noAudio": true,
@@ -4761,9 +4761,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈlaɪt ˌbʌlb/",
         "pos": "n.",
         "meaning": "灯泡",
-        "example": "The light bulb is connected to the Wi-Fi.",
+        "example": "The light bulb in the hallway burned out again.",
         "root": "",
-        "exampleZh": "灯泡已经连上Wi-Fi了。",
+        "exampleZh": "走廊的灯泡又烧坏了。",
         "subcategory": "Electronics & Appliances",
         "subcategoryZh": "家电 / 电子设备",
         "compound": true
@@ -5015,9 +5015,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "人行道",
-        "example": "The sidewalk was crowded with tourists.",
+        "example": "Walk on the sidewalk — it's safer.",
         "root": "",
-        "exampleZh": "人行道挤满了游客。",
+        "exampleZh": "走人行道——更安全。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5048,9 +5048,9 @@ var VOCAB_DATA = [
         "phonetic": "/stɔːr/",
         "pos": "n.",
         "meaning": "商店",
-        "example": "The store is just around the corner.",
+        "example": "I'm heading to the store — need anything?",
         "root": "",
-        "exampleZh": "商店就在拐角处。",
+        "exampleZh": "我要去商店——需要什么吗？",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5059,9 +5059,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈmɑː.kɪt/",
         "pos": "n.",
         "meaning": "市场",
-        "example": "The market is just around the corner.",
+        "example": "The farmers' market opens on Saturday mornings.",
         "root": "",
-        "exampleZh": "市场就在拐角处。",
+        "exampleZh": "农贸市场周六早上开门。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5103,9 +5103,9 @@ var VOCAB_DATA = [
         "phonetic": "/skuːl/",
         "pos": "n.",
         "meaning": "学校",
-        "example": "The school is just around the corner.",
+        "example": "She walks to school with her friends.",
         "root": "",
-        "exampleZh": "学校就在拐角处。",
+        "exampleZh": "她和朋友们一起走路上学。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5137,9 +5137,9 @@ var VOCAB_DATA = [
         "phonetic": "/pəˈlis ˌsteɪ·ʃən/",
         "pos": "n.",
         "meaning": "警察局",
-        "example": "The police station was crowded with tourists.",
+        "example": "He went to the police station to report the theft.",
         "root": "",
-        "exampleZh": "警察局挤满了游客。",
+        "exampleZh": "他去警察局报案了盗窃。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市",
         "compound": true
@@ -5149,9 +5149,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈfaɪə.haʊs/",
         "pos": "n.",
         "meaning": "消防站",
-        "example": "The fire station is just around the corner.",
+        "example": "The fire station is two blocks away.",
         "root": "",
-        "exampleZh": "消防站就在拐角处。",
+        "exampleZh": "消防站离这里两个街区。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市",
         "compound": true
@@ -5159,7 +5159,7 @@ var VOCAB_DATA = [
       {
         "en": "park",
         "phonetic": "/pɑːk/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶v. 停车 ❷n. 公园",
         "example": "Turn left at the park.",
         "root": "",
@@ -5194,9 +5194,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsɪn.ə.mɑː/",
         "pos": "n.",
         "meaning": "电影院",
-        "example": "The cinema is just around the corner.",
+        "example": "There's a new movie playing at the cinema tonight.",
         "root": "",
-        "exampleZh": "电影院就在拐角处。",
+        "exampleZh": "今晚电影院有一部新片上映。",
         "subcategory": "Street & City",
         "subcategoryZh": "街道 / 城市"
       },
@@ -5260,9 +5260,9 @@ var VOCAB_DATA = [
         "phonetic": "/sɔː/",
         "pos": "n.",
         "meaning": "锯子",
-        "example": "You'll need a saw for this project.",
+        "example": "Cut the board with a saw — it's too long.",
         "root": "",
-        "exampleZh": "这个项目你需要一把锯子。",
+        "exampleZh": "用锯子把板子锯短——太长了。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5271,9 +5271,9 @@ var VOCAB_DATA = [
         "phonetic": "/neɪl/",
         "pos": "n.",
         "meaning": "❶钉子（金属固定物） ❷指甲（手指上的硬壳）",
-        "example": "You'll need a nail for this project.",
+        "example": "Drive a nail into the wall to hang this picture.",
         "root": "",
-        "exampleZh": "这个项目你需要一把钉子。",
+        "exampleZh": "在墙上钉个钉子挂这幅画。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5293,9 +5293,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈteɪp ˌmeʒ.ɚ/",
         "pos": "n.",
         "meaning": "卷尺",
-        "example": "You'll need a tape measure for this project.",
+        "example": "Measure the room with a tape measure before you buy furniture.",
         "root": "",
-        "exampleZh": "这个项目你需要一把卷尺。",
+        "exampleZh": "买家具前用卷尺量一下房间。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修",
         "compound": true
@@ -5305,9 +5305,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈlæd.ɚ/",
         "pos": "n.",
         "meaning": "梯子",
-        "example": "You'll need a ladder for this project.",
+        "example": "Use a ladder to reach the top shelf.",
         "root": "",
-        "exampleZh": "这个项目你需要一把梯子。",
+        "exampleZh": "用梯子够最上面的架子。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5338,9 +5338,9 @@ var VOCAB_DATA = [
         "phonetic": "/mætʃ/",
         "pos": "n.",
         "meaning": "❶火柴（点燃用的小木棍） ❷比赛、竞赛",
-        "example": "You'll need a match for this project.",
+        "example": "Light a match to start the campfire.",
         "root": "",
-        "exampleZh": "这个项目你需要一把火柴。",
+        "exampleZh": "划根火柴来点篝火。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5349,9 +5349,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈlaɪ.t̬ɚ/",
         "pos": "n.",
         "meaning": "打火机",
-        "example": "You'll need a lighter for this project.",
+        "example": "Got a lighter? I need to light this candle.",
         "root": "",
-        "exampleZh": "这个项目你需要一把打火机。",
+        "exampleZh": "有打火机吗？我要点蜡烛。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5393,9 +5393,9 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "油漆",
-        "example": "You'll need a paint for this project.",
+        "example": "We're painting the bedroom this weekend.",
         "root": "",
-        "exampleZh": "这个项目你需要一把油漆。",
+        "exampleZh": "这个周末我们刷卧室的油漆。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5404,9 +5404,9 @@ var VOCAB_DATA = [
         "phonetic": "/brʌʃ/",
         "pos": "n.",
         "meaning": "刷子",
-        "example": "You'll need a brush for this project.",
+        "example": "Use a brush to clean off the dust.",
         "root": "",
-        "exampleZh": "这个项目你需要一把刷子。",
+        "exampleZh": "用刷子把灰尘清掉。",
         "subcategory": "Tools & Repair",
         "subcategoryZh": "工具 / 维修"
       },
@@ -5437,9 +5437,9 @@ var VOCAB_DATA = [
         "phonetic": "/taɪm/",
         "pos": "n.",
         "meaning": "时间",
-        "example": "The forecast says time is coming.",
+        "example": "We don't have much time — let's hurry.",
         "root": "",
-        "exampleZh": "预报说时间要来了。",
+        "exampleZh": "我们没多少时间了——快走吧。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5503,9 +5503,9 @@ var VOCAB_DATA = [
         "phonetic": "/wiːk/",
         "pos": "n.",
         "meaning": "周",
-        "example": "The forecast says week is coming.",
+        "example": "I'm super busy this week — can we meet next week?",
         "root": "",
-        "exampleZh": "预报说周要来了。",
+        "exampleZh": "这周太忙了——下周见面吧？",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5602,9 +5602,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈjes.tə.deɪ/",
         "pos": "n.",
         "meaning": "昨天",
-        "example": "The forecast says yesterday is coming.",
+        "example": "I saw him yesterday at the grocery store.",
         "root": "",
-        "exampleZh": "预报说昨天要来了。",
+        "exampleZh": "昨天我在杂货店看到了他。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5624,9 +5624,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈhɒl.ə.deɪ/",
         "pos": "n.",
         "meaning": "假期",
-        "example": "The forecast says holiday is coming.",
+        "example": "We're going on holiday to Florida next week.",
         "root": "",
-        "exampleZh": "预报说假期要来了。",
+        "exampleZh": "下周我们要去佛罗里达度假。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5646,9 +5646,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsi·zən/",
         "pos": "n.",
         "meaning": "季节",
-        "example": "The forecast says season is coming.",
+        "example": "Football season starts in September.",
         "root": "",
-        "exampleZh": "预报说季节要来了。",
+        "exampleZh": "橄榄球赛季九月开始。",
         "subcategory": "Time, Date & Weather",
         "subcategoryZh": "时间 / 日期 / 天气"
       },
@@ -5985,7 +5985,7 @@ var VOCAB_DATA = [
       {
         "en": "circle",
         "phonetic": "/—/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶n. 圆、圆圈 ❷n. 圈子（社交/学术） ❸v. 环绕、绕圈",
         "example": "The sign has a circle background.",
         "root": "",
@@ -5996,11 +5996,11 @@ var VOCAB_DATA = [
       {
         "en": "square",
         "phonetic": "/—/",
-        "pos": "n.",
+        "pos": "n./v./adj.",
         "meaning": "❶n. 正方形 ❷n. 广场 ❸v. 使成方形 ❹adj. 正方形的",
-        "example": "The sign has a square background.",
+        "example": "We met at the town square and walked to the cafe.",
         "root": "",
-        "exampleZh": "标志的背景是正方形色的。",
+        "exampleZh": "我们在镇上的广场见面然后走到了咖啡馆。",
         "subcategory": "Colors, Shapes & Numbers",
         "subcategoryZh": "颜色 / 形状 / 数字"
       },
@@ -6084,7 +6084,7 @@ var VOCAB_DATA = [
       {
         "en": "love",
         "phonetic": "/lʌv/",
-        "pos": "n.",
+        "pos": "v./n.",
         "meaning": "❶v./n. 爱、喜爱",
         "example": "The love in her voice was unmistakable.",
         "root": "",
@@ -6128,7 +6128,7 @@ var VOCAB_DATA = [
       {
         "en": "fear",
         "phonetic": "/fɪr/",
-        "pos": "n.",
+        "pos": "v./n.",
         "meaning": "❶v./n. 害怕、恐惧 ❷v. 担忧",
         "example": "Fear is a natural human emotion.",
         "root": "",
@@ -6150,7 +6150,7 @@ var VOCAB_DATA = [
       {
         "en": "hope",
         "phonetic": "/həʊp/",
-        "pos": "n.",
+        "pos": "v./n.",
         "meaning": "❶v. 希望 ❷n. 期望、希望",
         "example": "Hope is a natural human emotion.",
         "root": "",
@@ -6205,7 +6205,7 @@ var VOCAB_DATA = [
       {
         "en": "answer",
         "phonetic": "/ˈæn.sɚ/",
-        "pos": "n.",
+        "pos": "v./n.",
         "meaning": "❶v. 回答 ❷n. 答案",
         "example": "Answer is a natural human emotion.",
         "root": "",
@@ -6227,11 +6227,11 @@ var VOCAB_DATA = [
       {
         "en": "chance",
         "phonetic": "/—/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶n. 机会（a chance to do） ❷n. 可能性（a chance of） ❸v. 碰巧、冒险（chance it = 冒险尝试）",
-        "example": "He couldn't hide his chance.",
+        "example": "I got a chance to visit Japan last summer.",
         "root": "",
-        "exampleZh": "他无法掩饰自己的机会。",
+        "exampleZh": "去年夏天我有机会去了日本。",
         "subcategory": "Emotions & States",
         "subcategoryZh": "情感 / 状态"
       },
@@ -6524,7 +6524,7 @@ var VOCAB_DATA = [
       {
         "en": "walk",
         "phonetic": "/—/",
-        "pos": "n.",
+        "pos": "v./n.",
         "meaning": "❶v. 步行、走 ❷n. 散步、步行",
         "example": "Walk is a great way to stay active.",
         "root": "",
@@ -6889,9 +6889,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbrek.fəst/",
         "pos": "n.",
         "meaning": "早餐",
-        "example": "His breakfast impressed everyone.",
+        "example": "What do you usually have for breakfast?",
         "root": "",
-        "exampleZh": "他的早餐让所有人印象深刻。",
+        "exampleZh": "你早餐通常吃什么？",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6931,7 +6931,7 @@ var VOCAB_DATA = [
       {
         "en": "drink",
         "phonetic": "/drɪŋk/",
-        "pos": "n.",
+        "pos": "v./n.",
         "meaning": "❶v. 喝 ❷n. 饮料",
         "example": "She enjoys the drink every morning.",
         "root": "",
@@ -6955,9 +6955,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈvedʒ·tə·bəl/",
         "pos": "n.",
         "meaning": "蔬菜",
-        "example": "His vegetable impressed everyone.",
+        "example": "Eat more vegetables — they're good for you.",
         "root": "",
-        "exampleZh": "他的蔬菜让所有人印象深刻。",
+        "exampleZh": "多吃蔬菜——对身体好。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6977,9 +6977,9 @@ var VOCAB_DATA = [
         "phonetic": "/keɪk/",
         "pos": "n.",
         "meaning": "蛋糕",
-        "example": "His cake impressed everyone.",
+        "example": "She made a cake for his birthday.",
         "root": "",
-        "exampleZh": "他的蛋糕让所有人印象深刻。",
+        "exampleZh": "她为他的生日做了蛋糕。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -6988,9 +6988,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˌaɪs ˈkriːm/",
         "pos": "n.",
         "meaning": "冰淇淋",
-        "example": "His ice cream impressed everyone.",
+        "example": "Let's get ice cream after dinner.",
         "root": "",
-        "exampleZh": "他的冰淇淋让所有人印象深刻。",
+        "exampleZh": "晚饭后去吃冰淇淋吧。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词",
         "compound": true
@@ -7000,9 +7000,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkʊk.i/",
         "pos": "n.",
         "meaning": "饼干",
-        "example": "His cookie impressed everyone.",
+        "example": "My grandma makes the best chocolate chip cookies.",
         "root": "",
-        "exampleZh": "他的饼干让所有人印象深刻。",
+        "exampleZh": "我奶奶做的巧克力曲奇最好吃。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7011,9 +7011,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkæn.di/",
         "pos": "n.",
         "meaning": "糖果",
-        "example": "His candy impressed everyone.",
+        "example": "Don't eat too much candy before dinner.",
         "root": "",
-        "exampleZh": "他的糖果让所有人印象深刻。",
+        "exampleZh": "晚饭前别吃太多糖果。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7044,9 +7044,9 @@ var VOCAB_DATA = [
         "phonetic": "/sɒlt/",
         "pos": "n.",
         "meaning": "盐",
-        "example": "His salt impressed everyone.",
+        "example": "This soup needs more salt.",
         "root": "",
-        "exampleZh": "他的盐让所有人印象深刻。",
+        "exampleZh": "这汤需要多加点盐。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7066,9 +7066,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈpep.ɚ/",
         "pos": "n.",
         "meaning": "胡椒粉",
-        "example": "His pepper impressed everyone.",
+        "example": "Add some pepper if you like it spicy.",
         "root": "",
-        "exampleZh": "他的胡椒粉让所有人印象深刻。",
+        "exampleZh": "加点胡椒粉如果你喜欢辣。",
         "subcategory": "Action Nouns",
         "subcategoryZh": "动作相关名词"
       },
@@ -7110,9 +7110,9 @@ var VOCAB_DATA = [
         "phonetic": "/həʊm/",
         "pos": "n.",
         "meaning": "家",
-        "example": "This home has changed my perspective.",
+        "example": "I just want to go home and relax.",
         "root": "",
-        "exampleZh": "这个家改变了我的看法。",
+        "exampleZh": "我就想回家放松一下。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7154,9 +7154,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbɑːθ.ruːm/",
         "pos": "n.",
         "meaning": "浴室",
-        "example": "This bathroom has changed my perspective.",
+        "example": "Where's the bathroom? I need to go.",
         "root": "",
-        "exampleZh": "这个浴室改变了我的看法。",
+        "exampleZh": "洗手间在哪？我得去了。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7165,9 +7165,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbed.ruːm/",
         "pos": "n.",
         "meaning": "卧室",
-        "example": "This bedroom has changed my perspective.",
+        "example": "My bedroom is really small but it's cozy.",
         "root": "",
-        "exampleZh": "这个卧室改变了我的看法。",
+        "exampleZh": "我的卧室很小但很温馨。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7187,9 +7187,9 @@ var VOCAB_DATA = [
         "phonetic": "/faɪr/",
         "pos": "n./v.",
         "meaning": "❶n. 火、火焰 ❷v. 解雇（口语） ❸v. 开火、射击",
-        "example": "This fire has changed my perspective.",
+        "example": "They built a fire and sat around it telling stories.",
         "root": "",
-        "exampleZh": "这个火改变了我的看法。",
+        "exampleZh": "他们生了火，围坐在旁边讲故事。",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7242,9 +7242,9 @@ var VOCAB_DATA = [
         "phonetic": "/θɪŋ/",
         "pos": "n.",
         "meaning": "东西/事情",
-        "example": "This thing has changed my perspective.",
+        "example": "What's that thing on the table?",
         "root": "",
-        "exampleZh": "这个东西/事情改变了我的看法。",
+        "exampleZh": "桌上那个东西是什么？",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7264,9 +7264,9 @@ var VOCAB_DATA = [
         "phonetic": "/pleɪs/",
         "pos": "n.",
         "meaning": "地方",
-        "example": "This place has changed my perspective.",
+        "example": "This place is really nice — how did you find it?",
         "root": "",
-        "exampleZh": "这个地方改变了我的看法。",
+        "exampleZh": "这个地方真好——你怎么找到的？",
         "subcategory": "Extra High-Frequency",
         "subcategoryZh": "补充高频名词"
       },
@@ -7390,10 +7390,10 @@ var VOCAB_DATA = [
       {
         "en": "ship",
         "phonetic": "/ʃɪp/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶v. 运送 ❷n. 船",
-        "example": "The ship sailed across the ocean.",
-        "exampleZh": "那艘船航行穿越了大洋。"
+        "example": "The ship sails tomorrow at dawn.",
+        "exampleZh": "船明天黎明出发。"
       },
       {
         "en": "spaceship",
@@ -8126,8 +8126,8 @@ var VOCAB_DATA = [
         "phonetic": "/riːtʃ/",
         "pos": "v.",
         "meaning": "❶v. 到达、抵达 ❷v. 伸手够到 ❸n. 范围、影响力（within reach）",
-        "example": "Reach the airport by 3 p.m.",
-        "exampleZh": "下午3点前到达机场。",
+        "example": "I can't reach the top shelf — can you help me?",
+        "exampleZh": "我够不到最上面的架子——你能帮我吗？",
         "root": "",
         "irr": "",
         "subcategory": "Movement & Position",
@@ -8630,8 +8630,8 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈvel.əp/",
         "pos": "v.",
         "meaning": "❶ 发展 ❷ 开发 ❸ 冲洗(照片)",
-        "example": "The company developed a new product.",
-        "exampleZh": "公司开发了一个新产品。",
+        "example": "She's developing a new app for language learners.",
+        "exampleZh": "她正在开发一个面向语言学习者的新应用。",
         "root": "de(打开)+velop(包裹) → 打开包裹 → 发展",
         "irr": "",
         "subcategory": "Creating & Changing",
@@ -8654,8 +8654,8 @@ var VOCAB_DATA = [
         "phonetic": "/prəˈduːs/",
         "pos": "v.",
         "meaning": "❶v. 生产、制造 ❷v. 产生、引起 ❸v. 制作（节目/作品）",
-        "example": "The factory produces 1000 cars a day.",
-        "exampleZh": "工厂每天生产1000辆车。",
+        "example": "California produces a lot of wine.",
+        "exampleZh": "加利福尼亚产很多葡萄酒。",
         "root": "pro(前)+duce(引导) → 向前引导出来 → 生产",
         "irr": "",
         "subcategory": "Creating & Changing",
@@ -8666,8 +8666,8 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈzaɪn/",
         "pos": "v./n.",
         "meaning": "❶v. 设计 ❷n. 构思、设计",
-        "example": "She designed the website layout.",
-        "exampleZh": "她设计了网站布局。",
+        "example": "Who designed this building? It looks amazing.",
+        "exampleZh": "谁设计了这个建筑？看起来太棒了。",
         "root": "de(出)+sign(标记) → 做出标记 → 设计",
         "irr": "",
         "subcategory": "Creating & Changing",
@@ -9494,8 +9494,8 @@ var VOCAB_DATA = [
         "phonetic": "/prɪˈzent/",
         "pos": "v.",
         "meaning": "❶v. 展示、呈现 ❷v. 提交、提出 ❸v. 赠送、颁发",
-        "example": "Present your findings to the class.",
-        "exampleZh": "把你的发现展示给全班。",
+        "example": "She presented her project to the class.",
+        "exampleZh": "她向全班展示了她的项目。",
         "root": "pre(前)+sent(送) → 前面送来 → 展示",
         "irr": "",
         "subcategory": "Work & Study",
@@ -9852,7 +9852,7 @@ var VOCAB_DATA = [
       {
         "en": "park",
         "phonetic": "/pɑːrk/",
-        "pos": "v./n.",
+        "pos": "n./v.",
         "meaning": "❶v. 停车 ❷n. 公园",
         "example": "Park the car near the entrance.",
         "exampleZh": "把车停在入口附近。",
@@ -9888,10 +9888,10 @@ var VOCAB_DATA = [
       {
         "en": "ship",
         "phonetic": "/ʃɪp/",
-        "pos": "v./n.",
+        "pos": "n./v.",
         "meaning": "❶v. 运送 ❷n. 船",
-        "example": "Ship the order by Friday.",
-        "exampleZh": "周五前发货。",
+        "example": "The ship sails tomorrow at dawn.",
+        "exampleZh": "船明天黎明出发。",
         "root": "",
         "irr": "",
         "subcategory": "Travel & Transport",
@@ -9962,8 +9962,8 @@ var VOCAB_DATA = [
         "phonetic": "/əˈlaʊ/",
         "pos": "v.",
         "meaning": "❶ 允许 ❷ 给予",
-        "example": "Allow me to explain.",
-        "exampleZh": "请允许我解释。",
+        "example": "They don't allow dogs in this restaurant.",
+        "exampleZh": "这家餐厅不允许带狗。",
         "root": "",
         "irr": "",
         "subcategory": "Law & Rules",
@@ -9974,8 +9974,8 @@ var VOCAB_DATA = [
         "phonetic": "/fərˈbɪd/",
         "pos": "v.",
         "meaning": "❶ 禁止 ❷ 不许",
-        "example": "Smoking is forbidden here.",
-        "exampleZh": "这里禁止吸烟。",
+        "example": "My parents forbid me from staying out past midnight.",
+        "exampleZh": "我父母不许我在外面待到午夜之后。",
         "root": "",
         "irr": "forbade|forbidden",
         "subcategory": "Law & Rules",
@@ -9986,8 +9986,8 @@ var VOCAB_DATA = [
         "phonetic": "/pərˈmɪt/",
         "pos": "v./n.",
         "meaning": "❶v. 许可、准许 ❷n. 许可证",
-        "example": "Permit me to ask a question.",
-        "exampleZh": "允许我问一个问题。",
+        "example": "You need a permit to park here.",
+        "exampleZh": "你需要许可证才能在这里停车。",
         "root": "per(通过)+mit(送) → 让通过 → 许可",
         "irr": "",
         "subcategory": "Law & Rules",
@@ -9998,8 +9998,8 @@ var VOCAB_DATA = [
         "phonetic": "/rɪˈkwaɪər/",
         "pos": "v.",
         "meaning": "❶ 要求 ❷ 需要 ❸ 规定",
-        "example": "This job requires patience.",
-        "exampleZh": "这份工作需要耐心。",
+        "example": "This recipe requires fresh ingredients.",
+        "exampleZh": "这道菜需要新鲜食材。",
         "root": "re(再)+quire(寻求) → 再寻求 → 要求",
         "irr": "",
         "subcategory": "Law & Rules",
@@ -10034,8 +10034,8 @@ var VOCAB_DATA = [
         "phonetic": "/əˈbeɪ/",
         "pos": "v.",
         "meaning": "❶ 服从 ❷ 遵守",
-        "example": "Obey the traffic rules.",
-        "exampleZh": "遵守交通规则。",
+        "example": "The dog obeys every command I give him.",
+        "exampleZh": "这只狗听从我给的每个命令。",
         "root": "ob(对着)+ey(听) → 对着听 → 服从",
         "irr": "",
         "subcategory": "Law & Rules",
@@ -10046,8 +10046,8 @@ var VOCAB_DATA = [
         "phonetic": "/ruːl/",
         "pos": "v./n.",
         "meaning": "❶v. 统治 ❷n. 规则、规定 ❸n. 规定",
-        "example": "The king ruled the country for 30 years.",
-        "exampleZh": "国王统治了国家30年。",
+        "example": "The new rule says you can't smoke on campus.",
+        "exampleZh": "新规定说校园内不能吸烟。",
         "root": "",
         "irr": "",
         "subcategory": "Law & Rules",
@@ -10058,7 +10058,7 @@ var VOCAB_DATA = [
         "phonetic": "/dʒʌdʒ/",
         "pos": "v./n.",
         "meaning": "❶v. 判断、评判 ❷n. 法官",
-        "example": "Don't judge people by their looks.",
+        "example": "Don't judge a book by its cover.",
         "exampleZh": "不要以貌取人。",
         "root": "jud(法律)+ge → 按法律裁决 → 判断",
         "irr": "",
@@ -11525,7 +11525,7 @@ var VOCAB_DATA = [
         "en": "download",
         "phonetic": "/ˈdaʊnloʊd/",
         "pos": "n./v.",
-        "meaning": "下载",
+        "meaning": "❶v./n. 下载",
         "example": "Download the update before using it.",
         "root": "down(下)+load(载) → 从上往下载 → 下载",
         "exampleZh": "使用前先下载更新。",
@@ -11551,7 +11551,7 @@ var VOCAB_DATA = [
         "en": "upload",
         "phonetic": "/ˈʌploʊd/",
         "pos": "n./v.",
-        "meaning": "上传",
+        "meaning": "❶v./n. 上传",
         "example": "Upload the photo to your profile.",
         "root": "up(上)+load(载) → 往上载 → 上传",
         "exampleZh": "把照片上传到你的资料。",
@@ -11942,9 +11942,9 @@ var VOCAB_DATA = [
         "phonetic": "/ɪkˈspɪriəns/",
         "pos": "n./v.",
         "meaning": "❶n.经验 ❷n.经历 ❸v.体验",
-        "example": "She has a lot of work experience.",
+        "example": "That trip was an amazing experience.",
         "root": "ex(出)+peri(尝试)+ence → 尝试出来的 → 经验",
-        "exampleZh": "她有很多工作经验。",
+        "exampleZh": "那次旅行是一段奇妙的经历。",
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
         "wordType": "abstract",
@@ -12696,9 +12696,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈpeɪʃəns/",
         "pos": "n.",
         "meaning": "耐心",
-        "example": "Teaching kids requires patience.",
+        "example": "I don't have the patience for this — it's too slow.",
         "root": "pati(忍受)+ence → 忍受等待 → 耐心",
-        "exampleZh": "教孩子需要耐心。",
+        "exampleZh": "我没耐心——太慢了。",
         "subcategory": "Emotions Deep",
         "subcategoryZh": "情感深入",
         "wordType": "abstract",
@@ -13356,9 +13356,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbluːberi/",
         "pos": "n.",
         "meaning": "蓝莓",
-        "example": "Add blueberries to your oatmeal.",
+        "example": "Blueberry pancakes are my favorite.",
         "root": "",
-        "exampleZh": "在燕麦里加些蓝莓。",
+        "exampleZh": "蓝莓煎饼是我的最爱。",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食深入",
         "wordType": "concrete"
@@ -14220,9 +14220,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈɪndeks kɑːrd/",
         "pos": "n.",
         "meaning": "索引卡",
-        "example": "Write your notes on index cards.",
+        "example": "She used index cards to study for the exam.",
         "root": "",
-        "exampleZh": "在索引卡上写笔记。",
+        "exampleZh": "她用索引卡来复习考试。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
         "wordType": "concrete"
@@ -14244,9 +14244,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbʊlɪtɪn bɔːrd/",
         "pos": "n.",
         "meaning": "公告栏",
-        "example": "Check the bulletin board for updates.",
+        "example": "Check the bulletin board — there might be a job posting.",
         "root": "",
-        "exampleZh": "查看公告栏获取更新。",
+        "exampleZh": "看看公告栏——可能有招聘信息。",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
         "wordType": "concrete"
@@ -15108,9 +15108,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈjoʊɡə mæt/",
         "pos": "n.",
         "meaning": "瑜伽垫",
-        "example": "Bring your yoga mat to class.",
+        "example": "I left my yoga mat at the gym.",
         "root": "",
-        "exampleZh": "带瑜伽垫去上课。",
+        "exampleZh": "我把瑜伽垫忘在健身房了。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
         "wordType": "concrete"
@@ -15144,9 +15144,9 @@ var VOCAB_DATA = [
         "phonetic": "/bɔːrd geɪm/",
         "pos": "n.",
         "meaning": "桌游",
-        "example": "We played a board game last night.",
+        "example": "We played board games all night — it was so fun.",
         "root": "",
-        "exampleZh": "昨晚我们玩了桌游。",
+        "exampleZh": "我们玩了一整晚桌游——太好玩了。",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动娱乐深入",
         "wordType": "concrete"
@@ -15216,9 +15216,9 @@ var VOCAB_DATA = [
         "phonetic": "/sɜːrtʃ ˈendʒɪn/",
         "pos": "n.",
         "meaning": "搜索引擎",
-        "example": "Google is the most popular search engine.",
+        "example": "Just Google it — any search engine will work.",
         "root": "",
-        "exampleZh": "Google是最流行的搜索引擎。",
+        "exampleZh": "谷歌搜一下就行——哪个搜索引擎都可以。",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
         "wordType": "concrete"
@@ -15384,9 +15384,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbægɪdʒ kleɪm/",
         "pos": "n.",
         "meaning": "行李提取处",
-        "example": "Go to baggage claim to get your bags.",
+        "example": "Pick up your luggage at baggage claim.",
         "root": "",
-        "exampleZh": "去行李提取处取行李。",
+        "exampleZh": "在行李提取处取你的行李。",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
         "wordType": "concrete"
@@ -15528,9 +15528,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsʌbweɪ ˈsteɪʃən/",
         "pos": "n.",
         "meaning": "地铁站",
-        "example": "Walk to the subway station from here.",
+        "example": "The subway station is right across the street.",
         "root": "",
-        "exampleZh": "从这里步行到地铁站。",
+        "exampleZh": "地铁站就在马路对面。",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道深入",
         "wordType": "concrete"
@@ -15540,9 +15540,9 @@ var VOCAB_DATA = [
         "phonetic": "/bʌs stɒp/",
         "pos": "n.",
         "meaning": "公交站",
-        "example": "Wait at the bus stop over there.",
+        "example": "I'll meet you at the bus stop.",
         "root": "",
-        "exampleZh": "在那边的公交站等。",
+        "exampleZh": "我在公交站等你。",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道深入",
         "wordType": "concrete"
@@ -15552,9 +15552,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtæksi stænd/",
         "pos": "n.",
         "meaning": "出租车等候区",
-        "example": "There's a taxi stand outside the hotel.",
+        "example": "There's always a taxi stand outside the airport.",
         "root": "",
-        "exampleZh": "酒店外面有出租车等候区。",
+        "exampleZh": "机场外面总有出租车候客区。",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道深入",
         "wordType": "concrete"
@@ -15720,9 +15720,9 @@ var VOCAB_DATA = [
         "phonetic": "/praɪs tæg/",
         "pos": "n.",
         "meaning": "价格标签",
-        "example": "The price tag says $25.",
+        "example": "Look at the price tag — that jacket is way too expensive.",
         "root": "",
-        "exampleZh": "价格标签写着25美元。",
+        "exampleZh": "看价格标签——那件外套太贵了。",
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
         "wordType": "concrete"
@@ -15864,9 +15864,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈroʊlɪŋ pɪn/",
         "pos": "n.",
         "meaning": "擀面杖",
-        "example": "Roll out the dough with a rolling pin.",
+        "example": "Flatten the dough with a rolling pin.",
         "root": "",
-        "exampleZh": "用擀面杖擀面团。",
+        "exampleZh": "用擀面杖把面团擀平。",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房深入",
         "wordType": "concrete"
@@ -15888,9 +15888,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈʌvən mɪt/",
         "pos": "n.",
         "meaning": "隔热手套（烤箱用）",
-        "example": "Use oven mitts to take out the pan.",
+        "example": "Use oven mitts — that pan is really hot.",
         "root": "",
-        "exampleZh": "用隔热手套把锅拿出来。",
+        "exampleZh": "用隔热手套——那个锅很烫。",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房深入",
         "wordType": "concrete"
@@ -15924,9 +15924,9 @@ var VOCAB_DATA = [
         "phonetic": "/kæn ˈoʊpənər/",
         "pos": "n.",
         "meaning": "开罐器",
-        "example": "I need a can opener for this soup.",
+        "example": "I can't find the can opener — where did you put it?",
         "root": "",
-        "exampleZh": "我需要开罐器来开这罐汤。",
+        "exampleZh": "我找不到开罐器——你放哪了？",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房深入",
         "wordType": "concrete"
@@ -15936,9 +15936,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈmeʒərɪŋ kʌp/",
         "pos": "n.",
         "meaning": "量杯",
-        "example": "Pour two cups of water using the measuring cup.",
+        "example": "Use the measuring cup to pour exactly one cup of water.",
         "root": "",
-        "exampleZh": "用量杯倒两杯水。",
+        "exampleZh": "用量杯倒正好一杯水。",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房深入",
         "wordType": "concrete"
@@ -16068,9 +16068,9 @@ var VOCAB_DATA = [
         "phonetic": "/træʃ bæg/",
         "pos": "n.",
         "meaning": "垃圾袋",
-        "example": "Put a new trash bag in the bin.",
+        "example": "We're out of trash bags — add them to the shopping list.",
         "root": "",
-        "exampleZh": "在垃圾桶里放个新垃圾袋。",
+        "exampleZh": "垃圾袋没了——加到购物清单上。",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居深入",
         "wordType": "concrete"
@@ -16080,9 +16080,9 @@ var VOCAB_DATA = [
         "phonetic": "/riˈsaɪklɪŋ bɪn/",
         "pos": "n.",
         "meaning": "回收箱",
-        "example": "Put the paper in the recycling bin.",
+        "example": "Put the empty bottles in the recycling bin.",
         "root": "",
-        "exampleZh": "把纸放进回收箱。",
+        "exampleZh": "把空瓶子放进回收箱。",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居深入",
         "wordType": "concrete"
@@ -16356,9 +16356,9 @@ var VOCAB_DATA = [
         "phonetic": "/ɪd kɑːrd/",
         "pos": "n.",
         "meaning": "身份证",
-        "example": "Show your ID card at the gate.",
+        "example": "You need your ID card to enter the building.",
         "root": "",
-        "exampleZh": "在门口出示身份证。",
+        "exampleZh": "你需要身份证才能进入大楼。",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人物品",
         "wordType": "concrete"
@@ -16368,9 +16368,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkɒntækt lenz/",
         "pos": "n.",
         "meaning": "隐形眼镜",
-        "example": "I wear contact lenses instead of glasses.",
+        "example": "I switched to contact lenses — glasses were annoying.",
         "root": "",
-        "exampleZh": "我戴隐形眼镜不戴框架眼镜。",
+        "exampleZh": "我换成了隐形眼镜——戴眼镜太烦了。",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人物品",
         "wordType": "concrete"
@@ -16668,9 +16668,9 @@ var VOCAB_DATA = [
         "phonetic": "/saɪd ˈteɪbəl/",
         "pos": "n.",
         "meaning": "边桌、小茶几",
-        "example": "Put the lamp on the side table.",
+        "example": "She set her coffee down on the side table.",
         "root": "",
-        "exampleZh": "把灯放在边桌上。",
+        "exampleZh": "她把咖啡放在床头柜上。",
         "subcategory": "Living Room Deep",
         "subcategoryZh": "客厅深入",
         "wordType": "concrete"
@@ -16680,9 +16680,9 @@ var VOCAB_DATA = [
         "phonetic": "/ʃelf ˈjuːnɪt/",
         "pos": "n.",
         "meaning": "组合搁架",
-        "example": "We need a shelf unit for the books.",
+        "example": "We need a shelf unit for all these books.",
         "root": "",
-        "exampleZh": "我们需要一个组合搁架放书。",
+        "exampleZh": "我们需要一个书架来放这些书。",
         "subcategory": "Living Room Deep",
         "subcategoryZh": "客厅深入",
         "wordType": "concrete"
@@ -16716,9 +16716,9 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkʊʃən ˈkʌvər/",
         "pos": "n.",
         "meaning": "靠垫套",
-        "example": "These cushion covers are so soft.",
+        "example": "These cushion covers need washing — they're covered in cat hair.",
         "root": "",
-        "exampleZh": "这些靠垫套真的很软。",
+        "exampleZh": "这些靠垫套该洗了——全是猫毛。",
         "subcategory": "Living Room Deep",
         "subcategoryZh": "客厅深入",
         "wordType": "concrete"
@@ -16732,7 +16732,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "在拐角处左转。"
       },
       {
         "en": "bolt",
@@ -16743,7 +16744,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用扳手拧紧螺栓。"
       },
       {
         "en": "spring",
@@ -16754,7 +16756,8 @@ var VOCAB_DATA = [
         "root": "spring(跳) → 弹跳的装置 → 弹簧",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "门里的弹簧坏了。"
       },
       {
         "en": "blade",
@@ -16765,106 +16768,116 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "刀刃很锋利。"
       },
       {
         "en": "grain",
         "phonetic": "/ɡreɪn/",
         "pos": "n.",
         "meaning": "❶ 谷物 ❷ 颗粒",
-        "example": "China is a major grain producer.",
+        "example": "Grain prices went up this year.",
         "root": "gran(种子) → 种子 → 谷物",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "今年谷物价格上涨了。"
       },
       {
         "en": "bean",
         "phonetic": "/biːn/",
         "pos": "n.",
         "meaning": "豆子、豆类",
-        "example": "Beans are rich in protein.",
+        "example": "Beans are a great source of protein.",
         "root": "",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "豆类是很好的蛋白质来源。"
       },
       {
         "en": "pickle",
         "phonetic": "/ˈpɪkəl/",
         "pos": "n.",
         "meaning": "泡菜、腌菜",
-        "example": "I love Chinese pickles.",
+        "example": "Try the pickles — they're really good.",
         "root": "pick(腌)+le → 腌制的菜 → 泡菜",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "试试这些泡菜——真的很好吃。"
       },
       {
         "en": "roast",
         "phonetic": "/roʊst/",
         "pos": "n.",
         "meaning": "烤肉、烤菜",
-        "example": "We had a roast for dinner.",
+        "example": "I made a roast for Sunday dinner.",
         "root": "",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我做了一顿烤肉当周日晚餐。"
       },
       {
         "en": "stew",
         "phonetic": "/stuː/",
         "pos": "n.",
         "meaning": "炖菜、炖汤",
-        "example": "I made a beef stew.",
+        "example": "This beef stew is delicious — who made it?",
         "root": "",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "这道炖牛肉太好吃——谁做的？"
       },
       {
         "en": "curry",
         "phonetic": "/ˈkʌri/",
         "pos": "n.",
         "meaning": "咖喱",
-        "example": "I love chicken curry.",
+        "example": "Let's order curry tonight — I'm craving it.",
         "root": "",
         "subcategory": "Food & Drink Deep",
         "subcategoryZh": "饮食补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "今晚叫咖喱吧——我馋了。"
       },
       {
         "en": "lid",
         "phonetic": "/lɪd/",
         "pos": "n.",
         "meaning": "盖子",
-        "example": "Put the lid on the pot.",
+        "example": "Put the lid on so it doesn't spill.",
         "root": "",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "盖上盖子别洒了。"
       },
       {
         "en": "tongs",
         "phonetic": "/tɒŋz/",
         "pos": "n.",
         "meaning": "夹子、钳子",
-        "example": "Use tongs to pick up the hot food.",
+        "example": "Use tongs to grab the hot coals.",
         "root": "",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用夹子夹热炭。"
       },
       {
         "en": "freezer",
         "phonetic": "/ˈfriːzər/",
         "pos": "n.",
         "meaning": "冰柜、冷冻箱",
-        "example": "Put the meat in the freezer.",
+        "example": "Put the ice cream in the freezer.",
         "root": "freeze(冷冻)+er → 冷冻的箱子 → 冰柜",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把冰淇淋放进冰柜里。"
       },
       {
         "en": "basin",
@@ -16875,95 +16888,104 @@ var VOCAB_DATA = [
         "root": "bas(底) → 有底的容器 → 盆",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "在水盆里洗手。"
       },
       {
         "en": "shelf",
         "phonetic": "/ʃelf/",
         "pos": "n.",
         "meaning": "架子、搁板",
-        "example": "Put the books on the shelf.",
+        "example": "Move the books to the top shelf.",
         "root": "skelf(木板) → 木板 → 架子",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把书移到最上面的架子上。"
       },
       {
         "en": "cabinet",
         "phonetic": "/ˈkæbɪnət/",
         "pos": "n.",
         "meaning": "柜子、橱柜",
-        "example": "The files are in the cabinet.",
+        "example": "Lock the cabinet before you leave.",
         "root": "cabin(小屋) → 小屋状的 → 柜子",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "离开前锁好柜子。"
       },
       {
         "en": "box",
         "phonetic": "/bɒks/",
         "pos": "n./v.",
         "meaning": "❶n. 盒子、箱子 ❷n. 包厢（剧院/体育场的） ❸v. 拳击",
-        "example": "Put it in the box.",
+        "example": "Pack everything in the box.",
         "root": "",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把所有东西装进箱子里。"
       },
       {
         "en": "bag",
         "phonetic": "/bæɡ/",
         "pos": "n.",
         "meaning": "袋子、包",
-        "example": "Put it in the bag.",
+        "example": "I forgot my bag at home.",
         "root": "",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我把包忘在家里了。"
       },
       {
         "en": "drain",
         "phonetic": "/dreɪn/",
         "pos": "n.",
         "meaning": "排水口、下水道",
-        "example": "The drain is blocked.",
+        "example": "The drain is clogged — call a plumber.",
         "root": "drain(干) → 让水干掉 → 排水口",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "下水道堵了——叫水管工来。"
       },
       {
         "en": "filter",
         "phonetic": "/ˈfɪltər/",
         "pos": "n.",
         "meaning": "过滤器、滤网",
-        "example": "Change the water filter.",
+        "example": "Change the water filter every three months.",
         "root": "filtr(毛毡) → 用毛毡过滤 → 过滤器",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "每三个月换一次水过滤器。"
       },
       {
         "en": "bulb",
         "phonetic": "/bʌlb/",
         "pos": "n.",
         "meaning": "灯泡",
-        "example": "The bulb needs replacing.",
+        "example": "The bulb needs replacing — it keeps flickering.",
         "root": "bulb(球) → 球形的 → 灯泡",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "灯泡该换了——一直在闪。"
       },
       {
         "en": "coin",
         "phonetic": "/kɔɪn/",
         "pos": "n.",
         "meaning": "硬币",
-        "example": "I have a few coins left.",
+        "example": "I only have a few coins left in my pocket.",
         "root": "",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我口袋里只剩几枚硬币了。"
       },
       {
         "en": "dustpan",
@@ -16974,392 +16996,428 @@ var VOCAB_DATA = [
         "root": "dust(灰尘)+pan(盘) → 灰尘盘 → 簸箕",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用簸箕把灰尘扫起来。"
       },
       {
         "en": "trash",
         "phonetic": "/træʃ/",
         "pos": "n.",
         "meaning": "垃圾",
-        "example": "Put the trash in the bin.",
+        "example": "Take out the trash before you go.",
         "root": "",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "出门前把垃圾拿出去。"
       },
       {
         "en": "hook",
         "phonetic": "/hʊk/",
         "pos": "n.",
         "meaning": "钩子、挂钩",
-        "example": "Hang your coat on the hook.",
+        "example": "Hang your coat on the hook by the door.",
         "root": "",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把外套挂在门旁边的挂钩上。"
       },
       {
         "en": "string",
         "phonetic": "/strɪŋ/",
         "pos": "n.",
         "meaning": "绳子、线",
-        "example": "Tie it with a string.",
+        "example": "Tie it with a piece of string.",
         "root": "",
         "subcategory": "Household Deep",
         "subcategoryZh": "家居补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用一根绳子绑起来。"
       },
       {
         "en": "jaw",
         "phonetic": "/dʒɔː/",
         "pos": "n.",
         "meaning": "下巴、下颌",
-        "example": "He has a strong jaw.",
+        "example": "He broke his jaw in a fight.",
         "root": "",
         "subcategory": "Body Deep",
         "subcategoryZh": "身体补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "他在打架中下巴骨折了。"
       },
       {
         "en": "crow",
         "phonetic": "/kroʊ/",
         "pos": "n.",
         "meaning": "乌鸦",
-        "example": "A crow sat on the fence.",
+        "example": "A crow was sitting on the fence this morning.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "今天早上一只乌鸦坐在围栏上。"
       },
       {
         "en": "lobster",
         "phonetic": "/ˈlɒbstər/",
         "pos": "n.",
         "meaning": "龙虾",
-        "example": "We ordered lobster at the restaurant.",
+        "example": "We ordered lobster — it was amazing.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我们点了龙虾——太棒了。"
       },
       {
         "en": "seal",
         "phonetic": "/siːl/",
         "pos": "n.",
         "meaning": "❶ 海豹 ❷ 封印",
-        "example": "Seals swim in the cold ocean.",
+        "example": "Seals love swimming in cold water.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "海豹喜欢在冷水中游泳。"
       },
       {
         "en": "camel",
         "phonetic": "/ˈkæməl/",
         "pos": "n.",
         "meaning": "骆驼",
-        "example": "Camels live in the desert.",
+        "example": "Camels can go days without water.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "骆驼可以好几天不喝水。"
       },
       {
         "en": "giraffe",
         "phonetic": "/dʒɪˈræf/",
         "pos": "n.",
         "meaning": "长颈鹿",
-        "example": "Giraffes have very long necks.",
+        "example": "Giraffes are the tallest animals on land.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "长颈鹿是陆地上最高的动物。"
       },
       {
         "en": "gorilla",
         "phonetic": "/ɡəˈrɪlə/",
         "pos": "n.",
         "meaning": "大猩猩",
-        "example": "Gorillas are the largest primates.",
+        "example": "Gorillas live in the forests of Africa.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "大猩猩生活在非洲的森林里。"
       },
       {
         "en": "crocodile",
         "phonetic": "/ˈkrɒkədaɪl/",
         "pos": "n.",
         "meaning": "鳄鱼",
-        "example": "Crocodiles live near rivers.",
+        "example": "Crocodiles can be found near rivers and lakes.",
         "root": "croco(虫)+deilos(怕) → 怕虫的 → 鳄鱼(讽刺)",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "鳄鱼可以在河流和湖泊附近找到。"
       },
       {
         "en": "salmon",
         "phonetic": "/ˈsæmən/",
         "pos": "n.",
         "meaning": "三文鱼、鲑鱼",
-        "example": "Grilled salmon is delicious.",
+        "example": "I had grilled salmon for dinner last night.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "昨晚我吃了烤三文鱼。"
       },
       {
         "en": "squid",
         "phonetic": "/skwɪd/",
         "pos": "n.",
         "meaning": "鱿鱼",
-        "example": "Fried squid is delicious.",
+        "example": "Fried squid is really popular here.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "炸鱿鱼在这里很受欢迎。"
       },
       {
         "en": "snail",
         "phonetic": "/sneɪl/",
         "pos": "n.",
         "meaning": "蜗牛",
-        "example": "The snail moves very slowly.",
+        "example": "The snail crawled across the garden.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "蜗牛爬过了花园。"
       },
       {
         "en": "lizard",
         "phonetic": "/ˈlɪzərd/",
         "pos": "n.",
         "meaning": "蜥蜴",
-        "example": "A lizard ran across the wall.",
+        "example": "A lizard ran across the wall and disappeared.",
         "root": "",
         "subcategory": "Animals Deep",
         "subcategoryZh": "动物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "一只蜥蜴跑过墙壁消失了。"
       },
       {
         "en": "tunnel",
         "phonetic": "/ˈtʌnəl/",
         "pos": "n.",
         "meaning": "隧道",
-        "example": "The train goes through the tunnel.",
+        "example": "The tunnel goes under the mountain.",
         "root": "",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "隧道穿过山下。"
       },
       {
         "en": "scooter",
         "phonetic": "/ˈskuːtər/",
         "pos": "n.",
         "meaning": "滑板车、小摩托",
-        "example": "Kids ride scooters in the park.",
+        "example": "Kids ride scooters in the park all the time.",
         "root": "",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "孩子们总是在公园里骑滑板车。"
       },
       {
         "en": "tram",
         "phonetic": "/træm/",
         "pos": "n.",
         "meaning": "有轨电车",
-        "example": "Take the tram to the city center.",
+        "example": "Hop on the tram — it goes straight to downtown.",
         "root": "",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "跳上有轨电车——它直达市中心。"
       },
       {
         "en": "dashboard",
         "phonetic": "/ˈdæʃbɔːrd/",
         "pos": "n.",
         "meaning": "仪表盘",
-        "example": "Check the dashboard for warnings.",
+        "example": "Check the dashboard — there's a warning light on.",
         "root": "dash(快速)+board(板) → 信息显示板 → 仪表盘",
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "看仪表盘——有个警告灯亮了。"
       },
       {
         "en": "chalk",
         "phonetic": "/tʃɒk/",
         "pos": "n.",
         "meaning": "粉笔",
-        "example": "Write on the board with chalk.",
+        "example": "Write your answer on the board with chalk.",
         "root": "calx(石灰) → 石灰制的 → 粉笔",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用粉笔在板上写答案。"
       },
       {
         "en": "staple",
         "phonetic": "/ˈsteɪpəl/",
         "pos": "n.",
         "meaning": "❶ 订书钉 ❷ 主要产品",
-        "example": "Use a staple to bind the pages.",
+        "example": "Put a staple in the corner to hold them together.",
         "root": "",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "在角上钉一个订书钉把它们固定住。"
       },
       {
         "en": "clip",
         "phonetic": "/klɪp/",
         "pos": "n.",
         "meaning": "❶ 夹子 ❷ 回形针",
-        "example": "Hold the papers with a clip.",
+        "example": "Hold the papers together with a clip.",
         "root": "",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用夹子把纸夹在一起。"
       },
       {
         "en": "pin",
         "phonetic": "/pɪn/",
         "pos": "n.",
         "meaning": "❶ 针、别针 ❷ 图钉",
-        "example": "Pin the note to the board.",
+        "example": "Pin the note to the bulletin board.",
         "root": "",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把通知钉到公告栏上。"
       },
       {
         "en": "crayon",
         "phonetic": "/ˈkreɪən/",
         "pos": "n.",
         "meaning": "蜡笔",
-        "example": "Kids love drawing with crayons.",
+        "example": "Kids love drawing with crayons — it's so colorful.",
         "root": "craie(蜡) → 蜡制的笔 → 蜡笔",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "孩子们喜欢用蜡笔画画——颜色很丰富。"
       },
       {
         "en": "parcel",
         "phonetic": "/ˈpɑːrsəl/",
         "pos": "n.",
         "meaning": "包裹、邮包",
-        "example": "I received a parcel today.",
+        "example": "I got a parcel in the mail today.",
         "root": "part(部分) → 分开的一份 → 包裹",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "今天收到了一个包裹。"
       },
       {
         "en": "package",
         "phonetic": "/ˈpækɪdʒ/",
         "pos": "n.",
         "meaning": "❶ 包裹 ❷ 包装",
-        "example": "The package arrived yesterday.",
+        "example": "The package from Amazon arrived this morning.",
         "root": "pack(打包)+age → 打包的东西 → 包裹",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "亚马逊的包裹今天早上到了。"
       },
       {
         "en": "badge",
         "phonetic": "/bædʒ/",
         "pos": "n.",
         "meaning": "徽章、胸牌",
-        "example": "Employees wear a badge at work.",
+        "example": "All employees must wear a badge at work.",
         "root": "",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "所有员工上班必须戴胸牌。"
       },
       {
         "en": "ink",
         "phonetic": "/ɪŋk/",
         "pos": "n.",
         "meaning": "墨水、油墨",
-        "example": "The pen has no ink.",
+        "example": "This pen's out of ink — can I borrow yours?",
         "root": "",
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "这支笔没墨了——能借你的吗？"
       },
       {
         "en": "sock",
         "phonetic": "/sɒk/",
         "pos": "n.",
         "meaning": "袜子",
-        "example": "I lost one sock.",
+        "example": "I lost one sock — where did it go?",
         "root": "",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我丢了一只袜子——去哪了？"
       },
       {
         "en": "glove",
         "phonetic": "/ɡlʌv/",
         "pos": "n.",
         "meaning": "手套",
-        "example": "Wear gloves in winter.",
+        "example": "Put on your gloves — it's freezing out there.",
         "root": "",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "戴上手套——外面冻死了。"
       },
       {
         "en": "boot",
         "phonetic": "/buːt/",
         "pos": "n.",
         "meaning": "靴子",
-        "example": "Hiking boots are heavy.",
+        "example": "These hiking boots are really comfortable.",
         "root": "",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "这些登山靴真的很舒服。"
       },
       {
         "en": "vest",
         "phonetic": "/vest/",
         "pos": "n.",
         "meaning": "背心、马甲",
-        "example": "He wore a vest under his jacket.",
+        "example": "He wore a vest under his suit jacket.",
         "root": "",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "他在西装外套下面穿了马甲。"
       },
       {
         "en": "sneaker",
         "phonetic": "/ˈsniːkər/",
         "pos": "n.",
         "meaning": "运动鞋",
-        "example": "I bought new sneakers for running.",
+        "example": "I need new sneakers — these are worn out.",
         "root": "sneak(悄悄) → 悄悄走的鞋 → 运动鞋",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我需要新运动鞋——这些磨坏了。"
       },
       {
         "en": "slipper",
         "phonetic": "/ˈslɪpər/",
         "pos": "n.",
         "meaning": "拖鞋",
-        "example": "Wear slippers at home.",
+        "example": "I always wear slippers around the house.",
         "root": "slip(滑)+er → 滑进去的鞋 → 拖鞋",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我在家里总是穿拖鞋。"
       },
       {
         "en": "sandal",
         "phonetic": "/ˈsændəl/",
         "pos": "n.",
         "meaning": "凉鞋",
-        "example": "I wear sandals in summer.",
+        "example": "I wear sandals when it's hot out.",
         "root": "",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "天热的时候我穿凉鞋。"
       },
       {
         "en": "shawl",
@@ -17370,128 +17428,140 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "Clothing Deep",
         "subcategoryZh": "服装补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "她在肩上围了一条披肩。"
       },
       {
         "en": "wave",
         "phonetic": "/weɪv/",
         "pos": "n.",
         "meaning": "波浪",
-        "example": "The waves crashed on the shore.",
+        "example": "The waves crashed against the rocks.",
         "root": "waf(波动) → 波动 → 波浪",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "波浪撞击着岩石。"
       },
       {
         "en": "tide",
         "phonetic": "/taɪd/",
         "pos": "n.",
         "meaning": "潮汐",
-        "example": "The tide is coming in.",
+        "example": "The tide's coming in — we should move back.",
         "root": "tid(时间) → 随时间变化的水 → 潮汐",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "潮水涨了——我们该往后退。"
       },
       {
         "en": "dew",
         "phonetic": "/djuː/",
         "pos": "n.",
         "meaning": "露水",
-        "example": "Dew drops on the grass in the morning.",
+        "example": "The grass was covered in dew this morning.",
         "root": "",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "今天早上草上满是露水。"
       },
       {
         "en": "magnet",
         "phonetic": "/ˈmæɡnɪt/",
         "pos": "n.",
         "meaning": "磁铁",
-        "example": "A magnet attracts iron.",
+        "example": "A magnet sticks to anything made of iron.",
         "root": "Magnesia(马格尼西亚) → 该地发现的矿石 → 磁铁",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "磁铁会吸住任何铁制品。"
       },
       {
         "en": "crystal",
         "phonetic": "/ˈkrɪstəl/",
         "pos": "n.",
         "meaning": "❶ 水晶 ❷ 结晶",
-        "example": "The crystal shines in the light.",
+        "example": "The crystal chandelier looks beautiful.",
         "root": "krystallos(冰) → 冰样的透明体 → 水晶",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "水晶吊灯看起来很漂亮。"
       },
       {
         "en": "rainbow",
         "phonetic": "/ˈreɪnboʊ/",
         "pos": "n.",
         "meaning": "彩虹",
-        "example": "A rainbow appeared after the rain.",
+        "example": "We saw a rainbow after the storm.",
         "root": "rain(雨)+bow(弓) → 雨后的弓 → 彩虹",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "暴风雨后我们看到了彩虹。"
       },
       {
         "en": "pole",
         "phonetic": "/poʊl/",
         "pos": "n.",
         "meaning": "❶ 杆、柱 ❷ 极点",
-        "example": "The flag hangs on a pole.",
+        "example": "The flagpole is right in front of the school.",
         "root": "",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "旗杆就在学校前面。"
       },
       {
         "en": "fence",
         "phonetic": "/fens/",
         "pos": "n.",
         "meaning": "栅栏、围墙",
-        "example": "The fence keeps the dog in.",
+        "example": "The fence keeps the dog from running away.",
         "root": "defend(防御) → 防御的围栏 → 栅栏",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "栅栏防止狗跑掉。"
       },
       {
         "en": "hedge",
         "phonetic": "/hedʒ/",
         "pos": "n.",
         "meaning": "灌木篱笆",
-        "example": "The hedge borders the garden.",
+        "example": "The hedge around the yard needs trimming.",
         "root": "",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "院子周围的灌木篱笆需要修剪了。"
       },
       {
         "en": "lawn",
         "phonetic": "/lɔːn/",
         "pos": "n.",
         "meaning": "草坪",
-        "example": "The lawn needs mowing.",
+        "example": "The lawn needs mowing — it's getting long.",
         "root": "",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "草坪需要修剪了——草太长了。"
       },
       {
         "en": "yard",
         "phonetic": "/jɑːrd/",
         "pos": "n.",
         "meaning": "院子、庭院",
-        "example": "The kids play in the yard.",
+        "example": "The kids are playing in the backyard.",
         "root": "",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "孩子们在后院玩耍。"
       },
       {
         "en": "flag",
@@ -17502,161 +17572,176 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "旗帜是红白相间的。"
       },
       {
         "en": "cone",
         "phonetic": "/koʊn/",
         "pos": "n.",
         "meaning": "❶ 圆锥 ❷ 交通锥",
-        "example": "The road cone marks the work zone.",
+        "example": "Move the cone — they're painting the road.",
         "root": "konos(尖) → 尖形物 → 圆锥",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把交通锥移开——他们在刷路。"
       },
       {
         "en": "hydrant",
         "phonetic": "/ˈhaɪdrənt/",
         "pos": "n.",
         "meaning": "消防栓",
-        "example": "Don't park near the fire hydrant.",
+        "example": "Don't park near the fire hydrant — you'll get a ticket.",
         "root": "hydr(水)+ant → 放水的装置 → 消防栓",
         "subcategory": "Street & City Deep",
         "subcategoryZh": "街道补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "别停在消防栓旁边——会被罚款。"
       },
       {
         "en": "voucher",
         "phonetic": "/ˈvaʊtʃər/",
         "pos": "n.",
         "meaning": "代金券、凭证",
-        "example": "Use this voucher for a discount.",
+        "example": "Use this voucher for 20% off your next purchase.",
         "root": "vouch(担保)+er → 担保的凭据 → 代金券",
         "subcategory": "Shopping",
         "subcategoryZh": "购物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用这张代金券下次购物打八折。"
       },
       {
         "en": "wrapper",
         "phonetic": "/ˈræpər/",
         "pos": "n.",
         "meaning": "包装纸",
-        "example": "Remove the wrapper before eating.",
+        "example": "Take off the wrapper before you eat it.",
         "root": "wrap(包)+er → 包的东西 → 包装纸",
         "subcategory": "Shopping",
         "subcategoryZh": "购物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "吃之前把包装纸撕掉。"
       },
       {
         "en": "carton",
         "phonetic": "/ˈkɑːrtən/",
         "pos": "n.",
         "meaning": "纸箱、硬纸盒",
-        "example": "The milk comes in a carton.",
+        "example": "Grab a carton of milk from the fridge.",
         "root": "cart(纸)+on → 纥纸盒",
         "subcategory": "Shopping",
         "subcategoryZh": "购物补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "从冰箱拿一盒牛奶。"
       },
       {
         "en": "needle",
         "phonetic": "/ˈniːdəl/",
         "pos": "n.",
         "meaning": "针、注射针",
-        "example": "The needle is very thin.",
+        "example": "The needle on the sewing machine is broken.",
         "root": "",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医药补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "缝纫机上的针坏了。"
       },
       {
         "en": "crutch",
         "phonetic": "/krʌtʃ/",
         "pos": "n.",
         "meaning": "拐杖",
-        "example": "He walks with a crutch.",
+        "example": "He's been on crutches for two weeks now.",
         "root": "",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医药补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "他拄拐杖已经两周了。"
       },
       {
         "en": "stretcher",
         "phonetic": "/ˈstretʃər/",
         "pos": "n.",
         "meaning": "担架",
-        "example": "Put the patient on the stretcher.",
+        "example": "They carried him out on a stretcher.",
         "root": "stretch(伸展)+er → 伸展的床 → 担架",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医药补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "他们用担架把他抬出来了。"
       },
       {
         "en": "mask",
         "phonetic": "/mæsk/",
         "pos": "n.",
         "meaning": "❶ 口罩 ❷ 面具",
-        "example": "Wear a mask in the hospital.",
+        "example": "You should wear a mask in crowded places.",
         "root": "",
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医药补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "在人多的地方应该戴口罩。"
       },
       {
         "en": "remote",
         "phonetic": "/rɪˈmoʊt/",
         "pos": "n.",
         "meaning": "遥控器",
-        "example": "Where's the TV remote?",
+        "example": "Pass me the remote — I want to change the channel.",
         "root": "re(远)+mote(移) → 远距操控 → 遥控器",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把遥控器给我——我想换频道。"
       },
       {
         "en": "frame",
         "phonetic": "/freɪm/",
         "pos": "n.",
         "meaning": "❶ 框架 ❷ 边框",
-        "example": "Put the photo in a frame.",
+        "example": "Put the photo in a frame and hang it on the wall.",
         "root": "",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把照片放进框里挂到墙上。"
       },
       {
         "en": "pendant",
         "phonetic": "/ˈpendənt/",
         "pos": "n.",
         "meaning": "吊坠",
-        "example": "She wore a gold pendant.",
+        "example": "She wore a gold pendant on a chain around her neck.",
         "root": "pend(悬挂)+ent → 悬挂的饰品 → 吊坠",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "她脖子上戴着一条金吊坠项链。"
       },
       {
         "en": "keychain",
         "phonetic": "/ˈkiːtʃeɪn/",
         "pos": "n.",
         "meaning": "钥匙链",
-        "example": "My keys are on a keychain.",
+        "example": "I got a new keychain — it has my name on it.",
         "root": "key(钥匙)+chain(链) → 钥匙链",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我买了个新钥匙链——上面有我的名字。"
       },
       {
         "en": "card",
         "phonetic": "/kɑːrd/",
         "pos": "n.",
         "meaning": "❶ 卡片 ❷ 纸牌",
-        "example": "We played cards last night.",
+        "example": "We played cards all night — it was so fun.",
         "root": "",
         "subcategory": "Personal Items",
         "subcategoryZh": "个人补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我们打了一整晚牌——太好玩了。"
       },
       {
         "en": "hoop",
@@ -17667,84 +17752,92 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把球投进篮圈里。"
       },
       {
         "en": "puck",
         "phonetic": "/pʌk/",
         "pos": "n.",
         "meaning": "冰球",
-        "example": "Hit the puck with the stick.",
+        "example": "The puck slid across the ice.",
         "root": "",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "冰球滑过冰面。"
       },
       {
         "en": "jersey",
         "phonetic": "/ˈdʒɜːrzi/",
         "pos": "n.",
         "meaning": "运动衫",
-        "example": "He wears his team jersey.",
+        "example": "He's wearing his team jersey today.",
         "root": "Jersey(泽西岛) → 该岛产的毛衫 → 运动衫",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "他今天穿了他的球队运动衫。"
       },
       {
         "en": "router",
         "phonetic": "/ˈruːtər/",
         "pos": "n.",
         "meaning": "路由器",
-        "example": "Restart the router if WiFi is slow.",
+        "example": "Restart the router — the WiFi keeps dropping.",
         "root": "route(路线)+er → 分配路线的 → 路由器",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "重启路由器——WiFi老是断。"
       },
       {
         "en": "cable",
         "phonetic": "/ˈkeɪbəl/",
         "pos": "n.",
         "meaning": "电缆、线缆",
-        "example": "Connect the cable to the monitor.",
+        "example": "Plug the cable into the monitor.",
         "root": "cap(绳索) → 绳索 → cable",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "把线缆插到显示器上。"
       },
       {
         "en": "chip",
         "phonetic": "/tʃɪp/",
         "pos": "n.",
         "meaning": "❶ 芯片 ❷ 碎片",
-        "example": "The chip processes data.",
+        "example": "The chip in this phone is really fast.",
         "root": "cipp(碎片) → 小片 → 芯片",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "这部手机的芯片非常快。"
       },
       {
         "en": "sensor",
         "phonetic": "/ˈsensər/",
         "pos": "n.",
         "meaning": "传感器",
-        "example": "The sensor detects motion.",
+        "example": "The motion sensor turns on the light automatically.",
         "root": "sense(感知)+or → 感知的装置 → 传感器",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "运动传感器会自动开灯。"
       },
       {
         "en": "modem",
         "phonetic": "/ˈmoʊdəm/",
         "pos": "n.",
         "meaning": "调制解调器",
-        "example": "The modem connects to the internet.",
+        "example": "The modem isn't working — call the provider.",
         "root": "mo(dulator)+dem(odulator) → 调制解调 → modem",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "调制解调器不工作——打电话给运营商。"
       },
       {
         "en": "antenna",
@@ -17755,40 +17848,44 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "Digital Life",
         "subcategoryZh": "数字补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "调整天线以获取更好的信号。"
       },
       {
         "en": "armchair",
         "phonetic": "/ˈɑːrtʃer/",
         "pos": "n.",
         "meaning": "扶手椅",
-        "example": "Sit in the armchair.",
+        "example": "This armchair is so comfortable — I love sitting in it.",
         "root": "arm(扶手)+chair(椅) → 有扶手的椅 → 扶手椅",
         "subcategory": "Living Room Deep",
         "subcategoryZh": "客厅补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "这把扶手椅太舒服了——我喜欢坐在这里。"
       },
       {
         "en": "bookcase",
         "phonetic": "/ˈbʊkkeɪs/",
         "pos": "n.",
         "meaning": "书柜",
-        "example": "The bookcase is full of books.",
+        "example": "I need a bigger bookcase — mine's overflowing.",
         "root": "book(书)+case(柜) → 书柜",
         "subcategory": "Living Room Deep",
         "subcategoryZh": "客厅补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "我需要一个更大的书柜——我的已经满了。"
       },
       {
         "en": "ice",
         "phonetic": "/aɪs/",
         "pos": "n.",
         "meaning": "冰",
-        "example": "The road is covered in ice.",
+        "example": "Be careful — the road's covered in ice.",
         "root": "",
         "subcategory": "Weather Details",
         "subcategoryZh": "天气补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "小心——路上全是冰。"
       },
       {
         "en": "mortar",
@@ -17799,7 +17896,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "在研钵里研磨香料。"
       },
       {
         "en": "pestle",
@@ -17810,7 +17908,8 @@ var VOCAB_DATA = [
         "root": "pest(捣)+le → 捣的工具 → 研杵",
         "subcategory": "Kitchen Deep",
         "subcategoryZh": "厨房补充",
-        "wordType": "concrete"
+        "wordType": "concrete",
+        "exampleZh": "用研杵捣碎草药。"
       }
     ],
     "name": "📖 名词500-第二波（具体385）"
@@ -18213,7 +18312,7 @@ var VOCAB_DATA = [
         "en": "sneeze",
         "phonetic": "/sniːz/",
         "pos": "n./v.",
-        "meaning": "打喷嚏",
+        "meaning": "❶v./n. 打喷嚏",
         "example": "Cover your mouth when you sneeze.",
         "root": "",
         "exampleZh": "打喷嚏时捂住嘴。",
@@ -19090,9 +19189,9 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈspleɪ/",
         "pos": "n./v.",
         "meaning": "❶n.展示、陈列 ❷v.展示",
-        "example": "The display looks really attractive.",
+        "example": "The store has a beautiful display of flowers by the entrance.",
         "root": "dis(分开)+play(玩) → 展开给人看 → 展示",
-        "exampleZh": "陈列看起来很吸引人。",
+        "exampleZh": "商店入口处有一个漂亮的花卉展示。",
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
         "wordType": "semi-concrete"
@@ -19106,7 +19205,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "坐在床边上。"
       },
       {
         "en": "mark",
@@ -19117,7 +19217,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "墙上有个痕迹。"
       },
       {
         "en": "piece",
@@ -19128,7 +19229,8 @@ var VOCAB_DATA = [
         "root": "pett(小片) → 一小片 → piece",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "给我一块蛋糕。"
       },
       {
         "en": "group",
@@ -19139,7 +19241,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "一群学生走过来了。"
       },
       {
         "en": "set",
@@ -19150,7 +19253,8 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "我买了一套新工具。"
       },
       {
         "en": "patch",
@@ -19161,106 +19265,116 @@ var VOCAB_DATA = [
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "这里有一小块草地。"
       },
       {
         "en": "stain",
         "phonetic": "/steɪn/",
         "pos": "n.",
         "meaning": "污渍、污点",
-        "example": "There's a stain on my shirt.",
+        "example": "There's a coffee stain on my shirt.",
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "我的衬衫上有咖啡渍。"
       },
       {
         "en": "scratch",
         "phonetic": "/skrætʃ/",
         "pos": "n.",
         "meaning": "❶ 刮痕 ❷ 抓",
-        "example": "The car has a scratch on the door.",
+        "example": "There's a scratch on the car door.",
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "车门上有一道刮痕。"
       },
       {
         "en": "crack",
         "phonetic": "/kræk/",
         "pos": "n.",
         "meaning": "❶ 裂缝 ❷ 破裂声",
-        "example": "There's a crack in the window.",
+        "example": "There's a crack in the window — we need to fix it.",
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "窗户上有一道裂缝——需要修一下。"
       },
       {
         "en": "hole",
         "phonetic": "/hoʊl/",
         "pos": "n.",
         "meaning": "洞、孔",
-        "example": "There's a hole in my sock.",
+        "example": "There's a hole in my sock — I need new ones.",
         "root": "",
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "我的袜子有个洞——需要新袜子了。"
       },
       {
         "en": "shadow",
         "phonetic": "/ˈʃædoʊ/",
         "pos": "n.",
         "meaning": "❶ 影子 ❷ 阴暗处",
-        "example": "My shadow follows me.",
+        "example": "The building cast a long shadow across the street.",
         "root": "sceadu(遮蔽) → 遮蔽光线 → 影子",
         "subcategory": "Nature Deep",
         "subcategoryZh": "自然补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "大楼在街上投下了长长的影子。"
       },
       {
         "en": "container",
         "phonetic": "/kənˈteɪnər/",
         "pos": "n.",
         "meaning": "容器",
-        "example": "Store food in a container.",
+        "example": "Store the leftovers in a container.",
         "root": "contain(包含)+er → 包含东西的 → 容器",
         "subcategory": "Shopping",
         "subcategoryZh": "购物补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "把剩菜放在容器里保存。"
       },
       {
         "en": "field",
         "phonetic": "/fiːld/",
         "pos": "n.",
         "meaning": "❶ 田地 ❷ 场地",
-        "example": "The kids play on the field.",
+        "example": "The kids are playing on the field.",
         "root": "",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "孩子们在场地里玩耍。"
       },
       {
         "en": "target",
         "phonetic": "/ˈtɑːrgɪt/",
         "pos": "n.",
         "meaning": "靶子、目标",
-        "example": "Aim at the target.",
+        "example": "Hit the target — you missed last time.",
         "root": "targ(边界) → 边界上的标志 → 靶子",
         "subcategory": "Sports & Fun Deep",
         "subcategoryZh": "运动补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "打靶心——上次你没命中。"
       },
       {
         "en": "stock",
         "phonetic": "/stɒk/",
         "pos": "n.",
         "meaning": "❶ 股票 ❷ 库存",
-        "example": "She bought some tech stocks.",
+        "example": "She invested in tech stocks last year.",
         "root": "stoc(树干) → 存储的基础 → 库存/股票",
         "subcategory": "Finance Daily",
         "subcategoryZh": "金融补充",
-        "wordType": "semi-concrete"
+        "wordType": "semi-concrete",
+        "exampleZh": "她去年投资了科技股票。"
       }
     ]
   }
