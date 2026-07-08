@@ -13174,7 +13174,8 @@ var VOCAB_DATA = [
         "nameZh": "天气细节",
         "isAbstractCategory": true
       }
-    ]
+    ],
+    "date": "🧠 抽象名词114"
   },
   {
     "date": "6/30",
