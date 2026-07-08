@@ -10140,134 +10140,8 @@ var VOCAB_DATA = [
     ]
   },
   {
-    "date": "6/30",
-    "label": "名词500-第二波",
-    "isNouns500": true,
-    "isNouns500V2": true,
-    "wordCount": 500,
-    "categories": [
-      {
-        "name": "High-Frequency Deep",
-        "nameZh": "高频核心",
-        "count": 43
-      },
-      {
-        "name": "Food & Drink Deep",
-        "nameZh": "饮食",
-        "count": 35
-      },
-      {
-        "name": "Nature Deep",
-        "nameZh": "自然",
-        "count": 32
-      },
-      {
-        "name": "Office & School Deep",
-        "nameZh": "办公学习",
-        "count": 27
-      },
-      {
-        "name": "Body Deep",
-        "nameZh": "身体",
-        "count": 26
-      },
-      {
-        "name": "Medicine & Health",
-        "nameZh": "医药健康",
-        "count": 25
-      },
-      {
-        "name": "Animals Deep",
-        "nameZh": "动物",
-        "count": 23
-      },
-      {
-        "name": "People Deep",
-        "nameZh": "人物",
-        "count": 23
-      },
-      {
-        "name": "Finance Daily",
-        "nameZh": "金融日常",
-        "count": 23
-      },
-      {
-        "name": "Sports & Fun Deep",
-        "nameZh": "运动娱乐",
-        "count": 22
-      },
-      {
-        "name": "Digital Life",
-        "nameZh": "数字生活",
-        "count": 21
-      },
-      {
-        "name": "Action Nouns Deep",
-        "nameZh": "行为名词",
-        "count": 22
-      },
-      {
-        "name": "Transport Deep",
-        "nameZh": "交通",
-        "count": 21
-      },
-      {
-        "name": "Society Deep",
-        "nameZh": "社会",
-        "count": 20
-      },
-      {
-        "name": "Emotions Deep",
-        "nameZh": "情感",
-        "count": 19
-      },
-      {
-        "name": "Street & City Deep",
-        "nameZh": "街道城市",
-        "count": 18
-      },
-      {
-        "name": "Shopping",
-        "nameZh": "购物",
-        "count": 18
-      },
-      {
-        "name": "Kitchen Deep",
-        "nameZh": "厨房",
-        "count": 17
-      },
-      {
-        "name": "Household Deep",
-        "nameZh": "家居",
-        "count": 17
-      },
-      {
-        "name": "Personal Items",
-        "nameZh": "个人物品",
-        "count": 17
-      },
-      {
-        "name": "Clothing Deep",
-        "nameZh": "服装",
-        "count": 16
-      },
-      {
-        "name": "Weather Details",
-        "nameZh": "天气细节",
-        "count": 8
-      },
-      {
-        "name": "Living Room Deep",
-        "nameZh": "客厅",
-        "count": 7
-      },
-      {
-        "name": "Abstract Nouns",
-        "nameZh": "抽象名词",
-        "count": 114,
-        "isAbstractCategory": true
-      }
-    ],
+    "name": "🧠 抽象名词114",
+    "isAbstractNouns": true,
     "words": [
       {
         "en": "fact",
@@ -10398,18 +10272,6 @@ var VOCAB_DATA = [
             }
           ]
         }
-      },
-      {
-        "en": "detail",
-        "phonetic": "/ˈdiːteɪl/",
-        "pos": "n.",
-        "meaning": "细节、详情",
-        "example": "Check the details before signing.",
-        "root": "de(分开)+tail(切) → 切分开的 → 细节",
-        "exampleZh": "签字前检查细节。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "concrete"
       },
       {
         "en": "evidence",
@@ -10750,18 +10612,6 @@ var VOCAB_DATA = [
         }
       },
       {
-        "en": "sample",
-        "phonetic": "/ˈsæmpəl/",
-        "pos": "n.",
-        "meaning": "样品、样本",
-        "example": "Try a free sample of the product.",
-        "root": "",
-        "exampleZh": "试试产品的免费样品。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "concrete"
-      },
-      {
         "en": "option",
         "phonetic": "/ˈɒpʃən/",
         "pos": "n.",
@@ -10838,54 +10688,6 @@ var VOCAB_DATA = [
             }
           ]
         }
-      },
-      {
-        "en": "surface",
-        "phonetic": "/ˈsɜːrfɪs/",
-        "pos": "n.",
-        "meaning": "表面、表层",
-        "example": "The surface of the table is smooth.",
-        "root": "sur(上)+face(面) → 上面的面 → 表面",
-        "exampleZh": "桌子表面很光滑。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "concrete"
-      },
-      {
-        "en": "layer",
-        "phonetic": "/ˈleɪər/",
-        "pos": "n.",
-        "meaning": "层、层次",
-        "example": "Add another layer of paint.",
-        "root": "lay(放)+er → 放上去的 → 层",
-        "exampleZh": "再加一层漆。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "concrete"
-      },
-      {
-        "en": "angle",
-        "phonetic": "/ˈæŋɡəl/",
-        "pos": "n.",
-        "meaning": "❶角度 ❷视角",
-        "example": "Look at it from a different angle.",
-        "root": "",
-        "exampleZh": "从不同角度看这个问题。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "concrete"
-      },
-      {
-        "en": "position",
-        "phonetic": "/pəˈzɪʃən/",
-        "pos": "n.",
-        "meaning": "❶位置 ❷职位 ❸立场",
-        "example": "What position are you applying for?",
-        "root": "pos(放)+ition → 放的地方 → 位置/职位",
-        "exampleZh": "你申请什么职位？",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "concrete"
       },
       {
         "en": "level",
@@ -10992,6 +10794,2585 @@ var VOCAB_DATA = [
         }
       },
       {
+        "en": "resource",
+        "phonetic": "/rɪˈsɔːrs/",
+        "pos": "n.",
+        "meaning": "资源",
+        "example": "Use online resources to learn more.",
+        "root": "re(回)+source(来源) → 回到来源 → 资源",
+        "exampleZh": "利用在线资源学习更多。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something useful that you can use to achieve a goal, like money, tools, or information",
+          "zh": "你可以用来实现目标的有用东西，如金钱、工具或信息",
+          "examples": [
+            {
+              "en": "We don't have enough resources to finish the project.",
+              "zh": "我们没有足够的资源完成这个项目。"
+            },
+            {
+              "en": "Natural resources like oil and water are limited.",
+              "zh": "像石油和水这样的自然资源是有限的。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "stream",
+        "phonetic": "/striːm/",
+        "pos": "n.",
+        "meaning": "小溪、溪流",
+        "example": "We sat by the stream and relaxed.",
+        "root": "",
+        "exampleZh": "我们坐在溪边放松。",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a small narrow river; also a continuous flow of something",
+          "zh": "一条小窄河；也是某事物的持续流动",
+          "examples": [
+            {
+              "en": "We sat by the stream and relaxed.",
+              "zh": "我们坐在小溪旁边放松。"
+            },
+            {
+              "en": "A stream of people entered the building.",
+              "zh": "一股人流进入了大楼。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "horizon",
+        "phonetic": "/həˈraɪzən/",
+        "pos": "n.",
+        "meaning": "地平线",
+        "example": "The sun set below the horizon.",
+        "root": "horiz(边界)+on → 天地交界线 → 地平线",
+        "exampleZh": "太阳落到地平线以下。",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the line where the earth or sea seems to meet the sky; also the limit of what you can see or know",
+          "zh": "大地或海洋似乎与天空相接的线；也是你能看到或知道的极限",
+          "examples": [
+            {
+              "en": "The sun set below the horizon.",
+              "zh": "太阳落到了地平线以下。"
+            },
+            {
+              "en": "Travel broadens your horizons.",
+              "zh": "旅行拓宽你的视野。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "schedule",
+        "phonetic": "/ˈskedʒuːl/",
+        "pos": "n./v.",
+        "meaning": "❶n.日程表、时间表 ❷v.安排、排定",
+        "example": "Check the schedule for tomorrow.",
+        "root": "",
+        "exampleZh": "查看明天的日程表。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a plan that lists when events or tasks will happen",
+          "zh": "列出事件或任务何时发生的计划",
+          "examples": [
+            {
+              "en": "My schedule is very busy this week.",
+              "zh": "我这周的日程很忙。"
+            },
+            {
+              "en": "The flight was delayed, so the schedule changed.",
+              "zh": "航班延误了，所以日程改变了。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "syllabus",
+        "phonetic": "/ˈsɪləbəs/",
+        "pos": "n.",
+        "meaning": "课程大纲",
+        "example": "Read the syllabus before the first class.",
+        "root": "",
+        "exampleZh": "第一节课前先看课程大纲。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a document that lists what will be taught in a course",
+          "zh": "列出课程中将教授什么内容的文件",
+          "examples": [
+            {
+              "en": "Check the syllabus to see what topics we'll cover.",
+              "zh": "查看课程大纲看看我们会涵盖哪些主题。"
+            },
+            {
+              "en": "The syllabus says the exam is on Friday.",
+              "zh": "大纲上说考试在周五。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "presentation",
+        "phonetic": "/ˌprɪzenˈteɪʃən/",
+        "pos": "n.",
+        "meaning": "❶演示、报告 ❷展示",
+        "example": "She gave a great presentation.",
+        "root": "",
+        "exampleZh": "她做了一个很棒的演示。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a talk or display given to an audience to share information or ideas",
+          "zh": "向听众分享信息或想法的演讲或展示",
+          "examples": [
+            {
+              "en": "She gave a great presentation at the meeting.",
+              "zh": "她在会议上做了一个精彩的演讲。"
+            },
+            {
+              "en": "I need to prepare a presentation for tomorrow.",
+              "zh": "我需要为明天准备一个演示。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "document",
+        "phonetic": "/ˈdɒkjʊmənt/",
+        "pos": "n.",
+        "meaning": "文件、文档",
+        "example": "Save the document before closing.",
+        "root": "doc(教)+ment → 教导的记录 → 文件",
+        "exampleZh": "关闭前保存文档。",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公学习深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a piece of writing or record that provides information or proof",
+          "zh": "提供信息或证明的文字或记录",
+          "examples": [
+            {
+              "en": "Please sign this document.",
+              "zh": "请签署这份文件。"
+            },
+            {
+              "en": "All important documents should be kept safe.",
+              "zh": "所有重要文件应该妥善保管。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "dose",
+        "phonetic": "/doʊs/",
+        "pos": "n.",
+        "meaning": "剂量、一剂",
+        "example": "Take the correct dose of medicine.",
+        "root": "",
+        "exampleZh": "按正确剂量服药。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a measured amount of medicine taken at one time",
+          "zh": "一次服用的定量药物",
+          "examples": [
+            {
+              "en": "Take one dose every eight hours.",
+              "zh": "每八小时服用一剂。"
+            },
+            {
+              "en": "A high dose can be dangerous.",
+              "zh": "高剂量可能有危险。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "symptom",
+        "phonetic": "/ˈsɪmptəm/",
+        "pos": "n.",
+        "meaning": "症状",
+        "example": "What are your symptoms?",
+        "root": "sym(共同)+ptom(落下) → 与疾病一起出现的 → 症状",
+        "exampleZh": "你有什么症状？",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a sign that shows you have a disease or condition",
+          "zh": "表明你有疾病或状况的迹象",
+          "examples": [
+            {
+              "en": "Fever is a common symptom of flu.",
+              "zh": "发烧是流感的常见症状。"
+            },
+            {
+              "en": "What are the symptoms of this illness?",
+              "zh": "这种疾病的症状是什么？"
+            }
+          ]
+        }
+      },
+      {
+        "en": "fever",
+        "phonetic": "/ˈfiːvər/",
+        "pos": "n.",
+        "meaning": "发烧、发热",
+        "example": "She has a high fever.",
+        "root": "",
+        "exampleZh": "她发烧温度很高。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a condition where your body temperature is higher than normal, usually because of illness",
+          "zh": "你的体温比正常高的状况，通常因为生病",
+          "examples": [
+            {
+              "en": "She has a high fever and needs to rest.",
+              "zh": "她发高烧，需要休息。"
+            },
+            {
+              "en": "The fever went down after taking medicine.",
+              "zh": "吃药后烧退了。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "cold",
+        "phonetic": "/koʊld/",
+        "pos": "n./adj.",
+        "meaning": "❶n.感冒 ❷adj.冷的",
+        "example": "I caught a cold last week.",
+        "root": "",
+        "exampleZh": "上周我感冒了。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a common mild illness that makes you sneeze, cough, and feel unwell",
+          "zh": "一种常见的轻微疾病，让你打喷嚏、咳嗽和感觉不舒服",
+          "examples": [
+            {
+              "en": "I caught a cold last week.",
+              "zh": "我上周感冒了。"
+            },
+            {
+              "en": "She stayed home because of a bad cold.",
+              "zh": "她因为重感冒待在家里。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "allergy",
+        "phonetic": "/ˈælərdʒi/",
+        "pos": "n.",
+        "meaning": "过敏",
+        "example": "I have an allergy to peanuts.",
+        "root": "all(其他)+ergy(反应) → 对其他东西的反应 → 过敏",
+        "exampleZh": "我对花生过敏。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a condition where your body reacts badly to something that is harmless to most people",
+          "zh": "你的身体对大多数人都无害的东西产生不良反应的状况",
+          "examples": [
+            {
+              "en": "He has an allergy to peanuts.",
+              "zh": "他对花生过敏。"
+            },
+            {
+              "en": "My allergy gets worse in spring.",
+              "zh": "我的过敏在春天加重。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "infection",
+        "phonetic": "/ɪnˈfekʃən/",
+        "pos": "n.",
+        "meaning": "感染",
+        "example": "The wound got an infection.",
+        "root": "in(入)+fect(做)+ion → 有害物进入身体 → 感染",
+        "exampleZh": "伤口感染了。",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医疗健康",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a condition where harmful germs enter your body and cause disease",
+          "zh": "有害细菌进入你身体并引起疾病的状况",
+          "examples": [
+            {
+              "en": "The wound got an infection.",
+              "zh": "伤口感染了。"
+            },
+            {
+              "en": "Ear infections are common in children.",
+              "zh": "耳部感染在儿童中很常见。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "salary",
+        "phonetic": "/ˈsæləri/",
+        "pos": "n.",
+        "meaning": "工资、薪水",
+        "example": "My salary gets paid on the 15th.",
+        "root": "sal(盐)+ary → 古罗马用盐付工资 → 薪水",
+        "exampleZh": "我的工资15号发。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the fixed amount of money you receive regularly for your work",
+          "zh": "你因工作而定期收到的固定金额",
+          "examples": [
+            {
+              "en": "His monthly salary is $5,000.",
+              "zh": "他的月薪是5000美元。"
+            },
+            {
+              "en": "They offered me a higher salary.",
+              "zh": "他们给了我更高的工资。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "wage",
+        "phonetic": "/weɪdʒ/",
+        "pos": "n.",
+        "meaning": "工资（按小时/周计）",
+        "example": "His hourly wage is $15.",
+        "root": "",
+        "exampleZh": "他小时工资15美元。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the money you earn for work, usually paid by the hour or day",
+          "zh": "你因工作赚的钱，通常按小时或天支付",
+          "examples": [
+            {
+              "en": "The minimum wage is $15 per hour.",
+              "zh": "最低工资是每小时15美元。"
+            },
+            {
+              "en": "He earns a daily wage as a construction worker.",
+              "zh": "他作为建筑工人赚取日薪。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "income",
+        "phonetic": "/ˈɪnkʌm/",
+        "pos": "n.",
+        "meaning": "收入",
+        "example": "My income covers my basic expenses.",
+        "root": "in(入)+come(来) → 进来的钱 → 收入",
+        "exampleZh": "我的收入覆盖基本开支。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "all the money you receive from work, investments, or other sources",
+          "zh": "你从工作、投资或其他来源收到的所有钱",
+          "examples": [
+            {
+              "en": "Their household income is about $80,000 a year.",
+              "zh": "他们的家庭年收入大约8万美元。"
+            },
+            {
+              "en": "Income from rent helps pay the bills.",
+              "zh": "租金收入帮助支付账单。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "expense",
+        "phonetic": "/ɪkˈspens/",
+        "pos": "n.",
+        "meaning": "支出、花费",
+        "example": "Track your monthly expenses.",
+        "root": "ex(出)+pend(花) → 钱花出去 → 支出",
+        "exampleZh": "追踪你的月度支出。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that you spend on something; the cost of living or doing business",
+          "zh": "你在某事上花的钱；生活或做生意的成本",
+          "examples": [
+            {
+              "en": "Living expenses are high in this city.",
+              "zh": "这个城市的生活费用很高。"
+            },
+            {
+              "en": "The company cut expenses to save money.",
+              "zh": "公司削减开支来省钱。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "budget",
+        "phonetic": "/ˈbʌdʒɪt/",
+        "pos": "n.",
+        "meaning": "预算",
+        "example": "Stick to your budget this month.",
+        "root": "",
+        "exampleZh": "这个月要守住预算。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a plan for how to spend your money, based on how much you have",
+          "zh": "基于你有多少钱来规划如何花钱的计划",
+          "examples": [
+            {
+              "en": "We need to stick to our budget this month.",
+              "zh": "这个月我们需要遵守预算。"
+            },
+            {
+              "en": "The government's budget for education increased.",
+              "zh": "政府的教育预算增加了。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "debt",
+        "phonetic": "/det/",
+        "pos": "n.",
+        "meaning": "债务、欠款",
+        "example": "I need to pay off my student debt.",
+        "root": "",
+        "exampleZh": "我需要还清学生贷款。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that you owe to someone and must pay back",
+          "zh": "你欠别人的必须偿还的钱",
+          "examples": [
+            {
+              "en": "He's in debt because of his credit cards.",
+              "zh": "他因为信用卡欠了债。"
+            },
+            {
+              "en": "It took her five years to pay off the debt.",
+              "zh": "她花了五年才还清债务。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "loan",
+        "phonetic": "/loʊn/",
+        "pos": "n.",
+        "meaning": "贷款、借款",
+        "example": "I took out a loan for the car.",
+        "root": "",
+        "exampleZh": "我贷了款买车。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that you borrow and agree to pay back, usually with interest",
+          "zh": "你借来并同意偿还的钱，通常带利息",
+          "examples": [
+            {
+              "en": "She took out a loan to buy a car.",
+              "zh": "她贷款买了一辆车。"
+            },
+            {
+              "en": "The bank approved my loan application.",
+              "zh": "银行批准了我的贷款申请。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "interest",
+        "phonetic": "/ˈɪntrəst/",
+        "pos": "n.",
+        "meaning": "❶利息 ❷兴趣",
+        "example": "The loan has a 5% interest rate.",
+        "root": "inter(之间)+est → 在其中 → 利息/兴趣",
+        "exampleZh": "贷款利率5%。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "extra money you pay when borrowing, or earn when saving; also, curiosity about something",
+          "zh": "借钱时付的或存钱时赚的额外钱；也是对某事的好奇",
+          "examples": [
+            {
+              "en": "The interest rate on this loan is 5%.",
+              "zh": "这笔贷款的利率是5%。"
+            },
+            {
+              "en": "She showed great interest in science.",
+              "zh": "她对科学表现出极大的兴趣。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "tax",
+        "phonetic": "/tæks/",
+        "pos": "n.",
+        "meaning": "税、税款",
+        "example": "File your taxes before the deadline.",
+        "root": "",
+        "exampleZh": "截止日期前报税。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that the government requires you to pay based on your income or purchases",
+          "zh": "政府根据你的收入或购买要求你付的钱",
+          "examples": [
+            {
+              "en": "I pay income tax every year.",
+              "zh": "我每年付所得税。"
+            },
+            {
+              "en": "The sales tax here is 8%.",
+              "zh": "这里的销售税是8%。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "profit",
+        "phonetic": "/ˈprɒfɪt/",
+        "pos": "n.",
+        "meaning": "利润",
+        "example": "The profit was higher this quarter.",
+        "root": "pro(前)+fit(做) → 向前做得好 → 利润",
+        "exampleZh": "这季度利润更高。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the money you gain after subtracting all costs from your revenue",
+          "zh": "从收入中减去所有成本后你赚的钱",
+          "examples": [
+            {
+              "en": "The business made a profit of $10,000.",
+              "zh": "这家企业赚了1万美元的利润。"
+            },
+            {
+              "en": "We need to increase our profit margin.",
+              "zh": "我们需要提高利润率。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "insurance",
+        "phonetic": "/ɪnˈʃʊrəns/",
+        "pos": "n.",
+        "meaning": "保险",
+        "example": "Do you have health insurance?",
+        "root": "in(入)+sure(确定)+ance → 使确定 → 保险",
+        "exampleZh": "你有健康保险吗？",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a system where you pay regular amounts so that you'll be covered if something bad happens",
+          "zh": "你定期付钱以便在坏事发生时得到赔付的系统",
+          "examples": [
+            {
+              "en": "You should have health insurance.",
+              "zh": "你应该有医疗保险。"
+            },
+            {
+              "en": "Car insurance is required by law.",
+              "zh": "法律要求买车险。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "mortgage",
+        "phonetic": "/ˈmɔːrɡɪdʒ/",
+        "pos": "n.",
+        "meaning": "房贷、抵押贷款",
+        "example": "Our mortgage payment is due next week.",
+        "root": "mort(死)+gage(质押) → 死质押 → 还完才解押 → 房贷",
+        "exampleZh": "我们的房贷下周到期。",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "日常金融",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a loan you get to buy a house, which you pay back over many years",
+          "zh": "你用来买房的贷款，在多年内偿还",
+          "examples": [
+            {
+              "en": "They took out a 30-year mortgage.",
+              "zh": "他们贷了30年房贷。"
+            },
+            {
+              "en": "Our monthly mortgage payment is $2,000.",
+              "zh": "我们的月房贷还款是2000美元。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "account",
+        "phonetic": "/əˈkaʊnt/",
+        "pos": "n.",
+        "meaning": "❶账号、账户 ❷描述",
+        "example": "Create an account to sign in.",
+        "root": "ac(向)+count(计算) → 计算的记录 → 账户",
+        "exampleZh": "创建账号登录。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a record of money you keep at a bank; also a description of an event",
+          "zh": "你在银行保存的钱的记录；也是对事件的描述",
+          "examples": [
+            {
+              "en": "I opened a new bank account.",
+              "zh": "我开了一个新的银行账户。"
+            },
+            {
+              "en": "He gave a detailed account of what happened.",
+              "zh": "他详细描述了发生了什么。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "password",
+        "phonetic": "/ˈpæswɜːrd/",
+        "pos": "n.",
+        "meaning": "密码",
+        "example": "Change your password regularly.",
+        "root": "pass(通过)+word(词) → 通过的词 → 密码",
+        "exampleZh": "定期更换密码。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a secret word or code you type to prove you are allowed to access something",
+          "zh": "你输入以证明你有权访问某物的秘密词语或代码",
+          "examples": [
+            {
+              "en": "Don't share your password with anyone.",
+              "zh": "不要和任何人分享你的密码。"
+            },
+            {
+              "en": "I forgot my password and had to reset it.",
+              "zh": "我忘了密码，不得不重置。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "notification",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃən/",
+        "pos": "n.",
+        "meaning": "通知、提醒",
+        "example": "I got a notification about the delivery.",
+        "root": "noti(注意)+fication → 让人注意 → 通知",
+        "exampleZh": "我收到了配送通知。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a message or alert that tells you something has happened or needs your attention",
+          "zh": "告诉你某事发生了或需要你关注的消息或提醒",
+          "examples": [
+            {
+              "en": "I got a notification about a new email.",
+              "zh": "我收到了一个新邮件的通知。"
+            },
+            {
+              "en": "Turn off notifications when you're sleeping.",
+              "zh": "睡觉时关掉通知。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "download",
+        "phonetic": "/ˈdaʊnloʊd/",
+        "pos": "n./v.",
+        "meaning": "下载",
+        "example": "Download the update before using it.",
+        "root": "down(下)+load(载) → 从上往下载 → 下载",
+        "exampleZh": "使用前先下载更新。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of copying data from the internet to your device",
+          "zh": "从互联网复制数据到你的设备的动作",
+          "examples": [
+            {
+              "en": "The download took only a few seconds.",
+              "zh": "下载只花了几秒钟。"
+            },
+            {
+              "en": "This app has over a million downloads.",
+              "zh": "这个应用有超过一百万次下载。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "upload",
+        "phonetic": "/ˈʌploʊd/",
+        "pos": "n./v.",
+        "meaning": "上传",
+        "example": "Upload the photo to your profile.",
+        "root": "up(上)+load(载) → 往上载 → 上传",
+        "exampleZh": "把照片上传到你的资料。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of sending data from your device to the internet",
+          "zh": "从你的设备发送数据到互联网的动作",
+          "examples": [
+            {
+              "en": "The upload speed is very slow today.",
+              "zh": "今天上传速度很慢。"
+            },
+            {
+              "en": "I uploaded the photos to my cloud storage.",
+              "zh": "我把照片上传到了云存储。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "link",
+        "phonetic": "/lɪŋk/",
+        "pos": "n./v.",
+        "meaning": "❶n.链接 ❷n.联系 ❸v.连接",
+        "example": "Click the link to open the page.",
+        "root": "",
+        "exampleZh": "点击链接打开页面。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a connection between two things; on the internet, a clickable address",
+          "zh": "两事物之间的连接；在互联网上，可点击的地址",
+          "examples": [
+            {
+              "en": "Click this link to open the website.",
+              "zh": "点击这个链接打开网站。"
+            },
+            {
+              "en": "There's a link between diet and health.",
+              "zh": "饮食和健康之间有联系。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "backup",
+        "phonetic": "/ˈbækʌp/",
+        "pos": "n.",
+        "meaning": "备份",
+        "example": "Make a backup of your important files.",
+        "root": "back(后)+up(上) → 后面支撑 → 备份",
+        "exampleZh": "给重要文件做备份。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a copy of data you keep in case the original gets lost or damaged",
+          "zh": "你保存的数据副本，以防原件丢失或损坏",
+          "examples": [
+            {
+              "en": "Always make a backup of important files.",
+              "zh": "总是备份重要文件。"
+            },
+            {
+              "en": "The backup saved all my data.",
+              "zh": "备份保存了我的所有数据。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "storage",
+        "phonetic": "/ˈstɔːrɪdʒ/",
+        "pos": "n.",
+        "meaning": "存储空间",
+        "example": "Check your phone storage space.",
+        "root": "",
+        "exampleZh": "检查手机存储空间。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "space where you keep things or save data for later use",
+          "zh": "你存放东西或保存数据以备后用的空间",
+          "examples": [
+            {
+              "en": "This phone has 128GB of storage.",
+              "zh": "这款手机有128GB存储空间。"
+            },
+            {
+              "en": "We need more storage space in the garage.",
+              "zh": "我们需要车库更多的存储空间。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "network",
+        "phonetic": "/ˈnetwɜːrk/",
+        "pos": "n.",
+        "meaning": "网络",
+        "example": "The network is down right now.",
+        "root": "net(网)+work(工作) → 网状运作 → 网络",
+        "exampleZh": "网络现在断了。",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字生活",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a group of things or people that are connected to each other",
+          "zh": "一组相互连接的事物或人",
+          "examples": [
+            {
+              "en": "My social network helps me find jobs.",
+              "zh": "我的社交网络帮助我找工作。"
+            },
+            {
+              "en": "The Wi-Fi network is not working.",
+              "zh": "WiFi网络不工作。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "habit",
+        "phonetic": "/ˈhæbɪt/",
+        "pos": "n.",
+        "meaning": "习惯",
+        "example": "Reading is a good habit.",
+        "root": "",
+        "exampleZh": "阅读是好习惯。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something you do regularly, often without thinking about it",
+          "zh": "你经常做的事，通常不经过思考",
+          "examples": [
+            {
+              "en": "Reading before bed is a good habit.",
+              "zh": "睡前阅读是一个好习惯。"
+            },
+            {
+              "en": "He has a habit of checking his phone too often.",
+              "zh": "他有经常看手机的坏习惯。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "process",
+        "phonetic": "/ˈprɒses/",
+        "pos": "n.",
+        "meaning": "过程、流程",
+        "example": "The hiring process takes two weeks.",
+        "root": "pro(前)+cess(走) → 向前走的过程 → 流程",
+        "exampleZh": "招聘流程需要两周。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a series of actions or steps that lead to a result",
+          "zh": "导致结果的一系列行动或步骤",
+          "examples": [
+            {
+              "en": "The hiring process takes about two weeks.",
+              "zh": "招聘流程大约需要两周。"
+            },
+            {
+              "en": "Learning is a slow process.",
+              "zh": "学习是一个缓慢的过程。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "procedure",
+        "phonetic": "/prəˈsiːdʒər/",
+        "pos": "n.",
+        "meaning": "程序、步骤",
+        "example": "Follow the procedure step by step.",
+        "root": "pro(前)+cedure(走) → 向前走的方式 → 程序",
+        "exampleZh": "按步骤执行程序。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the official or correct way of doing something, step by step",
+          "zh": "做某事的官方或正确方式，一步一步",
+          "examples": [
+            {
+              "en": "Follow the safety procedure carefully.",
+              "zh": "仔细遵循安全程序。"
+            },
+            {
+              "en": "The procedure for applying is quite simple.",
+              "zh": "申请的程序很简单。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "effort",
+        "phonetic": "/ˈefərt/",
+        "pos": "n.",
+        "meaning": "努力、费力",
+        "example": "Put more effort into your studies.",
+        "root": "ex(出)+fort(力量) → 出力 → 努力",
+        "exampleZh": "在学习上多花点努力。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the physical or mental energy you use to try to do something",
+          "zh": "你用来尝试做某事的身体或精神能量",
+          "examples": [
+            {
+              "en": "She put a lot of effort into her project.",
+              "zh": "她在项目上投入了很多努力。"
+            },
+            {
+              "en": "With more effort, you can achieve your goals.",
+              "zh": "付出更多努力，你能实现目标。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "progress",
+        "phonetic": "/ˈprɒɡres/",
+        "pos": "n.",
+        "meaning": "进步、进展",
+        "example": "We made good progress this week.",
+        "root": "pro(前)+gress(走) → 向前走 → 进步",
+        "exampleZh": "这周我们进步很大。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the process of improving or moving forward toward a goal",
+          "zh": "改进或向目标前进的过程",
+          "examples": [
+            {
+              "en": "The students are making good progress.",
+              "zh": "学生们在取得良好进步。"
+            },
+            {
+              "en": "We've made progress on the project.",
+              "zh": "我们在项目上有了进展。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "result",
+        "phonetic": "/rɪˈzʌlt/",
+        "pos": "n.",
+        "meaning": "结果、成果",
+        "example": "What was the result of the test?",
+        "root": "re(回)+sult(跳) → 回跳出来 → 结果",
+        "exampleZh": "测试结果是什么？",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "what happens because of an action or situation; the outcome",
+          "zh": "因为某个行动或情况而发生的事情；结果",
+          "examples": [
+            {
+              "en": "The result of the test was positive.",
+              "zh": "测试结果是阳性。"
+            },
+            {
+              "en": "Hard work usually leads to good results.",
+              "zh": "努力通常带来好结果。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "effect",
+        "phonetic": "/ɪˈfekt/",
+        "pos": "n.",
+        "meaning": "效果、影响",
+        "example": "The effect was immediate.",
+        "root": "ef(出)+fect(做) → 做出来的 → 效果",
+        "exampleZh": "效果立竿见影。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a change that happens because of something else; how one thing influences another",
+          "zh": "因为其他事情而发生的变化；一件事如何影响另一件事",
+          "examples": [
+            {
+              "en": "The medicine had a positive effect.",
+              "zh": "药物有了积极的效果。"
+            },
+            {
+              "en": "What are the effects of pollution?",
+              "zh": "污染的影响是什么？"
+            }
+          ]
+        }
+      },
+      {
+        "en": "impact",
+        "phonetic": "/ˈɪmpækt/",
+        "pos": "n.",
+        "meaning": "❶影响、冲击 ❷撞击",
+        "example": "The impact of the policy is unclear.",
+        "root": "im(入)+pact(压) → 压进去 → 冲击/影响",
+        "exampleZh": "政策的影响还不明确。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the strong effect or influence that something has on a situation or person",
+          "zh": "某事对情况或人的强烈影响或冲击",
+          "examples": [
+            {
+              "en": "Climate change has a huge impact on wildlife.",
+              "zh": "气候变化对野生动物有巨大影响。"
+            },
+            {
+              "en": "The impact of the decision was immediate.",
+              "zh": "决定的影响是立即的。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "movement",
+        "phonetic": "/ˈmuːvmənt/",
+        "pos": "n.",
+        "meaning": "❶运动、移动 ❷运动（社会）",
+        "example": "Join the fitness movement.",
+        "root": "",
+        "exampleZh": "加入健身运动。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a change of position; also a group of people working together for a cause",
+          "zh": "位置的变化；也是一群人为了某个目标共同行动",
+          "examples": [
+            {
+              "en": "The civil rights movement changed many laws.",
+              "zh": "民权运动改变了许多法律。"
+            },
+            {
+              "en": "I watched the movement of the clouds.",
+              "zh": "我观察云的运动。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "operation",
+        "phonetic": "/ˌɒpəˈreɪʃən/",
+        "pos": "n.",
+        "meaning": "❶手术 ❷操作 ❸运营",
+        "example": "The operation went well.",
+        "root": "",
+        "exampleZh": "手术很顺利。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a planned activity or process; also a medical procedure",
+          "zh": "计划好的活动或过程；也是医疗手术",
+          "examples": [
+            {
+              "en": "He had an operation on his knee.",
+              "zh": "他做了膝盖手术。"
+            },
+            {
+              "en": "The company's daily operations are running smoothly.",
+              "zh": "公司的日常运营顺利进行。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "experience",
+        "phonetic": "/ɪkˈspɪriəns/",
+        "pos": "n./v.",
+        "meaning": "❶n.经验 ❷n.经历 ❸v.体验",
+        "example": "She has a lot of work experience.",
+        "root": "ex(出)+peri(尝试)+ence → 尝试出来的 → 经验",
+        "exampleZh": "她有很多工作经验。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something that happens to you and affects you; also, knowledge gained by doing something",
+          "zh": "发生在你身上并影响你的事；也是通过做某事获得的知识",
+          "examples": [
+            {
+              "en": "That was a great experience.",
+              "zh": "那是一次很棒的经历。"
+            },
+            {
+              "en": "She has five years of work experience.",
+              "zh": "她有五年的工作经验。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "delivery",
+        "phonetic": "/dɪˈlɪvəri/",
+        "pos": "n.",
+        "meaning": "快递、投递",
+        "example": "The delivery is expected tomorrow.",
+        "root": "de(离开)+liver(自由) → 释放送达 → 投递",
+        "exampleZh": "快递预计明天到达。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of bringing something to a place; also the package that is brought",
+          "zh": "把东西送到某地的行为；也是被送达的包裹",
+          "examples": [
+            {
+              "en": "The delivery arrived this morning.",
+              "zh": "快递今天早上到了。"
+            },
+            {
+              "en": "Free delivery on orders over $50.",
+              "zh": "订单超过50美元免费送货。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "purpose",
+        "phonetic": "/ˈpɜːrpəs/",
+        "pos": "n.",
+        "meaning": "目的、意图",
+        "example": "What's the purpose of this meeting?",
+        "root": "pro(前)+pose(放) → 放在前面的 → 目的",
+        "exampleZh": "这个会议的目的是什么？",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the reason why something is done or exists; the goal",
+          "zh": "某事被做或存在的理由；目标",
+          "examples": [
+            {
+              "en": "What's the purpose of this meeting?",
+              "zh": "这个会议的目的是什么？"
+            },
+            {
+              "en": "She found her purpose in helping others.",
+              "zh": "她在帮助他人中找到了人生目的。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "opportunity",
+        "phonetic": "/ˌɒpərˈtjuːnɪti/",
+        "pos": "n.",
+        "meaning": "机会",
+        "example": "This is a great opportunity.",
+        "root": "opport(适合)+unity → 适合的时候 → 机会",
+        "exampleZh": "这是一个好机会。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a chance to do something, especially something good or useful",
+          "zh": "做某事的机会，尤其是做好的或有用的事",
+          "examples": [
+            {
+              "en": "This is a great opportunity to learn.",
+              "zh": "这是一个学习的好机会。"
+            },
+            {
+              "en": "Don't miss this opportunity.",
+              "zh": "不要错过这个机会。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "permission",
+        "phonetic": "/pərˈmɪʃən/",
+        "pos": "n.",
+        "meaning": "许可、允许",
+        "example": "Ask permission before entering.",
+        "root": "per(通过)+miss(送)+ion → 让通过 → 许可",
+        "exampleZh": "进入前请获得许可。",
+        "subcategory": "Action Nouns Deep",
+        "subcategoryZh": "动作名词深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the act of allowing someone to do something; official approval",
+          "zh": "允许某人做某事的行为；正式批准",
+          "examples": [
+            {
+              "en": "You need permission to enter this area.",
+              "zh": "你需要许可才能进入这个区域。"
+            },
+            {
+              "en": "She asked her parents' permission to go out.",
+              "zh": "她征求父母的允许出去。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "platform",
+        "phonetic": "/ˈplætfɔːrm/",
+        "pos": "n.",
+        "meaning": "❶站台 ❷平台",
+        "example": "The train leaves from Platform 5.",
+        "root": "",
+        "exampleZh": "火车从5号站台出发。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a raised surface you stand on; also, a system or technology that other things are built on",
+          "zh": "你站立的升高表面；也是其他事物构建在其上的系统或技术",
+          "examples": [
+            {
+              "en": "Wait on the platform for the train.",
+              "zh": "在站台上等火车。"
+            },
+            {
+              "en": "YouTube is a video-sharing platform.",
+              "zh": "YouTube是一个视频分享平台。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "fare",
+        "phonetic": "/feər/",
+        "pos": "n.",
+        "meaning": "❶票价 ❷车费",
+        "example": "The bus fare is two dollars.",
+        "root": "",
+        "exampleZh": "公交车票价两美元。",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the money you pay to travel on a bus, train, or other transport",
+          "zh": "你付钱坐公交、火车或其他交通工具的费用",
+          "examples": [
+            {
+              "en": "The bus fare is $2.",
+              "zh": "公交车费是2美元。"
+            },
+            {
+              "en": "Air fares have increased this year.",
+              "zh": "今年机票价格上涨了。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "route",
+        "phonetic": "/ruːt/",
+        "pos": "n.",
+        "meaning": "路线、路途",
+        "example": "What's the fastest route to the airport?",
+        "root": "",
+        "exampleZh": "去机场最快的路线是什么？",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the way or path that you take to get from one place to another",
+          "zh": "你从一个地方到另一个地方所走的路或路径",
+          "examples": [
+            {
+              "en": "We took a different route to avoid traffic.",
+              "zh": "我们走了一条不同的路线以避开交通拥堵。"
+            },
+            {
+              "en": "What's the fastest route to the airport?",
+              "zh": "去机场最快的路线是什么？"
+            }
+          ]
+        }
+      },
+      {
+        "en": "policy",
+        "phonetic": "/ˈpɒlɪsi/",
+        "pos": "n.",
+        "meaning": "政策、方针",
+        "example": "The new policy starts next month.",
+        "root": "",
+        "exampleZh": "新政策下月开始。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a set of rules or principles that guide decisions, especially in government or business",
+          "zh": "指导决策的一套规则或原则，特别是在政府或企业中",
+          "examples": [
+            {
+              "en": "The company's policy is to hire locally.",
+              "zh": "公司的政策是本地招聘。"
+            },
+            {
+              "en": "Government policy affects everyone.",
+              "zh": "政府政策影响每个人。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "culture",
+        "phonetic": "/ˈkʌltʃər/",
+        "pos": "n.",
+        "meaning": "文化",
+        "example": "Learn about the local culture.",
+        "root": "cult(耕种)+ure → 耕作培养 → 文化",
+        "exampleZh": "了解当地文化。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the ideas, customs, and way of life of a particular group or society",
+          "zh": "特定群体或社会的思想、习俗和生活方式",
+          "examples": [
+            {
+              "en": "Chinese culture values family.",
+              "zh": "中国文化重视家庭。"
+            },
+            {
+              "en": "Learning about other cultures is important.",
+              "zh": "了解其他文化很重要。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "tradition",
+        "phonetic": "/trəˈdɪʃən/",
+        "pos": "n.",
+        "meaning": "传统、习俗",
+        "example": "It's a tradition in our family.",
+        "root": "trad(传递)+ition → 传递下来的 → 传统",
+        "exampleZh": "这是我们家传统。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a custom or belief that has been passed down through generations",
+          "zh": "通过世代传承下来的习俗或信念",
+          "examples": [
+            {
+              "en": "It's a tradition to eat turkey on Thanksgiving.",
+              "zh": "感恩节吃火鸡是一个传统。"
+            },
+            {
+              "en": "Many traditions are slowly disappearing.",
+              "zh": "许多传统正在慢慢消失。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "custom",
+        "phonetic": "/ˈkʌstəm/",
+        "pos": "n.",
+        "meaning": "❶习俗 ❷定制 ❸海关",
+        "example": "It's a local custom to shake hands.",
+        "root": "",
+        "exampleZh": "握手是当地习俗。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a traditional way of behaving or doing something that is specific to a society",
+          "zh": "特定社会中传统的行为或做事方式",
+          "examples": [
+            {
+              "en": "It is a local custom to greet with a bow.",
+              "zh": "鞠躬问候是当地习俗。"
+            },
+            {
+              "en": "Customs differ from country to country.",
+              "zh": "习俗因国而异。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "election",
+        "phonetic": "/ɪˈlekʃən/",
+        "pos": "n.",
+        "meaning": "选举",
+        "example": "The election is next month.",
+        "root": "e(出)+lect(选)+ion → 选出来 → 选举",
+        "exampleZh": "选举下个月举行。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the process of choosing someone by voting",
+          "zh": "通过投票选择某人的过程",
+          "examples": [
+            {
+              "en": "The election will be held next month.",
+              "zh": "选举将在下月举行。"
+            },
+            {
+              "en": "Who won the last election?",
+              "zh": "谁赢得了上次选举？"
+            }
+          ]
+        }
+      },
+      {
+        "en": "crime",
+        "phonetic": "/kraɪm/",
+        "pos": "n.",
+        "meaning": "犯罪、罪行",
+        "example": "Crime rates went down this year.",
+        "root": "",
+        "exampleZh": "今年犯罪率下降了。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an illegal action that can be punished by law",
+          "zh": "可以被法律惩罚的非法行为",
+          "examples": [
+            {
+              "en": "Crime rates have gone down in this area.",
+              "zh": "这个地区的犯罪率下降了。"
+            },
+            {
+              "en": "Stealing is a crime.",
+              "zh": "盗窃是犯罪。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "punishment",
+        "phonetic": "/ˈpʌnɪʃmənt/",
+        "pos": "n.",
+        "meaning": "惩罚、处罚",
+        "example": "The punishment was a fine.",
+        "root": "",
+        "exampleZh": "惩罚是罚款。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "something done to a person who has broken a rule or law, to make them suffer or learn",
+          "zh": "对违反规则或法律的人所做的使其受苦或学习的事",
+          "examples": [
+            {
+              "en": "The punishment for this crime is five years in prison.",
+              "zh": "这项犯罪的处罚是五年监禁。"
+            },
+            {
+              "en": "Fair punishment helps maintain order.",
+              "zh": "公正的处罚有助于维持秩序。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "freedom",
+        "phonetic": "/ˈfriːdəm/",
+        "pos": "n.",
+        "meaning": "自由",
+        "example": "Freedom of speech is important.",
+        "root": "free(自由)+dom → 自由的状态 → 自由",
+        "exampleZh": "言论自由很重要。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the state of being able to do what you want without being controlled or limited",
+          "zh": "能够做自己想做的事而不受控制或限制的状态",
+          "examples": [
+            {
+              "en": "Freedom of speech is a basic right.",
+              "zh": "言论自由是一项基本权利。"
+            },
+            {
+              "en": "He fought for freedom from oppression.",
+              "zh": "他为摆脱压迫的自由而战斗。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "equality",
+        "phonetic": "/ɪˈkwɒlɪti/",
+        "pos": "n.",
+        "meaning": "平等",
+        "example": "Everyone deserves equality.",
+        "root": "equal(相等)+ity → 相等的状态 → 平等",
+        "exampleZh": "每个人都应该平等。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the principle that all people should have the same rights and opportunities",
+          "zh": "所有人都应该有相同权利和机会的原则",
+          "examples": [
+            {
+              "en": "Gender equality is still a challenge in many places.",
+              "zh": "性别平等在许多地方仍是一个挑战。"
+            },
+            {
+              "en": "They promote equality in the workplace.",
+              "zh": "他们在工作场所促进平等。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "justice",
+        "phonetic": "/ˈdʒʌstɪs/",
+        "pos": "n.",
+        "meaning": "正义、司法",
+        "example": "Justice should be fair for everyone.",
+        "root": "just(公正)+ice → 公正 → 正义",
+        "exampleZh": "正义对每个人都应该公平。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the quality of being fair and treating people equally; also the system of law",
+          "zh": "公正和公平对待人的品质；也是法律系统",
+          "examples": [
+            {
+              "en": "We demand justice for the victims.",
+              "zh": "我们要求为受害者伸张正义。"
+            },
+            {
+              "en": "The justice system must be fair.",
+              "zh": "司法系统必须公正。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "community",
+        "phonetic": "/kəˈmjuːnɪti/",
+        "pos": "n.",
+        "meaning": "社区、社群",
+        "example": "Our community is very friendly.",
+        "root": "commun(共同)+ity → 共同体 → 社区",
+        "exampleZh": "我们的社区很友好。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a group of people who live in the same area or share common interests",
+          "zh": "住在同一地区或共享共同利益的一群人",
+          "examples": [
+            {
+              "en": "Our community has a strong sense of support.",
+              "zh": "我们的社区有很强的互助意识。"
+            },
+            {
+              "en": "The online community is very active.",
+              "zh": "在线社区非常活跃。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "economy",
+        "phonetic": "/ɪˈkɒnəmi/",
+        "pos": "n.",
+        "meaning": "经济",
+        "example": "The economy is doing well this year.",
+        "root": "eco(家)+nomy(管理) → 家政管理 → 经济",
+        "exampleZh": "今年经济状况不错。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the system of how money is made, spent, and managed in a country or region",
+          "zh": "一个国家或地区中金钱制造、花费和管理的系统",
+          "examples": [
+            {
+              "en": "The economy is growing this year.",
+              "zh": "经济今年在增长。"
+            },
+            {
+              "en": "A strong economy means more jobs.",
+              "zh": "强劲的经济意味着更多就业。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "education",
+        "phonetic": "/ˌedʒʊˈkeɪʃən/",
+        "pos": "n.",
+        "meaning": "教育",
+        "example": "Education is the key to success.",
+        "root": "e(出)+duc(引导)+ation → 引导出来 → 教育",
+        "exampleZh": "教育是成功的关键。",
+        "subcategory": "Society Deep",
+        "subcategoryZh": "社会深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the process of learning and gaining knowledge, especially in schools",
+          "zh": "学习和获取知识的过程，特别是在学校中",
+          "examples": [
+            {
+              "en": "Education is important for everyone.",
+              "zh": "教育对每个人都很重要。"
+            },
+            {
+              "en": "She received a good education.",
+              "zh": "她接受了良好的教育。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "guilt",
+        "phonetic": "/ɡɪlt/",
+        "pos": "n.",
+        "meaning": "内疚、罪恶感",
+        "example": "I felt guilt about lying to her.",
+        "root": "",
+        "exampleZh": "我对她撒谎感到内疚。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of having done something wrong or bad",
+          "zh": "做了错事或坏事的感觉",
+          "examples": [
+            {
+              "en": "He felt guilt after lying to his friend.",
+              "zh": "他对朋友撒谎后感到内疚。"
+            },
+            {
+              "en": "Guilt can be a heavy burden.",
+              "zh": "内疚感可以是沉重的负担。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "shame",
+        "phonetic": "/ʃeɪm/",
+        "pos": "n.",
+        "meaning": "羞耻、羞愧",
+        "example": "He felt shame about his mistake.",
+        "root": "",
+        "exampleZh": "他为自己的错误感到羞愧。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the painful feeling of having done something wrong or embarrassing",
+          "zh": "做了错事或令人尴尬的事的痛苦感觉",
+          "examples": [
+            {
+              "en": "He felt shame when he was caught cheating.",
+              "zh": "他被发现作弊时感到羞耻。"
+            },
+            {
+              "en": "There's no shame in asking for help.",
+              "zh": "寻求帮助并不丢人。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "pride",
+        "phonetic": "/praɪd/",
+        "pos": "n.",
+        "meaning": "❶自豪、骄傲 ❷自负",
+        "example": "She takes pride in her work.",
+        "root": "",
+        "exampleZh": "她为自己的工作感到自豪。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a feeling of satisfaction and pleasure in what you or others have achieved",
+          "zh": "对你或他人所取得的成就感到满意和高兴的感觉",
+          "examples": [
+            {
+              "en": "She takes pride in her work.",
+              "zh": "她对自己的工作感到自豪。"
+            },
+            {
+              "en": "National pride is strong during the Olympics.",
+              "zh": "奥运期间民族自豪感很强。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "jealousy",
+        "phonetic": "/ˈdʒeləsi/",
+        "pos": "n.",
+        "meaning": "嫉妒",
+        "example": "Jealousy can ruin relationships.",
+        "root": "",
+        "exampleZh": "嫉妒会破坏关系。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the unhappy feeling when you want what someone else has",
+          "zh": "当你想要别人拥有的东西时的不愉快感觉",
+          "examples": [
+            {
+              "en": "Jealousy can destroy friendships.",
+              "zh": "嫉妒可以毁掉友谊。"
+            },
+            {
+              "en": "He felt jealousy when his friend got the promotion.",
+              "zh": "当朋友得到晋升时他感到嫉妒。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "embarrassment",
+        "phonetic": "/ɪmˈbærəsmənt/",
+        "pos": "n.",
+        "meaning": "尴尬、窘迫",
+        "example": "It was a moment of embarrassment.",
+        "root": "",
+        "exampleZh": "那是个尴尬的时刻。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the uncomfortable feeling when you've done something that makes you look foolish",
+          "zh": "当你做了让自己显得愚蠢的事时的不舒服感觉",
+          "examples": [
+            {
+              "en": "She hid her embarrassment with a smile.",
+              "zh": "她用微笑掩饰尴尬。"
+            },
+            {
+              "en": "To my embarrassment, I forgot his name.",
+              "zh": "令我尴尬的是，我忘了他的名字。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "gratitude",
+        "phonetic": "/ˈɡrætɪtjuːd/",
+        "pos": "n.",
+        "meaning": "感激、感恩",
+        "example": "I expressed my gratitude to her.",
+        "root": "grat(高兴)+itude → 让人高兴的状态 → 感恩",
+        "exampleZh": "我向她表达了感激。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being thankful and wanting to show appreciation",
+          "zh": "感到感谢并想要表达感激的感觉",
+          "examples": [
+            {
+              "en": "I want to express my gratitude to you.",
+              "zh": "我想向你表达我的感激之情。"
+            },
+            {
+              "en": "She showed gratitude by writing a thank-you letter.",
+              "zh": "她通过写感谢信表达感激。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "sympathy",
+        "phonetic": "/ˈsɪmpəθi/",
+        "pos": "n.",
+        "meaning": "同情",
+        "example": "I feel sympathy for the homeless.",
+        "root": "sym(共同)+pathy(感情) → 共同的感情 → 同情",
+        "exampleZh": "我对无家可归者感到同情。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "understanding and caring about someone else's suffering or sadness",
+          "zh": "理解和关心他人的痛苦或悲伤",
+          "examples": [
+            {
+              "en": "I feel sympathy for people who lost their homes.",
+              "zh": "我对失去家园的人感到同情。"
+            },
+            {
+              "en": "She expressed sympathy for the victim.",
+              "zh": "她对受害者表达了同情。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "curiosity",
+        "phonetic": "/ˌkjʊriˈɒsɪti/",
+        "pos": "n.",
+        "meaning": "好奇心",
+        "example": "Curiosity drives kids to learn.",
+        "root": "curi(关心)+osity → 关心的程度 → 好奇心",
+        "exampleZh": "好奇心驱使孩子学习。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the desire to know or learn about something",
+          "zh": "想要知道或学习某事的欲望",
+          "examples": [
+            {
+              "en": "Curiosity drives scientific discovery.",
+              "zh": "好奇心推动科学发现。"
+            },
+            {
+              "en": "Children have natural curiosity about the world.",
+              "zh": "孩子们对世界有天然的好奇心。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "patience",
+        "phonetic": "/ˈpeɪʃəns/",
+        "pos": "n.",
+        "meaning": "耐心",
+        "example": "Teaching kids requires patience.",
+        "root": "pati(忍受)+ence → 忍受等待 → 耐心",
+        "exampleZh": "教孩子需要耐心。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the ability to wait calmly without getting angry or frustrated",
+          "zh": "平静等待而不生气或沮丧的能力",
+          "examples": [
+            {
+              "en": "You need patience when learning a new language.",
+              "zh": "学新语言需要耐心。"
+            },
+            {
+              "en": "Patience is key to good teaching.",
+              "zh": "耐心是好教学的关键。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "comfort",
+        "phonetic": "/ˈkʌmfərt/",
+        "pos": "n./v.",
+        "meaning": "❶n.安慰、舒适 ❷v.安慰",
+        "example": "She needs some comfort right now.",
+        "root": "com(加强)+fort(力量) → 给予力量 → 安慰",
+        "exampleZh": "她现在需要安慰。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a feeling of being relaxed and free from pain or worry; also something that makes you feel this way",
+          "zh": "感到放松和免于痛苦或担忧的感觉；也是让你有这种感觉的东西",
+          "examples": [
+            {
+              "en": "These shoes provide great comfort.",
+              "zh": "这些鞋子提供了极大的舒适感。"
+            },
+            {
+              "en": "Her words gave me comfort.",
+              "zh": "她的话给了我安慰。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "relief",
+        "phonetic": "/rɪˈliːf/",
+        "pos": "n.",
+        "meaning": "❶解脱、松口气 ❷救济",
+        "example": "What a relief that exam is over!",
+        "root": "re(再)+lief(升起) → 重担升起 → 解脱",
+        "exampleZh": "考试结束了真是解脱！",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being freed from worry, pain, or a difficult situation",
+          "zh": "从担忧、痛苦或困难处境中被解脱的感觉",
+          "examples": [
+            {
+              "en": "It was such a relief when the exam ended.",
+              "zh": "考试结束时的解脱感真是太好了。"
+            },
+            {
+              "en": "Financial relief helped the family survive.",
+              "zh": "经济救济帮助了这个家庭度过难关。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "frustration",
+        "phonetic": "/frʌˈstreɪʃən/",
+        "pos": "n.",
+        "meaning": "挫败感、沮丧",
+        "example": "I felt frustration when I couldn't fix it.",
+        "root": "",
+        "exampleZh": "没法修好它让我感到挫败。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being upset because you cannot achieve what you want",
+          "zh": "因为你无法实现你想要的东西而感到烦恼的感觉",
+          "examples": [
+            {
+              "en": "He expressed frustration with the slow progress.",
+              "zh": "他对缓慢的进展表达了沮丧。"
+            },
+            {
+              "en": "Frustration is normal when learning something new.",
+              "zh": "学习新东西时感到挫败是正常的。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "loneliness",
+        "phonetic": "/ˈloʊnli/",
+        "pos": "n.",
+        "meaning": "孤独",
+        "example": "Loneliness can be really hard.",
+        "root": "",
+        "exampleZh": "孤独真的很难熬。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the sad feeling of being alone or not having friends",
+          "zh": "独自一人或没有朋友的悲伤感觉",
+          "examples": [
+            {
+              "en": "Loneliness can affect your mental health.",
+              "zh": "孤独感会影响心理健康。"
+            },
+            {
+              "en": "She felt loneliness after moving to a new city.",
+              "zh": "搬到新城市后她感到孤独。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "excitement",
+        "phonetic": "/ɪkˈsaɪtmənt/",
+        "pos": "n.",
+        "meaning": "兴奋、激动",
+        "example": "The kids showed excitement about the trip.",
+        "root": "ex(出)+cite(唤起)+ment → 被唤出 → 兴奋",
+        "exampleZh": "孩子们对旅行感到兴奋。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being very happy and enthusiastic about something",
+          "zh": "对某事感到非常高兴和热情的感觉",
+          "examples": [
+            {
+              "en": "The children showed excitement about the trip.",
+              "zh": "孩子们对旅行表现出兴奋。"
+            },
+            {
+              "en": "There was excitement in the crowd.",
+              "zh": "人群中有兴奋的情绪。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "boredom",
+        "phonetic": "/ˈbɔːrdəm/",
+        "pos": "n.",
+        "meaning": "无聊、厌倦",
+        "example": "Boredom makes you do weird things.",
+        "root": "",
+        "exampleZh": "无聊让你做奇怪的事。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the feeling of being tired and unhappy because nothing interesting is happening",
+          "zh": "因为没有有趣的事情发生而感到疲倦和不快乐的感觉",
+          "examples": [
+            {
+              "en": "Boredom makes people seek new activities.",
+              "zh": "无聊让人寻找新活动。"
+            },
+            {
+              "en": "He quit his job out of boredom.",
+              "zh": "他因为无聊辞了职。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "despair",
+        "phonetic": "/dɪˈspeər/",
+        "pos": "n.",
+        "meaning": "绝望",
+        "example": "Don't give in to despair.",
+        "root": "de(去除)+spair(希望) → 没有希望 → 绝望",
+        "exampleZh": "不要屈服于绝望。",
+        "subcategory": "Emotions Deep",
+        "subcategoryZh": "情感深入",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a feeling that there is no hope and nothing can be done to improve the situation",
+          "zh": "一种没有希望、无法改善情况的感觉",
+          "examples": [
+            {
+              "en": "She was in despair after losing everything.",
+              "zh": "失去一切后她陷入了绝望。"
+            },
+            {
+              "en": "Never give in to despair.",
+              "zh": "永远不要屈服于绝望。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "discount",
+        "phonetic": "/ˈdɪskæʊnt/",
+        "pos": "n./v.",
+        "meaning": "❶n.折扣 ❷v.打折",
+        "example": "Is there a discount for students?",
+        "root": "dis(去除)+count(计算) → 减少计算 → 折扣",
+        "exampleZh": "学生有折扣吗？",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a reduction in the price of something",
+          "zh": "某物价格的减少",
+          "examples": [
+            {
+              "en": "I got a 20% discount on this shirt.",
+              "zh": "这件衬衫我得到了20%的折扣。"
+            },
+            {
+              "en": "Students get a discount at the museum.",
+              "zh": "学生在博物馆享受折扣。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "sale",
+        "phonetic": "/seɪl/",
+        "pos": "n.",
+        "meaning": "❶打折促销 ❷销售",
+        "example": "There's a big sale this weekend.",
+        "root": "",
+        "exampleZh": "这周末有大促销。",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an event where things are sold at lower prices; also the act of selling something",
+          "zh": "以较低价格出售东西的活动；也是出售某物的行为",
+          "examples": [
+            {
+              "en": "The summer sale starts tomorrow.",
+              "zh": "夏季促销明天开始。"
+            },
+            {
+              "en": "The sale of the house was completed.",
+              "zh": "房屋的出售已完成。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "promotion",
+        "phonetic": "/prəˈmoʊʃən/",
+        "pos": "n.",
+        "meaning": "❶促销活动 ❷晋升",
+        "example": "The promotion ends tomorrow.",
+        "root": "pro(前)+motion(移动) → 向前推 → 促销/晋升",
+        "exampleZh": "促销明天结束。",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an activity to increase sales or awareness; also, being moved to a higher position at work",
+          "zh": "增加销售或知名度的活动；也是在工作中升到更高职位",
+          "examples": [
+            {
+              "en": "The store is running a promotion this week.",
+              "zh": "商店这周在做促销。"
+            },
+            {
+              "en": "She got a promotion to manager.",
+              "zh": "她被晋升为经理。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "brand",
+        "phonetic": "/brænd/",
+        "pos": "n.",
+        "meaning": "品牌",
+        "example": "What brand of shampoo do you use?",
+        "root": "",
+        "exampleZh": "你用什么品牌的洗发水？",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the name and image that identify a company's product and make it different from others",
+          "zh": "识别公司产品并使其与其他产品不同的名称和形象",
+          "examples": [
+            {
+              "en": "Nike is a well-known brand.",
+              "zh": "耐克是一个知名品牌。"
+            },
+            {
+              "en": "I don't care about brands — I just want good quality.",
+              "zh": "我不在乎品牌——我只想要好质量。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "refund",
+        "phonetic": "/ˈriːfʌnd/",
+        "pos": "n./v.",
+        "meaning": "❶n.退款 ❷v.退还",
+        "example": "I'd like a refund for this item.",
+        "root": "re(回)+fund(资金) → 资金退回 → 退款",
+        "exampleZh": "我想退这个商品。",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "money that is given back to you when you return something you bought",
+          "zh": "当你退还购买的东西时给你退回的钱",
+          "examples": [
+            {
+              "en": "I asked for a refund because the product was defective.",
+              "zh": "我要求退款因为产品有缺陷。"
+            },
+            {
+              "en": "Full refund within 30 days.",
+              "zh": "30天内全额退款。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "license",
+        "phonetic": "/ˈlaɪsəns/",
+        "pos": "n.",
+        "meaning": "❶执照、许可证 ❷驾照",
+        "example": "Do you have a driver's license?",
+        "root": "lic(允许)+ense → 允许的凭证 → 执照",
+        "exampleZh": "你有驾照吗？",
+        "subcategory": "Personal Items",
+        "subcategoryZh": "个人物品",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "an official document that gives you permission to do something, like drive or practice a profession",
+          "zh": "给你许可做某事的官方文件，比如开车或执业",
+          "examples": [
+            {
+              "en": "You need a license to drive a car.",
+              "zh": "你需要驾照才能开车。"
+            },
+            {
+              "en": "His medical license was revoked.",
+              "zh": "他的医疗执照被吊销了。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "temperature",
+        "phonetic": "/ˈtemprətʃər/",
+        "pos": "n.",
+        "meaning": "温度、气温",
+        "example": "The temperature dropped below zero.",
+        "root": "temper(调节)+ature → 调节的热量 → 温度",
+        "exampleZh": "温度降到零度以下了。",
+        "subcategory": "Weather Details",
+        "subcategoryZh": "天气细节",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "a measure of how hot or cold something is",
+          "zh": "衡量某物有多热或多冷的指标",
+          "examples": [
+            {
+              "en": "The temperature today is 30°C.",
+              "zh": "今天的温度是30度。"
+            },
+            {
+              "en": "Take your temperature if you feel sick.",
+              "zh": "如果觉得不舒服就量体温。"
+            }
+          ]
+        }
+      },
+      {
+        "en": "humidity",
+        "phonetic": "/hjuːˈmɪdɪti/",
+        "pos": "n.",
+        "meaning": "湿度",
+        "example": "The humidity is really high today.",
+        "root": "",
+        "exampleZh": "今天湿度很高。",
+        "subcategory": "Weather Details",
+        "subcategoryZh": "天气细节",
+        "wordType": "abstract",
+        "abstractDef": {
+          "en": "the amount of water vapor in the air; how moist the air feels",
+          "zh": "空气中水蒸气的量；空气感觉有多潮湿",
+          "examples": [
+            {
+              "en": "The humidity is very high today — it feels sticky.",
+              "zh": "今天湿度很高——感觉很黏。"
+            },
+            {
+              "en": "High humidity makes hot weather worse.",
+              "zh": "高湿度让炎热的天气更难受。"
+            }
+          ]
+        }
+      }
+    ],
+    "categories": [
+      {
+        "name": "High-Frequency Deep",
+        "nameZh": "高频补充",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Nature Deep",
+        "nameZh": "自然深入",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Office & School Deep",
+        "nameZh": "办公学习深入",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Medicine & Health",
+        "nameZh": "医疗健康",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Finance Daily",
+        "nameZh": "日常金融",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Digital Life",
+        "nameZh": "数字生活",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Action Nouns Deep",
+        "nameZh": "动作名词深入",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Transport Deep",
+        "nameZh": "交通深入",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Society Deep",
+        "nameZh": "社会深入",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Emotions Deep",
+        "nameZh": "情感深入",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Shopping",
+        "nameZh": "购物",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Personal Items",
+        "nameZh": "个人物品",
+        "isAbstractCategory": true
+      },
+      {
+        "name": "Weather Details",
+        "nameZh": "天气细节",
+        "isAbstractCategory": true
+      }
+    ]
+  },
+  {
+    "date": "6/30",
+    "label": "名词500-第二波",
+    "isNouns500": true,
+    "isNouns500V2": true,
+    "wordCount": 500,
+    "categories": [
+      {
+        "name": "High-Frequency Deep",
+        "nameZh": "高频核心",
+        "count": 43
+      },
+      {
+        "name": "Food & Drink Deep",
+        "nameZh": "饮食",
+        "count": 35
+      },
+      {
+        "name": "Nature Deep",
+        "nameZh": "自然",
+        "count": 32
+      },
+      {
+        "name": "Office & School Deep",
+        "nameZh": "办公学习",
+        "count": 27
+      },
+      {
+        "name": "Body Deep",
+        "nameZh": "身体",
+        "count": 26
+      },
+      {
+        "name": "Medicine & Health",
+        "nameZh": "医药健康",
+        "count": 25
+      },
+      {
+        "name": "Animals Deep",
+        "nameZh": "动物",
+        "count": 23
+      },
+      {
+        "name": "People Deep",
+        "nameZh": "人物",
+        "count": 23
+      },
+      {
+        "name": "Finance Daily",
+        "nameZh": "金融日常",
+        "count": 23
+      },
+      {
+        "name": "Sports & Fun Deep",
+        "nameZh": "运动娱乐",
+        "count": 22
+      },
+      {
+        "name": "Digital Life",
+        "nameZh": "数字生活",
+        "count": 21
+      },
+      {
+        "name": "Action Nouns Deep",
+        "nameZh": "行为名词",
+        "count": 22
+      },
+      {
+        "name": "Transport Deep",
+        "nameZh": "交通",
+        "count": 21
+      },
+      {
+        "name": "Society Deep",
+        "nameZh": "社会",
+        "count": 20
+      },
+      {
+        "name": "Emotions Deep",
+        "nameZh": "情感",
+        "count": 19
+      },
+      {
+        "name": "Street & City Deep",
+        "nameZh": "街道城市",
+        "count": 18
+      },
+      {
+        "name": "Shopping",
+        "nameZh": "购物",
+        "count": 18
+      },
+      {
+        "name": "Kitchen Deep",
+        "nameZh": "厨房",
+        "count": 17
+      },
+      {
+        "name": "Household Deep",
+        "nameZh": "家居",
+        "count": 17
+      },
+      {
+        "name": "Personal Items",
+        "nameZh": "个人物品",
+        "count": 17
+      },
+      {
+        "name": "Clothing Deep",
+        "nameZh": "服装",
+        "count": 16
+      },
+      {
+        "name": "Weather Details",
+        "nameZh": "天气细节",
+        "count": 8
+      },
+      {
+        "name": "Living Room Deep",
+        "nameZh": "客厅",
+        "count": 7
+      }
+    ],
+    "words": [
+      {
+        "en": "detail",
+        "phonetic": "/ˈdiːteɪl/",
+        "pos": "n.",
+        "meaning": "细节、详情",
+        "example": "Check the details before signing.",
+        "root": "de(分开)+tail(切) → 切分开的 → 细节",
+        "exampleZh": "签字前检查细节。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "sample",
+        "phonetic": "/ˈsæmpəl/",
+        "pos": "n.",
+        "meaning": "样品、样本",
+        "example": "Try a free sample of the product.",
+        "root": "",
+        "exampleZh": "试试产品的免费样品。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "surface",
+        "phonetic": "/ˈsɜːrfɪs/",
+        "pos": "n.",
+        "meaning": "表面、表层",
+        "example": "The surface of the table is smooth.",
+        "root": "sur(上)+face(面) → 上面的面 → 表面",
+        "exampleZh": "桌子表面很光滑。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "layer",
+        "phonetic": "/ˈleɪər/",
+        "pos": "n.",
+        "meaning": "层、层次",
+        "example": "Add another layer of paint.",
+        "root": "lay(放)+er → 放上去的 → 层",
+        "exampleZh": "再加一层漆。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "angle",
+        "phonetic": "/ˈæŋɡəl/",
+        "pos": "n.",
+        "meaning": "❶角度 ❷视角",
+        "example": "Look at it from a different angle.",
+        "root": "",
+        "exampleZh": "从不同角度看这个问题。",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "position",
+        "phonetic": "/pəˈzɪʃən/",
+        "pos": "n.",
+        "meaning": "❶位置 ❷职位 ❸立场",
+        "example": "What position are you applying for?",
+        "root": "pos(放)+ition → 放的地方 → 位置/职位",
+        "exampleZh": "你申请什么职位？",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
         "en": "spot",
         "phonetic": "/spɒt/",
         "pos": "n.",
@@ -11062,32 +13443,6 @@ var VOCAB_DATA = [
         "subcategory": "High-Frequency Deep",
         "subcategoryZh": "高频补充",
         "wordType": "concrete"
-      },
-      {
-        "en": "resource",
-        "phonetic": "/rɪˈsɔːrs/",
-        "pos": "n.",
-        "meaning": "资源",
-        "example": "Use online resources to learn more.",
-        "root": "re(回)+source(来源) → 回到来源 → 资源",
-        "exampleZh": "利用在线资源学习更多。",
-        "subcategory": "High-Frequency Deep",
-        "subcategoryZh": "高频补充",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "something useful that you can use to achieve a goal, like money, tools, or information",
-          "zh": "你可以用来实现目标的有用东西，如金钱、工具或信息",
-          "examples": [
-            {
-              "en": "We don't have enough resources to finish the project.",
-              "zh": "我们没有足够的资源完成这个项目。"
-            },
-            {
-              "en": "Natural resources like oil and water are limited.",
-              "zh": "像石油和水这样的自然资源是有限的。"
-            }
-          ]
-        }
       },
       {
         "en": "material",
@@ -11678,32 +14033,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "stream",
-        "phonetic": "/striːm/",
-        "pos": "n.",
-        "meaning": "小溪、溪流",
-        "example": "We sat by the stream and relaxed.",
-        "root": "",
-        "exampleZh": "我们坐在溪边放松。",
-        "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a small narrow river; also a continuous flow of something",
-          "zh": "一条小窄河；也是某事物的持续流动",
-          "examples": [
-            {
-              "en": "We sat by the stream and relaxed.",
-              "zh": "我们坐在小溪旁边放松。"
-            },
-            {
-              "en": "A stream of people entered the building.",
-              "zh": "一股人流进入了大楼。"
-            }
-          ]
-        }
-      },
-      {
         "en": "swamp",
         "phonetic": "/swɒmp/",
         "pos": "n.",
@@ -11956,32 +14285,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "horizon",
-        "phonetic": "/həˈraɪzən/",
-        "pos": "n.",
-        "meaning": "地平线",
-        "example": "The sun set below the horizon.",
-        "root": "horiz(边界)+on → 天地交界线 → 地平线",
-        "exampleZh": "太阳落到地平线以下。",
-        "subcategory": "Nature Deep",
-        "subcategoryZh": "自然深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the line where the earth or sea seems to meet the sky; also the limit of what you can see or know",
-          "zh": "大地或海洋似乎与天空相接的线；也是你能看到或知道的极限",
-          "examples": [
-            {
-              "en": "The sun set below the horizon.",
-              "zh": "太阳落到了地平线以下。"
-            },
-            {
-              "en": "Travel broadens your horizons.",
-              "zh": "旅行拓宽你的视野。"
-            }
-          ]
-        }
-      },
-      {
         "en": "clipboard",
         "phonetic": "/ˈklɪpbɔːrd/",
         "pos": "n.",
@@ -12078,32 +14381,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "schedule",
-        "phonetic": "/ˈskedʒuːl/",
-        "pos": "n./v.",
-        "meaning": "❶n.日程表、时间表 ❷v.安排、排定",
-        "example": "Check the schedule for tomorrow.",
-        "root": "",
-        "exampleZh": "查看明天的日程表。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a plan that lists when events or tasks will happen",
-          "zh": "列出事件或任务何时发生的计划",
-          "examples": [
-            {
-              "en": "My schedule is very busy this week.",
-              "zh": "我这周的日程很忙。"
-            },
-            {
-              "en": "The flight was delayed, so the schedule changed.",
-              "zh": "航班延误了，所以日程改变了。"
-            }
-          ]
-        }
-      },
-      {
         "en": "timetable",
         "phonetic": "/ˈtaɪmteɪbəl/",
         "pos": "n.",
@@ -12114,32 +14391,6 @@ var VOCAB_DATA = [
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "syllabus",
-        "phonetic": "/ˈsɪləbəs/",
-        "pos": "n.",
-        "meaning": "课程大纲",
-        "example": "Read the syllabus before the first class.",
-        "root": "",
-        "exampleZh": "第一节课前先看课程大纲。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a document that lists what will be taught in a course",
-          "zh": "列出课程中将教授什么内容的文件",
-          "examples": [
-            {
-              "en": "Check the syllabus to see what topics we'll cover.",
-              "zh": "查看课程大纲看看我们会涵盖哪些主题。"
-            },
-            {
-              "en": "The syllabus says the exam is on Friday.",
-              "zh": "大纲上说考试在周五。"
-            }
-          ]
-        }
       },
       {
         "en": "assignment",
@@ -12164,32 +14415,6 @@ var VOCAB_DATA = [
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "presentation",
-        "phonetic": "/ˌprɪzenˈteɪʃən/",
-        "pos": "n.",
-        "meaning": "❶演示、报告 ❷展示",
-        "example": "She gave a great presentation.",
-        "root": "",
-        "exampleZh": "她做了一个很棒的演示。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a talk or display given to an audience to share information or ideas",
-          "zh": "向听众分享信息或想法的演讲或展示",
-          "examples": [
-            {
-              "en": "She gave a great presentation at the meeting.",
-              "zh": "她在会议上做了一个精彩的演讲。"
-            },
-            {
-              "en": "I need to prepare a presentation for tomorrow.",
-              "zh": "我需要为明天准备一个演示。"
-            }
-          ]
-        }
       },
       {
         "en": "lecture",
@@ -12334,32 +14559,6 @@ var VOCAB_DATA = [
         "subcategory": "Office & School Deep",
         "subcategoryZh": "办公学习深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "document",
-        "phonetic": "/ˈdɒkjʊmənt/",
-        "pos": "n.",
-        "meaning": "文件、文档",
-        "example": "Save the document before closing.",
-        "root": "doc(教)+ment → 教导的记录 → 文件",
-        "exampleZh": "关闭前保存文档。",
-        "subcategory": "Office & School Deep",
-        "subcategoryZh": "办公学习深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a piece of writing or record that provides information or proof",
-          "zh": "提供信息或证明的文字或记录",
-          "examples": [
-            {
-              "en": "Please sign this document.",
-              "zh": "请签署这份文件。"
-            },
-            {
-              "en": "All important documents should be kept safe.",
-              "zh": "所有重要文件应该妥善保管。"
-            }
-          ]
-        }
       },
       {
         "en": "brain",
@@ -12770,110 +14969,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "dose",
-        "phonetic": "/doʊs/",
-        "pos": "n.",
-        "meaning": "剂量、一剂",
-        "example": "Take the correct dose of medicine.",
-        "root": "",
-        "exampleZh": "按正确剂量服药。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a measured amount of medicine taken at one time",
-          "zh": "一次服用的定量药物",
-          "examples": [
-            {
-              "en": "Take one dose every eight hours.",
-              "zh": "每八小时服用一剂。"
-            },
-            {
-              "en": "A high dose can be dangerous.",
-              "zh": "高剂量可能有危险。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "symptom",
-        "phonetic": "/ˈsɪmptəm/",
-        "pos": "n.",
-        "meaning": "症状",
-        "example": "What are your symptoms?",
-        "root": "sym(共同)+ptom(落下) → 与疾病一起出现的 → 症状",
-        "exampleZh": "你有什么症状？",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a sign that shows you have a disease or condition",
-          "zh": "表明你有疾病或状况的迹象",
-          "examples": [
-            {
-              "en": "Fever is a common symptom of flu.",
-              "zh": "发烧是流感的常见症状。"
-            },
-            {
-              "en": "What are the symptoms of this illness?",
-              "zh": "这种疾病的症状是什么？"
-            }
-          ]
-        }
-      },
-      {
-        "en": "fever",
-        "phonetic": "/ˈfiːvər/",
-        "pos": "n.",
-        "meaning": "发烧、发热",
-        "example": "She has a high fever.",
-        "root": "",
-        "exampleZh": "她发烧温度很高。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a condition where your body temperature is higher than normal, usually because of illness",
-          "zh": "你的体温比正常高的状况，通常因为生病",
-          "examples": [
-            {
-              "en": "She has a high fever and needs to rest.",
-              "zh": "她发高烧，需要休息。"
-            },
-            {
-              "en": "The fever went down after taking medicine.",
-              "zh": "吃药后烧退了。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "cold",
-        "phonetic": "/koʊld/",
-        "pos": "n./adj.",
-        "meaning": "❶n.感冒 ❷adj.冷的",
-        "example": "I caught a cold last week.",
-        "root": "",
-        "exampleZh": "上周我感冒了。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a common mild illness that makes you sneeze, cough, and feel unwell",
-          "zh": "一种常见的轻微疾病，让你打喷嚏、咳嗽和感觉不舒服",
-          "examples": [
-            {
-              "en": "I caught a cold last week.",
-              "zh": "我上周感冒了。"
-            },
-            {
-              "en": "She stayed home because of a bad cold.",
-              "zh": "她因为重感冒待在家里。"
-            }
-          ]
-        }
-      },
-      {
         "en": "cough",
         "phonetic": "/kɒf/",
         "pos": "n./v.",
@@ -12920,58 +15015,6 @@ var VOCAB_DATA = [
         "subcategory": "Medicine & Health",
         "subcategoryZh": "医疗健康",
         "wordType": "concrete"
-      },
-      {
-        "en": "allergy",
-        "phonetic": "/ˈælərdʒi/",
-        "pos": "n.",
-        "meaning": "过敏",
-        "example": "I have an allergy to peanuts.",
-        "root": "all(其他)+ergy(反应) → 对其他东西的反应 → 过敏",
-        "exampleZh": "我对花生过敏。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a condition where your body reacts badly to something that is harmless to most people",
-          "zh": "你的身体对大多数人都无害的东西产生不良反应的状况",
-          "examples": [
-            {
-              "en": "He has an allergy to peanuts.",
-              "zh": "他对花生过敏。"
-            },
-            {
-              "en": "My allergy gets worse in spring.",
-              "zh": "我的过敏在春天加重。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "infection",
-        "phonetic": "/ɪnˈfekʃən/",
-        "pos": "n.",
-        "meaning": "感染",
-        "example": "The wound got an infection.",
-        "root": "in(入)+fect(做)+ion → 有害物进入身体 → 感染",
-        "exampleZh": "伤口感染了。",
-        "subcategory": "Medicine & Health",
-        "subcategoryZh": "医疗健康",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a condition where harmful germs enter your body and cause disease",
-          "zh": "有害细菌进入你身体并引起疾病的状况",
-          "examples": [
-            {
-              "en": "The wound got an infection.",
-              "zh": "伤口感染了。"
-            },
-            {
-              "en": "Ear infections are common in children.",
-              "zh": "耳部感染在儿童中很常见。"
-            }
-          ]
-        }
       },
       {
         "en": "vaccine",
@@ -13610,240 +15653,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "salary",
-        "phonetic": "/ˈsæləri/",
-        "pos": "n.",
-        "meaning": "工资、薪水",
-        "example": "My salary gets paid on the 15th.",
-        "root": "sal(盐)+ary → 古罗马用盐付工资 → 薪水",
-        "exampleZh": "我的工资15号发。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the fixed amount of money you receive regularly for your work",
-          "zh": "你因工作而定期收到的固定金额",
-          "examples": [
-            {
-              "en": "His monthly salary is $5,000.",
-              "zh": "他的月薪是5000美元。"
-            },
-            {
-              "en": "They offered me a higher salary.",
-              "zh": "他们给了我更高的工资。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "wage",
-        "phonetic": "/weɪdʒ/",
-        "pos": "n.",
-        "meaning": "工资（按小时/周计）",
-        "example": "His hourly wage is $15.",
-        "root": "",
-        "exampleZh": "他小时工资15美元。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the money you earn for work, usually paid by the hour or day",
-          "zh": "你因工作赚的钱，通常按小时或天支付",
-          "examples": [
-            {
-              "en": "The minimum wage is $15 per hour.",
-              "zh": "最低工资是每小时15美元。"
-            },
-            {
-              "en": "He earns a daily wage as a construction worker.",
-              "zh": "他作为建筑工人赚取日薪。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "income",
-        "phonetic": "/ˈɪnkʌm/",
-        "pos": "n.",
-        "meaning": "收入",
-        "example": "My income covers my basic expenses.",
-        "root": "in(入)+come(来) → 进来的钱 → 收入",
-        "exampleZh": "我的收入覆盖基本开支。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "all the money you receive from work, investments, or other sources",
-          "zh": "你从工作、投资或其他来源收到的所有钱",
-          "examples": [
-            {
-              "en": "Their household income is about $80,000 a year.",
-              "zh": "他们的家庭年收入大约8万美元。"
-            },
-            {
-              "en": "Income from rent helps pay the bills.",
-              "zh": "租金收入帮助支付账单。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "expense",
-        "phonetic": "/ɪkˈspens/",
-        "pos": "n.",
-        "meaning": "支出、花费",
-        "example": "Track your monthly expenses.",
-        "root": "ex(出)+pend(花) → 钱花出去 → 支出",
-        "exampleZh": "追踪你的月度支出。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "money that you spend on something; the cost of living or doing business",
-          "zh": "你在某事上花的钱；生活或做生意的成本",
-          "examples": [
-            {
-              "en": "Living expenses are high in this city.",
-              "zh": "这个城市的生活费用很高。"
-            },
-            {
-              "en": "The company cut expenses to save money.",
-              "zh": "公司削减开支来省钱。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "budget",
-        "phonetic": "/ˈbʌdʒɪt/",
-        "pos": "n.",
-        "meaning": "预算",
-        "example": "Stick to your budget this month.",
-        "root": "",
-        "exampleZh": "这个月要守住预算。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a plan for how to spend your money, based on how much you have",
-          "zh": "基于你有多少钱来规划如何花钱的计划",
-          "examples": [
-            {
-              "en": "We need to stick to our budget this month.",
-              "zh": "这个月我们需要遵守预算。"
-            },
-            {
-              "en": "The government's budget for education increased.",
-              "zh": "政府的教育预算增加了。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "debt",
-        "phonetic": "/det/",
-        "pos": "n.",
-        "meaning": "债务、欠款",
-        "example": "I need to pay off my student debt.",
-        "root": "",
-        "exampleZh": "我需要还清学生贷款。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "money that you owe to someone and must pay back",
-          "zh": "你欠别人的必须偿还的钱",
-          "examples": [
-            {
-              "en": "He's in debt because of his credit cards.",
-              "zh": "他因为信用卡欠了债。"
-            },
-            {
-              "en": "It took her five years to pay off the debt.",
-              "zh": "她花了五年才还清债务。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "loan",
-        "phonetic": "/loʊn/",
-        "pos": "n.",
-        "meaning": "贷款、借款",
-        "example": "I took out a loan for the car.",
-        "root": "",
-        "exampleZh": "我贷了款买车。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "money that you borrow and agree to pay back, usually with interest",
-          "zh": "你借来并同意偿还的钱，通常带利息",
-          "examples": [
-            {
-              "en": "She took out a loan to buy a car.",
-              "zh": "她贷款买了一辆车。"
-            },
-            {
-              "en": "The bank approved my loan application.",
-              "zh": "银行批准了我的贷款申请。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "interest",
-        "phonetic": "/ˈɪntrəst/",
-        "pos": "n.",
-        "meaning": "❶利息 ❷兴趣",
-        "example": "The loan has a 5% interest rate.",
-        "root": "inter(之间)+est → 在其中 → 利息/兴趣",
-        "exampleZh": "贷款利率5%。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "extra money you pay when borrowing, or earn when saving; also, curiosity about something",
-          "zh": "借钱时付的或存钱时赚的额外钱；也是对某事的好奇",
-          "examples": [
-            {
-              "en": "The interest rate on this loan is 5%.",
-              "zh": "这笔贷款的利率是5%。"
-            },
-            {
-              "en": "She showed great interest in science.",
-              "zh": "她对科学表现出极大的兴趣。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "tax",
-        "phonetic": "/tæks/",
-        "pos": "n.",
-        "meaning": "税、税款",
-        "example": "File your taxes before the deadline.",
-        "root": "",
-        "exampleZh": "截止日期前报税。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "money that the government requires you to pay based on your income or purchases",
-          "zh": "政府根据你的收入或购买要求你付的钱",
-          "examples": [
-            {
-              "en": "I pay income tax every year.",
-              "zh": "我每年付所得税。"
-            },
-            {
-              "en": "The sales tax here is 8%.",
-              "zh": "这里的销售税是8%。"
-            }
-          ]
-        }
-      },
-      {
         "en": "bill",
         "phonetic": "/bɪl/",
         "pos": "n.",
@@ -13866,32 +15675,6 @@ var VOCAB_DATA = [
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
         "wordType": "concrete"
-      },
-      {
-        "en": "profit",
-        "phonetic": "/ˈprɒfɪt/",
-        "pos": "n.",
-        "meaning": "利润",
-        "example": "The profit was higher this quarter.",
-        "root": "pro(前)+fit(做) → 向前做得好 → 利润",
-        "exampleZh": "这季度利润更高。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the money you gain after subtracting all costs from your revenue",
-          "zh": "从收入中减去所有成本后你赚的钱",
-          "examples": [
-            {
-              "en": "The business made a profit of $10,000.",
-              "zh": "这家企业赚了1万美元的利润。"
-            },
-            {
-              "en": "We need to increase our profit margin.",
-              "zh": "我们需要提高利润率。"
-            }
-          ]
-        }
       },
       {
         "en": "credit card",
@@ -13928,58 +15711,6 @@ var VOCAB_DATA = [
         "subcategory": "Finance Daily",
         "subcategoryZh": "日常金融",
         "wordType": "concrete"
-      },
-      {
-        "en": "insurance",
-        "phonetic": "/ɪnˈʃʊrəns/",
-        "pos": "n.",
-        "meaning": "保险",
-        "example": "Do you have health insurance?",
-        "root": "in(入)+sure(确定)+ance → 使确定 → 保险",
-        "exampleZh": "你有健康保险吗？",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a system where you pay regular amounts so that you'll be covered if something bad happens",
-          "zh": "你定期付钱以便在坏事发生时得到赔付的系统",
-          "examples": [
-            {
-              "en": "You should have health insurance.",
-              "zh": "你应该有医疗保险。"
-            },
-            {
-              "en": "Car insurance is required by law.",
-              "zh": "法律要求买车险。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "mortgage",
-        "phonetic": "/ˈmɔːrɡɪdʒ/",
-        "pos": "n.",
-        "meaning": "房贷、抵押贷款",
-        "example": "Our mortgage payment is due next week.",
-        "root": "mort(死)+gage(质押) → 死质押 → 还完才解押 → 房贷",
-        "exampleZh": "我们的房贷下周到期。",
-        "subcategory": "Finance Daily",
-        "subcategoryZh": "日常金融",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a loan you get to buy a house, which you pay back over many years",
-          "zh": "你用来买房的贷款，在多年内偿还",
-          "examples": [
-            {
-              "en": "They took out a 30-year mortgage.",
-              "zh": "他们贷了30年房贷。"
-            },
-            {
-              "en": "Our monthly mortgage payment is $2,000.",
-              "zh": "我们的月房贷还款是2000美元。"
-            }
-          ]
-        }
       },
       {
         "en": "rent",
@@ -14330,58 +16061,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "account",
-        "phonetic": "/əˈkaʊnt/",
-        "pos": "n.",
-        "meaning": "❶账号、账户 ❷描述",
-        "example": "Create an account to sign in.",
-        "root": "ac(向)+count(计算) → 计算的记录 → 账户",
-        "exampleZh": "创建账号登录。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a record of money you keep at a bank; also a description of an event",
-          "zh": "你在银行保存的钱的记录；也是对事件的描述",
-          "examples": [
-            {
-              "en": "I opened a new bank account.",
-              "zh": "我开了一个新的银行账户。"
-            },
-            {
-              "en": "He gave a detailed account of what happened.",
-              "zh": "他详细描述了发生了什么。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "password",
-        "phonetic": "/ˈpæswɜːrd/",
-        "pos": "n.",
-        "meaning": "密码",
-        "example": "Change your password regularly.",
-        "root": "pass(通过)+word(词) → 通过的词 → 密码",
-        "exampleZh": "定期更换密码。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a secret word or code you type to prove you are allowed to access something",
-          "zh": "你输入以证明你有权访问某物的秘密词语或代码",
-          "examples": [
-            {
-              "en": "Don't share your password with anyone.",
-              "zh": "不要和任何人分享你的密码。"
-            },
-            {
-              "en": "I forgot my password and had to reset it.",
-              "zh": "我忘了密码，不得不重置。"
-            }
-          ]
-        }
-      },
-      {
         "en": "username",
         "phonetic": "/ˈjuːzərneɪm/",
         "pos": "n.",
@@ -14404,110 +16083,6 @@ var VOCAB_DATA = [
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
         "wordType": "concrete"
-      },
-      {
-        "en": "notification",
-        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃən/",
-        "pos": "n.",
-        "meaning": "通知、提醒",
-        "example": "I got a notification about the delivery.",
-        "root": "noti(注意)+fication → 让人注意 → 通知",
-        "exampleZh": "我收到了配送通知。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a message or alert that tells you something has happened or needs your attention",
-          "zh": "告诉你某事发生了或需要你关注的消息或提醒",
-          "examples": [
-            {
-              "en": "I got a notification about a new email.",
-              "zh": "我收到了一个新邮件的通知。"
-            },
-            {
-              "en": "Turn off notifications when you're sleeping.",
-              "zh": "睡觉时关掉通知。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "download",
-        "phonetic": "/ˈdaʊnloʊd/",
-        "pos": "n./v.",
-        "meaning": "下载",
-        "example": "Download the update before using it.",
-        "root": "down(下)+load(载) → 从上往下载 → 下载",
-        "exampleZh": "使用前先下载更新。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the act of copying data from the internet to your device",
-          "zh": "从互联网复制数据到你的设备的动作",
-          "examples": [
-            {
-              "en": "The download took only a few seconds.",
-              "zh": "下载只花了几秒钟。"
-            },
-            {
-              "en": "This app has over a million downloads.",
-              "zh": "这个应用有超过一百万次下载。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "upload",
-        "phonetic": "/ˈʌploʊd/",
-        "pos": "n./v.",
-        "meaning": "上传",
-        "example": "Upload the photo to your profile.",
-        "root": "up(上)+load(载) → 往上载 → 上传",
-        "exampleZh": "把照片上传到你的资料。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the act of sending data from your device to the internet",
-          "zh": "从你的设备发送数据到互联网的动作",
-          "examples": [
-            {
-              "en": "The upload speed is very slow today.",
-              "zh": "今天上传速度很慢。"
-            },
-            {
-              "en": "I uploaded the photos to my cloud storage.",
-              "zh": "我把照片上传到了云存储。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "link",
-        "phonetic": "/lɪŋk/",
-        "pos": "n./v.",
-        "meaning": "❶n.链接 ❷n.联系 ❸v.连接",
-        "example": "Click the link to open the page.",
-        "root": "",
-        "exampleZh": "点击链接打开页面。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a connection between two things; on the internet, a clickable address",
-          "zh": "两事物之间的连接；在互联网上，可点击的地址",
-          "examples": [
-            {
-              "en": "Click this link to open the website.",
-              "zh": "点击这个链接打开网站。"
-            },
-            {
-              "en": "There's a link between diet and health.",
-              "zh": "饮食和健康之间有联系。"
-            }
-          ]
-        }
       },
       {
         "en": "search engine",
@@ -14582,58 +16157,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "backup",
-        "phonetic": "/ˈbækʌp/",
-        "pos": "n.",
-        "meaning": "备份",
-        "example": "Make a backup of your important files.",
-        "root": "back(后)+up(上) → 后面支撑 → 备份",
-        "exampleZh": "给重要文件做备份。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a copy of data you keep in case the original gets lost or damaged",
-          "zh": "你保存的数据副本，以防原件丢失或损坏",
-          "examples": [
-            {
-              "en": "Always make a backup of important files.",
-              "zh": "总是备份重要文件。"
-            },
-            {
-              "en": "The backup saved all my data.",
-              "zh": "备份保存了我的所有数据。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "storage",
-        "phonetic": "/ˈstɔːrɪdʒ/",
-        "pos": "n.",
-        "meaning": "存储空间",
-        "example": "Check your phone storage space.",
-        "root": "",
-        "exampleZh": "检查手机存储空间。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "space where you keep things or save data for later use",
-          "zh": "你存放东西或保存数据以备后用的空间",
-          "examples": [
-            {
-              "en": "This phone has 128GB of storage.",
-              "zh": "这款手机有128GB存储空间。"
-            },
-            {
-              "en": "We need more storage space in the garage.",
-              "zh": "我们需要车库更多的存储空间。"
-            }
-          ]
-        }
-      },
-      {
         "en": "screen",
         "phonetic": "/skriːn/",
         "pos": "n.",
@@ -14644,32 +16167,6 @@ var VOCAB_DATA = [
         "subcategory": "Digital Life",
         "subcategoryZh": "数字生活",
         "wordType": "concrete"
-      },
-      {
-        "en": "network",
-        "phonetic": "/ˈnetwɜːrk/",
-        "pos": "n.",
-        "meaning": "网络",
-        "example": "The network is down right now.",
-        "root": "net(网)+work(工作) → 网状运作 → 网络",
-        "exampleZh": "网络现在断了。",
-        "subcategory": "Digital Life",
-        "subcategoryZh": "数字生活",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a group of things or people that are connected to each other",
-          "zh": "一组相互连接的事物或人",
-          "examples": [
-            {
-              "en": "My social network helps me find jobs.",
-              "zh": "我的社交网络帮助我找工作。"
-            },
-            {
-              "en": "The Wi-Fi network is not working.",
-              "zh": "WiFi网络不工作。"
-            }
-          ]
-        }
       },
       {
         "en": "wifi",
@@ -14696,84 +16193,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "habit",
-        "phonetic": "/ˈhæbɪt/",
-        "pos": "n.",
-        "meaning": "习惯",
-        "example": "Reading is a good habit.",
-        "root": "",
-        "exampleZh": "阅读是好习惯。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "something you do regularly, often without thinking about it",
-          "zh": "你经常做的事，通常不经过思考",
-          "examples": [
-            {
-              "en": "Reading before bed is a good habit.",
-              "zh": "睡前阅读是一个好习惯。"
-            },
-            {
-              "en": "He has a habit of checking his phone too often.",
-              "zh": "他有经常看手机的坏习惯。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "process",
-        "phonetic": "/ˈprɒses/",
-        "pos": "n.",
-        "meaning": "过程、流程",
-        "example": "The hiring process takes two weeks.",
-        "root": "pro(前)+cess(走) → 向前走的过程 → 流程",
-        "exampleZh": "招聘流程需要两周。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a series of actions or steps that lead to a result",
-          "zh": "导致结果的一系列行动或步骤",
-          "examples": [
-            {
-              "en": "The hiring process takes about two weeks.",
-              "zh": "招聘流程大约需要两周。"
-            },
-            {
-              "en": "Learning is a slow process.",
-              "zh": "学习是一个缓慢的过程。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "procedure",
-        "phonetic": "/prəˈsiːdʒər/",
-        "pos": "n.",
-        "meaning": "程序、步骤",
-        "example": "Follow the procedure step by step.",
-        "root": "pro(前)+cedure(走) → 向前走的方式 → 程序",
-        "exampleZh": "按步骤执行程序。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the official or correct way of doing something, step by step",
-          "zh": "做某事的官方或正确方式，一步一步",
-          "examples": [
-            {
-              "en": "Follow the safety procedure carefully.",
-              "zh": "仔细遵循安全程序。"
-            },
-            {
-              "en": "The procedure for applying is quite simple.",
-              "zh": "申请的程序很简单。"
-            }
-          ]
-        }
-      },
-      {
         "en": "task",
         "phonetic": "/tæsk/",
         "pos": "n.",
@@ -14796,188 +16215,6 @@ var VOCAB_DATA = [
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "effort",
-        "phonetic": "/ˈefərt/",
-        "pos": "n.",
-        "meaning": "努力、费力",
-        "example": "Put more effort into your studies.",
-        "root": "ex(出)+fort(力量) → 出力 → 努力",
-        "exampleZh": "在学习上多花点努力。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the physical or mental energy you use to try to do something",
-          "zh": "你用来尝试做某事的身体或精神能量",
-          "examples": [
-            {
-              "en": "She put a lot of effort into her project.",
-              "zh": "她在项目上投入了很多努力。"
-            },
-            {
-              "en": "With more effort, you can achieve your goals.",
-              "zh": "付出更多努力，你能实现目标。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "progress",
-        "phonetic": "/ˈprɒɡres/",
-        "pos": "n.",
-        "meaning": "进步、进展",
-        "example": "We made good progress this week.",
-        "root": "pro(前)+gress(走) → 向前走 → 进步",
-        "exampleZh": "这周我们进步很大。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the process of improving or moving forward toward a goal",
-          "zh": "改进或向目标前进的过程",
-          "examples": [
-            {
-              "en": "The students are making good progress.",
-              "zh": "学生们在取得良好进步。"
-            },
-            {
-              "en": "We've made progress on the project.",
-              "zh": "我们在项目上有了进展。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "result",
-        "phonetic": "/rɪˈzʌlt/",
-        "pos": "n.",
-        "meaning": "结果、成果",
-        "example": "What was the result of the test?",
-        "root": "re(回)+sult(跳) → 回跳出来 → 结果",
-        "exampleZh": "测试结果是什么？",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "what happens because of an action or situation; the outcome",
-          "zh": "因为某个行动或情况而发生的事情；结果",
-          "examples": [
-            {
-              "en": "The result of the test was positive.",
-              "zh": "测试结果是阳性。"
-            },
-            {
-              "en": "Hard work usually leads to good results.",
-              "zh": "努力通常带来好结果。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "effect",
-        "phonetic": "/ɪˈfekt/",
-        "pos": "n.",
-        "meaning": "效果、影响",
-        "example": "The effect was immediate.",
-        "root": "ef(出)+fect(做) → 做出来的 → 效果",
-        "exampleZh": "效果立竿见影。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a change that happens because of something else; how one thing influences another",
-          "zh": "因为其他事情而发生的变化；一件事如何影响另一件事",
-          "examples": [
-            {
-              "en": "The medicine had a positive effect.",
-              "zh": "药物有了积极的效果。"
-            },
-            {
-              "en": "What are the effects of pollution?",
-              "zh": "污染的影响是什么？"
-            }
-          ]
-        }
-      },
-      {
-        "en": "impact",
-        "phonetic": "/ˈɪmpækt/",
-        "pos": "n.",
-        "meaning": "❶影响、冲击 ❷撞击",
-        "example": "The impact of the policy is unclear.",
-        "root": "im(入)+pact(压) → 压进去 → 冲击/影响",
-        "exampleZh": "政策的影响还不明确。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the strong effect or influence that something has on a situation or person",
-          "zh": "某事对情况或人的强烈影响或冲击",
-          "examples": [
-            {
-              "en": "Climate change has a huge impact on wildlife.",
-              "zh": "气候变化对野生动物有巨大影响。"
-            },
-            {
-              "en": "The impact of the decision was immediate.",
-              "zh": "决定的影响是立即的。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "movement",
-        "phonetic": "/ˈmuːvmənt/",
-        "pos": "n.",
-        "meaning": "❶运动、移动 ❷运动（社会）",
-        "example": "Join the fitness movement.",
-        "root": "",
-        "exampleZh": "加入健身运动。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a change of position; also a group of people working together for a cause",
-          "zh": "位置的变化；也是一群人为了某个目标共同行动",
-          "examples": [
-            {
-              "en": "The civil rights movement changed many laws.",
-              "zh": "民权运动改变了许多法律。"
-            },
-            {
-              "en": "I watched the movement of the clouds.",
-              "zh": "我观察云的运动。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "operation",
-        "phonetic": "/ˌɒpəˈreɪʃən/",
-        "pos": "n.",
-        "meaning": "❶手术 ❷操作 ❸运营",
-        "example": "The operation went well.",
-        "root": "",
-        "exampleZh": "手术很顺利。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a planned activity or process; also a medical procedure",
-          "zh": "计划好的活动或过程；也是医疗手术",
-          "examples": [
-            {
-              "en": "He had an operation on his knee.",
-              "zh": "他做了膝盖手术。"
-            },
-            {
-              "en": "The company's daily operations are running smoothly.",
-              "zh": "公司的日常运营顺利进行。"
-            }
-          ]
-        }
       },
       {
         "en": "transaction",
@@ -15004,32 +16241,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "experience",
-        "phonetic": "/ɪkˈspɪriəns/",
-        "pos": "n./v.",
-        "meaning": "❶n.经验 ❷n.经历 ❸v.体验",
-        "example": "She has a lot of work experience.",
-        "root": "ex(出)+peri(尝试)+ence → 尝试出来的 → 经验",
-        "exampleZh": "她有很多工作经验。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "something that happens to you and affects you; also, knowledge gained by doing something",
-          "zh": "发生在你身上并影响你的事；也是通过做某事获得的知识",
-          "examples": [
-            {
-              "en": "That was a great experience.",
-              "zh": "那是一次很棒的经历。"
-            },
-            {
-              "en": "She has five years of work experience.",
-              "zh": "她有五年的工作经验。"
-            }
-          ]
-        }
-      },
-      {
         "en": "journey",
         "phonetic": "/ˈdʒɜːrni/",
         "pos": "n.",
@@ -15054,32 +16265,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "delivery",
-        "phonetic": "/dɪˈlɪvəri/",
-        "pos": "n.",
-        "meaning": "快递、投递",
-        "example": "The delivery is expected tomorrow.",
-        "root": "de(离开)+liver(自由) → 释放送达 → 投递",
-        "exampleZh": "快递预计明天到达。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the act of bringing something to a place; also the package that is brought",
-          "zh": "把东西送到某地的行为；也是被送达的包裹",
-          "examples": [
-            {
-              "en": "The delivery arrived this morning.",
-              "zh": "快递今天早上到了。"
-            },
-            {
-              "en": "Free delivery on orders over $50.",
-              "zh": "订单超过50美元免费送货。"
-            }
-          ]
-        }
-      },
-      {
         "en": "appointment",
         "phonetic": "/əˈpɔɪntmənt/",
         "pos": "n.",
@@ -15090,84 +16275,6 @@ var VOCAB_DATA = [
         "subcategory": "Action Nouns Deep",
         "subcategoryZh": "动作名词深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "purpose",
-        "phonetic": "/ˈpɜːrpəs/",
-        "pos": "n.",
-        "meaning": "目的、意图",
-        "example": "What's the purpose of this meeting?",
-        "root": "pro(前)+pose(放) → 放在前面的 → 目的",
-        "exampleZh": "这个会议的目的是什么？",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the reason why something is done or exists; the goal",
-          "zh": "某事被做或存在的理由；目标",
-          "examples": [
-            {
-              "en": "What's the purpose of this meeting?",
-              "zh": "这个会议的目的是什么？"
-            },
-            {
-              "en": "She found her purpose in helping others.",
-              "zh": "她在帮助他人中找到了人生目的。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "opportunity",
-        "phonetic": "/ˌɒpərˈtjuːnɪti/",
-        "pos": "n.",
-        "meaning": "机会",
-        "example": "This is a great opportunity.",
-        "root": "opport(适合)+unity → 适合的时候 → 机会",
-        "exampleZh": "这是一个好机会。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a chance to do something, especially something good or useful",
-          "zh": "做某事的机会，尤其是做好的或有用的事",
-          "examples": [
-            {
-              "en": "This is a great opportunity to learn.",
-              "zh": "这是一个学习的好机会。"
-            },
-            {
-              "en": "Don't miss this opportunity.",
-              "zh": "不要错过这个机会。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "permission",
-        "phonetic": "/pərˈmɪʃən/",
-        "pos": "n.",
-        "meaning": "许可、允许",
-        "example": "Ask permission before entering.",
-        "root": "per(通过)+miss(送)+ion → 让通过 → 许可",
-        "exampleZh": "进入前请获得许可。",
-        "subcategory": "Action Nouns Deep",
-        "subcategoryZh": "动作名词深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the act of allowing someone to do something; official approval",
-          "zh": "允许某人做某事的行为；正式批准",
-          "examples": [
-            {
-              "en": "You need permission to enter this area.",
-              "zh": "你需要许可才能进入这个区域。"
-            },
-            {
-              "en": "She asked her parents' permission to go out.",
-              "zh": "她征求父母的允许出去。"
-            }
-          ]
-        }
       },
       {
         "en": "cab",
@@ -15252,58 +16359,6 @@ var VOCAB_DATA = [
         "subcategory": "Transport Deep",
         "subcategoryZh": "交通深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "platform",
-        "phonetic": "/ˈplætfɔːrm/",
-        "pos": "n.",
-        "meaning": "❶站台 ❷平台",
-        "example": "The train leaves from Platform 5.",
-        "root": "",
-        "exampleZh": "火车从5号站台出发。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a raised surface you stand on; also, a system or technology that other things are built on",
-          "zh": "你站立的升高表面；也是其他事物构建在其上的系统或技术",
-          "examples": [
-            {
-              "en": "Wait on the platform for the train.",
-              "zh": "在站台上等火车。"
-            },
-            {
-              "en": "YouTube is a video-sharing platform.",
-              "zh": "YouTube是一个视频分享平台。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "fare",
-        "phonetic": "/feər/",
-        "pos": "n.",
-        "meaning": "❶票价 ❷车费",
-        "example": "The bus fare is two dollars.",
-        "root": "",
-        "exampleZh": "公交车票价两美元。",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the money you pay to travel on a bus, train, or other transport",
-          "zh": "你付钱坐公交、火车或其他交通工具的费用",
-          "examples": [
-            {
-              "en": "The bus fare is $2.",
-              "zh": "公交车费是2美元。"
-            },
-            {
-              "en": "Air fares have increased this year.",
-              "zh": "今年机票价格上涨了。"
-            }
-          ]
-        }
       },
       {
         "en": "passport",
@@ -15426,32 +16481,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "route",
-        "phonetic": "/ruːt/",
-        "pos": "n.",
-        "meaning": "路线、路途",
-        "example": "What's the fastest route to the airport?",
-        "root": "",
-        "exampleZh": "去机场最快的路线是什么？",
-        "subcategory": "Transport Deep",
-        "subcategoryZh": "交通深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the way or path that you take to get from one place to another",
-          "zh": "你从一个地方到另一个地方所走的路或路径",
-          "examples": [
-            {
-              "en": "We took a different route to avoid traffic.",
-              "zh": "我们走了一条不同的路线以避开交通拥堵。"
-            },
-            {
-              "en": "What's the fastest route to the airport?",
-              "zh": "去机场最快的路线是什么？"
-            }
-          ]
-        }
-      },
-      {
         "en": "mileage",
         "phonetic": "/ˈmaɪlɪdʒ/",
         "pos": "n.",
@@ -15476,110 +16505,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "policy",
-        "phonetic": "/ˈpɒlɪsi/",
-        "pos": "n.",
-        "meaning": "政策、方针",
-        "example": "The new policy starts next month.",
-        "root": "",
-        "exampleZh": "新政策下月开始。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a set of rules or principles that guide decisions, especially in government or business",
-          "zh": "指导决策的一套规则或原则，特别是在政府或企业中",
-          "examples": [
-            {
-              "en": "The company's policy is to hire locally.",
-              "zh": "公司的政策是本地招聘。"
-            },
-            {
-              "en": "Government policy affects everyone.",
-              "zh": "政府政策影响每个人。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "culture",
-        "phonetic": "/ˈkʌltʃər/",
-        "pos": "n.",
-        "meaning": "文化",
-        "example": "Learn about the local culture.",
-        "root": "cult(耕种)+ure → 耕作培养 → 文化",
-        "exampleZh": "了解当地文化。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the ideas, customs, and way of life of a particular group or society",
-          "zh": "特定群体或社会的思想、习俗和生活方式",
-          "examples": [
-            {
-              "en": "Chinese culture values family.",
-              "zh": "中国文化重视家庭。"
-            },
-            {
-              "en": "Learning about other cultures is important.",
-              "zh": "了解其他文化很重要。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "tradition",
-        "phonetic": "/trəˈdɪʃən/",
-        "pos": "n.",
-        "meaning": "传统、习俗",
-        "example": "It's a tradition in our family.",
-        "root": "trad(传递)+ition → 传递下来的 → 传统",
-        "exampleZh": "这是我们家传统。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a custom or belief that has been passed down through generations",
-          "zh": "通过世代传承下来的习俗或信念",
-          "examples": [
-            {
-              "en": "It's a tradition to eat turkey on Thanksgiving.",
-              "zh": "感恩节吃火鸡是一个传统。"
-            },
-            {
-              "en": "Many traditions are slowly disappearing.",
-              "zh": "许多传统正在慢慢消失。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "custom",
-        "phonetic": "/ˈkʌstəm/",
-        "pos": "n.",
-        "meaning": "❶习俗 ❷定制 ❸海关",
-        "example": "It's a local custom to shake hands.",
-        "root": "",
-        "exampleZh": "握手是当地习俗。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a traditional way of behaving or doing something that is specific to a society",
-          "zh": "特定社会中传统的行为或做事方式",
-          "examples": [
-            {
-              "en": "It is a local custom to greet with a bow.",
-              "zh": "鞠躬问候是当地习俗。"
-            },
-            {
-              "en": "Customs differ from country to country.",
-              "zh": "习俗因国而异。"
-            }
-          ]
-        }
-      },
-      {
         "en": "religion",
         "phonetic": "/rɪˈlɪdʒən/",
         "pos": "n.",
@@ -15592,32 +16517,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "election",
-        "phonetic": "/ɪˈlekʃən/",
-        "pos": "n.",
-        "meaning": "选举",
-        "example": "The election is next month.",
-        "root": "e(出)+lect(选)+ion → 选出来 → 选举",
-        "exampleZh": "选举下个月举行。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the process of choosing someone by voting",
-          "zh": "通过投票选择某人的过程",
-          "examples": [
-            {
-              "en": "The election will be held next month.",
-              "zh": "选举将在下月举行。"
-            },
-            {
-              "en": "Who won the last election?",
-              "zh": "谁赢得了上次选举？"
-            }
-          ]
-        }
-      },
-      {
         "en": "vote",
         "phonetic": "/voʊt/",
         "pos": "n./v.",
@@ -15628,162 +16527,6 @@ var VOCAB_DATA = [
         "subcategory": "Society Deep",
         "subcategoryZh": "社会深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "crime",
-        "phonetic": "/kraɪm/",
-        "pos": "n.",
-        "meaning": "犯罪、罪行",
-        "example": "Crime rates went down this year.",
-        "root": "",
-        "exampleZh": "今年犯罪率下降了。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "an illegal action that can be punished by law",
-          "zh": "可以被法律惩罚的非法行为",
-          "examples": [
-            {
-              "en": "Crime rates have gone down in this area.",
-              "zh": "这个地区的犯罪率下降了。"
-            },
-            {
-              "en": "Stealing is a crime.",
-              "zh": "盗窃是犯罪。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "punishment",
-        "phonetic": "/ˈpʌnɪʃmənt/",
-        "pos": "n.",
-        "meaning": "惩罚、处罚",
-        "example": "The punishment was a fine.",
-        "root": "",
-        "exampleZh": "惩罚是罚款。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "something done to a person who has broken a rule or law, to make them suffer or learn",
-          "zh": "对违反规则或法律的人所做的使其受苦或学习的事",
-          "examples": [
-            {
-              "en": "The punishment for this crime is five years in prison.",
-              "zh": "这项犯罪的处罚是五年监禁。"
-            },
-            {
-              "en": "Fair punishment helps maintain order.",
-              "zh": "公正的处罚有助于维持秩序。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "freedom",
-        "phonetic": "/ˈfriːdəm/",
-        "pos": "n.",
-        "meaning": "自由",
-        "example": "Freedom of speech is important.",
-        "root": "free(自由)+dom → 自由的状态 → 自由",
-        "exampleZh": "言论自由很重要。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the state of being able to do what you want without being controlled or limited",
-          "zh": "能够做自己想做的事而不受控制或限制的状态",
-          "examples": [
-            {
-              "en": "Freedom of speech is a basic right.",
-              "zh": "言论自由是一项基本权利。"
-            },
-            {
-              "en": "He fought for freedom from oppression.",
-              "zh": "他为摆脱压迫的自由而战斗。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "equality",
-        "phonetic": "/ɪˈkwɒlɪti/",
-        "pos": "n.",
-        "meaning": "平等",
-        "example": "Everyone deserves equality.",
-        "root": "equal(相等)+ity → 相等的状态 → 平等",
-        "exampleZh": "每个人都应该平等。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the principle that all people should have the same rights and opportunities",
-          "zh": "所有人都应该有相同权利和机会的原则",
-          "examples": [
-            {
-              "en": "Gender equality is still a challenge in many places.",
-              "zh": "性别平等在许多地方仍是一个挑战。"
-            },
-            {
-              "en": "They promote equality in the workplace.",
-              "zh": "他们在工作场所促进平等。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "justice",
-        "phonetic": "/ˈdʒʌstɪs/",
-        "pos": "n.",
-        "meaning": "正义、司法",
-        "example": "Justice should be fair for everyone.",
-        "root": "just(公正)+ice → 公正 → 正义",
-        "exampleZh": "正义对每个人都应该公平。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the quality of being fair and treating people equally; also the system of law",
-          "zh": "公正和公平对待人的品质；也是法律系统",
-          "examples": [
-            {
-              "en": "We demand justice for the victims.",
-              "zh": "我们要求为受害者伸张正义。"
-            },
-            {
-              "en": "The justice system must be fair.",
-              "zh": "司法系统必须公正。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "community",
-        "phonetic": "/kəˈmjuːnɪti/",
-        "pos": "n.",
-        "meaning": "社区、社群",
-        "example": "Our community is very friendly.",
-        "root": "commun(共同)+ity → 共同体 → 社区",
-        "exampleZh": "我们的社区很友好。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a group of people who live in the same area or share common interests",
-          "zh": "住在同一地区或共享共同利益的一群人",
-          "examples": [
-            {
-              "en": "Our community has a strong sense of support.",
-              "zh": "我们的社区有很强的互助意识。"
-            },
-            {
-              "en": "The online community is very active.",
-              "zh": "在线社区非常活跃。"
-            }
-          ]
-        }
       },
       {
         "en": "neighborhood",
@@ -15822,32 +16565,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "economy",
-        "phonetic": "/ɪˈkɒnəmi/",
-        "pos": "n.",
-        "meaning": "经济",
-        "example": "The economy is doing well this year.",
-        "root": "eco(家)+nomy(管理) → 家政管理 → 经济",
-        "exampleZh": "今年经济状况不错。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the system of how money is made, spent, and managed in a country or region",
-          "zh": "一个国家或地区中金钱制造、花费和管理的系统",
-          "examples": [
-            {
-              "en": "The economy is growing this year.",
-              "zh": "经济今年在增长。"
-            },
-            {
-              "en": "A strong economy means more jobs.",
-              "zh": "强劲的经济意味着更多就业。"
-            }
-          ]
-        }
-      },
-      {
         "en": "industry",
         "phonetic": "/ˈɪndəstri/",
         "pos": "n.",
@@ -15860,266 +16577,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "education",
-        "phonetic": "/ˌedʒʊˈkeɪʃən/",
-        "pos": "n.",
-        "meaning": "教育",
-        "example": "Education is the key to success.",
-        "root": "e(出)+duc(引导)+ation → 引导出来 → 教育",
-        "exampleZh": "教育是成功的关键。",
-        "subcategory": "Society Deep",
-        "subcategoryZh": "社会深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the process of learning and gaining knowledge, especially in schools",
-          "zh": "学习和获取知识的过程，特别是在学校中",
-          "examples": [
-            {
-              "en": "Education is important for everyone.",
-              "zh": "教育对每个人都很重要。"
-            },
-            {
-              "en": "She received a good education.",
-              "zh": "她接受了良好的教育。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "guilt",
-        "phonetic": "/ɡɪlt/",
-        "pos": "n.",
-        "meaning": "内疚、罪恶感",
-        "example": "I felt guilt about lying to her.",
-        "root": "",
-        "exampleZh": "我对她撒谎感到内疚。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the feeling of having done something wrong or bad",
-          "zh": "做了错事或坏事的感觉",
-          "examples": [
-            {
-              "en": "He felt guilt after lying to his friend.",
-              "zh": "他对朋友撒谎后感到内疚。"
-            },
-            {
-              "en": "Guilt can be a heavy burden.",
-              "zh": "内疚感可以是沉重的负担。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "shame",
-        "phonetic": "/ʃeɪm/",
-        "pos": "n.",
-        "meaning": "羞耻、羞愧",
-        "example": "He felt shame about his mistake.",
-        "root": "",
-        "exampleZh": "他为自己的错误感到羞愧。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the painful feeling of having done something wrong or embarrassing",
-          "zh": "做了错事或令人尴尬的事的痛苦感觉",
-          "examples": [
-            {
-              "en": "He felt shame when he was caught cheating.",
-              "zh": "他被发现作弊时感到羞耻。"
-            },
-            {
-              "en": "There's no shame in asking for help.",
-              "zh": "寻求帮助并不丢人。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "pride",
-        "phonetic": "/praɪd/",
-        "pos": "n.",
-        "meaning": "❶自豪、骄傲 ❷自负",
-        "example": "She takes pride in her work.",
-        "root": "",
-        "exampleZh": "她为自己的工作感到自豪。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a feeling of satisfaction and pleasure in what you or others have achieved",
-          "zh": "对你或他人所取得的成就感到满意和高兴的感觉",
-          "examples": [
-            {
-              "en": "She takes pride in her work.",
-              "zh": "她对自己的工作感到自豪。"
-            },
-            {
-              "en": "National pride is strong during the Olympics.",
-              "zh": "奥运期间民族自豪感很强。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "jealousy",
-        "phonetic": "/ˈdʒeləsi/",
-        "pos": "n.",
-        "meaning": "嫉妒",
-        "example": "Jealousy can ruin relationships.",
-        "root": "",
-        "exampleZh": "嫉妒会破坏关系。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the unhappy feeling when you want what someone else has",
-          "zh": "当你想要别人拥有的东西时的不愉快感觉",
-          "examples": [
-            {
-              "en": "Jealousy can destroy friendships.",
-              "zh": "嫉妒可以毁掉友谊。"
-            },
-            {
-              "en": "He felt jealousy when his friend got the promotion.",
-              "zh": "当朋友得到晋升时他感到嫉妒。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "embarrassment",
-        "phonetic": "/ɪmˈbærəsmənt/",
-        "pos": "n.",
-        "meaning": "尴尬、窘迫",
-        "example": "It was a moment of embarrassment.",
-        "root": "",
-        "exampleZh": "那是个尴尬的时刻。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the uncomfortable feeling when you've done something that makes you look foolish",
-          "zh": "当你做了让自己显得愚蠢的事时的不舒服感觉",
-          "examples": [
-            {
-              "en": "She hid her embarrassment with a smile.",
-              "zh": "她用微笑掩饰尴尬。"
-            },
-            {
-              "en": "To my embarrassment, I forgot his name.",
-              "zh": "令我尴尬的是，我忘了他的名字。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "gratitude",
-        "phonetic": "/ˈɡrætɪtjuːd/",
-        "pos": "n.",
-        "meaning": "感激、感恩",
-        "example": "I expressed my gratitude to her.",
-        "root": "grat(高兴)+itude → 让人高兴的状态 → 感恩",
-        "exampleZh": "我向她表达了感激。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the feeling of being thankful and wanting to show appreciation",
-          "zh": "感到感谢并想要表达感激的感觉",
-          "examples": [
-            {
-              "en": "I want to express my gratitude to you.",
-              "zh": "我想向你表达我的感激之情。"
-            },
-            {
-              "en": "She showed gratitude by writing a thank-you letter.",
-              "zh": "她通过写感谢信表达感激。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "sympathy",
-        "phonetic": "/ˈsɪmpəθi/",
-        "pos": "n.",
-        "meaning": "同情",
-        "example": "I feel sympathy for the homeless.",
-        "root": "sym(共同)+pathy(感情) → 共同的感情 → 同情",
-        "exampleZh": "我对无家可归者感到同情。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "understanding and caring about someone else's suffering or sadness",
-          "zh": "理解和关心他人的痛苦或悲伤",
-          "examples": [
-            {
-              "en": "I feel sympathy for people who lost their homes.",
-              "zh": "我对失去家园的人感到同情。"
-            },
-            {
-              "en": "She expressed sympathy for the victim.",
-              "zh": "她对受害者表达了同情。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "curiosity",
-        "phonetic": "/ˌkjʊriˈɒsɪti/",
-        "pos": "n.",
-        "meaning": "好奇心",
-        "example": "Curiosity drives kids to learn.",
-        "root": "curi(关心)+osity → 关心的程度 → 好奇心",
-        "exampleZh": "好奇心驱使孩子学习。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the desire to know or learn about something",
-          "zh": "想要知道或学习某事的欲望",
-          "examples": [
-            {
-              "en": "Curiosity drives scientific discovery.",
-              "zh": "好奇心推动科学发现。"
-            },
-            {
-              "en": "Children have natural curiosity about the world.",
-              "zh": "孩子们对世界有天然的好奇心。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "patience",
-        "phonetic": "/ˈpeɪʃəns/",
-        "pos": "n.",
-        "meaning": "耐心",
-        "example": "Teaching kids requires patience.",
-        "root": "pati(忍受)+ence → 忍受等待 → 耐心",
-        "exampleZh": "教孩子需要耐心。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the ability to wait calmly without getting angry or frustrated",
-          "zh": "平静等待而不生气或沮丧的能力",
-          "examples": [
-            {
-              "en": "You need patience when learning a new language.",
-              "zh": "学新语言需要耐心。"
-            },
-            {
-              "en": "Patience is key to good teaching.",
-              "zh": "耐心是好教学的关键。"
-            }
-          ]
-        }
-      },
-      {
         "en": "stress",
         "phonetic": "/stres/",
         "pos": "n.",
@@ -16130,188 +16587,6 @@ var VOCAB_DATA = [
         "subcategory": "Emotions Deep",
         "subcategoryZh": "情感深入",
         "wordType": "concrete"
-      },
-      {
-        "en": "comfort",
-        "phonetic": "/ˈkʌmfərt/",
-        "pos": "n./v.",
-        "meaning": "❶n.安慰、舒适 ❷v.安慰",
-        "example": "She needs some comfort right now.",
-        "root": "com(加强)+fort(力量) → 给予力量 → 安慰",
-        "exampleZh": "她现在需要安慰。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a feeling of being relaxed and free from pain or worry; also something that makes you feel this way",
-          "zh": "感到放松和免于痛苦或担忧的感觉；也是让你有这种感觉的东西",
-          "examples": [
-            {
-              "en": "These shoes provide great comfort.",
-              "zh": "这些鞋子提供了极大的舒适感。"
-            },
-            {
-              "en": "Her words gave me comfort.",
-              "zh": "她的话给了我安慰。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "relief",
-        "phonetic": "/rɪˈliːf/",
-        "pos": "n.",
-        "meaning": "❶解脱、松口气 ❷救济",
-        "example": "What a relief that exam is over!",
-        "root": "re(再)+lief(升起) → 重担升起 → 解脱",
-        "exampleZh": "考试结束了真是解脱！",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the feeling of being freed from worry, pain, or a difficult situation",
-          "zh": "从担忧、痛苦或困难处境中被解脱的感觉",
-          "examples": [
-            {
-              "en": "It was such a relief when the exam ended.",
-              "zh": "考试结束时的解脱感真是太好了。"
-            },
-            {
-              "en": "Financial relief helped the family survive.",
-              "zh": "经济救济帮助了这个家庭度过难关。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "frustration",
-        "phonetic": "/frʌˈstreɪʃən/",
-        "pos": "n.",
-        "meaning": "挫败感、沮丧",
-        "example": "I felt frustration when I couldn't fix it.",
-        "root": "",
-        "exampleZh": "没法修好它让我感到挫败。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the feeling of being upset because you cannot achieve what you want",
-          "zh": "因为你无法实现你想要的东西而感到烦恼的感觉",
-          "examples": [
-            {
-              "en": "He expressed frustration with the slow progress.",
-              "zh": "他对缓慢的进展表达了沮丧。"
-            },
-            {
-              "en": "Frustration is normal when learning something new.",
-              "zh": "学习新东西时感到挫败是正常的。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "loneliness",
-        "phonetic": "/ˈloʊnli/",
-        "pos": "n.",
-        "meaning": "孤独",
-        "example": "Loneliness can be really hard.",
-        "root": "",
-        "exampleZh": "孤独真的很难熬。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the sad feeling of being alone or not having friends",
-          "zh": "独自一人或没有朋友的悲伤感觉",
-          "examples": [
-            {
-              "en": "Loneliness can affect your mental health.",
-              "zh": "孤独感会影响心理健康。"
-            },
-            {
-              "en": "She felt loneliness after moving to a new city.",
-              "zh": "搬到新城市后她感到孤独。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "excitement",
-        "phonetic": "/ɪkˈsaɪtmənt/",
-        "pos": "n.",
-        "meaning": "兴奋、激动",
-        "example": "The kids showed excitement about the trip.",
-        "root": "ex(出)+cite(唤起)+ment → 被唤出 → 兴奋",
-        "exampleZh": "孩子们对旅行感到兴奋。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the feeling of being very happy and enthusiastic about something",
-          "zh": "对某事感到非常高兴和热情的感觉",
-          "examples": [
-            {
-              "en": "The children showed excitement about the trip.",
-              "zh": "孩子们对旅行表现出兴奋。"
-            },
-            {
-              "en": "There was excitement in the crowd.",
-              "zh": "人群中有兴奋的情绪。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "boredom",
-        "phonetic": "/ˈbɔːrdəm/",
-        "pos": "n.",
-        "meaning": "无聊、厌倦",
-        "example": "Boredom makes you do weird things.",
-        "root": "",
-        "exampleZh": "无聊让你做奇怪的事。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the feeling of being tired and unhappy because nothing interesting is happening",
-          "zh": "因为没有有趣的事情发生而感到疲倦和不快乐的感觉",
-          "examples": [
-            {
-              "en": "Boredom makes people seek new activities.",
-              "zh": "无聊让人寻找新活动。"
-            },
-            {
-              "en": "He quit his job out of boredom.",
-              "zh": "他因为无聊辞了职。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "despair",
-        "phonetic": "/dɪˈspeər/",
-        "pos": "n.",
-        "meaning": "绝望",
-        "example": "Don't give in to despair.",
-        "root": "de(去除)+spair(希望) → 没有希望 → 绝望",
-        "exampleZh": "不要屈服于绝望。",
-        "subcategory": "Emotions Deep",
-        "subcategoryZh": "情感深入",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a feeling that there is no hope and nothing can be done to improve the situation",
-          "zh": "一种没有希望、无法改善情况的感觉",
-          "examples": [
-            {
-              "en": "She was in despair after losing everything.",
-              "zh": "失去一切后她陷入了绝望。"
-            },
-            {
-              "en": "Never give in to despair.",
-              "zh": "永远不要屈服于绝望。"
-            }
-          ]
-        }
       },
       {
         "en": "contentment",
@@ -16590,32 +16865,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "discount",
-        "phonetic": "/ˈdɪskæʊnt/",
-        "pos": "n./v.",
-        "meaning": "❶n.折扣 ❷v.打折",
-        "example": "Is there a discount for students?",
-        "root": "dis(去除)+count(计算) → 减少计算 → 折扣",
-        "exampleZh": "学生有折扣吗？",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a reduction in the price of something",
-          "zh": "某物价格的减少",
-          "examples": [
-            {
-              "en": "I got a 20% discount on this shirt.",
-              "zh": "这件衬衫我得到了20%的折扣。"
-            },
-            {
-              "en": "Students get a discount at the museum.",
-              "zh": "学生在博物馆享受折扣。"
-            }
-          ]
-        }
-      },
-      {
         "en": "coupon",
         "phonetic": "/ˈkuːpɒn/",
         "pos": "n.",
@@ -16626,84 +16875,6 @@ var VOCAB_DATA = [
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
         "wordType": "concrete"
-      },
-      {
-        "en": "sale",
-        "phonetic": "/seɪl/",
-        "pos": "n.",
-        "meaning": "❶打折促销 ❷销售",
-        "example": "There's a big sale this weekend.",
-        "root": "",
-        "exampleZh": "这周末有大促销。",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "an event where things are sold at lower prices; also the act of selling something",
-          "zh": "以较低价格出售东西的活动；也是出售某物的行为",
-          "examples": [
-            {
-              "en": "The summer sale starts tomorrow.",
-              "zh": "夏季促销明天开始。"
-            },
-            {
-              "en": "The sale of the house was completed.",
-              "zh": "房屋的出售已完成。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "promotion",
-        "phonetic": "/prəˈmoʊʃən/",
-        "pos": "n.",
-        "meaning": "❶促销活动 ❷晋升",
-        "example": "The promotion ends tomorrow.",
-        "root": "pro(前)+motion(移动) → 向前推 → 促销/晋升",
-        "exampleZh": "促销明天结束。",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "an activity to increase sales or awareness; also, being moved to a higher position at work",
-          "zh": "增加销售或知名度的活动；也是在工作中升到更高职位",
-          "examples": [
-            {
-              "en": "The store is running a promotion this week.",
-              "zh": "商店这周在做促销。"
-            },
-            {
-              "en": "She got a promotion to manager.",
-              "zh": "她被晋升为经理。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "brand",
-        "phonetic": "/brænd/",
-        "pos": "n.",
-        "meaning": "品牌",
-        "example": "What brand of shampoo do you use?",
-        "root": "",
-        "exampleZh": "你用什么品牌的洗发水？",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the name and image that identify a company's product and make it different from others",
-          "zh": "识别公司产品并使其与其他产品不同的名称和形象",
-          "examples": [
-            {
-              "en": "Nike is a well-known brand.",
-              "zh": "耐克是一个知名品牌。"
-            },
-            {
-              "en": "I don't care about brands — I just want good quality.",
-              "zh": "我不在乎品牌——我只想要好质量。"
-            }
-          ]
-        }
       },
       {
         "en": "label",
@@ -16740,32 +16911,6 @@ var VOCAB_DATA = [
         "subcategory": "Shopping",
         "subcategoryZh": "购物",
         "wordType": "concrete"
-      },
-      {
-        "en": "refund",
-        "phonetic": "/ˈriːfʌnd/",
-        "pos": "n./v.",
-        "meaning": "❶n.退款 ❷v.退还",
-        "example": "I'd like a refund for this item.",
-        "root": "re(回)+fund(资金) → 资金退回 → 退款",
-        "exampleZh": "我想退这个商品。",
-        "subcategory": "Shopping",
-        "subcategoryZh": "购物",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "money that is given back to you when you return something you bought",
-          "zh": "当你退还购买的东西时给你退回的钱",
-          "examples": [
-            {
-              "en": "I asked for a refund because the product was defective.",
-              "zh": "我要求退款因为产品有缺陷。"
-            },
-            {
-              "en": "Full refund within 30 days.",
-              "zh": "30天内全额退款。"
-            }
-          ]
-        }
       },
       {
         "en": "exchange",
@@ -17248,32 +17393,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "license",
-        "phonetic": "/ˈlaɪsəns/",
-        "pos": "n.",
-        "meaning": "❶执照、许可证 ❷驾照",
-        "example": "Do you have a driver's license?",
-        "root": "lic(允许)+ense → 允许的凭证 → 执照",
-        "exampleZh": "你有驾照吗？",
-        "subcategory": "Personal Items",
-        "subcategoryZh": "个人物品",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "an official document that gives you permission to do something, like drive or practice a profession",
-          "zh": "给你许可做某事的官方文件，比如开车或执业",
-          "examples": [
-            {
-              "en": "You need a license to drive a car.",
-              "zh": "你需要驾照才能开车。"
-            },
-            {
-              "en": "His medical license was revoked.",
-              "zh": "他的医疗执照被吊销了。"
-            }
-          ]
-        }
-      },
-      {
         "en": "keys",
         "phonetic": "/kiːz/",
         "pos": "n.",
@@ -17658,58 +17777,6 @@ var VOCAB_DATA = [
         "wordType": "concrete"
       },
       {
-        "en": "temperature",
-        "phonetic": "/ˈtemprətʃər/",
-        "pos": "n.",
-        "meaning": "温度、气温",
-        "example": "The temperature dropped below zero.",
-        "root": "temper(调节)+ature → 调节的热量 → 温度",
-        "exampleZh": "温度降到零度以下了。",
-        "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "a measure of how hot or cold something is",
-          "zh": "衡量某物有多热或多冷的指标",
-          "examples": [
-            {
-              "en": "The temperature today is 30°C.",
-              "zh": "今天的温度是30度。"
-            },
-            {
-              "en": "Take your temperature if you feel sick.",
-              "zh": "如果觉得不舒服就量体温。"
-            }
-          ]
-        }
-      },
-      {
-        "en": "humidity",
-        "phonetic": "/hjuːˈmɪdɪti/",
-        "pos": "n.",
-        "meaning": "湿度",
-        "example": "The humidity is really high today.",
-        "root": "",
-        "exampleZh": "今天湿度很高。",
-        "subcategory": "Weather Details",
-        "subcategoryZh": "天气细节",
-        "wordType": "abstract",
-        "abstractDef": {
-          "en": "the amount of water vapor in the air; how moist the air feels",
-          "zh": "空气中水蒸气的量；空气感觉有多潮湿",
-          "examples": [
-            {
-              "en": "The humidity is very high today — it feels sticky.",
-              "zh": "今天湿度很高——感觉很黏。"
-            },
-            {
-              "en": "High humidity makes hot weather worse.",
-              "zh": "高湿度让炎热的天气更难受。"
-            }
-          ]
-        }
-      },
-      {
         "en": "storm",
         "phonetic": "/stɔːrm/",
         "pos": "n.",
@@ -17864,7 +17931,1262 @@ var VOCAB_DATA = [
         "subcategory": "Living Room Deep",
         "subcategoryZh": "客厅深入",
         "wordType": "concrete"
+      },
+      {
+        "en": "corner",
+        "phonetic": "/ˈkɔːrnər/",
+        "pos": "n.",
+        "meaning": "❶ 角、角落 ❷ 街角",
+        "example": "Turn left at the corner.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "edge",
+        "phonetic": "/edʒ/",
+        "pos": "n.",
+        "meaning": "❶ 边、边缘 ❷ 优势",
+        "example": "Sit on the edge of the bed.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "mark",
+        "phonetic": "/mɑːrk/",
+        "pos": "n.",
+        "meaning": "❶ 标记、痕迹 ❷ 分数",
+        "example": "There's a mark on the wall.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "piece",
+        "phonetic": "/piːs/",
+        "pos": "n.",
+        "meaning": "❶ 片、块 ❷ 碎片",
+        "example": "Give me a piece of cake.",
+        "root": "pett(小片) → 一小片 → piece",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "group",
+        "phonetic": "/ɡruːp/",
+        "pos": "n.",
+        "meaning": "❶ 群、组 ❷ 团体",
+        "example": "A group of students walked by.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "set",
+        "phonetic": "/set/",
+        "pos": "n.",
+        "meaning": "❶ 套、组 ❷ 装置",
+        "example": "I bought a new set of tools.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "patch",
+        "phonetic": "/pætʃ/",
+        "pos": "n.",
+        "meaning": "❶ 补丁 ❷ 一小块地",
+        "example": "There's a patch of grass here.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "stain",
+        "phonetic": "/steɪn/",
+        "pos": "n.",
+        "meaning": "污渍、污点",
+        "example": "There's a stain on my shirt.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "scratch",
+        "phonetic": "/skrætʃ/",
+        "pos": "n.",
+        "meaning": "❶ 刮痕 ❷ 抓",
+        "example": "The car has a scratch on the door.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "crack",
+        "phonetic": "/kræk/",
+        "pos": "n.",
+        "meaning": "❶ 裂缝 ❷ 破裂声",
+        "example": "There's a crack in the window.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "hole",
+        "phonetic": "/hoʊl/",
+        "pos": "n.",
+        "meaning": "洞、孔",
+        "example": "There's a hole in my sock.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "bolt",
+        "phonetic": "/boʊlt/",
+        "pos": "n.",
+        "meaning": "❶ 螺栓 ❷ 闪电",
+        "example": "Tighten the bolt with a wrench.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "spring",
+        "phonetic": "/sprɪŋ/",
+        "pos": "n.",
+        "meaning": "❶ 弹簧 ❷ 春天 ❸ 泉",
+        "example": "The spring in the door is broken.",
+        "root": "spring(跳) → 弹跳的装置 → 弹簧",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "blade",
+        "phonetic": "/bleɪd/",
+        "pos": "n.",
+        "meaning": "❶ 刀刃 ❷ 叶片",
+        "example": "The blade of the knife is sharp.",
+        "root": "",
+        "subcategory": "High-Frequency Deep",
+        "subcategoryZh": "高频补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "grain",
+        "phonetic": "/ɡreɪn/",
+        "pos": "n.",
+        "meaning": "❶ 谷物 ❷ 颗粒",
+        "example": "China is a major grain producer.",
+        "root": "gran(种子) → 种子 → 谷物",
+        "subcategory": "Food & Drink Deep",
+        "subcategoryZh": "饮食补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "bean",
+        "phonetic": "/biːn/",
+        "pos": "n.",
+        "meaning": "豆子、豆类",
+        "example": "Beans are rich in protein.",
+        "root": "",
+        "subcategory": "Food & Drink Deep",
+        "subcategoryZh": "饮食补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "pickle",
+        "phonetic": "/ˈpɪkəl/",
+        "pos": "n.",
+        "meaning": "泡菜、腌菜",
+        "example": "I love Chinese pickles.",
+        "root": "pick(腌)+le → 腌制的菜 → 泡菜",
+        "subcategory": "Food & Drink Deep",
+        "subcategoryZh": "饮食补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "roast",
+        "phonetic": "/roʊst/",
+        "pos": "n.",
+        "meaning": "烤肉、烤菜",
+        "example": "We had a roast for dinner.",
+        "root": "",
+        "subcategory": "Food & Drink Deep",
+        "subcategoryZh": "饮食补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "stew",
+        "phonetic": "/stuː/",
+        "pos": "n.",
+        "meaning": "炖菜、炖汤",
+        "example": "I made a beef stew.",
+        "root": "",
+        "subcategory": "Food & Drink Deep",
+        "subcategoryZh": "饮食补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "curry",
+        "phonetic": "/ˈkʌri/",
+        "pos": "n.",
+        "meaning": "咖喱",
+        "example": "I love chicken curry.",
+        "root": "",
+        "subcategory": "Food & Drink Deep",
+        "subcategoryZh": "饮食补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "lid",
+        "phonetic": "/lɪd/",
+        "pos": "n.",
+        "meaning": "盖子",
+        "example": "Put the lid on the pot.",
+        "root": "",
+        "subcategory": "Kitchen Deep",
+        "subcategoryZh": "厨房补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "tongs",
+        "phonetic": "/tɒŋz/",
+        "pos": "n.",
+        "meaning": "夹子、钳子",
+        "example": "Use tongs to pick up the hot food.",
+        "root": "",
+        "subcategory": "Kitchen Deep",
+        "subcategoryZh": "厨房补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "freezer",
+        "phonetic": "/ˈfriːzər/",
+        "pos": "n.",
+        "meaning": "冰柜、冷冻箱",
+        "example": "Put the meat in the freezer.",
+        "root": "freeze(冷冻)+er → 冷冻的箱子 → 冰柜",
+        "subcategory": "Kitchen Deep",
+        "subcategoryZh": "厨房补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "basin",
+        "phonetic": "/ˈbeɪsən/",
+        "pos": "n.",
+        "meaning": "❶ 盆、水盆 ❷ 流域",
+        "example": "Wash your hands in the basin.",
+        "root": "bas(底) → 有底的容器 → 盆",
+        "subcategory": "Kitchen Deep",
+        "subcategoryZh": "厨房补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "shelf",
+        "phonetic": "/ʃelf/",
+        "pos": "n.",
+        "meaning": "架子、搁板",
+        "example": "Put the books on the shelf.",
+        "root": "skelf(木板) → 木板 → 架子",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "cabinet",
+        "phonetic": "/ˈkæbɪnət/",
+        "pos": "n.",
+        "meaning": "柜子、橱柜",
+        "example": "The files are in the cabinet.",
+        "root": "cabin(小屋) → 小屋状的 → 柜子",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "box",
+        "phonetic": "/bɒks/",
+        "pos": "n.",
+        "meaning": "盒子、箱子",
+        "example": "Put it in the box.",
+        "root": "",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "bag",
+        "phonetic": "/bæɡ/",
+        "pos": "n.",
+        "meaning": "袋子、包",
+        "example": "Put it in the bag.",
+        "root": "",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "drain",
+        "phonetic": "/dreɪn/",
+        "pos": "n.",
+        "meaning": "排水口、下水道",
+        "example": "The drain is blocked.",
+        "root": "drain(干) → 让水干掉 → 排水口",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "filter",
+        "phonetic": "/ˈfɪltər/",
+        "pos": "n.",
+        "meaning": "过滤器、滤网",
+        "example": "Change the water filter.",
+        "root": "filtr(毛毡) → 用毛毡过滤 → 过滤器",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "bulb",
+        "phonetic": "/bʌlb/",
+        "pos": "n.",
+        "meaning": "灯泡",
+        "example": "The bulb needs replacing.",
+        "root": "bulb(球) → 球形的 → 灯泡",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "coin",
+        "phonetic": "/kɔɪn/",
+        "pos": "n.",
+        "meaning": "硬币",
+        "example": "I have a few coins left.",
+        "root": "",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "dustpan",
+        "phonetic": "/ˈdʌstpæn/",
+        "pos": "n.",
+        "meaning": "簸箕",
+        "example": "Use the dustpan to sweep up.",
+        "root": "dust(灰尘)+pan(盘) → 灰尘盘 → 簸箕",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "trash",
+        "phonetic": "/træʃ/",
+        "pos": "n.",
+        "meaning": "垃圾",
+        "example": "Put the trash in the bin.",
+        "root": "",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "hook",
+        "phonetic": "/hʊk/",
+        "pos": "n.",
+        "meaning": "钩子、挂钩",
+        "example": "Hang your coat on the hook.",
+        "root": "",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "string",
+        "phonetic": "/strɪŋ/",
+        "pos": "n.",
+        "meaning": "绳子、线",
+        "example": "Tie it with a string.",
+        "root": "",
+        "subcategory": "Household Deep",
+        "subcategoryZh": "家居补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "jaw",
+        "phonetic": "/dʒɔː/",
+        "pos": "n.",
+        "meaning": "下巴、下颌",
+        "example": "He has a strong jaw.",
+        "root": "",
+        "subcategory": "Body Deep",
+        "subcategoryZh": "身体补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "crow",
+        "phonetic": "/kroʊ/",
+        "pos": "n.",
+        "meaning": "乌鸦",
+        "example": "A crow sat on the fence.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "lobster",
+        "phonetic": "/ˈlɒbstər/",
+        "pos": "n.",
+        "meaning": "龙虾",
+        "example": "We ordered lobster at the restaurant.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "seal",
+        "phonetic": "/siːl/",
+        "pos": "n.",
+        "meaning": "❶ 海豹 ❷ 封印",
+        "example": "Seals swim in the cold ocean.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "camel",
+        "phonetic": "/ˈkæməl/",
+        "pos": "n.",
+        "meaning": "骆驼",
+        "example": "Camels live in the desert.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "giraffe",
+        "phonetic": "/dʒɪˈræf/",
+        "pos": "n.",
+        "meaning": "长颈鹿",
+        "example": "Giraffes have very long necks.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "gorilla",
+        "phonetic": "/ɡəˈrɪlə/",
+        "pos": "n.",
+        "meaning": "大猩猩",
+        "example": "Gorillas are the largest primates.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "crocodile",
+        "phonetic": "/ˈkrɒkədaɪl/",
+        "pos": "n.",
+        "meaning": "鳄鱼",
+        "example": "Crocodiles live near rivers.",
+        "root": "croco(虫)+deilos(怕) → 怕虫的 → 鳄鱼(讽刺)",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "salmon",
+        "phonetic": "/ˈsæmən/",
+        "pos": "n.",
+        "meaning": "三文鱼、鲑鱼",
+        "example": "Grilled salmon is delicious.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "squid",
+        "phonetic": "/skwɪd/",
+        "pos": "n.",
+        "meaning": "鱿鱼",
+        "example": "Fried squid is delicious.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "snail",
+        "phonetic": "/sneɪl/",
+        "pos": "n.",
+        "meaning": "蜗牛",
+        "example": "The snail moves very slowly.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "lizard",
+        "phonetic": "/ˈlɪzərd/",
+        "pos": "n.",
+        "meaning": "蜥蜴",
+        "example": "A lizard ran across the wall.",
+        "root": "",
+        "subcategory": "Animals Deep",
+        "subcategoryZh": "动物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "tunnel",
+        "phonetic": "/ˈtʌnəl/",
+        "pos": "n.",
+        "meaning": "隧道",
+        "example": "The train goes through the tunnel.",
+        "root": "",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "scooter",
+        "phonetic": "/ˈskuːtər/",
+        "pos": "n.",
+        "meaning": "滑板车、小摩托",
+        "example": "Kids ride scooters in the park.",
+        "root": "",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "tram",
+        "phonetic": "/træm/",
+        "pos": "n.",
+        "meaning": "有轨电车",
+        "example": "Take the tram to the city center.",
+        "root": "",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "dashboard",
+        "phonetic": "/ˈdæʃbɔːrd/",
+        "pos": "n.",
+        "meaning": "仪表盘",
+        "example": "Check the dashboard for warnings.",
+        "root": "dash(快速)+board(板) → 信息显示板 → 仪表盘",
+        "subcategory": "Transport Deep",
+        "subcategoryZh": "交通补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "chalk",
+        "phonetic": "/tʃɒk/",
+        "pos": "n.",
+        "meaning": "粉笔",
+        "example": "Write on the board with chalk.",
+        "root": "calx(石灰) → 石灰制的 → 粉笔",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "staple",
+        "phonetic": "/ˈsteɪpəl/",
+        "pos": "n.",
+        "meaning": "❶ 订书钉 ❷ 主要产品",
+        "example": "Use a staple to bind the pages.",
+        "root": "",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "clip",
+        "phonetic": "/klɪp/",
+        "pos": "n.",
+        "meaning": "❶ 夹子 ❷ 回形针",
+        "example": "Hold the papers with a clip.",
+        "root": "",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "pin",
+        "phonetic": "/pɪn/",
+        "pos": "n.",
+        "meaning": "❶ 针、别针 ❷ 图钉",
+        "example": "Pin the note to the board.",
+        "root": "",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "crayon",
+        "phonetic": "/ˈkreɪən/",
+        "pos": "n.",
+        "meaning": "蜡笔",
+        "example": "Kids love drawing with crayons.",
+        "root": "craie(蜡) → 蜡制的笔 → 蜡笔",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "parcel",
+        "phonetic": "/ˈpɑːrsəl/",
+        "pos": "n.",
+        "meaning": "包裹、邮包",
+        "example": "I received a parcel today.",
+        "root": "part(部分) → 分开的一份 → 包裹",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "package",
+        "phonetic": "/ˈpækɪdʒ/",
+        "pos": "n.",
+        "meaning": "❶ 包裹 ❷ 包装",
+        "example": "The package arrived yesterday.",
+        "root": "pack(打包)+age → 打包的东西 → 包裹",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "badge",
+        "phonetic": "/bædʒ/",
+        "pos": "n.",
+        "meaning": "徽章、胸牌",
+        "example": "Employees wear a badge at work.",
+        "root": "",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "ink",
+        "phonetic": "/ɪŋk/",
+        "pos": "n.",
+        "meaning": "墨水、油墨",
+        "example": "The pen has no ink.",
+        "root": "",
+        "subcategory": "Office & School Deep",
+        "subcategoryZh": "办公补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "sock",
+        "phonetic": "/sɒk/",
+        "pos": "n.",
+        "meaning": "袜子",
+        "example": "I lost one sock.",
+        "root": "",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "glove",
+        "phonetic": "/ɡlʌv/",
+        "pos": "n.",
+        "meaning": "手套",
+        "example": "Wear gloves in winter.",
+        "root": "",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "boot",
+        "phonetic": "/buːt/",
+        "pos": "n.",
+        "meaning": "靴子",
+        "example": "Hiking boots are heavy.",
+        "root": "",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "vest",
+        "phonetic": "/vest/",
+        "pos": "n.",
+        "meaning": "背心、马甲",
+        "example": "He wore a vest under his jacket.",
+        "root": "",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "sneaker",
+        "phonetic": "/ˈsniːkər/",
+        "pos": "n.",
+        "meaning": "运动鞋",
+        "example": "I bought new sneakers for running.",
+        "root": "sneak(悄悄) → 悄悄走的鞋 → 运动鞋",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "slipper",
+        "phonetic": "/ˈslɪpər/",
+        "pos": "n.",
+        "meaning": "拖鞋",
+        "example": "Wear slippers at home.",
+        "root": "slip(滑)+er → 滑进去的鞋 → 拖鞋",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "sandal",
+        "phonetic": "/ˈsændəl/",
+        "pos": "n.",
+        "meaning": "凉鞋",
+        "example": "I wear sandals in summer.",
+        "root": "",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "shawl",
+        "phonetic": "/ʃɔːl/",
+        "pos": "n.",
+        "meaning": "披肩、围巾",
+        "example": "She wrapped a shawl around her shoulders.",
+        "root": "",
+        "subcategory": "Clothing Deep",
+        "subcategoryZh": "服装补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "wave",
+        "phonetic": "/weɪv/",
+        "pos": "n.",
+        "meaning": "波浪",
+        "example": "The waves crashed on the shore.",
+        "root": "waf(波动) → 波动 → 波浪",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "tide",
+        "phonetic": "/taɪd/",
+        "pos": "n.",
+        "meaning": "潮汐",
+        "example": "The tide is coming in.",
+        "root": "tid(时间) → 随时间变化的水 → 潮汐",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "dew",
+        "phonetic": "/djuː/",
+        "pos": "n.",
+        "meaning": "露水",
+        "example": "Dew drops on the grass in the morning.",
+        "root": "",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "shadow",
+        "phonetic": "/ˈʃædoʊ/",
+        "pos": "n.",
+        "meaning": "❶ 影子 ❷ 阴暗处",
+        "example": "My shadow follows me.",
+        "root": "sceadu(遮蔽) → 遮蔽光线 → 影子",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "magnet",
+        "phonetic": "/ˈmæɡnɪt/",
+        "pos": "n.",
+        "meaning": "磁铁",
+        "example": "A magnet attracts iron.",
+        "root": "Magnesia(马格尼西亚) → 该地发现的矿石 → 磁铁",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "crystal",
+        "phonetic": "/ˈkrɪstəl/",
+        "pos": "n.",
+        "meaning": "❶ 水晶 ❷ 结晶",
+        "example": "The crystal shines in the light.",
+        "root": "krystallos(冰) → 冰样的透明体 → 水晶",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "rainbow",
+        "phonetic": "/ˈreɪnboʊ/",
+        "pos": "n.",
+        "meaning": "彩虹",
+        "example": "A rainbow appeared after the rain.",
+        "root": "rain(雨)+bow(弓) → 雨后的弓 → 彩虹",
+        "subcategory": "Nature Deep",
+        "subcategoryZh": "自然补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "pole",
+        "phonetic": "/poʊl/",
+        "pos": "n.",
+        "meaning": "❶ 杆、柱 ❷ 极点",
+        "example": "The flag hangs on a pole.",
+        "root": "",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "fence",
+        "phonetic": "/fens/",
+        "pos": "n.",
+        "meaning": "栅栏、围墙",
+        "example": "The fence keeps the dog in.",
+        "root": "defend(防御) → 防御的围栏 → 栅栏",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "hedge",
+        "phonetic": "/hedʒ/",
+        "pos": "n.",
+        "meaning": "灌木篱笆",
+        "example": "The hedge borders the garden.",
+        "root": "",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "lawn",
+        "phonetic": "/lɔːn/",
+        "pos": "n.",
+        "meaning": "草坪",
+        "example": "The lawn needs mowing.",
+        "root": "",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "yard",
+        "phonetic": "/jɑːrd/",
+        "pos": "n.",
+        "meaning": "院子、庭院",
+        "example": "The kids play in the yard.",
+        "root": "",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "flag",
+        "phonetic": "/flæɡ/",
+        "pos": "n.",
+        "meaning": "旗帜",
+        "example": "The flag is red and white.",
+        "root": "",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "cone",
+        "phonetic": "/koʊn/",
+        "pos": "n.",
+        "meaning": "❶ 圆锥 ❷ 交通锥",
+        "example": "The road cone marks the work zone.",
+        "root": "konos(尖) → 尖形物 → 圆锥",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "hydrant",
+        "phonetic": "/ˈhaɪdrənt/",
+        "pos": "n.",
+        "meaning": "消防栓",
+        "example": "Don't park near the fire hydrant.",
+        "root": "hydr(水)+ant → 放水的装置 → 消防栓",
+        "subcategory": "Street & City Deep",
+        "subcategoryZh": "街道补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "voucher",
+        "phonetic": "/ˈvaʊtʃər/",
+        "pos": "n.",
+        "meaning": "代金券、凭证",
+        "example": "Use this voucher for a discount.",
+        "root": "vouch(担保)+er → 担保的凭据 → 代金券",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "wrapper",
+        "phonetic": "/ˈræpər/",
+        "pos": "n.",
+        "meaning": "包装纸",
+        "example": "Remove the wrapper before eating.",
+        "root": "wrap(包)+er → 包的东西 → 包装纸",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "carton",
+        "phonetic": "/ˈkɑːrtən/",
+        "pos": "n.",
+        "meaning": "纸箱、硬纸盒",
+        "example": "The milk comes in a carton.",
+        "root": "cart(纸)+on → 纥纸盒",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "container",
+        "phonetic": "/kənˈteɪnər/",
+        "pos": "n.",
+        "meaning": "容器",
+        "example": "Store food in a container.",
+        "root": "contain(包含)+er → 包含东西的 → 容器",
+        "subcategory": "Shopping",
+        "subcategoryZh": "购物补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "needle",
+        "phonetic": "/ˈniːdəl/",
+        "pos": "n.",
+        "meaning": "针、注射针",
+        "example": "The needle is very thin.",
+        "root": "",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医药补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "crutch",
+        "phonetic": "/krʌtʃ/",
+        "pos": "n.",
+        "meaning": "拐杖",
+        "example": "He walks with a crutch.",
+        "root": "",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医药补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "stretcher",
+        "phonetic": "/ˈstretʃər/",
+        "pos": "n.",
+        "meaning": "担架",
+        "example": "Put the patient on the stretcher.",
+        "root": "stretch(伸展)+er → 伸展的床 → 担架",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医药补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "mask",
+        "phonetic": "/mæsk/",
+        "pos": "n.",
+        "meaning": "❶ 口罩 ❷ 面具",
+        "example": "Wear a mask in the hospital.",
+        "root": "",
+        "subcategory": "Medicine & Health",
+        "subcategoryZh": "医药补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "remote",
+        "phonetic": "/rɪˈmoʊt/",
+        "pos": "n.",
+        "meaning": "遥控器",
+        "example": "Where's the TV remote?",
+        "root": "re(远)+mote(移) → 远距操控 → 遥控器",
+        "subcategory": "Personal Items",
+        "subcategoryZh": "个人补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "frame",
+        "phonetic": "/freɪm/",
+        "pos": "n.",
+        "meaning": "❶ 框架 ❷ 边框",
+        "example": "Put the photo in a frame.",
+        "root": "",
+        "subcategory": "Personal Items",
+        "subcategoryZh": "个人补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "pendant",
+        "phonetic": "/ˈpendənt/",
+        "pos": "n.",
+        "meaning": "吊坠",
+        "example": "She wore a gold pendant.",
+        "root": "pend(悬挂)+ent → 悬挂的饰品 → 吊坠",
+        "subcategory": "Personal Items",
+        "subcategoryZh": "个人补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "keychain",
+        "phonetic": "/ˈkiːtʃeɪn/",
+        "pos": "n.",
+        "meaning": "钥匙链",
+        "example": "My keys are on a keychain.",
+        "root": "key(钥匙)+chain(链) → 钥匙链",
+        "subcategory": "Personal Items",
+        "subcategoryZh": "个人补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "card",
+        "phonetic": "/kɑːrd/",
+        "pos": "n.",
+        "meaning": "❶ 卡片 ❷ 纸牌",
+        "example": "We played cards last night.",
+        "root": "",
+        "subcategory": "Personal Items",
+        "subcategoryZh": "个人补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "field",
+        "phonetic": "/fiːld/",
+        "pos": "n.",
+        "meaning": "❶ 田地 ❷ 场地",
+        "example": "The kids play on the field.",
+        "root": "",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "hoop",
+        "phonetic": "/huːp/",
+        "pos": "n.",
+        "meaning": "篮圈、环",
+        "example": "Shoot the ball through the hoop.",
+        "root": "",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "puck",
+        "phonetic": "/pʌk/",
+        "pos": "n.",
+        "meaning": "冰球",
+        "example": "Hit the puck with the stick.",
+        "root": "",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "target",
+        "phonetic": "/ˈtɑːrgɪt/",
+        "pos": "n.",
+        "meaning": "靶子、目标",
+        "example": "Aim at the target.",
+        "root": "targ(边界) → 边界上的标志 → 靶子",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "jersey",
+        "phonetic": "/ˈdʒɜːrzi/",
+        "pos": "n.",
+        "meaning": "运动衫",
+        "example": "He wears his team jersey.",
+        "root": "Jersey(泽西岛) → 该岛产的毛衫 → 运动衫",
+        "subcategory": "Sports & Fun Deep",
+        "subcategoryZh": "运动补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "router",
+        "phonetic": "/ˈruːtər/",
+        "pos": "n.",
+        "meaning": "路由器",
+        "example": "Restart the router if WiFi is slow.",
+        "root": "route(路线)+er → 分配路线的 → 路由器",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "cable",
+        "phonetic": "/ˈkeɪbəl/",
+        "pos": "n.",
+        "meaning": "电缆、线缆",
+        "example": "Connect the cable to the monitor.",
+        "root": "cap(绳索) → 绳索 → cable",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "chip",
+        "phonetic": "/tʃɪp/",
+        "pos": "n.",
+        "meaning": "❶ 芯片 ❷ 碎片",
+        "example": "The chip processes data.",
+        "root": "cipp(碎片) → 小片 → 芯片",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "sensor",
+        "phonetic": "/ˈsensər/",
+        "pos": "n.",
+        "meaning": "传感器",
+        "example": "The sensor detects motion.",
+        "root": "sense(感知)+or → 感知的装置 → 传感器",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "modem",
+        "phonetic": "/ˈmoʊdəm/",
+        "pos": "n.",
+        "meaning": "调制解调器",
+        "example": "The modem connects to the internet.",
+        "root": "mo(dulator)+dem(odulator) → 调制解调 → modem",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "antenna",
+        "phonetic": "/ænˈtenə/",
+        "pos": "n.",
+        "meaning": "天线",
+        "example": "Adjust the antenna for better signal.",
+        "root": "",
+        "subcategory": "Digital Life",
+        "subcategoryZh": "数字补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "armchair",
+        "phonetic": "/ˈɑːrtʃer/",
+        "pos": "n.",
+        "meaning": "扶手椅",
+        "example": "Sit in the armchair.",
+        "root": "arm(扶手)+chair(椅) → 有扶手的椅 → 扶手椅",
+        "subcategory": "Living Room Deep",
+        "subcategoryZh": "客厅补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "bookcase",
+        "phonetic": "/ˈbʊkkeɪs/",
+        "pos": "n.",
+        "meaning": "书柜",
+        "example": "The bookcase is full of books.",
+        "root": "book(书)+case(柜) → 书柜",
+        "subcategory": "Living Room Deep",
+        "subcategoryZh": "客厅补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "ice",
+        "phonetic": "/aɪs/",
+        "pos": "n.",
+        "meaning": "冰",
+        "example": "The road is covered in ice.",
+        "root": "",
+        "subcategory": "Weather Details",
+        "subcategoryZh": "天气补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "stock",
+        "phonetic": "/stɒk/",
+        "pos": "n.",
+        "meaning": "❶ 股票 ❷ 库存",
+        "example": "She bought some tech stocks.",
+        "root": "stoc(树干) → 存储的基础 → 库存/股票",
+        "subcategory": "Finance Daily",
+        "subcategoryZh": "金融补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "mortar",
+        "phonetic": "/ˈmɔːrtər/",
+        "pos": "n.",
+        "meaning": "❶ 研钵 ❷ 灰泥",
+        "example": "Grind the spices in a mortar.",
+        "root": "",
+        "subcategory": "Kitchen Deep",
+        "subcategoryZh": "厨房补充",
+        "wordType": "concrete"
+      },
+      {
+        "en": "pestle",
+        "phonetic": "/ˈpesəl/",
+        "pos": "n.",
+        "meaning": "研杵、捣棒",
+        "example": "Use the pestle to crush the herbs.",
+        "root": "pest(捣)+le → 捣的工具 → 研杵",
+        "subcategory": "Kitchen Deep",
+        "subcategoryZh": "厨房补充",
+        "wordType": "concrete"
       }
-    ]
+    ],
+    "name": "📖 名词500-第二波"
   }
 ];
