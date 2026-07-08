@@ -439,6 +439,10 @@ console.log('[VOCAB] v67 loaded at ' + new Date().toISOString());
 .verbs-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #2196F3; border-radius:20px; background:#fff; color:#2196F3; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
 .nouns2-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #9c27b0; border-radius:20px; background:#fff; color:#9c27b0; font-size:0.9em; font-weight:600; cursor:pointer; transition:all 0.2s; margin-top:6px; }
 .nouns2-btn:hover { background:#9c27b0; color:#fff; }
+.abstract-btn { display:inline-flex; align-items:center; gap:5px; margin:0 auto; padding:7px 20px; border:2px solid #ff9800; border-radius:20px; background:#fff3e0; color:#e65100; font-size:14px; cursor:pointer; transition:all .2s; }
+.abstract-btn:hover { background:#ff9800; color:#fff; }
+.abstract-btn:active { background:#ffe0b2; }
+.abstract-view { display:none; padding-bottom:80px; }
 .nouns2-btn:active { background:#f3e5f5; }
 .verbs-btn:active { background:#e3f2fd; }
 .verbs-view { display:none; padding-bottom:80px; }
@@ -671,6 +675,7 @@ html { scroll-behavior:smooth; }
   <button class="add-word-btn" id="addWordBtn" onclick="showAddWord()">➕ 添加单词</button>
   <button class="nouns-btn" id="nounsBtn" onclick="openNouns500()">📚 名词500</button>
   <button class="verbs-btn" id="verbsBtn" onclick="openVerbs200()">📝 动词200</button>
+  <button class="abstract-btn" onclick="openAbstractNouns()">🧠 抽象名词</button>
   <button class="nouns2-btn" id="nouns2Btn" onclick="openNouns500V2()">📖 名词500-第二波</button>
   <button class="grammar-btn" id="grammarBtn" onclick="openGrammar()">📝 语法</button>
   <button class="shadow-btn" id="shadowBtn" onclick="openShadowing()">🗣️ 跟读</button>
@@ -692,6 +697,7 @@ html { scroll-behavior:smooth; }
 <div class="nouns-view" id="nounsView" style="display:none"></div>
 <div class="verbs-view" id="verbsView" style="display:none"></div>
 <div class="nouns2-view" id="nouns2View" style="display:none"></div>
+<div class="abstract-view" id="abstractView" style="display:none"></div>
 
 <button class="back-top" id="backTop" ontouchstart="this.click()">⬆</button>
 
@@ -710,6 +716,8 @@ function closeAllViews() {
   document.getElementById('verbsView').innerHTML = '';
   document.getElementById('nouns2View').style.display = 'none';
   document.getElementById('nouns2View').innerHTML = '';
+  document.getElementById('abstractView').style.display = 'none';
+  document.getElementById('abstractView').innerHTML = '';
   // Close all overlays
   const overlays = ['grammarOverlay','shadowOverlay','overlay','quizOverlay','addWordOverlay','grammarAddOverlay'];
   overlays.forEach(id => {
@@ -721,6 +729,152 @@ function closeAllViews() {
   if (typeof stopShadowRecording === 'function') stopShadowRecording();
   // Restore body scroll
   document.body.style.overflow = '';
+}
+
+/* ===== 抽象名词 ===== */
+let _absViewMode = 'all';
+
+function openAbstractNouns() {
+  closeAllViews();
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('abstractView').style.display = 'block';
+  renderAbstractNouns('');
+  document.getElementById('searchInput').value = '';
+  window.scrollTo({ top: 0 });
+}
+function closeAbstractNouns() {
+  closeAllViews();
+  renderAll(document.getElementById('searchInput').value);
+}
+
+function renderAbstractNouns(filter) {
+  const q = (filter || '').toLowerCase();
+  const av = document.getElementById('abstractView');
+  const mobile = isMobile();
+  const data = getMergedData();
+  const sec = data.find(s => s.isAbstractNouns);
+  if (!sec) return;
+
+  let words = sec.words.filter(w =>
+    !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || (w.abstractDef && (w.abstractDef.en.toLowerCase().includes(q) || w.abstractDef.zh.includes(q)))
+  );
+  words = sortByPos(words);
+
+  let html = '<div class="nouns2-top"><h2>\u{1F9E0} 抽象名词114</h2><button class="nouns2-close-btn" onclick="closeAbstractNouns()">\u2715 返回</button></div>';
+  html += '<div class="nouns2-stats" id="absStats">共 ' + words.length + ' 词</div>';
+
+  // Category nav
+  if (sec.categories) {
+    html += '<div class="subcat-nav" id="absCatNav">';
+    sec.categories.forEach((cat, ci) => {
+      const catWords = sec.words.filter(w => w.subcategory === cat.name);
+      if (catWords.length > 0) {
+        html += '<button class="subcat-btn" onclick="jumpAbsCat(' + ci + ')">' + cat.nameZh + ' (' + catWords.length + ')</button>';
+      }
+    });
+    html += '</div>';
+  }
+
+  // Render words grouped by category
+  if (sec.categories) {
+    const catGroups = {};
+    words.forEach(w => {
+      const key = w.subcategory || 'other';
+      if (!catGroups[key]) catGroups[key] = [];
+      catGroups[key].push(w);
+    });
+
+    sec.categories.forEach((cat, ci) => {
+      const catWords = catGroups[cat.name] || [];
+      if (!catWords.length) return;
+
+      html += '<div class="subcat-header" id="abscat-' + ci + '">' + cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '\u8BCD</span></div>';
+
+      if (mobile) {
+        html += '<div class="mobile-cards">';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\\'");
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakTTS(\'' + esc + '\',this)">\u{1F916}</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">\u{1F50A}</button>';
+          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
+          const typeBadge = '<span class="abs-type-badge abstract">\u62BD\u8C61</span>';
+
+          const defId = 'abs-' + ci + '-' + i + '-' + w.en;
+          let defHtml = '';
+          if (w.abstractDef) {
+            defHtml = '<div class="abs-def">';
+            defHtml += '<span class="abs-def-en" id="' + defId + '-en">' + w.abstractDef.en + '<button class="abs-def-toggle" onclick="toggleAbsDef(\'' + defId + '\',this)">\u4E2D</button></span>';
+            defHtml += '<span class="abs-def-zh" id="' + defId + '-zh" style="display:none">' + w.abstractDef.zh + '<button class="abs-def-toggle zh-mode" onclick="toggleAbsDef(\'' + defId + '\',this)">\u82F1</button></span>';
+            defHtml += '</div>';
+          }
+
+          let exHtml = '';
+          if (w.abstractDef && w.abstractDef.examples) {
+            exHtml = '<div class="abs-examples">';
+            w.abstractDef.examples.forEach((ex, ei) => {
+              const exDefId = 'absex-' + ci + '-' + i + '-' + ei + '-' + w.en;
+              exHtml += '<div class="abs-ex-row">';
+              exHtml += '<span class="abs-ex-en" id="' + exDefId + '-en">' + ex.en + '<button class="card-toggle-zh" onclick="toggleAbsDef(\'' + exDefId + '\',this)">\u4E2D</button></span>';
+              exHtml += '<span class="abs-ex-zh" id="' + exDefId + '-zh" style="display:none">' + ex.zh + '<button class="card-toggle-zh zh-mode" onclick="toggleAbsDef(\'' + exDefId + '\',this)">\u82F1</button></span>';
+              exHtml += '</div>';
+            });
+            exHtml += '</div>';
+          }
+
+          html += '<div class="vocab-card">';
+          html += '<div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + typeBadge + ttsTag + '<span class="card-phonetic">' + w.phonetic + '</span></div>';
+          html += '<span class="card-pos">' + w.pos + '</span>';
+          html += '<div class="card-meaning">' + w.meaning + '</div>';
+          html += defHtml;
+          html += exHtml;
+          html += rootHtml;
+          html += '</div>';
+        });
+        html += '</div>';
+      } else {
+        // Desktop: table
+        html += '<table class="desk-table"><thead><tr><th>#</th><th>\u{1F50A} \u5355\u8BCD</th><th>\u97F3\u6807</th><th>\u8BCD\u6027</th><th>\u542B\u4E49</th><th>\u82F1\u6587\u8BD3\u4E49</th><th>\u4F8B\u8BCD</th></tr></thead><tbody>';
+        catWords.forEach((w, i) => {
+          const esc = w.en.replace(/'/g, "\\'");
+          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakTTS(\'' + esc + '\',this)">\u{1F916}</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">\u{1F50A}</button>';
+          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const typeBadge = '<span class="abs-type-badge abstract">\u62BD\u8C61</span>';
+          const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
+
+          const defId = 'abs-' + ci + '-' + i + '-' + w.en;
+          let defHtml = '';
+          if (w.abstractDef) {
+            defHtml = '<span class="abs-def-en" id="' + defId + '-en">' + w.abstractDef.en + '<button class="abs-def-toggle" onclick="toggleAbsDef(\'' + defId + '\',this)">\u4E2D</button></span>';
+            defHtml += '<span class="abs-def-zh" id="' + defId + '-zh" style="display:none">' + w.abstractDef.zh + '<button class="abs-def-toggle zh-mode" onclick="toggleAbsDef(\'' + defId + '\',this)">\u82F1</button></span>';
+          }
+
+          let exHtml = '';
+          if (w.abstractDef && w.abstractDef.examples) {
+            exHtml = '<div class="abs-examples">';
+            w.abstractDef.examples.forEach((ex, ei) => {
+              const exDefId = 'absex-' + ci + '-' + i + '-' + ei + '-' + w.en;
+              exHtml += '<div class="abs-ex-row">';
+              exHtml += '<span class="abs-ex-en" id="' + exDefId + '-en">' + ex.en + '<button class="toggle-zh-btn" onclick="toggleAbsDef(\'' + exDefId + '\',this)">\u4E2D</button></span>';
+              exHtml += '<span class="abs-ex-zh" id="' + exDefId + '-zh" style="display:none">' + ex.zh + '<button class="toggle-zh-btn zh-mode" onclick="toggleAbsDef(\'' + exDefId + '\',this)">\u82F1</button></span>';
+              exHtml += '</div>';
+            });
+            exHtml += '</div>';
+          }
+
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + typeBadge + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + defHtml + '</td><td>' + exHtml + '</td></tr>';
+        });
+        html += '</tbody></table>';
+      }
+    });
+  }
+
+  av.innerHTML = html;
+  addExampleSpeakButtons();
+}
+
+function jumpAbsCat(ci) {
+  const el = document.getElementById('abscat-' + ci);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function openNouns500V2() {
@@ -1274,7 +1428,7 @@ function renderAll(filter) {
   let total = 0, shown = 0;
   const mobile = isMobile();
 
-  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2).forEach((sec, secIdx) => {
+  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns).forEach((sec, secIdx) => {
     let m = sec.words.filter(w =>
       !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || w.example.toLowerCase().includes(q)
     );
@@ -1440,7 +1594,7 @@ function renderAll(filter) {
 function buildCalendar() {
   const grid = document.getElementById('calGrid');
   grid.innerHTML = '';
-  getMergedData().filter(sec => !sec.isNouns500).forEach((sec, idx) => {
+  getMergedData().filter(sec => !sec.isNouns500 && !sec.isVerbs200 && !sec.isNouns500V2 && !sec.isAbstractNouns).forEach((sec, idx) => {
     const card = document.createElement('div');
     card.className = 'cal-card';
     const dateStr = sec.date.replace(/^[^\d]*/, '').replace(/（.*）/, '');
@@ -4262,7 +4416,10 @@ document.getElementById('searchInput').addEventListener('input', function() {
   const nv = document.getElementById('nounsView');
   const vv = document.getElementById('verbsView');
   const n2v = document.getElementById('nouns2View');
-  if (nv.style.display !== 'none' && nv.style.display) {
+  const abv = document.getElementById('abstractView');
+  if (abv.style.display !== 'none' && abv.style.display) {
+    renderAbstractNouns(this.value);
+  } else if (nv.style.display !== 'none' && nv.style.display) {
     renderNouns500(this.value);
   } else if (vv.style.display !== 'none' && vv.style.display) {
     renderVerbs200(this.value);
