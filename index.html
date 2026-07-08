@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -6,6 +6,8 @@
 <title>英语词汇本</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+
 html, body { width:100%; overflow-x:hidden; }
 body { font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif; background:linear-gradient(180deg,#f0ebff 0%,#f8f5ff 50%,#fef9f0 100%); color:#1a1a2e; padding:12px; -webkit-text-size-adjust:100%; min-height:100vh; }
 
@@ -628,6 +630,33 @@ html { scroll-behavior:smooth; }
 .shadow-word-popup .swp-m.zh { color:#c0392b; }
 @keyframes popIn { from { opacity:0; transform:scale(0.9) translateY(4px); } to { opacity:1; transform:scale(1) translateY(0); } }
 
+
+/* Type toggle nav */
+.type-toggle-nav { display:flex; justify-content:center; gap:8px; margin:8px 0 6px; flex-wrap:wrap; }
+.type-btn { padding:7px 16px; border-radius:18px; border:2px solid #ddd; background:#fff; font-size:0.85em; font-weight:600; cursor:pointer; transition:all 0.2s; color:#555; }
+.type-btn.type-btn-abstract { border-color:#ff9800; color:#ff9800; }
+.type-btn.type-btn-abstract.type-btn-active { background:#ff9800; color:#fff; border-color:#ff9800; }
+.type-btn.type-btn-concrete { border-color:#4caf50; color:#4caf50; }
+.type-btn.type-btn-concrete.type-btn-active { background:#4caf50; color:#fff; border-color:#4caf50; }
+.type-btn.type-btn-active { background:#764ba2; color:#fff; border-color:#764ba2; }
+.type-btn:hover { opacity:0.85; }
+
+/* Abstract definition */
+.abs-def { margin:4px 0; padding:6px 10px; border-radius:10px; font-size:0.88em; line-height:1.45; }
+.abs-def-en { color:#2d1b69; font-weight:500; background:#f8f0ff; padding:5px 8px; border-radius:8px; display:inline; }
+.abs-def-zh { color:#4a4a4a; font-weight:400; background:#fff8e1; padding:5px 8px; border-radius:8px; display:inline; }
+.abs-def-toggle { background:none; border:1px solid #ddd; font-size:0.68em; padding:1px 7px; border-radius:10px; cursor:pointer; color:#aaa; margin-left:6px; vertical-align:middle; transition:all 0.15s; font-weight:500; }
+.abs-def-toggle:hover { border-color:#764ba2; color:#764ba2; }
+.abs-def-toggle.zh-mode { background:#764ba2; color:#fff; border-color:#764ba2; }
+
+/* Abstract examples */
+.abs-examples { margin:4px 0 2px; }
+.abs-ex-row { font-size:0.82em; line-height:1.5; margin:2px 0; }
+.abs-ex-en { color:#888; font-style:italic; }
+.abs-ex-zh { color:#5a8a5a; font-style:normal; }
+.abs-type-badge { display:inline-block; font-size:0.7em; padding:2px 7px; border-radius:8px; margin-right:4px; font-weight:600; vertical-align:middle; }
+.abs-type-badge.abstract { background:#fff3e0; color:#ff9800; border:1px solid #ffcc80; }
+.abs-type-badge.concrete { background:#e8f5e9; color:#4caf50; border:1px solid #a5d6a7; }
 </style>
 </head>
 <body>
@@ -707,6 +736,8 @@ function closeNouns500V2() {
   renderAll(document.getElementById('searchInput').value);
 }
 
+let _n2ViewMode = 'all'; // 'all' | 'abstract' | 'concrete'
+
 function renderNouns500V2(filter) {
   const q = (filter || '').toLowerCase();
   const n2v = document.getElementById('nouns2View');
@@ -716,65 +747,166 @@ function renderNouns500V2(filter) {
   if (!sec) return;
 
   let words = sec.words.filter(w =>
-    !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || (w.example || '').toLowerCase().includes(q)
+    !q || w.en.toLowerCase().includes(q) || w.meaning.includes(q) || (w.example || '').toLowerCase().includes(q) || (w.abstractDef ? (w.abstractDef.en.toLowerCase().includes(q) || w.abstractDef.zh.includes(q)) : false)
   );
+
+  // Apply view mode filter
+  if (_n2ViewMode === 'abstract') words = words.filter(w => w.wordType === 'abstract');
+  if (_n2ViewMode === 'concrete') words = words.filter(w => w.wordType === 'concrete');
 
   let html = '<div class="nouns2-top"><h2>📖 名词500-第二波</h2><button class="nouns2-close-btn" onclick="closeNouns500V2()">✕</button></div>';
   html += '<div class="nouns2-stats" id="nouns2Stats"></div>';
 
-  if (sec.categories) {
+  // Type toggle: All / Abstract / Concrete
+  const absCount = sec.words.filter(w => w.wordType === 'abstract').length;
+  const conCount = sec.words.filter(w => w.wordType === 'concrete').length;
+  html += '<div class="type-toggle-nav">';
+  html += '<button class="type-btn' + (_n2ViewMode === 'all' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'all\';renderNouns500V2(document.getElementById(\'searchInput\').value)">全部 ' + sec.words.length + '</button>';
+  html += '<button class="type-btn type-btn-abstract' + (_n2ViewMode === 'abstract' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'abstract\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🧠 抽象 ' + absCount + '</button>';
+  html += '<button class="type-btn type-btn-concrete' + (_n2ViewMode === 'concrete' ? ' type-btn-active' : '') + '" onclick="_n2ViewMode=\'concrete\';renderNouns500V2(document.getElementById(\'searchInput\').value)">🧱 具体 ' + conCount + '</button>';
+  html += '</div>';
+
+  // Subcategory nav (only in 'all' and 'concrete' modes)
+  if ((_n2ViewMode === 'all' || _n2ViewMode === 'concrete') && sec.categories) {
     html += '<div class="subcat-nav" id="subcatNavN2">';
     sec.categories.forEach((cat, ci) => {
-      const count = words.filter(w => w.subcategory === cat.name).length;
-      if (count > 0) {
+      if (cat.isAbstractCategory) return;
+      const catWordsFiltered = words.filter(w => w.subcategory === cat.name);
+      if (catWordsFiltered.length > 0) {
         html += '<button class="subcat-btn" onclick="jumpN2Subcat(' + ci + ')">' + cat.nameZh + '</button>';
       }
     });
     html += '</div>';
   }
 
-  const catGroups = {};
-  words.forEach(w => {
-    const key = w.subcategory || 'other';
-    if (!catGroups[key]) catGroups[key] = [];
-    catGroups[key].push(w);
-  });
+  // === ABSTRACT MODE: render abstract nouns with English definitions ===
+  if (_n2ViewMode === 'abstract') {
+    const abstractWords = words.filter(w => w.wordType === 'abstract');
 
-  if (sec.categories) {
-    sec.categories.forEach((cat, ci) => {
-      const catWords = catGroups[cat.name] || [];
-      if (!catWords.length) return;
+    if (mobile) {
+      html += '<div class="mobile-cards">';
+      abstractWords.forEach((w, i) => {
+        const esc = w.en.replace(/'/g, "\'");
+        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
+        const typeBadge = '<span class="abs-type-badge abstract">抽象</span>';
 
-      html += '<div class="subcat-header" id="n2subcat-' + ci + '">' + cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '词</span></div>';
+        // Abstract definition: English one-liner (click to toggle Chinese)
+        const defId = 'absdef-' + i + '-' + w.en;
+        let defHtml = '';
+        if (w.abstractDef) {
+          defHtml = '<div class="abs-def">';
+          defHtml += '<span class="abs-def-en" id="' + defId + '-en">' + w.abstractDef.en + '<button class="abs-def-toggle" onclick="toggleAbsDef(\'' + defId + '\',this)">中</button></span>';
+          defHtml += '<span class="abs-def-zh" id="' + defId + '-zh" style="display:none">' + w.abstractDef.zh + '<button class="abs-def-toggle zh-mode" onclick="toggleAbsDef(\'' + defId + '\',this)">英</button></span>';
+          defHtml += '</div>';
+        }
 
-      if (mobile) {
-        html += '<div class="mobile-cards">';
-        catWords.forEach((w, i) => {
-          const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-          const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
-          const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
-          const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
-          const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
-        });
-        html += '</div>';
-      } else {
-        html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>';
-        catWords.forEach((w, i) => {
-          const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-          const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
-          const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
-          const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
-          const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + exHtml + '</td></tr>';
-        });
-        html += '</tbody></table>';
-      }
+        // Abstract examples (2-3 sentences)
+        let exHtml = '';
+        if (w.abstractDef && w.abstractDef.examples) {
+          exHtml = '<div class="abs-examples">';
+          w.abstractDef.examples.forEach((ex, ei) => {
+            const exDefId = 'absex-' + i + '-' + ei + '-' + w.en;
+            exHtml += '<div class="abs-ex-row">';
+            exHtml += '<span class="abs-ex-en" id="' + exDefId + '-en">' + ex.en + '<button class="card-toggle-zh" onclick="toggleZh(\'' + exDefId + '\',this)">中</button></span>';
+            exHtml += '<span class="abs-ex-zh" id="' + exDefId + '-zh" style="display:none">' + ex.zh + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + exDefId + '\',this)">英</button></span>';
+            exHtml += '</div>';
+          });
+          exHtml += '</div>';
+        }
+
+        // Original example (if exists, from vocab data)
+        const origExHtml = w.example ? '<div class="card-example">' + w.example + '</div>' : '';
+
+        html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + defHtml + rootHtml + exHtml + origExHtml + '</div>';
+      });
+      html += '</div>';
+    } else {
+      // Desktop: table with extra columns
+      html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>英文释义</th><th>例句</th></tr></thead><tbody>';
+      abstractWords.forEach((w, i) => {
+        const esc = w.en.replace(/'/g, "\'");
+        const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const typeBadge = '<span class="abs-type-badge abstract">抽象</span>';
+        const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
+
+        // Abstract definition
+        const defId = 'absdef-' + i + '-' + w.en;
+        let defHtml = '';
+        if (w.abstractDef) {
+          defHtml = '<span class="abs-def-en" id="' + defId + '-en">' + w.abstractDef.en + '<button class="abs-def-toggle" onclick="toggleAbsDef(\'' + defId + '\',this)">中</button></span>';
+          defHtml += '<span class="abs-def-zh" id="' + defId + '-zh" style="display:none">' + w.abstractDef.zh + '<button class="abs-def-toggle zh-mode" onclick="toggleAbsDef(\'' + defId + '\',this)">英</button></span>';
+        }
+
+        // Examples
+        let exHtml = '';
+        if (w.abstractDef && w.abstractDef.examples) {
+          w.abstractDef.examples.forEach((ex, ei) => {
+            const exDefId = 'absex-' + i + '-' + ei + '-' + w.en;
+            exHtml += '<div class="abs-ex-row">';
+            exHtml += '<span class="abs-ex-en" id="' + exDefId + '-en">' + ex.en + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + exDefId + '\',this)">中</button></span>';
+            exHtml += '<span class="abs-ex-zh" id="' + exDefId + '-zh" style="display:none">' + ex.zh + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + exDefId + '\',this)">英</button></span>';
+            exHtml += '</div>';
+          });
+        }
+
+        html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td class="meaning">' + defHtml + '</td><td>' + exHtml + '</td></tr>';
+      });
+      html += '</tbody></table>';
+    }
+  }
+
+  // === ALL / CONCRETE MODE: render by categories ===
+  if (_n2ViewMode === 'all' || _n2ViewMode === 'concrete') {
+    const catGroups = {};
+    words.forEach(w => {
+      const key = w.subcategory || 'other';
+      if (!catGroups[key]) catGroups[key] = [];
+      catGroups[key].push(w);
     });
+
+    if (sec.categories) {
+      sec.categories.forEach((cat, ci) => {
+        if (cat.isAbstractCategory) return;
+        const catWords = catGroups[cat.name] || [];
+        if (!catWords.length) return;
+
+        html += '<div class="subcat-header" id="n2subcat-' + ci + '">' + cat.nameZh + ' <span class="sc-count">(' + cat.name + ') ' + catWords.length + '词</span></div>';
+
+        if (mobile) {
+          html += '<div class="mobile-cards">';
+          catWords.forEach((w, i) => {
+            const esc = w.en.replace(/'/g, "\'");
+            const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+            const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+            const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+            const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
+            // Show type badge for abstract words even in all/concrete mode
+            const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : '';
+            const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
+            const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
+            html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
+          });
+          html += '</div>';
+        } else {
+          html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>';
+          catWords.forEach((w, i) => {
+            const esc = w.en.replace(/'/g, "\'");
+            const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+            const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
+            const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+            const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
+            const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : '';
+            const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
+            const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
+            html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + exHtml + '</td></tr>';
+          });
+          html += '</tbody></table>';
+        }
+      });
+    }
   }
 
   n2v.innerHTML = html;
@@ -1083,6 +1215,23 @@ function toggleZh(id, btn) {
     zhEl.style.display = 'none';
   }
 }
+function toggleAbsDef(id, btn) {
+  const enEl = document.getElementById(id + '-en');
+  const zhEl = document.getElementById(id + '-zh');
+  if (!enEl || !zhEl) return;
+  if (enEl.style.display === 'none') {
+    enEl.style.display = 'inline';
+    zhEl.style.display = 'none';
+    btn.textContent = '中';
+    btn.classList.remove('zh-mode');
+  } else {
+    enEl.style.display = 'none';
+    zhEl.style.display = 'inline';
+    btn.textContent = '英';
+    btn.classList.add('zh-mode');
+  }
+}
+
 
 function posPriority(pos) {
   const p = (pos||'').toLowerCase().trim();
