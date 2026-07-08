@@ -1826,6 +1826,16 @@ const VERBS200_QUIZ_GROUPS = [
   { name: '法律与规则', subcats: ['Law & Rules'] },
 ];
 
+const NOUNS500V2_QUIZ_GROUPS = [
+  { name: '🍔 饮食购物', subcats: ['Food & Drink Deep', 'Shopping', 'Kitchen Deep', 'Living Room Deep'] },
+  { name: '🏠 家居服装', subcats: ['Household Deep', 'Clothing Deep', 'Personal Items'] },
+  { name: '🏙️ 出行街市', subcats: ['Street & City Deep', 'Transport Deep', 'Office & School Deep'] },
+  { name: '🌿 自然身体', subcats: ['Nature Deep', 'Animals Deep', 'Body Deep'] },
+  { name: '💊 医药天气', subcats: ['Medicine & Health', 'Weather Details'] },
+  { name: '🏀 运动娱乐', subcats: ['Sports & Fun Deep', 'Digital Life'] },
+  { name: '💰 金融情感', subcats: ['Finance Daily', 'Emotions Deep', 'Society Deep', 'High-Frequency Deep'] },
+];
+
 /* ===== 测验音效(Web Audio API 合成)===== */
 function playCorrectSound() {
   try {
@@ -1960,7 +1970,7 @@ function analyzeMistakes() {
   return results;
 }
 
-let quizState = { mode:null, range:'all', count:15, questions:[], idx:0, score:0, wrong:[], answered:false, nounsGroup:null, verbsGroup:null };
+let quizState = { mode:null, range:'all', count:15, questions:[], idx:0, score:0, wrong:[], answered:false, nounsGroup:null, verbsGroup:null, nouns500V2Group:null };
 
 function renderMistakeBook() {
   const analysis = analyzeMistakes();
@@ -2057,6 +2067,11 @@ function getWordsByRange(range) {
   // Support verbs200 sub-group filtering
   if (sec.isVerbs200 && quizState.verbsGroup) {
     const g = VERBS200_QUIZ_GROUPS.find(g => g.name === quizState.verbsGroup);
+    if (g) return sec.words.filter(w => g.subcats.includes(w.subcategory));
+  }
+  // Support nouns500V2 sub-group filtering
+  if (sec.isNouns500V2 && quizState.nouns500V2Group) {
+    const g = NOUNS500V2_QUIZ_GROUPS.find(g => g.name === quizState.nouns500V2Group);
     if (g) return sec.words.filter(w => g.subcats.includes(w.subcategory));
   }
   return sec.words;
@@ -2233,6 +2248,23 @@ function renderQuizSetup() {
     verbsSubHtml += '</div></div>';
   }
 
+  // Build nouns500V2 sub-group buttons
+  let n2SubHtml = '';
+  if (n2sec) {
+    const n2words = n2sec.words;
+    var isN2Active = quizState.range === n2sec.date || quizState.nouns500V2Group;
+    n2SubHtml = '<div class="verbs500-panel' + (isN2Active ? ' active"' : '"') + ' style="border-color:#9c27b0">';
+    n2SubHtml += '<div class="verbs500-header" onclick="toggleNouns500V2Panel()" style="background:#9c27b0;color:#fff">📖 名词500-第二波 · 选择单元 <span class="verbs500-arrow">' + (isN2Active ? '▲' : '▼') + '</span></div>';
+    n2SubHtml += '<div class="verbs500-grid' + (isN2Active ? '' : ' collapsed') + '">';
+    n2SubHtml += '<button class="verbs500-card' + (!quizState.nouns500V2Group && isN2Active ? ' selected' : '') + '" onclick="selectNouns500V2Group(null,this)" style="border-color:#9c27b0"><span class="verbs500-name">📖 全部分类</span><span class="verbs500-count">' + n2words.length + '词</span></button>';
+    NOUNS500V2_QUIZ_GROUPS.forEach(g => {
+      const count = n2words.filter(w => g.subcats.includes(w.subcategory)).length;
+      const sel = quizState.nouns500V2Group === g.name ? ' selected' : ''; 
+      n2SubHtml += '<button class="verbs500-card' + sel + '" onclick="selectNouns500V2Group(\'' + g.name + '\',this)" style="border-color:#9c27b0"><span class="verbs500-name">' + g.name + '</span><span class="verbs500-count">' + count + '词</span></button>'; 
+    });
+    n2SubHtml += '</div></div>'; 
+  }
+
   const el = document.getElementById('quizInner');
   el.innerHTML = `
     <div class="quiz-top">
@@ -2256,6 +2288,7 @@ function renderQuizSetup() {
       </div>
       ${nounsSubHtml}
       ${verbsSubHtml}
+      ${n2SubHtml}
       <h3>题目数量</h3>
       <div class="quiz-count-row">
         <label>5</label>
@@ -2299,10 +2332,26 @@ function selectNounsGroup(group, btn) {
   quizState.range = getMergedData().find(s => s.isNouns500).date;
   renderQuizSetup();
 }
+function selectNouns500V2Group(group, btn) {
+  quizState.nouns500V2Group = group;
+  quizState.range = getMergedData().find(s => s.isNouns500V2).date;
+  renderQuizSetup();
+}
+function toggleNouns500V2Panel() {
+  var grid = document.querySelector('.nouns500v2-grid, .verbs500-panel[style*="9c27b0"] .verbs500-grid');
+  var arrow = document.querySelector('.nouns500v2-arrow, .verbs500-panel[style*="9c27b0"] .verbs500-arrow');
+  var panel = document.querySelector('.verbs500-panel[style*="9c27b0"]');
+  if (!grid) return;
+  var collapsed = grid.classList.contains('collapsed');
+  grid.classList.toggle('collapsed');
+  if (arrow) arrow.textContent = collapsed ? '▲' : '▼';
+  if (panel) panel.classList.toggle('active', collapsed);
+}
 function setQuizRange(range, btn) {
   quizState.range = range;
   quizState.nounsGroup = null;
   quizState.verbsGroup = null;
+  quizState.nouns500V2Group = null;
   renderQuizSetup();
 }
 
