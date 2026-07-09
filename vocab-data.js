@@ -13178,9 +13178,9 @@ var VOCAB_DATA = [
     "date": "🧠 抽象名词114"
   },
   {
-    "date": "6/30",
+    "date": "📅 6/30",
     "label": "名词500-第二波",
-    "isNouns500": true,
+    "isNouns500": false,
     "isNouns500V2": true,
     "wordCount": 500,
     "categories": [
@@ -17915,7 +17915,7 @@ var VOCAB_DATA = [
     "name": "📖 名词500-第二波（具体385）"
   },
   {
-    "date": "2026-07-09",
+    "date": "📅 2026-07-09",
     "name": "🔀 半具体名词115",
     "isSemiConcrete": true,
     "categories": [

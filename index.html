@@ -804,7 +804,7 @@ function renderSemiConcreteNouns(filter) {
         html += '<div class="mobile-cards">';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\'");
-          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const irrHtml = w.irr ? '<div class="card-irr"><span class="irr-badge">' + formatIrrTag(w) + '</span></div>' : '';
           html += '<div class="vocab-card">';
           html += '<div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div>';
@@ -822,7 +822,7 @@ function renderSemiConcreteNouns(filter) {
         html += '<div class="desk-table"><table><thead><tr><th>🔊</th><th>单词</th><th>音标</th><th>词性</th><th>含义</th><th>根意</th><th>例句</th></tr></thead><tbody>';
         catWords.forEach(w => {
           const esc = w.en.replace(/'/g, "\'");
-          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const irrHtml = w.irr ? formatIrrTag(w) : '';
           html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + irrHtml + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + w.meaning + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
         });
@@ -835,7 +835,7 @@ function renderSemiConcreteNouns(filter) {
       html += '<div class="mobile-cards">';
       words.forEach(w => {
         const esc = w.en.replace(/'/g, "\'");
-        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
         html += '<div class="vocab-card"><div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div><span class="abs-type-badge semi-concrete">半具体</span> <span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div></div>';
       });
       html += '</div>';
@@ -843,7 +843,7 @@ function renderSemiConcreteNouns(filter) {
       html += '<div class="desk-table"><table><thead><tr><th>🔊</th><th>单词</th><th>音标</th><th>词性</th><th>含义</th><th>根意</th><th>例句</th></tr></thead><tbody>';
       words.forEach(w => {
         const esc = w.en.replace(/'/g, "\'");
-        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
         html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + w.meaning + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
       });
       html += '</tbody></table></div>';
@@ -908,8 +908,8 @@ function renderAbstractNouns(filter) {
         html += '<div class="mobile-cards">';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakTTS(\'' + esc + '\',this)">\u{1F916}</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">\u{1F50A}</button>';
-          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">\u{1F50A}</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">\u{1F50A}</button>';
+          const ttsTag = '';
           const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
           const typeBadge = '<span class="abs-type-badge abstract">\u62BD\u8C61</span>';
 
@@ -950,8 +950,8 @@ function renderAbstractNouns(filter) {
         html += '<table class="desk-table"><thead><tr><th>#</th><th>\u{1F50A} \u5355\u8BCD</th><th>\u97F3\u6807</th><th>\u8BCD\u6027</th><th>\u542B\u4E49</th><th>\u82F1\u6587\u8BD3\u4E49</th><th>\u4F8B\u8BCD</th></tr></thead><tbody>';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakTTS(\'' + esc + '\',this)">\u{1F916}</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">\u{1F50A}</button>';
-          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">\u{1F50A}</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">\u{1F50A}</button>';
+          const ttsTag = '';
           const typeBadge = '<span class="abs-type-badge abstract">\u62BD\u8C61</span>';
           const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
 
@@ -1046,8 +1046,8 @@ function renderNouns500V2(filter) {
       html += '<div class="mobile-cards">';
       abstractWords.forEach((w, i) => {
         const esc = w.en.replace(/'/g, "\'");
-        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        const ttsTag = '';
         const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
         const typeBadge = '<span class="abs-type-badge abstract">抽象</span>';
 
@@ -1086,8 +1086,8 @@ function renderNouns500V2(filter) {
       html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>英文释义</th><th>例句</th></tr></thead><tbody>';
       abstractWords.forEach((w, i) => {
         const esc = w.en.replace(/'/g, "\'");
-        const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-        const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+        const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+        const ttsTag = '';
         const typeBadge = '<span class="abs-type-badge abstract">抽象</span>';
         const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
 
@@ -1138,9 +1138,9 @@ function renderNouns500V2(filter) {
           html += '<div class="mobile-cards">';
           catWords.forEach((w, i) => {
             const esc = w.en.replace(/'/g, "\'");
-            const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+            const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
             const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-            const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+            const ttsTag = '';
             const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
             // Show type badge for abstract words even in all/concrete mode
             const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : w.wordType === 'semi-concrete' ? '<span class="abs-type-badge semi-concrete">半具体</span>' : '';
@@ -1153,9 +1153,9 @@ function renderNouns500V2(filter) {
           html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>';
           catWords.forEach((w, i) => {
             const esc = w.en.replace(/'/g, "\'");
-            const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+            const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
             const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-            const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+            const ttsTag = '';
             const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
             const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : w.wordType === 'semi-concrete' ? '<span class="abs-type-badge semi-concrete">半具体</span>' : '';
             const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
@@ -1239,7 +1239,6 @@ const loadingSet = new Set(); // 正在加载的
 let currentSource = null;     // 当前播放的 BufferSource
 let currentBtn = null;        // 当前播放的按钮
 let currentKey = null;        // 当前播放的word key
-let currentTTS = false;       // 当前是否在播TTS
 let unlocked = false;
 
 // iOS: 首次触摸解锁 AudioContext
@@ -1284,58 +1283,13 @@ function preloadAll() {
 }
 
 // TTS 播放(浏览器语音合成)
-function speakTTS(word, btn) {
-  if (!('speechSynthesis' in window)) return false;
-  const key = word.toLowerCase().replace(/\s+/g, '_');
-
-  if (currentKey === key && currentTTS) {
-    speechSynthesis.cancel();
-    stopCurrent();
-    return true;
-  }
-  stopCurrent();
-
-  const utt = new SpeechSynthesisUtterance(word);
-  utt.lang = 'en-US';
-  utt.rate = 0.85;
-  // 优先选美式英语声音
-  const voices = speechSynthesis.getVoices();
-  const usVoice = voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
-  if (usVoice) utt.voice = usVoice;
-
-  currentKey = key;
-  currentBtn = btn;
-  currentTTS = true;
-  btn.classList.add('playing');
-
-  utt.onend = () => {
-    if (currentKey === key) {
-      btn.classList.remove('playing');
-      currentKey = null;
-      currentBtn = null;
-      currentTTS = false;
-    }
-  };
-  utt.onerror = () => {
-    btn.classList.remove('playing');
-    btn.classList.add('error');
-    setTimeout(() => btn.classList.remove('error'), 600);
-    currentKey = null;
-    currentBtn = null;
-    currentTTS = false;
-  };
-  speechSynthesis.speak(utt);
-  return true;
-}
-
-// 核心:播放/停止(优先真人音频 → TTS兜底)
+// 核心:播放/停止(真人音频,无TTS兜底)
 async function speak(word, btn) {
   if (audioCtx.state === 'suspended') audioCtx.resume();
   const key = word.toLowerCase().replace(/\s+/g, '_');
 
   // 如果点的是正在播放的按钮 → 停止
-  if (currentKey === key && (currentSource || currentTTS)) {
-    if (currentTTS) speechSynthesis.cancel();
+  if (currentKey === key && currentSource) {
     stopCurrent();
     return;
   }
@@ -1344,7 +1298,7 @@ async function speak(word, btn) {
   // 查找该词条
   const entry = getMergedData().flatMap(s => s.words).find(w => w.en.toLowerCase().replace(/\s+/g,'_') === key);
 
-  // noAudio 标记 → 直接用 TTS
+  // noAudio 标记 → 逐词播放真人音频
   if (entry && entry.customAudioUrl) {
     // Real human audio from Free Dictionary API CDN
     btn.classList.add('loading');
@@ -1372,11 +1326,12 @@ async function speak(word, btn) {
         btn.classList.remove('loading');
         return;
       }
-    } catch(e) { /* fall through to TTS */ }
+    } catch(e) { /* fall through to speakWordByWord */ }
     btn.classList.remove('loading');
   }
   if (entry && entry.noAudio) {
-    speakTTS(word, btn);
+    // 逐词播放真人音频(不再用TTS)
+    speakWordByWord(word, btn);
     return;
   }
 
@@ -1403,20 +1358,16 @@ async function speak(word, btn) {
     currentKey = key;
     btn.classList.add('playing');
   } else {
-    // 真人音频不存在 → TTS 兜底
-    if (!speakTTS(word, btn)) {
-      btn.classList.add('error');
-      setTimeout(() => btn.classList.remove('error'), 600);
-    }
+    // 真人音频不存在 → 逐词播放真人音频(不再用TTS)
+    speakWordByWord(word, btn);
   }
 }
 
-// 变形词发音(优先真人音频,TTS兜底)
+// 变形词发音(真人音频,无TTS兜底)
 async function speakIrr(word, btn) {
   if (audioCtx.state === 'suspended') audioCtx.resume();
   const key = word.toLowerCase().replace(/\s+/g, '_');
-  if (currentKey === key && (currentSource || currentTTS)) {
-    if (currentTTS) speechSynthesis.cancel();
+  if (currentKey === key && currentSource) {
     stopCurrent();
     return;
   }
@@ -1437,21 +1388,93 @@ async function speakIrr(word, btn) {
     currentKey = key;
     btn.classList.add('playing');
   } else {
-    if (!speakTTS(word, btn)) {
-      btn.classList.add('error');
-      setTimeout(() => btn.classList.remove('error'), 600);
+    // 逐词播放真人音频(不再用TTS)
+    speakWordByWord(word, btn);
+  }
+}
+
+// 逐词播放真人音频:将多词短语拆分为单词，逐个播放真人mp3
+async function speakWordByWord(word, btn) {
+  const parts = word.trim().split(/\s+/);
+  if (parts.length === 1) {
+    // 单词无本地音频 → 尝试Free Dictionary API真人音频
+    const wKey = word.toLowerCase();
+    btn.classList.add('loading');
+    for (const suffix of ['-us.mp3', '.mp3']) {
+      try {
+        const resp = await fetch('https://api.dictionaryapi.dev/media/pronunciations/en/' + wKey + suffix);
+        if (resp.ok) {
+          const arrayBuf = await resp.arrayBuffer();
+          const audioBuf = await audioCtx.decodeAudioData(arrayBuf);
+          const source = audioCtx.createBufferSource();
+          source.buffer = audioBuf;
+          source.connect(audioCtx.destination);
+          const key = wKey.replace(/\s+/g,'_');
+          source.onended = () => { if (currentKey === key) { btn.classList.remove('playing'); currentSource = null; currentBtn = null; currentKey = null; } };
+          source.start(0);
+          currentSource = source;
+          currentBtn = btn;
+          currentKey = key;
+          btn.classList.add('playing');
+          btn.classList.remove('loading');
+          return;
+        }
+      } catch(e) {}
+    }
+    btn.classList.remove('loading');
+    btn.classList.add('error');
+    setTimeout(() => btn.classList.remove('error'), 600);
+    return;
+  }
+  // 多词短语:逐词播放真人音频
+  const key = word.toLowerCase().replace(/\s+/g,'_');
+  currentKey = key;
+  currentBtn = btn;
+  btn.classList.add('playing');
+  for (let i = 0; i < parts.length; i++) {
+    const partKey = parts[i].toLowerCase();
+    // 优先本地音频缓存
+    const buf = await loadBuffer(partKey);
+    if (buf) {
+      const source = audioCtx.createBufferSource();
+      source.buffer = buf;
+      source.connect(audioCtx.destination);
+      source.start(0);
+      await new Promise(resolve => { source.onended = resolve; });
+    } else {
+      // 尝试Free Dictionary API真人音频
+      for (const suffix of ['-us.mp3', '.mp3']) {
+        try {
+          const resp = await fetch('https://api.dictionaryapi.dev/media/pronunciations/en/' + partKey + suffix);
+          if (resp.ok) {
+            const arrayBuf = await resp.arrayBuffer();
+            const audioBuf = await audioCtx.decodeAudioData(arrayBuf);
+            const source = audioCtx.createBufferSource();
+            source.buffer = audioBuf;
+            source.connect(audioCtx.destination);
+            source.start(0);
+            await new Promise(resolve => { source.onended = resolve; });
+            break;
+          }
+        } catch(e) {}
+      }
+    }
+    // 检查是否被中断(用户点了其他词)
+    if (currentKey !== key) return;
+    // 词间停顿150ms
+    if (i < parts.length - 1) {
+      await new Promise(resolve => setTimeout(resolve, 150));
     }
   }
+  btn.classList.remove('playing');
+  currentKey = null;
+  currentBtn = null;
 }
 
 function stopCurrent() {
   if (currentSource) {
     try { currentSource.stop(); } catch(e) {}
     currentSource = null;
-  }
-  if (currentTTS) {
-    speechSynthesis.cancel();
-    currentTTS = false;
   }
   if (currentBtn) currentBtn.classList.remove('playing');
   currentBtn = null;
@@ -1591,7 +1614,7 @@ function renderAll(filter) {
             const esc = w.en.replace(/'/g,"\\'");
             const card = document.createElement('div');
             card.className = 'vocab-card';
-            const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+            const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speakWordByWord('${esc}',this)">🔊</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
             const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
             const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
             const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
@@ -1616,7 +1639,7 @@ function renderAll(filter) {
         } else {
           const rows = catWords.map((w, i) => {
             const esc = w.en.replace(/'/g,"\\'");
-            const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+            const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speakWordByWord('${esc}',this)">🔊</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
             const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
             const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
             const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
@@ -1643,7 +1666,7 @@ function renderAll(filter) {
           const esc = w.en.replace(/'/g,"\\'");
           const card = document.createElement('div');
           card.className = 'vocab-card';
-          const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+          const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="card-speak" data-word="${w.en}" onclick="speakWordByWord('${esc}',this)">🔊</button>` : `<button class="card-speak" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
           const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
           const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
           const rootHtml = w.root ? `<div class="card-root">${w.root}</div>` : '';
@@ -1668,7 +1691,7 @@ function renderAll(filter) {
       } else {
         const rows = m.map((w,i) => {
           const esc = w.en.replace(/'/g,"\\'");
-          const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🤖</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
+          const audioBtn = w.noAudio && !w.customAudioUrl ? `<button class="speak-btn" data-word="${w.en}" onclick="speakWordByWord('${esc}',this)">🔊</button>` : `<button class="speak-btn" data-word="${w.en}" onclick="speak('${esc}',this)">🔊</button>`;
           const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
           const ttsTag = w.noAudio && !w.customAudioUrl ? '<span class="tts-mark">TTS</span>' : '';
           const rootHtml = w.root ? `<div class="root-meaning">${w.root}</div>` : '';
@@ -2117,7 +2140,9 @@ function cleanMeaningForQuiz(meaning, wordEn) {
 // 生成题目
 function generateQuestions(mode, words, count) {
   const all = getAllWords();
-  const picked = shuffle(words).slice(0, Math.min(count, words.length));
+  // 如果是名词500-第二波子分类测验,按分类原序出题(不随机shuffle)
+  const isN2SubGroup = quizState.nouns500V2Group;
+  const picked = isN2SubGroup ? words.slice(0, Math.min(count, words.length)) : shuffle(words).slice(0, Math.min(count, words.length));
   return picked.map(w => {
     const q = { word: w, mode };
     if (mode === 'spell') return q; // 拼写模式不需要选项
@@ -3223,9 +3248,9 @@ function renderNouns500(filter) {
         html += '<div class="mobile-cards">';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const ttsTag = '';
           const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
           const zhId = 'nzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
@@ -3236,9 +3261,9 @@ function renderNouns500(filter) {
         html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>例句</th></tr></thead><tbody>';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const compoundTag = w.compound ? '<span class="compound-tag">🔗</span>' : '';
-          const ttsTag = w.noAudio ? '<span class="tts-mark">TTS</span>' : '';
+          const ttsTag = '';
           const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
           const zhId = 'nzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
@@ -3340,7 +3365,7 @@ function renderVerbs200(filter) {
         html += '<div class="mobile-cards">';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const irrHtml = w.irr ? `<div class="card-irr">${formatIrrTag(w.irr)}</div>` : '';
           const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
           const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
@@ -3352,7 +3377,7 @@ function renderVerbs200(filter) {
         html += '<table class="desk-table"><thead><tr><th>#</th><th>🔊 单词</th><th>音标</th><th>词性</th><th>含义</th><th>不规则</th><th>例句</th></tr></thead><tbody>';
         catWords.forEach((w, i) => {
           const esc = w.en.replace(/'/g, "\\'");
-          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🤖</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
+          const audioBtn = w.noAudio ? '<button class="speak-btn" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="speak-btn" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const irrHtml = w.irr ? `<div class="irr-row">${formatIrrTag(w.irr)}</div>` : '';
           const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
           const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
@@ -3997,7 +4022,7 @@ function renderWordPopup(popup, info) {
   if (audioUrl) {
     html += '<button class="swp-play" onclick="playPopupWord(this,\'' + audioUrl.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   } else {
-    html += '<button class="swp-play" onclick="playPopupTTS(\'' + word.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
+    html += '<button class="swp-play" onclick="speakWordByWord(\'' + word.replace(/'/g, "\\'") + '\')" title="播放发音">🔊</button>';
   }
   html += '</div>';
 
@@ -4054,11 +4079,6 @@ function togglePopupZh(btn) {
   btn.textContent = popupShowZh ? '🇨🇳 英文' : '🇨🇳 中文';
 }
 
-function playPopupTTS(word) {
-  const utt = new SpeechSynthesisUtterance(word);
-  utt.lang = 'en-US';
-  speechSynthesis.speak(utt);
-}
 
 function playPopupWord(btn, audioUrl) {
   // Use Web Audio API (same engine as word pronunciation)
@@ -4072,11 +4092,9 @@ function playPopupWord(btn, audioUrl) {
     source.start(0);
   }).catch(() => {
     btn.classList.remove('playing');
-    // Fallback: TTS
-    const utt = new SpeechSynthesisUtterance(btn.closest('.shadow-word-popup').querySelector('.swp-word')?.textContent || '');
-    utt.lang = 'en-US';
-    utt.onend = () => btn.classList.remove('playing');
-    speechSynthesis.speak(utt);
+    // 逐词真人音频(不再用TTS)
+    const word = btn.closest('.shadow-word-popup').querySelector('.swp-word')?.textContent || '';
+    if (word) speakWordByWord(word, btn);
   });
 }
 
