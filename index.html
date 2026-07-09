@@ -2140,9 +2140,25 @@ function cleanMeaningForQuiz(meaning, wordEn) {
 // 生成题目
 function generateQuestions(mode, words, count) {
   const all = getAllWords();
-  // 如果是名词500-第二波子分类测验,按分类原序出题(不随机shuffle)
-  const isN2SubGroup = quizState.nouns500V2Group;
-  const picked = isN2SubGroup ? words.slice(0, Math.min(count, words.length)) : shuffle(words).slice(0, Math.min(count, words.length));
+  // 名词500-第二波测验:分类间保持顺序,分类内shuffle
+  let picked;
+  if (quizState.nouns500V2Group) {
+    // 选了子分类:该分类内shuffle
+    picked = shuffle(words).slice(0, Math.min(count, words.length));
+  } else if (quizState.range && getMergedData().find(s => s.date === quizState.range)?.isNouns500V2) {
+    // 选了"全部分类":按NOUNS500V2_QUIZ_GROUPS顺序,每组内shuffle
+    const ordered = [];
+    NOUNS500V2_QUIZ_GROUPS.forEach(g => {
+      const groupWords = words.filter(w => g.subcats.includes(w.subcategory));
+      ordered.push(...shuffle(groupWords));
+    });
+    // 无subcategory的词(如果有的话)也shuffle加入末尾
+    const leftover = shuffle(words.filter(w => !NOUNS500V2_QUIZ_GROUPS.some(g => g.subcats.includes(w.subcategory))));
+    ordered.push(...leftover);
+    picked = ordered.slice(0, Math.min(count, ordered.length));
+  } else {
+    picked = shuffle(words).slice(0, Math.min(count, words.length));
+  }
   return picked.map(w => {
     const q = { word: w, mode };
     if (mode === 'spell') return q; // 拼写模式不需要选项
