@@ -114,6 +114,9 @@ h1 { text-align:center; font-size:1.4em; color:#2d1b69; letter-spacing:2px; marg
 .card-toggle-zh { background:none; border:1px solid #ddd; font-size:0.68em; padding:1px 7px; border-radius:10px; cursor:pointer; color:#aaa; margin-left:6px; vertical-align:middle; transition:all 0.15s; font-weight:500; }
 .card-toggle-zh:hover { border-color:#764ba2; color:#764ba2; background:#f8f0ff; }
 .card-toggle-zh.zh-mode { background:#764ba2; color:#fff; border-color:#764ba2; }
+.def-en, .def-zh { line-height:1.4; }
+.def-en .toggle-zh-btn, .def-en .card-toggle-zh { margin-left:4px; }
+.def-zh .toggle-zh-btn, .def-zh .card-toggle-zh { margin-left:4px; }
 
 /* ===== 响应式 ===== */
 @keyframes pulse {
@@ -713,6 +716,30 @@ html { scroll-behavior:smooth; }
 
 <script src="vocab-data.js?v=20260709"></script>
 <script>
+/* === English/Chinese definition toggle === */
+function renderMeaning(w, isCard) {
+  if (w.defEn) {
+    var id = "def-" + w.en.replace(/[^a-zA-Z0-9]/g, "_");
+    var cls = isCard ? "card-toggle-zh" : "toggle-zh-btn";
+    return '<span class="def-en" id="' + id + '-en">' + w.defEn + ' <button class="' + cls + '" data-def-id="' + id + '" data-def-mode="en">中</button></span>' +
+           '<span class="def-zh" id="' + id + '-zh" style="display:none">' + renderMeaning(w, false) + ' <button class="' + cls + ' zh-mode" data-def-id="' + id + '" data-def-mode="zh">英</button></span>';
+  }
+  return w.meaning;
+}
+
+document.addEventListener("click", function(e) {
+  if (e.target.getAttribute("data-def-mode")) {
+    var id = e.target.getAttribute("data-def-id");
+    var mode = e.target.getAttribute("data-def-mode");
+    var enEl = document.getElementById(id + "-en");
+    var zhEl = document.getElementById(id + "-zh");
+    if (enEl && zhEl) {
+      if (mode === "en") { enEl.style.display = "none"; zhEl.style.display = ""; }
+      else { enEl.style.display = ""; zhEl.style.display = "none"; }
+    }
+  }
+});
+
 /* 名词500-第二波 */
 
 function closeAllViews() {
@@ -809,7 +836,7 @@ function renderSemiConcreteNouns(filter) {
           html += '<div class="vocab-card">';
           html += '<div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div>';
           html += '<span class="abs-type-badge semi-concrete">半具体</span> <span class="card-pos">' + w.pos + '</span>';
-          html += '<div class="card-meaning">' + w.meaning + '</div>';
+          html += '<div class="card-meaning">' + renderMeaning(w, true) + '</div>';
           if (w.example) html += '<div class="card-example">' + w.example + '</div>';
           if (w.exampleZh) html += '<div class="card-example-zh">' + w.exampleZh + '</div>';
           if (w.root) html += '<div class="card-root">' + w.root + '</div>';
@@ -824,7 +851,7 @@ function renderSemiConcreteNouns(filter) {
           const esc = w.en.replace(/'/g, "\'");
           const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
           const irrHtml = w.irr ? formatIrrTag(w) : '';
-          html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + irrHtml + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + w.meaning + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
+          html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + irrHtml + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + renderMeaning(w, false) + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
         });
         html += '</tbody></table></div>'; // desk-table
       }
@@ -836,7 +863,7 @@ function renderSemiConcreteNouns(filter) {
       words.forEach(w => {
         const esc = w.en.replace(/'/g, "\'");
         const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-        html += '<div class="vocab-card"><div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div><span class="abs-type-badge semi-concrete">半具体</span> <span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div></div>';
+        html += '<div class="vocab-card"><div class="card-speak-row"><' + audioBtn + '><span class="card-word">' + w.en + '</span><span class="card-phonetic">' + (w.phonetic || '') + '</span></div><span class="abs-type-badge semi-concrete">半具体</span> <span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + renderMeaning(w, false) + '</div></div>';
       });
       html += '</div>';
     } else {
@@ -844,7 +871,7 @@ function renderSemiConcreteNouns(filter) {
       words.forEach(w => {
         const esc = w.en.replace(/'/g, "\'");
         const audioBtn = w.noAudio ? '<button class="card-speak" data-word="' + w.en + '" onclick="speakWordByWord(\'' + esc + '\',this)">🔊</button>' : '<button class="card-speak" data-word="' + w.en + '" onclick="speak(\'' + esc + '\',this)">🔊</button>';
-        html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + w.meaning + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
+        html += '<tr><td>' + audioBtn + '</td><td><span class="abs-type-badge semi-concrete">半具体</span> ' + w.en + '</td><td>' + (w.phonetic || '') + '</td><td>' + w.pos + '</td><td>' + renderMeaning(w, false) + '</td><td>' + (w.root || '') + '</td><td>' + (w.example || '') + '</td></tr>';
       });
       html += '</tbody></table></div>';
     }
@@ -938,7 +965,7 @@ function renderAbstractNouns(filter) {
           html += '<div class="vocab-card">';
           html += '<div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + typeBadge + ttsTag + '<span class="card-phonetic">' + w.phonetic + '</span></div>';
           html += '<span class="card-pos">' + w.pos + '</span>';
-          html += '<div class="card-meaning">' + w.meaning + '</div>';
+          html += '<div class="card-meaning">' + renderMeaning(w, true) + '</div>';
           html += defHtml;
           html += exHtml;
           html += rootHtml;
@@ -975,7 +1002,7 @@ function renderAbstractNouns(filter) {
             exHtml += '</div>';
           }
 
-          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + typeBadge + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + defHtml + '</td><td>' + exHtml + '</td></tr>';
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + typeBadge + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + renderMeaning(w, false) + rootHtml + '</td><td>' + defHtml + '</td><td>' + exHtml + '</td></tr>';
         });
         html += '</tbody></table>';
       }
@@ -1078,7 +1105,7 @@ function renderNouns500V2(filter) {
         // Original example (if exists, from vocab data)
         const origExHtml = w.example ? '<div class="card-example">' + w.example + '</div>' : '';
 
-        html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + defHtml + rootHtml + exHtml + origExHtml + '</div>';
+        html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + renderMeaning(w, false) + '</div>' + defHtml + rootHtml + exHtml + origExHtml + '</div>';
       });
       html += '</div>';
     } else {
@@ -1111,7 +1138,7 @@ function renderNouns500V2(filter) {
           });
         }
 
-        html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td class="meaning">' + defHtml + '</td><td>' + exHtml + '</td></tr>';
+        html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + renderMeaning(w, false) + rootHtml + '</td><td class="meaning">' + defHtml + '</td><td>' + exHtml + '</td></tr>';
       });
       html += '</tbody></table>';
     }
@@ -1146,7 +1173,7 @@ function renderNouns500V2(filter) {
             const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : w.wordType === 'semi-concrete' ? '<span class="abs-type-badge semi-concrete">半具体</span>' : '';
             const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
             const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-            html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
+            html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + typeBadge + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + renderMeaning(w, false) + '</div>' + rootHtml + exHtml + '</div>';
           });
           html += '</div>';
         } else {
@@ -1160,7 +1187,7 @@ function renderNouns500V2(filter) {
             const typeBadge = w.wordType === 'abstract' ? '<span class="abs-type-badge abstract">抽象</span>' : w.wordType === 'semi-concrete' ? '<span class="abs-type-badge semi-concrete">半具体</span>' : '';
             const zhId = 'n2zh-' + ci + '-' + i + '-' + w.en.replace(/s+/g, '-');
             const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-            html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + exHtml + '</td></tr>';
+            html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + typeBadge + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + renderMeaning(w, false) + rootHtml + '</td><td>' + exHtml + '</td></tr>';
           });
           html += '</tbody></table>';
         }
@@ -1629,7 +1656,7 @@ function renderAll(filter) {
               </div>
               <span class="card-pos">${w.pos}</span>
               ${irrHtml}
-              <div class="card-meaning">${w.meaning}</div>
+              <div class="card-meaning">${renderMeaning(w, true)}</div>
               ${rootHtml}
               <div class="card-example" id="${zhId}-en">${w.example}<button class="card-toggle-zh" onclick="toggleZh('${zhId}',this)">中</button></div>
               <div class="card-example-zh" id="${zhId}-zh" style="display:none">${w.exampleZh||''}<button class="card-toggle-zh zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div>`;
@@ -1650,7 +1677,7 @@ function renderAll(filter) {
               <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
               <td class="phonetic">${w.phonetic}</td>
               <td><span class="pos">${w.pos}</span></td>
-              <td class="meaning">${irrHtml}${w.meaning}${rootHtml}</td>
+              <td class="meaning">${irrHtml}${renderMeaning(w, false)}${rootHtml}</td>
               <td><div id="${zhId}-en" class="example">${w.example}<button class="toggle-zh-btn" onclick="toggleZh('${zhId}',this)">中</button></div><div id="${zhId}-zh" class="example-zh" style="display:none">${w.exampleZh||''}<button class="toggle-zh-btn zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div></td>
             </tr>`;
           }).join('');
@@ -1681,7 +1708,7 @@ function renderAll(filter) {
             </div>
             <span class="card-pos">${w.pos}</span>
             ${irrHtml}
-            <div class="card-meaning">${w.meaning}</div>
+            <div class="card-meaning">${renderMeaning(w, true)}</div>
             ${rootHtml}
             <div class="card-example" id="${zhId}-en">${w.example}<button class="card-toggle-zh" onclick="toggleZh('${zhId}',this)">中</button></div>
             <div class="card-example-zh" id="${zhId}-zh" style="display:none">${w.exampleZh||''}<button class="card-toggle-zh zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div>`;
@@ -1702,7 +1729,7 @@ function renderAll(filter) {
             <td><div class="word-cell">${audioBtn}${w.en}${compoundTag}${ttsTag}</div></td>
             <td class="phonetic">${w.phonetic}</td>
             <td><span class="pos">${w.pos}</span></td>
-            <td class="meaning">${irrHtml}${w.meaning}${rootHtml}</td>
+            <td class="meaning">${irrHtml}${renderMeaning(w, false)}${rootHtml}</td>
             <td><div id="${zhId}-en" class="example">${w.example}<button class="toggle-zh-btn" onclick="toggleZh('${zhId}',this)">中</button></div><div id="${zhId}-zh" class="example-zh" style="display:none">${w.exampleZh||''}<button class="toggle-zh-btn zh-mode" onclick="toggleZh('${zhId}',this)">英</button></div></td>
           </tr>`;
         }).join('');
@@ -3270,7 +3297,7 @@ function renderNouns500(filter) {
           const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
           const zhId = 'nzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + rootHtml + exHtml + '</div>';
+          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span>' + compoundTag + ttsTag + '<span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + renderMeaning(w, false) + '</div>' + rootHtml + exHtml + '</div>';
         });
         html += '</div>';
       } else {
@@ -3283,7 +3310,7 @@ function renderNouns500(filter) {
           const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
           const zhId = 'nzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + exHtml + '</td></tr>';
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + compoundTag + ttsTag + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + renderMeaning(w, false) + rootHtml + '</td><td>' + exHtml + '</td></tr>';
         });
         html += '</tbody></table>';
       }
@@ -3386,7 +3413,7 @@ function renderVerbs200(filter) {
           const rootHtml = w.root ? '<div class="card-root">' + w.root + '</div>' : '';
           const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div class="card-example" id="' + zhId + '-en">' + w.example + '<button class="card-toggle-zh" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div class="card-example-zh" id="' + zhId + '-zh" style="display:none">' + (w.exampleZh || '') + '<button class="card-toggle-zh zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span><span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + w.meaning + '</div>' + irrHtml + rootHtml + exHtml + '</div>';
+          html += '<div class="vocab-card"><div class="card-top"><span class="card-num">' + (i+1) + '</span>' + audioBtn + '<span class="card-word">' + w.en + '</span><span class="card-phonetic">' + w.phonetic + '</span></div><span class="card-pos">' + w.pos + '</span><div class="card-meaning">' + renderMeaning(w, false) + '</div>' + irrHtml + rootHtml + exHtml + '</div>';
         });
         html += '</div>';
       } else {
@@ -3398,7 +3425,7 @@ function renderVerbs200(filter) {
           const rootHtml = w.root ? '<div class="root-meaning">' + w.root + '</div>' : '';
           const zhId = 'vzh-' + ci + '-' + i + '-' + w.en.replace(/\s+/g, '-');
           const exHtml = w.example ? '<div id="' + zhId + '-en" class="example">' + w.example + '<button class="toggle-zh-btn" onclick="toggleZh(\'' + zhId + '\',this)">中</button></div><div id="' + zhId + '-zh" class="example-zh" style="display:none">' + (w.exampleZh || '') + '<button class="toggle-zh-btn zh-mode" onclick="toggleZh(\'' + zhId + '\',this)">英</button></div>' : '';
-          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + w.meaning + rootHtml + '</td><td>' + irrHtml + '</td><td>' + exHtml + '</td></tr>';
+          html += '<tr><td class="td-num">' + (i+1) + '</td><td><div class="word-cell">' + audioBtn + w.en + '</div></td><td class="phonetic">' + w.phonetic + '</td><td><span class="pos">' + w.pos + '</span></td><td class="meaning">' + renderMeaning(w, false) + rootHtml + '</td><td>' + irrHtml + '</td><td>' + exHtml + '</td></tr>';
         });
         html += '</tbody></table>';
       }
