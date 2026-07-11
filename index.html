@@ -722,7 +722,7 @@ function renderMeaning(w, isCard) {
     var id = "def-" + w.en.replace(/[^a-zA-Z0-9]/g, "_");
     var cls = isCard ? "card-toggle-zh" : "toggle-zh-btn";
     return '<span class="def-en" id="' + id + '-en">' + w.defEn + ' <button class="' + cls + '" data-def-id="' + id + '" data-def-mode="en">中</button></span>' +
-           '<span class="def-zh" id="' + id + '-zh" style="display:none">' + w.meaning + ' <button class="' + cls + ' zh-mode" data-def-id="' + id + '" data-def-mode="zh">英</button></span>';
+           '<span class="def-zh" id="' + id + '-zh" style="display:none">' + (w.defZh || w.meaning) + ' <button class="' + cls + ' zh-mode" data-def-id="' + id + '" data-def-mode="zh">英</button></span>';
   }
   return w.meaning;
 }
