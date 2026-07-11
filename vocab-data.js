@@ -556,11 +556,11 @@ const VOCAB_DATA = [
         "phonetic": "/ˈsaɪdwɔːk/",
         "pos": "n.",
         "meaning": "人行道（美式英语，英式为pavement）",
-        "defEn": "❶A footpath, usually paved, at the side of a road for the use of ped... ❷(by extension) any paved footpath,",
+        "defEn": "❶A path with a hard surface beside a road, for people to walk on.",
         "example": "Walk on the sidewalk — it's safer.",
         "root": "side(旁边)+walk(走道) → 路边用来走的 → 人行道",
         "exampleZh": "走人行道——更安全。",
-        "defZh": "❶道路旁供行人使用的人行道"
+        "defZh": "❶道路旁供行人行走的人行道。"
       },
       {
         "en": "plaza",
@@ -1522,12 +1522,12 @@ const VOCAB_DATA = [
         "en": "crisp",
         "phonetic": "/krɪsp/",
         "pos": "adj./n./v.",
-        "meaning": "❶adj. 脆的、酥脆的 ❷adj. 清爽的、干冷的（天气） ❸n. 炸薯片（英式=chips美式）",
-        "defEn": "❶adj. Hard, dry, and easily broken. ❶adj. Pleasantly cold and dry. ❸n. A thin slice of fried potato eaten as a snack.",
+        "meaning": "❶adj. 脆的、酥脆的 ❷adj. 清爽的、干冷的（天气）",
+        "defEn": "❶adj. Hard, dry, and easily broken. ❷adj. Pleasantly cold and dry.",
         "example": "The skin on the roast pork was perfectly crisp.",
         "root": "古英语crisp → 咬下去咔嚓响的 → 脆的",
         "exampleZh": "烤猪皮的脆度完美。",
-        "defZh": "❶adj.脆的、酥脆的 ❷adj.清爽的、干冷的（天气） ❸n.炸薯片"
+        "defZh": "❶adj.脆的、酥脆的 ❷adj.清爽的、干冷的（天气）"
       },
       {
         "en": "historical",
@@ -1841,12 +1841,12 @@ const VOCAB_DATA = [
         "en": "crown",
         "phonetic": "/kraʊn/",
         "pos": "n./v.",
-        "meaning": "❶n. 王冠、皇冠 ❷n. 冠军头衔 ❸n. 顶部、最高处 ❹v. 加冕 ❺v. 授予称号 [遗漏❸",
-        "defEn": "❶v. To place a crown on the head of. ❷v. To formally declare (someone) a king, queen, emperor, etc. ❸n. A royal, imperial or princely headdress; a diadem.",
+        "meaning": "❶n. 王冠、皇冠 ❷n. 冠军头衔 ❸n. 顶部、最高处 ❹v. 加冕 ❺v. 授予称号",
+        "defEn": "❶n. A royal headdress; a diadem ❷n. The title of champion ❸n. The top or highest part ❹v. To place a crown on the head ❺v. To confer a title on someone",
         "example": "The king wore a golden crown.",
         "root": "corona(花环/冠) → 戴在头顶的象征 → 王冠",
         "exampleZh": "国王戴着金色的王冠。",
-        "defZh": "❶动词：将皇冠戴在某人的头上。❷动词：正式宣布某人成为国王、女王、皇帝等。❸名词：皇室、帝国或王公的头饰；冠冕。"
+        "defZh": "❶n. 皇冠、王冠 ❷n. 冠军头衔 ❸n. 顶部、最高处 ❹v. 加冕 ❺v. 授予称号"
       },
       {
         "en": "spray",
@@ -2682,11 +2682,11 @@ const VOCAB_DATA = [
         "phonetic": "/ˈfɔːsɪt/",
         "pos": "n.",
         "meaning": "水龙头（美式英语）",
-        "defEn": "❶A device that controls the flow of water from a pipe (American English; tap in British English).",
+        "defEn": "❶A device that controls the flow of water from a pipe.",
         "example": "Turn off the faucet — you're wasting water.",
         "exampleZh": "关掉水龙头——你在浪费水。",
         "subcategory": "Bathroom",
-        "defZh": "❶控制管道中水流出的装置，即水龙头（美式英语）。"
+        "defZh": "❶控制管道中水流出的装置，即水龙头。"
       },
       {
         "en": "toilet paper",
@@ -3408,12 +3408,12 @@ const VOCAB_DATA = [
         "en": "pants",
         "phonetic": "/pænts/",
         "pos": "n.",
-        "meaning": "❶裤子（美式）❷内裤（英式）",
-        "defEn": "❶A piece of clothing that covers the lower part of the body from the waist to the feet, consisting of two separate parts (US).❷Underpants (UK).",
+        "meaning": "裤子",
+        "defEn": "❶A piece of clothing that covers the lower part of the body from the waist to the feet, consisting of two separate parts.",
         "example": "The film was a load [or pile] of pants.",
         "exampleZh": "这部电影是一堆（或一堆）裤子。",
         "subcategory": "Clothing",
-        "defZh": "❶从腰部到脚覆盖下半身的外衣，即裤子（美式）；或内裤（英式）。"
+        "defZh": "❶从腰部到脚覆盖下半身的外衣，即裤子。"
       },
       {
         "en": "jeans",
@@ -3981,11 +3981,11 @@ const VOCAB_DATA = [
         "phonetic": "/ˈsʌb.weɪ/",
         "pos": "n.",
         "meaning": "地铁",
-        "defEn": "❶An underground railway system in a city (American English; underground or tube in British English).",
+        "defEn": "❶An underground railway system in a city.",
         "example": "Take the subway — it's faster than driving.",
         "exampleZh": "坐地铁吧——比开车快。",
         "subcategory": "Transportation",
-        "defZh": "❶地下铁路。 ❷在这种地下铁路上运行的列车。 ❸快速交通系统。"
+        "defZh": "❶城市地下铁路系统，即地铁。"
       },
       {
         "en": "bicycle",
@@ -4014,11 +4014,11 @@ const VOCAB_DATA = [
         "phonetic": "/trʌk/",
         "pos": "n.",
         "meaning": "卡车",
-        "defEn": "❶A large road vehicle used for carrying goods (American English; lorry in British English).",
+        "defEn": "❶A large road vehicle used for carrying goods.",
         "example": "The truck is the fastest way to get there.",
         "exampleZh": "卡车是去那里最快的方式。",
         "subcategory": "Transportation",
-        "defZh": "❶一种用于运输货物的大型道路车辆（美式英语），即卡车。"
+        "defZh": "❶用于运输货物的大型道路车辆，即卡车。"
       },
       {
         "en": "plane",
@@ -4150,7 +4150,7 @@ const VOCAB_DATA = [
         "exampleZh": "在下个加油站停车——油快没了。",
         "compound": true,
         "subcategory": "Transportation",
-        "defEn": "❶A place where you can buy petrol or diesel for your car (American English; petrol station in British English)."
+        "defEn": "❶A place where you can buy fuel for your car."
       },
       {
         "en": "pen",
@@ -5346,11 +5346,11 @@ const VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "人行道",
-        "defEn": "❶A path with a hard surface beside a road, for people to walk on (American English; pavement in British English).",
+        "defEn": "❶A path with a hard surface beside a road, for people to walk on.",
         "example": "Walk on the sidewalk — it's safer.",
         "exampleZh": "走人行道——更安全。",
         "subcategory": "Street & City",
-        "defZh": "❶道路旁供行人使用的人行道"
+        "defZh": "❶道路旁供行人行走的人行道。"
       },
       {
         "en": "bridge",
@@ -5643,11 +5643,11 @@ const VOCAB_DATA = [
         "phonetic": "/ˈflæʃ.laɪt/",
         "pos": "n.",
         "meaning": "手电筒",
-        "defEn": "❶A small electric light that you can carry in your hand (American English; torch in British English).",
+        "defEn": "❶A small electric light that you can carry in your hand.",
         "example": "The flashlight is in the garage.",
         "exampleZh": "手电筒在车库里。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶电池供电的手持光源，即手电筒。 ❷闪光灯（摄影中用于产生闪光的装置）。"
+        "defZh": "❶电池供电的手持光源，即手电筒。"
       },
       {
         "en": "candle",
@@ -5950,12 +5950,12 @@ const VOCAB_DATA = [
         "en": "holiday",
         "phonetic": "/ˈhɒl.ə.deɪ/",
         "pos": "n.",
-        "meaning": "❶假期❿节日",
-        "defEn": "❶A time when you do not go to work or school, especially when you go somewhere to enjoy yourself. ❿A day when people do not work, because of a religious or national festival.",
+        "meaning": "❶假期 ❷节日",
+        "defEn": "❶A time when you do not go to work or school, especially when you go somewhere to enjoy yourself. ❷A day when people do not work, because of a religious or national festival.",
         "example": "We're going on holiday to Florida next week.",
         "exampleZh": "下周我们要去佛罗里达度假。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶举行节庆的日子。 ❷由国家或政府宣布免于工作的日子，即法定假日。 ❸为了休闲和旅游而离开工作一天或多天的时段，即假期。"
+        "defZh": "❶假期（离开工作去休闲旅游的时段） ❷法定假日、节日（因宗教或国家庆典不工作的日子）"
       },
       {
         "en": "weekend",
@@ -16897,12 +16897,12 @@ const VOCAB_DATA = [
         "phonetic": "/kɔːrt/",
         "pos": "n.",
         "meaning": "❶法庭 ❷球场",
-        "defEn": "❶n. A place where legal cases are judged ❷n. An area marked out for playing a game like tennis ❸n. The home and officials of a ruler",
+        "defEn": "❶n. A place where legal cases are judged ❷n. An area marked out for playing a game like tennis",
         "example": "The tennis court is free now.",
         "exampleZh": "网球场现在空了。",
         "wordType": "semi-concrete",
         "subcategory": "Sports & Fun Deep",
-        "defZh": "❶n. 法院，法庭 ❷n. 球场；为打网球等比赛而划出的区域 ❸n. 统治者的宫廷及官员"
+        "defZh": "❶n. 法院，法庭 ❷n. 球场"
       },
       {
         "en": "pitch",
