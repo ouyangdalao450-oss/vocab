@@ -1,4 +1,4 @@
-var VOCAB_DATA = [
+const VOCAB_DATA = [
   {
     "date": "📅 2026-05-17（47词）",
     "words": [
@@ -7,7 +7,7 @@ var VOCAB_DATA = [
         "phonetic": "/prəˌnʌnsiˈeɪʃn/",
         "pos": "n.",
         "meaning": "❶ 发音方式（某个词或语言的读法） ❷ 某人的发音（口音）",
-        "defEn": "❶The formal or informal way in which a word is made to sound when sp... ❷The way in which the words of a language are made to sound when spe... ❸The act of pronouncing or uttering something.",
+        "defEn": "❶The way in which a word is pronounced. ❷The way in which a language is pronounced by its speakers.",
         "example": "Your pronunciation of 'th' needs work.",
         "root": "pro(向前)+nounce(说)+ation → 把话说出来的方式 → 发音",
         "exampleZh": "你发'th'的音还需要练习。",
@@ -18,22 +18,22 @@ var VOCAB_DATA = [
         "phonetic": "/ˌkɑːmprɪˈhenʃn/",
         "pos": "n.",
         "meaning": "❶ 理解力（读懂/听懂的能力） ❷ 理解练习（如阅读理解、听力理解）",
-        "defEn": "❶Thorough understanding ❷The totality of intensions, ❸A compact syntax for generating a list in some functional programmi...",
+        "defEn": "❶The ability to understand something completely. ❶A full understanding of something.",
         "example": "The test has a listening comprehension section.",
         "root": "com(完全)+prehend(抓住) → 完全抓住意思 → 理解",
         "exampleZh": "考试有听力理解部分。",
-        "defZh": "❶充分的理解 ❷内涵的总和 ❸某些函数式编程语言中用于生成列表的简洁语法"
+        "defZh": "❶完全理解的能力 ❷充分的理解"
       },
       {
         "en": "method",
         "phonetic": "/ˈmeθəd/",
         "pos": "n.",
         "meaning": "❶ 方法、办法（做某事的特定/系统方式） ❷ 条理、秩序（做事有计划、有组织的品质）",
-        "defEn": "❶A process by which a task is completed; ❷(often \"the method\") A technique for acting based on the ideas arti... ❸A subroutine or function belonging to a class or object,",
+        "defEn": "❶A particular way of doing something. ❷A particular form of procedure for accomplishing something.",
         "example": "The method we used was surveys.",
         "root": "meta(跟随)+hodos(道路) → 沿着走的路 → 方法",
         "exampleZh": "我们使用的方法是问卷调查。",
-        "defZh": "❶完成任务的过程 ❷通常指基于某种理念的行动技巧 ❸属于类或对象的子程序或函数"
+        "defZh": "❶做某事的特定方式 ❷完成某事的特定程序"
       },
       {
         "en": "comprehensible input",
@@ -49,34 +49,34 @@ var VOCAB_DATA = [
         "en": "lesson",
         "phonetic": "/ˈlesn/",
         "pos": "n.",
-        "meaning": "❶一节课 ❷教训（从经历中学到的道理）",
-        "defEn": "❶A section of learning or teaching into which a wider learning conte... ❷A learning task assigned to a student; homework. ❸Something learned or to be learned.",
+        "meaning": "❶一节课（一段教学时间） ❷教训（从经历中学到的道理）",
+        "defEn": "❶A period of time in which a person is taught about a subject. ❷Something that you learn from experience.",
         "example": "That failure taught me a valuable lesson.",
         "root": "learn的变体 → 学到的东西 → 一课/教训",
         "exampleZh": "那次失败给了我一个宝贵的教训。",
-        "defZh": "❶更广泛的课程体系中的一部分学习或教学内容 ❷分配给学生的学习任务；家庭作业 ❸已学到或需要学到的东西"
+        "defZh": "❶一段教学时间 ❷从经历中学到的东西"
       },
       {
         "en": "quiz",
         "phonetic": "/kwɪz/",
         "pos": "n./v.",
         "meaning": "❶n. 小测验、问答比赛 ❷v. 盘问、考问",
-        "defEn": "❶v. To hoax; to chaff or mock with pretended seriousness of discours... ❷v. To peer at; to eye suspiciously or mockingly. ❸n. An odd, puzzling or absurd person or thing.",
+        "defEn": "❶n. A short informal test. ❷n. A game or competition in which you answer questions. ❸v. To ask someone questions.",
         "example": "We have a quiz on chapter 3.",
         "root": "起源不确定，可能来自拉丁语qui es? → 问你知道多少 → 小测验",
         "exampleZh": "我们第三章有一个小测验。",
-        "defZh": "❶愚弄；以假装严肃的方式嘲弄或调侃 ❶窥视；怀疑地或嘲弄地盯着看 ❸一个古怪的、令人困惑的或荒谬的人或事物"
+        "defZh": "❶小测验 ❷问答比赛 ❸提问、盘问"
       },
       {
         "en": "term",
         "phonetic": "/tɜːrm/",
         "pos": "n./v.",
         "meaning": "❶n. 术语、措辞 ❷n. 学期 ❸n. 期限、任期 ❹n. 条款、条件（terms of agreement）",
-        "defEn": "❶v. To phrase a certain way; to name or call. ❷n. That which limits the extent of anything; ❸n. A chronological limitation or restriction.",
+        "defEn": "❶n. A word or expression with a specific meaning. ❷n. A fixed period of time. ❸n. The conditions of an agreement. ❹n. One of the periods into which the school year is divided.",
         "example": "The teacher explained the key terms in the lesson.",
         "root": "terminus(边界/终点) → 划定范围的词 → 术语/期限",
         "exampleZh": "老师讲解了课程中的关键术语。",
-        "defZh": "❶以某种方式表述；命名或称呼 ❷限制任何事物范围的要素 ❸时间上的限制或约束"
+        "defZh": "❶n.术语、措辞 ❷n.学期 ❸n.期限、任期 ❹n.条款、条件"
       },
       {
         "en": "conclusion",
@@ -93,8 +93,8 @@ var VOCAB_DATA = [
         "en": "description",
         "phonetic": "/dɪˈskrɪpʃn/",
         "pos": "n.",
-        "meaning": "❶ 描述、描写 ❷ 种类、类型（of a certain description）",
-        "defEn": "❶A sketch or account of anything in words; ❷The act of describing; a delineation by marks or signs. ❸A set of characteristics by which someone or something can be recog...",
+        "meaning": "❶描述、描写 ❷种类、类型（of a certain description）",
+        "defEn": "❶Something that tells you what something is like. ❷The act of describing something.",
         "example": "Give a brief description of the problem.",
         "root": "de(向下)+scribere(写) → 写下来的细节 → 描述",
         "exampleZh": "简要描述一下这个问题。",
@@ -104,12 +104,12 @@ var VOCAB_DATA = [
         "en": "definition",
         "phonetic": "/ˌdefɪˈnɪʃn/",
         "pos": "n.",
-        "meaning": "❶ 定义、释义 ❷ 清晰度、鲜明度（图像/声音）",
-        "defEn": "❶A statement of the meaning of a word or word group or a sign or sym... ❷(usually with the definite article the) A clear instance conforming... ❸A statement expressing the essential nature of something; formulation",
+        "meaning": "❶定义、释义 ❷清晰度、鲜明度（图像/声音）",
+        "defEn": "❶A statement that explains the meaning of a word or phrase. ❷The clarity of a sound or image.",
         "example": "Look up the definition of this word.",
         "root": "de(完全)+finire(限定) → 严格划定边界 → 定义",
         "exampleZh": "查一下这个词的定义。",
-        "defZh": "❶对一个词、词组或符号意义的陈述 ❷一个明确符合定义的典型实例 ❸表达某事物本质属性的陈述；定义表述"
+        "defZh": "❶解释词或短语意义的陈述 ❷声音或图像的清晰度"
       },
       {
         "en": "sentence structure",
@@ -126,18 +126,18 @@ var VOCAB_DATA = [
         "phonetic": "/ədˈventʃər/",
         "pos": "n.",
         "meaning": "❶ 冒险（不寻常的、刺激的经历） ❷ 冒险精神",
-        "defEn": "❶The encountering of risks; ❷A remarkable occurrence; a striking event. ❸A mercantile or speculative enterprise of hazard;",
+        "defEn": "❶An unusual and exciting, sometimes dangerous, experience or activity. ❷The willingness to take risks and try new experiences.",
         "example": "We had many adventures in South America.",
         "root": "ad(向)+vent(来) → 向未知的未来走去 → 冒险",
         "exampleZh": "我们在南美有很多冒险经历。",
-        "defZh": "❶冒险的经历 ❷一次非凡的事件；一个引人注目的事 ❸带有风险的商业或投机性冒险"
+        "defZh": "❶不寻常的、令人兴奋的、有时危险的经历或活动"
       },
       {
         "en": "goal",
         "phonetic": "/ɡoʊl/",
         "pos": "n.",
         "meaning": "❶目标、目的 ❷球门",
-        "defEn": "❶A result that one is attempting to achieve. ❷In many sports, ❸The act of placing the object into the goal.",
+        "defEn": "❶Something that you hope to achieve in the future. ❶An area on a playing field into which a ball must go for a point to be scored. ❸The point scored when a player sends the ball into the goal area.",
         "example": "My goal is to become fluent.",
         "root": "古义: 障碍/边界 → 需要到达的终点 → 目标",
         "exampleZh": "我的目标是变得流利。",
@@ -148,7 +148,7 @@ var VOCAB_DATA = [
         "phonetic": "/tʃæns/",
         "pos": "n./v.",
         "meaning": "❶n. 机会（a chance to do） ❷n. 可能性（a chance of） ❸v. 碰巧、冒险（chance it = 冒险尝试）",
-        "defEn": "❶n. An opportunity or possibility. ❷n. Random occurrence; luck. ❸adj. Happening by chance, casual.",
+        "defEn": "❶n. The possibility that something will happen. ❷n. An opportunity to do something. ❸n. Luck.",
         "example": "I got a chance to visit Japan last summer.",
         "root": "cadere(落下) → 像骰子落下一样 → 随机的可能性",
         "exampleZh": "去年夏天我有机会去了日本。",
@@ -159,22 +159,22 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsɔːftwer/",
         "pos": "n.",
         "meaning": "软件（计算机程序和指令的统称，不可数）",
-        "defEn": "❶Encoded computer instructions, ❷The human beings involved in warfare,",
+        "defEn": "❶The instructions that control what a computer does; computer programs.",
         "example": "Install the software first.",
         "root": "soft(软的)+ware(商品) → 看不见摸不着但能用的程序 → 软件",
         "exampleZh": "先安装软件。",
-        "defZh": "❶编码的计算机指令 ❷战争中涉及的人员"
+        "defZh": "❶控制计算机操作的指令；计算机程序"
       },
       {
         "en": "confusion",
         "phonetic": "/kənˈfjuːʒn/",
         "pos": "n.",
         "meaning": "❶困惑、糊涂 ❷混乱、混淆",
-        "defEn": "❶A lack of clarity or order. ❷The state of being confused; misunderstanding. ❸A state of shame or embarrassment.",
+        "defEn": "❶A state of not being able to think clearly. ❷A feeling of not understanding something. ❸A situation in which things are mixed up.",
         "example": "There was confusion about the time.",
         "root": "con(一起)+fundere(倾倒) → 全混在一起分不清 → 困惑/混乱",
         "exampleZh": "关于时间有些混淆。",
-        "defZh": "❶缺乏清晰性或秩序 ❷困惑的状态；误解 ❸一种羞耻或尴尬的状态"
+        "defZh": "❶无法清晰思考的状态 ❶不理解的感觉 ❸事物混淆混乱的状况"
       },
       {
         "en": "routine",
@@ -192,22 +192,22 @@ var VOCAB_DATA = [
         "phonetic": "/pɑːrt/",
         "pos": "n./v.",
         "meaning": "❶n. 部分、组件 ❷n. 角色（戏剧中的） ❸v. 分开、分离（part ways = 分道扬镳）",
-        "defEn": "❶v. To leave the company of. ❷v. To cut hair with a parting; shed. ❸n. A portion; a component.",
+        "defEn": "❶n. Some but not all of a thing. ❷n. A role in a play or film. ❸v. To separate or move apart.",
         "example": "She's part of our team — we can't do this without her.",
         "root": "pars(部分) → 整体中的一块 → 部分",
         "exampleZh": "她是我们的团队成员——没有她我们做不到。",
-        "defZh": "❶离开同伴 ❶用分线方式剪头发；脱落 ❸一部分；一个组成部分"
+        "defZh": "❶n.一部分、组件 ❷n.角色（戏剧/电影中的） ❸v.分开、分离"
       },
       {
         "en": "study",
         "phonetic": "/ˈstʌdi/",
         "pos": "v./n.",
         "meaning": "❶v. 学习 ❷v. 研究 ❸n. 书房",
-        "defEn": "❶v. (usually academic) To review materials already learned in order ... ❷v. (academic) To take a course or courses on a subject.",
+        "defEn": "❶v. To learn about a subject, especially in an educational course or by reading books. ❷v. To examine something carefully. ❸n. A room used for reading and writing.",
         "example": "She studies English every day.",
         "root": "studium(热心) → 投入热情去做 → 学习/研究",
         "exampleZh": "她每天学习英语。",
-        "defZh": "❶v. 从书籍或材料中花时间学习 ❷v. 深入调查某事 ❸n. 用于阅读和写作的房间"
+        "defZh": "❶v.学习（通过阅读等方式） ❷v.仔细阅读、深入研究 ❸n.书房"
       },
       {
         "en": "practice",
@@ -225,41 +225,41 @@ var VOCAB_DATA = [
         "phonetic": "/stɪk/",
         "pos": "v./n.",
         "meaning": "❶v. 粘住、固定 ❷v. 坚持（stick to/with） ❸v. 随意放置（口语，stick it on the table） ❹n. 棍、棒、枝条 ❺n. 指责、批评（get stick from sb）",
-        "defEn": "❶v. To cut a piece of wood to be the stick member of a cope-and-stic... ❷v. To compose; to set, or arrange, in a composing stick. ❸n. An elongated piece of wood or similar material,",
+        "defEn": "❶v. To fix something to something else, usually with glue. ❷v. To continue doing something (stick to). ❸n. A thin piece of wood.",
         "example": "Stick to the plan.",
         "root": "古义: 树枝/棍子 → 用棍子固定住 → 粘住/坚持",
         "irr": "过去:stuck /stʌk/|过分:stuck /stʌk/",
         "exampleZh": "坚持按计划来。",
-        "defZh": "❶将一块木头切割成配合与榫接结构中的榫件 ❷排版；在排版棒中设置或排列 ❸一段细长的木头或类似材料的物体"
+        "defZh": "❶v.粘住、固定 ❷v.坚持（stick to/with） ❸n.棍、棒"
       },
       {
         "en": "prompt",
         "phonetic": "/prɑːmpt/",
         "pos": "v./adj./n.",
         "meaning": "❶v. 提示、促使 ❷adj. 迅速的、及时的 ❸n. 提示词、提词（电脑/舞台）",
-        "defEn": "❶v. To lead (someone) toward what they should say or do. ❷v. To show or tell an actor/person the words they should be saying, ❸n. A reminder or cue.",
+        "defEn": "❶v. To make someone decide to say or do something. ❷adj. Done without delay; quick. ❸n. A message or instruction on a computer screen; a reminder or cue.",
         "example": "The teacher prompted him to answer the question.",
         "root": "pro(向前)+emere(拿) → 把想法拿出来的 → 提示/促使",
         "exampleZh": "老师提示他回答问题。",
-        "defZh": "❶引导某人说出或做出他们应该说的话或事 ❷向演员或某人展示或告知他们应该说的台词 ❸一个提醒或提示信号"
+        "defZh": "❶v.促使某人做某事 ❷adj.迅速的、及时的 ❸n.提示词、提示信号"
       },
       {
         "en": "design",
         "phonetic": "/dɪˈzaɪn/",
         "pos": "v./n.",
         "meaning": "❶v. 设计 ❷n. 构思、设计",
-        "defEn": "❶v. To plan and carry out (a picture, work of art, construction etc.). ❷v. To plan (to do something). ❸n. A specification of an object or process,",
+        "defEn": "❶v. To make a drawing or plan of something that will be made or built",
         "example": "Who designed this building? It looks amazing.",
         "root": "de(出)+signare(标记) → 做出标记来规划 → 设计",
         "exampleZh": "谁设计了这个建筑？看起来太棒了。",
-        "defZh": "❶v. 在制作之前规划某物的外观和功能 ❷n. 已创造之物背后的计划或构想"
+        "defZh": "❶v. 为将要制作或建造的事物画图或做计划"
       },
       {
         "en": "reach",
         "phonetic": "/riːtʃ/",
         "pos": "v./n.",
-        "meaning": "❶v. 到达、抵达 ❷v. 伸手够到 ❸n. 范围、影响力（within reach）",
-        "defEn": "❶v. To extend, ❷v. To give to someone by stretching out a limb, ❸n. The act of stretching or extending; extension.",
+        "meaning": "❶❷❸❶OK但'尽量伸出去'偏强调用力，剑桥是'stretch out';❷OK;❸OK;遗漏了❹'达到某目标/水平'（reach a goal/level/number），这是重要义项如'reach an agreement/reach 100'",
+        "defEn": "❶v. To arrive at a place. ❷v. To stretch out your hand to touch or take something. ❸n. The distance you can stretch your arm; the range of influence.",
         "example": "I can't reach the top shelf — can you help me?",
         "root": "古义: 伸展手臂 → 伸手够到的范围 → 到达",
         "exampleZh": "我够不到最上面的架子——你能帮我吗？",
@@ -270,51 +270,51 @@ var VOCAB_DATA = [
         "phonetic": "/əˈlaʊ/",
         "pos": "v.",
         "meaning": "❶允许、准许（allow sb to do） ❷使能够、给…机会（allow access）",
-        "defEn": "❶To grant, give, admit, accord, afford, or yield; to let one have. ❷To acknowledge; ❸To grant (something) as a deduction or an addition;",
+        "defEn": "❶To give permission for someone to do something. ❷To make something possible.",
         "example": "They don't allow dogs in this restaurant.",
         "root": "ad(向)+laudare(赞美) → 给予认可 → 允许",
         "exampleZh": "这家餐厅不允许带狗。",
-        "defZh": "❶v. 不阻止某人做某事 ❷v. 使某事成为可能"
+        "defZh": "❶v.允许、准许（不阻止某人做某事） ❷v.使能够、给…机会"
       },
       {
         "en": "reinforce",
         "phonetic": "/ˌriːɪnˈfɔːrs/",
         "pos": "v.",
         "meaning": "❶加强、强化（观点/行为等） ❷增援（军事）",
-        "defEn": "❶To strengthen, especially by addition or augmentation. ❷To emphasize or review. ❸To encourage (a behavior or idea) through repeated stimulus.",
+        "defEn": "❶To make something stronger, especially by adding more support. ❷To strengthen a feeling, idea, or habit.",
         "example": "The new data reinforces what we already knew.",
         "root": "re(再)+in+force(力量) → 再次注入力量 → 加强",
         "exampleZh": "新数据印证了我们已有的认知。",
-        "defZh": "❶加强，尤指通过增添或扩容来加强 ❷强调或回顾 ❸通过反复刺激来鼓励某种行为或想法"
+        "defZh": "❶加强、强化 ❷强化感受、想法或习惯"
       },
       {
         "en": "explain",
         "phonetic": "/ɪkˈspleɪn/",
         "pos": "v.",
         "meaning": "❶ 解释、说明 ❷ 为…辩解、说明原因",
-        "defEn": "❶To make plain, ❷To give a valid excuse for past behavior. ❸To make flat, smooth out.",
+        "defEn": "❶To make something clear or easy to understand.",
         "example": "Let me explain it to you.",
         "root": "ex(出)+plain(平坦) → 把复杂的摊平说清楚 → 解释",
         "exampleZh": "让我给你解释一下。",
-        "defZh": "❶使某事变得清晰易懂"
+        "defZh": "❶使某事变得清晰易懂 ❷为…辩解（explain away）"
       },
       {
         "en": "ensure",
         "phonetic": "/ɪnˈʃʊr/",
         "pos": "v.",
         "meaning": "确保、保证（某事一定发生）",
-        "defEn": "❶To make a pledge to (someone); ❷To make sure or certain of something (usually some future event or ...",
+        "defEn": "❶To make something certain to happen.",
         "example": "Ensure all doors are locked before you leave.",
         "root": "en(使)+sure(确定) → 使之确定 → 确保",
         "exampleZh": "确保离开前所有门都锁好了。",
-        "defZh": "❶向某人作出承诺 ❷确保某事一定会发生（通常是某个未来事件或条件）"
+        "defZh": "❶确保某事一定发生"
       },
       {
         "en": "solidify",
         "phonetic": "/səˈlɪdɪfaɪ/",
         "pos": "v.",
-        "meaning": "❶ 巩固、使稳固（关系/地位等） ❷ 使凝固、变硬",
-        "defEn": "❶To make solid; convert into a solid body. ❷To concentrate; consolidate. ❸To become solid; to freeze, set.",
+        "meaning": "❶巩固、使稳固 ❷使凝固、变硬",
+        "defEn": "❶To become solid; to make something solid. ❷To make something more certain or stronger.",
         "example": "This win solidified her position.",
         "root": "solid(固体)+ify(使) → 使变成固体 → 巩固",
         "exampleZh": "这次胜利巩固了她的地位。",
@@ -324,8 +324,8 @@ var VOCAB_DATA = [
         "en": "visual",
         "phonetic": "/ˈvɪʒuəl/",
         "pos": "adj./n.",
-        "meaning": "❶ adj. 视觉的、看得见的 ❷ n. 视觉资料（图片、图表等）",
-        "defEn": "❶n. Any element of something that depends on sight. ❷n. An image; a picture; a graphic. ❸adj. Related to or affecting the vision.",
+        "meaning": "❶adj. 视觉的、看得见的 ❷n. 视觉资料（图片、图表等）",
+        "defEn": "❶adj. Relating to seeing. ❷n. Something such as a picture, diagram, or film that is used to give information.",
         "example": "The visuals drove the point home.",
         "root": "vis(看) → 与看见有关的 → 视觉的",
         "exampleZh": "视觉资料让人印象深刻。",
@@ -336,22 +336,22 @@ var VOCAB_DATA = [
         "phonetic": "/tens/",
         "pos": "adj./n.",
         "meaning": "❶ adj. 紧张的、绷紧的 ❷ n. 时态（动词的时间形式）",
-        "defEn": "❶v. (grammar) To apply a tense to. ❷n. (grammar) Any of the forms of a verb which distinguish when an a... ❸n. (grammar) An inflected form of a verb that indicates tense.",
+        "defEn": "❶adj. Nervous and worried; unable to relax. ❷n. Any of the forms of a verb that show the time at which an action happens.",
         "example": "English has 12 tenses.",
         "root": "tempus(时间) → 动词标记时间的形状 → 时态；拉紧 → 紧张",
         "exampleZh": "英语有12种时态。",
-        "defZh": "❶给动词施加时态 ❷区分动作或状态发生时间的动词形式中的任何一种 ❸表示时态的动词屈折变化形式"
+        "defZh": "❶adj.紧张的、绷紧的 ❷n.时态（动词的时间形式）"
       },
       {
         "en": "present",
         "phonetic": "/ˈpreznt/ /prɪˈzent/",
         "pos": "adj./n./v.",
         "meaning": "❶adj. 在场的、出席的（be present at） ❷adj. 当前的、现在的（at the present time） ❸n. 礼物、赠品 ❹v. 呈现、展示 ❺v. 颁发、赠送",
-        "defEn": "❶n. The current moment or period of time. ❷n. The present tense. ❸adj. Relating to now, for the time being; current.",
+        "defEn": "❶adj. In a particular place; existing. ❷adj. Relating to now; current. ❸n. A gift. ❹v. To show or give something to someone.",
         "example": "She presented her project to the class.",
         "root": "pre(在前)+esse(存在) → 在眼前存在 → 出席/呈现/礼物",
         "exampleZh": "她向全班展示了她的项目。",
-        "defZh": "❶v. 向观众展示某物 ❷v. 正式提交文件 ❸v. 将礼物或奖项给予某人"
+        "defZh": "❶adj.在场的、出席的 ❷adj.当前的、现在的 ❸n.礼物 ❹v.呈现、展示 ❺v.颁发、赠送"
       },
       {
         "en": "fluent",
@@ -367,22 +367,22 @@ var VOCAB_DATA = [
         "phonetic": "/ˈpɑːsəbl/",
         "pos": "adj./n.",
         "meaning": "❶adj. 可能的、有可能实现的 ❷adj. 合理的、可接受的",
-        "defEn": "❶n. A possible one. ❷n. A possible choice, notably someone being considered for a position. ❸adj. (usually not comparable) Able but not certain to happen;",
+        "defEn": "❶adj. Able to be done or achieved. ❷adj. That might happen or be true.",
         "example": "It's possible that it will rain.",
         "root": "posse(能够) → 能够做到的 → 可能的",
         "exampleZh": "可能会下雨。",
-        "defZh": "❶一个可能的选项 ❶一个可能的候选人，特别指正在被考虑担任某个职位的人 ❸可能发生但不确定会发生的事"
+        "defZh": "❶adj.可能实现的、有可能的 ❷adj.可能发生的、可能是真的"
       },
       {
         "en": "intermediate",
         "phonetic": "/ˌɪntərˈmiːdiət/",
         "pos": "adj./n.",
         "meaning": "❶ adj. 中级的、中间的 ❷ n. 中级水平者/中级课程",
-        "defEn": "❶v. To mediate, to be an intermediate. ❷v. To arrange, in the manner of a broker. ❸n. Anything in an intermediate position.",
+        "defEn": "❶adj. Between two levels or stages. ❷n. A student at an intermediate level.",
         "example": "This is for intermediate learners.",
         "root": "inter(在之间)+medius(中间) → 夹在中间的 → 中级的",
         "exampleZh": "这是给中级学习者的。",
-        "defZh": "❶居中调解；充当中间人 ❶以经纪人的方式安排 ❸处于中间位置的任何事物"
+        "defZh": "❶adj.中级的、中间的 ❷n.中级水平者/中级课程"
       },
       {
         "en": "advanced",
@@ -434,33 +434,33 @@ var VOCAB_DATA = [
         "phonetic": "/les/",
         "pos": "adj./adv./det.",
         "meaning": "❶ adj./det. 更少的、较少的 ❷ adv. 较少地、不如",
-        "defEn": "❶To make less; to lessen.",
+        "defEn": "❶A smaller amount of; not as much (adj./det.). ❷Not as much as (adv.).",
         "example": "We have less time than I thought.",
         "root": "古义: 更小的 → 数量上更少的 → less",
         "exampleZh": "我们的时间比我想的少。",
-        "defZh": "❶减少；使之变少"
+        "defZh": "❶adj./det.更少的、较少的 ❷adv.较少地、不如"
       },
       {
         "en": "daily",
         "phonetic": "/ˈdeɪli/",
         "pos": "adj./adv./n.",
         "meaning": "❶adj. 每日的、日常的 ❷adv. 每天 ❸n. 日报（daily newspaper）",
-        "defEn": "❶v. To drive an automobile frequently, ❷n. Something that is produced, consumed, used, or done every day. ❸adj. That occurs every day, or at least every working day",
+        "defEn": "❶adj./adv. Happening or done every day. ❷n. A newspaper published every day.",
         "example": "Exercise is part of my daily routine.",
         "root": "day(天)+ly(每) → 每天的 → 日常的",
         "exampleZh": "锻炼是我日常生活的一部分。",
-        "defZh": "❶频繁驾驶汽车 ❶每天生产、消费、使用或完成的事物 ❸每天发生的，或至少每个工作日发生的"
+        "defZh": "❶adj.每日的、日常的 ❷adv.每天 ❸n.日报"
       },
       {
         "en": "especially",
         "phonetic": "/ɪˈspeʃəli/",
         "pos": "adv.",
         "meaning": "❶ 尤其、特别 ❷ 专门地、特意地",
-        "defEn": "❶(manner) In a special manner; specially. ❷(focus) Particularly; to a greater extent than is normal. ❸(focus) Used to place greater emphasis upon someone or something.",
+        "defEn": "❶Particularly; more than usual.",
         "example": "I love fruit, especially mangoes.",
         "root": "es(出)+special(特别) → 特别地从中突出 → 尤其",
         "exampleZh": "我喜欢水果，尤其是芒果。",
-        "defZh": "❶以特殊的方式；特别地 ❶尤其；比正常程度更大 ❸用来对某人或某事给予更大强调"
+        "defZh": "❶尤其、特别 ❷专门地、特意地"
       },
       {
         "en": "without",
@@ -523,33 +523,33 @@ var VOCAB_DATA = [
         "phonetic": "/ˈelɪveɪtər/",
         "pos": "n.",
         "meaning": "电梯、升降机（美式英语，英式为lift）",
-        "defEn": "❶Anything that raises or uplifts. ❷A permanent construction with a built-in platform that is lifted ve... ❸A silo used for storing wheat, corn or other grain (grain elevator)",
+        "defEn": "❶A machine that carries people or goods from one level to another in a building.",
         "example": "Take the elevator to the fifth floor.",
         "root": "elevare(举起) → 把人举上去的机器 → 电梯",
         "exampleZh": "坐电梯到五楼。",
-        "defZh": "❶任何提升或抬升的东西。❷一种带有内置平台、通过……垂直升降的永久构筑物❸一种用于储存小麦、玉米或其他谷物的筒仓（谷物升降机）"
+        "defZh": "❶建筑中载人或货物从一层到另一层的升降机/电梯"
       },
       {
         "en": "tower",
         "phonetic": "/ˈtaʊər/",
         "pos": "n./v.",
-        "meaning": "❶n. 塔、塔楼 ❷n. 高楼（tower block） ❸v. 高耸、超过（tower above/over）",
-        "defEn": "❶n. A very tall iron-framed structure, ❷n. A similarly framed structure with a platform or enclosed area on...",
+        "meaning": "❶n. 塔、塔楼 ❷n. 高楼 ❸v. 高耸、超过",
+        "defEn": "❶n. A tall narrow building or part of a building. ❷v. To be much taller than the things around you.",
         "example": "The TV tower overlooks the whole city.",
         "root": "古法语tor → 向天空突出的高建筑 → 塔",
         "exampleZh": "电视塔俯瞰整个城市。",
-        "defZh": "❶一种非常高大的铁框架结构 ❶一种类似的框架结构，顶部设有平台或封闭区域"
+        "defZh": "❶n.塔、塔楼 ❷v.高耸、超过（tower above/over）"
       },
       {
         "en": "roundabout",
         "phonetic": "/ˈraʊndəˌbaʊt/",
         "pos": "n./adj.",
         "meaning": "❶n. 环形交叉路口（英式） ❷n. 旋转木马 ❸adj. 迂回的、拐弯抹角的（a roundabout way）",
-        "defEn": "❶(Australia and sometimes United States) A road junction at which tr... ❷A horizontal wheel which rotates around a central axis when pushed ... ❸A fairground carousel.",
+        "defEn": "❶n. A place where roads meet in a circle. ❷n. A fairground carousel. ❸adj. Not simple or direct.",
         "example": "Take the roundabout instead of turning left.",
         "root": "round(绕圈)+about(到处) → 绕一大圈 → 环形路口/绕弯的",
         "exampleZh": "走环岛，不要左转。",
-        "defZh": "❶一种道路交通环岛，车辆沿环形方向行驶以通过交叉口 ❶一种水平旋转的圆盘游乐设施，推动时围绕中心轴旋转 ❸游乐场中的旋转木马"
+        "defZh": "❶n.环形交叉路口 ❷n.旋转木马 ❸adj.迂回的、拐弯抹角的"
       },
       {
         "en": "sidewalk",
@@ -560,25 +560,25 @@ var VOCAB_DATA = [
         "example": "Walk on the sidewalk — it's safer.",
         "root": "side(旁边)+walk(走道) → 路边用来走的 → 人行道",
         "exampleZh": "走人行道——更安全。",
-        "defZh": "❶通常铺砌的、位于道路旁供行人使用的人行道。 ❷引申义：任何铺砌的步行道。"
+        "defZh": "❶道路旁供行人使用的人行道"
       },
       {
         "en": "plaza",
         "phonetic": "/ˈplɑːzə/",
         "pos": "n.",
         "meaning": "❶ 广场、露天公共空间 ❷ 购物中心、商业区",
-        "defEn": "❶A town's public square. ❷An open area used for gathering in a city, ❸A strip mall.",
+        "defEn": "❶An open area in a city where people gather, often with shops and places to eat.",
         "example": "We met at the plaza in front of the library.",
         "root": "拉丁语platea(宽阔空间) → 城市中的开阔地 → 广场",
         "exampleZh": "我们在图书馆前的广场见面。",
-        "defZh": "❶城镇中的公共广场 ❶城市中用于集会的开放区域 ❸一条沿街的商业店铺带"
+        "defZh": "❶广场、露天公共空间 ❷购物中心、商业区"
       },
       {
         "en": "square",
         "phonetic": "/skwer/",
         "pos": "n./v./adj.",
         "meaning": "❶n. 正方形 ❷n. 广场 ❸v. 使成方形 ❹adj. 正方形的",
-        "defEn": "❶v. To adjust so as to align with or place at a right angle to somet... ❷v. To resolve or reconcile; to suit or fit. ❸n. A polygon with four sides of equal length and four right angles;",
+        "defEn": "❶n. A shape with four straight equal sides and four corners (90°). ❷n. An open area in a town or city. ❸adj. Having the shape of a square.",
         "example": "We met at the town square and walked to the cafe.",
         "root": "古法语esquarre → 四条边一样长的形状 → 正方形/广场",
         "exampleZh": "我们在镇上的广场见面然后走到了咖啡馆。",
@@ -613,47 +613,47 @@ var VOCAB_DATA = [
         "example": "The flood damaged many homes.",
         "root": "古英语flod → 水漫过正常范围 → 洪水",
         "exampleZh": "洪水损坏了很多房屋。",
-        "defZh": "❶因过量降雨导致的水流泛滥 ❶像洪水一样覆盖或部分填满 ❸来自湖泊或其他水体的大量水流溢出（通常造成灾难）"
+        "defZh": "❶n.洪水 ❷n.大量、大批 ❸v.淹没、泛滥"
       },
       {
         "en": "shoulder",
         "phonetic": "/ˈʃoʊldər/",
         "pos": "n./v.",
-        "meaning": "❶n. 肩膀 ❷n. 路肩（道路两侧的紧急停车带） ❸v. 承担、肩负（shoulder responsibility/responsibilities）",
-        "defEn": "❶v. To push (a person or thing) using one's shoulder. ❷v. To put (something) on one's shoulders. ❸n. The part of an animal's body between the base of the neck and fo...",
+        "meaning": "❶n. 肩膀 ❷n. 路肩 ❸v. 承担、肩负",
+        "defEn": "❶n. The part of the body between the neck and the upper arm. ❷n. The edge of a road. ❸v. To accept responsibility for something.",
         "example": "He put his hand on her shoulder to comfort her.",
         "root": "古义: 承载重物的部位 → 肩膀 → 承担",
         "exampleZh": "他把手放在她肩上安慰她。",
-        "defZh": "❶动词：用肩膀推（人或物）。❷动词：把（某物）放在肩上。❸名词：动物身体上颈部底部与前肢之间的部位……"
+        "defZh": "❶n.肩膀 ❷n.路肩 ❸v.承担、肩负"
       },
       {
         "en": "path",
         "phonetic": "/pæθ/",
         "pos": "n.",
         "meaning": "❶小路、小径 ❷路线、途径",
-        "defEn": "❶A trail for the use of, or worn by, pedestrians. ❷A course taken. ❸A Pagan tradition, for example witchcraft, Wicca, druidism, Heathenry.",
+        "defEn": "❶A track or way made by or used by people walking. ❷A direction or course of action.",
         "example": "Follow the path through the forest.",
         "root": "古英语pæth → 脚踩出来的路线 → 小径/途径",
         "exampleZh": "沿着小路穿过森林。",
-        "defZh": "❶供行人行走或因行人踩踏而形成的小径 ❶所采取的路线或方向 ❸一种异教传统，例如巫术、威卡教、德鲁伊教、北欧异教"
+        "defZh": "❶n.小路、小径 ❷n.路线、途径"
       },
       {
         "en": "side",
         "phonetic": "/saɪd/",
         "pos": "n./adj./v.",
         "meaning": "❶n. 侧面、一边 ❷n. 方面、立场 ❸v. 支持、站在某一方（side with）",
-        "defEn": "❶v. To ally oneself, ❷v. To lean on one side. ❸n. A bounding straight edge of a two-dimensional shape.",
+        "defEn": "❶n. A flat surface of an object; one of the surfaces that form the outside of something. ❷n. A position or opinion in a disagreement. ❸v. To support one person or group in a disagreement.",
         "example": "Choose a side and stick with it.",
         "root": "古义: 宽而扁的面 → 物体/立场的某一侧 → 侧面/方面",
         "exampleZh": "选一边站，然后坚持下去。",
-        "defZh": "❶与某方结盟 ❶向一侧倾斜 ❸二维图形的一条边界直线边"
+        "defZh": "❶n.侧面、一边 ❷n.方面、立场 ❸v.支持、站在某一方"
       },
       {
         "en": "accident",
         "phonetic": "/ˈæksɪdənt/",
         "pos": "n.",
         "meaning": "❶ 事故、意外事件 ❷ 偶然、意外（by accident）",
-        "defEn": "❶An unexpected event with negative consequences occurring without th... ❷Especially, a collision or similar unintended event that causes dam... ❸Any chance event.",
+        "defEn": "❶Something bad that happens unexpectedly and is not intended. ❶A crash involving vehicles or other objects.",
         "example": "The accident happened at the intersection.",
         "root": "ad(向)+cadere(落下) → 不该发生却落到头上的事 → 事故/意外",
         "exampleZh": "事故发生在十字路口。",
@@ -675,22 +675,22 @@ var VOCAB_DATA = [
         "phonetic": "/ɪˌlekˈtrɪsəti/",
         "pos": "n.",
         "meaning": "电、电力（能量形式，通过电线输送供照明/驱动等）",
-        "defEn": "❶Originally, a property of amber and certain other nonconducting sub... ❷The study of electrical phenomena; ❸A feeling of excitement; a thrill.",
+        "defEn": "❶A form of energy that can be produced and used to provide power or light.",
         "example": "The electricity was cut off during the storm.",
         "root": "elektron(琥珀) → 琥珀摩擦生电 → 电",
         "exampleZh": "暴风雨期间电被切断了。",
-        "defZh": "❶最初指琥珀和其他某些非导电物质在摩擦时产生吸引轻小物体的性质 ❶对电现象的研究 ❸一种兴奋的感觉；一阵刺激"
+        "defZh": "❶一种可以产生并用于提供电力或照明的能量形式"
       },
       {
         "en": "median",
         "phonetic": "/ˈmiːdiən/",
         "pos": "n./adj.",
         "meaning": "❶n. 中位数（统计学） ❷n. 中央分隔带（道路）",
-        "defEn": "❶A central vein or nerve, ❷A line segment joining the vertex of triangle to the midpoint of th... ❸The number separating the higher half of a data sample,",
+        "defEn": "❶n. The middle number or value in a series of numbers. ❷n. A strip of land between lanes of traffic going in opposite directions.",
         "example": "The median income is lower than the average.",
         "root": "medius(中间) → 正中间的那一个 → 中位数/中央隔离带",
         "exampleZh": "中位数收入低于平均收入。",
-        "defZh": "❶一条中央静脉或神经 ❶连接三角形顶点与对边中点的线段 ❸将数据样本较高半部分与较低半部分分开的数值"
+        "defZh": "❶n.中位数 ❷n.中央分隔带"
       },
       {
         "en": "dump truck",
@@ -707,11 +707,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈnɑːzl/",
         "pos": "n.",
         "meaning": "❶ 喷嘴、管嘴 ❷ 加油枪嘴",
-        "defEn": "❶A short tube, usually tapering, forming the vent of a hose or pipe. ❷A short outlet or inlet pipe projecting from the end or side of a h... ❸The nose of an animal; muzzle.",
+        "defEn": "❶A narrow piece attached to the end of a tube or pipe to direct the flow of liquid or gas.",
         "example": "Fill up the tank and return the nozzle.",
         "root": "古法语nose → 管子的「鼻子」→ 喷嘴",
         "exampleZh": "加满油然后把加油枪放回去。",
-        "defZh": "❶一段通常呈锥形的短管，构成软管或管道的出口 ❶从管道末端或侧面突出的短出口或入口管 ❸动物的鼻子；吻部"
+        "defZh": "❶连接在管道末端用于引导液体或气体流动的狭窄部件"
       },
       {
         "en": "stuff",
@@ -722,7 +722,7 @@ var VOCAB_DATA = [
         "example": "Put your stuff in the back seat.",
         "root": "古义: 塞进去的材料 → 不知名的杂七杂八 → 东西",
         "exampleZh": "把你的东西放在后座。",
-        "defZh": "❶通过塞入或挤入来填充 ❶以压缩方式将某物填满一个空间 ❸各种杂项物品或物体；个人物品"
+        "defZh": "❶n.东西、物品 ❷v.塞满、填满"
       },
       {
         "en": "nightstand",
@@ -762,22 +762,22 @@ var VOCAB_DATA = [
         "phonetic": "/ˈstætʃuː/",
         "pos": "n.",
         "meaning": "雕像、塑像（人/动物的立体造型）",
-        "defEn": "❶A three-dimensional work of art, ❷A portrait.",
+        "defEn": "❶A sculpture of a person or animal, made of stone, metal, or other hard material.",
         "example": "There's a statue of the founder in the square.",
         "root": "statuere(立起来) → 立在那里给人看的东西 → 雕像",
         "exampleZh": "广场上有一座创始人的雕像。",
-        "defZh": "❶一件三维艺术作品 ❶一幅肖像"
+        "defZh": "❶用石头、金属或其他硬材料制作的人或动物的雕塑"
       },
       {
         "en": "cathedral",
         "phonetic": "/kəˈθiːdrəl/",
         "pos": "n.",
         "meaning": "大教堂（有主教座位的教堂，比普通church规模大、地位高）",
-        "defEn": "❶Relating to the throne or the see of a bishop.",
+        "defEn": "❶The main church of a particular area, with a seat for a bishop.",
         "example": "Notre-Dame is a famous cathedral in Paris.",
         "root": "cathedra(座位) → 放主教宝座的教堂 → 大教堂",
         "exampleZh": "巴黎圣母院是巴黎著名的大教堂。",
-        "defZh": "❶与主教座位或主教辖区有关的"
+        "defZh": "❶大教堂（一个地区的主要教堂，设有主教座位）"
       },
       {
         "en": "graffiti",
@@ -788,7 +788,7 @@ var VOCAB_DATA = [
         "example": "The wall was covered in graffiti.",
         "root": "graffiare(刮/刻) → 在墙上刻画的痕迹 → 涂鸦",
         "exampleZh": "墙上满是涂鸦。",
-        "defZh": "❶在公共场所的表面上绘制的图画或文字 ❶非正式的题词或涂写"
+        "defZh": "❶在公共场所墙面上的未经许可的字画、涂鸦"
       },
       {
         "en": "mural",
@@ -806,11 +806,11 @@ var VOCAB_DATA = [
         "phonetic": "/spɔːrk/",
         "pos": "n.",
         "meaning": "叉勺（勺子和叉子的合体餐具，spoon + fork）",
-        "defEn": "❶An eating utensil shaped like a spoon,",
+        "defEn": "❶A plastic utensil that is a combination of a spoon and a fork.",
         "example": "They gave us a spork with the takeout meal.",
         "root": "spoon(勺)+fork(叉)的混成词 → 又是勺又是叉 → 叉勺",
         "exampleZh": "外卖给了我们一个叉勺。",
-        "defZh": "❶一种形状像勺子的餐具"
+        "defZh": "❶叉勺（勺子和叉子的合体餐具）"
       },
       {
         "en": "reroute",
@@ -827,13 +827,13 @@ var VOCAB_DATA = [
         "en": "spin",
         "phonetic": "/spɪn/",
         "pos": "v./n.",
-        "meaning": "❶v. 快速旋转 ❷v. 纺纱、吐丝 ❸n. 旋转、转向（give it a spin）",
+        "meaning": "❶v. 快速旋转 ❷v. 纺纱、吐丝 ❸n. 旋转、转向",
         "defEn": "❶v. To rotate, ❷v. To make yarn by twisting and winding fibers together. ❸n. Rapid circular motion.",
         "example": "The wheel started to spin.",
         "root": "古义: 快速旋转(如纺锤) → 绕轴高速转动 → 转",
         "irr": "过去:spun /spʌn/|过分:spun /spʌn/",
         "exampleZh": "轮子开始旋转。",
-        "defZh": "❶旋转 ❶通过扭转和缠绕纤维来纺纱 ❸快速旋转的运动"
+        "defZh": "❶v.旋转 ❷v.纺纱 ❸n.旋转、转向"
       },
       {
         "en": "solar",
@@ -894,29 +894,29 @@ var VOCAB_DATA = [
         "phonetic": "/els/",
         "pos": "adj./adv.",
         "meaning": "❶adv. 其他、另外（用在疑问词/不定代词后） ❷adj. 别的、其他的",
-        "defEn": "❶(used only with indefinite or interrogative pronouns) Other; ❷(follows interrogative adverbs) Otherwise, if not. ❸For otherwise; or else.",
+        "defEn": "❶Used after words beginning with 'any-', 'some-', 'no-', 'every-', and question words, meaning 'other' or 'in addition'. ❷Otherwise; if not.",
         "example": "Do you want anything else?",
         "root": "古英语elles → 其他的、别的 → 否则",
         "exampleZh": "你还要别的什么吗？",
-        "defZh": "❶其他的（仅与不定代词或疑问代词连用） ❶否则，如果不是（跟在疑问副词之后） ❸否则；不然"
+        "defZh": "❶adv./adj.其他、另外 ❷否则、不然"
       },
       {
         "en": "completely",
         "phonetic": "/kəmˈpliːtli/",
         "pos": "adv.",
         "meaning": "完全地、彻底地（百分之百，毫无保留）",
-        "defEn": "❶(manner) In a complete manner ❷(degree) To the fullest extent or degree; totally.",
+        "defEn": "❶In every way; totally.",
         "example": "I completely forgot about the meeting.",
         "root": "com(完全)+plere(填满)+ly → 一点空隙都不留 → 完全地",
         "exampleZh": "我完全忘了那个会议。",
-        "defZh": "❶以完整的方式 ❶达到最充分的程度；完全地"
+        "defZh": "❶完全地、彻底地"
       },
       {
         "en": "fill up",
         "phonetic": "/fɪl ʌp/",
         "pos": "phrasal v.",
         "meaning": "❶加满、装满 ❷填写（表格）",
-        "defEn": "❶To make (something) completely full. ❷To fill the tank of a vehicle with fuel. ❸To become completely full.",
+        "defEn": "❶To make something completely full. ❷To fill the tank of a vehicle with fuel.",
         "example": "I need to fill up the car with gas.",
         "root": "fill(填满)+up(到顶) → 填到最上面 → 加满",
         "noAudio": true,
@@ -928,7 +928,7 @@ var VOCAB_DATA = [
         "phonetic": "/kʌm daʊn/",
         "pos": "phrasal v.",
         "meaning": "❶下来、降落 ❷下跌、降价",
-        "defEn": "❶To descend, fall down, collapse. ❷To be demolished. ❸To decrease.",
+        "defEn": "❶To fall or come down. ❷To become lower in level or amount.",
         "example": "The rain is coming down hard.",
         "root": "come(来)+down(下) → 从高处下来 → 下来/下跌",
         "irr": "过去:came /keɪm/ down|过分:come /kʌm/ down",
@@ -975,41 +975,41 @@ var VOCAB_DATA = [
         "en": "stair",
         "phonetic": "/ster/",
         "pos": "n.",
-        "meaning": "❶楼梯❷梯级",
+        "meaning": "❶梯级（楼梯中的一个台阶）❷楼梯（通常用复数stairs）",
         "defEn": "❶A set of steps that lead from one level of a building to another.",
         "example": "Go up the stairs to the second floor.",
         "root": "古英语stǣr → 一步步往上走的台阶 → 阶梯",
         "exampleZh": "上楼到二楼。",
-        "defZh": "❶楼梯中的一个单级台阶。❷一系列台阶；一段楼梯。"
+        "defZh": "❶梯级（楼梯中的一个台阶）❷楼梯"
       },
       {
         "en": "spiral",
         "phonetic": "/ˈspaɪrəl/",
         "pos": "n./adj./v.",
         "meaning": "❶n. 螺旋形 ❷n. 不断恶化/上升的进程 ❸v. 螺旋式上升/下降",
-        "defEn": "❶v. To move along the path of a spiral or helix. ❷v. To cause something to spiral. ❸n. A curve that is the locus of a point that rotates about a fixed ...",
+        "defEn": "❶n. A shape that curves inward in a circle. ❷v. To move in a spiral.",
         "example": "The staircase has a beautiful spiral design.",
         "root": "spira(螺旋/线圈) → 像弹簧一样绕圈上升 → 螺旋",
         "exampleZh": "楼梯有漂亮的螺旋设计。",
-        "defZh": "❶沿螺旋或螺旋线轨迹移动 ❶使某物呈螺旋形 ❸一条围绕固定点旋转并同时远离该点的曲线"
+        "defZh": "❶n.螺旋形 ❷n.不断恶化/上升的进程 ❸v.螺旋式上升/下降"
       },
       {
         "en": "vault",
         "phonetic": "/vɔːlt/",
         "pos": "n./v.",
-        "meaning": "❶n. 金库、保险库 ❷v. 跳越、撑杆跳 ❸n. 地下墓室",
-        "defEn": "❶v. To build as, or cover with a vault. ❷n. An arched masonry structure supporting and forming a ceiling, ❸n. Any arched ceiling or roof.",
+        "meaning": "❶n. 金库、保险库 ❷n. 拱顶（建筑的拱形结构） ❸v. 跳越、撑杆跳",
+        "defEn": "❶n. A room for keeping money or valuables. ❷n. An arched structure forming a ceiling. ❸v. To jump over something.",
         "example": "The bank vault was locked overnight.",
         "root": "volvere(卷/拱) → 拱形覆盖的空间 → 金库/拱顶",
         "exampleZh": "银行金库锁了一整夜。",
-        "defZh": "❶建造拱顶或覆盖拱顶 ❶一种支撑并构成天花板的拱形砖石结构 ❸任何拱形的天花板或屋顶"
+        "defZh": "❶n.金库、保险库 ❷n.拱顶 ❸v.跳越、撑杆跳"
       },
       {
         "en": "arch",
         "phonetic": "/ɑːrtʃ/",
         "pos": "n./v./adj.",
         "meaning": "❶n. 拱、拱门 ❷v. 形成拱形、拱起",
-        "defEn": "❶v. To form into an arch shape ❷v. To cover with an arch or arches. ❸n. An inverted U shape.",
+        "defEn": "❶n. A curved structure that supports weight, often over an opening. ❷v. To form a curved shape.",
         "example": "The bridge was built with stone arches.",
         "root": "arcus(弧) → 弯成弧形的结构 → 拱门",
         "exampleZh": "这座桥是用石拱建造的。",
@@ -1020,55 +1020,55 @@ var VOCAB_DATA = [
         "phonetic": "/ˈstrʌktʃər/",
         "pos": "n./v.",
         "meaning": "❶n. 结构、构造 ❷n. 建筑物 ❸v. 组织、安排",
-        "defEn": "❶v. To give structure to; to arrange. ❷n. A cohesive whole built up of distinct parts. ❸n. The underlying shape of a solid.",
+        "defEn": "❶n. The way in which something is organized or built. ❷n. A large building. ❸v. To organize something.",
         "example": "The bridge's structure is really impressive — it's over 100 years old.",
         "root": "struere(建造) → 建造出来的框架 → 结构",
         "exampleZh": "这座桥的结构令人惊叹——它超过100岁了。",
-        "defZh": "❶赋予结构；排列组织 ❶由不同部分组成的有机整体 ❸固体内部的基本形状"
+        "defZh": "❶n.结构、构造 ❷n.建筑物 ❸v.组织、安排"
       },
       {
         "en": "center",
         "phonetic": "/ˈsentər/",
         "pos": "n./v.",
         "meaning": "❶n. 中心、中央 ❷n. 活动中心、机构 ❸v. 以…为中心、集中（center on/around）",
-        "defEn": "❶v. To cause (an object) to occupy the center of an area. ❷v. To cause (some attribute, ❸n. The point in the interior of a circle that is equidistant from a...",
+        "defEn": "❶n. The middle point or part. ❷n. A place where a particular activity happens. ❸v. To be mainly about something.",
         "example": "The hotel is in the city center.",
         "root": "centrum(圆心/中心点) → 一切围绕的那个点 → 中心",
         "exampleZh": "酒店在市中心。",
-        "defZh": "❶使某物占据某个区域的中心位置 ❶使某种属性居中 ❸圆内部与圆周上所有点等距的那个点"
+        "defZh": "❶n.中心、中央 ❷n.活动中心、机构 ❸v.以…为中心、集中"
       },
       {
         "en": "gate",
         "phonetic": "/ɡeɪt/",
         "pos": "n.",
         "meaning": "❶大门、栅栏门 ❷登机口",
-        "defEn": "❶A doorlike structure outside a house. ❷Doorway, opening, or passage in a fence or wall. ❸Movable barrier.",
+        "defEn": "❶A part of a fence or wall that opens like a door. ❷The place where you leave an airport to get onto a plane.",
         "example": "We waited at the airport gate.",
         "root": "古英语ġeat → 围墙上的开口 → 大门",
         "exampleZh": "我们在登机口等。",
-        "defZh": "❶房屋外部类似门的结构 ❶围栏或墙壁中的门口、开口或通道 ❸可移动的屏障"
+        "defZh": "❶n.大门、栅栏门 ❷n.登机口"
       },
       {
         "en": "intersection",
         "phonetic": "/ˌɪntərˈsekʃn/",
         "pos": "n.",
         "meaning": "❶十字路口、交叉路口 ❷交叉点、交点",
-        "defEn": "❶The junction of two (or more) paths, ❷Any overlap, confluence, or crossover. ❸The point or set of points common to two geometrical objects (such ...",
+        "defEn": "❶A place where roads cross each other. ❶The point where two lines meet.",
         "example": "Turn left at the intersection.",
         "root": "inter(之间)+secare(切) → 两条路互相切过的点 → 交叉路口",
         "exampleZh": "在十字路口左转。",
-        "defZh": "❶两条或多条路径的交汇处 ❶任何重叠、汇合或交叉 ❸两个几何对象共有的点或点的集合"
+        "defZh": "❶n.十字路口、交叉路口 ❷n.交叉点、交点"
       },
       {
         "en": "alleyway",
         "phonetic": "/ˈæliweɪ/",
         "pos": "n.",
         "meaning": "小巷、窄巷（建筑物之间的狭窄通道，= alley）",
-        "defEn": "❶A narrow street formed by the proximity of adjacent buildings. ❷A passage between two rows of cabins in a ship.",
+        "defEn": "❶A narrow street between or behind buildings.",
         "example": "We walked down a narrow alleyway.",
         "root": "alley(小巷)+way(路) → 建筑之间的窄路 → 小巷",
         "exampleZh": "我们走过一条窄巷。",
-        "defZh": "❶相邻建筑物之间形成的狭窄街道 ❶船上两排船舱之间的通道"
+        "defZh": "❶小巷、窄巷"
       },
       {
         "en": "sushi bowl",
@@ -1095,33 +1095,33 @@ var VOCAB_DATA = [
         "phonetic": "/ˈblendər/",
         "pos": "n.",
         "meaning": "搅拌机、榨汁机（厨房电器，用于打碎和混合食物）",
-        "defEn": "❶A machine outfitted with sharp blades, ❷A piece of fabric sewn into the front of a theatrical wig to make i... ❸(quilting) A subtly patterned fabric printed in different shades of...",
+        "defEn": "❶A piece of equipment that you use to mix or chop food into a smooth liquid.",
         "example": "Throw some fruit and yogurt in the blender and make a smoothie.",
         "root": "blend(混合)+er(器) → 把东西混在一起的机器 → 搅拌机",
         "exampleZh": "把水果和酸奶扔进搅拌机做个冰沙。",
-        "defZh": "❶一种装有锋利刀片的机器，❷缝在戏剧假发前部的一块面料，使其看起来……❸（拼布）一种在不同色调……印刷的微妙图案面料"
+        "defZh": "❶搅拌机、榨汁机（用于将食物混合或切碎的厨房电器）"
       },
       {
         "en": "sausage",
         "phonetic": "/ˈsɔːsɪdʒ/",
         "pos": "n.",
         "meaning": "香肠（碎肉加调料灌入肠衣制成，可数）",
-        "defEn": "❶A food made of ground meat (or meat substitute) and seasoning, ❷A sausage-shaped thing. ❸Penis.",
+        "defEn": "❶A tube-shaped piece of meat, usually made of minced meat mixed with spices.",
         "example": "We had sausages and eggs for breakfast.",
         "root": "salsus(加盐的) → 用盐腌制的碎肉灌肠 → 香肠",
         "exampleZh": "我们早餐吃了香肠和鸡蛋。",
-        "defZh": "❶由碎肉（或替代肉）和调味料制成的食物 ❶一种香肠形状的东西 ❸阴茎"
+        "defZh": "❶香肠（通常由碎肉加调料制成的管状肉食品）"
       },
       {
         "en": "pork",
         "phonetic": "/pɔːrk/",
         "pos": "n.",
         "meaning": "猪肉（不可数名词，指食材；与pig的区别：pig是活猪，pork是猪肉）",
-        "defEn": "❶The meat of a pig; swineflesh. ❷Funding proposed or requested by a member of Congress for special i...",
+        "defEn": "❶Meat from a pig.",
         "example": "We had roast pork for dinner.",
         "root": "拉丁语porcus(猪) → 猪身上的肉(区别于活猪pig) → 猪肉",
         "exampleZh": "我们晚餐吃了烤猪肉。",
-        "defZh": "❶猪的肉；猪肉。 ❷国会议员为特殊利益项目提出或请求的资金。"
+        "defZh": "❶猪肉"
       },
       {
         "en": "butcher",
@@ -1149,11 +1149,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈplæntɪn/",
         "pos": "n.",
         "meaning": "大蕉、烹饪蕉（类似香蕉但更大更硬，通常需烹饪后食用，是拉美/加勒比/非洲的主食）",
-        "defEn": "❶A plant of the genus Plantago,",
+        "defEn": "❶A type of banana that is cooked before eating, usually eaten with savoury food.",
         "example": "Fried plantain is a popular side dish in many countries.",
         "root": "planta(脚掌) → 叶子像脚掌一样宽的蕉 → 大蕉",
         "exampleZh": "炸大蕉在许多国家是受欢迎的配菜。",
-        "defZh": "❶车前草属的一种植物"
+        "defZh": "❶大蕉、烹饪蕉（需烹饪后食用的香蕉类水果）"
       },
       {
         "en": "security",
@@ -1193,11 +1193,11 @@ var VOCAB_DATA = [
         "phonetic": "/bʌs/",
         "pos": "n.",
         "meaning": "公共汽车、巴士（沿固定路线行驶的大客车）",
-        "defEn": "❶A motor vehicle for transporting large numbers of people along roads. ❷An electrical conductor or interface serving as a common connection... ❸(medical industry) An ambulance.",
+        "defEn": "❶A large motor vehicle that carries passengers along roads.",
         "example": "We took the bus to the festival.",
         "root": "拉丁语omnibus(为大家所有人) → 载所有人的车 → 公交车",
         "exampleZh": "我们坐公交去音乐节。",
-        "defZh": "❶一种沿公路运送大量人员的机动车辆。 ❷作为公共连接点的电导体或接口。 ❸救护车。"
+        "defZh": "❶公共汽车、巴士（沿固定路线行驶的大客车）"
       },
       {
         "en": "light rail transit",
@@ -1214,11 +1214,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈtrænspɔːrt/",
         "pos": "n./v.",
         "meaning": "❶n. 交通系统、运输方式 ❷n. 交通工具 ❸v. 运输、运送",
-        "defEn": "❶v. To carry or bear from one place to another; to remove; to convey. ❷v. To deport to a penal colony. ❸n. An act of transporting; conveyance.",
+        "defEn": "❶v. To move goods or people from one place to another. ❷n. A system for moving people or goods from one place to another. ❸n. A vehicle.",
         "example": "Public transport here is pretty good — buses run every 10 minutes.",
         "root": "trans(跨越)+portare(携带) → 把东西带过去 → 运输",
         "exampleZh": "这里的公共交通不错——公交车每10分钟一班。",
-        "defZh": "❶从一个地方携带或搬运到另一个地方；移走；运送 ❶流放到罪犯殖民地 ❸一次运输的行为；运送"
+        "defZh": "❶v.运输、运送 ❷n.交通系统、运输方式 ❸n.交通工具"
       },
       {
         "en": "farm",
@@ -1236,44 +1236,44 @@ var VOCAB_DATA = [
         "phonetic": "/ʃel/",
         "pos": "n./v.",
         "meaning": "❶n. 壳、贝壳 ❷v. 剥壳、去壳 ❸n. 炮弹、弹壳",
-        "defEn": "❶v. To remove the outer covering or shell of something. ❷v. To bombard, to fire projectiles at, especially with artillery. ❸n. A hard external covering of an animal.",
+        "defEn": "❶n. The hard outer covering of something. ❷n. A bomb. ❸v. To remove the shell from something.",
         "example": "We spent the afternoon shelling peas.",
         "root": "古英语sciell → 覆盖在外的硬层 → 壳",
         "exampleZh": "我们花了一下午剥豌豆。",
-        "defZh": "❶去除某物的外壳 ❶ bombard；发射炮弹攻击，尤指用火炮 ❸动物坚硬的外部覆盖物"
+        "defZh": "❶n.壳、贝壳 ❷n.炮弹、弹壳 ❸v.剥壳、去壳"
       },
       {
         "en": "product",
         "phonetic": "/ˈprɑːdʌkt/",
         "pos": "n.",
         "meaning": "❶产品、制品（制造出来出售的东西） ❷产物、结果（the product of hard work）",
-        "defEn": "❶A commodity offered for sale. ❷Any preparation to be applied to the hair, skin, nails, etc. ❸Anything that is produced; a result.",
+        "defEn": "❶Something that is made or grown to be sold. ❶Something that is the result of a process.",
         "example": "This is our best-selling product.",
         "root": "pro(向前)+ducere(引导) → 引导产出的东西 → 产品",
         "exampleZh": "这是我们的畅销产品。",
-        "defZh": "❶出售的商品 ❶任何用于头发、皮肤、指甲等的制剂 ❸任何被生产出来的东西；一个结果"
+        "defZh": "❶产品、制品 ❷产物、结果"
       },
       {
         "en": "stall",
         "phonetic": "/stɔːl/",
         "pos": "n./v.",
         "meaning": "❶n. 摊位、售货亭 ❷n. 畜栏、隔间 ❸v. 拖延、停顿（stall for time）",
-        "defEn": "❶v. To put (an animal, etc.) in a stall. ❷v. To fatten. ❸n. A compartment for a single animal in a stable or cattle shed.",
+        "defEn": "❶n. A table or small shop with an open front, often outdoors. ❷n. A small enclosed area, especially for an animal. ❸v. To delay or stop making progress.",
         "example": "We bought fruit from a market stall.",
         "root": "stallum(站立的地方) → 站着卖东西的位置 → 摊位",
         "exampleZh": "我们从市场摊位买了水果。",
-        "defZh": "❶将动物等放入畜栏 ❶催肥 ❸畜棚或牛棚中供单个动物使用的隔间"
+        "defZh": "❶n.摊位、售货亭 ❷n.畜栏、隔间 ❸v.拖延、停顿"
       },
       {
         "en": "tent",
         "phonetic": "/tent/",
         "pos": "n./v.",
         "meaning": "❶ n. 帐篷 ❷ v. 搭帐篷、宿营",
-        "defEn": "❶v. To go camping. ❷v. To prop up aluminum foil in an inverted \"V\" (reminiscent of a po... ❸n. A pavilion or portable lodge consisting of skins,",
+        "defEn": "❶n. A shelter made of canvas or nylon, held up by poles and ropes. ❷v. To camp in a tent.",
         "example": "We pitched the tent by the river.",
         "root": "tendere(拉伸) → 用布拉伸搭起的 shelter → 帐篷",
         "exampleZh": "我们在河边搭了帐篷。",
-        "defZh": "❶去露营 ❶将铝箔支成倒V形（类似于帐篷形状） ❸一种由兽皮等材料组成的凉亭或可移动住所"
+        "defZh": "❶n.帐篷 ❷v.搭帐篷、宿营"
       },
       {
         "en": "wood pallet",
@@ -1290,89 +1290,89 @@ var VOCAB_DATA = [
         "phonetic": "/skɪn/",
         "pos": "n./v.",
         "meaning": "❶n. 皮肤、表皮 ❷n. 外皮、外壳 ❸v. 剥皮、去皮",
-        "defEn": "❶v. To injure the skin of. ❷v. To remove the skin and/or fur of an animal or a human. ❸n. Someone with a shaved head.",
+        "defEn": "❶n. The natural outer layer that covers a person, animal, fruit, or seed. ❷v. To remove the skin from something.",
         "example": "She has sensitive skin.",
         "root": "古英语scinn → 覆盖身体的外层 → 皮肤",
         "exampleZh": "她的皮肤很敏感。",
-        "defZh": "❶动词：损伤皮肤。❷动词：去除动物或人的皮肤/毛皮。❸名词：剃光头的人。"
+        "defZh": "❶n.皮肤、表皮 ❷n.外皮、外壳 ❸v.剥皮、去皮"
       },
       {
         "en": "law",
         "phonetic": "/lɔː/",
         "pos": "n.",
         "meaning": "❶法律、法规 ❷法学、法律界",
-        "defEn": "❶The body of binding rules and regulations, ❷A binding regulation or custom established in a community in this way. ❸(more generally) A rule, such as:",
+        "defEn": "❶A rule that all the people in a country must obey. ❶The system of rules of a country.",
         "example": "It's against the law to steal.",
         "root": "古诺斯语lag → 让大家遵守的规则 → 法律",
         "exampleZh": "偷东西是违法的。",
-        "defZh": "❶具有约束力的规则和法规的总体系 ❶以这种方式在社区中确立的具有约束力的规定或习俗 ❸更广义上的规则，例如"
+        "defZh": "❶法律、法规 ❷法学、法律界"
       },
       {
         "en": "festival",
         "phonetic": "/ˈfestəvl/",
         "pos": "n.",
         "meaning": "❶ 节日、庆典日（人们停止工作庆祝特殊日子，常与宗教有关） ❷ 文化节、艺术节（一系列演出/活动，通常每年在同一地点举办）",
-        "defEn": "❶An event or community gathering, ❷In mythology, a set of celebrations in the honour of a god. ❸Fried cornbread",
+        "defEn": "❶A special day or period when people celebrate an event. ❶A series of performances of music, plays, films, etc.",
         "example": "There are many music festivals in summer.",
         "root": "festum(节日) → 大家停下来庆祝的日子 → 节日/文化节",
         "exampleZh": "夏天有很多音乐节。",
-        "defZh": "❶一个活动或社区聚会 ❶神话中为敬奉神灵而举行的一系列庆典 ❸油炸玉米面包"
+        "defZh": "❶n.节日、庆典日 ❷n.文化节、艺术节"
       },
       {
         "en": "light",
         "phonetic": "/laɪt/",
         "pos": "n./adj./v.",
         "meaning": "❶ n. 光、灯 ❷ v. 点燃、照亮 ❸ adj. 轻的、少量的（light rain / light meal） ❹ adj. 浅色的、淡色的",
-        "defEn": "❶n. Visible electromagnetic radiation. The human eye can typically d... ❷n. A source of illumination.",
+        "defEn": "❶n. The brightness that comes from the sun, fire, etc. and allows you to see. ❷n. A lamp or other source of light. ❸adj. Not heavy. ❹adj. Pale in colour. ❺v. To start to burn.",
         "example": "Turn on the light, please.",
         "root": "古英语lēoht → 让世界可见的东西 → 光/轻的",
         "irr": "过去:lit /lɪt/|过分:lit /lɪt/",
         "exampleZh": "请把灯打开。",
-        "defZh": "❶可见的电磁辐射。❷光源。❸精神或心智上的启示；启迪，有用的信息。"
+        "defZh": "❶n.光、灯 ❷adj.轻的、少量的 ❸adj.浅色的、淡色 ❹v.点燃、照亮"
       },
       {
         "en": "camera",
         "phonetic": "/ˈkæmərə/ /ˈkæmrə/",
         "pos": "n.",
         "meaning": "❶照相机、摄像机 ❷监控摄像头",
-        "defEn": "❶A device for taking still or moving pictures or photographs. ❷The viewpoint in a three-dimensional game or simulation. ❸A vaulted room.",
+        "defEn": "❶A piece of equipment for taking photographs or making films.",
         "example": "Take a picture with the camera — this view is amazing.",
         "root": "camera(房间/暗室) → 暗箱拍照的装置 → 相机",
         "exampleZh": "用相机拍张照——这景色太美了。",
-        "defZh": "❶一种用于拍摄静态或动态图片或照片的设备。❷三维游戏或模拟中的视角。❸拱形房间。"
+        "defZh": "❶照相机、摄像机 ❷监控摄像头"
       },
       {
         "en": "sign",
         "phonetic": "/saɪn/",
         "pos": "n./v.",
         "meaning": "❶n. 标志、指示牌 ❷n. 迹象、征兆（sign of） ❸v. 签名、签字 ❹n. 手势、示意动作",
-        "defEn": "❶n. (sometimes also used uncountably) A visible indication. ❷n. Physical evidence left by an animal.",
+        "defEn": "❶n. A mark or object that shows something. ❶n. Evidence that something is happening or exists. ❸n. A flat object with words or pictures on it that gives information. ❹v. To write your name on something.",
         "example": "Follow the signs to the exit.",
         "root": "signum(标记) → 用来指示或代表某物的 → 标志/签名",
         "exampleZh": "跟着指示牌走到出口。",
-        "defZh": "❶一种可见的指示 ❶动物留下的物理痕迹"
+        "defZh": "❶n.标志、指示牌 ❷n.迹象、征兆 ❸n.手势 ❹v.签名、签字"
       },
       {
         "en": "giant",
         "phonetic": "/ˈdʒaɪənt/",
         "pos": "n./adj.",
         "meaning": "❶n. 巨人（传说中的） ❷n. 大公司、巨头（商业/体育）",
-        "defEn": "❶A mythical human of very great size. ❷Specifically, ❸A very tall and large person.",
+        "defEn": "❶n. An imaginary creature that is very big and strong. ❷n. A very large and successful organization. ❸adj. Extremely big.",
         "example": "A giant tree stood in the middle of the park.",
         "root": "古希腊语gigas → 体型远超常人的存在 → 巨人",
         "exampleZh": "公园中央矗立着一棵巨大的树。",
-        "defZh": "❶体型极为庞大的神话人物 ❶特指 ❸一个非常高大的人"
+        "defZh": "❶n.巨人（传说中的） ❷n.大公司、巨头 ❸adj.巨大的"
       },
       {
         "en": "mayor",
         "phonetic": "/ˈmeɪər/ /ˈmer/",
         "pos": "n.",
         "meaning": "市长（城镇/城市的民选最高行政长官）",
-        "defEn": "❶The chief executive of the municipal government of a city, ❷Short for mayor of the palace, ❸Synonym of mair, various former officials in the Kingdom of Scotland.",
+        "defEn": "❶The person who has been elected to lead the government of a town or city.",
         "example": "The mayor gave a speech at the festival.",
         "root": "maior(更大的) → 城镇里最大的官 → 市长",
         "exampleZh": "市长在节庆上发表了讲话。",
-        "defZh": "❶一个城市市政政府的首席行政官 ❶宫廷长官的简称 ❸苏格兰王国中各种前官员的同义词"
+        "defZh": "❶市长（城镇/城市的民选最高行政长官）"
       },
       {
         "en": "Spain",
@@ -1390,22 +1390,22 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈzaɪər/",
         "pos": "n./v.",
         "meaning": "❶n. 渴望、欲望 ❷n. 性欲 ❸v. 渴望、想要",
-        "defEn": "❶v. To want; to wish for earnestly. ❷v. To put a request to (someone); to entreat. ❸n. Someone or something wished for.",
+        "defEn": "❶v. To want something very much. ❶n. A strong feeling of wanting something.",
         "example": "He has a strong desire to travel the world.",
         "root": "de+siderare(观察星辰) → 仰望星空般地渴望 → 欲望",
         "exampleZh": "他有强烈的环游世界的渴望。",
-        "defZh": "❶动词：想要；迫切地期望。❷动词：向某人提出请求；恳求。❸名词：渴望的人或事物。"
+        "defZh": "❶v.渴望、想要 ❷n.渴望、欲望 ❸n.性欲"
       },
       {
         "en": "section",
         "phonetic": "/ˈsekʃn/",
         "pos": "n./v.",
         "meaning": "❶n. 部分、区域 ❷n. 章节 ❸v. 切分、分成部分（section off）",
-        "defEn": "❶v. To cut, divide or separate into pieces. ❷v. To reduce to the degree of thinness required for study with the ... ❸n. A cutting; a part cut out from the rest of something.",
+        "defEn": "❶n. One of the parts that something is divided into. ❶n. A separate part of a document. ❸v. To divide something into sections.",
         "example": "The book is divided into three sections.",
         "root": "secare(切) → 从整体上切下来的一块 → 部分/章节",
         "exampleZh": "这本书分为三个章节。",
-        "defZh": "❶动词：切割、分割或分离成若干部分。❷动词：将组织切成薄片以便于显微镜下观察研究。❸名词：切面；从整体中切出的一部分。"
+        "defZh": "❶n.部分、区域 ❷n.章节 ❸v.切分、分成部分"
       },
       {
         "en": "suit jacket",
@@ -1422,7 +1422,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈherdresər/",
         "pos": "n.",
         "meaning": "理发师、美发师（为顾客剪发、染发、做造型的人）",
-        "defEn": "❶A person who cuts or styles hair as an occupation or profession.",
+        "defEn": "❶A person who cuts, washes, and arranges people's hair.",
         "example": "She's been going to the same hairdresser for years.",
         "root": "hair(头发)+dresser(打理的人) → 给头发做造型的人 → 理发师",
         "exampleZh": "她多年来一直去同一个理发师。",
@@ -1433,81 +1433,81 @@ var VOCAB_DATA = [
         "phonetic": "/rɑːb/",
         "pos": "v.",
         "meaning": "❶ 抢劫、掠夺 ❷ 使丧失（rob sb of sth）",
-        "defEn": "❶To steal from, especially using force or violence. ❷To deprive of, or withhold from, unjustly or injuriously; to defraud. ❸(used with \"of\") To deprive (of).",
+        "defEn": "❶To take money or property illegally from a person or place, often using force. ❶To take something from someone unjustly.",
         "example": "He was robbed on his way home.",
         "root": "古诺斯语rauba → 剥夺别人的东西 → 抢劫",
         "exampleZh": "他在回家的路上被抢了。",
-        "defZh": "❶从某人处偷窃，尤指使用暴力或武力。❷不正当地剥夺或扣留；欺诈。❸（与“of”连用）使丧失。"
+        "defZh": "❶抢劫、掠夺 ❶使丧失（rob sb of sth）"
       },
       {
         "en": "grow",
         "phonetic": "/ɡroʊ/",
         "pos": "v.",
-        "meaning": "❶生长、成长 ❷种植、栽培（grow tomatoes）",
-        "defEn": "❶To become larger, to increase in magnitude. ❷To appear or sprout. ❸To develop, to mature.",
+        "meaning": "❶❷❸❶OK;❷OK;❸'慢慢从A状态滑向B状态'偏物理比喻，剑桥是'start to have a feeling or quality'（逐渐产生感觉/品质），如grow tired/angry/fond",
+        "defEn": "❶To increase in size or amount. ❶To plant and take care of crops or plants. ❸To become or develop.",
         "example": "Plants grow faster in spring.",
         "root": "古英语grōwan → 从小变大 → 生长",
         "irr": "过去:grew /ɡruː/|过分:grown /ɡroʊn/",
         "exampleZh": "植物在春天长得更快。",
-        "defZh": "❶自然地增大尺寸❷在数量或程度上增加❸逐渐变成一种不同的状态"
+        "defZh": "❶v.生长、成长（增大尺寸） ❷v.种植、栽培 ❸v.逐渐变成"
       },
       {
         "en": "bite",
         "phonetic": "/baɪt/",
         "pos": "v./n.",
         "meaning": "❶v. 咬、叮 ❷v. 上当、咬钩 ❸n. 咬伤、一口（take a bite）",
-        "defEn": "❶v. To cut into something by clamping the teeth. ❷v. To hold something by clamping one's teeth. ❸n. The act of biting.",
+        "defEn": "❶v. To use your teeth to cut into or crush something. ❶v. To take something into your mouth with your teeth. ❸n. The act of biting. ❹n. A small piece of food.",
         "example": "The mosquito bit me on the arm.",
         "root": "古英语bītan → 用牙齿切入 → 咬",
         "irr": "过去:bit /bɪt/|过分:bitten /ˈbɪtən/",
         "exampleZh": "蚊子咬了我的手臂。",
-        "defZh": "❶动词：用牙齿咬住并切入某物。❷动词：用牙齿夹住某物。❸名词：咬的动作。"
+        "defZh": "❶v.咬、叮 ❷v.上当、咬钩 ❸n.咬伤、一口"
       },
       {
         "en": "lick",
         "phonetic": "/lɪk/",
         "pos": "v./n.",
         "meaning": "❶v. 舔 ❷v. 轻易击败（口语） ❸n. 舔、少量（a lick of paint）",
-        "defEn": "❶v. To stroke with the tongue. ❷v. To lap; to take in with the tongue. ❸n. The act of licking; a stroke of the tongue.",
+        "defEn": "❶v. To move your tongue across something. ❶n. The act of licking.",
         "example": "The dog licked my hand.",
         "root": "古英语liccian → 用舌头触碰 → 舔",
         "exampleZh": "狗舔了我的手。",
-        "defZh": "❶动词：用舌头舔。❷动词：舔食；用舌头卷入口中。❸名词：舔的动作；舌头的一触。"
+        "defZh": "❶v.舔 ❷v.轻易击败 ❸n.舔、少量"
       },
       {
         "en": "break",
         "phonetic": "/breɪk/",
         "pos": "v./n.",
-        "meaning": "❶ v. 打破、弄碎 ❷ v. 违反、打破（break a law/promise/record） ❸ n. 休息、间歇（take a break）",
-        "defEn": "❶v. To separate into two or more pieces, ❷v. To divide (something, often money) into smaller units. ❸n. An instance of breaking something into two or more pieces.",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹'中断/停止'（break a journey/break the silence），这是重要义项",
+        "defEn": "❶v. To separate into two or more pieces, usually by force. ❶v. To not follow a rule, promise, or agreement. ❸n. A short rest or period of time when you stop what you are doing.",
         "example": "Don't break the window.",
         "root": "古英语brecan → 把完整的东西分开 → 打破",
         "irr": "过去:broke /broʊk/|过分:broken /ˈbroʊkən/",
         "exampleZh": "不要打破窗户。",
-        "defZh": "❶用力将某物分成碎片❷违反规则或协议❸从活动中暂停休息"
+        "defZh": "❶v.打破、弄碎 ❷v.违反、打破（规则/承诺） ❸n.休息、间歇"
       },
       {
         "en": "express",
         "phonetic": "/ɪkˈspres/",
         "pos": "v./adj./n.",
-        "meaning": "❶v. 表达、表述（thoughts/feelings） ❷adj. 快速的、快递的 ❸n. 快车、快递服务",
-        "defEn": "❶n. A mode of transportation, ❷n. A service that allows mail or money to be sent rapidly from one ... ❸adj. Moving or operating quickly, as a train not making local stops.",
+        "meaning": "❶v. 表达、表述 ❷adj. 快速的、快递的 ❸n. 快车、快递服务",
+        "defEn": "❶v. To show a feeling or opinion by words or actions. ❶adj. Travelling fast; not stopping at all stations. ❸n. A fast train or delivery service.",
         "example": "I find it hard to express my feelings.",
         "root": "ex(出)+pressare(压) → 把里面的想法压出来 → 表达/快递",
         "exampleZh": "我发现很难表达自己的感受。",
-        "defZh": "❶名词：一种快速交通方式。❷名词：允许邮件或钱款快速从一地送往另一地的服务。❸形容词：快速移动或运营的，如不停靠沿途各站的列车。"
+        "defZh": "❶v.表达、表述 ❷adj.快速的、快递的 ❸n.快车、快递服务"
       },
       {
         "en": "might",
         "phonetic": "/maɪt/",
         "pos": "modal v./n.",
         "meaning": "❶ modal v. 可能、也许（比may更不确定） ❷ n. 力量、威力（with all one's might）",
-        "defEn": "❶n. Power, strength, force or influence held by a person or group. ❷n. Physical strength or force. ❸adj. Mighty; powerful.",
+        "defEn": "❶modal v. Used to say that something is possible or likely. ❷n. Power, strength, or energy.",
         "example": "It might rain later.",
         "root": "古英语mihte → 可能存在的力量 → 也许(可能性)/力量",
         "irr": "may /meɪ/ 的过去式",
         "exampleZh": "可能会下雨。",
-        "defZh": "❶名词：人或团体所拥有的权力、力量、影响力。❷名词：体力或力量。❸形容词：强大的；有力的。"
+        "defZh": "❶modal v.可能、也许 ❷n.力量、威力"
       },
       {
         "en": "raw",
@@ -1523,11 +1523,11 @@ var VOCAB_DATA = [
         "phonetic": "/krɪsp/",
         "pos": "adj./n./v.",
         "meaning": "❶adj. 脆的、酥脆的 ❷adj. 清爽的、干冷的（天气） ❸n. 炸薯片（英式=chips美式）",
-        "defEn": "❶v. To make crisp. ❷v. To become crisp. ❸n. A thin slice of fried potato eaten as a snack.",
+        "defEn": "❶adj. Hard, dry, and easily broken. ❶adj. Pleasantly cold and dry. ❸n. A thin slice of fried potato eaten as a snack.",
         "example": "The skin on the roast pork was perfectly crisp.",
         "root": "古英语crisp → 咬下去咔嚓响的 → 脆的",
         "exampleZh": "烤猪皮的脆度完美。",
-        "defZh": "❶动词：使变脆。❷动词：变脆。❸名词：炸得薄薄的薯片，作为零食食用。"
+        "defZh": "❶adj.脆的、酥脆的 ❷adj.清爽的、干冷的（天气） ❸n.炸薯片"
       },
       {
         "en": "historical",
@@ -1543,33 +1543,33 @@ var VOCAB_DATA = [
         "phonetic": "/ˈempti/",
         "pos": "adj./v.",
         "meaning": "❶adj. 空的、没有内容的 ❷adj. 空洞的、无意义的（empty words/promises）",
-        "defEn": "❶To make empty; to void; to remove the contents of. ❷Of a river, duct, etc: to drain or flow toward an ultimate destinat...",
+        "defEn": "❶adj. Containing nothing; not having anything inside. ❶adj. Not sincere or meaningful. ❸v. To remove everything from inside something.",
         "example": "The room was completely empty.",
         "root": "古英语ǣmettig → 里面什么都没有的 → 空的",
         "exampleZh": "房间完全空了。",
-        "defZh": "❶使变空；清除内容物。❷指河流、管道等流向最终目的地。"
+        "defZh": "❶adj.空的、没有内容的 ❷adj.空洞的、无意义的 ❸v.清空"
       },
       {
         "en": "dry",
         "phonetic": "/draɪ/",
         "pos": "adj./v.",
         "meaning": "❶adj. 干的、干燥的 ❷adj. 无甜味的（酒）",
-        "defEn": "❶To lose moisture. ❷To remove moisture from. ❸To be thirsty.",
+        "defEn": "❶adj. Not wet; containing no water or moisture. ❶adj. Describing wine that is not sweet. ❸v. To become dry or to make something dry.",
         "example": "Hang the clothes outside to dry.",
         "root": "古英语drūge → 没有水分的 → 干的",
         "exampleZh": "把衣服挂在外面晾干。",
-        "defZh": "❶v. 除去某物的水分 ❷adj. 无水或无水分的"
+        "defZh": "❶adj.干的、干燥的 ❷adj.无甜味的（酒） ❸v.变干、使干"
       },
       {
         "en": "extreme",
         "phonetic": "/ɪkˈstriːm/",
         "pos": "adj./n.",
-        "meaning": "adj. 极端的、极度的",
-        "defEn": "❶n. The greatest or utmost point, degree or condition. ❷n. Each of the things at opposite ends of a range or scale. ❸adj. Of a place, the most remote, farthest or outermost.",
+        "meaning": "❶adj. 极端的、极度的 ❷n. 极端、极度",
+        "defEn": "❶adj. Very great in degree. ❶n. The furthest or highest point of something.",
         "example": "The weather here is extreme in summer.",
         "root": "extremus(最外面的) → 离正常范围最远的 → 极端的",
         "exampleZh": "这里夏天天气极端。",
-        "defZh": "❶名词：最大或极限的点、程度或状态。❷名词：范围或尺度两端各自的事物。❸形容词：指某地最偏远的、最远的或最外围的。"
+        "defZh": "❶adj.极端的、极度的 ❷n.极端、极度"
       },
       {
         "en": "set up",
@@ -1582,32 +1582,32 @@ var VOCAB_DATA = [
         "irr": "过去:set /set/ up|过分:set /set/ up",
         "noAudio": true,
         "exampleZh": "他们在市场搭了一个摊位。",
-        "defZh": "❶准备好某物以供使用。❷逻辑性地安排。❸使某事发生。"
+        "defZh": "❶建立、创办 ❶搭建、安装"
       },
       {
         "en": "check out",
         "phonetic": "/tʃek aʊt/",
         "pos": "phrasal v.",
         "meaning": "❶查看、了解（口语：去试试/看看） ❷退房（酒店）",
-        "defEn": "❶To confirm and pay for goods and services at a facility (e.g.: supe... ❷To withdraw (an item), ❸To record (someone) as leaving the premises or as taking something ...",
+        "defEn": "❶To leave a hotel after paying and returning your room key. ❶To look at something or try something to see if it is good.",
         "example": "You should check out that new restaurant.",
         "root": "check(核实)+out(出去) → 核实完离开 → 退房/查看",
         "noAudio": true,
         "exampleZh": "你应该去看看那家新餐厅。",
-        "defZh": "❶在设施（如超市等）确认并支付商品和服务费用。❷取出某项物品。❸登记某人离开场所或带走某物。"
+        "defZh": "❶退房（酒店） ❶查看、了解（口语）"
       },
       {
         "en": "cut up",
         "phonetic": "/kʌt ʌp/",
         "pos": "phrasal v.",
         "meaning": "❶ 切碎、切成小块 ❷ 伤心、难受（口语：cut up about）",
-        "defEn": "❶To cut into smaller pieces, parts, or sections. ❷To lacerate; ❸To distress mentally or emotionally.",
+        "defEn": "❶To cut something into small pieces. ❶To be very upset about something.",
         "example": "Cut up the vegetables before putting them in the soup.",
         "root": "cut(切)+up(彻底) → 彻底切成碎块 → 切碎",
         "irr": "过去:cut /kʌt/ up|过分:cut /kʌt/ up",
         "noAudio": true,
         "exampleZh": "把蔬菜切碎再放进汤里。",
-        "defZh": "❶切成更小的碎片、部分或段落。❷划破；撕裂。❸在精神或情感上使痛苦。"
+        "defZh": "❶切碎、切成小块 ❶伤心、难受（口语）"
       }
     ]
   },
@@ -1634,7 +1634,7 @@ var VOCAB_DATA = [
         "example": "I broke my leg playing football.",
         "root": "古印欧语词根，原义'弯曲的' → 腿是弯曲活动的肢体 → 腿",
         "exampleZh": "我踢足球时摔断了腿。",
-        "defZh": "❶动物用于支撑或运动的肢体或附属物。❷在人体中，从腹股沟延伸到踝关节的下肢。❸人体下肢从膝盖延伸的部分……"
+        "defZh": "❶身体中用于行走和站立的长部分之一，即腿。"
       },
       {
         "en": "bottom",
@@ -1656,7 +1656,7 @@ var VOCAB_DATA = [
         "example": "There's a letter for you from your mother.",
         "root": "litera(字母/文字) → 用文字写的消息 → 信",
         "exampleZh": "有你妈妈给你的一封信。",
-        "defZh": "❶授予某学术机构的识别首字母……"
+        "defZh": "❶一个人写给另一个人的书面信息，通常装入信封邮寄；信件。❿书写语言时使用的符号之一；字母。"
       },
       {
         "en": "lion",
@@ -1720,12 +1720,12 @@ var VOCAB_DATA = [
         "en": "paint",
         "phonetic": "/peɪnt/",
         "pos": "n./v.",
-        "meaning": "❶油漆❷颜料❸v.刷漆❹v.绘画",
+        "meaning": "❶油漆、涂料（涂在表面用于保护或装饰的彩色液体）❷v.涂漆、刷漆❸v.绘画、画画 [知识判断：原释义",
         "defEn": "❶A coloured liquid that you put on a surface to protect it or to make it look attractive.❿To cover a surface with paint.",
         "example": "We're painting the bedroom this weekend.",
         "root": "拉丁语pingere → 涂抹颜色 → 油漆/绘画",
         "exampleZh": "这个周末我们刷卧室的油漆。",
-        "defZh": "❶以液体或膏状形式涂抹、干燥后形成固体涂层的物质，即油漆。 ❷一组装有不同颜色油漆的容器或色块。 ❸篮球中的罚球区。"
+        "defZh": "❶涂在表面用于保护或装饰的彩色液体；油漆。❷v.用油漆涂覆表面。❸v.用画笔画画。 [原defZh❷"
       },
       {
         "en": "art",
@@ -1743,7 +1743,7 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈrɛkʃn/",
         "pos": "n.",
         "meaning": "❶ 方向、方位 ❷ 指导、管理 ❸ 趋势、动向",
-        "defEn": "❶A theoretical line (physically or mentally) followed from a point o... ❷A general trend for future action. ❸Guidance, instruction.",
+        "defEn": "❶The position towards which something or someone moves or faces. ❷Control or guidance; instructions. ❸A general tendency or trend for future development. [原defEn❶",
         "example": "Which direction is the station?",
         "root": "di(分开)+rigere(引导) → 引导向某处 → 方向",
         "exampleZh": "车站在哪个方向？",
@@ -1753,19 +1753,19 @@ var VOCAB_DATA = [
         "en": "location",
         "phonetic": "/loʊˈkeɪʃn/",
         "pos": "n.",
-        "meaning": "❶ 位置、地点 ❷ 外景拍摄地 ❸ 定位、找出位置",
-        "defEn": "❶A particular point or place in physical space. ❷An act of locating. ❸An apartheid-era urban area populated by non-white people; township.",
+        "meaning": "❶ 位置、地点 ❷ 定位、找出位置 [知识判断：❷",
+        "defEn": "❶A particular place or position. ❷The act or process of finding where something is. [defEn❸ apartheid-era township义为Wiktionary南非特有义，非剑桥核心义]",
         "example": "This is a great location for a restaurant.",
         "root": "locus(地方)+ation → 某个地方 → 位置",
         "exampleZh": "这是个开餐厅的好位置。",
-        "defZh": "❶物理空间中的特定点或位置。❷定位的行为。❸种族隔离时期非白人居住的城市区域；乡镇。"
+        "defZh": "❶某个特定的地方或位置。❷找出某物位置的过程。 [defZh❸种族隔离区域义为Wiktionary特有，非剑桥义]"
       },
       {
         "en": "goat",
         "phonetic": "/ɡoʊt/",
         "pos": "n.",
         "meaning": "❶ 山羊（有角、善攀爬的家畜） ❷ 色鬼（口语，old goat）",
-        "defEn": "❶A mammal, Capra aegagrus hircus, and similar species of the genus C... ❷A lecherous man. ❸A scapegoat.",
+        "defEn": "❶An animal related to sheep, usually with horns. ❷(informal, disapproving) A man who is very interested in sex. ❸(informal) Someone blamed for something that goes wrong (scapegoat). [原defEn❶使用Wiktionary分类学命名Capra aegagrus hircus，过于学术化]",
         "example": "The goat climbed up the steep hill.",
         "root": "古英语gāt → 有角善攀爬的动物 → 山羊",
         "exampleZh": "山羊爬上了陡峭的山坡。",
@@ -1775,18 +1775,18 @@ var VOCAB_DATA = [
         "en": "trunk",
         "phonetic": "/trʌŋk/",
         "pos": "n.",
-        "meaning": "❶ 树干 ❷ 汽车后备箱 ❸ 象鼻 ❹ 大箱子 ❺ 躯干",
-        "defEn": "❶(heading, biological) Part of a body. ❷(heading) A container. ❸(heading) A channel for flow of some kind.",
+        "meaning": "❶ 树干 ❷ 汽车后备箱 ❸ 象鼻 ❹ 大箱子、旅行箱 ❺ 躯干 [原释义一致，无需修改]",
+        "defEn": "❶The thick main stem of a tree, from which branches grow. ❷The long nose of an elephant. ❸(AmE) The large box at the back of a car for storing things. ❹The main part of the human body, not including the head, arms, or legs. [原defEn使用Wiktionary的heading格式，过于笼统，缺少tree trunk和elephant trunk两个核心义项]",
         "example": "The trunk of that tree is huge.",
         "root": "truncus(截断的) → 主要的粗大部分 → 树干/后备箱/象鼻",
         "exampleZh": "那棵树的树干很粗。",
-        "defZh": "❶身体的一部分。❷容器。❸某种流动的通道。"
+        "defZh": "❶树的主干，从主干长出树枝。❷大象的长鼻子。❸（美式）汽车后部用于存放物品的大箱子。❹人体的主要部分，不包括头、手臂或腿。 [原defZh过于笼统，遗漏树干和象鼻这两个最重要义项]"
       },
       {
         "en": "challenge",
         "phonetic": "/ˈtʃælɪndʒ/",
         "pos": "n./v.",
-        "meaning": "❶n. 挑战、难题 ❷n. 质疑 ❸v. 向…挑战 ❹v. 质疑、怀疑",
+        "meaning": "❶n. 挑战、难题（困难的事）❷n. 质疑、怀疑 ❸v. 向…挑战、邀请竞赛 ❹v. 质疑、怀疑、拒绝接受 [原释义基本一致，但v.质疑应补充",
         "defEn": "❶v. To invite (someone) to take part in a competition. ❷v. To dare (someone). ❸n. A confrontation; a dare.",
         "example": "Learning a new language is a challenge.",
         "root": "calumnia(诽谤) → 被质疑要证明自己 → 挑战",
@@ -1798,29 +1798,29 @@ var VOCAB_DATA = [
         "phonetic": "/tiːm/",
         "pos": "n.",
         "meaning": "❶ 团队、小组（一起工作的人） ❷ 运动队",
-        "defEn": "❶A set of draught animals, such as two horses in front of a carriage. ❷Any group of people involved in the same activity, ❸A group of animals moving together, especially young ducks.",
+        "defEn": "❶A group of people who work together. ❷A group of people who play a sport or game together. [原defEn❶动物组义和❸幼鸭义为Wiktionary特有，非剑桥核心义；剑桥核心义为工作团队和运动队]",
         "example": "Our team won the championship.",
         "root": "古英语tēam → 拉同一辆车的一组人 → 团队",
         "exampleZh": "我们队赢得了冠军。",
-        "defZh": "❶一组拉车的役畜，如马车前面的两匹马。❷参与同一活动的任何人群。❸一起移动的一群动物，尤指幼鸭。"
+        "defZh": "❶一起工作的一群人（工作团队）。❷一起参加体育比赛的一群人（运动队）。 [原defZh❶❸为Wiktionary非核心义]"
       },
       {
         "en": "forecast",
         "phonetic": "/ˈfɔːrkæst/",
         "pos": "n./v.",
         "meaning": "❶n. 预测、预报 ❷v. 预测、预报",
-        "defEn": "❶v. To estimate how something will be in the future. ❷v. To foreshadow; to suggest something in advance. ❸n. An estimation of a future condition.",
+        "defEn": "❶v. To make a statement about what is expected to happen in the future. ❷n. A statement of what is expected to happen in the future. [原defEn❷",
         "example": "The forecast says it'll rain this afternoon.",
         "root": "fore(提前)+cast(抛) → 提前抛出判断 → 预报",
         "exampleZh": "天气预报说今天下午会下雨。",
-        "defZh": "❶动词：估计某事物未来的状况。❷动词：预示；提前暗示某事。❸名词：对未来状况的估计。"
+        "defZh": "❶动词：对未来可能发生的事做出预测或预报。❷名词：对未来情况的预测或预报。 [原defZh❷"
       },
       {
         "en": "floor",
         "phonetic": "/flɔːr/",
         "pos": "n.",
         "meaning": "❶ 地板、地面 ❷ 楼层 ❸ 发言权（take the floor）",
-        "defEn": "❶The interior bottom or surface of a house or building; ❷Ground (surface of the Earth, ❸The lower inside surface of a hollow space.",
+        "defEn": "❶The flat surface that you walk on inside a building. ❷A level of a building. ❸The bottom of an ocean, sea, or other body of water. ❹The large open area in a building where people gather. [原defEn❷截断不完整，❸",
         "example": "The office is on the third floor.",
         "root": "古英语flōr → 脚下踩的平面 → 地板/楼层",
         "exampleZh": "办公室在三楼。",
@@ -1831,17 +1831,17 @@ var VOCAB_DATA = [
         "phonetic": "/kluː/",
         "pos": "n.",
         "meaning": "❶ 线索、提示 ❷ 毫无头绪（not have a clue）",
-        "defEn": "❶A strand of yarn etc. ❷Information which may lead one to a certain point or conclusion. ❸An object or a kind of indication which may be used as evidence.",
+        "defEn": "❶A sign or piece of information that helps you find the answer to a problem or find something. [原defEn❶",
         "example": "I don't have a clue where she went.",
         "root": "clew(线团) → 跟着线团走能找到出路 → 线索",
         "exampleZh": "我完全不知道她去哪了。",
-        "defZh": "❶一缕纱线等。❷可能引导人到达某个要点或结论的信息。❸可作为证据使用的物品或某种迹象。"
+        "defZh": "❶帮助人找到问题答案或找到某物的信息或迹象；线索。 [原defZh❶"
       },
       {
         "en": "crown",
         "phonetic": "/kraʊn/",
         "pos": "n./v.",
-        "meaning": "❶n. 王冠、皇冠 ❷n. 冠军头衔 ❸v. 加冕、为…加冠",
+        "meaning": "❶n. 王冠、皇冠 ❷n. 冠军头衔 ❸n. 顶部、最高处 ❹v. 加冕 ❺v. 授予称号 [遗漏❸",
         "defEn": "❶v. To place a crown on the head of. ❷v. To formally declare (someone) a king, queen, emperor, etc. ❸n. A royal, imperial or princely headdress; a diadem.",
         "example": "The king wore a golden crown.",
         "root": "corona(花环/冠) → 戴在头顶的象征 → 王冠",
@@ -1864,65 +1864,65 @@ var VOCAB_DATA = [
         "phonetic": "/drɔː/",
         "pos": "v./n.",
         "meaning": "❶v. 画、绘图（铅笔/钢笔） ❷v. 拉/拖 ❸v. 吸引 ❹v. 汲取 ❺n. 平局",
-        "defEn": "❶v. To move or develop something. ❷v. To exert or experience force. ❸n. The result of a contest that neither side has won; a tie.",
+        "defEn": "❶v. To make a picture with a pencil or pen. ❷v. To pull something towards you. ❸v. To cause a particular reaction. ❹v. To take something out. ❺v. To breathe in. ❻n. A game where both sides have the same score. [原defEn❶❷过于笼统，遗漏最核心的draw(画图)义项]",
         "example": "She drew a house.",
         "root": "dragan → 拉/拖 → 用笔拉出线条 → 画",
         "irr": "过去:drew /druː/|过分:drawn /drɔːn/",
         "exampleZh": "她画了一栋房子。",
-        "defZh": "❶动词：移动或发展某事物。❷动词：施加或承受力量。❸名词：竞赛中双方均未获胜的结果；平局。"
+        "defZh": "❶v. 用铅笔或钢笔画画。❷v. 拉、拖。❸v. 引起、吸引。❹v. 取出。❺v. 吸入（空气）。❻n. 平局。 [原defZh❶❷过于笼统，遗漏画图这一最核心义项]"
       },
       {
         "en": "find",
         "phonetic": "/faɪnd/",
         "pos": "v.",
-        "meaning": "❶ 找到、发现 ❷ 觉得、认为（find sth adj.） ❸ 裁决、判定",
-        "defEn": "❶To encounter or discover by accident; to happen upon. ❷To encounter or discover something being searched for; to locate. ❸(ditransitive) To discover by study or experiment direct to an obje...",
+        "meaning": "❶搜索后发现或找到目标 ❷发现自己有某种感受或想法 ❸n.值得发现的稀有好物 ❶'摸到目标'口语化，剑桥核心是'发现/找到';❷'经历后心里冒出感受'偏离，剑桥是'发现自己有某种感受/看法'（discover that you feel/think），不是'冒出'",
+        "defEn": "❶To discover or locate something by searching or by accident. ❷To discover that something is true or exists. ❸To make a judgment or decision, especially in a court of law. [原defEn❸语法标注",
         "example": "I can't find my keys.",
         "root": "古英语findan → 遇到/碰到 → 找到",
         "irr": "过去:found /faʊnd/|过分:found /faʊnd/",
         "exampleZh": "我找不到我的钥匙。",
-        "defZh": "❶搜索后发现某物❷在事件之后体验到一种感觉"
+        "defZh": "❶v. 发现或找到某物。❷v. 觉得、认为（find sth adj.）。❸v. 裁决、判定（法律用语）。 [原defZh❷"
       },
       {
         "en": "remember",
         "phonetic": "/rɪˈmɛmbər/",
         "pos": "v.",
-        "meaning": "❶ 记得、记住 ❷ 回想、想起 ❸ 代…问候（remember me to）",
-        "defEn": "❶To recall from one's memory; to have an image in one's memory. ❷To memorize; to put something into memory. ❸To keep in mind, be mindful of",
+        "meaning": "❶❷❸❶'还稳稳存在脑子里随时能调出来'过于比喻化，剑桥是'to be able to bring back information into your mind';❷'主动翻找回忆重温往事'不是剑桥独立义项，❶❷都是'bring back/recall information';❸OK;遗漏了❹'记住要做某事'（remember to do something），这是区别remember doing的关键义项",
+        "defEn": "❶v. To be able to bring back a piece of information into your mind ❷v. To not forget to do something ❸v. To give a greeting from someone",
         "example": "Do you remember her name?",
         "root": "re(再)+memor(记忆) → 再次从记忆中取出 → 记得",
         "exampleZh": "你记得她的名字吗？",
-        "defZh": "❶在脑海中保留过去的事情❷主动回忆过去的事件❸代他人向某人致意"
+        "defZh": "❶能够把信息从记忆中调回到脑海❷不要忘记去做某事❸代他人向某人致意问候"
       },
       {
         "en": "start",
         "phonetic": "/stɑːrt/",
         "pos": "v./n.",
-        "meaning": "❶v. 开始、启动 ❷n. 开始、出发",
-        "defEn": "❶n. The beginning of an activity. ❷n. A sudden involuntary movement.",
+        "meaning": "❶v. 从零开始迈出第一步做起 ❷n. 起跑线上迈出的第一步",
+        "defEn": "❶v. To begin doing something. ❷n. The beginning of something. ❸n. A sudden involuntary movement of the body. [原defEn只有n.义项，遗漏v.开始这一最核心义项]",
         "example": "Let's start the meeting.",
         "root": "古英语styrtan → 突然跳起 → 开始/出发",
         "exampleZh": "我们开始开会吧。",
-        "defZh": "❶v. 开始做某事 ❷n. 某项活动的第一步或开端"
+        "defZh": "❶v. 开始做某事。❷n. 某事的开始、开端。❸n. （因惊吓等引起的）突然身体动作。 [原defZh❶和❷基本正确但❶的动词定义未提及"
       },
       {
         "en": "say",
         "phonetic": "/seɪ/",
         "pos": "v.",
-        "meaning": "❶ 说、讲 ❷ 表明、说明 ❸ 比如说（let's say）",
-        "defEn": "❶To pronounce. ❷To recite. ❸To tell, either verbally or in writing.",
+        "meaning": "❶❷核心含义一致，但❶'嘴巴张开把想法变成声音'过于具体和口语化，剑桥简洁地定义为'to express in words/to speak words'",
+        "defEn": "❶To express thoughts or ideas using words. ❷To pronounce words. [原defEn❷",
         "example": "What did she say?",
         "root": "古英语secgan → 用语言表达 → 说",
         "irr": "过去:said /sɛd/|过分:said /sɛd/",
         "exampleZh": "她说了什么？",
-        "defZh": "❶通过说出词语来表达想法❷清楚地指示或表明某事"
+        "defZh": "❶用言语表达某事❷表明或显示某事"
       },
       {
         "en": "look",
         "phonetic": "/lʊk/",
         "pos": "v./n.",
-        "meaning": "❶v. 看、瞧 ❷v. 看起来、显得 ❸n. 看、目光 ❹n. 外表、样子",
-        "defEn": "❶v. To direct your eyes towards someone or something ❷n. An act of directing your eyes ❸n. The appearance of something",
+        "meaning": "❶❷❸核心含义一致，但❶'想看清楚'偏主观意图，剑桥是'direct your eyes toward...and see them'（转向并看到），不强调'想看清楚'",
+        "defEn": "❶v. To direct your eyes toward someone or something and see them",
         "example": "Look at this picture.",
         "root": "古英语lōcian → 用眼睛观察 → 看",
         "exampleZh": "看这张图片。",
@@ -1932,43 +1932,43 @@ var VOCAB_DATA = [
         "en": "try",
         "phonetic": "/traɪ/",
         "pos": "v./n.",
-        "meaning": "❶v. 尝试、试图 ❷v. 审判、审理 ❸n. 尝试",
-        "defEn": "❶v. To attempt; to endeavour. Followed by infinitive. ❷v. To divide; to separate. ❸n. An attempt.",
+        "meaning": "❶❷❶❷基本一致，但❶'不知道结果会怎样'是冗余修饰，剑桥核心就是'attempt';❷'亲自动手做看行不行'偏实践操作，剑桥是'test to see if satisfactory';❸'法庭审理定罪'狭隘，剑桥是'examine and decide a case'（审理并裁决，不一定是定罪）",
+        "defEn": "❶v. To attempt to do something. ❷v. To test or use something to see if it works. ❸v. (law) To judge a legal case in a court. ❹n. An attempt. [原defEn❷",
         "example": "Try it, you might like it.",
         "root": "古法语trier → 挑选/检验 → 尝试",
         "irr": "过去:tried /traɪd/|过分:tried /traɪd/",
         "exampleZh": "试试看，你可能会喜欢。",
-        "defZh": "❶尝试做某事，不确定能否成功❷测试或试用某事"
+        "defZh": "❶v. 试图做某事，不确定能否成功。❷v. 测试或试用某事物。❸v. 审判、审理（法律用语）。❹n. 尝试。 [原defZh遗漏❸审判和❹名词义]"
       },
       {
         "en": "put",
         "phonetic": "/pʊt/",
         "pos": "v.",
-        "meaning": "❶ 放、放置 ❷ 表达、说（put it this way） ❸ 使处于某种状态",
-        "defEn": "❶To place something somewhere. ❷To bring or set into a certain relation, state or condition. ❸To exercise a put option.",
+        "meaning": "❶❷❶核心含义基本一致，但❶'稳稳放在指定位置'偏狭隘，剑桥是'移到某位置'（更宽泛）；❸'把人推入'措辞略偏，剑桥是'使某人/某物处于'（不一定推）",
+        "defEn": "❶To move or place something in a particular position. ❷To express something in words. ❸To cause someone or something to be in a particular state or condition. [原defEn❸",
         "example": "Put the book on the table.",
         "root": "古英语putian → 放到某个位置 → 放",
         "irr": "过去:put /pʊt/|过分:put /pʊt/",
         "exampleZh": "把书放在桌子上。",
-        "defZh": "❶将某物放在特定位置❷用语言表达某事❸迫使某人陷入某种处境"
+        "defZh": "❸使某人或某物处于某种处境"
       },
       {
         "en": "hold",
         "phonetic": "/hoʊld/",
         "pos": "v./n.",
-        "meaning": "❶v. 拿住、握住 ❷v. 举办、举行 ❸v. 容纳 ❹v. 保持 ❺n. 抓、握",
-        "defEn": "❶v. To grasp or grip. ❷v. To contain or store. ❸n. A grasp or grip.",
+        "meaning": "❶ 把东西拿在手里或抱在臂弯里不放开 ❷ 把一群人召集到一处举行活动 ❸ 担任并保持某个职位",
+        "defEn": "❶v. To take and keep something in your hand(s). ❷v. To organize and have an event or meeting. ❸v. To have space to contain something inside. ❹v. To continue to be true or valid. ❺n. A firm grip with your hand. [原defEn遗漏",
         "example": "Hold this for me, please.",
         "root": "古英语healdan → 用手抓住不放 → 拿住/举办",
         "irr": "过去:held /hɛld/|过分:held /hɛld/",
         "exampleZh": "请帮我拿一下这个。",
-        "defZh": "❶v. 用手紧紧握住某物 ❷v. 组织并举办活动 ❸v. 维持对局势的控制"
+        "defZh": "❶v. 将某物拿在手中或抱在臂弯中 ❷v. 组织并举办活动 ❸v. 担任并保持某个职位"
       },
       {
         "en": "lose",
         "phonetic": "/luːz/",
         "pos": "v.",
-        "meaning": "❶ 丢失、失去 ❷ 输掉、失败 ❸ 迷路 ❹ 浪费（lose time）",
+        "meaning": "❶ 丢失、失去（不再拥有或无法找到）❷ 输掉、被击败 ❸ 迷路 ❹ 浪费、未能保持 [原❹",
         "defEn": "❶To cause (something) to cease to be in one's possession or capabili... ❷To wander from; ❸To fail to win (a game, competition, trial, etc).",
         "example": "Don't lose your ticket.",
         "root": "古英语losian → 变得失无所 → 丢失/输掉",
@@ -1980,31 +1980,31 @@ var VOCAB_DATA = [
         "en": "sit",
         "phonetic": "/sɪt/",
         "pos": "v.",
-        "meaning": "❶ 坐、坐下 ❷ 位于、坐落 ❸ 开会、开庭",
-        "defEn": "❶(of a person) To be in a position in which the upper body is uprigh... ❷(of a person) To move oneself into such a position. ❸(of an object) To occupy a given position permanently.",
+        "meaning": "❶ 坐、坐下 ❷ 位于、坐落 ❸ 开会、开庭（正式用语） [原释义基本一致]",
+        "defEn": "❶v. To rest on a seat with your back upright",
         "example": "Please sit down.",
         "root": "古英语sittan → 臀部放低 → 坐",
         "irr": "过去:sat /sæt/|过分:sat /sæt/",
         "exampleZh": "请坐下。",
-        "defZh": "❶将身体降低到座位或表面上❷位于特定位置"
+        "defZh": "❶坐在座位上，背部挺直地休息"
       },
       {
         "en": "eat",
         "phonetic": "/iːt/",
         "pos": "v.",
         "meaning": "❶ 吃、进食 ❷ 吃饭",
-        "defEn": "❶To ingest; to be ingested. ❷To use up. ❸To cause (someone) to worry.",
+        "defEn": "❶To put food in your mouth, chew it, and swallow it. ❷To have a meal. [原defEn❷",
         "example": "I was too nervous to eat.",
         "root": "古英语etan → 把食物送入嘴里 → 吃",
         "irr": "过去:ate /eɪt/|过分:eaten /ˈiːtən/",
         "exampleZh": "我太紧张了吃不下。",
-        "defZh": "❶v. 把食物放入口中、咀嚼并吞咽 ❷v. 吃一顿饭"
+        "defZh": "❶v. 把食物放入口中、咀嚼并吞咽 ❷v. 吃一顿饭 [原defZh与剑桥一致，无需修改]"
       },
       {
         "en": "walk",
         "phonetic": "/wɔːk/",
         "pos": "v./n.",
-        "meaning": "❶v. 步行、走 ❷n. 散步、步行",
+        "meaning": "❶❷❶OK;❷'慢悠悠走一段路的经历'偏强调悠闲，剑桥是'a journey that you make by walking'（更中性）;遗漏了❸n.'步行道/步道'（a walk/path for walking）",
         "defEn": "❶v. To move on the feet by alternately setting each foot (or pair or... ❷v. To \"walk free\",",
         "example": "The baby is just learning to walk.",
         "root": "古英语wealcan → 移动脚步 → 走/散步",
@@ -2015,7 +2015,7 @@ var VOCAB_DATA = [
         "en": "ask",
         "phonetic": "/æsk/",
         "pos": "v.",
-        "meaning": "❶ 问、询问 ❷ 请求、要求 ❸ 邀请 ❹ 请求许可",
+        "meaning": "❶ 问、询问 ❷ 请求、要求 ❸ 邀请 ❹ 请求许可 [原释义基本一致，❹是❷的子义]",
         "defEn": "❶To request (information, or an answer to a question). ❷To put forward (a question) to be answered. ❸To interrogate or enquire of (a person).",
         "example": "Can I ask a question?",
         "root": "古英语āscian → 向人发问 → 问/请求",
@@ -2027,7 +2027,7 @@ var VOCAB_DATA = [
         "phonetic": "/feɪl/",
         "pos": "v.",
         "meaning": "❶ 失败 ❷ 未能（fail to do） ❸ 不及格 ❹ 失灵/停止工作 ❺ 辜负",
-        "defEn": "❶To be unsuccessful. ❷Not to achieve a particular stated goal. ❸To neglect.",
+        "defEn": "❶To not succeed in what you are trying to do. ❷To not do something that you should do (fail to do). ❸To not pass a test or exam. [原defEn❸",
         "example": "She failed to get into law school.",
         "root": "拉丁语fallere → 欺骗/失误 → 未成功 → 失败",
         "exampleZh": "她没能考上法学院。",
@@ -2084,18 +2084,18 @@ var VOCAB_DATA = [
         "en": "positive",
         "phonetic": "/ˈpɑːzətɪv/",
         "pos": "adj./n.",
-        "meaning": "❶adj. 积极的、正面的 ❷adj. 确定的、肯定的 ❸adj. 正的（数学）",
-        "defEn": "❶n. A thing capable of being affirmed; something real or actual. ❷n. A favourable point or characteristic. ❸adj. Not negative or neutral.",
+        "meaning": "❶adj. 积极的、有建设性的 ❷adj. 确定的、肯定的 ❸adj. 正的（大于零）❹adj. 阳性的（检测结果） [遗漏❹",
+        "defEn": "❶adj. Certain, confident, without doubt. ❷adj. Full of hope and confidence; constructive. ❸adj. Greater than zero (mathematics). ❹adj. Showing a particular medical condition exists. ❺n. A good thing about a situation. [原defEn使用Wiktionary哲学式表述",
         "example": "Try to stay positive.",
         "root": "positus(放置的) → 确定站住的 → 积极的/肯定的",
         "exampleZh": "尽量保持积极。",
-        "defZh": "❶名词：可被肯定的事物；真实或实际的东西。❷名词：一个有利的特点或特征。❸形容词：非负面或非中性的。"
+        "defZh": "❶adj. 确定的、肯定的、毫无疑问的。❷adj. 积极的、有建设性的。❸adj. 正的（大于零，数学）。❹adj. 阳性的（检测结果显示某种状况）。❺n. 好的方面、有利之处。 [原defZh❶❸使用Wiktionary哲学式表述，不如剑桥简洁明了]"
       },
       {
         "en": "exhausted",
         "phonetic": "/ɪɡˈzɔːstɪd/",
         "pos": "adj.",
-        "meaning": "❶ 筋疲力尽的、极度疲惫的 ❷ 用完的、耗尽的",
+        "meaning": "❶ 筋疲力尽的、极度疲惫的 ❷ 用完的、耗尽的 [原释义与剑桥基本一致，❷为资源耗尽义，准确]",
         "example": "I was completely exhausted after the hike.",
         "root": "ex(出)+haurire(抽干) → 被抽干的 → 筋疲力尽的",
         "exampleZh": "徒步之后我完全筋疲力尽了。"
@@ -2104,7 +2104,7 @@ var VOCAB_DATA = [
         "en": "angry",
         "phonetic": "/ˈæŋɡri/",
         "pos": "adj.",
-        "meaning": "❶ 生气的、愤怒的 ❷ （伤口）红肿发炎的 ❸ （海/天）狂暴的",
+        "meaning": "❶ 生气的、愤怒的 ❷ （伤口）红肿发炎的 [❸海/天狂暴义在剑桥为比喻用法而非独立义项，可保留但应标注",
         "example": "Please don't be angry with me.",
         "root": "anger+y → 有怒气的 → 生气的",
         "exampleZh": "请不要对我生气。"
@@ -2114,29 +2114,29 @@ var VOCAB_DATA = [
         "phonetic": "/raɪt/",
         "pos": "adj./adv./n.",
         "meaning": "❶adj. 正确的 ❷adj. 右边的 ❸adv. 恰好、正好 ❹n. 权利 ❺adv. 立刻、马上",
-        "defEn": "❶adj. Straight, not bent. ❷adj. Of an angle,",
+        "defEn": "❶adj. Suitable, correct, or appropriate. ❷adj. Morally acceptable. ❸adj. On or towards the right side. ❹adv. Exactly, precisely. ❺n. A moral or legal entitlement to have or do something. [原defEn❶",
         "example": "You're absolutely right.",
         "root": "古英语riht → 正直/正确 → 正确的/右边的/权利",
         "exampleZh": "你完全正确。",
-        "defZh": "❶形容词：笔直的，不弯曲的。❷形容词：指角度的。"
+        "defZh": "❶adj. 正确的、合适的。❷adj. 道德上可接受的、公正的。❸adj. 右边的、右侧的。❹adv. 恰好、正好。❺n. 权利、合法权利。 [原defZh❶❺使用Wiktionary字面义，遗漏所有核心义项]"
       },
       {
         "en": "brief",
         "phonetic": "/briːf/",
         "pos": "adj./n./v.",
-        "meaning": "❶adj. 简短的、短暂的 ❷n. 简报、摘要 ❸v. 向…作简报",
-        "defEn": "❶v. To summarize a recent development to some person with decision-m... ❷v. To write a legal argument and submit it to a court. ❸n. A writ summoning one to answer to any action.",
+        "meaning": "❶adj. 简短的、短暂的 ❷n. 简报、摘要；法律文书 ❸v. 向…作简报、介绍情况 [❷应补充法律文书义项]",
+        "defEn": "❶adj. Lasting only a short time; using few words. ❷v. To give someone information or instructions about what they should do. ❸n. (law) A written legal argument submitted to a court. [原defEn❶截断，❷❸使用Wiktionary法律术语而非剑桥学习者定义]",
         "example": "Keep it brief, please.",
         "root": "brevis(短的) → 时间或内容上短的 → 简短",
         "exampleZh": "请简短一点。",
-        "defZh": "❶动词：向有决策权的人摘要汇报最新进展。❷动词：撰写法律论辩书并提交给法院。❸名词：传唤某人到庭应诉的令状。"
+        "defZh": "❶adj. 简短的、短暂的。❷v. 向某人提供信息或指示；作简报。❸n. 法律文书；简报、摘要。 [原defZh只有v.和n.法律义，遗漏adj.简短这一最核心义项]"
       },
       {
         "en": "more",
         "phonetic": "/mɔːr/",
         "pos": "adj./adv./pron.",
         "meaning": "❶adj./adv. 更多的/更 ❷pron. 更多的人/物",
-        "defEn": "❶To a greater degree or extent. ❷Used to form the comparative form of adjectives and adverbs. ❸In negative constructions: any further, any longer; any more.",
+        "defEn": "❶A larger or additional amount/number of something. ❷Used to form the comparative of adjectives and adverbs. ❸To a greater degree or extent. [原defEn❸否定结构义过于语法化]",
         "example": "I need more time.",
         "root": "古英语māra → 数量上更大的 → 更多",
         "exampleZh": "我需要更多时间。",
@@ -2156,11 +2156,11 @@ var VOCAB_DATA = [
         "phonetic": "/kwɪk/",
         "pos": "adj./adv.",
         "meaning": "❶adj. 快的、迅速的 ❷adj. 聪明的、机灵的 ❸adv. 快地（口语）",
-        "defEn": "❶To amalgamate surfaces prior to gilding or silvering by dipping the... ❷To quicken.",
+        "defEn": "❶adj. Done or happening in a short time; fast. ❷adj. Intelligent, clever. ❸adv. Quickly (informal). [原defEn完全是Wiktionary金属工艺义",
         "example": "She gave a quick answer.",
         "root": "古英语cwic → 活的/有活力的 → 动作快的 → 快的",
         "exampleZh": "她迅速回答了。",
-        "defZh": "❶在镀金或镀银之前将表面浸入汞齐化处理。❷加快。"
+        "defZh": "❶adj. 快的、迅速的。❷adj. 聪明的、机灵的。❸adv. 快地（口语）。 [原defZh完全是Wiktionary金属工艺术语，与剑桥学习者释义完全无关]"
       },
       {
         "en": "hungry",
@@ -2187,11 +2187,11 @@ var VOCAB_DATA = [
         "phonetic": "/dʒʌst/",
         "pos": "adv./adj.",
         "meaning": "❶adv. 刚刚 ❷adv. 只是、仅仅 ❸adv. 正好、恰好 ❹adj. 公正的、合理的",
-        "defEn": "❶Factually right, correct; factual. ❷Rationally right, correct. ❸Morally right; upright, righteous, equitable; fair.",
+        "defEn": "❶adv. Only, merely. ❷adv. Exactly, precisely. ❸adv. Very recently. ❹adj. Fair, reasonable, and morally right. [原defEn全部是adj.正义的Wiktionary哲学式展开，完全遗漏adv.只是/刚刚/恰好这些最核心义项]",
         "example": "I just finished my homework.",
         "root": "拉丁语justus(公正的) → 精确/公正 → 刚刚/只是/公正的",
         "exampleZh": "我刚做完作业。",
-        "defZh": "❶事实上正确的；符合事实的。❷理性上正确的。❸道德上正确的；正直的、公正的、公平的。"
+        "defZh": "❶adv. 只是、仅仅。❷adv. 恰好、正好。❸adv. 刚刚。❹adj. 公正的、合理的。 [原defZh只有adj.公正义，完全遗漏adv.只是/刚刚/恰好这三大最核心义项]"
       },
       {
         "en": "probably",
@@ -2252,12 +2252,12 @@ var VOCAB_DATA = [
         "en": "actually",
         "phonetic": "/ˈæktʃuəli/",
         "pos": "adv.",
-        "meaning": "❶adv. 实际上、事实上（纠正误解或强调事实） ❷adv. 居然、竟然（表示意外）",
+        "meaning": "❶adv. 实际上、事实上 ❷adv. （礼貌地）纠正对方或引入不同看法 ❸adv. 居然、竟然 [原❷",
         "defEn": "❶(modal) In act or in fact; really; in truth; positively. ❷Actively.",
         "example": "It's not actually raining now.",
         "root": "act(做)+ual(的)+ly → 实际做的 → 实际上",
         "exampleZh": "其实现在没下雨。",
-        "defZh": "❶事实上；真的；确实地。❷积极地；主动地。"
+        "defZh": "❶事实上；实际上；真的。❷用于礼貌地表达不同看法或纠正误解。 [原defZh❷"
       },
       {
         "en": "often",
@@ -2274,12 +2274,12 @@ var VOCAB_DATA = [
         "en": "sometime",
         "phonetic": "/ˈsʌmtaɪm/",
         "pos": "adv.",
-        "meaning": "❶ 某个时候（时间不确定或未定）",
-        "defEn": "❶Former, erstwhile; at some previous time. ❷Occasional. ❸At an indefinite but stated time in the past or future.",
+        "meaning": "❶ 某个时候（时间不确定或未定） [原释义一致，无需修改]",
+        "defEn": "❶At an indefinite or unspecified time in the past or future. [原defEn❶",
         "example": "We must get together sometime.",
         "root": "some+time → 某个时间 → 某时",
         "exampleZh": "我们改天一定要聚一聚。",
-        "defZh": "❶以前的；在过去的某个时间。❷偶尔的。❸在过去或未来的某个不确定但已提到的时间。"
+        "defZh": "❶在过去或未来的某个不确定的时间。 [原defZh❶"
       },
       {
         "en": "never",
@@ -2336,22 +2336,22 @@ var VOCAB_DATA = [
         "phonetic": "/ˈoʊvər/",
         "pos": "prep./adv.",
         "meaning": "❶prep. 在…上方 ❷prep. 超过、多于 ❸adv. 结束了 ❹adv. 翻转",
-        "defEn": "❶To go over, or jump over. ❷To run about.",
+        "defEn": "❶prep. Above or higher than something, without touching it. ❷prep. Covering something. ❸prep. More than a particular number/amount. ❹adv. Finished, ended. ❺adv. Again, from the beginning. [原defEn❶❺是动词义而非介词/副词义，遗漏所有核心介词义项]",
         "example": "The plane flew over the mountains.",
         "root": "古英语ofer → 在更高位置 → 上方/超过",
         "exampleZh": "飞机飞越了山脉。",
-        "defZh": "❶越过或跳过。❷到处跑动。"
+        "defZh": "❶prep. 在…上方，高于。❷prep. 覆盖在…上面。❸prep. 超过、多于。❹adv. 结束了。❺adv. 再一次、重新。 [原defZh❶❺是动词义而非介词/副词义，遗漏所有核心义项]"
       },
       {
         "en": "through",
         "phonetic": "/θruː/",
         "pos": "prep./adv.",
         "meaning": "❶prep. 穿过、通过 ❷prep. 经历、度过 ❸adv. 彻底地、完全地",
-        "defEn": "❶A large slab of stone laid in a dry-stone wall from one side to the... ❷Passing from one side of something to the other. ❸Finished; complete.",
+        "defEn": "❶prep. From one side to the other. ❷prep. By means of; because of. ❸prep. During and continuing to the end of. ❹adv. From one side to the other. ❺adv. Finished, complete. [原defEn❶",
         "example": "We drove through the tunnel.",
         "root": "古英语þurh → 从一端到另一端 → 穿过",
         "exampleZh": "我们开车穿过了隧道。",
-        "defZh": "❶一块横跨干石墙两侧的大石板。❷从某物的一侧穿到另一侧。❸完成的；结束的。"
+        "defZh": "❶prep. 从一侧穿到另一侧。❷prep. 凭借、通过。❸prep. 经历、度过（整段时间）。❹adv. 穿过。❺adv. 完成、结束了。 [原defZh❶"
       },
       {
         "en": "than",
@@ -2372,7 +2372,7 @@ var VOCAB_DATA = [
         "root": "put(放)+down(下) → 往下放 → 放下/记下",
         "noAudio": true,
         "exampleZh": "放下笔听我说。",
-        "defZh": "❶侮辱、轻视或贬低。❷作为押金支付。❸制止、消除、停止或压制，常以武力。"
+        "defZh": "❶放下（物品）。❷写下、记下。❸贬低、批评（某人）。❹镇压、压制（武力）。 [原defZh遗漏❶"
       },
       {
         "en": "in between",
@@ -2576,7 +2576,7 @@ var VOCAB_DATA = [
         "example": "Wash your hands with soap and warm water.",
         "exampleZh": "用肥皂和温水洗手。",
         "subcategory": "Bathroom",
-        "defZh": "❶一种能同时与油和水混合的物质。❷从脂肪酸衍生出的金属盐。❸奉承话或过于谄媚的言辞。"
+        "defZh": "❶一种用于洗涤身体或物品的物质（与水配合使用）。"
       },
       {
         "en": "shampoo",
@@ -2587,7 +2587,7 @@ var VOCAB_DATA = [
         "example": "Please put the shampoo back on the shelf after using it.",
         "exampleZh": "用完请把洗发水放回架子上。",
         "subcategory": "Bathroom",
-        "defZh": "❶一种传统的印度和波斯身体按摩，在倒水之后进行。❷一种用于洗头发或其他纤维的商用液体皂产品。❸一次用洗发水洗头发或其他纤维的行为。"
+        "defZh": "❶一种用于洗头发的液体洗涤产品。"
       },
       {
         "en": "towel",
@@ -2631,18 +2631,18 @@ var VOCAB_DATA = [
         "example": "The toilet is clogged — can you fix it?",
         "exampleZh": "马桶堵了——你能修一下吗？",
         "subcategory": "Bathroom",
-        "defZh": "❶一种亚麻覆盖物。❷被这种布覆盖的桌子；梳妆台。❸个人梳妆打扮。"
+        "defZh": "❶用于排泄废物的大型碗状容器，即马桶。❷包含马桶的房间，即厕所、卫生间。"
       },
       {
         "en": "sink",
         "phonetic": "/sɪŋk/",
         "pos": "n.",
-        "meaning": "洗手池、水槽",
+        "meaning": "❶洗手池❷水槽",
         "defEn": "❶A large bowl in a kitchen or bathroom with taps to supply water, used for washing things.",
         "example": "Please put the sink back on the shelf after using it.",
         "exampleZh": "用完请把洗手池放回架子上。",
         "subcategory": "Bathroom",
-        "defZh": "❶用于盛水洗涤的水盆。❷排出废水的排水口。❸天坑。"
+        "defZh": "❶厨房或浴室中带有水龙头、用于洗涤物品的大型水盆。"
       },
       {
         "en": "mirror",
@@ -2653,7 +2653,7 @@ var VOCAB_DATA = [
         "example": "Please put the mirror back on the shelf after using it.",
         "exampleZh": "用完请把镜子放回架子上。",
         "subcategory": "Bathroom",
-        "defZh": "❶光滑的表面。❷反映或呈现另一事物映像的物体、人物或事件。❸包含复制数据的磁盘、网站或其他资源。"
+        "defZh": "❶一种可以反射图像的特殊平面玻璃，即镜子。"
       },
       {
         "en": "shower",
@@ -2686,7 +2686,7 @@ var VOCAB_DATA = [
         "example": "Turn off the faucet — you're wasting water.",
         "exampleZh": "关掉水龙头——你在浪费水。",
         "subcategory": "Bathroom",
-        "defZh": "❶一种外露的管道配件。❷游戏开发中注入货币的若干系统之一。"
+        "defZh": "❶控制管道中水流出的装置，即水龙头（美式英语）。"
       },
       {
         "en": "toilet paper",
@@ -2708,7 +2708,7 @@ var VOCAB_DATA = [
         "example": "I need a new razor — this one is dull.",
         "exampleZh": "我需要一把新剃须刀——这把钝了。",
         "subcategory": "Bathroom",
-        "defZh": "❶一种特殊形状的锋利刀片。❷任何设计用于刮剃的工具或器具。❸野猪的尖牙。"
+        "defZh": "❶一种带有锋利刀片的工具，用于剃除皮肤上的毛发，即剃刀/剃须刀。"
       },
       {
         "en": "comb",
@@ -2719,7 +2719,7 @@ var VOCAB_DATA = [
         "example": "Can I borrow your comb for a second?",
         "exampleZh": "能借你的梳子用一下吗？",
         "subcategory": "Bathroom",
-        "defZh": "❶一种有齿的工具，用于梳理头发或曾经用于固定头发。❷一种用于将优质棉纤维与精梳棉分离的机器。❸某些鸟类和爬行动物头顶上的肉质突起。"
+        "defZh": "❶一种扁平的带有细齿排列的工具，用于整理头发，即梳子。"
       },
       {
         "en": "hair dryer",
@@ -2741,7 +2741,7 @@ var VOCAB_DATA = [
         "example": "The tissue in this hotel is really nice.",
         "exampleZh": "这家酒店的纸巾真的很不错。",
         "subcategory": "Bathroom",
-        "defZh": "❶薄薄的、织成的、纱布般的织物。❷一种细薄的透明丝绸材料。❸一张吸水纸。"
+        "defZh": "❶柔软的薄纸，用于擦拭鼻子或面部，即纸巾。❷动物或植物中具有相同功能的相连细胞群，即组织。"
       },
       {
         "en": "lotion",
@@ -2752,7 +2752,7 @@ var VOCAB_DATA = [
         "example": "Put on some lotion — your hands are really dry.",
         "exampleZh": "抹点乳液——你的手很干。",
         "subcategory": "Bathroom",
-        "defZh": "❶一种低到中等粘度的外用制剂，用于涂抹于皮肤。❷洗涤，尤指为美化而进行的皮肤洗涤。"
+        "defZh": "❶一种涂抹在皮肤上使其柔软或治愈皮肤的浓稠液体，即乳液/护肤液。"
       },
       {
         "en": "deodorant",
@@ -2763,7 +2763,7 @@ var VOCAB_DATA = [
         "example": "Don't forget to put on deodorant before you leave.",
         "exampleZh": "出门前别忘了涂除臭剂。",
         "subcategory": "Bathroom",
-        "defZh": "❶任何能消除、减少、掩盖或控制气味的产品。❷涂于腋下以对抗体味的除臭物质。"
+        "defZh": "❶一种涂抹在皮肤上以掩盖或减少汗味的物质，即除臭剂/止汗剂。"
       },
       {
         "en": "cotton swab",
@@ -2797,7 +2797,7 @@ var VOCAB_DATA = [
         "example": "The bed matches the color of the walls perfectly.",
         "exampleZh": "床和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
-        "defZh": "❶一件家具。❷一个地方，或平坦的表面或层，其他东西置于其上。❸一层或一个表面。"
+        "defZh": "❶一种用于睡觉时躺在上面的家具，即床。"
       },
       {
         "en": "pillow",
@@ -2808,18 +2808,18 @@ var VOCAB_DATA = [
         "example": "We need to buy a new pillow for the guest room.",
         "exampleZh": "我们需要给客房买一个新的枕头。",
         "subcategory": "Bedroom",
-        "defZh": "❶床上用于支撑头部的柔软垫子。❷枕状熔岩。❸一块金属或木头。"
+        "defZh": "❶一种用于睡觉时支撑头部的柔软垫子，即枕头。"
       },
       {
         "en": "blanket",
         "phonetic": "/ˈblæŋkɪt/",
         "pos": "n.",
-        "meaning": "毯子",
+        "meaning": "❶毯子",
         "defEn": "❶A large piece of soft cloth used as a covering on a bed to keep you warm.",
         "example": "The baby was cold, so his mother put a blanket over him.",
         "exampleZh": "婴儿很冷，所以他妈妈给他盖上了毯子。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种厚重的、松散编织的织物，通常较大且由羊毛制成，用于保暖覆盖。❷任何东西的一层。❸用于胶印过程中转印图像的厚橡胶垫。"
+        "defZh": "❶一种用于床上保暖的大型柔软厚实布料，即毯子。"
       },
       {
         "en": "sheet",
@@ -2830,7 +2830,7 @@ var VOCAB_DATA = [
         "example": "He put his clothes in the sheet.",
         "exampleZh": "他把衣服放进了床单里。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种薄床布，用作床垫的覆盖物或铺在上面的层。❷一张纸。❸一种平底金属盘，常无凸起边缘，用于烘烤。"
+        "defZh": "❶床上使用的大块薄布，即床单。❷扁平薄的材料，尤指纸张，即薄片。"
       },
       {
         "en": "mattress",
@@ -2841,7 +2841,7 @@ var VOCAB_DATA = [
         "example": "The mattress matches the color of the walls perfectly.",
         "exampleZh": "床垫和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
-        "defZh": "❶供人躺卧和睡觉的垫子。❷一种用于支撑地基或堤岸的挡土墙形式。"
+        "defZh": "❶床上柔软的部分，由厚布包裹柔软材料或弹簧制成，即床垫。"
       },
       {
         "en": "wardrobe",
@@ -2852,7 +2852,7 @@ var VOCAB_DATA = [
         "example": "He put his clothes in the wardrobe.",
         "exampleZh": "他把衣服放进了衣柜里。",
         "subcategory": "Bedroom",
-        "defZh": "❶用于保管衣物和盔甲的房间。❷君主制下采购衣物的政府办公室或部门。❸容纳该部门的建筑。"
+        "defZh": "❶一种带门的高柜，用于存放衣服，即衣柜。❷一个人的全部衣服收藏。"
       },
       {
         "en": "hanger",
@@ -2863,7 +2863,7 @@ var VOCAB_DATA = [
         "example": "The hanger matches the color of the walls perfectly.",
         "exampleZh": "衣架和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种标记，通常涉及球员跳跃抓住的动作。"
+        "defZh": "❶一种弯曲的金属、木头或塑料制品，顶部有挂钩，用于悬挂衣服，即衣架。"
       },
       {
         "en": "alarm clock",
@@ -2885,7 +2885,7 @@ var VOCAB_DATA = [
         "example": "He put his clothes in the lamp.",
         "exampleZh": "他把衣服放进了台灯里。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种产生热量的装置。❷一种装油的装置。❸一种容纳一个或多个电灯插座的家具。"
+        "defZh": "❶一种产生光的装置，尤其是可以携带或放在桌子上的，即灯/台灯。"
       },
       {
         "en": "curtain",
@@ -2896,7 +2896,7 @@ var VOCAB_DATA = [
         "example": "Close the curtains — the sun's too bright.",
         "exampleZh": "拉上窗帘——阳光太刺眼了。",
         "subcategory": "Bedroom",
-        "defZh": "❶覆盖窗户的布。❷将观众与舞台隔开的类似布幕。❸演出的开始；幕起的时刻。"
+        "defZh": "❶一种悬挂在窗户或门上覆盖的布料，即窗帘。"
       },
       {
         "en": "carpet",
@@ -2907,7 +2907,7 @@ var VOCAB_DATA = [
         "example": "He put his clothes in the carpet.",
         "exampleZh": "他把衣服放进了地毯里。",
         "subcategory": "Bedroom",
-        "defZh": "❶用作完整地板覆盖物的织物。❷任何类似地毯或发挥其功能的面或覆盖物。❸尺蛾亚科中的若干种蛾。"
+        "defZh": "❶一种覆盖房间地面的厚实柔软材料，即地毯。"
       },
       {
         "en": "pajamas",
@@ -2918,7 +2918,7 @@ var VOCAB_DATA = [
         "example": "The pajamas matches the color of the walls perfectly.",
         "exampleZh": "睡衣和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
-        "defZh": "❶睡觉时穿的衣物，即睡衣裤。 ❷南亚地区男女都穿的一种宽松裤子。"
+        "defZh": "❶睡觉时穿的宽松裤子和上衣套装，即睡衣。"
       },
       {
         "en": "slippers",
@@ -2929,7 +2929,7 @@ var VOCAB_DATA = [
         "example": "We need to buy a new slippers for the guest room.",
         "exampleZh": "我们需要给客房买一个新的拖鞋。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种低帮软底鞋，可以轻松地穿上和脱下。 ❷供室内穿着的此类鞋，即卧室或家用拖鞋。 ❸一种橡胶凉鞋（人字拖）。"
+        "defZh": "❶一种在家里穿的柔软鞋子，即拖鞋。"
       },
       {
         "en": "drawer",
@@ -2940,7 +2940,7 @@ var VOCAB_DATA = [
         "example": "We need to buy a new drawer for the guest room.",
         "exampleZh": "我们需要给客房买一个新的抽屉。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种无顶盖的盒子，可以滑入和滑出柜子。 ❷包含补充内容的侧面板。"
+        "defZh": "❶一种可以从家具中滑入滑出的盒状容器，用于存放物品，即抽屉。"
       },
       {
         "en": "quilt",
@@ -2951,7 +2951,7 @@ var VOCAB_DATA = [
         "example": "He put his clothes in the quilt.",
         "exampleZh": "他把衣服放进了被子里。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种由两层布料缝合在一起制成的床铺覆盖物。 ❷一种具有吸音性能的材料卷。 ❸女性穿的绗缝裙。"
+        "defZh": "❶一种温暖的床上覆盖物，由两层布料中间夹着柔软材料制成，即被子。"
       },
       {
         "en": "cushion",
@@ -2962,7 +2962,7 @@ var VOCAB_DATA = [
         "example": "This cushion is so comfortable — where did you get it?",
         "exampleZh": "这个靠垫太舒服了——你从哪买的？",
         "subcategory": "Bedroom",
-        "defZh": "❶塞入布袋中的柔软填充物。 ❷起垫子作用的东西，特别是用来吸收冲击或碰撞的。 ❸足够数量的某种无形事物（如积分或分钟数等）。"
+        "defZh": "❶一种柔软的袋状垫子，用于坐或靠头，即靠垫/坐垫。"
       },
       {
         "en": "nightstand",
@@ -2984,7 +2984,7 @@ var VOCAB_DATA = [
         "example": "The duvet matches the color of the walls perfectly.",
         "exampleZh": "羽绒被和墙壁的颜色很搭。",
         "subcategory": "Bedroom",
-        "defZh": "❶一种厚实、有填充的绗缝被，用来代替毯子。 ❷绗缝被或舒适被的外套。"
+        "defZh": "❶一种厚实柔软的床上覆盖物，填充羽毛或其他柔软材料，即羽绒被。"
       },
       {
         "en": "closet",
@@ -2995,7 +2995,7 @@ var VOCAB_DATA = [
         "example": "We need to buy a new closet for the guest room.",
         "exampleZh": "我们需要给客房买一个新的壁橱。",
         "subcategory": "Bedroom",
-        "defZh": "❶任何私密区域，（尤指）户外的凉亭。 ❷任何私密或内室，（尤指）： ❸为君主或其他封建领主保留的席位或侧廊。"
+        "defZh": "❶一种用于存放物品（尤指衣服）的小房间或柜子，即壁橱/储藏室。"
       },
       {
         "en": "fridge",
@@ -3039,7 +3039,7 @@ var VOCAB_DATA = [
         "example": "I left the stove on — can you check it?",
         "exampleZh": "炉灶没关——你能看一下吗？",
         "subcategory": "Kitchen",
-        "defZh": "❶一种取暖器，一种封闭装置，燃烧燃料来给房间供暖。 ❷一种加热食物的设备，（英国用法）即炊具。 ❸温室（加热的暖房）。"
+        "defZh": "❶一种燃烧燃料或使用电力来加热房间的设备，即炉灶/火炉。❷一种用于烹饪的大型设备，即炊具。"
       },
       {
         "en": "knife",
@@ -3050,7 +3050,7 @@ var VOCAB_DATA = [
         "example": "Put the knife in the kitchen after washing it.",
         "exampleZh": "洗完后把刀放回厨房。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种专为切割而设计的器具或工具。 ❷按照上述规格设计、专用于攻击的武器。 ❸工具或机器中任何刀片状的切割部件。"
+        "defZh": "❶一种有锋利刀片的工具，用于切割物品，即刀。"
       },
       {
         "en": "fork",
@@ -3061,7 +3061,7 @@ var VOCAB_DATA = [
         "example": "The fork is on the counter next to the stove.",
         "exampleZh": "叉子在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种带有长直手柄的多齿工具。 ❷园艺中使用的多齿工具。 ❸绞刑架。"
+        "defZh": "❶一种有手柄和末端有几个尖点的工具，用于进食，即叉子。"
       },
       {
         "en": "spoon",
@@ -3072,7 +3072,7 @@ var VOCAB_DATA = [
         "example": "Grab a spoon — the soup's ready.",
         "exampleZh": "拿把勺子——汤好了。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种用于进食或盛取食物的器具。 ❷烹饪时搅拌食物用的器具；木勺。 ❸能装进一把勺子的量；一勺的量。"
+        "defZh": "❶一种由圆形凹部和手柄组成的物品，用于混合、端菜和进食，即勺/匙/调羹。"
       },
       {
         "en": "plate",
@@ -3083,7 +3083,7 @@ var VOCAB_DATA = [
         "example": "Can you put the plates on the table?",
         "exampleZh": "你能把盘子放到桌上吗？",
         "subcategory": "Kitchen",
-        "defZh": "❶一种微曲但近乎平坦的盘子，用来盛放或展示食物。 ❷此类盘子的总称。 ❸这种盘子里盛的东西。"
+        "defZh": "❶一种扁平通常圆形的盘子，边缘略微翘起，用于进餐或盛放食物，即盘子/碟子。"
       },
       {
         "en": "bowl",
@@ -3094,7 +3094,7 @@ var VOCAB_DATA = [
         "example": "The bowl is on the counter next to the stove.",
         "exampleZh": "碗在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种大致半球形的容器，用来盛放物品。 ❷一碗所盛的量。 ❸由多种不同食物混合而成的一道菜。"
+        "defZh": "❶一种圆顶开口的容器，深度足以盛放食物或小物品，即碗/钵。"
       },
       {
         "en": "cup",
@@ -3105,18 +3105,18 @@ var VOCAB_DATA = [
         "example": "The cup is on the counter next to the stove.",
         "exampleZh": "杯子在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种凹形饮具。 ❷该饮具所盛的内容；一杯的量。 ❸一种惯用的计量单位。"
+        "defZh": "❶一种小圆形容器，通常有手柄，用于喝茶、咖啡等，即杯子。"
       },
       {
         "en": "glass",
         "phonetic": "/ɡlɑːs/",
         "pos": "n.",
-        "meaning": "❶玻璃（材料）❿玻璃杯❿眼镜（glasses复数）",
-        "defEn": "❶A hard transparent material, used for making windows and bottles. ❿A container made of glass, used for drinking. ❿Two lenses in a frame, worn to help you see better (glasses).",
+        "meaning": "❶玻璃（材料）❷玻璃杯❸眼镜（glasses复数）",
+        "defEn": "❶A hard transparent material, used for making windows and bottles. ❷A container made of glass, used for drinking. ❸Two lenses in a frame, worn to help you see better (glasses).",
         "example": "The glass is on the counter next to the stove.",
         "exampleZh": "玻璃杯在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种非晶态固体。 ❷一种用来饮酒的器皿。 ❸（借代）该器皿中所盛液体的量。"
+        "defZh": "❶一种坚硬透明的材料，用于制作窗户和瓶子，即玻璃。❷由玻璃制成的容器，用于饮水，即玻璃杯。❸框架中的两个镜片，帮助看清，即眼镜。"
       },
       {
         "en": "pan",
@@ -3127,7 +3127,7 @@ var VOCAB_DATA = [
         "example": "Heat up the pan before you add the oil.",
         "exampleZh": "先把锅加热再加油。",
         "subcategory": "Kitchen",
-        "defZh": "❶与管乐器相关的含义。 ❷与空心管道相关的含义。 ❸与容器相关的含义。"
+        "defZh": "❶一种有手柄的金属容器，用于在炉灶上烹饪食物，即平底锅。"
       },
       {
         "en": "pot",
@@ -3138,7 +3138,7 @@ var VOCAB_DATA = [
         "example": "The pot is on the counter next to the stove.",
         "exampleZh": "锅在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种旧尺寸的纸张，12.5 × 15 英寸。"
+        "defZh": "❶各种类型的圆形容器，尤指用于烹饪食物的，即锅/罐/壶。"
       },
       {
         "en": "cutting board",
@@ -3160,7 +3160,7 @@ var VOCAB_DATA = [
         "example": "The spatula is on the counter next to the stove.",
         "exampleZh": "锅铲在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种厨房用具，由连接在长手柄上的扁平表面组成。 ❷一种厨房用具，由连接在长手柄上的柔性表面组成。 ❸抹刀。"
+        "defZh": "❶一种烹饪用具，有宽平不锋利的刀片，用于翻取食物，即锅铲/刮勺。"
       },
       {
         "en": "ladle",
@@ -3171,7 +3171,7 @@ var VOCAB_DATA = [
         "example": "Put the ladle in the kitchen after washing it.",
         "exampleZh": "洗完后把勺子/长柄勺放回厨房。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种深碗形勺子，带有通常弯曲的长手柄。 ❷铸造厂中用于运输和倾倒熔融金属的容器。 ❸水车轮的浮板；杓板。"
+        "defZh": "❶一种非常大的勺子，有长手柄和深杯状部分，尤指用于舀汤，即长柄勺/大勺子。"
       },
       {
         "en": "kettle",
@@ -3182,7 +3182,7 @@ var VOCAB_DATA = [
         "example": "The kettle is on the counter next to the stove.",
         "exampleZh": "水壶在灶台旁边。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种用于煮沸液体或烹饪食物的容器。 ❷一把壶所装的量。 ❸一种用于烧开水泡茶的壶。"
+        "defZh": "❶一种烧水的容器，有盖子、手柄和壶嘴，由塑料或金属制成，即水壶/烧水壶。"
       },
       {
         "en": "dishwasher",
@@ -3193,7 +3193,7 @@ var VOCAB_DATA = [
         "example": "We need to replace the old dishwasher in the kitchen.",
         "exampleZh": "我们需要换掉厨房里那个旧的洗碗机。",
         "subcategory": "Kitchen",
-        "defZh": "❶一种用来洗碗的机器。 ❷洗碗的人。 ❸一种欧洲鸟类，鹡鸰。"
+        "defZh": "❶一种用于洗碗的机器，即洗碗机。"
       },
       {
         "en": "trash can",
@@ -3215,7 +3215,7 @@ var VOCAB_DATA = [
         "example": "The sofa is the centerpiece of the living room.",
         "exampleZh": "沙发是客厅的核心。",
         "subcategory": "Living Room",
-        "defZh": "❶建筑物地面上的一块抬高的区域。 ❷一种有靠背和一到两个扶手的软垫座椅家具。"
+        "defZh": "❶一种舒适的座椅，有靠背和扶手，可供两人或多人坐，即沙发。"
       },
       {
         "en": "couch",
@@ -3226,7 +3226,7 @@ var VOCAB_DATA = [
         "example": "Let's just chill on the couch and watch a movie.",
         "exampleZh": "我们就在沙发上放松看个电影吧。",
         "subcategory": "Living Room",
-        "defZh": "❶茅草，狗牙根。"
+        "defZh": "❶沙发。❷一种高床，尤指诊察台。"
       },
       {
         "en": "table",
@@ -3237,7 +3237,7 @@ var VOCAB_DATA = [
         "example": "Set the table — dinner's almost ready.",
         "exampleZh": "摆好桌子——晚饭快好了。",
         "subcategory": "Living Room",
-        "defZh": "❶一种顶部有平面、可满足多种用途的家具。 ❷数据的二维呈现方式。 ❸弦乐器顶部的那部分。"
+        "defZh": "❶一种有平面的家具，通常有腿，即桌子。❷按列和行排列的事实或数字集合，即表格。"
       },
       {
         "en": "chair",
@@ -3248,7 +3248,7 @@ var VOCAB_DATA = [
         "example": "She arranged the chair to face the window.",
         "exampleZh": "她把椅子朝窗户的方向摆好。",
         "subcategory": "Living Room",
-        "defZh": "❶一种用于电刑处决的椅状装置。 ❷一种电动轮椅。 ❸一种过渡性擒拿动作，攻击方将对手举起。"
+        "defZh": "❶一种有座位、靠背和腿的家具，供一人坐，即椅子。"
       },
       {
         "en": "TV",
@@ -3259,7 +3259,7 @@ var VOCAB_DATA = [
         "example": "There's nothing good on TV tonight.",
         "exampleZh": "今晚电视上没什么好看的。",
         "subcategory": "Living Room",
-        "defZh": "❶有时穿着传统上与某类人相关联的衣物的人。 ❷一种人，通常是异性恋男性，强迫性地寻求和……"
+        "defZh": "❶television的缩写；一种有屏幕的电子设备，用于观看节目，即电视。"
       },
       {
         "en": "remote control",
@@ -3292,7 +3292,7 @@ var VOCAB_DATA = [
         "example": "The rug in the living room really ties the room together.",
         "exampleZh": "客厅的地毯把整个房间搭配得很协调。",
         "subcategory": "Living Room",
-        "defZh": "❶覆盖地板部分区域的小地毯。 ❷一种通常较厚的织物，用于保暖（尤其铺在……上）。 ❸一种粗糙厚重的起绒织物，以前用于制衣。"
+        "defZh": "❶一种比地毯小的厚重布料，用于覆盖地板，即小地毯/垫子。"
       },
       {
         "en": "window",
@@ -3303,18 +3303,18 @@ var VOCAB_DATA = [
         "example": "Open the window — it's stuffy in here.",
         "exampleZh": "开窗吧——屋里太闷了。",
         "subcategory": "Living Room",
-        "defZh": "❶一种通常由一块或多块透明玻璃覆盖的开口，用于…… ❷商店中一种通常由玻璃覆盖的开口，让人们可以…… ❸百叶窗或窗扇。"
+        "defZh": "❶墙壁或门上的开口，通常装有玻璃，允许光线和空气进入，即窗户。"
       },
       {
         "en": "fan",
         "phonetic": "/fæn/",
         "pos": "n.",
-        "meaning": "❶风扇❿粉丝、狂热爱好者",
+        "meaning": "❶风扇❷粉丝、狂热爱好者",
         "defEn": "❶A device with blades that turn, used for moving the air to make a room cooler. ❿Someone who likes a particular sport, performer, or activity very much.",
         "example": "She arranged the fan to face the window.",
         "exampleZh": "她把风扇朝窗户的方向摆好。",
         "subcategory": "Living Room",
-        "defZh": "❶一种手持设备，由可折叠的扇面材料组成。 ❷一种用于推动空气流动的电动或机械装置。 ❸扇风的动作；对空气的搅动。"
+        "defZh": "❶一种带有旋转叶片的装置，用于推动空气使房间更凉快，即风扇。❷非常喜欢某项运动、表演者或活动的人，即粉丝/狂热爱好者。"
       },
       {
         "en": "air conditioner",
@@ -3336,7 +3336,7 @@ var VOCAB_DATA = [
         "example": "Turn on the heater — it's freezing in here.",
         "exampleZh": "开暖气——屋里冻死了。",
         "subcategory": "Living Room",
-        "defZh": "❶一种产生并辐射热量的装置。 ❷加热某物的人，例如金属加工中的加热工。 ❸枪。"
+        "defZh": "❶一种产生热量的装置，即取暖器/加热器。"
       },
       {
         "en": "coaster",
@@ -3347,7 +3347,7 @@ var VOCAB_DATA = [
         "example": "She arranged the coaster to face the window.",
         "exampleZh": "她把杯垫朝窗户的方向摆好。",
         "subcategory": "Living Room",
-        "defZh": "❶coast的施事名词：沿海岸行进者。 ❷滑行之物，如雪橇或长雪橇。 ❸在沿海水域航行的商船。"
+        "defZh": "❶一种小型扁平物品，用于保护桌面免受玻璃杯或杯子的热量或潮气，即杯垫。"
       },
       {
         "en": "coffee table",
@@ -3369,7 +3369,7 @@ var VOCAB_DATA = [
         "example": "She arranged the vase to face the window.",
         "exampleZh": "她把花瓶朝窗户的方向摆好。",
         "subcategory": "Living Room",
-        "defZh": "❶一种直立敞口容器，主要用于展示新鲜花卉。 ❷科林斯柱头的主体部分。"
+        "defZh": "❶一种用于插花的容器，通常由玻璃或陶瓷制成，即花瓶。"
       },
       {
         "en": "painting",
@@ -3380,7 +3380,7 @@ var VOCAB_DATA = [
         "example": "The painting is the centerpiece of the living room.",
         "exampleZh": "画是客厅的核心。",
         "subcategory": "Living Room",
-        "defZh": "❶使用颜料创作的插图或艺术品。 ❷将颜料涂抹到表面上的动作。 ❸作为艺术形式的同一活动。"
+        "defZh": "❶一幅画好的图画，即画。❷用颜料绘画的活动，即绘画（活动）。"
       },
       {
         "en": "shirt",
@@ -3391,7 +3391,7 @@ var VOCAB_DATA = [
         "example": "She bought a new shirt for the party.",
         "exampleZh": "她为聚会买了一件新衬衫。",
         "subcategory": "Clothing",
-        "defZh": "❶一种穿在上半身的衣物。 ❷炼铁炉内部的衬里。 ❸穿衫队与脱衫队比赛中穿衫队的成员。"
+        "defZh": "❶一种上半身的衣物，有袖子，通常前面有纽扣，即衬衫。"
       },
       {
         "en": "T-shirt",
@@ -3402,7 +3402,7 @@ var VOCAB_DATA = [
         "example": "You should wear a T-shirt — it's cold outside.",
         "exampleZh": "你应该穿件T恤——外面很冷。",
         "subcategory": "Clothing",
-        "defZh": "❶一种没有纽扣的轻便衬衫。 ❷内衣汗衫。"
+        "defZh": "❶一种简单的上半身衣物，通常由棉制成，短袖无纽扣，即T恤。"
       },
       {
         "en": "pants",
@@ -3413,7 +3413,7 @@ var VOCAB_DATA = [
         "example": "The film was a load [or pile] of pants.",
         "exampleZh": "这部电影是一堆（或一堆）裤子。",
         "subcategory": "Clothing",
-        "defZh": "❶一种从腰部往下覆盖身体的外衣。 ❷一种覆盖生殖器官以及通常覆盖臀部的内衣。 ❸垃圾；毫无价值的东西。"
+        "defZh": "❶从腰部到脚覆盖下半身的外衣，即裤子（美式）；或内裤（英式）。"
       },
       {
         "en": "jeans",
@@ -3435,7 +3435,7 @@ var VOCAB_DATA = [
         "example": "This dress doesn't fit me anymore.",
         "exampleZh": "这件连衣裙我已经穿不下了。",
         "subcategory": "Clothing",
-        "defZh": "❶一种衣物（通常由女性或小女孩穿着），连体式…… ❷服装、衣物。 ❸磨石面上沟槽的系统。"
+        "defZh": "❶n. 一种女性或女孩穿的连体式衣物，即连衣裙。❷v. 给自己或他人穿衣服。"
       },
       {
         "en": "skirt",
@@ -3446,7 +3446,7 @@ var VOCAB_DATA = [
         "example": "The plain was skirted by rows of trees.",
         "exampleZh": "平原周围是一排排的树木。",
         "subcategory": "Clothing",
-        "defZh": "❶一种衣物，裙子。 ❷连衣裙或长袍等在腰部以下垂挂的部分。 ❸衣物任何部分的宽松边缘。"
+        "defZh": "❶一种女性或女孩穿的衣物，从腰部垂挂，没有分开的裤腿，即裙子。"
       },
       {
         "en": "jacket",
@@ -3457,7 +3457,7 @@ var VOCAB_DATA = [
         "example": "He hung his jacket on the back of the chair.",
         "exampleZh": "他把夹克挂在椅背上。",
         "subcategory": "Clothing",
-        "defZh": "❶穿在上半身衬衫或罩衣外面的一件衣服。 ❷一个人套装中的一件。 ❸物体的保护性或绝缘性覆盖层（例如……）。"
+        "defZh": "❶一种覆盖上半身的短外套，即夹克/短外套。"
       },
       {
         "en": "coat",
@@ -3468,7 +3468,7 @@ var VOCAB_DATA = [
         "example": "You should wear a coat — it's cold outside.",
         "exampleZh": "你应该穿件大衣——外面很冷。",
         "subcategory": "Clothing",
-        "defZh": "❶覆盖上半身和手臂的外衣。 ❷一种材料覆盖层，如涂料。 ❸覆盖动物皮肤的毛发或羽毛。"
+        "defZh": "❶一种有长袖的外衣，穿在其他衣服外面以在户外保暖，即大衣/外套。"
       },
       {
         "en": "socks",
@@ -3479,7 +3479,7 @@ var VOCAB_DATA = [
         "example": "You should wear a socks — it's cold outside.",
         "exampleZh": "你应该穿件袜子——外面很冷。",
         "subcategory": "Clothing",
-        "defZh": "❶一种开口，用于插入插头或其他连接部件。 ❷骨骼中某部分嵌入的凹窝。 ❸双向通信链路的一个端点。"
+        "defZh": "❶一种柔软的材料，覆盖脚和踝部，穿在鞋内，即袜子。"
       },
       {
         "en": "shoes",
@@ -3490,7 +3490,7 @@ var VOCAB_DATA = [
         "example": "She bought a new shoes for the party.",
         "exampleZh": "她为聚会买了一件新鞋子。",
         "subcategory": "Clothing",
-        "defZh": "❶脚的保护性覆盖物。 ❷一种金属件，设计安装在马的脚上作为…… ❸一种用于容纳多副扑克牌的装置。"
+        "defZh": "❶一种覆盖脚部的物品，通常由皮革或其他坚固材料制成，走路时穿着，即鞋子。"
       },
       {
         "en": "boots",
@@ -3501,7 +3501,7 @@ var VOCAB_DATA = [
         "example": "You should wear a boots — it's cold outside.",
         "exampleZh": "你应该穿件靴子——外面很冷。",
         "subcategory": "Clothing",
-        "defZh": "❶酒店等服务场所中负责清洁和给靴鞋擦黑的服务员。"
+        "defZh": "❶一种覆盖整个脚和小腿下部的鞋子，即靴子。"
       },
       {
         "en": "hat",
@@ -3512,7 +3512,7 @@ var VOCAB_DATA = [
         "example": "This hat doesn't fit me anymore.",
         "exampleZh": "这件帽子我已经穿不下了。",
         "subcategory": "Clothing",
-        "defZh": "❶一种覆盖头部的物品。 ❷一个人可能承担的特定角色或身份。 ❸彩票中用来抽取号码或名字的任何容器。"
+        "defZh": "❶一种覆盖头部的物品，通常有帽檐遮阳，即帽子。"
       },
       {
         "en": "scarf",
@@ -3523,7 +3523,7 @@ var VOCAB_DATA = [
         "example": "You should wear a scarf — it's cold outside.",
         "exampleZh": "你应该穿件围巾——外面很冷。",
         "subcategory": "Clothing",
-        "defZh": "❶一种通常为针织的长条织物，围在脖子上。 ❷头巾。 ❸颈巾或领巾。"
+        "defZh": "❶一种长条布料，通常由羊毛制成，围在脖子上保暖，即围巾。"
       },
       {
         "en": "gloves",
@@ -3534,7 +3534,7 @@ var VOCAB_DATA = [
         "example": "He hung his gloves on the back of the chair.",
         "exampleZh": "他把手套挂在椅背上。",
         "subcategory": "Clothing",
-        "defZh": "❶一种非连指型的手部穿着物。 ❷棒球手套。 ❸接住击球的能力。"
+        "defZh": "❶一种覆盖手和手指的衣物，用于保暖或保护，即手套。"
       },
       {
         "en": "belt",
@@ -3545,7 +3545,7 @@ var VOCAB_DATA = [
         "example": "This belt doesn't fit me anymore.",
         "exampleZh": "这件皮带我已经穿不下了。",
         "subcategory": "Clothing",
-        "defZh": "❶一种围在腰间用来把衣物固定在身上的带子。 ❷一种用于安全约束的带子，如安全带。 ❸机器中用来帮助传递运动或动力的皮带。"
+        "defZh": "❶一条皮革或其他材料的带子，围在腰间用来固定衣服，即腰带/皮带。"
       },
       {
         "en": "underwear",
@@ -3556,7 +3556,7 @@ var VOCAB_DATA = [
         "example": "This underwear doesn't fit me anymore.",
         "exampleZh": "这件内衣我已经穿不下了。",
         "subcategory": "Clothing",
-        "defZh": "❶贴身穿着、在外衣之下的衣物。 ❷内裤（平角裤、三角裤、女裤等）以及通常还包括胸罩。"
+        "defZh": "❶穿在皮肤上、其他衣服之下的衣服，即内衣/内衣裤。"
       },
       {
         "en": "sweater",
@@ -3567,7 +3567,7 @@ var VOCAB_DATA = [
         "example": "You should wear a sweater — it's cold outside.",
         "exampleZh": "你应该穿件毛衣——外面很冷。",
         "subcategory": "Clothing",
-        "defZh": "❶一种针织的夹克或套头衫。 ❷用于保暖的类似衣物。 ❸出汗的人。"
+        "defZh": "❶一种通常由羊毛制成的衣物，覆盖上半身和手臂，用于保暖，即毛衣。"
       },
       {
         "en": "shorts",
@@ -3578,7 +3578,7 @@ var VOCAB_DATA = [
         "example": "She bought a new shorts for the party.",
         "exampleZh": "她为聚会买了一件新短裤。",
         "subcategory": "Clothing",
-        "defZh": "❶主要在暖天穿着的不低于膝盖的裤子。 ❷内裤下装。 ❸生产过程中的残余物、碎屑、修剪物。"
+        "defZh": "❶在膝盖上方或齐膝盖结束的短裤子，在炎热天气或运动时穿，即短裤。"
       },
       {
         "en": "sandals",
@@ -3589,7 +3589,7 @@ var VOCAB_DATA = [
         "example": "This sandals doesn't fit me anymore.",
         "exampleZh": "这件凉鞋我已经穿不下了。",
         "subcategory": "Clothing",
-        "defZh": "❶巴巴里海岸使用的一种长窄型小船。"
+        "defZh": "❶一种轻便的鞋子，顶部开放，通常用细条皮革或其他材料固定在脚上，即凉鞋。"
       },
       {
         "en": "suit",
@@ -3600,7 +3600,7 @@ var VOCAB_DATA = [
         "example": "This suit doesn't fit me anymore.",
         "exampleZh": "这件西装我已经穿不下了。",
         "subcategory": "Clothing",
-        "defZh": "❶一套搭配穿着的衣物。 ❷（引申）覆盖全身的单件衣物：太空服…… ❸（借代）穿着配套夹克和裤子的人。"
+        "defZh": "❶一套由相同材料制成的衣服，通常包括外套配裤子或裙子，即西装/套装。"
       },
       {
         "en": "rice",
@@ -3611,7 +3611,7 @@ var VOCAB_DATA = [
         "example": "The rice at this restaurant is amazing.",
         "exampleZh": "这家餐厅的米饭太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶谷物类植物。 ❷该植物的一种特定品种。 ❸该植物的种子用作食物。"
+        "defZh": "❶一种特定类型草的小种子，煮熟后作为食物，即大米/米饭/稻子。"
       },
       {
         "en": "bread",
@@ -3622,7 +3622,7 @@ var VOCAB_DATA = [
         "example": "Would you like some bread with your meal?",
         "exampleZh": "你想来点面包配餐吗？",
         "subcategory": "Food & Drink",
-        "defZh": "❶由谷物面团烘焙而成的食品。 ❷面包的任何品种。 ❸钱。"
+        "defZh": "❶由面粉、水和通常酵母制成的食物，混合后烘焙，即面包。"
       },
       {
         "en": "egg",
@@ -3633,7 +3633,7 @@ var VOCAB_DATA = [
         "example": "She added a little egg to make it taste better.",
         "exampleZh": "她加了一点鸡蛋让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶鸟类产的近似球形或椭球形物体。 ❷家禽（尤指母鸡）的蛋及其内容物。 ❸雌性初级细胞，即卵子。"
+        "defZh": "❶雌性鸟类（尤指鸡）产的带硬壳的椭圆形物体，即蛋/鸡蛋。"
       },
       {
         "en": "milk",
@@ -3644,7 +3644,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more milk from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点牛奶。",
         "subcategory": "Food & Drink",
-        "defZh": "❶雌性哺乳动物乳腺产生的白色液体，用于…… ❷从植物源（如……）获得的白色（或近白色）液体。 ❸一份牛奶。"
+        "defZh": "❶牛、山羊和绵羊产生的白色液体，人类用作饮品或制作黄油等，即奶/牛奶。"
       },
       {
         "en": "water",
@@ -3655,7 +3655,7 @@ var VOCAB_DATA = [
         "example": "She added a little water to make it taste better.",
         "exampleZh": "她加了一点水让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种分子式为H₂O的物质，在室温下呈……状态。 ❷上述液体。 ❸水体中的水；一片开阔水域。"
+        "defZh": "❶一种清澈无色无味的液体，以雨的形式从天空落下，存在于河流和湖泊中，即水。"
       },
       {
         "en": "coffee",
@@ -3666,7 +3666,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more coffee from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点咖啡。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种将咖啡豆用热水冲泡而成的饮料。 ❷一份这种饮料。 ❸用于制作咖啡的植物种子。"
+        "defZh": "❶一种深棕色粉末制成的饮料或该粉末本身，即咖啡/咖啡粉。"
       },
       {
         "en": "tea",
@@ -3677,7 +3677,7 @@ var VOCAB_DATA = [
         "example": "She added a little tea to make it taste better.",
         "exampleZh": "她加了一点茶让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶茶树（山茶属的一种植物）；该植物的一种品种。 ❷茶树的干叶或芽；这类叶子的一种。 ❸将这些干叶或芽用热水冲泡而成的饮品。"
+        "defZh": "❶由茶植物的干碎叶制成的饮料或这些叶子，即茶/茶叶。"
       },
       {
         "en": "juice",
@@ -3688,7 +3688,7 @@ var VOCAB_DATA = [
         "example": "The juice at this restaurant is amazing.",
         "exampleZh": "这家餐厅的果汁太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶来自植物（尤其是水果）的液体。 ❷由果汁制成的饮料。 ❸任何类似果汁的液体。"
+        "defZh": "❶来自水果或蔬菜的液体，即汁/果汁。"
       },
       {
         "en": "beer",
@@ -3699,7 +3699,7 @@ var VOCAB_DATA = [
         "example": "The beer at this restaurant is amazing.",
         "exampleZh": "这家餐厅的啤酒太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶由淀粉类原料发酵而成的酒精饮料。 ❷由各种植物的根和其他部分发酵提取的饮品。 ❸将植物材料浸泡在水或其他液体中制成的溶液。"
+        "defZh": "❶由谷物和啤酒花制成的酒精饮料，即啤酒。"
       },
       {
         "en": "wine",
@@ -3710,7 +3710,7 @@ var VOCAB_DATA = [
         "example": "She added a little wine to make it taste better.",
         "exampleZh": "她加了一点葡萄酒让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶由葡萄汁发酵制成的酒精饮料。 ❷由水果或蔬菜汁发酵制成的酒精饮料。 ❸一份葡萄酒。"
+        "defZh": "❶通常由葡萄制成的酒精饮料，即葡萄酒/果酒。"
       },
       {
         "en": "apple",
@@ -3721,7 +3721,7 @@ var VOCAB_DATA = [
         "example": "She added a little apple to make it taste better.",
         "exampleZh": "她加了一点苹果让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶苹果树（Malus domestica）产的常见圆形水果，栽培…… ❷各种被认为是……的树上水果或蔬菜。 ❸知识之树上的果实。"
+        "defZh": "❶一种圆形水果，肉质坚实白色，皮绿色、红色或黄色，即苹果。"
       },
       {
         "en": "banana",
@@ -3732,7 +3732,7 @@ var VOCAB_DATA = [
         "example": "The banana at this restaurant is amazing.",
         "exampleZh": "这家餐厅的香蕉太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种细长弯曲的热带水果，成串生长，有……外皮。 ❷结出成串香蕉的热带树状植物。 ❸一种黄色，类似香蕉皮的颜色。"
+        "defZh": "❶一种长弯曲的水果，黄色外皮和柔软甜白色肉质，即香蕉。"
       },
       {
         "en": "orange",
@@ -3743,7 +3743,7 @@ var VOCAB_DATA = [
         "example": "The orange at this restaurant is amazing.",
         "exampleZh": "这家餐厅的橙子太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶柑橘属的一种常绿树，如甜橙树。 ❷橙树所结的水果。 ❸橙树成熟果实的颜色。"
+        "defZh": "❶一种圆形多汁的柑橘类水果，即橙子。❷红和黄之间的颜色，即橙色。"
       },
       {
         "en": "grape",
@@ -3754,7 +3754,7 @@ var VOCAB_DATA = [
         "example": "She added a little grape to make it taste better.",
         "exampleZh": "她加了一点葡萄让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种小而圆、皮光滑的可食用水果，通常为紫色、红色或…… ❷结出葡萄串的木质藤本植物。 ❸一种深紫红色，即许多葡萄的颜色。"
+        "defZh": "❶一种小圆的紫色或绿色水果，可以食用或酿酒，即葡萄。"
       },
       {
         "en": "tomato",
@@ -3765,7 +3765,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more tomato from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点番茄。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种广泛栽培的植物，番茄（Solanum lycopersicum），果实可食用。 ❷这种植物的鲜味果实。 ❸一种红色色调，即成熟番茄的颜色。"
+        "defZh": "❶一种圆形红色水果，有很多种子，煮熟或生吃作为蔬菜，即西红柿/番茄。"
       },
       {
         "en": "potato",
@@ -3776,7 +3776,7 @@ var VOCAB_DATA = [
         "example": "She added a little potato to make it taste better.",
         "exampleZh": "她加了一点土豆让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种植物的块茎。 ❷袜子或长筒袜上的明显破洞。 ❸拍照质量很差的相机。"
+        "defZh": "❶一种圆形的地下生长的蔬菜，有白色肉质和浅棕色、红色或粉色外皮，即土豆/马铃薯。"
       },
       {
         "en": "carrot",
@@ -3787,7 +3787,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more carrot from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点胡萝卜。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种有营养的蔬菜。 ❷一种类似大多数胡萝卜肉质的橙色调。 ❸任何激励手段。"
+        "defZh": "❶一种长而尖的橙色根茎蔬菜，即胡萝卜。"
       },
       {
         "en": "onion",
@@ -3798,7 +3798,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more onion from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点洋葱。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种单子叶植物（洋葱，Allium cepa）。 ❷这种植物的鳞茎。 ❸该属整体。"
+        "defZh": "❶一种圆形的蔬菜，有棕色外皮和多层结构，气味和味道强烈，即洋葱。"
       },
       {
         "en": "chicken",
@@ -3809,7 +3809,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more chicken from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点鸡肉。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种家禽，鸡（Gallus gallus），尤指幼年的。 ❷这种鸟的肉作为食物。 ❸任何鸟类的幼雏；小鸟。"
+        "defZh": "❶一种农场饲养的鸟类，用于取蛋或取肉，或其肉作为食物，即鸡/鸡肉。❷胆小的人，即胆小鬼。"
       },
       {
         "en": "beef",
@@ -3820,18 +3820,18 @@ var VOCAB_DATA = [
         "example": "She added a little beef to make it taste better.",
         "exampleZh": "她加了一点牛肉让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶来自牛、公牛或其他牛科动物的肉。 ❷怨恨；积怨。"
+        "defZh": "❶牛的肉，作为食物食用，即牛肉。"
       },
       {
         "en": "pork",
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "猪肉",
-        "defEn": "❶The meat from a pig, eaten as food.",
+        "defEn": "❶Meat from a pig.",
         "example": "Would you like some pork with your meal?",
         "exampleZh": "你想来点猪肉配餐吗？",
         "subcategory": "Food & Drink",
-        "defZh": "❶猪的肉；猪肉。 ❷国会议员为特殊利益项目提出或请求的资金。"
+        "defZh": "❶猪肉"
       },
       {
         "en": "fish",
@@ -3842,7 +3842,7 @@ var VOCAB_DATA = [
         "example": "The fish at this restaurant is amazing.",
         "exampleZh": "这家餐厅的鱼太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种生活在水中的冷血脊椎动物。 ❷任何完全生活在水中的动物（或任何脊椎动物）。 ❸用作食物的鱼肉。"
+        "defZh": "❶一种生活在水中的动物，用鳍和尾巴游泳，即鱼。❷用作食物的鱼肉。"
       },
       {
         "en": "shrimp",
@@ -3853,7 +3853,7 @@ var VOCAB_DATA = [
         "example": "The shrimp at this restaurant is amazing.",
         "exampleZh": "这家餐厅的虾太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶许多会游泳的……甲壳类动物中的任何一种。 ❷这类甲壳动物的肉。 ❸一个渺小、微不足道的人。"
+        "defZh": "❶一种非常小的类似对虾但更小的海洋生物，或其肉作为食物，即虾/小海虾。"
       },
       {
         "en": "noodle",
@@ -3864,7 +3864,7 @@ var VOCAB_DATA = [
         "example": "She added a little noodle to make it taste better.",
         "exampleZh": "她加了一点面条让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶面条，通常是复数形式，指一条或一根面食。 ❷判断力差的人；傻瓜。 ❸大脑、脑袋。"
+        "defZh": "❶一种由面粉或米、水及常有鸡蛋制成的长细条状食物，在液体中烹煮，即面条。"
       },
       {
         "en": "soup",
@@ -3875,7 +3875,7 @@ var VOCAB_DATA = [
         "example": "She added a little soup to make it taste better.",
         "exampleZh": "她加了一点汤让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶通常由液体与各种食材混合制成的多种菜肴中的任何一种。 ❷任何类似汤的稠度的混合物或物质。"
+        "defZh": "❶一种通常热的液体食物，由蔬菜、肉或鱼制成，即汤/羹。"
       },
       {
         "en": "salad",
@@ -3886,7 +3886,7 @@ var VOCAB_DATA = [
         "example": "She added a little salad to make it taste better.",
         "exampleZh": "她加了一点沙拉让味道更好。",
         "subcategory": "Food & Drink",
-        "defZh": "❶主要由生的或冷的食材混合制成的食品。 ❷用于沙拉的生蔬菜。"
+        "defZh": "❶生蔬菜的混合物，通常配有调味汁，即沙拉。"
       },
       {
         "en": "cheese",
@@ -3897,7 +3897,7 @@ var VOCAB_DATA = [
         "example": "The cheese at this restaurant is amazing.",
         "exampleZh": "这家餐厅的奶酪太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶由凝乳或发酵牛奶制成的乳制品。 ❷奶酪的任何特定品种。 ❸一块奶酪。"
+        "defZh": "❶由牛奶制成的食物，可以是坚硬的或柔软的，即奶酪/干酪。"
       },
       {
         "en": "butter",
@@ -3908,7 +3908,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more butter from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点黄油。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种柔软的脂肪食品，由搅拌牛奶的奶油制成。 ❷由其他食物或油脂制成的各种食品。 ❸任何特定的柔软物质。"
+        "defZh": "❶一种淡黄色的固体食物，由奶油制成，涂在面包上或在烹饪中使用，即黄油。"
       },
       {
         "en": "yogurt",
@@ -3919,7 +3919,7 @@ var VOCAB_DATA = [
         "example": "The yogurt at this restaurant is amazing.",
         "exampleZh": "这家餐厅的酸奶太棒了。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种以牛奶为基础、通过细菌辅助凝结过程变稠的产品。 ❷基于其他物质的类似产品。"
+        "defZh": "❶一种微酸的浓稠液体，由加入细菌的牛奶制成，即酸奶/酸乳。"
       },
       {
         "en": "chocolate",
@@ -3930,7 +3930,7 @@ var VOCAB_DATA = [
         "example": "We need to buy more chocolate from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点巧克力。",
         "subcategory": "Food & Drink",
-        "defZh": "❶由研磨烘焙可可豆制成的食品。 ❷将此食品溶解在煮沸的牛奶或水中制成的饮料。 ❸由巧克力制成的一小块糖果。"
+        "defZh": "❶一种甜的通常是棕色的食物，由可可种子制成，即巧克力。"
       },
       {
         "en": "car",
@@ -3941,18 +3941,18 @@ var VOCAB_DATA = [
         "example": "I'll drive — my car's right outside.",
         "exampleZh": "我来开——我的车就在外面。",
         "subcategory": "Transportation",
-        "defZh": "❶一种能独立移动的有轮车辆。 ❷由马或其他动物牵引的有轮车辆；战车。 ❸铁路列车中的无动力单元车厢。"
+        "defZh": "❶一种有引擎、四个轮子和少量座位的道路车辆，即汽车。"
       },
       {
         "en": "bus",
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "公共汽车、巴士",
-        "defEn": "❶A large road vehicle that carries passengers, especially one that travels along a fixed route.",
+        "defEn": "❶A large motor vehicle that carries passengers along roads.",
         "example": "The bus is the fastest way to get there.",
         "exampleZh": "公交车是去那里最快的方式。",
         "subcategory": "Transportation",
-        "defZh": "❶一种沿公路运送大量人员的机动车辆。 ❷作为公共连接点的电导体或接口。 ❸救护车。"
+        "defZh": "❶公共汽车、巴士（沿固定路线行驶的大客车）"
       },
       {
         "en": "taxi",
@@ -3974,7 +3974,7 @@ var VOCAB_DATA = [
         "example": "The train to NYC leaves at 8:15.",
         "exampleZh": "去纽约的火车8:15出发。",
         "subcategory": "Transportation",
-        "defZh": "❶延长的部分。 ❷人或事物的连续序列。"
+        "defZh": "❶一种沿金属轨道行驶的长型车辆，运送乘客或货物，即火车。"
       },
       {
         "en": "subway",
@@ -3996,7 +3996,7 @@ var VOCAB_DATA = [
         "example": "I ride my bicycle to work every morning.",
         "exampleZh": "我每天早上骑自行车上班。",
         "subcategory": "Transportation",
-        "defZh": "❶一种有两个轮子的车辆。 ❷用于在缆索上拖运木材的移动滑轮。 ❸低牌扑克中最好的手牌。"
+        "defZh": "❶一种有两个轮子、一个座位和脚踏板的车辆，用脚踩踏板使其移动，即自行车。"
       },
       {
         "en": "motorcycle",
@@ -4018,7 +4018,7 @@ var VOCAB_DATA = [
         "example": "The truck is the fastest way to get there.",
         "exampleZh": "卡车是去那里最快的方式。",
         "subcategory": "Transportation",
-        "defZh": "❶一种小轮或滚轮，特指炮车车轮。 ❷旗杆顶部的球。 ❸在木质桅杆上……"
+        "defZh": "❶一种用于运输货物的大型道路车辆（美式英语），即卡车。"
       },
       {
         "en": "plane",
@@ -4029,7 +4029,7 @@ var VOCAB_DATA = [
         "example": "The plane is the fastest way to get there.",
         "exampleZh": "飞机是去那里最快的方式。",
         "subcategory": "Transportation",
-        "defZh": "❶一个水平或平坦的表面。 ❷向所有方向无限延伸的平面。 ❸一种存在或发展的层次（如星界）。"
+        "defZh": "❶一种有翅膀和引擎的交通工具，能在空中飞行，即飞机。"
       },
       {
         "en": "boat",
@@ -4040,14 +4040,14 @@ var VOCAB_DATA = [
         "example": "We took a boat across the lake.",
         "exampleZh": "我们坐船穿过了湖。",
         "subcategory": "Transportation",
-        "defZh": "❶一种用于运输货物的水上交通工具。 ❷扑克中的满堂红（三加二）。 ❸一种在形状上有些像船的车辆、器具或容器。"
+        "defZh": "❶一种用于在水上旅行的小型交通工具，即船。"
       },
       {
         "en": "ship",
         "phonetic": "/ʃɪp/",
         "pos": "n./v.",
         "meaning": "❶n. 船❿v. 运送",
-        "defEn": "❶n. A large boat for carrying people or goods by sea. ❿v. To send something, usually by sea or post.",
+        "defEn": "❶n. A large boat for transporting people or goods by sea. ❷v. To send something, especially goods, to a place. [原defEn❷",
         "example": "The ship sails tomorrow at dawn.",
         "exampleZh": "船明天黎明出发。",
         "subcategory": "Transportation",
@@ -4084,7 +4084,7 @@ var VOCAB_DATA = [
         "example": "The steering wheel was vibrating — I think the tires need balancing.",
         "exampleZh": "方向盘在抖——我觉得轮胎需要平衡。",
         "subcategory": "Transportation",
-        "defZh": "❶一种能绕自身轴旋转的圆形装置，❷刑轮，一种古老的刑具。❸拥有很大权力或影响力的人；大人物。"
+        "defZh": "❶一种旋转的圆形物体，用于使车辆移动，即轮子。❷汽车的方向盘。"
       },
       {
         "en": "tire",
@@ -4095,7 +4095,7 @@ var VOCAB_DATA = [
         "example": "I got a flat tire on the highway this morning.",
         "exampleZh": "今天早上我在高速上爆胎了。",
         "subcategory": "Transportation",
-        "defZh": "❶变得困倦或疲惫。❷使某人困倦或疲惫。❸变得厌烦或不耐烦（对……）。"
+        "defZh": "❶一种厚实的橡胶环，套在汽车、自行车等车轮的边缘上，即轮胎。"
       },
       {
         "en": "engine",
@@ -4106,7 +4106,7 @@ var VOCAB_DATA = [
         "example": "The engine's making a weird noise — you should get it checked.",
         "exampleZh": "发动机发出怪声——你应该去检查一下。",
         "subcategory": "Transportation",
-        "defZh": "❶战争中使用的大型构筑物，❷工具；器具或用具。❸一种复杂的机械装置，将能量转换为有用的运动……"
+        "defZh": "❶车辆中产生动力使其移动的部分，即发动机/引擎。"
       },
       {
         "en": "brake",
@@ -4117,7 +4117,7 @@ var VOCAB_DATA = [
         "example": "Hit the brakes! There's a dog in the road!",
         "exampleZh": "踩刹车！路上有只狗！",
         "subcategory": "Transportation",
-        "defZh": "❶一种蕨类植物；欧洲蕨。"
+        "defZh": "❶一种使车辆减速或停止的装置，即刹车。"
       },
       {
         "en": "steering wheel",
@@ -4161,7 +4161,7 @@ var VOCAB_DATA = [
         "example": "There are two steers in the third pen.",
         "exampleZh": "第三支钢笔里有两个舵。",
         "subcategory": "Office & School",
-        "defZh": "❶用于圈养家畜的围栏（封闭区域），❷牢房。❸ bullpen。"
+        "defZh": "❶一种细长的物体，用墨水书写或绘画，即笔。"
       },
       {
         "en": "pencil",
@@ -4172,7 +4172,7 @@ var VOCAB_DATA = [
         "example": "Can I borrow your pencil for a moment?",
         "exampleZh": "能借用一下你的铅笔吗？",
         "subcategory": "Office & School",
-        "defZh": "❶画笔。❷一种带有石墨（通常被称为铅）芯的书写工具……❸光线的集合或聚集，"
+        "defZh": "❶一种细长的物体，用于书写或绘画，中间有细石墨芯，即铅笔。"
       },
       {
         "en": "eraser",
@@ -4183,7 +4183,7 @@ var VOCAB_DATA = [
         "example": "She left her eraser on the desk.",
         "exampleZh": "她把橡皮落在桌上了。",
         "subcategory": "Office & School",
-        "defZh": "❶擦除者。❷用于擦除或去除用笔书写或绘制内容的东西……❸用于擦除粉笔在黑板上书写内容的东西，"
+        "defZh": "❶一小块橡胶，用于从纸上擦除铅笔痕迹，即橡皮。"
       },
       {
         "en": "notebook",
@@ -4205,7 +4205,7 @@ var VOCAB_DATA = [
         "example": "The book is essential for this assignment.",
         "exampleZh": "书对这项作业来说是必需的。",
         "subcategory": "Office & School",
-        "defZh": "❶一组纸张在一侧边缘装订在一起形成的集合，❷适合出版的长篇作品，❸长篇作品的主要分区。"
+        "defZh": "❶一种书面文本，可以以印刷或电子形式出版，即书/书本。"
       },
       {
         "en": "computer",
@@ -4216,7 +4216,7 @@ var VOCAB_DATA = [
         "example": "She left her computer on the desk.",
         "exampleZh": "她把电脑落在桌上了。",
         "subcategory": "Office & School",
-        "defZh": "❶被雇用来进行计算的人；计算者。❷（限定含义）男性计算员，❸一种可编程的电子设备，执行数学计算……"
+        "defZh": "❶一种电子机器，用于存储、组织和查找文字、数字和图片等，即电脑/计算机。"
       },
       {
         "en": "keyboard",
@@ -4227,7 +4227,7 @@ var VOCAB_DATA = [
         "example": "The keyboard is essential for this assignment.",
         "exampleZh": "键盘对这项作业来说是必需的。",
         "subcategory": "Office & School",
-        "defZh": "❶（等）一组用于操作打字机、计算机等的按键。❷许多乐器（包括钢琴）的一个部件，❸一种带有音乐键盘按键的装置，"
+        "defZh": "❶计算机或打字机上的一组按键，按这些键使其运作，即键盘。"
       },
       {
         "en": "mouse",
@@ -4238,7 +4238,7 @@ var VOCAB_DATA = [
         "example": "He always carries a mouse in his bag.",
         "exampleZh": "他总是随身带着鼠标。",
         "subcategory": "Office & School",
-        "defZh": "❶鼠属的任何小型啮齿动物。❷许多类似于小鼠的小型啮齿动物和有袋动物物种中的一员……❸安静或害羞的人。"
+        "defZh": "❶一种小型设备，在表面移动以控制计算机屏幕上光标的移动，即鼠标。❷一种有灰色或棕色毛、长尾巴和尖耳朵的小动物，即老鼠。"
       },
       {
         "en": "monitor",
@@ -4249,7 +4249,7 @@ var VOCAB_DATA = [
         "example": "The camp monitors look after the children during the night, when the teachers are asleep.",
         "exampleZh": "当老师们睡觉时，营地监视器会在夜间照顾孩子们。",
         "subcategory": "Office & School",
-        "defZh": "❶监视某事物的人；❷一种检测并通报某种事物存在的设备，❸一种类似于电视机、用于提供图形显示的设备……"
+        "defZh": "❶n. 一种显示计算机信息的屏幕，即显示器。❷v. 在一段时间内观察和检查某事物，即监控/监视。"
       },
       {
         "en": "printer",
@@ -4260,7 +4260,7 @@ var VOCAB_DATA = [
         "example": "Can I borrow your printer for a moment?",
         "exampleZh": "能借用一下你的打印机吗？",
         "subcategory": "Office & School",
-        "defZh": "❶制作印刷品的人。❷印刷机的操作员，或印刷企业的所有者。❸一种通常连接到计算机的设备，用于打印文本或图像……"
+        "defZh": "❶一种连接到计算机并在纸上打印信息的机器，即打印机。"
       },
       {
         "en": "stapler",
@@ -4282,7 +4282,7 @@ var VOCAB_DATA = [
         "example": "He always carries a paper in his bag.",
         "exampleZh": "他总是随身带着纸。",
         "subcategory": "Office & School",
-        "defZh": "❶一种用于书写或印刷的片状材料（或作为非纺织……❷报纸或类似用途的东西（如简报或列表……❸墙纸。"
+        "defZh": "❶由碎木或布料制成的薄平材料，用于书写、印刷或绘画，即纸。❷关于特定主题的文章，即论文。❸报纸。"
       },
       {
         "en": "folder",
@@ -4293,7 +4293,7 @@ var VOCAB_DATA = [
         "example": "She left her folder on the desk.",
         "exampleZh": "她把文件夹落在桌上了。",
         "subcategory": "Office & School",
-        "defZh": "❶用来存放纸张的整理工具，❷计算机文件系统中的虚拟容器，❸折叠物品的机器或人。"
+        "defZh": "❶一种从中间折叠的塑料或硬纸板，用于保存散页纸张，即文件夹。"
       },
       {
         "en": "desk",
@@ -4304,7 +4304,7 @@ var VOCAB_DATA = [
         "example": "The desk is essential for this assignment.",
         "exampleZh": "书桌对这项作业来说是必需的。",
         "subcategory": "Office & School",
-        "defZh": "❶一种桌子、框架或箱体，在过去几个世纪通常带有倾斜的……❷一种用于支撑礼仪书籍的阅读桌或读经台……❸报纸中负责报道特定地理区域的部门……"
+        "defZh": "❶一种可以在上面工作的桌子，通常有抽屉，即书桌/办公桌。"
       },
       {
         "en": "calculator",
@@ -4315,7 +4315,7 @@ var VOCAB_DATA = [
         "example": "He always carries a calculator in his bag.",
         "exampleZh": "他总是随身带着计算器。",
         "subcategory": "Office & School",
-        "defZh": "❶一种执行数学计算的机械或电子设备……❷进行数学计算的人❸暗中算计的人。"
+        "defZh": "❶一种用于进行数学计算的小型电子设备，即计算器。"
       },
       {
         "en": "ruler",
@@ -4337,7 +4337,7 @@ var VOCAB_DATA = [
         "example": "Can you pass me the scissors? I need to cut this.",
         "exampleZh": "能把剪刀递给我吗？我要剪这个。",
         "subcategory": "Office & School",
-        "defZh": "❶（通常作复数）一种用于剪裁薄材料的工具，❷由两名选手执行的攻击动作；❸一种一脚明显在另一脚前方的滑冰方法。"
+        "defZh": "❶一种有两片锋利刀片、中间连接的工具，用于剪裁纸张、布料等，即剪刀。"
       },
       {
         "en": "tape",
@@ -4348,7 +4348,7 @@ var VOCAB_DATA = [
         "example": "She left her tape on the desk.",
         "exampleZh": "她把胶带落在桌上了。",
         "subcategory": "Office & School",
-        "defZh": "❶卷状的柔性材料，一面或两面有粘性表面……❷薄而平的纸，❸终点带，横跨跑道拉起来标记比赛终点的带子。"
+        "defZh": "❶一条窄长的粘性材料，用于粘贴物品，即胶带。❷一条窄长的磁性材料，用于录制声音或视频，即磁带。❸在磁带上录制，即录音/录像。"
       },
       {
         "en": "highlighter",
@@ -4359,7 +4359,7 @@ var VOCAB_DATA = [
         "example": "The highlighter is essential for this assignment.",
         "exampleZh": "荧光笔对这项作业来说是必需的。",
         "subcategory": "Office & School",
-        "defZh": "❶用于突出标记文本的荧光笔。❷一种反射光线的化妆品，❸使某事物突出或强调的东西。"
+        "defZh": "❶一种颜色鲜艳的笔，用于标记文本中的重要文字，即荧光笔。"
       },
       {
         "en": "head",
@@ -4370,7 +4370,7 @@ var VOCAB_DATA = [
         "example": "He injured his head during the game.",
         "exampleZh": "他在比赛中伤到了头。",
         "subcategory": "Body Parts",
-        "defZh": "❶动物或人体中包含大脑的部位，❷最顶部、最前面或最领先的部分。❸（社会含义，借代）领导者或专家。"
+        "defZh": "❶身体顶部包含大脑、眼睛、耳朵和嘴巴的部分，即头/头部。❷组织或团体的负责人，即首领/负责人。"
       },
       {
         "en": "hair",
@@ -4381,7 +4381,7 @@ var VOCAB_DATA = [
         "example": "She felt a sharp pain in her hair.",
         "exampleZh": "她感到头发一阵剧痛。",
         "subcategory": "Body Parts",
-        "defZh": "❶一种从毛囊生长出的有颜色的角蛋白丝状物……❷从人类皮肤生长出的此类丝状物的集合或整体……❸昆虫角质外骨骼上长出的细小突起，"
+        "defZh": "❶生长在头部和其他身体部位的细线状丝，即头发。"
       },
       {
         "en": "face",
@@ -4392,7 +4392,7 @@ var VOCAB_DATA = [
         "example": "She felt a sharp pain in her face.",
         "exampleZh": "她感到脸一阵剧痛。",
         "subcategory": "Body Parts",
-        "defZh": "❶人类或其他动物头部的前部，❷一个人的面部表情。❸（在诸如'做鬼脸'等表达中）扭曲的面部表情；"
+        "defZh": "❶n. 头部的前部，有眼睛、鼻子和嘴巴，即脸。❷v. 处理或接受困难的情况，即面对。"
       },
       {
         "en": "eye",
@@ -4403,7 +4403,7 @@ var VOCAB_DATA = [
         "example": "Put your eye on the table, please.",
         "exampleZh": "请把眼睛放在桌子上。",
         "subcategory": "Body Parts",
-        "defZh": "❶动物通过它来看见（通过光线感知周围环境）的器官。❷视觉感官。❸眼睛的虹膜，具有某种特定颜色。"
+        "defZh": "❶身体中用于看东西的两个器官之一，即眼睛。"
       },
       {
         "en": "nose",
@@ -4414,7 +4414,7 @@ var VOCAB_DATA = [
         "example": "She felt a sharp pain in her nose.",
         "exampleZh": "她感到鼻子一阵剧痛。",
         "subcategory": "Body Parts",
-        "defZh": "❶面部上容纳鼻孔的凸起部位，❷动物的口鼻部。❸物体的尖端。"
+        "defZh": "❶嘴巴上方脸部的部分，用于呼吸和嗅觉，即鼻子。"
       },
       {
         "en": "mouth",
@@ -4425,7 +4425,7 @@ var VOCAB_DATA = [
         "example": "She felt a sharp pain in her mouth.",
         "exampleZh": "她感到嘴巴一阵剧痛。",
         "subcategory": "Body Parts",
-        "defZh": "❶生物通过其摄取食物的开口。❷河流中水流入大海或其他大型水域的出口……❸出口、孔洞或开口。"
+        "defZh": "❶脸上的开口，用于进食和说话，即嘴巴。"
       },
       {
         "en": "ear",
@@ -4436,7 +4436,7 @@ var VOCAB_DATA = [
         "example": "He injured his ear during the game.",
         "exampleZh": "他在比赛中伤到了耳朵。",
         "subcategory": "Body Parts",
-        "defZh": "❶听觉器官，❷听觉器官的外部部分，即耳廓。❸警察的线人。"
+        "defZh": "❶头部两侧的两个器官之一，用于听觉，即耳朵。"
       },
       {
         "en": "tooth",
@@ -4447,7 +4447,7 @@ var VOCAB_DATA = [
         "example": "He injured his tooth during the game.",
         "exampleZh": "他在比赛中伤到了牙齿。",
         "subcategory": "Body Parts",
-        "defZh": "❶许多脊椎动物口腔中存在的坚硬钙化结构……❷锯片或类似工具上的尖锐凸起。❸齿轮边缘上与其他齿轮的类似凸起相啮合的凸起……"
+        "defZh": "❶嘴里的硬白色物体之一，用于咬和咀嚼，即牙齿。"
       },
       {
         "en": "tongue",
@@ -4458,7 +4458,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her tongue carefully.",
         "exampleZh": "医生仔细检查了她的舌头。",
         "subcategory": "Body Parts",
-        "defZh": "❶口腔中用于移动食物的灵活肌肉器官……❷从用作食物的动物身上取下的此器官（尤指牛）。−❸（借代）一种语言。"
+        "defZh": "❶嘴里的柔软部分，用于品尝、说话和吞咽，即舌头。❷一种语言。"
       },
       {
         "en": "neck",
@@ -4469,18 +4469,18 @@ var VOCAB_DATA = [
         "example": "The doctor examined her neck carefully.",
         "exampleZh": "医生仔细检查了她的脖子。",
         "subcategory": "Body Parts",
-        "defZh": "❶人体中连接头部和躯干的部位……❷在其他解剖学语境中相应的部位。❸衬衫、连衣裙等贴合人颈部的部分。"
+        "defZh": "❶连接头部和肩膀的身体部分，即脖子。❷衣物中围绕颈部的部分，即领口。"
       },
       {
         "en": "shoulder",
         "phonetic": "/—/",
         "pos": "n./v.",
-        "meaning": "❶n. 肩膀❷n. 路肩❸v. 承担、肩负",
-        "defEn": "❶n. One of the two parts of your body at each side of your neck, where your arm connects. ❷v. To accept or take responsibility for something.",
+        "meaning": "❶n. 肩膀 ❷n. 路肩 ❸v. 承担、肩负",
+        "defEn": "❶n. The part of the body between the neck and the upper arm. ❷n. The edge of a road. ❸v. To accept responsibility for something.",
         "example": "He put his hand on her shoulder to comfort her.",
         "exampleZh": "他把手放在她肩上安慰她。",
         "subcategory": "Body Parts",
-        "defZh": "❶动词：用肩膀推（人或物）。❷动词：把（某物）放在肩上。❸名词：动物身体上颈部底部与前肢之间的部位……"
+        "defZh": "❶n.肩膀 ❷n.路肩 ❸v.承担、肩负"
       },
       {
         "en": "arm",
@@ -4491,7 +4491,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her arm carefully.",
         "exampleZh": "医生仔细检查了她的手臂。",
         "subcategory": "Body Parts",
-        "defZh": "❶人类上肢的一部分，❷上肢的延伸部分，❸无脊椎动物的肢体，或运动或抓握器官。"
+        "defZh": "❶肩膀和手之间的身体部分，即手臂。❷武器（总是复数arms）。"
       },
       {
         "en": "elbow",
@@ -4502,7 +4502,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her elbow carefully.",
         "exampleZh": "医生仔细检查了她的肘。",
         "subcategory": "Body Parts",
-        "defZh": "❶上臂和前臂之间的关节。❷（引申）任何类似于肘部的转弯或弯曲，❸侦探。"
+        "defZh": "❶手臂弯曲的关节，在手臂中间，即肘/肘部。"
       },
       {
         "en": "hand",
@@ -4513,7 +4513,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her hand carefully.",
         "exampleZh": "医生仔细检查了她的手。",
         "subcategory": "Body Parts",
-        "defZh": "❶人体前臂或手腕以下的部分，❷类似手的形状之物，❸在长度计量中："
+        "defZh": "❶手臂末端的部分，用于握持和移动物品，即手。"
       },
       {
         "en": "finger",
@@ -4524,7 +4524,7 @@ var VOCAB_DATA = [
         "example": "She felt a sharp pain in her finger.",
         "exampleZh": "她感到手指一阵剧痛。",
         "subcategory": "Body Parts",
-        "defZh": "❶人类手上的细长关节末端，不包括拇指。❷其他动物中类似或外观类似的末端，尤其是：❸形状类似于人类手指的东西，尤其是："
+        "defZh": "❶手末端的五个细长部分之一，即手指。"
       },
       {
         "en": "chest",
@@ -4535,7 +4535,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her chest carefully.",
         "exampleZh": "医生仔细检查了她的胸部。",
         "subcategory": "Body Parts",
-        "defZh": "❶一种箱子，现在通常指带有安全凸盖的大坚固箱。❷棺材。❸存放公共资金的地方；金库。"
+        "defZh": "❶身体的上前部分，在颈部和腹部之间，即胸部。❷一种用于存放物品的大型坚固箱子，即箱子/柜子。"
       },
       {
         "en": "stomach",
@@ -4546,7 +4546,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her stomach carefully.",
         "exampleZh": "医生仔细检查了她的胃/肚子。",
         "subcategory": "Body Parts",
-        "defZh": "❶动物体内在消化过程中储存食物的器官。❷腹部。❸骄傲、傲慢。"
+        "defZh": "❶体内的器官，食物进入后被消化，即胃。❷胸部以下身体的部分，即肚子/腹部。"
       },
       {
         "en": "back",
@@ -4557,7 +4557,7 @@ var VOCAB_DATA = [
         "example": "Put your back on the table, please.",
         "exampleZh": "请把背放在桌子上。",
         "subcategory": "Body Parts",
-        "defZh": "❶身体的背面，❷离正面最远的那一面。❸被认为是类似动物背部的自然物体的上部……"
+        "defZh": "❶n. 与胸部相对的身体部分，即背/背部。❷n. 物的后部，即后面。❸v. 向后移动或支持某人，即返回/支持。"
       },
       {
         "en": "leg",
@@ -4568,7 +4568,7 @@ var VOCAB_DATA = [
         "example": "Put your leg on the table, please.",
         "exampleZh": "请把腿放在桌子上。",
         "subcategory": "Body Parts",
-        "defZh": "❶动物用于支撑或运动的肢体或附属物。❷在人体中，从腹股沟延伸到踝关节的下肢。❸人体下肢从膝盖延伸的部分……"
+        "defZh": "❶身体中用于行走和站立的长部分之一，即腿。"
       },
       {
         "en": "knee",
@@ -4579,7 +4579,7 @@ var VOCAB_DATA = [
         "example": "The doctor examined her knee carefully.",
         "exampleZh": "医生仔细检查了她的膝盖。",
         "subcategory": "Body Parts",
-        "defZh": "❶在人体中，中间部分连接大腿和小腿的关节或关节区域……❷在马及相关动物中，❸覆盖膝盖的衣物部分。"
+        "defZh": "❶腿中间弯曲的关节，即膝盖。"
       },
       {
         "en": "foot",
@@ -4590,7 +4590,7 @@ var VOCAB_DATA = [
         "example": "Put your foot on the table, please.",
         "exampleZh": "请把脚放在桌子上。",
         "subcategory": "Body Parts",
-        "defZh": "❶许多动物体内用于运动的生物结构……❷特指，❸（常作定语使用）步行旅行。"
+        "defZh": "❶腿末端的部分，站立时用，即脚。❷等于12英寸的计量单位，即英尺。"
       },
       {
         "en": "toe",
@@ -4601,18 +4601,18 @@ var VOCAB_DATA = [
         "example": "She felt a sharp pain in her toe.",
         "exampleZh": "她感到脚趾一阵剧痛。",
         "subcategory": "Body Parts",
-        "defZh": "❶脚末端的五个趾头中的每一个。❷动物中对应的部位。❸鞋或袜子覆盖脚趾的部分。"
+        "defZh": "❶脚末端的五个小部分之一，即脚趾。"
       },
       {
         "en": "skin",
         "phonetic": "/—/",
         "pos": "n./v.",
         "meaning": "❶皮肤❷外皮、外壳❸剥皮（动词）",
-        "defEn": "❶n. The outer covering of your body. ❷n. The outer layer of some fruits and animals. ❸v. To remove the skin from an animal or fruit.",
+        "defEn": "❶n. The natural outer layer that covers a person, animal, fruit, or seed. ❷v. To remove the skin from something.",
         "example": "The doctor examined her skin carefully.",
         "exampleZh": "医生仔细检查了她的皮肤。",
         "subcategory": "Body Parts",
-        "defZh": "❶动词：损伤皮肤。❷动词：去除动物或人的皮肤/毛皮。❸名词：剃光头的人。"
+        "defZh": "❶n.皮肤、表皮 ❷n.外皮、外壳 ❸v.剥皮、去皮"
       },
       {
         "en": "bone",
@@ -4623,7 +4623,7 @@ var VOCAB_DATA = [
         "example": "Put your bone on the table, please.",
         "exampleZh": "请把骨头放在桌子上。",
         "subcategory": "Body Parts",
-        "defZh": "❶一种主要由磷酸钙和胶原蛋白组成的复合材料……❷内骨骼的任何组成部分，由骨构成。❸鱼骨；鱼刺。"
+        "defZh": "❶构成体内框架的硬部分之一，即骨头。"
       },
       {
         "en": "heart",
@@ -4634,7 +4634,7 @@ var VOCAB_DATA = [
         "example": "He injured his heart during the game.",
         "exampleZh": "他在比赛中伤到了心脏。",
         "subcategory": "Body Parts",
-        "defZh": "❶一种通过身体泵送血液的肌肉器官，❷情感、善良、道德努力或精神总体而言。❸感情或感觉的所在之处，"
+        "defZh": "❶体内泵送血液的器官，即心脏。❷感情和情感，即内心/感情。"
       },
       {
         "en": "sun",
@@ -4645,29 +4645,29 @@ var VOCAB_DATA = [
         "example": "The sun is one of the most amazing things in nature.",
         "exampleZh": "太阳是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶一颗恒星，尤其被视为任何单一太阳系的中心。❷从太阳接收到的光和温暖。❸在亮度或光辉方面类似太阳的事物。"
+        "defZh": "❶给地球提供热量和光的恒星，即太阳。"
       },
       {
         "en": "moon",
         "phonetic": "/muːn/",
         "pos": "n.",
-        "meaning": "❶月亮❿卫星",
+        "meaning": "❶月亮❷卫星",
         "defEn": "❶The round object that shines in the sky at night. ❿A natural satellite of a planet.",
         "example": "After the rain, the moon appeared.",
         "exampleZh": "雨后，月亮出现了。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶（由月球引申）行星的任何天然卫星。❷一个月，尤指农历月。❸堡垒中新月形的外围工事。"
+        "defZh": "❶夜空中发光的圆形物体，即月亮。❷行星的天然卫星，即卫星。"
       },
       {
         "en": "star",
         "phonetic": "/stɑːr/",
         "pos": "n.",
-        "meaning": "❶星星❿明星",
+        "meaning": "❶星星❷明星",
         "defEn": "❶A very large ball of burning gas in space, that you can see as a point of light in the sky at night. ❿A famous and successful performer, especially in sport or entertainment.",
         "example": "We hiked through the star all afternoon.",
         "exampleZh": "我们整个下午都在星星中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶在无云夜空中出现的任何小亮点……❷发光的天体，❸一种具有规则的凹多边形，"
+        "defZh": "❶空间中非常大的燃烧气体球，在夜空中可见为亮点，即星星。❷一位著名且成功的表演者，即明星。"
       },
       {
         "en": "sky",
@@ -4678,18 +4678,18 @@ var VOCAB_DATA = [
         "example": "The sky is one of the most amazing things in nature.",
         "exampleZh": "天空是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶一种鲜明的浅蓝色，像晴天天空的颜色。"
+        "defZh": "❶地球上方的空间，你可以看到云、太阳、月亮和星星，即天空。"
       },
       {
         "en": "cloud",
         "phonetic": "/klaʊd/",
         "pos": "n.",
-        "meaning": "云",
+        "meaning": "❶云❷一团（尘土、烟雾等）",
         "defEn": "❶A white or grey mass of floating water drops in the sky.",
         "example": "We hiked through the cloud all afternoon.",
         "exampleZh": "我们整个下午都在云中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶岩石；巨石；山丘。❷空气中悬浮的可见水滴团。❸任何类似于此类水滴团的灰尘、蒸汽或烟雾团。"
+        "defZh": "❶天空中漂浮的白色或灰色水滴团，即云。"
       },
       {
         "en": "rain",
@@ -4700,7 +4700,7 @@ var VOCAB_DATA = [
         "example": "The rain is one of the most amazing things in nature.",
         "exampleZh": "雨是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶从云中落下的凝结水。❷任何移动或落下的物质，❸粒子或较大物质移动或落下的实例……"
+        "defZh": "❶从云中落下的水滴，即雨/雨水。"
       },
       {
         "en": "snow",
@@ -4711,7 +4711,7 @@ var VOCAB_DATA = [
         "example": "After the rain, the snow appeared.",
         "exampleZh": "雨后，雪出现了。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶以降水形式落下的冻结结晶态水。❷任何气体或液体的类似冻结形态。❸一场降雪；一层冻结结晶水的覆盖。"
+        "defZh": "❶寒冷时从天空落下的柔软白色小冰片，即雪/积雪。"
       },
       {
         "en": "wind",
@@ -4722,7 +4722,7 @@ var VOCAB_DATA = [
         "example": "We hiked through the wind all afternoon.",
         "exampleZh": "我们整个下午都在风中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶大气空气的实际或感知运动，通常由对流……引起❷通过任何力量或动作人为使之运动的空气。❸轻松呼吸的能力。"
+        "defZh": "❶大约水平移动的气流，尤指足够强可以被感觉到的，即风/气流。"
       },
       {
         "en": "tree",
@@ -4733,7 +4733,7 @@ var VOCAB_DATA = [
         "example": "The tree looked beautiful in the morning light.",
         "exampleZh": "晨光中的树看起来很美。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶一种多年生木本植物，❷任何类似于上述但未被分类为……的植物❸由树干制成并具有多个挂钩或储物……的物件"
+        "defZh": "❶一种有木质树干和从上部生长的枝条的高大植物，即树/乔木。"
       },
       {
         "en": "flower",
@@ -4744,7 +4744,7 @@ var VOCAB_DATA = [
         "example": "We hiked through the flower all afternoon.",
         "exampleZh": "我们整个下午都在花中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶与被子植物相关的色彩鲜艳、显眼的结构，常……❷被子植物（开花植物）中的繁殖结构，❸一种开花的植物，"
+        "defZh": "❶植物中通常颜色鲜艳且有香味的部分，即花。❷产生花的植物类型，即开花植物。"
       },
       {
         "en": "grass",
@@ -4755,18 +4755,18 @@ var VOCAB_DATA = [
         "example": "We hiked through the grass all afternoon.",
         "exampleZh": "我们整个下午都在草中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶禾本科的任何植物，❷各种不属于禾本科但外观类似禾草的植物。❸草坪。"
+        "defZh": "❶一种自然生长在田野和其他表面的低矮绿色植物，即草。"
       },
       {
         "en": "leaf",
         "phonetic": "/liːf/",
         "pos": "n.",
-        "meaning": "❶叶子❿页（leaf of a book）",
+        "meaning": "❶叶子❷页（书的页）",
         "defEn": "❶One of the flat green parts of a plant that are joined to its stem or branches. ❿A page of a book.",
         "example": "The leaf is one of the most amazing things in nature.",
         "exampleZh": "叶子是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶通常是绿色扁平的器官，代表最显著的……❷任何类似于植物叶片的东西。❸任何物质被打薄或擀薄至极薄的薄片。"
+        "defZh": "❶植物中与茎或枝相连的扁平绿色部分，即叶子。❷书的一页，即页。"
       },
       {
         "en": "rock",
@@ -4777,7 +4777,7 @@ var VOCAB_DATA = [
         "example": "The rock looked beautiful in the morning light.",
         "exampleZh": "晨光中的石头看起来很美。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶矿物形成的岩石，具体而言：❷没有植被的大山丘或岛屿。❸坚固的东西，"
+        "defZh": "❶大块石头；岩石。❿一种节奏强烈的流行音乐，即摇滚乐。"
       },
       {
         "en": "sand",
@@ -4788,7 +4788,7 @@ var VOCAB_DATA = [
         "example": "We hiked through the sand all afternoon.",
         "exampleZh": "我们整个下午都在沙子中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶比砾石更细磨碎的岩石，❷（常作复数）沙滩或其他沙质区域。❸（约1920年）个人的勇气。"
+        "defZh": "❶细碎的岩石颗粒，尤见于海滩和沙漠中；沙子。❷（作复数sands）沙滩；沙质区域。"
       },
       {
         "en": "river",
@@ -4810,7 +4810,7 @@ var VOCAB_DATA = [
         "example": "After the rain, the lake appeared.",
         "exampleZh": "雨后，湖泊出现了。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶一条小的流水溪流；水道；排水沟。❷大片内陆水域。❸大量液体；如酒湖。"
+        "defZh": "❶被陆地环绕的大片水域；湖泊。❷（比喻）大量液体（如a lake of wine）。"
       },
       {
         "en": "mountain",
@@ -4843,7 +4843,7 @@ var VOCAB_DATA = [
         "example": "We hiked through the bird all afternoon.",
         "exampleZh": "我们整个下午都在鸟中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶脊索动物门鸟纲动物类中的一员，❷男人、家伙。❸女孩或女人，尤指被认为有性吸引力的。"
+        "defZh": "❶有羽毛和翅膀、通常能飞行的动物；鸟。❷（英式口语）女人。"
       },
       {
         "en": "dog",
@@ -4854,7 +4854,7 @@ var VOCAB_DATA = [
         "example": "We hiked through the dog all afternoon.",
         "exampleZh": "我们整个下午都在狗中徒步。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶作为食物食用的狗肉。❷准备给狗作为食物的肉。❸一种侮辱，意在夸张地断言另一个人具有……"
+        "defZh": "❶一种常见的四腿动物，尤指被人当作宠物或用于狩猎、看护的动物；狗。❷（口语）令人讨厌的男人。"
       },
       {
         "en": "cat",
@@ -4865,7 +4865,7 @@ var VOCAB_DATA = [
         "example": "The cat looked beautiful in the morning light.",
         "exampleZh": "晨光中的猫看起来很美。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶猫科的动物：❷一个人：❸一种用于将锚吊到船锚架上的强力起重装置。"
+        "defZh": "❶一种有毛皮、四条腿、尾巴和爪子的小型动物，通常被当作宠物或用来抓老鼠；猫。"
       },
       {
         "en": "insect",
@@ -4876,7 +4876,7 @@ var VOCAB_DATA = [
         "example": "The insect is one of the most amazing things in nature.",
         "exampleZh": "昆虫是大自然中最神奇的事物之一。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶昆虫纲中的节肢动物，❷任何类似昆虫的小型节肢动物，包括蜘蛛，❸可鄙或无力的人。"
+        "defZh": "❶一种非常小的动物，有六条腿、分为三部分的身体和通常两对翅膀；昆虫。"
       },
       {
         "en": "butterfly",
@@ -4887,7 +4887,7 @@ var VOCAB_DATA = [
         "example": "The butterfly looked beautiful in the morning light.",
         "exampleZh": "晨光中的蝴蝶看起来很美。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶鳞翅目中的飞虫，❷手术胶带的一种用法，❸蝶泳。"
+        "defZh": "❶有大型彩色翅膀的飞行昆虫；蝴蝶。"
       },
       {
         "en": "ant",
@@ -4898,7 +4898,7 @@ var VOCAB_DATA = [
         "example": "After the rain, the ant appeared.",
         "exampleZh": "雨后，蚂蚁出现了。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶膜翅目蚁科中的各种昆虫……❷网络蜘蛛。"
+        "defZh": "❶一种非常小的昆虫，在地下以大型且有组织的群体生活；蚂蚁。"
       },
       {
         "en": "bee",
@@ -4909,7 +4909,7 @@ var VOCAB_DATA = [
         "example": "After the rain, the bee appeared.",
         "exampleZh": "雨后，蜜蜂出现了。",
         "subcategory": "Nature & Outdoors",
-        "defZh": "❶一种飞虫，"
+        "defZh": "❶一种黄黑相间的飞行昆虫，能产蜜和刺人；蜜蜂。"
       },
       {
         "en": "phone",
@@ -4927,11 +4927,11 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "相机",
-        "defEn": "❶A device used for taking photographs or making films.",
+        "defEn": "❶A piece of equipment for taking photographs or making films.",
         "example": "Take a picture with the camera — this view is amazing.",
         "exampleZh": "用相机拍张照——这景色太美了。",
         "subcategory": "Electronics & Appliances",
-        "defZh": "❶一种用于拍摄静态或动态图片或照片的设备。❷三维游戏或模拟中的视角。❸拱形房间。"
+        "defZh": "❶照相机、摄像机 ❷监控摄像头"
       },
       {
         "en": "laptop",
@@ -4964,18 +4964,18 @@ var VOCAB_DATA = [
         "example": "I always carry a charger in my bag.",
         "exampleZh": "我包里总带着充电器。",
         "subcategory": "Electronics & Appliances",
-        "defZh": "❶一种用于充电或再充电的设备❷骑兵使用的大型战马（轻型……❸大型托盘"
+        "defZh": "❶一种用于给电池充电的设备；充电器。"
       },
       {
         "en": "battery",
         "phonetic": "/ˈbæt̬.ɚ.i/",
         "pos": "n.",
-        "meaning": "电池",
+        "meaning": "❶电池❿一组火炮",
         "defEn": "❶A device that stores electricity and provides power for things such as cars, radios, and toys.",
         "example": "My battery's at 5% — I need to charge it ASAP.",
         "exampleZh": "我的电池只剩5%——得马上充电。",
         "subcategory": "Electronics & Appliances",
-        "defZh": "❶一种用于为电动设备提供电源的装置，❷对一个人施加非法身体暴力的行为，❸一组协调的火炮武器。"
+        "defZh": "❶一种储存电力并为汽车、收音机、玩具等提供动力的装置；电池。❿一组协同运作的火炮武器。"
       },
       {
         "en": "headphone",
@@ -5052,18 +5052,18 @@ var VOCAB_DATA = [
         "example": "My toaster ran out of battery again.",
         "exampleZh": "我的烤面包机又没电了。",
         "subcategory": "Electronics & Appliances",
-        "defZh": "❶烤面包的人（通过微烤使之变黄来烹饪）。❷敬酒的人（饮酒时行礼祝酒）。❸烤叉。"
+        "defZh": "❶一种通过加热使面包变黄变脆的设备；烤面包机。"
       },
       {
         "en": "blender",
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "搅拌机",
-        "defEn": "❶An electrical machine used for mixing soft food or liquid.",
+        "defEn": "❶A piece of equipment that you use to mix or chop food into a smooth liquid.",
         "example": "Throw some fruit and yogurt in the blender and make a smoothie.",
         "exampleZh": "把水果和酸奶扔进搅拌机做个冰沙。",
         "subcategory": "Electronics & Appliances",
-        "defZh": "❶一种装有锋利刀片的机器，❷缝在戏剧假发前部的一块面料，使其看起来……❸（拼布）一种在不同色调……印刷的微妙图案面料"
+        "defZh": "❶搅拌机、榨汁机（用于将食物混合或切碎的厨房电器）"
       },
       {
         "en": "refrigerator",
@@ -5074,7 +5074,7 @@ var VOCAB_DATA = [
         "example": "My refrigerator ran out of battery again.",
         "exampleZh": "我的冰箱又没电了。",
         "subcategory": "Electronics & Appliances",
-        "defZh": "❶一种用于通过制冷保持食物新鲜的家用设备……❷具有寒冻影响力的人。"
+        "defZh": "❶一种带有马达、保持食物低温的大型容器；冰箱。"
       },
       {
         "en": "air purifier",
@@ -5148,7 +5148,7 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "❶地板❿楼层",
-        "defEn": "❶The surface of a room that you walk on. ❿A level of a building.",
+        "defEn": "❶The flat surface that you walk on inside a building. ❷A level of a building. ❸The bottom of an ocean, sea, or other body of water. ❹The large open area in a building where people gather. [原defEn❷截断不完整，❸",
         "example": "The room has a wooden floor.",
         "exampleZh": "房间铺有木地板。",
         "subcategory": "Household Items",
@@ -5180,23 +5180,23 @@ var VOCAB_DATA = [
         "en": "stair",
         "phonetic": "/—/",
         "pos": "n.",
-        "meaning": "❶楼梯❷梯级",
+        "meaning": "❶梯级（楼梯中的一个台阶）❷楼梯（通常用复数stairs）",
         "defEn": "❶A set of steps that lead from one level of a building to another.",
         "example": "Please don't leave the stair on the floor.",
         "exampleZh": "请不要把楼梯留在地板上。",
         "subcategory": "Household Items",
-        "defZh": "❶楼梯中的一个单级台阶。❷一系列台阶；一段楼梯。"
+        "defZh": "❶梯级（楼梯中的一个台阶）❷楼梯"
       },
       {
         "en": "elevator",
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "电梯",
-        "defEn": "❶A machine that moves people and things up and down inside a building (American English; lift in British English).",
+        "defEn": "❶A machine that carries people or goods from one level to another in a building.",
         "example": "Please don't leave the elevator on the floor.",
         "exampleZh": "请不要把电梯留在地板上。",
         "subcategory": "Household Items",
-        "defZh": "❶任何提升或抬升的东西。❷一种带有内置平台、通过……垂直升降的永久构筑物❸一种用于储存小麦、玉米或其他谷物的筒仓（谷物升降机）"
+        "defZh": "❶建筑中载人或货物从一层到另一层的升降机/电梯"
       },
       {
         "en": "balcony",
@@ -5284,7 +5284,7 @@ var VOCAB_DATA = [
         "example": "Where did you put the bleach?",
         "exampleZh": "你把漂白剂放哪了？",
         "subcategory": "Household Items",
-        "defZh": "❶苍白的；黯淡的。"
+        "defZh": "❶一种用于清洁物品或去除物品颜色的强化学剂；漂白剂。"
       },
       {
         "en": "broom",
@@ -5295,18 +5295,18 @@ var VOCAB_DATA = [
         "example": "She used the broom to clean up the mess.",
         "exampleZh": "她用扫帚清理了脏乱。",
         "subcategory": "Household Items",
-        "defZh": "❶一种家居用具，纤维束绑在长手柄末端，用于清扫地面，即扫帚。 ❷冰上运动中用于扫冰以使石壶滑行的工具。 ❸豆科中几种开黄花灌木的统称。"
+        "defZh": "❶一种带有长手柄的刷子，用于清扫地面；扫帚。"
       },
       {
         "en": "mop",
         "phonetic": "/mɒp/",
         "pos": "n.",
-        "meaning": "❶拖把❷洗碗刷",
+        "meaning": "拖把",
         "defEn": "❶A stick with soft material attached to one end, especially used for washing floors.",
         "example": "Where did you put the mop?",
         "exampleZh": "你把拖把放哪了？",
         "subcategory": "Household Items",
-        "defZh": "❶用于擦洗地板的工具，即拖把。 ❷用拖把擦洗；拖地这一动作。 ❸一头浓密的头发。"
+        "defZh": "❶一种一端附着柔软材料的长柄工具，尤用于擦洗地板；拖把。"
       },
       {
         "en": "bucket",
@@ -5317,7 +5317,7 @@ var VOCAB_DATA = [
         "example": "Please don't leave the bucket on the floor.",
         "exampleZh": "请不要把桶留在地板上。",
         "subcategory": "Household Items",
-        "defZh": "❶由硬质材料制成的容器，即桶。 ❷该容器所能容纳的量。 ❸等于四加仑的计量单位。"
+        "defZh": "❶一种圆口带提手的容器，用于携带液体或其他东西；桶。"
       },
       {
         "en": "road",
@@ -5350,7 +5350,7 @@ var VOCAB_DATA = [
         "example": "Walk on the sidewalk — it's safer.",
         "exampleZh": "走人行道——更安全。",
         "subcategory": "Street & City",
-        "defZh": "❶通常铺砌的、位于道路旁供行人使用的人行道。 ❷引申义：任何铺砌的步行道。"
+        "defZh": "❶道路旁供行人使用的人行道"
       },
       {
         "en": "bridge",
@@ -5372,7 +5372,7 @@ var VOCAB_DATA = [
         "example": "They built a new building downtown.",
         "exampleZh": "他们在市中心建了一个新的建筑物。",
         "subcategory": "Street & City",
-        "defZh": "❶建造某物的行为或过程；施工。 ❷有墙壁和屋顶的封闭结构，即建筑物。"
+        "defZh": "❶有屋顶和墙壁的结构，用于居住、工作或储存物品；建筑物。"
       },
       {
         "en": "store",
@@ -5383,7 +5383,7 @@ var VOCAB_DATA = [
         "example": "I'm heading to the store — need anything?",
         "exampleZh": "我要去商店——需要什么吗？",
         "subcategory": "Street & City",
-        "defZh": "❶可以累积或常规存放物品的地方，即仓库。 ❷储存中的供应品。 ❸主要在北美使用，指可以购买物品的地方，即商店。"
+        "defZh": "❶一种销售多种不同类型商品的大型店铺；商店（尤用于北美）。❿储存或保管物品以备将来使用。"
       },
       {
         "en": "market",
@@ -5416,7 +5416,7 @@ var VOCAB_DATA = [
         "example": "They built a new hotel downtown.",
         "exampleZh": "他们在市中心建了一个新的酒店。",
         "subcategory": "Street & City",
-        "defZh": "❶城镇中的大型宅邸或豪宅。 ❷提供住宿和其他服务的机构，即旅馆。 ❸餐厅；任何餐饮场所。"
+        "defZh": "❶一种你在离家时付费住宿的地方；旅馆，酒店。"
       },
       {
         "en": "hospital",
@@ -5427,7 +5427,7 @@ var VOCAB_DATA = [
         "example": "Turn left at the hospital.",
         "exampleZh": "在医院处左转。",
         "subcategory": "Street & City",
-        "defZh": "❶大型医疗设施，即医院。 ❷为居民提供长期照护而设立的建筑物。 ❸住宿之处。"
+        "defZh": "❶为生病或受伤的人提供治疗的地方；医院。"
       },
       {
         "en": "school",
@@ -5438,7 +5438,7 @@ var VOCAB_DATA = [
         "example": "She walks to school with her friends.",
         "exampleZh": "她和朋友们一起走路上学。",
         "subcategory": "Street & City",
-        "defZh": "❶一群鱼或一群海洋哺乳动物如海豚等。 ❷大量；许多。"
+        "defZh": "❶孩子们接受教育的地方；学校。"
       },
       {
         "en": "bank",
@@ -5449,7 +5449,7 @@ var VOCAB_DATA = [
         "example": "They built a new bank downtown.",
         "exampleZh": "他们在市中心建了一个新的银行。",
         "subcategory": "Street & City",
-        "defZh": "❶可以存取借贷金钱并处理财务事务的机构，即银行。 ❷此类机构的一个分支机构。 ❸牌类游戏中庄家或控牌人；也叫banque。"
+        "defZh": "❶为人们保管金钱、提供贷款和其他金融服务的商业机构；银行。❿河流沿岸的土地；河岸。"
       },
       {
         "en": "post office",
@@ -5521,12 +5521,12 @@ var VOCAB_DATA = [
         "en": "cinema",
         "phonetic": "/ˈsɪn.ə.mɑː/",
         "pos": "n.",
-        "meaning": "电影院",
+        "meaning": "❶电影院❿电影（英式用法）",
         "defEn": "❶A building where you go to watch films.",
         "example": "There's a new movie playing at the cinema tonight.",
         "exampleZh": "今晚电影院有一部新片上映。",
         "subcategory": "Street & City",
-        "defZh": "❶电影院。 ❷电影的统称。 ❸电影和影视行业。"
+        "defZh": "❶去看电影的建筑；电影院。❿（英式）电影艺术或电影行业。"
       },
       {
         "en": "mall",
@@ -5537,7 +5537,7 @@ var VOCAB_DATA = [
         "example": "They built a new mall downtown.",
         "exampleZh": "他们在市中心建了一个新的商场。",
         "subcategory": "Street & City",
-        "defZh": "❶步行街，尤指购物步行区。 ❷封闭式购物中心。 ❸曾用于打槌球游戏的巷道。"
+        "defZh": "❶包含许多商店的大型建筑；购物中心。"
       },
       {
         "en": "hammer",
@@ -5559,7 +5559,7 @@ var VOCAB_DATA = [
         "example": "Hand me the screwdriver, please.",
         "exampleZh": "请把螺丝刀递给我。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶一种手动或机械工具，与螺丝头部啮合用于转动螺丝，即螺丝刀。 ❷由伏特加和橙汁混合而成的饮料。"
+        "defZh": "❶一种带有手柄和长金属杆的工具，用于转动螺丝；螺丝刀。"
       },
       {
         "en": "wrench",
@@ -5570,7 +5570,7 @@ var VOCAB_DATA = [
         "example": "He used a wrench to fix the shelf.",
         "exampleZh": "他用扳手修好了架子。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶猛然扭动或用力拉扯的动作；猛拽。 ❷因肢体被猛烈扭拉而造成的损伤。 ❸一种计谋或手段。"
+        "defZh": "❶一种带有手柄的金属工具，用于夹持和转动螺母和螺栓；扳手。"
       },
       {
         "en": "drill",
@@ -5592,7 +5592,7 @@ var VOCAB_DATA = [
         "example": "Cut the board with a saw — it's too long.",
         "exampleZh": "用锯子把板子锯短——太长了。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶带有齿状刀片用于切割硬质材料的工具，即锯。 ❷音乐锯（一种用锯演奏的乐器）。 ❸锯齿波形。"
+        "defZh": "❶一种带有长刀片且边缘有锋利齿的工具，用于切割木材或其他硬质材料；锯。"
       },
       {
         "en": "nail",
@@ -5603,7 +5603,7 @@ var VOCAB_DATA = [
         "example": "Drive a nail into the wall to hang this picture.",
         "exampleZh": "在墙上钉个钉子挂这幅画。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶人和其他灵长类动物手指和脚趾末端的薄而硬的角质板，即指甲。 ❷某些半翅目昆虫前翅基部的加厚部分。 ❸鸭及相关鸟类嘴喙末端的角质板。"
+        "defZh": "❶一种扁平头部、细而尖的金属件，用于通过锤击将物品连接到表面上；钉子。❿手指和脚趾末端坚硬光滑的部分；指甲。"
       },
       {
         "en": "screw",
@@ -5614,7 +5614,7 @@ var VOCAB_DATA = [
         "example": "The screw is in the garage.",
         "exampleZh": "螺丝在车库里。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶具有螺旋功能的装置，即螺丝。 ❷拧转某物的动作；向一侧的扭动。 ❸监狱看守。"
+        "defZh": "❶一种细而尖的金属件，带有凸起的螺旋边缘，通过转动来将物品连接在一起；螺丝。"
       },
       {
         "en": "tape measure",
@@ -5658,7 +5658,7 @@ var VOCAB_DATA = [
         "example": "The candle is in the garage.",
         "exampleZh": "蜡烛在车库里。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶由嵌入固体蜡中的灯芯制成的光源，即蜡烛。 ❷凸出的部分。 ❸一种光强度单位，现已被国际单位坎德拉取代。"
+        "defZh": "❶一根中间有细绳的蜡棒，点燃后用于照明；蜡烛。"
       },
       {
         "en": "match",
@@ -5669,7 +5669,7 @@ var VOCAB_DATA = [
         "example": "Light a match to start the campfire.",
         "exampleZh": "划根火柴来点篝火。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶竞技性体育赛事，如拳击比赛。 ❷任何力量或技能的竞赛或考验。 ❸在某一属性上的衡量值等于或超过对手的人。"
+        "defZh": "❶n. 一端带有可摩擦起火物质的木棍；火柴。❿n. 一场比赛或竞赛。❿v. 与某物相同或适合某物；匹配。"
       },
       {
         "en": "lighter",
@@ -5680,7 +5680,7 @@ var VOCAB_DATA = [
         "example": "Got a lighter? I need to light this candle.",
         "exampleZh": "有打火机吗？我要点蜡烛。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶实际重量很小或相对很小的。 ❷与体积相比重量很小的。 ❸重量不足的。"
+        "defZh": "❶一种用于点燃香烟或蜡烛的小型设备；打火机。"
       },
       {
         "en": "rope",
@@ -5691,7 +5691,7 @@ var VOCAB_DATA = [
         "example": "He used a rope to fix the shelf.",
         "exampleZh": "他用绳子修好了架子。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶粗绳，即绳子。 ❷此种材料中的一段。 ❸某种事物的紧密束股。"
+        "defZh": "❶一种结实粗壮的绳索，由更细的绳索扭合而成；绳子。"
       },
       {
         "en": "chain",
@@ -5702,7 +5702,7 @@ var VOCAB_DATA = [
         "example": "He used a chain to fix the shelf.",
         "exampleZh": "他用链条修好了架子。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶一系列相互连接的环或链节，通常由金属制成，即链条。 ❷一系列相互关联的事物。 ❸拥有相同品牌名称的一系列商店或企业。"
+        "defZh": "❶一系列相互连接的金属环，用于固定或拉拽；链条。❿同一公司拥有的商店、酒店或餐厅群；连锁店。"
       },
       {
         "en": "glue",
@@ -5713,18 +5713,18 @@ var VOCAB_DATA = [
         "example": "Hand me the glue, please.",
         "exampleZh": "请把胶水递给我。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶由煮沸骨头和兽皮制成的硬质明胶，即胶水。 ❷任何将两件事物或两个人联系在一起的东西。 ❸粘鸟胶。"
+        "defZh": "❶一种用于将物品粘合在一起的粘性物质；胶水。"
       },
       {
         "en": "paint",
         "phonetic": "/—/",
         "pos": "n.",
-        "meaning": "❶油漆❷颜料❸v.刷漆❹v.绘画",
+        "meaning": "❶油漆、涂料（涂在表面用于保护或装饰的彩色液体）❷v.涂漆、刷漆❸v.绘画、画画 [知识判断：原释义",
         "defEn": "❶A coloured liquid that you put on a surface to protect it or to make it look attractive.❿To cover a surface with paint.",
         "example": "We're painting the bedroom this weekend.",
         "exampleZh": "这个周末我们刷卧室的油漆。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶以液体或膏状形式涂抹、干燥后形成固体涂层的物质，即油漆。 ❷一组装有不同颜色油漆的容器或色块。 ❸篮球中的罚球区。"
+        "defZh": "❶涂在表面用于保护或装饰的彩色液体；油漆。❷v.用油漆涂覆表面。❸v.用画笔画画。 [原defZh❷"
       },
       {
         "en": "brush",
@@ -5735,7 +5735,7 @@ var VOCAB_DATA = [
         "example": "Use a brush to clean off the dust.",
         "exampleZh": "用刷子把灰尘清掉。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶由多根较柔软的刷毛固定在手柄上构成的工具，用于清扫、涂抹或梳理，即刷子。 ❷刷某物的动作。 ❸导电材料制成的部件。"
+        "defZh": "❶由短段硬质金属丝或毛发固定在手柄上制成的物品，用于清洁、涂画或整理头发；刷子。"
       },
       {
         "en": "shovel",
@@ -5757,7 +5757,7 @@ var VOCAB_DATA = [
         "example": "He used a axe to fix the shelf.",
         "exampleZh": "他用斧头修好了架子。",
         "subcategory": "Tools & Repair",
-        "defZh": "❶用于砍伐树木或劈柴等的工具，即斧头。 ❷一种古老武器，头部有一面或两面刃装在柄上。 ❸解雇或拒绝。"
+        "defZh": "❶一种在长手柄末端带有厚重金属刃的工具，用于砍伐木材或树木；斧头。"
       },
       {
         "en": "time",
@@ -5779,7 +5779,7 @@ var VOCAB_DATA = [
         "example": "The day was perfect for a walk.",
         "exampleZh": "这个天很适合散步。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶任何24小时的时段。 ❷从午夜到下一个午夜的时段。 ❸行星（尤指地球）的自转周期。"
+        "defZh": "❶一段24小时的时段；一天。❿从早晨天亮到傍晚天黑之间的时间；白天。"
       },
       {
         "en": "night",
@@ -5790,7 +5790,7 @@ var VOCAB_DATA = [
         "example": "We've been waiting since night.",
         "exampleZh": "我们从夜晚就在等了。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶从日落到日出之间的时段，即夜晚。 ❷天文学中从傍晚天文暮光结束到次日早晨天文暮光开始的黑暗时段。 ❸法律系统中通常定义为日落前30分钟开始的时间段。"
+        "defZh": "❶一天中黑暗的部分；夜晚。"
       },
       {
         "en": "morning",
@@ -5801,7 +5801,7 @@ var VOCAB_DATA = [
         "example": "We've been waiting since morning.",
         "exampleZh": "我们从早上就在等了。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶从黎明到正午的这段时间，即早晨。 ❷从午夜到正午之间的时段。 ❸任何事物的早期阶段。"
+        "defZh": "❶一天中从太阳升起到大约正午的时段；早晨。"
       },
       {
         "en": "afternoon",
@@ -5812,7 +5812,7 @@ var VOCAB_DATA = [
         "example": "She loves the afternoon — it's her favorite time.",
         "exampleZh": "她喜欢下午——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶从中午或午饭时间到日落之间的时段，即下午。 ❷任何事物的后期阶段，常暗示衰退。 ❸在下午举行的聚会或社交活动。"
+        "defZh": "❶一天中从午饭时间到太阳落山的时段；下午。"
       },
       {
         "en": "evening",
@@ -5823,7 +5823,7 @@ var VOCAB_DATA = [
         "example": "The evening was perfect for a walk.",
         "exampleZh": "这个傍晚很适合散步。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶一天中从黄昏到夜晚天色变暗的时段，即傍晚。 ❷一天中大约从隆冬黄昏到就寝时间的时段。 ❸一个收尾的时段。"
+        "defZh": "❶一天中从下午结束到夜晚之间的时段；傍晚，晚上。"
       },
       {
         "en": "week",
@@ -5834,7 +5834,7 @@ var VOCAB_DATA = [
         "example": "I'm super busy this week — can we meet next week?",
         "exampleZh": "这周太忙了——下周见面吧？",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶任何连续七天的时段。 ❷以星期日或星期一开始的七天周期。 ❸从星期一开始的五天周期。"
+        "defZh": "❶一段七天的时段，尤指从周六或周日到下一个周六或周日；一周。"
       },
       {
         "en": "month",
@@ -5845,7 +5845,7 @@ var VOCAB_DATA = [
         "example": "She loves the month — it's her favorite time.",
         "exampleZh": "她喜欢月——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶一年被划分成的时段，即月份。 ❷30天或31天或两者交替的时段。 ❸女性的经期；月经。"
+        "defZh": "❶一年被划分成的十二个时段之一；月份。"
       },
       {
         "en": "year",
@@ -5856,7 +5856,7 @@ var VOCAB_DATA = [
         "example": "The year was perfect for a walk.",
         "exampleZh": "这个年很适合散步。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶太阳年，即地球绕太阳公转一圈的时间。 ❷引申义：任何天体（如行星）绕其主星完成一圈公转所需的时间。 ❸由设定日期标记的年份之间的时段。"
+        "defZh": "❶一段十二个月的时段，从1月1日开始；年。"
       },
       {
         "en": "hour",
@@ -5867,7 +5867,7 @@ var VOCAB_DATA = [
         "example": "The hour was perfect for a walk.",
         "exampleZh": "这个小时很适合散步。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶六十分钟的时间段；一天的二十四分之一。 ❷一个季节、时刻或时机。 ❸时间。"
+        "defZh": "❶一段六十分钟长的时段；小时。"
       },
       {
         "en": "minute",
@@ -5878,7 +5878,7 @@ var VOCAB_DATA = [
         "example": "The minute was perfect for a walk.",
         "exampleZh": "这个分钟很适合散步。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶等于六十秒的时间单位（一小时的六十分之一）。 ❷一段短暂但未明确的时间。 ❸等于一度六十分之一的角度量单位。"
+        "defZh": "❶一小时被划分成的六十份之一；分钟。❿一段非常短的时间；片刻。"
       },
       {
         "en": "second",
@@ -5889,7 +5889,7 @@ var VOCAB_DATA = [
         "example": "They were discounted because they contained blemishes, nicks or were otherwise factory seconds.",
         "exampleZh": "它们被打折，因为它们包含瑕疵，刻痕或工厂秒。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶序列中排名第二的东西。 ❷在等级上仅次于前者的事物。 ❸在比赛或竞赛中仅次于第一名而获得的位次。"
+        "defZh": "❶一分钟被划分成的六十份之一；秒。❿在顺序或时间上排在第一之后的；第二。"
       },
       {
         "en": "Monday",
@@ -5944,7 +5944,7 @@ var VOCAB_DATA = [
         "example": "She loves the birthday — it's her favorite time.",
         "exampleZh": "她喜欢生日——那是她最喜欢的时候。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶某人出生那天的周年纪念日，即生日。 ❷某物被创建那天的周年纪念日。 ❸某人出生或某物创建的日期。"
+        "defZh": "❶恰好一年或你出生那天周年纪念的日子；生日。"
       },
       {
         "en": "holiday",
@@ -5977,7 +5977,7 @@ var VOCAB_DATA = [
         "example": "Football season starts in September.",
         "exampleZh": "橄榄球赛季九月开始。",
         "subcategory": "Time, Date & Weather",
-        "defZh": "❶一年中的四个划分之一：春、夏、秋、冬，即季节。 ❷一年中某特定事情发生的时段。 ❸增添风味的东西；调味料。"
+        "defZh": "❶一年中的四个时期之一（春、夏、秋、冬）；季节。❿一段进行某项运动的时间；赛季。"
       },
       {
         "en": "man",
@@ -6109,7 +6109,7 @@ var VOCAB_DATA = [
         "example": "Her husband came to visit last weekend.",
         "exampleZh": "她的丈夫上周末来看她了。",
         "subcategory": "People & Relationships",
-        "defZh": "❶一家之主；家庭的首领；户主。 ❷耕种土地的人；农夫。 ❸谨慎或节俭的管理者。"
+        "defZh": "❶与某女性结婚的男性；丈夫。"
       },
       {
         "en": "wife",
@@ -6120,7 +6120,7 @@ var VOCAB_DATA = [
         "example": "My wife always gives good advice.",
         "exampleZh": "我的妻子总能给出好建议。",
         "subcategory": "People & Relationships",
-        "defZh": "❶成年女性人类。 ❷集合用法：所有女性的总称；女性群体。 ❸一个女性人物。"
+        "defZh": "❶与你结婚的女性；妻子。"
       },
       {
         "en": "friend",
@@ -6131,7 +6131,7 @@ var VOCAB_DATA = [
         "example": "Her friend came to visit last weekend.",
         "exampleZh": "她的朋友上周末来看她了。",
         "subcategory": "People & Relationships",
-        "defZh": "❶非家庭成员的人，即朋友。 ❷提供帮助的伙伴或同事。 ❸与某人模糊或间接认识的人。"
+        "defZh": "❶你很了解并喜欢的人，不是家庭成员；朋友。"
       },
       {
         "en": "neighbor",
@@ -6142,7 +6142,7 @@ var VOCAB_DATA = [
         "example": "My neighbor always gives good advice.",
         "exampleZh": "我的邻居总能给出好建议。",
         "subcategory": "People & Relationships",
-        "defZh": "❶住在相邻或附近土地上的人，即邻居。 ❷在情感或信任上亲近的人。 ❸同类的其他人；同胞。"
+        "defZh": "❶住在离你很近地方的人；邻居。"
       },
       {
         "en": "teacher",
@@ -6153,7 +6153,7 @@ var VOCAB_DATA = [
         "example": "He introduced his teacher to us.",
         "exampleZh": "他把老师介绍给了我们。",
         "subcategory": "People & Relationships",
-        "defZh": "❶教学的人，尤指在学校任职的人，即教师。 ❷食指；前指。 ❸一个指示；一堂课。"
+        "defZh": "❶在学校或大学教书的人；教师。"
       },
       {
         "en": "student",
@@ -6186,7 +6186,7 @@ var VOCAB_DATA = [
         "example": "Her nurse came to visit last weekend.",
         "exampleZh": "她的护士上周末来看她了。",
         "subcategory": "People & Relationships",
-        "defZh": "❶奶妈；哺乳他人婴儿的妇女。 ❷照顾他人幼子的人（通常是女性）。 ❸受过训练为病人提供护理的人，即护士。"
+        "defZh": "❶护理生病或受伤的人的工作人员，尤指在医院中；护士。"
       },
       {
         "en": "police",
@@ -6197,7 +6197,7 @@ var VOCAB_DATA = [
         "example": "Her police came to visit last weekend.",
         "exampleZh": "她的警察上周末来看她了。",
         "subcategory": "People & Relationships",
-        "defZh": "❶被授予执法和维护公共秩序合法权力的民事力量，即警察。 ❷一名警察。 ❸试图执行规范或标准的人。"
+        "defZh": "❶负责保护人民和财产、使人们遵守法律的官方组织；警方，警察。"
       },
       {
         "en": "red",
@@ -6208,7 +6208,7 @@ var VOCAB_DATA = [
         "example": "He chose the red one from the group.",
         "exampleZh": "他从组里选了红色色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶波长最长的一系列颜色中的任何一种，即红色。 ❷革命社会主义者或最常见的共产主义者。 ❸斯诺克中使用的15个红球之一。"
+        "defZh": "❶血液或成熟番茄的颜色；红色。"
       },
       {
         "en": "blue",
@@ -6219,7 +6219,7 @@ var VOCAB_DATA = [
         "example": "The sign has a blue background.",
         "exampleZh": "标志的背景是蓝色色的。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶晴空或深海的颜色，即蓝色。 ❷蓝色染料或颜料。 ❸几种保护金属防锈的工艺中的任何一种。"
+        "defZh": "❶晴空或深海的颜色；蓝色。"
       },
       {
         "en": "green",
@@ -6230,7 +6230,7 @@ var VOCAB_DATA = [
         "example": "She painted the wall green.",
         "exampleZh": "她把墙刷成了绿色色。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶以绿色为颜色的。 ❷指人身体不适、生病。 ❸未成熟的，指某些成熟后会变色的果实。"
+        "defZh": "❶草地或大多数植物叶子的颜色；绿色。❿尚未成熟可食用的；缺乏经验的。"
       },
       {
         "en": "yellow",
@@ -6241,7 +6241,7 @@ var VOCAB_DATA = [
         "example": "The sign has a yellow background.",
         "exampleZh": "标志的背景是黄色色的。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶金子的颜色，即黄色。 ❷三盏交通灯中的中间那盏。 ❸斯诺克中使用的彩色球之一，值为2分。"
+        "defZh": "❶金子或成熟柠檬的颜色；黄色。"
       },
       {
         "en": "black",
@@ -6252,7 +6252,7 @@ var VOCAB_DATA = [
         "example": "He chose the black one from the group.",
         "exampleZh": "他从组里选了黑色色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶在没有光线时被感知到的颜色，即黑色。 ❷黑色染料或颜料。 ❸由黑色颜料制成的笔、铅笔、蜡笔等。"
+        "defZh": "❶最暗的颜色，如同夜晚或煤炭的颜色；黑色。"
       },
       {
         "en": "white",
@@ -6263,7 +6263,7 @@ var VOCAB_DATA = [
         "example": "She painted the wall white.",
         "exampleZh": "她把墙刷成了白色色。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶雪或牛奶的颜色，即白色。 ❷具有浅色皮肤的欧洲裔人。 ❸粉蝶科中的任何蝴蝶。"
+        "defZh": "❶雪或牛奶的颜色；白色。"
       },
       {
         "en": "purple",
@@ -6274,7 +6274,7 @@ var VOCAB_DATA = [
         "example": "He chose the purple one from the group.",
         "exampleZh": "他从组里选了紫色色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶一种基于止咳糖浆的消遣性毒品。"
+        "defZh": "❶一种由红色和蓝色混合而成的深色；紫色。"
       },
       {
         "en": "pink",
@@ -6285,7 +6285,7 @@ var VOCAB_DATA = [
         "example": "The sign has a pink background.",
         "exampleZh": "标志的背景是粉色色的。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶常见的鲦鱼（Phoxinus phoxinus）。 ❶幼年的大西洋鲑鱼。"
+        "defZh": "❶一种淡红色；粉色。"
       },
       {
         "en": "brown",
@@ -6296,7 +6296,7 @@ var VOCAB_DATA = [
         "example": "The sign has a brown background.",
         "exampleZh": "标志的背景是棕色色的。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶像巧克力或咖啡那样的颜色，即棕色。 ❷斯诺克中使用的彩色球之一，值为4分。 ❸黑焦油海洛因。"
+        "defZh": "❶巧克力或咖啡的颜色；棕色。"
       },
       {
         "en": "gray",
@@ -6307,7 +6307,7 @@ var VOCAB_DATA = [
         "example": "The gray one is mine.",
         "exampleZh": "灰色色的那个是我的。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶介于黑色和白色之间的无彩色，即灰色。 ❷灰色色的动物或事物，如灰色马、獾或鲑鱼。 ❸具有灰白色皮肤的外星类人生物。"
+        "defZh": "❶介于黑色和白色之间的颜色；灰色。"
       },
       {
         "en": "circle",
@@ -6325,7 +6325,7 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n./v./adj.",
         "meaning": "❶n. 正方形❷n. 广场❸adj. 正方形的",
-        "defEn": "❶n. A shape with four sides of equal length and four corners that are all right angles. ❷n. An open area in a town or city, often in the shape of a square.",
+        "defEn": "❶n. A shape with four straight equal sides and four corners (90°). ❷n. An open area in a town or city. ❸adj. Having the shape of a square.",
         "example": "We met at the town square and walked to the cafe.",
         "exampleZh": "我们在镇上的广场见面然后走到了咖啡馆。",
         "subcategory": "Colors, Shapes & Numbers",
@@ -6362,7 +6362,7 @@ var VOCAB_DATA = [
         "example": "She painted the wall one.",
         "exampleZh": "她把墙刷成了一色。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶数字1或数字符号1。 ❷环中关于乘法的恒等元素。 ❸一美元纸币。"
+        "defZh": "❶数字1。"
       },
       {
         "en": "two",
@@ -6373,7 +6373,7 @@ var VOCAB_DATA = [
         "example": "He chose the two one from the group.",
         "exampleZh": "他从组里选了二色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶数字2或数字符号2。 ❷两美元纸币。 ❸两岁的孩子。"
+        "defZh": "❶数字2。"
       },
       {
         "en": "three",
@@ -6384,7 +6384,7 @@ var VOCAB_DATA = [
         "example": "She painted the wall three.",
         "exampleZh": "她把墙刷成了三色。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶值三分的进球或其他得分方式。 ❷三分投篮；从三分线以外投中的球。 ❸三点着陆。"
+        "defZh": "❶数字3。"
       },
       {
         "en": "ten",
@@ -6395,7 +6395,7 @@ var VOCAB_DATA = [
         "example": "She painted the wall ten.",
         "exampleZh": "她把墙刷成了十色。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶由十个元素组成的集合或组。 ❷某花色中值为十的牌。 ❸一种货币面额，"
+        "defZh": "❶数字10。"
       },
       {
         "en": "hundred",
@@ -6406,18 +6406,18 @@ var VOCAB_DATA = [
         "example": "He chose the hundred one from the group.",
         "exampleZh": "他从组里选了百色的那个。",
         "subcategory": "Colors, Shapes & Numbers",
-        "defZh": "❶一张一百美元的钞票， ❷英格兰南部郡 formerly的一种行政分区…… ❸（引申）其他地区的类似分区，"
+        "defZh": "❶数字100。"
       },
       {
         "en": "love",
         "phonetic": "/lʌv/",
         "pos": "v./n.",
-        "meaning": "❶爱❷热爱❸爱情",
-        "defEn": "❶(n.) A strong feeling of affection.❷(v.) To have strong feelings of affection for someone.",
+        "meaning": "❶❷❸过于简略，❶n.应明确'强烈的爱慕感情';❷v.应明确'对某人深感爱慕/浪漫吸引';❸应注明'喜欢某物'（如love music），不仅是'爱情'",
+        "defEn": "❶(n.) A strong feeling of affection ❷(v.) To like someone very much and be romantically attracted to them ❸(v.) To like something very much",
         "example": "The love in her voice was unmistakable.",
         "exampleZh": "她声音中的爱是掩饰不住的。",
         "subcategory": "Emotions & States",
-        "defZh": "❶对某人感到强烈的喜爱和关心"
+        "defZh": "❶(n.) 强烈的爱慕感情 ❷(v.) 对某人深感爱慕并被浪漫地吸引 ❸(v.) 极度喜欢某事物"
       },
       {
         "en": "happiness",
@@ -6456,12 +6456,12 @@ var VOCAB_DATA = [
         "en": "fear",
         "phonetic": "/fɪr/",
         "pos": "v./n.",
-        "meaning": "❶害怕，恐惧❷担忧",
-        "defEn": "❶An unpleasant emotion caused by the threat of danger, pain, or harm.❷To be frightened or worried.",
+        "meaning": "❶❷❶n.过于简略（只写'害怕，恐惧'），应包含'由危险/疼痛/伤害威胁引起的不愉快情绪';❷v.过于简略（只写'担忧'），应包含'害怕某事/担心不好的事可能发生'",
+        "defEn": "❶(n.) An unpleasant emotion caused by the threat of danger, pain, or harm ❷(v.) To be frightened of something or be afraid that something bad might happen",
         "example": "Fear is a natural human emotion.",
         "exampleZh": "恐惧是人类自然的情感。",
         "subcategory": "Emotions & States",
-        "defZh": "❶对某事感到害怕❷担心可能发生不好的事"
+        "defZh": "❶(n.) 由危险、疼痛或伤害威胁引起的不愉快情绪 ❷(v.) 害怕某事物或担心不好的事可能发生"
       },
       {
         "en": "surprise",
@@ -6479,7 +6479,7 @@ var VOCAB_DATA = [
         "phonetic": "/həʊp/",
         "pos": "v./n.",
         "meaning": "❶v. 希望❷n. 期望、希望",
-        "defEn": "❶v. To want something to happen or be true, and usually have a good reason to think it might. ❷n. A good feeling about the future, or something that you want to happen.",
+        "defEn": "❶v. To want something to happen or be true and think that it could happen ❷n. The feeling that something wanted can be had or will happen",
         "example": "Hope is a natural human emotion.",
         "exampleZh": "希望是人类自然的情感。",
         "subcategory": "Emotions & States",
@@ -6534,11 +6534,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈæn.sɚ/",
         "pos": "v./n.",
         "meaning": "❶n. 答案❷v. 回答",
-        "defEn": "❶n. A reaction to a question, letter, or phone call. ❷v. To say or write something as a reaction to a question.",
+        "defEn": "❶v. To say, write, or do something as a reaction to a question",
         "example": "Answer is a natural human emotion.",
         "exampleZh": "答案是人类自然的情感。",
         "subcategory": "Emotions & States",
-        "defZh": "❶回复一个问题所说或所写的内容❷你回复时所说或所写的东西"
+        "defZh": "❶对一个问题做出回应（说、写或做）❷对一个问题的回应内容 ❶原defZh侧重'回复所说/所写的内容'，但剑桥answer(v.)核心是'react/respond to a question'（反应/回应），不仅是'说/写';❷n.应更简洁"
       },
       {
         "en": "reason",
@@ -6556,7 +6556,7 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n./v.",
         "meaning": "❶机会❿可能性❸偶然",
-        "defEn": "❶An opportunity to do something. ❷The possibility that something will happen. ❸Something that happens unexpectedly.",
+        "defEn": "❶n. The possibility that something will happen. ❷n. An opportunity to do something. ❸n. Luck.",
         "example": "I got a chance to visit Japan last summer.",
         "exampleZh": "去年夏天我有机会去了日本。",
         "subcategory": "Emotions & States",
@@ -6681,7 +6681,7 @@ var VOCAB_DATA = [
         "example": "She has a pet duck at home.",
         "exampleZh": "她家里养了一只宠物鸭。",
         "subcategory": "Animals",
-        "defZh": "❶迅速低下头或身体以防止被…… ❷迅速低下（头部）以防止被击…… ❸将（某物）放入水中；"
+        "defZh": "❶一种生活在水边、有蹼足、短颈和大嘴的鸟类；鸭子。❿这种鸟的肉用作食物；鸭肉。"
       },
       {
         "en": "rabbit",
@@ -6736,7 +6736,7 @@ var VOCAB_DATA = [
         "example": "The elephant was resting in the shade.",
         "exampleZh": "大象在阴凉处休息。",
         "subcategory": "Animals",
-        "defZh": "❶一种大尺寸的纸张，"
+        "defZh": "❶一种非常大的灰色哺乳动物，有长鼻子（象鼻）可用来拾取物品；大象。"
       },
       {
         "en": "monkey",
@@ -6758,7 +6758,7 @@ var VOCAB_DATA = [
         "example": "The path snaked through the forest.",
         "exampleZh": "小路蜿蜒穿过森林。",
         "subcategory": "Animals",
-        "defZh": "❶蛇亚目的一种无足爬行动物，身体细长…… ❷阴险的人。 ❸为获取社交利益而行事狡诈的人。"
+        "defZh": "❶一种身体细长、没有腿的爬行动物；蛇。"
       },
       {
         "en": "frog",
@@ -6769,7 +6769,7 @@ var VOCAB_DATA = [
         "example": "She has a pet frog at home.",
         "exampleZh": "她家里养了一只宠物青蛙。",
         "subcategory": "Animals",
-        "defZh": "❶无尾目中一种小型无尾两栖动物，通常跳跃移动。 ❷提琴弓（或其他类似弦乐器弓）上的部分…… ❸路。frog and toad的更短、更常见形式。"
+        "defZh": "❶一种皮肤光滑、生活在水陆两栖的小型动物，有强壮的后腿用于跳跃；青蛙。"
       },
       {
         "en": "spider",
@@ -6780,18 +6780,18 @@ var VOCAB_DATA = [
         "example": "The spider is one of the most popular pets.",
         "exampleZh": "蜘蛛是最受欢迎的宠物之一。",
         "subcategory": "Animals",
-        "defZh": "❶各种八足的， ❷一种在万维网上跟踪链接以收集信息的程序…… ❸一种由冰淇淋和汽水或碳酸饮料混合制成的饮品……"
+        "defZh": "❶一种有八条细腿的小生物，在蛛网中捕捉昆虫；蜘蛛。"
       },
       {
         "en": "ball",
         "phonetic": "/bɔːl/",
         "pos": "n.",
-        "meaning": "球",
+        "meaning": "❶球❿舞会",
         "defEn": "❶A round object that you throw, hit, or kick in games and sports.",
         "example": "Ball is a great way to stay active.",
         "exampleZh": "球是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶实心或空心的球体，或大致球形的物体。 ❷圆形或椭球形的物体。 ❸（委婉语，通常用复数）睾丸。"
+        "defZh": "❶在游戏和运动中投掷、击打或踢的圆形物体；球。❿一种大型正式场合，人们在其中跳舞；舞会。"
       },
       {
         "en": "football",
@@ -6835,24 +6835,24 @@ var VOCAB_DATA = [
         "example": "Swim is a great way to stay active.",
         "exampleZh": "游泳是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶一次游泳的动作或实例。 ❷鱼的声囊或气囊。 ❸溪流中鱼类频繁出没的部分。"
+        "defZh": "❶通过移动手臂和腿在水中移动；游泳。❿一次游泳的场合。"
       },
       {
         "en": "run",
         "phonetic": "/rʌn/",
         "pos": "n.",
         "meaning": "❶v. 跑❿v. 经营、运行❿n. 跑步",
-        "defEn": "❶v. To move fast on foot, faster than walking. ❿v. To organize or manage something, such as a business. ❿n. An act or period of running.",
+        "defEn": "❶v. To move quickly on foot, faster than walking ❷v. To organize or manage a system or organization",
         "example": "She's been into run lately.",
         "exampleZh": "她最近迷上了跑步。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶用脚快速移动，比走路更快❷管理或运营一个系统或组织❸一段持续运行的时期"
+        "defZh": "❷组织或管理一个系统或组织"
       },
       {
         "en": "walk",
         "phonetic": "/—/",
         "pos": "v./n.",
-        "meaning": "❶v. 步行❿n. 散步",
+        "meaning": "❶❷❶OK;❷'慢悠悠走一段路的经历'偏强调悠闲，剑桥是'a journey that you make by walking'（更中性）;遗漏了❸n.'步行道/步道'（a walk/path for walking）",
         "defEn": "❶v. To move by putting one foot in front of the other. ❿n. A journey that you make on foot, usually for pleasure.",
         "example": "Walk is a great way to stay active.",
         "exampleZh": "走路是保持活力的好方式。",
@@ -6868,7 +6868,7 @@ var VOCAB_DATA = [
         "example": "She's been into dance lately.",
         "exampleZh": "她最近迷上了跳舞。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶一系列通常配合音乐的节奏性舞步或动作， ❷以跳舞为主要活动的社交聚会。 ❸一条通常水平的称为fess的纹章条纹，经修改后……"
+        "defZh": "❶v. 配合音乐节奏移动身体；跳舞。❿n. 一套配合音乐的特定动作序列；舞蹈。❿n. 以跳舞为主要活动的社交活动；舞会。"
       },
       {
         "en": "song",
@@ -6879,7 +6879,7 @@ var VOCAB_DATA = [
         "example": "She's been into song lately.",
         "exampleZh": "她最近迷上了歌曲。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶一首配有歌词供人声或多人声演唱的音乐作品， ❷（引申）任何音乐作品。 ❸诗歌创作；诗歌；韵文。"
+        "defZh": "❶一段配有歌词供演唱的短音乐作品；歌曲。"
       },
       {
         "en": "music",
@@ -6890,7 +6890,7 @@ var VOCAB_DATA = [
         "example": "They went to a music last weekend.",
         "exampleZh": "他们上周末去音乐了。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶一系列按时间组织的声音， ❷任何悦耳或有趣的声音。 ❸一种艺术形式，"
+        "defZh": "❶由乐器或人声发出的悦耳声音模式；音乐。"
       },
       {
         "en": "movie",
@@ -6923,7 +6923,7 @@ var VOCAB_DATA = [
         "example": "They went to a toy last weekend.",
         "exampleZh": "他们上周末去玩具了。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶供玩耍的物品，尤指专为儿童使用的。 ❷不重要或无价值的东西；琐事。 ❸一首简单、轻快的乐曲，尤专为维吉纳琴而作。"
+        "defZh": "❶供儿童玩耍的物品；玩具。"
       },
       {
         "en": "doll",
@@ -6934,7 +6934,7 @@ var VOCAB_DATA = [
         "example": "Doll is a great way to stay active.",
         "exampleZh": "娃娃是保持活力的好方式。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶人形玩具。 ❷（有时具冒犯性）一位迷人的年轻女性 ❸爱称：亲爱的，甜心。"
+        "defZh": "❶一种人形或婴儿形状的儿童玩具；玩偶，娃娃。"
       },
       {
         "en": "guitar",
@@ -6967,7 +6967,7 @@ var VOCAB_DATA = [
         "example": "She's been into drum lately.",
         "exampleZh": "她最近迷上了鼓。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶一种打击乐器，至少一面蒙有薄覆盖层…… ❷任何类似的空心圆柱形物体。 ❸用于液体运输和储存的桶或大型圆柱容器……"
+        "defZh": "❶一种你用手或棍子敲打的乐器；鼓。"
       },
       {
         "en": "ticket",
@@ -6978,7 +6978,7 @@ var VOCAB_DATA = [
         "example": "She's been into ticket lately.",
         "exampleZh": "她最近迷上了票。",
         "subcategory": "Sports & Entertainment",
-        "defZh": "❶持有人有权进入演出、音乐会等的通行证。 ❷持有人有权登上火车的通行证， ❸交通违规传票。"
+        "defZh": "❶一张小纸片，证明你已付费进入某场所或乘坐公交车等；票。"
       },
       {
         "en": "photo",
@@ -7000,7 +7000,7 @@ var VOCAB_DATA = [
         "example": "Understanding money helps us see the world differently.",
         "exampleZh": "理解钱能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一种具有法律或社会约束力的概念性合同，赋予…… ❷一种普遍接受的交换手段和价值度量。 ❸由国家或其他能保证……的实体维持的货币。"
+        "defZh": "❶用于购买物品的硬币或纸币，或你拥有的金额；钱，货币。"
       },
       {
         "en": "price",
@@ -7011,7 +7011,7 @@ var VOCAB_DATA = [
         "example": "Price plays an important role in modern society.",
         "exampleZh": "价格在现代社会中扮演着重要角色。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶获得某物所需的费用。 ❷某行动或行为的代价。 ❸价值；评价；卓越；值得。"
+        "defZh": "❶你必须为某物支付的金额；价格。❿（比喻）做某事的代价。"
       },
       {
         "en": "shop",
@@ -7022,7 +7022,7 @@ var VOCAB_DATA = [
         "example": "Understanding shop helps us see the world differently.",
         "exampleZh": "理解商店能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶向公众销售商品或服务的店铺； ❷制造或手工艺品的场所；工坊。 ❸汽车技工工作的大型车库。"
+        "defZh": "❶n. 你可以购买商品或服务的地方；商店。❿v. 从商店购买东西；购物。"
       },
       {
         "en": "job",
@@ -7033,7 +7033,7 @@ var VOCAB_DATA = [
         "example": "Understanding job helps us see the world differently.",
         "exampleZh": "理解工作能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一项任务。 ❷一个人获得报酬的经济角色。 ❸（在名词复合词中）整形手术。"
+        "defZh": "❶一个人定期从事以赚取收入的工作；职业。❿一项特定的工作。"
       },
       {
         "en": "office",
@@ -7044,7 +7044,7 @@ var VOCAB_DATA = [
         "example": "Understanding office helps us see the world differently.",
         "exampleZh": "理解办公室能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一项仪式性的职责或服务，特别指： ❷一个负有责任的职位。 ❸官方职位，"
+        "defZh": "❶人们从事行政或专业工作的房间或建筑；办公室。❿组织中重要的职位或工作；职务。"
       },
       {
         "en": "company",
@@ -7055,7 +7055,7 @@ var VOCAB_DATA = [
         "example": "She studied company at university.",
         "exampleZh": "她在大学学了公司。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一个团队；一群专业上共同工作的人。 ❷一小群鸟或动物。 ❸具有法律人格的实体，"
+        "defZh": "❶通过生产或销售商品或服务盈利的商业组织；公司。❿与某人在一起；陪伴。"
       },
       {
         "en": "factory",
@@ -7066,7 +7066,7 @@ var VOCAB_DATA = [
         "example": "Understanding factory helps us see the world differently.",
         "exampleZh": "理解工厂能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一个贸易机构， ❷作为代理人的地位或状态。 ❸制造发生的建筑或其他场所。"
+        "defZh": "❶一栋或一组使用机器大规模生产商品的建筑；工厂。"
       },
       {
         "en": "country",
@@ -7077,7 +7077,7 @@ var VOCAB_DATA = [
         "example": "Country plays an important role in modern society.",
         "exampleZh": "国家在现代社会中扮演着重要角色。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一种起源于乡村民间音乐的流行音乐风格……"
+        "defZh": "❶由自己的政府控制的土地区域；国家。❿不在城镇中的土地；乡村。"
       },
       {
         "en": "city",
@@ -7088,7 +7088,7 @@ var VOCAB_DATA = [
         "example": "The city has changed a lot over the years.",
         "exampleZh": "城市这些年来变化很大。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一个大型定居点， ❷由皇家特许状或专利证书授予特殊地位的定居点…… ❸中心商业区；市中心。"
+        "defZh": "❶一个有许多人居住和工作的大型城镇；城市。"
       },
       {
         "en": "village",
@@ -7099,7 +7099,7 @@ var VOCAB_DATA = [
         "example": "Understanding village helps us see the world differently.",
         "exampleZh": "理解村庄能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶规模介于小村庄和城镇之间的乡村聚落。 ❷有教堂但没有市场的乡村聚落。 ❸一种规划社区，如退休社区或购物区……"
+        "defZh": "❶乡间非常小的城镇；村庄。"
       },
       {
         "en": "language",
@@ -7110,7 +7110,7 @@ var VOCAB_DATA = [
         "example": "Understanding language helps us see the world differently.",
         "exampleZh": "理解语言能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一组词语， ❷使用词语进行沟通的能力。 ❸一种亚语言：特定社区的俚语或特定行业的行话……"
+        "defZh": "❶一个特定国家的人们使用的沟通系统；语言。"
       },
       {
         "en": "name",
@@ -7121,7 +7121,7 @@ var VOCAB_DATA = [
         "example": "Name plays an important role in modern society.",
         "exampleZh": "名字在现代社会中扮演着重要角色。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶任何指示特定人、物或地方的名词性词语或短语， ❷名声。 ❸侮辱性或谩骂性的称呼。"
+        "defZh": "❶一个人、事物或地方被称呼的词或词语；名字。❿人们对某人好的或坏的看法；名声。"
       },
       {
         "en": "number",
@@ -7132,7 +7132,7 @@ var VOCAB_DATA = [
         "example": "Understanding number helps us see the world differently.",
         "exampleZh": "理解号码能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶用于描述数量的抽象概念。 ❷数字符号：表示非负整数的符号。 ❸若干集合中的一个元素：自然数，"
+        "defZh": "❶构成计数和计算系统一部分的符号或单位；数字。❿用于标记某物特定例子的号码。"
       },
       {
         "en": "address",
@@ -7143,7 +7143,7 @@ var VOCAB_DATA = [
         "example": "The address has changed a lot over the years.",
         "exampleZh": "地址这些年来变化很大。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶方向。 ❷准备。"
+        "defZh": "❶n. 你居住或工作的建筑号码、街道名称和城镇；地址。❿v. 处理一个问题；应对。"
       },
       {
         "en": "map",
@@ -7154,7 +7154,7 @@ var VOCAB_DATA = [
         "example": "The map has changed a lot over the years.",
         "exampleZh": "地图这些年来变化很大。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶一个区域（无论是真实还是虚构的）的视觉表示。 ❷对象之间关系的图形表示， ❸一个函数。"
+        "defZh": "❶一个区域的绘画，显示道路、河流和城镇等事物的位置；地图。"
       },
       {
         "en": "news",
@@ -7165,7 +7165,7 @@ var VOCAB_DATA = [
         "example": "Understanding news helps us see the world differently.",
         "exampleZh": "理解新闻能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶令人感兴趣的新信息。 ❷通过媒体传播的关于当前事件的信息。 ❸发布在新闻组上的帖子"
+        "defZh": "❶关于近期事件的信息或报道；新闻。"
       },
       {
         "en": "letter",
@@ -7176,7 +7176,7 @@ var VOCAB_DATA = [
         "example": "She studied letter at university.",
         "exampleZh": "她在大学学了信件。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶授予某学术机构的识别首字母……"
+        "defZh": "❶一个人写给另一个人的书面信息，通常装入信封邮寄；信件。❿书写语言时使用的符号之一；字母。"
       },
       {
         "en": "gift",
@@ -7187,7 +7187,7 @@ var VOCAB_DATA = [
         "example": "She studied gift at university.",
         "exampleZh": "她在大学学了礼物。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶自愿无偿赠予他人的东西。 ❷天赋或自然能力。 ❸不经努力而偶然获得的东西。"
+        "defZh": "❶一种礼物；你送给某人的东西，尤指在特殊场合；礼物。"
       },
       {
         "en": "party",
@@ -7198,7 +7198,7 @@ var VOCAB_DATA = [
         "example": "Understanding party helps us see the world differently.",
         "exampleZh": "理解派对能帮助我们用不同的角度看世界。",
         "subcategory": "Society & Abstract",
-        "defZh": "❶构成冲突中特定一方的人或群体…… ❷一个人。 ❸在给定争议、竞赛等中构成一方的一群人。"
+        "defZh": "❶人们聚在一起庆祝或享受的社交活动；派对。❿拥有特定信仰和目标的政治组织；政党。"
       },
       {
         "en": "meal",
@@ -7253,7 +7253,7 @@ var VOCAB_DATA = [
         "example": "A quick snack cleared her mind.",
         "exampleZh": "一次快速的零食让她头脑清醒。",
         "subcategory": "Action Nouns",
-        "defZh": "❶一顿轻食。 ❷正餐之间食用的食物。 ❸一个非常性感迷人的人。"
+        "defZh": "❶在正餐之间食用的小量食物，或非常少量的一餐；零食，小吃。"
       },
       {
         "en": "drink",
@@ -7264,7 +7264,7 @@ var VOCAB_DATA = [
         "example": "She enjoys the drink every morning.",
         "exampleZh": "她每天早上享受饮料。",
         "subcategory": "Action Nouns",
-        "defZh": "❶v. 将液体送入口中并吞下 ❷n. 任何可吞咽的液体"
+        "defZh": "❶v. 将液体送入口中并吞下 ❷n. 任何可饮用的液体 ❸n. 酒，含酒精的饮品"
       },
       {
         "en": "fruit",
@@ -7363,7 +7363,7 @@ var VOCAB_DATA = [
         "example": "The sauce took longer than expected.",
         "exampleZh": "酱汁花的时间比预期的长。",
         "subcategory": "Action Nouns",
-        "defZh": "❶提供某物（信息、商品……）的人、地方或事物 ❷泉源；泉头；水井；地表或地下任何水的聚集…… ❸记者的消息来源。"
+        "defZh": "❶一种与食物搭配食用以增加风味的浓稠液体；酱汁，调味汁。"
       },
       {
         "en": "salt",
@@ -7374,7 +7374,7 @@ var VOCAB_DATA = [
         "example": "This soup needs more salt.",
         "exampleZh": "这汤需要多加点盐。",
         "subcategory": "Action Nouns",
-        "defZh": "❶一种常见物质， ❷酸与碱反应形成的化合物之一， ❸盐沼，海边含盐的沼泽。"
+        "defZh": "❶一种在海水和地下发现的常见白色物质，尤用于给食物调味或保存食物；盐。"
       },
       {
         "en": "sugar",
@@ -7385,7 +7385,7 @@ var VOCAB_DATA = [
         "example": "She enjoys the sugar every morning.",
         "exampleZh": "她每天早上享受糖。",
         "subcategory": "Action Nouns",
-        "defZh": "❶以小晶体形式存在的蔗糖， ❷一种特定种类的糖。 ❸生物用来储存能量的各种小碳水化合物……"
+        "defZh": "❶一种甜味物质，尤指来自甘蔗和甜菜植物的，用于使食物和饮料变甜；糖。"
       },
       {
         "en": "pepper",
@@ -7440,7 +7440,7 @@ var VOCAB_DATA = [
         "example": "I just want to go home and relax.",
         "exampleZh": "我就想回家放松一下。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶包含用户文件的目录。"
+        "defZh": "❶你居住的房子、公寓或地方；家。"
       },
       {
         "en": "house",
@@ -7462,7 +7462,7 @@ var VOCAB_DATA = [
         "example": "She thought about the room for a long time.",
         "exampleZh": "她想了很久关于那个房间。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶做某事的机会或余地。 ❷容纳某物或开展活动的空间。 ❸空间的特定部分。"
+        "defZh": "❶建筑物内部由墙壁、门或帘子隔开的一部分；房间。❿可用于特定目的的空间；余地。"
       },
       {
         "en": "kitchen",
@@ -7473,7 +7473,7 @@ var VOCAB_DATA = [
         "example": "She thought about the kitchen for a long time.",
         "exampleZh": "她想了很久关于那个厨房。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶准备食物的房间或区域。 ❷菜系。 ❸人后颈的发际线，"
+        "defZh": "❶准备和烹饪食物的房间；厨房。"
       },
       {
         "en": "bathroom",
@@ -7502,11 +7502,11 @@ var VOCAB_DATA = [
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "❶光❿灯❿轻的（形容词）",
-        "defEn": "❶n. The brightness that comes from the sun, fire, or electrical devices, that allows you to see. ❿n. A device that produces light, especially an electric light. ❸adj. Not heavy.",
+        "defEn": "❶n. The brightness that comes from the sun, fire, etc. and allows you to see. ❷n. A lamp or other source of light. ❸adj. Not heavy. ❹adj. Pale in colour. ❺v. To start to burn.",
         "example": "She thought about the light for a long time.",
         "exampleZh": "她想了很久关于那个光/灯。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶可见的电磁辐射。❷光源。❸精神或心智上的启示；启迪，有用的信息。"
+        "defZh": "❶n.光、灯 ❷adj.轻的、少量的 ❸adj.浅色的、淡色 ❹v.点燃、照亮"
       },
       {
         "en": "fire",
@@ -7517,7 +7517,7 @@ var VOCAB_DATA = [
         "example": "They built a fire and sat around it telling stories.",
         "exampleZh": "他们生了火，围坐在旁边讲故事。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶一种通常能自我维持的化学反应，涉及键合……❷这种化学反应的一个实例，"
+        "defZh": "❶n. 燃烧产生的热量和光；火。❿v. 停止某人的工作；解雇。❿v. 射击武器；开火。"
       },
       {
         "en": "air",
@@ -7528,7 +7528,7 @@ var VOCAB_DATA = [
         "example": "The air is something we all need.",
         "exampleZh": "空气是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶构成地球大气的物质，尤指：❷通常带the，地面上方看似开阔的空间，……❸微风；轻风。"
+        "defZh": "❶包围地球且人们呼吸的气体混合物；空气。❿一个地方或情境所具有的感觉或特征；气氛。"
       },
       {
         "en": "food",
@@ -7539,7 +7539,7 @@ var VOCAB_DATA = [
         "example": "The innkeeper brought them food and drink.",
         "exampleZh": "客栈老板给他们带来了食物和饮料。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶任何可被生物体摄入的固体物质，❷一种食品。❸任何滋养或维持的东西。"
+        "defZh": "❶人和动物食用的、或植物吸收以维持生命的东西；食物。"
       },
       {
         "en": "people",
@@ -7550,7 +7550,7 @@ var VOCAB_DATA = [
         "example": "There were so many people at the restaurant last night.",
         "exampleZh": "昨晚餐厅里人太多了。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶一个个体；通常指人。❷被视为与心智有区别的肉身，❸任何在法院面前有地位的个体或正式组织。"
+        "defZh": "❶泛指的人类，被视为一个群体；人们。"
       },
       {
         "en": "work",
@@ -7561,7 +7561,7 @@ var VOCAB_DATA = [
         "example": "There's no work like this one.",
         "exampleZh": "没有哪个工作像这个一样。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶就业。❷努力。❸为达成目标或结果而持续的努力，"
+        "defZh": "❶你定期从事以赚取收入的活动，如职业；工作。❿为达成某事而做出的努力或活动；努力。"
       },
       {
         "en": "thing",
@@ -7572,7 +7572,7 @@ var VOCAB_DATA = [
         "example": "What's that thing on the table?",
         "exampleZh": "桌上那个东西是什么？",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶被认为作为独立实体存在的东西，❷一个词、符号、标志或其他可用来指代……❸一个单独的物体或明确的实体。"
+        "defZh": "❶用于指代一个物体、事件或想法，当你不想具体说明时；东西，事物。"
       },
       {
         "en": "way",
@@ -7583,7 +7583,7 @@ var VOCAB_DATA = [
         "example": "The way is something we all need.",
         "exampleZh": "方式/路是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶与地点相关。❷做某事的方法或方式；一种习惯性举止。❸一种状态或条件"
+        "defZh": "❶做某事的方法、风格或方式；方法。❿一条路或路径；道路。❿一个方向。"
       },
       {
         "en": "place",
@@ -7605,7 +7605,7 @@ var VOCAB_DATA = [
         "example": "She thought about the point for a long time.",
         "exampleZh": "她想了很久关于那个点/要点。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶某物的离散划分。❷尖锐的端部。❸盾徽的几个不同部分之一。"
+        "defZh": "❶一个想法或观点；要点。❿一个标记或点；点。❿游戏中用于计分的单位；分数。"
       },
       {
         "en": "end",
@@ -7616,7 +7616,7 @@ var VOCAB_DATA = [
         "example": "There's no end like this one.",
         "exampleZh": "没有哪个结束/末端像这个一样。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶某物在空间或时间上的终点。❷（引申）努力、活动、状态或运动的终止。❸（引申）死亡。"
+        "defZh": "❶某物停止或结束的点，或其最后部分；结束。❿某物的尖端或远端边缘；末端。"
       }
     ]
   },
@@ -7628,11 +7628,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈvɝː.ʒən/",
         "pos": "n.",
         "meaning": "❶ 版本（某物的特定形式，与同类略有不同） ❷ 说法（某人对事件的描述方式）",
-        "defEn": "❶A specific form or variation of something. ❷A translation from one language to another. ❸A school exercise, generally of composition in a foreign language.",
+        "defEn": "❶A particular form of something that is slightly different from other forms of the same thing. ❷A person's description or account of an event. [原defEn❷",
         "example": "What version of the software are you using?",
         "root": "vers(转)+ion → 转变后的形态 → 版本",
         "exampleZh": "你在用哪个版本的软件？",
-        "defZh": "❶某物的特定形式或变体。❷从一种语言到另一种语言的翻译。❸一种学校练习，通常是外语写作。"
+        "defZh": "❶某物的特定形式或变体；版本。❷某人对事件的描述方式；说法。 [原defZh❷"
       },
       {
         "en": "website",
@@ -7660,7 +7660,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsʌbˌtaɪ.t̬əl/",
         "pos": "n.",
         "meaning": "❶ 字幕（影视中对白的文字，通常显示在屏幕底部） ❷ 副标题（书名下方的补充标题）",
-        "defEn": "❶(authorship) A heading below or after a title. ❷Textual versions of the dialog in films,",
+        "defEn": "❶A heading below or after a main title. ❷Words appearing on a screen during a film or TV programme that translate or transcribe the dialogue. [原defEn❶有Wiktionary标签(authorship)，❷截断不完整]",
         "example": "Turn on the subtitles so I can understand better.",
         "root": "sub(下面)+title(标题) → 标题下面的文字 → 字幕/副标题",
         "exampleZh": "打开字幕让我能更好地理解。",
@@ -7678,11 +7678,11 @@ var VOCAB_DATA = [
         "en": "touch",
         "phonetic": "/tʌtʃ/",
         "pos": "v.",
-        "meaning": "❶ 触摸、碰（用手轻轻接触某物） ❷ 联系（与某人保持/取得联络）",
-        "defEn": "❶v. To make contact with something using your hand ❷v. To affect someone emotionally ❸n. The sense that detects pressure on the skin",
+        "meaning": "❶ 手指伸出去碰到物体表面 ❷ 深深触动内心让人动容",
+        "defEn": "❶v. To put your hand or another part of your body onto something ❷v. To affect someone emotionally",
         "example": "Don't touch the hot stove!",
         "exampleZh": "别碰热的炉子！",
-        "defZh": "❶v. 用手触碰某物 ❷v. 在情感上打动某人 ❸n. 检测皮肤上压力的感官"
+        "defZh": "❶v. 用手或身体其他部位触碰某物 ❷v. 在情感上打动某人"
       },
       {
         "en": "move away",
@@ -7699,11 +7699,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkɑːn.tækt/",
         "pos": "n.",
         "meaning": "❶ 联系、联络（与某人沟通） ❷ 接触（物理上的碰触） ❸ 联系人（可以联络的人）",
-        "defEn": "❶The act of touching physically; being in close association. ❷The establishment of communication (with). ❸A nodule designed to connect a device with something else.",
+        "defEn": "❶Communication with someone, by phone, letter, etc. ❷The act of touching someone or something. ❸A person you know who can help you. [原defEn❸",
         "example": "I lost contact with my old friends.",
         "root": "con(共同)+tact(触) → 互相触碰 → 接触/联系",
         "exampleZh": "我和老朋友们失去了联系。",
-        "defZh": "❶物理上触碰的行为；密切关联。❷建立通信联系。❸设计用于将设备与其他东西连接的节点。"
+        "defZh": "❶与某人通信联系。❷物理上触碰的行为。❸可以帮你的人；联系人。 [原defZh❸"
       },
       {
         "en": "a couple of",
@@ -7719,18 +7719,18 @@ var VOCAB_DATA = [
         "phonetic": "/ˈfrend.ʃɪp/",
         "pos": "n.",
         "meaning": "❶ 友谊、友情（朋友之间的关系）",
-        "defEn": "❶The condition of being friends. ❷A friendly relationship, or a relationship as friends. ❸Good will.",
+        "defEn": "❶A relationship between people who are friends. [原defEn❸",
         "example": "Their friendship has lasted for years.",
         "root": "friend(朋友)+ship(状态) → 朋友之间的状态 → 友谊",
         "exampleZh": "他们的友谊持续了很多年。",
-        "defZh": "❶成为朋友的状态。❷友好的关系，或作为朋友的关系。❸善意。"
+        "defZh": "❶朋友之间的关系；友谊。 [原defZh❸"
       },
       {
         "en": "ship",
         "phonetic": "/ʃɪp/",
         "pos": "n./v.",
         "meaning": "❶v. 运送 ❷n. 船",
-        "defEn": "❶n. A water-borne vessel generally larger than a boat. ❷n. (chiefly in combination) A vessel which travels through any medi...",
+        "defEn": "❶n. A large boat for transporting people or goods by sea. ❷v. To send something, especially goods, to a place. [原defEn❷",
         "example": "The ship sails tomorrow at dawn.",
         "exampleZh": "船明天黎明出发。",
         "defZh": "❶v. 通过运输将货物发送到目的地 ❷n. 在水面上航行的大型船只"
@@ -7740,23 +7740,23 @@ var VOCAB_DATA = [
         "phonetic": "/ˈspeɪs.ʃɪp/",
         "pos": "n.",
         "meaning": "❶ 宇宙飞船（太空中的飞行器）",
-        "defEn": "❶A vehicle that flies through space. ❷A finite pattern that reappears after a certain number of generatio... ❸The operator <=> in the Perl,",
+        "defEn": "❶A vehicle that travels through space. [原defEn❷数学图案义和❸Perl运算符义为Wiktionary非核心义]",
         "example": "The spaceship returned to Earth safely.",
         "root": "space(太空)+ship(船) → 太空中的船 → 宇宙飞船",
         "exampleZh": "宇宙飞船安全返回了地球。",
         "compound": "🔗",
-        "defZh": "❶一种在太空中飞行的飞行器。❷一种在若干代之后重现的有限模式……❸Perl中的运算符 <=>"
+        "defZh": "❶一种在太空中飞行或旅行的飞行器；宇宙飞船。 [原defZh❷数学义和❸Perl运算符义为Wiktionary非核心义]"
       },
       {
         "en": "advance",
         "phonetic": "/ədˈvæns/",
         "pos": "v.",
-        "meaning": "❶ 前进、推进（向前移动） ❷ 提前（使时间更早） ❸ 进步、进展（取得发展）",
-        "defEn": "❶To promote or advantage. ❷To move forward in space or time. ❸To raise, be raised.",
+        "meaning": "❶ 前进、推进 ❷ 提前、预先 ❸ 进步、进展 ❹ 预付（款项） [遗漏❹预付义项，剑桥有PAY义项]",
+        "defEn": "❶To move forward in space or time. ❷To make something happen earlier than expected. ❸To increase in price or amount. ❹To pay money before it is due. [原defEn❶",
         "example": "Technology has advanced rapidly in recent years.",
         "root": "ad(向前)+vance(走) → 向前走 → 前进/进步",
         "exampleZh": "近年来技术进步飞速。",
-        "defZh": "❶促进或有利。❷在空间或时间上向前移动。❸提高，被提高。"
+        "defZh": "❶向前移动；前进。❷使某事提前发生。❸在价格或数量上增加。❹预付（款项）。 [原defZh❶"
       },
       {
         "en": "how often",
@@ -7811,7 +7811,7 @@ var VOCAB_DATA = [
         "en": "little",
         "phonetic": "/ˈlɪt̬.əl/",
         "pos": "adj.",
-        "meaning": "❶ 少的、不多的（量小） ❷ 小的（体型小）",
+        "meaning": "❶ 少的、不多的 ❷ 小的 ❸ 一点、少量（a little） [遗漏❸",
         "example": "There's little time left before the deadline.",
         "exampleZh": "离截止时间只剩很少的时间了。"
       },
@@ -7819,7 +7819,7 @@ var VOCAB_DATA = [
         "en": "lose",
         "phonetic": "/luːz/",
         "pos": "v.",
-        "meaning": "❶ 失去、丢失（不再拥有） ❷ 输掉（比赛、争论中失败）",
+        "meaning": "❶ 丢失、失去（不再拥有或无法找到）❷ 输掉、被击败 ❸ 迷路 ❹ 浪费、未能保持 [原❹",
         "defEn": "❶To cause (something) to cease to be in one's possession or capabili... ❷To wander from; ❸To fail to win (a game, competition, trial, etc).",
         "example": "I don't want to lose this opportunity.",
         "irr": "lose→lost→lost",
@@ -7835,18 +7835,18 @@ var VOCAB_DATA = [
         "example": "They had an argument about money.",
         "root": "argu(争论)+ment(名词) → 争论的行为/内容 → 争吵/论点",
         "exampleZh": "他们因为钱吵了一架。",
-        "defZh": "❶用于支持命题的事实或陈述；理由。❷口头争辩；争吵。❸一种推理过程。"
+        "defZh": "❶口头争辩；争吵。❷用于支持观点的事实或陈述；论据。❸推理过程。 [原defZh❶❷顺序颠倒，剑桥先列争吵再列论据；B2阶段应优先争吵义]"
       },
       {
         "en": "decide",
         "phonetic": "/dɪˈsaɪd/",
         "pos": "v.",
-        "meaning": "❶ 决定（做出选择） ❷ 下决心（经过考虑后做判断）",
-        "defEn": "❶To resolve (a contest, ❷To make a judgment, especially after deliberation ❸To cause someone to come to a decision",
+        "meaning": "❶❷❶'在多条路面前拍板选定'过于比喻化，剑桥是'to make a choice or judgment about something';❷'法庭正式宣判定案'OK但这是特殊语境用法，不是独立义项;遗漏了❸'影响/决定结果'（determine a result）如'The weather decided our plans'",
+        "defEn": "❶v. To make a choice or judgment about something ❷v. To influence or determine a result",
         "example": "I can't decide what to eat for dinner.",
         "root": "de(离开)+cide(切) → 切断其他选项 → 决定",
         "exampleZh": "我决定不了晚饭吃什么。",
-        "defZh": "❶考虑各种选项后选择做什么❷在法庭上正式解决一件事"
+        "defZh": "❶考虑各种选项后做出选择或判断；决定。❷影响或确定某事的结果。 [原defZh❶基本正确但缺"
       },
       {
         "en": "definitely",
@@ -7891,11 +7891,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˌsɪtʃ.uˈeɪ.ʃən/",
         "pos": "n.",
         "meaning": "❶ 情况、处境（某时的综合状况） ❷ 位置、位置状况（某物所处的环境）",
-        "defEn": "❶The combination of circumstances at a given moment; ❷The way in which something is positioned vis-à-vis its surroundings. ❸The place in which something is situated; a location.",
+        "defEn": "❶The combination of conditions and circumstances at a particular time and place. [原defEn❷❸为Wiktionary物理位置义，非剑桥核心义（剑桥核心义=情况、处境）]",
         "example": "The situation is getting better now.",
         "root": "situ(位置)+ation(状态) → 处于某个位置的状态 → 处境/情况",
         "exampleZh": "现在情况正在好转。",
-        "defZh": "❶某一时刻各种情况的组合；❷某物相对于其周围环境的定位方式。❸某物所处的地方；一个地点。"
+        "defZh": "❶某一时刻特定地点的各种情况和条件的组合；处境。 [原defZh❷❸为物理位置义，非剑桥核心义]"
       },
       {
         "en": "stay in touch",
@@ -8097,138 +8097,138 @@ var VOCAB_DATA = [
         "en": "get",
         "phonetic": "/ɡet/",
         "pos": "v.",
-        "meaning": "❶ 伸手去够，拿到了就是get ❷ 从A状态变成B状态 ❸ 走到某处抵达了",
-        "defEn": "❶v. To obtain or acquire something ❷v. To become or change to a state ❸v. To arrive at a place",
+        "meaning": "❶❷❸❶'伸手去够，拿到了'过于具体化，剑桥是'to obtain, buy, or earn something'（更宽泛的获取）;❷OK;❸OK;遗漏了❹'理解/明白'（get it = understand），这是极常用义项",
+        "defEn": "❶v. To obtain, buy, or earn something ❹v. To understand something",
         "example": "I need to get some milk from the store.",
         "irr": "got|gotten",
         "exampleZh": "我需要从商店买些牛奶。",
         "subcategory": "Daily Actions",
-        "defZh": "❶获得或获取某物❷变成或改变为某种状态❸到达一个地方"
+        "defZh": "❶获得、购买或挣得某物❷变成或改变为某种状态❸到达一个地方❹理解某事（I get it）"
       },
       {
         "en": "make",
         "phonetic": "/meɪk/",
         "pos": "v.",
-        "meaning": "❶ 把原材料动手变成成品 ❷ 让某人/某事变成某种状态 ❸ 促成某事发生",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹'赚得/获得'（make money/make friends/make a living），这是极常用义项",
         "defEn": "❶v. To create or produce something from materials ❷v. To cause someone or something to become a certain way ❸v. To cause something to happen",
         "example": "She made a cake for the party.",
         "irr": "made|made",
         "exampleZh": "她为聚会做了一个蛋糕。",
         "subcategory": "Daily Actions",
-        "defZh": "❶用材料创造或生产某物❷使某人或某物变成某种样子❸使某事发生"
+        "defZh": "❶用材料创造或生产某物❷使某人或某物变成某种样子❸使某事发生❹赚得或获得某物（如赚钱/交友）"
       },
       {
         "en": "take",
         "phonetic": "/teɪk/",
         "pos": "v.",
-        "meaning": "❶ 手伸出去把东西拿过来归自己 ❷ 随身带着走 ❸ 消耗掉（时间/精力）",
-        "defEn": "❶v. To grab and hold something with your hands ❷v. To carry something with you ❸v. To use up time or effort",
+        "meaning": "❶❷❸❶'手伸出去把东西拿过来归自己'偏强调归自己，剑桥是'to remove or hold something'（拿取，不一定归自己）;❷OK;❸OK;遗漏了❹'接受/收到'（take advice/take a gift）和❺'乘坐交通工具'（take a bus/take a train）",
+        "defEn": "❶v. To remove or hold something ❷v. To carry something with you ❸v. To need or require time or effort ❹v. To accept or receive something ❺v. To use a form of transport",
         "example": "Take your time, there's no rush.",
         "irr": "took|taken",
         "exampleZh": "慢慢来，不用急。",
         "subcategory": "Daily Actions",
-        "defZh": "❶用手抓住并握住某物❷随身携带某物❸消耗时间或精力"
+        "defZh": "❶拿取或握住某物❷随身携带某物❸需要或消耗时间或精力❹接受或收到某物❺乘坐某种交通工具"
       },
       {
         "en": "give",
         "phonetic": "/ɡɪv/",
         "pos": "v.",
-        "meaning": "❶ 把自己手里的东西递到对方手里 ❷ 无中生有地产生某种效果",
-        "defEn": "❶v. To hand something to someone else ❷v. To produce an effect without deliberate effort",
+        "meaning": "❶ 把自己手里的东西自愿递到对方手里（无偿） ❷ 引发或产生某种效果 ❸ 提供或供给某物（give information/advice） ❶核心是'自愿赠予/提供'，不是简单的'递到对方手里'，'无中生有'表述不准确，剑桥是'引发/产生'效果",
+        "defEn": "❶v. To present something to someone voluntarily ❷v. To cause or produce something ❸v. To provide or supply something",
         "example": "Can you give me a hand with this?",
         "irr": "gave|given",
         "exampleZh": "你能帮我一把吗？",
         "subcategory": "Daily Actions",
-        "defZh": "❶把某物递给别人❷不刻意费力而产生效果"
+        "defZh": "❶自愿将某物赠予某人❷引发或产生某事❸提供或供给某物"
       },
       {
         "en": "come",
         "phonetic": "/kʌm/",
         "pos": "v.",
-        "meaning": "❶ 从远处朝你这边移动过来 ❷ 某事自然而然出现了",
-        "defEn": "❶v. To move toward someone or a place ❷v. To happen or appear naturally",
+        "meaning": "❶❷❶'从远处朝你这边移动过来'偏强调方向性，剑桥是'move or travel towards someone or a place'（更宽泛）;❷'自然而然出现了'偏主观，剑桥是'to happen or arrive'（发生/到来）;遗漏了❸'达到某点/状态'（come to realize/come to a decision）",
+        "defEn": "❶v. To move or travel toward someone or a place ❷v. To happen or arrive ❸v. To reach a particular point or state",
         "example": "Come over to my house this weekend.",
         "irr": "came|come",
         "exampleZh": "这个周末来我家吧。",
         "subcategory": "Daily Actions",
-        "defZh": "❶朝某人或某个地方移动❷自然地发生或出现"
+        "defZh": "❶向某人或某个地方移动或前往❷发生或到来❸达到某个点或状态"
       },
       {
         "en": "go",
         "phonetic": "/ɡoʊ/",
         "pos": "v.",
-        "meaning": "❶ 离开当前位置朝远处移动 ❷ 从正常状态变成另一种状态 ❸ 机器持续运转中",
-        "defEn": "❶v. To move away from a place ❷v. To change from one state to another ❸v. To continue working or operating",
+        "meaning": "❶ 从一处移动或前往另一处 ❷ 处于某种状态或变为某种状态 ❸ 按某种方式运作或发生 ❶'离开当前位置朝远处移动'侧重'离开'，但剑桥核心是'移动/前往'（不一定离开原位），❸'机器持续运转中'表述为'运作/发生'更准确",
+        "defEn": "❶v. To move or travel from one place to another ❷v. To be in or change to a particular state ❸v. To happen or work in a particular way",
         "example": "Let's go to the park this afternoon.",
         "irr": "went|gone",
         "exampleZh": "今天下午去公园吧。",
         "subcategory": "Daily Actions",
-        "defZh": "❶从一个地方离开❷从一个状态变为另一个状态❸继续运作或运行"
+        "defZh": "❶从一个地方移动或前往另一个地方❷处于或变为某种状态❸以某种方式发生或运作"
       },
       {
         "en": "put",
         "phonetic": "/pʊt/",
         "pos": "v.",
-        "meaning": "❶ 拿起东西稳稳放在指定位置 ❷ 把想法用语言装进别人脑袋 ❸ 把人推入某种处境",
-        "defEn": "❶v. To place something in a specific position ❷v. To express something in words ❸v. To force someone into a situation",
+        "meaning": "❶❷❶核心含义基本一致，但❶'稳稳放在指定位置'偏狭隘，剑桥是'移到某位置'（更宽泛）；❸'把人推入'措辞略偏，剑桥是'使某人/某物处于'（不一定推）",
+        "defEn": "❶To move or place something in a particular position. ❷To express something in words. ❸To cause someone or something to be in a particular state or condition. [原defEn❸",
         "example": "Put the keys on the table.",
         "irr": "put|put",
         "exampleZh": "把钥匙放在桌子上。",
         "subcategory": "Daily Actions",
-        "defZh": "❶将某物放在特定位置❷用语言表达某事❸迫使某人陷入某种处境"
+        "defZh": "❸使某人或某物处于某种处境"
       },
       {
         "en": "keep",
         "phonetic": "/kiːp/",
         "pos": "v.",
-        "meaning": "❶ 紧紧攥住不让跑掉 ❷ 留着不丢继续拥有 ❸ 动作不间断地持续做下去",
-        "defEn": "❶v. To hold something and not let it go ❷v. To continue to have something without losing it ❸v. To continue doing something without stopping",
+        "meaning": "❶❷❸❶'紧紧攥住不让跑掉'过于比喻化，剑桥是'to have or continue to have something'（拥有/继续拥有）;❷OK但和❶重叠;❸OK;遗漏了❹'保持/停留于某状态'（keep quiet/keep warm）和❺'存放/保存'（keep food fresh）",
+        "defEn": "❶v. To have or continue to have something ❷v. To continue doing something ❸v. To stay in a particular state ❹v. To store or preserve something",
         "example": "Keep the door closed please.",
         "irr": "kept|kept",
         "exampleZh": "请保持门关着。",
         "subcategory": "Daily Actions",
-        "defZh": "❶握住某物不放手❷继续拥有某物而不失去它❸继续做某事不停下来"
+        "defZh": "❶拥有或继续拥有某物❷继续做某事❸保持某种状态❸存放或保存某物"
       },
       {
         "en": "let",
         "phonetic": "/let/",
         "pos": "v.",
-        "meaning": "❶ 打开闸门不再拦着，让水/人过去 ❷ 把房子租出去让人住",
-        "defEn": "❶v. To allow something to happen without preventing it ❷v. To rent out a property to someone",
+        "meaning": "❶❷❶'打开闸门不再拦着'过于比喻化，剑桥是'to allow someone to do something';❷OK",
+        "defEn": "❶v. To allow someone to do something",
         "example": "Let me help you with that.",
         "exampleZh": "让我帮你做那个。",
         "subcategory": "Daily Actions",
-        "defZh": "❶允许某事发生而不阻止❷将房产出租给某人"
+        "defZh": "❶允许某人做某事"
       },
       {
         "en": "say",
         "phonetic": "/seɪ/",
         "pos": "v.",
-        "meaning": "❶ 嘴巴张开把想法变成声音说出来 ❷ 事实本身就表明了某件事",
-        "defEn": "❶v. To express thoughts by speaking words ❷v. To indicate or show something clearly",
+        "meaning": "❶❷核心含义一致，但❶'嘴巴张开把想法变成声音'过于具体和口语化，剑桥简洁地定义为'to express in words/to speak words'",
+        "defEn": "❶To express thoughts or ideas using words. ❷To pronounce words. [原defEn❷",
         "example": "What did she say about the plan?",
         "irr": "said|said",
         "exampleZh": "她对那个计划说了什么？",
         "subcategory": "Daily Actions",
-        "defZh": "❶通过说出词语来表达想法❷清楚地指示或表明某事"
+        "defZh": "❶用言语表达某事❷表明或显示某事"
       },
       {
         "en": "tell",
         "phonetic": "/tel/",
         "pos": "v.",
-        "meaning": "❶ 把消息从你脑子里装进对方脑子里 ❷ 仔细辨认出A和B的区别 ❸ 用命令口气让别人去做",
-        "defEn": "❶v. To communicate information to someone ❷v. To distinguish one thing from another ❸v. To instruct someone to do something",
+        "meaning": "❶❷❸核心含义基本一致，❶'把消息从你脑子里装进对方脑子里'过于比喻化，剑桥简单定义为'to say something to someone';❷'仔细辨认出A和B的区别'偏具体，剑桥是'to know, recognize, or judge'更宽泛;❸OK",
+        "defEn": "❶v. To say something to someone ❷v. To know, recognize, or be able to judge something",
         "example": "Tell me what happened yesterday.",
         "irr": "told|told",
         "exampleZh": "告诉我昨天发生了什么。",
         "subcategory": "Daily Actions",
-        "defZh": "❶向某人传达信息❷区分一件事与另一件事❸指示某人做某事"
+        "defZh": "❶对某人说出某事❷辨认、识别或判断某事③指示或命令某人做某事"
       },
       {
         "en": "know",
         "phonetic": "/noʊ/",
         "pos": "v.",
-        "meaning": "❶ 信息已经在脑子里存着了，不用再查 ❷ 见过面打过交道认得这个人 ❸ 深度理解内在原理",
+        "meaning": "❶❷❸核心含义基本一致，❶'不用再查'多余修饰，剑桥核心是'have information in your mind';❷'见过面打过交道'过于具体，剑桥是'be familiar with'（可以是通过任何途径）;❸OK",
         "defEn": "❶v. To have information stored in your mind ❷v. To be familiar with a person or place ❸v. To understand how something works",
         "example": "I know the answer to that question.",
         "irr": "knew|known",
@@ -8240,32 +8240,32 @@ var VOCAB_DATA = [
         "en": "think",
         "phonetic": "/θɪŋk/",
         "pos": "v.",
-        "meaning": "❶ 脑子里在转念头琢磨事情 ❷ 经过思考后得出一个判断 ❸ 认真考虑要不要做",
-        "defEn": "❶v. To use your mind to consider something ❷v. To form an opinion after consideration ❸v. To seriously consider doing something",
+        "meaning": "❶❷❸❶OK;❷'得出一个判断'偏狭，剑桥是'have an opinion or belief'（持有观点/信念，不一定经过思考得出）;❸OK",
+        "defEn": "❷v. To have an opinion or belief about something",
         "example": "I think it's a good idea.",
         "irr": "thought|thought",
         "exampleZh": "我觉得这是个好主意。",
         "subcategory": "Daily Actions",
-        "defZh": "❶用头脑考虑某事❷经过考虑后形成看法❸认真考虑做某事"
+        "defZh": "❷对某事持有某种看法或信念"
       },
       {
         "en": "see",
         "phonetic": "/siː/",
         "pos": "v.",
-        "meaning": "❶ 眼睛接收到光线，物体出现在视野里 ❷ 看穿表面直抵本质 ❸ 和某人面对面碰头",
-        "defEn": "❶v. To perceive something with your eyes ❷v. To understand the true nature of something ❸v. To meet someone face to face",
+        "meaning": "❶❷❸❶'眼睛接收到光线'过于物理化，剑桥是'notice or become aware using your eyes';❷'看穿表面直抵本质'过于文学化，剑桥简洁定义为'understand or realize';❸'面对面碰头'偏口语，剑桥是'visit or meet'",
+        "defEn": "❶v. To notice or become aware of something using your eyes ❷v. To understand or realize something",
         "example": "I saw her at the supermarket yesterday.",
         "irr": "saw|seen",
         "exampleZh": "我昨天在超市看见了她。",
         "subcategory": "Daily Actions",
-        "defZh": "❶用眼睛感知某物❷理解某事物的真实本质❸与某人面对面会面"
+        "defZh": "❶用眼睛注意到或察觉某物❷理解或意识到某事③拜访或会见某人"
       },
       {
         "en": "look",
         "phonetic": "/lʊk/",
         "pos": "v.",
-        "meaning": "❶ 眼球转向某处想看清楚 ❷ 外表看起来给人某种印象 ❸ 主动搜索翻找（look for）",
-        "defEn": "❶v. To direct your eyes toward something ❷v. To appear or seem in a certain way ❸v. To search for something",
+        "meaning": "❶❷❸核心含义一致，但❶'想看清楚'偏主观意图，剑桥是'direct your eyes toward...and see them'（转向并看到），不强调'想看清楚'",
+        "defEn": "❶v. To direct your eyes toward someone or something and see them",
         "example": "Look at that beautiful sunset.",
         "exampleZh": "看那美丽的日落。",
         "subcategory": "Daily Actions",
@@ -8275,42 +8275,42 @@ var VOCAB_DATA = [
         "en": "find",
         "phonetic": "/faɪnd/",
         "pos": "v.",
-        "meaning": "❶v. 搜索一番后终于摸到目标 ❷v. 经历后心里冒出感受 ❸n. 值得发现的稀有好物",
-        "defEn": "❶v. To discover something after searching ❷v. To experience a feeling after an event",
+        "meaning": "❶搜索后发现或找到目标 ❷发现自己有某种感受或想法 ❸n.值得发现的稀有好物 ❶'摸到目标'口语化，剑桥核心是'发现/找到';❷'经历后心里冒出感受'偏离，剑桥是'发现自己有某种感受/看法'（discover that you feel/think），不是'冒出'",
+        "defEn": "❶To discover or locate something by searching or by accident. ❷To discover that something is true or exists. ❸To make a judgment or decision, especially in a court of law. [原defEn❸语法标注",
         "example": "I can't find my phone anywhere.",
         "irr": "found|found",
         "exampleZh": "我到处找不到手机。",
         "subcategory": "Daily Actions",
-        "defZh": "❶搜索后发现某物❷在事件之后体验到一种感觉"
+        "defZh": "❶v. 发现或找到某物。❷v. 觉得、认为（find sth adj.）。❸v. 裁决、判定（法律用语）。 [原defZh❷"
       },
       {
         "en": "show",
         "phonetic": "/ʃoʊ/",
         "pos": "v.",
-        "meaning": "❶ 把藏着的东西摊开让人看清楚 ❷ 用证据论证某事确实如此 ❸ 手指指向某处引导注意",
-        "defEn": "❶v. To make something visible that was hidden ❷v. To prove or demonstrate that something is true ❸v. To guide someone's attention to something",
+        "meaning": "❶ 让某人能看到某物 ❷ 用证据证明或表明某事确实如此 ❸ 引导或指示某人注意某处 ❶'把藏着的东西摊开'偏狭隘，剑桥是'make it possible/easy for someone to see'（更宽泛，不一定是从'藏着'到'摊开');❷OK;❸OK但'手指指向'过于具体",
+        "defEn": "❶v. To make it possible or easy for someone to see something ❸v. To guide or direct someone's attention to something",
         "example": "Show me how to use this app.",
         "irr": "showed|shown",
         "exampleZh": "给我展示怎么用这个应用。",
         "subcategory": "Daily Actions",
-        "defZh": "❶使隐藏的事物变得可见❷证明或表明某事是真实的❸引导某人的注意力到某物"
+        "defZh": "❶让某人能够看到某物❸引导或指引某人的注意力"
       },
       {
         "en": "try",
         "phonetic": "/traɪ/",
         "pos": "v.",
-        "meaning": "❶ 不知道结果会怎样但还是动手试一把 ❷ 亲自动手做看行不行 ❸ 法庭审理定罪",
-        "defEn": "❶v. To attempt to do something without knowing if you'll succeed ❷v. To test or experiment with something",
+        "meaning": "❶❷❶❷基本一致，但❶'不知道结果会怎样'是冗余修饰，剑桥核心就是'attempt';❷'亲自动手做看行不行'偏实践操作，剑桥是'test to see if satisfactory';❸'法庭审理定罪'狭隘，剑桥是'examine and decide a case'（审理并裁决，不一定是定罪）",
+        "defEn": "❶v. To attempt to do something. ❷v. To test or use something to see if it works. ❸v. (law) To judge a legal case in a court. ❹n. An attempt. [原defEn❷",
         "example": "Try the new restaurant downtown.",
         "exampleZh": "试试市中心那家新餐厅。",
         "subcategory": "Daily Actions",
-        "defZh": "❶尝试做某事，不确定能否成功❷测试或试用某事"
+        "defZh": "❶v. 试图做某事，不确定能否成功。❷v. 测试或试用某事物。❸v. 审判、审理（法律用语）。❹n. 尝试。 [原defZh遗漏❸审判和❹名词义]"
       },
       {
         "en": "walk",
         "phonetic": "/wɔːk/",
         "pos": "v./n.",
-        "meaning": "❶v. 双脚交替迈步前进 ❷n. 慢悠悠走一段路的经历",
+        "meaning": "❶❷❶OK;❷'慢悠悠走一段路的经历'偏强调悠闲，剑桥是'a journey that you make by walking'（更中性）;遗漏了❸n.'步行道/步道'（a walk/path for walking）",
         "defEn": "❶v. To move by putting one foot forward at a time ❷n. A journey made by walking",
         "example": "I walk to work every day.",
         "exampleZh": "我每天步行上班。",
@@ -8322,55 +8322,55 @@ var VOCAB_DATA = [
         "phonetic": "/rʌn/",
         "pos": "v./n.",
         "meaning": "❶v. 双腿快速交替冲出去比走快得多 ❷v. 让系统/组织持续运作 ❸n. 一段连续运作过程",
-        "defEn": "❶v. To move quickly on foot, faster than walking ❷v. To manage or operate a system or organization ❸n. A period of continuous operation",
+        "defEn": "❶v. To move quickly on foot, faster than walking ❷v. To organize or manage a system or organization",
         "example": "She runs three miles every morning.",
         "irr": "ran|run",
         "exampleZh": "她每天早上跑三英里。",
         "subcategory": "Movement & Position",
-        "defZh": "❶用脚快速移动，比走路更快❷管理或运营一个系统或组织❸一段持续运行的时期"
+        "defZh": "❷组织或管理一个系统或组织"
       },
       {
         "en": "stand",
         "phonetic": "/stænd/",
         "pos": "v./n.",
-        "meaning": "❶v. 双腿撑直身体竖直不倒 ❷v. 咬紧牙关硬扛住压力不退缩 ❸v. 代表某个立场（stand for） ❹ n. 站立的姿势或位置",
-        "defEn": "❶v. To support your body on your feet in an upright position ❷v. To endure or resist without giving in ❸v. To represent a position or opinion",
+        "meaning": "❶❷❸❹❶'双腿撑直身体竖直不倒'偏口语，剑桥是'be in an upright position on your feet'（更简洁准确）;❷'咬紧牙关硬扛住压力'过于戏剧化，剑桥是'to tolerate or endure'（容忍/忍受）;❸OK但应注明stand for是短语;❹n.还应包含'摊位/支架'（a small shop/structure）",
+        "defEn": "❶v. To be in an upright position on your feet ❷v. To tolerate or endure something",
         "example": "Please stand up when the teacher enters.",
         "irr": "stood|stood",
         "exampleZh": "老师进来时请站起来。",
         "subcategory": "Movement & Position",
-        "defZh": "❶用双脚支撑身体保持直立❷忍受或抵抗而不屈服❸代表一种立场或观点"
+        "defZh": "❶双脚站立保持直立姿势❷容忍或忍受某事"
       },
       {
         "en": "sit",
         "phonetic": "/sɪt/",
         "pos": "v.",
-        "meaning": "❶ 从站姿降下来屁股落在椅子/地上 ❷ 建筑物安安稳稳坐落在某处",
-        "defEn": "❶v. To lower your body onto a seat or surface ❷v. To be located in a particular position",
+        "meaning": "❶ 坐、坐下 ❷ 位于、坐落 ❸ 开会、开庭（正式用语） [原释义基本一致]",
+        "defEn": "❶v. To rest on a seat with your back upright",
         "example": "Sit down and make yourself comfortable.",
         "irr": "sat|sat",
         "exampleZh": "坐下，让自己舒服点。",
         "subcategory": "Movement & Position",
-        "defZh": "❶将身体降低到座位或表面上❷位于特定位置"
+        "defZh": "❶坐在座位上，背部挺直地休息"
       },
       {
         "en": "lie",
         "phonetic": "/laɪ/",
         "pos": "v.",
         "meaning": "❶ 身体横放下来平躺不动 ❷ 嘴里编假话骗人 ❸ 物体平铺延展在某处",
-        "defEn": "❶v. To rest in a horizontal position ❷v. To say something that is not true ❸v. To extend flat across an area",
+        "defEn": "❶v. To be in or move into a horizontal position ❸v. To be situated in a particular place",
         "example": "Lie down and rest for a while.",
         "irr": "lay|lain",
         "exampleZh": "躺下来休息一会儿。",
         "subcategory": "Movement & Position",
-        "defZh": "❶以水平姿势休息❷说不真实的话❸平展延伸过一个区域"
+        "defZh": "❶处于或进入水平姿势❷说不真实的话骗人❸位于特定位置"
       },
       {
         "en": "fall",
         "phonetic": "/fɔːl/",
         "pos": "v./n.",
         "meaning": "❶v. 从高处失去支撑直直摔下来 ❷n. 美国叫秋天因为树叶往下掉 ❸v./n. 数字从高处往下滑落",
-        "defEn": "❶v. To drop down from a higher position ❷n. The season when leaves drop from trees ❸v. To decrease in number or level",
+        "defEn": "❶v. To drop down from a higher position to a lower position",
         "example": "Be careful not to fall on the ice.",
         "irr": "fell|fallen",
         "exampleZh": "小心别在冰上摔倒。",
@@ -8415,7 +8415,7 @@ var VOCAB_DATA = [
         "en": "turn",
         "phonetic": "/tɜːrn/",
         "pos": "v./n.",
-        "meaning": "❶v. 身体或物体绕轴旋转换个朝向 ❷v. 从A状态切换到B状态 ❸n. 轮到你出手的那个回合",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹n.'弯道/转弯处'（a turn in the road），以及turn on/off（开关）这个极常用短语",
         "defEn": "❶v. To rotate or change direction ❷v. To change from one state to another ❸n. A chance or opportunity to do something",
         "example": "Turn left at the next intersection.",
         "exampleZh": "在下一个路口左转。",
@@ -8426,30 +8426,30 @@ var VOCAB_DATA = [
         "en": "move",
         "phonetic": "/muːv/",
         "pos": "v.",
-        "meaning": "❶ 从当前位置换到新位置 ❷ 促成某事往前推进 ❸ 深深触动内心让人动容",
-        "defEn": "❶v. To change position from one place to another ❷v. To cause progress in a situation ❸v. To touch someone emotionally",
+        "meaning": "❶❷❸❶OK;❷'促成某事往前推进'偏模糊，剑桥是'to make progress';❸OK;遗漏了❹'搬家/搬迁'（move house/move to a new city）和❺'正式提议'（move a motion）",
+        "defEn": "❷v. To make progress",
         "example": "Move your chair closer to the table.",
         "exampleZh": "把椅子挪到桌子旁边。",
         "subcategory": "Movement & Position",
-        "defZh": "❶从一处改变位置到另一处❷使局势取得进展❸在情感上触动某人"
+        "defZh": "❷取得进展❸使某人深受感动❹搬家/搬迁❺在会议上正式提议"
       },
       {
         "en": "stop",
         "phonetic": "/stɑːp/",
         "pos": "v./n.",
-        "meaning": "❶v. 正在运动的东西突然刹住不动了 ❷v. 伸手拦住不让继续往前 ❸n. 公交车停靠让乘客上下车的点位",
-        "defEn": "❶v. To come to an end and no longer move ❷v. To prevent someone from continuing ❸n. A place where a bus stops for passengers",
+        "meaning": "❶❷❸❶'突然刹住不动了'偏物理动作，剑桥是'to finish doing something or to no longer happen'（更宽泛，包括停止活动/事件）;❷OK;❸OK",
+        "defEn": "❶v. To no longer do something or no longer happen ❷v. To prevent someone from doing something",
         "example": "Stop talking and listen to me.",
         "exampleZh": "别说话，听我说。",
         "subcategory": "Movement & Position",
-        "defZh": "❶停下来不再移动❷阻止某人继续❸公交车停靠载客的地方"
+        "defZh": "❶不再做某事或不再发生❷阻止某人做某事"
       },
       {
         "en": "stay",
         "phonetic": "/steɪ/",
         "pos": "v./n.",
-        "meaning": "❶v. 原地不动继续待在同一个地方 ❷v. 状态持续不变不转变 ❸n. 在某地暂住一段时间",
-        "defEn": "❶v. To remain in one place without leaving ❷v. To continue in a certain state ❸n. A period of living somewhere temporarily",
+        "meaning": "❶❷❸❶'原地不动继续待在同一个地方'中'原地不动'多余限定，剑桥是'remain in a place'（留在某处，不一定原地不动）;❷OK;❸OK",
+        "defEn": "❶v. To remain in a place",
         "example": "Stay here until I come back.",
         "exampleZh": "留在这里等我回来。",
         "subcategory": "Movement & Position",
@@ -8459,19 +8459,19 @@ var VOCAB_DATA = [
         "en": "wait",
         "phonetic": "/weɪt/",
         "pos": "v.",
-        "meaning": "❶ 脚步停在那不动，等别人先做完再来 ❷ 跟在旁边随时听吩咐伺候",
-        "defEn": "❶v. To stay where you are until something happens ❷v. To serve someone attentively",
+        "meaning": "❶❷❶'脚步停在那不动'过于具体，剑桥是'stay where you are or delay action';❷'随时听吩咐伺候'偏仆人式伺候，剑桥是'serve customers at a table'（餐厅服务等）",
+        "defEn": "❷v. To serve customers at a table (e.g. in a restaurant)",
         "example": "Wait for me at the bus stop.",
         "exampleZh": "在公交站等我。",
         "subcategory": "Movement & Position",
-        "defZh": "❶留在原地直到某事发生❷殷勤地服侍某人"
+        "defZh": "❷在餐厅等场所为顾客提供餐桌服务"
       },
       {
         "en": "reach",
         "phonetic": "/riːtʃ/",
         "pos": "v.",
-        "meaning": "❶v. 手臂尽量伸出去够远处的东西 ❷v. 一步一步走到目的地抵达了 ❸n. 手能伸到的最远范围",
-        "defEn": "❶v. To stretch your arm out to touch something ❷v. To arrive at a destination ❸n. The distance you can stretch your arm",
+        "meaning": "❶❷❸❶OK但'尽量伸出去'偏强调用力，剑桥是'stretch out';❷OK;❸OK;遗漏了❹'达到某目标/水平'（reach a goal/level/number），这是重要义项如'reach an agreement/reach 100'",
+        "defEn": "❶v. To arrive at a place. ❷v. To stretch out your hand to touch or take something. ❸n. The distance you can stretch your arm; the range of influence.",
         "example": "I can't reach the top shelf — can you help me?",
         "exampleZh": "我够不到最上面的架子——你能帮我吗？",
         "subcategory": "Movement & Position",
@@ -8481,8 +8481,8 @@ var VOCAB_DATA = [
         "en": "leave",
         "phonetic": "/liːv/",
         "pos": "v./n.",
-        "meaning": "❶v. 从某处转身走掉不再待在这 ❷v. 临走时故意把东西留在原处 ❸n. 不上班的休息假期",
-        "defEn": "❶v. To go away from a place ❷v. To let something remain behind when you go ❸n. Time off from work",
+        "meaning": "❶❷❸❶'转身走掉'过于戏剧化，剑桥是'go away from';❷OK;❸OK;遗漏了❹'允许/让'（leave someone alone/leave something to happen），这是常用义项",
+        "defEn": "❶v. To go away from a place or person",
         "example": "I'll leave the office at 5 p.m.",
         "irr": "left|left",
         "exampleZh": "我下午5点离开办公室。",
@@ -8493,8 +8493,8 @@ var VOCAB_DATA = [
         "en": "speak",
         "phonetic": "/spiːk/",
         "pos": "v.",
-        "meaning": "❶ 嘴里发出有意义的词语跟人交流 ❷ 用某种语言说出句子 ❸ 在众人面前站起来讲话",
-        "defEn": "❶v. To say words to communicate with someone ❷v. To be able to use a language ❸v. To give a formal talk to an audience",
+        "meaning": "❶❷❸❶'嘴里发出有意义的词语'过于字面化，剑桥简洁定义为'to say words / to use the voice';❷OK;❸OK",
+        "defEn": "❶v. To say words, to use the voice, or to have a conversation",
         "example": "She speaks three languages fluently.",
         "irr": "spoke|spoken",
         "exampleZh": "她流利地说三种语言。",
@@ -8516,18 +8516,18 @@ var VOCAB_DATA = [
         "en": "call",
         "phonetic": "/kɔːl/",
         "pos": "v./n.",
-        "meaning": "❶v. 用嘴巴大声喊名字让对方听到 ❷v. 拿起电话拨号等对方接 ❸v. 正式宣布给某人某事贴标签 ❹ n. 一次电话沟通或呼叫",
-        "defEn": "❶v. To shout or say someone's name ❷v. To telephone someone ❸v. To name or describe someone as something ❹n. A telephone conversation",
+        "meaning": "❶❷❸❹❶'用嘴巴大声喊名字'过于具体，剑桥是'to cry out or shout'（不一定是喊名字）;❷OK;❸'正式宣布给某人某事贴标签'偏比喻，剑桥是'to give a name to someone or something'（命名/称呼）;❹OK",
+        "defEn": "❶v. To cry out or shout in a loud voice",
         "example": "Call me when you get home.",
         "exampleZh": "到家后给我打电话。",
         "subcategory": "Communication",
-        "defZh": "❶大声喊出某人的名字❷给某人打电话❸将某人命名为或描述为某物❹一次电话对话"
+        "defZh": "❶大声喊叫或呼叫"
       },
       {
         "en": "write",
         "phonetic": "/raɪt/",
         "pos": "v.",
-        "meaning": "❶ 用笔/键盘把想法变成文字记录下来 ❷ 正式起草撰写某类文本",
+        "meaning": "❶❷❶OK;❷OK;遗漏了❸'写信/写邮件与人沟通'（write to someone），这是常用义项",
         "defEn": "❶v. To put words on paper or screen using a pen or keyboard ❷v. To compose a text or document",
         "example": "Write your name on the form.",
         "irr": "wrote|written",
@@ -8540,7 +8540,7 @@ var VOCAB_DATA = [
         "phonetic": "/riːd/",
         "pos": "v./n.",
         "meaning": "❶v. 眼睛从左到右扫过文字一行行看 ❷v. 透过文字表面读懂背后的意思 ❸v. 在某处读到某信息",
-        "defEn": "❶v. To look at written words and understand them ❷v. To understand the meaning of something ❸v. To find information in a text",
+        "defEn": "❶v. To look at and understand the meaning of written or printed words or symbols",
         "example": "I read a book before bed every night.",
         "irr": "read|read",
         "exampleZh": "我每晚睡前读一本书。",
@@ -8552,18 +8552,18 @@ var VOCAB_DATA = [
         "phonetic": "/ˈæn.sər/",
         "pos": "v./n.",
         "meaning": "❶v. 别人问了问题，你开口给出回应 ❷n. 针对问题给出的那个回应内容",
-        "defEn": "❶v. To say or write something in reply to a question ❷n. Something you say or write in reply",
+        "defEn": "❶v. To say, write, or do something as a reaction to a question",
         "example": "Please answer the phone.",
         "exampleZh": "请接电话。",
         "subcategory": "Communication",
-        "defZh": "❶回复一个问题所说或所写的内容❷你回复时所说或所写的东西"
+        "defZh": "❶对一个问题做出回应（说、写或做）❷对一个问题的回应内容 ❶原defZh侧重'回复所说/所写的内容'，但剑桥answer(v.)核心是'react/respond to a question'（反应/回应），不仅是'说/写';❷n.应更简洁"
       },
       {
         "en": "listen",
         "phonetic": "/ˈlɪs.ən/",
         "pos": "v.",
-        "meaning": "❶ 耳朵竖起来认真听对方说的每个字 ❷ 听完之后照着说的去做",
-        "defEn": "❶v. To pay attention to sounds or someone's words ❷v. To follow someone's advice or instructions",
+        "meaning": "❶❷❶'耳朵竖起来认真听对方说的每个字'过于夸张，剑桥简洁定义为'to give attention with the ear to sound';❷OK",
+        "defEn": "❶v. To give attention to sound or someone's words with your ear",
         "example": "Listen carefully to the instructions.",
         "exampleZh": "仔细听说明。",
         "subcategory": "Communication",
@@ -8574,30 +8574,30 @@ var VOCAB_DATA = [
         "phonetic": "/ɪkˈspleɪn/",
         "pos": "v.",
         "meaning": "❶ 把复杂的道理一层一层摊平说清楚",
-        "defEn": "❶v. To make something clear and easy to understand",
+        "defEn": "❶To make something clear or easy to understand.",
         "example": "Can you explain this rule to me?",
         "root": "ex(out)+plain(清楚) → 说清楚 → 解释",
         "exampleZh": "你能给我解释这条规则吗？",
         "subcategory": "Communication",
-        "defZh": "❶使某事变得清晰易懂"
+        "defZh": "❶使某事变得清晰易懂 ❷为…辩解（explain away）"
       },
       {
         "en": "agree",
         "phonetic": "/əˈɡriː/",
         "pos": "v.",
-        "meaning": "❶ 觉得对方说的没错点头认可 ❷ 双方意见碰在一起达成一致",
-        "defEn": "❶v. To have the same opinion as someone else ❷v. To decide together on something",
+        "meaning": "❶❷❶OK;❷OK;遗漏了❸'适合/可接受'（agree with you = suit you），例如'the food doesn't agree with me'",
+        "defEn": "❶v. To have the same opinion ❷v. To decide something together ❸v. To be suitable or acceptable",
         "example": "I agree with your opinion.",
         "exampleZh": "我同意你的观点。",
         "subcategory": "Communication",
-        "defZh": "❶与某人持有相同意见❷共同决定某事"
+        "defZh": "❶与某人持有相同意见❷共同决定某事❸适合或可接受（如：the food doesn't agree with me）"
       },
       {
         "en": "suggest",
         "phonetic": "/səˈdʒest/",
         "pos": "v.",
-        "meaning": "❶ 脑子里冒出想法递给对方参考 ❷ 话里暗含某种意思不用明说",
-        "defEn": "❶v. To offer an idea for someone to consider ❷v. To hint at something without saying it directly",
+        "meaning": "❶❷❶'脑子里冒出想法递给对方参考'过于比喻化，剑桥是'mention an idea or plan for someone to consider';❷OK",
+        "defEn": "❶v. To mention an idea or plan for someone to consider",
         "example": "I suggest we try a different approach.",
         "root": "sub(下)+gest(带) → 从下面带上来 → 提议",
         "exampleZh": "我建议我们试试不同的方法。",
@@ -8608,31 +8608,31 @@ var VOCAB_DATA = [
         "en": "promise",
         "phonetic": "/ˈprɑːm.ɪs/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 举手发誓说一定会做到的事",
-        "defEn": "❶v./n. To say that you will certainly do something",
+        "meaning": "❶❶'举手发誓'过于具体化（不是必须举手），剑桥是'to tell someone that you will certainly do something';遗漏了❸n.'前途/希望'（show promise = 显示前途），这是重要义项",
+        "defEn": "❶v. To tell someone that you will certainly do something ❷n. A statement that you will certainly do something ❸n. Signs of likely future success",
         "example": "I promise I'll be there on time.",
         "root": "pro(前)+mise(送) → 先送出保证 → 承诺",
         "exampleZh": "我保证准时到。",
         "subcategory": "Communication",
-        "defZh": "❶说你一定会做某事"
+        "defZh": "❶(v.) 向某人保证一定会做某事 ❷(n.) 做某事的承诺/诺言 ❸(n.) 未来成功的迹象/前途"
       },
       {
         "en": "warn",
         "phonetic": "/wɔːrn/",
         "pos": "v.",
         "meaning": "❶ 提前敲响警钟让对方注意危险",
-        "defEn": "❶v. To tell someone about a danger before it happens",
+        "defEn": "❶v. To make someone realize a possible danger or problem, especially one in the future",
         "example": "They warned us about the storm.",
         "exampleZh": "他们警告我们有暴风雨。",
         "subcategory": "Communication",
-        "defZh": "❶在危险发生前告诉某人"
+        "defZh": "❶使某人意识到可能存在的危险或问题"
       },
       {
         "en": "remind",
         "phonetic": "/rɪˈmaɪnd/",
         "pos": "v.",
         "meaning": "❶ 轻轻戳一下让对方想起差点忘了的事 ❷ 某个场景自动把记忆唤醒",
-        "defEn": "❶v. To help someone remember something ❷v. To cause someone to think of something",
+        "defEn": "❶v. To make someone think of something they have forgotten or might have forgotten",
         "example": "Remind me to call Mom tonight.",
         "root": "re(再)+mind(心) → 再回到心头 → 提醒",
         "exampleZh": "提醒我今晚给妈妈打电话。",
@@ -8643,66 +8643,66 @@ var VOCAB_DATA = [
         "en": "invite",
         "phonetic": "/ɪnˈvaɪt/",
         "pos": "v.",
-        "meaning": "❶ 正式发出邀请请对方来参加 ❷ 某种条件吸引人自动想参与",
-        "defEn": "❶v. To ask someone to come to an event ❷v. To attract someone to participate",
+        "meaning": "❶❷❶OK;❷'某种条件吸引人自动想参与'偏正面理解，剑桥义项❷是'encourage or seem to encourage something bad'（常指招致不好的事），如'Don't leave the window open — it invites burglars'",
+        "defEn": "❷v. To encourage or seem to encourage something to happen (often unwanted)",
         "example": "She invited me to her birthday party.",
         "root": "in(内)+vit(叫) → 叫进来 → 邀请",
         "exampleZh": "她邀请我去她的生日聚会。",
         "subcategory": "Communication",
-        "defZh": "❶邀请某人参加活动❷吸引某人参与"
+        "defZh": "❷诱使/招致某事发生（常指不好的事）"
       },
       {
         "en": "refuse",
         "phonetic": "/rɪˈfjuːz/",
         "pos": "v.",
-        "meaning": "❶ 把递过来的东西推回去不接受 ❷ 内心抗拒不愿去做",
-        "defEn": "❶v. To say no to something offered ❷v. To be unwilling to do something",
+        "meaning": "❶❷❶'把递过来的东西推回去'过于比喻化，剑桥是'say that you will not do or accept';❷'内心抗拒不愿去做'偏心理描述，剑桥是'say you will not do something'（明确的拒绝行为，不只是内心抗拒）",
+        "defEn": "❶v. To say that you will not do or accept something ❷v. To not give or allow something",
         "example": "He refused to help with the project.",
         "root": "re(回)+fuse(倾注) → 退回 → 拒绝",
         "exampleZh": "他拒绝帮忙做这个项目。",
         "subcategory": "Communication",
-        "defZh": "❶对所提供的东西说不❷不愿意做某事"
+        "defZh": "❶拒绝做或接受某事❷不予给予或允许某事"
       },
       {
         "en": "complain",
         "phonetic": "/kəmˈpleɪn/",
         "pos": "v.",
-        "meaning": "❶ 对着不满意的事反复嘟囔发牢骚",
-        "defEn": "❶v. To express dissatisfaction about something",
+        "meaning": "❶❶'反复嘟囔发牢骚'过于口语化，剑桥是'to say that something is wrong or that you are unhappy about something';遗漏了正式投诉义项（complain to the manager/complain about service）",
+        "defEn": "❶v. To say that something is wrong or that you are not satisfied about something",
         "example": "She complains about the noise every day.",
         "exampleZh": "她每天抱怨噪音。",
         "subcategory": "Communication",
-        "defZh": "❶对某事表达不满"
+        "defZh": "❶v. 说某事有问题或表示不满/不高兴"
       },
       {
         "en": "argue",
         "phonetic": "/ˈɑːr.ɡjuː/",
         "pos": "v.",
-        "meaning": "❶ 两人观点对撞互相抛理由试图说服对方 ❷ 在法庭上正面对辩 ❸ 抛出一个立场作为论证依据",
-        "defEn": "❶v. To disagree with someone by giving reasons ❷v. To present reasons in support of a position ❸v. To debate in a court",
+        "meaning": "❶❷❸❶OK;❷'在法庭上正面对辩'不是剑桥的独立义项，argue在法庭用法归属义项❷'give reasons';❸'抛出一个立场'偏口语，剑桥是'give reasons for or against something'（为/反对某事提供理由）",
+        "defEn": "❶v. To disagree with someone by giving reasons ❷v. To give reasons for or against something",
         "example": "They argued about where to eat.",
         "exampleZh": "他们争论去哪里吃饭。",
         "subcategory": "Communication",
-        "defZh": "❶通过给出理由与某人不同意❷提出理由支持一个立场❸在法庭上辩论"
+        "defZh": "❶通过给出理由与某人争论❷为或反对某事提出理由"
       },
       {
         "en": "believe",
         "phonetic": "/bɪˈliːv/",
         "pos": "v.",
         "meaning": "❶ 在心里认定某事是真的即便没亲眼看到 ❷ 信任某个人不会骗你",
-        "defEn": "❶v. To accept something as true without proof ❷v. To have trust or confidence in someone",
+        "defEn": "❶v. To think that something is true or that someone is telling the truth ❷v. To have confidence or faith in someone or something",
         "example": "I believe you can do it.",
         "root": "be(存在)+lieve(爱) → 因爱而信 → 相信",
         "exampleZh": "我相信你能做到。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶在没有证据的情况下接受某事为真❷对某人怀有信任或信心"
+        "defZh": "❶认为某事是真的或某人说的是真话❷对某人或某事怀有信心或信念"
       },
       {
         "en": "hope",
         "phonetic": "/hoʊp/",
         "pos": "v./n.",
         "meaning": "❶v. 心里想着好事会发生翘首期盼 ❷n. 那件让你翘首期盼的好事",
-        "defEn": "❶v. To want something to happen and think it might ❷n. The feeling that something good will happen",
+        "defEn": "❶v. To want something to happen or be true and think that it could happen ❷n. The feeling that something wanted can be had or will happen",
         "example": "I hope it doesn't rain tomorrow.",
         "exampleZh": "我希望明天不下雨。",
         "subcategory": "Thinking & Feeling",
@@ -8712,34 +8712,34 @@ var VOCAB_DATA = [
         "en": "wish",
         "phonetic": "/wɪʃ/",
         "pos": "v./n.",
-        "meaning": "❶v. 对着星星许愿希望某事成真 ❷n. 心里那个想实现的愿望",
-        "defEn": "❶v. To want something that may not be possible ❷n. A strong desire for something",
+        "meaning": "❶❷❶'对着星星许愿'过于童话化，剑桥是'to want something to happen, especially when it is unlikely';❷OK",
+        "defEn": "❶v. To want something to happen, especially when it is unlikely",
         "example": "I wish I could travel more.",
         "exampleZh": "我希望能多旅行。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶想要可能不可能的事❷对某物的强烈渴望"
+        "defZh": "❶希望某事发生，尤其不太可能实现的事❷强烈的愿望或渴望"
       },
       {
         "en": "fear",
         "phonetic": "/fɪr/",
         "pos": "v./n.",
-        "meaning": "❶害怕，恐惧❷担忧",
-        "defEn": "❶An unpleasant emotion caused by the threat of danger, pain, or harm.❷To be frightened or worried.",
+        "meaning": "❶❷❶n.过于简略（只写'害怕，恐惧'），应包含'由危险/疼痛/伤害威胁引起的不愉快情绪';❷v.过于简略（只写'担忧'），应包含'害怕某事/担心不好的事可能发生'",
+        "defEn": "❶(n.) An unpleasant emotion caused by the threat of danger, pain, or harm ❷(v.) To be frightened of something or be afraid that something bad might happen",
         "example": "She fears the dark.",
         "exampleZh": "她怕黑。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶对某事感到害怕❷担心可能发生不好的事"
+        "defZh": "❶(n.) 由危险、疼痛或伤害威胁引起的不愉快情绪 ❷(v.) 害怕某事物或担心不好的事可能发生"
       },
       {
         "en": "love",
         "phonetic": "/lʌv/",
         "pos": "v./n.",
-        "meaning": "❶爱❷热爱❸爱情",
-        "defEn": "❶(n.) A strong feeling of affection.❷(v.) To have strong feelings of affection for someone.",
+        "meaning": "❶❷❸过于简略，❶n.应明确'强烈的爱慕感情';❷v.应明确'对某人深感爱慕/浪漫吸引';❸应注明'喜欢某物'（如love music），不仅是'爱情'",
+        "defEn": "❶(n.) A strong feeling of affection ❷(v.) To like someone very much and be romantically attracted to them ❸(v.) To like something very much",
         "example": "I love this song so much.",
         "exampleZh": "我太喜欢这首歌了。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶对某人感到强烈的喜爱和关心"
+        "defZh": "❶(n.) 强烈的爱慕感情 ❷(v.) 对某人深感爱慕并被浪漫地吸引 ❸(v.) 极度喜欢某事物"
       },
       {
         "en": "hate",
@@ -8756,19 +8756,19 @@ var VOCAB_DATA = [
         "en": "enjoy",
         "phonetic": "/ɪnˈdʒɔɪ/",
         "pos": "v.",
-        "meaning": "❶ 全身心沉浸在美好体验里不想结束 ❷ 对某事物真心喜欢乐在其中",
-        "defEn": "❶v. To take pleasure in something ❷v. To like doing something",
+        "meaning": "❶❷❶过于主观化（'全身心沉浸不想结束'），剑桥是'take pleasure in something';❷OK;遗漏了❸'享有/拥有好东西'如enjoy good health/enjoy a privilege",
+        "defEn": "❶v. To take pleasure in something ❷v. To have something good, such as health or a privilege",
         "example": "Enjoy your weekend!",
         "root": "en(使)+joy(快乐) → 使快乐 → 享受",
         "exampleZh": "享受你的周末！",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶在某事中获得乐趣❷喜欢做某事"
+        "defZh": "❶从某事中获得乐趣❷享有好的东西（如健康或特权）"
       },
       {
         "en": "worry",
         "phonetic": "/ˈwɜːr.i/",
         "pos": "v.",
-        "meaning": "❶ 脑子里不停转着坏念头越想越慌 ❷ 心里拧成一团焦虑不安",
+        "meaning": "❶❷❶'脑子里不停转着坏念头越想越慌'过于具体化，剑桥是'to feel anxious about problems';❷'心里拧成一团焦虑不安'跟❶语义重叠，而剑桥❷是'to make someone feel anxious'（使别人担忧），如'It worries me that...'",
         "defEn": "❶v. To feel anxious about possible problems ❷v. To cause someone to feel anxious",
         "example": "Don't worry about the test.",
         "exampleZh": "别担心考试。",
@@ -8779,8 +8779,8 @@ var VOCAB_DATA = [
         "en": "doubt",
         "phonetic": "/daʊt/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 心里悬着不确定到底是真的还是假的",
-        "defEn": "❶v./n. To feel uncertain about whether something is true",
+        "meaning": "❶❶'心里悬着不确定到底是真的还是假的'过于口语化比喻，剑桥是'to not believe or be uncertain about something'",
+        "defEn": "❶v./n. To not believe or be uncertain about whether something is true or likely",
         "example": "I doubt he'll come today.",
         "root": "dub(二) → 两种想法摇摆 → 怀疑",
         "exampleZh": "我怀疑他今天会来。",
@@ -8792,7 +8792,7 @@ var VOCAB_DATA = [
         "phonetic": "/ɪˈmæd.ʒɪn/",
         "pos": "v.",
         "meaning": "❶ 闭上眼睛在脑子里画出还没发生的画面 ❷ 假设某种情况来推演",
-        "defEn": "❶v. To form a picture in your mind of something not present ❷v. To suppose that something might happen",
+        "defEn": "❶v. To form or have a mental picture or idea of something",
         "example": "Imagine living on the moon.",
         "root": "im(像)+age(像) → 形成像 → 想象",
         "exampleZh": "想象住在月球上。",
@@ -8803,45 +8803,45 @@ var VOCAB_DATA = [
         "en": "remember",
         "phonetic": "/rɪˈmem.bər/",
         "pos": "v.",
-        "meaning": "❶ 过去的事还稳稳存在脑子里随时能调出来 ❷ 主动翻找回忆重温往事 ❸ 替别人传达问候说'代我问好'",
-        "defEn": "❶v. To have something in your mind from the past ❷v. To actively recall a past event ❸v. To greet someone on behalf of another",
+        "meaning": "❶❷❸❶'还稳稳存在脑子里随时能调出来'过于比喻化，剑桥是'to be able to bring back information into your mind';❷'主动翻找回忆重温往事'不是剑桥独立义项，❶❷都是'bring back/recall information';❸OK;遗漏了❹'记住要做某事'（remember to do something），这是区别remember doing的关键义项",
+        "defEn": "❶v. To be able to bring back a piece of information into your mind ❷v. To not forget to do something ❸v. To give a greeting from someone",
         "example": "Remember to bring your umbrella.",
         "root": "re(再)+member(成员) → 再召回脑海 → 记住",
         "exampleZh": "记得带上雨伞。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶在脑海中保留过去的事情❷主动回忆过去的事件❸代他人向某人致意"
+        "defZh": "❶能够把信息从记忆中调回到脑海❷不要忘记去做某事❸代他人向某人致意问候"
       },
       {
         "en": "forget",
         "phonetic": "/fərˈɡet/",
         "pos": "v.",
-        "meaning": "❶ 原本存着的信息从脑子里溜走了再也找不到 ❷ 真的彻底丢掉了不再记得",
-        "defEn": "❶v. To lose information from your mind ❷v. To fail to keep something in memory",
+        "meaning": "❶❷❶'从脑子里溜走了再也找不到'过于比喻化，剑桥是'to be unable to remember something';❷'真的彻底丢掉了'跟❶重叠，不是独立义项;遗漏了❷'因忘记而没做某事'（forget to do），这是极常用义项",
+        "defEn": "❶v. To be unable to remember something ❷v. To fail to remember to do something",
         "example": "I forgot her phone number.",
         "root": "for(远离)+get(得到) → 得到的东西远离 → 忘记",
         "irr": "forgot|forgotten",
         "exampleZh": "我忘了她的电话号码。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶从脑海中丢失信息❷未能将某事保留在记忆中"
+        "defZh": "❶无法记起某事❷忘记去做某事"
       },
       {
         "en": "understand",
         "phonetic": "/ˌʌn.dərˈstænd/",
         "pos": "v.",
-        "meaning": "❶ 把纷杂的信息理顺，内在逻辑全部串通 ❷ 别人一说就立刻抓住了重点 ❸ 从某个渠道得到了新消息",
-        "defEn": "❶v. To know what something means and how it works ❷v. To grasp the meaning of what someone says ❸v. To learn something new from a source",
+        "meaning": "❶❷❸❶'把纷杂的信息理顺'过于具体，剑桥是'know what something means';❷OK但'立刻抓住了重点'偏强调速度，剑桥是'know what someone means';❸'从某个渠道得到了新消息'偏离，剑桥是'learn or be told information'（得知信息），不是'从某个渠道'",
+        "defEn": "❶v. To know what something means ❷v. To know how something works or why it happens ❸v. To learn or be told information",
         "example": "I understand what you mean.",
         "root": "under(在下)+stand(站) → 站在下面支撑 → 理解",
         "irr": "understood|understood",
         "exampleZh": "我理解你的意思。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶知道某事物的含义及其运作方式❷领会某人所说的话的意思❸从某个来源学到新东西"
+        "defZh": "❶理解某事物的含义❷了解某事物如何运作或为何发生❸得知或被告知信息"
       },
       {
         "en": "realize",
         "phonetic": "/ˈriː.ə.laɪz/",
         "pos": "v.",
-        "meaning": "❶ 突然像灯泡亮了一样，看清了之前没注意的事实 ❷ 把计划一步步做出来变成现实",
+        "meaning": "❶❷❶'突然像灯泡亮了一样'比喻过于具体，剑桥是'to understand a situation, sometimes suddenly';❷OK;遗漏了❸'变现/出售资产'（realize assets），金融领域重要义项",
         "defEn": "❶v. To suddenly become aware of a fact ❷v. To make a plan actually happen",
         "example": "I just realized I left the keys at home.",
         "root": "real(真实)+ize(使) → 使变为真实 → 实现/意识到",
@@ -8853,8 +8853,8 @@ var VOCAB_DATA = [
         "en": "notice",
         "phonetic": "/ˈnoʊ.tɪs/",
         "pos": "v./n.",
-        "meaning": "❶v. 眼神或注意力被某个细节捕捉到 ❷n. 正式张贴的通知公告",
-        "defEn": "❶v. To become aware of something by seeing or hearing ❷n. A formal announcement or warning",
+        "meaning": "❶❷❶'眼神或注意力被某个细节捕捉到'过于被动化比喻，剑桥是'to see or become aware of something';❷OK;遗漏了❸n.'注意/关注'（attention）;❹n.'提前通知期'（period of advance warning），如give notice",
+        "defEn": "❶v. To see or become aware of something ❷n. A written or printed announcement ❸n. Attention ❹n. A period of advance warning before something happens",
         "example": "I noticed a new shop on the corner.",
         "exampleZh": "我注意到拐角新开了一家店。",
         "subcategory": "Thinking & Feeling",
@@ -8864,8 +8864,8 @@ var VOCAB_DATA = [
         "en": "consider",
         "phonetic": "/kənˈsɪd.ər/",
         "pos": "v.",
-        "meaning": "❶ 在脑子里翻来覆去权衡各种选项 ❷ 经过思考后得出看法 ❸ 体谅别人的处境设身处地",
-        "defEn": "❶v. To think carefully about something before deciding ❷v. To have a particular opinion ❸v. To take someone's feelings into account",
+        "meaning": "❸ 在做决定前考虑某人的感受和处境",
+        "defEn": "❸v. To think about a person or their feelings before making a decision",
         "example": "Consider all options before deciding.",
         "exampleZh": "做决定前考虑所有选项。",
         "subcategory": "Thinking & Feeling",
@@ -8875,44 +8875,44 @@ var VOCAB_DATA = [
         "en": "decide",
         "phonetic": "/dɪˈsaɪd/",
         "pos": "v.",
-        "meaning": "❶ 在多条路面前拍板选定走哪条 ❷ 法庭正式宣判定案",
-        "defEn": "❶v. To choose what to do after thinking about options ❷v. To officially settle a matter in court",
+        "meaning": "❶❷❶'在多条路面前拍板选定'过于比喻化，剑桥是'to make a choice or judgment about something';❷'法庭正式宣判定案'OK但这是特殊语境用法，不是独立义项;遗漏了❸'影响/决定结果'（determine a result）如'The weather decided our plans'",
+        "defEn": "❶v. To make a choice or judgment about something ❷v. To influence or determine a result",
         "example": "We decided to go camping this weekend.",
         "root": "de(离开)+cide(切) → 切断犹豫 → 决定",
         "exampleZh": "我们决定这周末去露营。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶考虑各种选项后选择做什么❷在法庭上正式解决一件事"
+        "defZh": "❶考虑各种选项后做出选择或判断；决定。❷影响或确定某事的结果。 [原defZh❶基本正确但缺"
       },
       {
         "en": "choose",
         "phonetic": "/tʃuːz/",
         "pos": "v.",
-        "meaning": "❶ 从一堆选项里挑出一个合意的 ❷ 仔细审视逐一挑选最合适的",
-        "defEn": "❶v. To pick one thing from a group of options ❷v. To select carefully what you prefer",
+        "meaning": "❶❷❶OK;❷'仔细审视逐一挑选最合适的'不是剑桥的独立义项，❶❷在剑桥中是同一个核心含义的不同语境应用;遗漏了❸'决定做某事'（choose to do something）",
+        "defEn": "❶v. To decide which one of a number of things you want ❷v. To decide to do something",
         "example": "Choose your favorite color.",
         "irr": "chose|chosen",
         "exampleZh": "选你最喜欢的颜色。",
         "subcategory": "Thinking & Feeling",
-        "defZh": "❶从一组选项中挑选一个❷仔细挑选你所偏好的"
+        "defZh": "❶从若干事物中决定想要哪一个❷决定做某事"
       },
       {
         "en": "build",
         "phonetic": "/bɪld/",
         "pos": "v.",
-        "meaning": "❶ 一砖一瓦从地基往上搭出完整结构 ❷ 从零开始逐步建立起体系 ❸ 让实力一层一层往上叠加",
-        "defEn": "❶v. To construct something by putting parts together ❷v. To develop something gradually over time ❸v. To increase strength or ability",
+        "meaning": "❶❷❸❶'一砖一瓦'过于具体，剑桥是'make something by putting parts together';❷OK;❸'让实力一层一层往上叠加'不是剑桥独立义项，是❷的具体应用",
+        "defEn": "❶v. To make something by putting parts or materials together ❷v. To develop something gradually over time",
         "example": "They built a new school in our neighborhood.",
         "irr": "built|built",
         "exampleZh": "他们在我们社区建了一所新学校。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶通过组装部件来建造某物❷逐渐地发展某事❸增加力量或能力"
+        "defZh": "❶通过组装部件或材料建造某物❷逐步发展某事"
       },
       {
         "en": "create",
         "phonetic": "/kriˈeɪt/",
         "pos": "v.",
-        "meaning": "❶ 从无到有亲手做出前所未见的东西 ❷ 某个动作引发了后续连锁反应",
-        "defEn": "❶v. To make something new that did not exist before ❷v. To cause something to happen as a result",
+        "meaning": "❶❷❶OK;❷'某个动作引发了后续连锁反应'过于戏剧化，剑桥是'cause a situation to happen'（导致某情况发生），不一定有连锁反应",
+        "defEn": "❷v. To cause a situation to happen or exist",
         "example": "She created a beautiful painting.",
         "root": "cre(生长/产生) → 使产生 → 创造",
         "exampleZh": "她创作了一幅美丽的画。",
@@ -8923,36 +8923,36 @@ var VOCAB_DATA = [
         "en": "break",
         "phonetic": "/breɪk/",
         "pos": "v./n.",
-        "meaning": "❶v. 把完整的东西一分为二不再完好如初 ❷v. 跨越不该跨的红线（法律/承诺/记录） ❸n. 做到一半停下来喘口气的小歇",
-        "defEn": "❶v. To separate something into pieces by force ❷v. To violate a rule or agreement ❸n. A pause from activity for rest",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹'中断/停止'（break a journey/break the silence），这是重要义项",
+        "defEn": "❶v. To separate into two or more pieces, usually by force. ❶v. To not follow a rule, promise, or agreement. ❸n. A short rest or period of time when you stop what you are doing.",
         "example": "Don't break the window.",
         "irr": "broke|broken",
         "exampleZh": "不要打破窗户。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶用力将某物分成碎片❷违反规则或协议❸从活动中暂停休息"
+        "defZh": "❶v.打破、弄碎 ❷v.违反、打破（规则/承诺） ❸n.休息、间歇"
       },
       {
         "en": "change",
         "phonetic": "/tʃeɪndʒ/",
         "pos": "v./n.",
-        "meaning": "❶v. 把现有的状态推翻换成另一种 ❷n. 从旧状态到新状态的那个转变过程 ❸v./n. 把旧的换掉拿新的替上",
-        "defEn": "❶v. To make something different from what it was ❷n. The process of becoming different ❸v./n. To replace one thing with another",
+        "meaning": "❶❷❸❶'把现有的状态推翻'过于激进，剑桥是'to make something different'（使变不同）;❷OK;❸OK;遗漏了❹n.'零钱'（coins of low value），这是非常常用的义项",
+        "defEn": "❶v. To make something different, or to become different",
         "example": "We need to change our plan.",
         "exampleZh": "我们需要改变计划。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶使某物变得与原来不同❷变得不同的过程❸用另一物替换一物"
+        "defZh": "❶使某物变得不同，或变得不同❷变化的过程或结果❸用另一物替换一物❹n.零钱（硬币）"
       },
       {
         "en": "grow",
         "phonetic": "/ɡroʊ/",
         "pos": "v.",
-        "meaning": "❶ 从小苗一点点变大变壮的生命过程 ❷ 数量或规模像滚雪球越滚越大 ❸ 慢慢从A状态滑向B状态",
-        "defEn": "❶v. To increase in size naturally ❷v. To increase in amount or degree ❸v. To gradually become a different state",
+        "meaning": "❶❷❸❶OK;❷OK;❸'慢慢从A状态滑向B状态'偏物理比喻，剑桥是'start to have a feeling or quality'（逐渐产生感觉/品质），如grow tired/angry/fond",
+        "defEn": "❶To increase in size or amount. ❶To plant and take care of crops or plants. ❸To become or develop.",
         "example": "The kids grow so fast.",
         "irr": "grew|grown",
         "exampleZh": "孩子们长得太快了。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶自然地增大尺寸❷在数量或程度上增加❸逐渐变成一种不同的状态"
+        "defZh": "❶v.生长、成长（增大尺寸） ❷v.种植、栽培 ❸v.逐渐变成"
       },
       {
         "en": "develop",
@@ -8964,7 +8964,7 @@ var VOCAB_DATA = [
         "root": "de(打开)+velop(包裹) → 打开包裹 → 发展",
         "exampleZh": "她正在开发一个面向语言学习者的新应用。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶v. 逐渐成长或进步直至成熟 ❷v. 从概念出发创造某物 ❸v. 将摄影胶片处理为可见影像"
+        "defZh": "❶v. 发展或使某事物发展变得更先进成熟"
       },
       {
         "en": "improve",
@@ -8982,31 +8982,31 @@ var VOCAB_DATA = [
         "en": "produce",
         "phonetic": "/prəˈduːs/",
         "pos": "v.",
-        "meaning": "❶v. 在工厂里把原材料加工成成品 ❷v. 某个动作自然催生了后续结果 ❸v. 把创意做成可交付的作品/节目",
-        "defEn": "❶v. To make goods from raw materials ❷v. To cause a result or effect ❸v. To create a show or program",
+        "meaning": "❶❷❸❶'在工厂里'过于限定场所，剑桥是'to make something or bring into existence'（更宽泛）;❷OK;❸OK",
+        "defEn": "❶v. To make something or bring it into existence",
         "example": "California produces a lot of wine.",
         "root": "pro(前)+duce(引导) → 向前引导出来 → 生产",
         "exampleZh": "加利福尼亚产很多葡萄酒。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶v. 用原材料制造产品 ❷v. 导致某种结果或影响 ❸v. 创作一场演出或节目"
+        "defZh": "❶v. 制造或使某事物产生"
       },
       {
         "en": "design",
         "phonetic": "/dɪˈzaɪn/",
         "pos": "v./n.",
         "meaning": "❶v. 在动手之前先画蓝图规划好每一步 ❷n. 藏在成品背后的那一套构思蓝图",
-        "defEn": "❶v. To plan how something will look and work before making it ❷n. The plan or concept behind something created",
+        "defEn": "❶v. To make a drawing or plan of something that will be made or built",
         "example": "Who designed this building? It looks amazing.",
         "root": "de(出)+sign(标记) → 做出标记 → 设计",
         "exampleZh": "谁设计了这个建筑？看起来太棒了。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶v. 在制作之前规划某物的外观和功能 ❷n. 已创造之物背后的计划或构想"
+        "defZh": "❶v. 为将要制作或建造的事物画图或做计划"
       },
       {
         "en": "fix",
         "phonetic": "/fɪks/",
         "pos": "v.",
-        "meaning": "❶ 把坏了的东西修好恢复功能 ❷ 用钉子/胶水牢牢固定不让松动 ❸ 把不确定的事敲定下来不再犹豫",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹'准备食物/饮料'（fix a meal/drink），美式英语常用",
         "defEn": "❶v. To repair something that is broken ❷v. To fasten something securely in place ❸v. To decide or settle something definitively",
         "example": "Can you fix my bike?",
         "root": "fix(固定) → 固住 → 修理/固定",
@@ -9019,7 +9019,7 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈstrɔɪ/",
         "pos": "v.",
         "meaning": "❶ 把完整的东西彻底砸碎再也恢复不了",
-        "defEn": "❶v. To damage something so completely it cannot be repaired",
+        "defEn": "❶v. To damage something so badly that it no longer exists or cannot be used or repaired",
         "example": "The storm destroyed several houses.",
         "root": "de(向下)+stroy(建造) → 把建造的东西推倒 → 摧毁",
         "exampleZh": "暴风雨摧毁了几栋房子。",
@@ -9030,7 +9030,7 @@ var VOCAB_DATA = [
         "en": "cut",
         "phonetic": "/kʌt/",
         "pos": "v./n.",
-        "meaning": "❶v. 用刀沿一条线把整体分成两块 ❷v./n. 像刀砍一样把数量砍掉一截 ❸v. 用剪刀沿轮廓裁开",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK但和❶有重叠;遗漏了❹'停止/取消'（cut services/cut funding）",
         "defEn": "❶v. To divide something with a knife or blade ❷v./n. To reduce the amount of something ❸v. To remove with scissors",
         "example": "Cut the bread into slices.",
         "irr": "cut|cut",
@@ -9042,8 +9042,8 @@ var VOCAB_DATA = [
         "en": "open",
         "phonetic": "/ˈoʊ.pən/",
         "pos": "v./adj.",
-        "meaning": "❶ 把关着的门/盖子掀开让里面露出来 ❷ 打开边界让所有人都能进来 ❸ 从头启动一段新的过程",
-        "defEn": "❶v. To move something so a space is no longer closed ❷v. To make something accessible to everyone ❸v. To begin a new process",
+        "meaning": "❶❷❸❶OK但'掀开'偏动作描述，剑桥是'move something so it is no longer closed';❷OK;❸'从头启动一段新的过程'偏模糊，剑桥是'start a business/event/activity'",
+        "defEn": "❸v. To start a business, event, or activity",
         "example": "Open the window for some fresh air.",
         "exampleZh": "打开窗户透透气。",
         "subcategory": "Creating & Changing",
@@ -9053,40 +9053,40 @@ var VOCAB_DATA = [
         "en": "close",
         "phonetic": "/kloʊz/",
         "pos": "v./adj.",
-        "meaning": "❶ 把敞开的东西合上封住不让进出 ❷ 差一点点几乎就要碰上了 ❸ 把进行中的事情收尾画上句号",
+        "meaning": "❶❷❸❶OK;❷'差一点点几乎就要碰上了'只取了空间接近义，遗漏了'关系亲近'（close friend）;❸OK",
         "defEn": "❶v. To shut something so it is no longer open ❷v. To bring something to an end ❸v. To be near in space or time",
         "example": "Close the door when you leave.",
         "exampleZh": "离开时关上门。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶v. 关闭某物使其不再敞开 ❷v. 使某事结束 ❸v. 在空间或时间上接近"
+        "defZh": "❸(adj.) 在空间/时间上接近，或在关系上亲近"
       },
       {
         "en": "fill",
         "phonetic": "/fɪl/",
         "pos": "v.",
-        "meaning": "❶ 把空壳一直灌到满边一滴空间不留 ❷ 某种情绪充盈了整个心房",
-        "defEn": "❶v. To put something into a container until it is full ❷v. To occupy all the space or time",
+        "meaning": "❶❷❶OK;❷OK但过于文学化（'充盈了整个心房'），剑桥更简洁'occupy time or space';遗漏了❸'填写表格'（fill in/out a form），这是极常用义项",
+        "defEn": "❶v. To put something into a container until it is full ❷v. To complete a form (fill in/out) ❸v. To occupy all the space or time",
         "example": "Fill the cup with water.",
         "exampleZh": "把杯子装满水。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶v. 将某物放入容器直到装满 ❷v. 占据所有空间或时间"
+        "defZh": "❶v. 将某物放入容器直到装满 ❷v. 填写表格（fill in/out） ❸v. 占据所有空间或时间"
       },
       {
         "en": "mix",
         "phonetic": "/mɪks/",
         "pos": "v.",
         "meaning": "❶ 把不同的东西搅在一起分不清谁是谁 ❷ 不同元素自然交融混在一起",
-        "defEn": "❶v. To combine different things together so they cannot be separated ❷v. To blend naturally with something",
+        "defEn": "❶v. To combine two or more things together",
         "example": "Mix the flour and sugar together.",
         "exampleZh": "把面粉和糖混合在一起。",
         "subcategory": "Creating & Changing",
-        "defZh": "❶v. 将不同的东西混合在一起使其无法分开 ❷v. 与某物自然融合"
+        "defZh": "❶v. 将两种或多种东西混合在一起"
       },
       {
         "en": "separate",
         "phonetic": "/ˈsep.ə.reɪt/",
         "pos": "v./adj.",
-        "meaning": "❶ 把混在一起的东西掰开各归各堆 ❷ 两者之间存在明显界限不相连 ❸ 从混杂中分辨出不同类别",
+        "meaning": "❶❷❸❶❷OK，❸和❶重叠，应合并;adj.义项❷'两者之间存在明显界限不相连'OK",
         "defEn": "❶v. To divide things into different groups ❷v. To be distinct and not connected ❸v. To tell apart by differences",
         "example": "Separate the white clothes from the dark ones.",
         "root": "se(分开)+par(准备) → 分开准备 → 分离",
@@ -9098,24 +9098,24 @@ var VOCAB_DATA = [
         "en": "meet",
         "phonetic": "/miːt/",
         "pos": "v.",
-        "meaning": "❶ 两条路线交叉碰上了对方 ❷ 约好时间地点面对面坐下来谈 ❸ 条件刚好对上了需求",
-        "defEn": "❶v. To encounter someone by chance or arrangement ❷v. To come together for a discussion ❸v. To satisfy a requirement or need",
+        "meaning": "❶❷❸❶'两条路线交叉碰上了对方'过于比喻化，剑桥是'to see and talk to someone';❷OK;❸OK",
+        "defEn": "❶v. To see and talk to someone, especially for the first time",
         "example": "Let's meet at the coffee shop.",
         "irr": "met|met",
         "exampleZh": "我们在咖啡馆见面吧。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 偶然或按约定遇到某人 ❷v. 一起聚会讨论 ❸v. 满足要求或需要"
+        "defZh": "❶v. 与某人见面并交谈，尤其是初次见面"
       },
       {
         "en": "help",
         "phonetic": "/help/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 伸出手去拉一把让对方脱离困境 ❷v. 紧急救援把人从危险中救出",
-        "defEn": "❶v./n. To assist someone in doing something ❷v. To rescue someone from danger",
+        "meaning": "❶❷❶'伸出手去拉一把让对方脱离困境'过于具体比喻化，剑桥是'to make it possible or easier for someone to do something'（更宽泛）;❷'紧急救援把人从危险中救出'偏狭隘（紧急救援是子集），剑桥是'assist someone in need'",
+        "defEn": "❶v./n. To make it possible or easier for someone to do something ❷v. To assist someone who is in need",
         "example": "Can you help me with this homework?",
         "exampleZh": "你能帮我做作业吗？",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v./n. 协助某人做某事 ❷v. 将某人从危险中救出"
+        "defZh": "❶v./n. 使某人能够或更容易做某事 ❷v. 帮助有需要的人"
       },
       {
         "en": "thank",
@@ -9132,18 +9132,18 @@ var VOCAB_DATA = [
         "en": "share",
         "phonetic": "/ʃer/",
         "pos": "v./n.",
-        "meaning": "❶v. 把自己有的东西分一份给别人 ❷v. 两个人一起扛同一份负担 ❸n. 一块饼里你切走的那一份",
-        "defEn": "❶v. To give part of what you have to someone else ❷v. To distribute a responsibility together ❸n. A portion that belongs to you",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹n.'股份/股票'（shares in a company），这是金融领域重要义项",
+        "defEn": "❸n. A part or portion of something ❹n. A unit of ownership in a business company (a share/stock)",
         "example": "Share your ideas with the team.",
         "exampleZh": "和团队分享你的想法。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 把自己的一部分给别人 ❷v. 共同分担责任 ❸n. 属于你的那一份"
+        "defZh": "❸n. 某事物的一部分/一份 ❹n. 公司的股份/股票"
       },
       {
         "en": "trust",
         "phonetic": "/trʌst/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 相信对方不会辜负你放心交出去 ❷v. 把重要的事托付给某人代为处理",
+        "meaning": "❶❷❶OK但'放心交出去'偏比喻，剑桥是'believe someone is honest and reliable';❷OK;遗漏了❸n.'信托'（a trust = legal arrangement for managing property），这是重要法律义项",
         "defEn": "❶v./n. To believe someone is reliable and honest ❷v. To entrust something to someone's care",
         "example": "I trust you to do the right thing.",
         "exampleZh": "我相信你会做对的事。",
@@ -9154,7 +9154,7 @@ var VOCAB_DATA = [
         "en": "respect",
         "phonetic": "/rɪˈspekt/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 承认对方的价值不打折扣地重视 ❷v. 严格遵守规矩不越线",
+        "meaning": "❶❷❶OK但'不打折扣地重视'偏口语，剑桥是'admiration felt or shown for someone you believe has good qualities';❷OK;遗漏了❸n.'方面/细节'（in this respect / in many respects），这是非常常用的义项",
         "defEn": "❶v./n. To treat someone with honor and consideration ❷v. To follow rules or laws carefully",
         "example": "Respect other people's opinions.",
         "root": "re(回)+spect(看) → 回看注视 → 尊敬",
@@ -9166,32 +9166,32 @@ var VOCAB_DATA = [
         "en": "support",
         "phonetic": "/səˈpɔːrt/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 从底下撑住不让倒下去 ❷v. 维持运转提供持续保障 ❸v. 出钱赞助让事情能办成",
-        "defEn": "❶v./n. To hold something up so it does not fall ❷v. To provide help or encouragement ❸v. To sponsor with money",
+        "meaning": "❶❷❸❶'从底下撑住不让倒下去'偏物理支撑义，但剑桥❶核心是'agree with and give encouragement'（赞同/鼓励），是精神支持而非物理支撑;❷❸顺序和侧重与剑桥不一致。剑桥优先义项是精神/情感支持，而非物理支撑",
+        "defEn": "❶v./n. To agree with and give encouragement to someone or something ❷v. To provide help or financial assistance ❸v. To hold something up physically",
         "example": "I support your decision.",
         "root": "sub(下)+port(扛) → 从下面扛住 → 支持",
         "exampleZh": "我支持你的决定。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v./n. 支撑某物使其不倒 ❷v. 提供帮助或鼓励 ❸v. 用资金赞助"
+        "defZh": "❶v./n. 赞同并鼓励某人或某事 ❷v. 提供帮助或资金援助 ❸v. 物理上支撑某物"
       },
       {
         "en": "protect",
         "phonetic": "/prəˈtekt/",
         "pos": "v.",
-        "meaning": "❶ 在脆弱的东西外面围起防线挡住伤害 ❷ 提前设好防护措施预防风险",
-        "defEn": "❶v. To keep something safe from harm or danger ❷v. To take measures to prevent damage",
+        "meaning": "❶❷❶OK但'围起防线挡住伤害'过于比喻化，剑桥是'keep safe from injury, damage, or loss';❷和❶语义重叠（都是'保护免受伤害'），不是独立义项",
+        "defEn": "❶v. To keep someone or something safe from injury, damage, or loss",
         "example": "Protect your skin from the sun.",
         "root": "pro(前)+tect(覆盖) → 前面覆盖 → 保护",
         "exampleZh": "保护皮肤免受日晒。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 使某物免受伤害或危险 ❷v. 采取措施防止损害"
+        "defZh": "❶v. 保护某人或某物免受伤害、损害或损失"
       },
       {
         "en": "welcome",
         "phonetic": "/ˈwel.kəm/",
         "pos": "v./adj.",
         "meaning": "❶ 张开双臂笑脸迎接新来的人 ❷ 门打开说'进来吧这里欢迎你'",
-        "defEn": "❶v. To greet someone gladly when they arrive ❷v. To be pleased to receive something new",
+        "defEn": "❶v. To greet someone in a warm and friendly way ❷v. To be glad to accept something new",
         "example": "Welcome to our new home!",
         "exampleZh": "欢迎来到我们的新家！",
         "subcategory": "Social & Relationship",
@@ -9201,18 +9201,18 @@ var VOCAB_DATA = [
         "en": "join",
         "phonetic": "/dʒɔɪn/",
         "pos": "v.",
-        "meaning": "❶ 走进已有的群体成为其中一员 ❷ 把两块拼图对接扣在一起 ❸ 报名登记参加某项活动",
-        "defEn": "❶v. To become part of a group ❷v. To connect two things together ❸v. To participate in an activity",
+        "meaning": "❶❷❸❶OK;❷OK;❸'报名登记参加某项活动'过于具体，剑桥是'to come together with someone to do something'（一起做某事，不一定报名登记）",
+        "defEn": "❸v. To come together with someone to do something",
         "example": "Join us for dinner tonight.",
         "exampleZh": "今晚来和我们一起吃晚饭。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 成为某个群体的一部分 ❷v. 将两件事物连接在一起 ❸v. 参加一项活动"
+        "defZh": "❸v. 与某人一起做某事"
       },
       {
         "en": "follow",
         "phonetic": "/ˈfɑː.loʊ/",
         "pos": "v.",
-        "meaning": "❶ 走在前面的人身后一步一步跟着 ❷ 把已有的规矩照着做不偏离 ❸ 持续关注某人动态（follow on social media）",
+        "meaning": "❶❷❸❶OK;❷OK;❸OK;遗漏了❹'接着发生/随后而来'（follow after something / the meeting followed the dinner），这是常用义项",
         "defEn": "❶v. To go behind someone who leads ❷v. To act according to rules or instructions ❸v. To track someone's updates online",
         "example": "Follow the signs to the exit.",
         "exampleZh": "跟着指示牌走到出口。",
@@ -9223,48 +9223,48 @@ var VOCAB_DATA = [
         "en": "lead",
         "phonetic": "/liːd/",
         "pos": "v./n.",
-        "meaning": "❶v. 站在队伍最前面指引方向其他人跟在后面 ❷n. 比对手多出来的那一段领先优势",
-        "defEn": "❶v. To guide others by going in front ❷n. An advantage over competitors",
+        "meaning": "❶❷❶'站在队伍最前面指引方向'偏物理位置，剑桥核心是'control or guide'（领导/指挥），不一定要'站在最前面';❷OK;遗漏了❸n.'狗牵引绳/皮带'（a lead/leash for a dog）",
+        "defEn": "❶v. To control or guide a group or activity",
         "example": "She leads the team with confidence.",
         "irr": "led|led",
         "exampleZh": "她自信地领导团队。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 在前面引导他人 ❷n. 对竞争对手的优势"
+        "defZh": "❶v. 领导或引导一个群体或活动"
       },
       {
         "en": "teach",
         "phonetic": "/tiːtʃ/",
         "pos": "v.",
-        "meaning": "❶ 把自己懂的知识一点一点装进学生脑袋 ❷ 在课堂上系统讲授专业知识 ❸ 用严厉手段纠正坏习惯",
-        "defEn": "❶v. To help someone learn knowledge or skills ❷v. To give lessons in a school ❸v. To correct behavior through discipline",
+        "meaning": "❶❷❸❶'一点一点装进学生脑袋'过于比喻化，剑桥是'to help someone learn something by giving information';❷OK;❸'用严厉手段纠正坏习惯'不是剑桥的独立义项，剑桥是'to show someone how to do something'（教做某事）或'that experience taught me'（教训），不是'用严厉手段'",
+        "defEn": "❸v. To show someone how to do something / to make someone realize something through experience",
         "example": "She teaches English at the school.",
         "irr": "taught|taught",
         "exampleZh": "她在学校教英语。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 帮助某人学习知识或技能 ❷v. 在学校授课 ❸v. 通过训导纠正行为"
+        "defZh": "❸v. 教某人做某事 / 通过经历使某人意识到某事"
       },
       {
         "en": "learn",
         "phonetic": "/lɜːrn/",
         "pos": "v.",
-        "meaning": "❶ 主动投入把新知识从外部吸收到脑子里 ❷ 通过经历或观察了解到某个事实 ❸ 反复练习直到牢牢记住不忘",
-        "defEn": "❶v. To gain new knowledge or skills by studying ❷v. To discover something through experience ❸v. To memorize and retain information",
+        "meaning": "❶❷❸❶'主动投入把新知识从外部吸收'过于比喻化，剑桥是'to get knowledge or skill in a new subject or activity';❷OK;❸OK",
+        "defEn": "❶v. To get knowledge or skill in a new subject or activity ❷v. To find out information or a fact ❸v. To memorize",
         "example": "I learn something new every day.",
         "irr": "learned|learned",
         "exampleZh": "我每天学些新东西。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 通过学习获得新知识或技能 ❷v. 通过经历发现某事 ❸v. 记忆并保留信息"
+        "defZh": "❶v. 在新领域或活动中获得知识或技能 ❷v. 得知某个信息或事实 ❸v. 记住"
       },
       {
         "en": "serve",
         "phonetic": "/sɜːrv/",
         "pos": "v.",
-        "meaning": "❶ 主动为他人提供所需的东西或帮助 ❷ 把做好的食物端到客人面前 ❸ 在网球场上把球抛起击出开局",
-        "defEn": "❶v. To provide what someone needs ❷v. To present food to a customer ❸v. To start a game by hitting the ball",
+        "meaning": "❶ 为某人或机构做事履行职责 ❷ 把食物饮料端上桌供人享用 ❸ 在网球等运动中发球开局",
+        "defEn": "❶v. To perform duties for someone or an organization ❷v. To provide food or drinks ❸v. To hit the ball to start play in tennis",
         "example": "She serves dinner at 7 p.m.",
         "exampleZh": "她晚上7点供应晚餐。",
         "subcategory": "Social & Relationship",
-        "defZh": "❶v. 提供某人所需的东西 ❷v. 向顾客呈上食物 ❸v. 通过击球开始一场比赛"
+        "defZh": "❶v. 为某人或机构履行职责 ❷v. 供应食物或饮料 ❸v. 在网球等运动中发球开局"
       },
       {
         "en": "introduce",
@@ -9283,12 +9283,12 @@ var VOCAB_DATA = [
         "phonetic": "/iːt/",
         "pos": "v.",
         "meaning": "❶ 把食物放进嘴里嚼碎咽下去填饱肚子 ❷ 正式坐下来进餐吃饭",
-        "defEn": "❶v. To put food in your mouth, chew, and swallow it ❷v. To have a meal",
+        "defEn": "❶To put food in your mouth, chew it, and swallow it. ❷To have a meal. [原defEn❷",
         "example": "Let's eat lunch at the cafe.",
         "irr": "ate|eaten",
         "exampleZh": "我们在咖啡馆吃午饭吧。",
         "subcategory": "Body & Health",
-        "defZh": "❶v. 把食物放入口中、咀嚼并吞咽 ❷v. 吃一顿饭"
+        "defZh": "❶v. 把食物放入口中、咀嚼并吞咽 ❷v. 吃一顿饭 [原defZh与剑桥一致，无需修改]"
       },
       {
         "en": "drink",
@@ -9300,19 +9300,19 @@ var VOCAB_DATA = [
         "irr": "drank|drunk",
         "exampleZh": "跑完后喝点水。",
         "subcategory": "Body & Health",
-        "defZh": "❶v. 将液体送入口中并吞下 ❷n. 任何可吞咽的液体"
+        "defZh": "❶v. 将液体送入口中并吞下 ❷n. 任何可饮用的液体 ❸n. 酒，含酒精的饮品"
       },
       {
         "en": "sleep",
         "phonetic": "/sliːp/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 闭上眼睛身体进入休眠状态恢复精力",
-        "defEn": "❶v./n. To rest with eyes closed and body inactive",
+        "meaning": "❶v./n. 闭上眼睛身心进入不活动的休息状态",
+        "defEn": "❶v./n. To rest with your eyes closed and your mind and body not active",
         "example": "I usually sleep eight hours a night.",
         "irr": "slept|slept",
         "exampleZh": "我通常每晚睡八小时。",
         "subcategory": "Body & Health",
-        "defZh": "❶v./n. 闭眼休息，身体处于不活动状态"
+        "defZh": "❶v./n. 闭眼休息，身心处于不活动状态"
       },
       {
         "en": "wake",
@@ -9341,13 +9341,13 @@ var VOCAB_DATA = [
         "en": "hurt",
         "phonetic": "/hɜːrt/",
         "pos": "v.",
-        "meaning": "❶ 身体某个部位发出疼痛信号 ❷ 举动给别人的心扎了一刀 ❸ 伤口持续往外喊痛",
-        "defEn": "❶v. To cause physical pain ❷v. To cause emotional pain to someone ❸v. To feel pain in your body",
+        "meaning": "❶ 给别人的身体造成伤痛 ❷ 举动给别人的心扎了一刀 ❸ 身体某个部位自己感到疼",
+        "defEn": "❶v. To cause physical pain or injury ❷v. To cause emotional pain ❸v. To feel physical pain",
         "example": "My back hurts after sitting all day.",
         "irr": "hurt|hurt",
         "exampleZh": "坐了一天我背疼。",
         "subcategory": "Body & Health",
-        "defZh": "❶v. 造成身体上的疼痛 ❷v. 给某人造成情感上的痛苦 ❸v. 身体感到疼痛"
+        "defZh": "❶v. 造成身体上的疼痛或伤害 ❷v. 给某人造成情感上的痛苦 ❸v. 身体感到疼痛"
       },
       {
         "en": "heal",
@@ -9430,12 +9430,12 @@ var VOCAB_DATA = [
         "en": "touch",
         "phonetic": "/tʌtʃ/",
         "pos": "v.",
-        "meaning": "❶ 手指伸出去轻轻碰一下物体表面 ❷ 不小心撞上了不该碰的 ❸ 深深触动内心让人动容",
-        "defEn": "❶v. To make contact with something using your hand ❷v. To affect someone emotionally ❸n. The sense that detects pressure on the skin",
+        "meaning": "❶ 手指伸出去碰到物体表面 ❷ 深深触动内心让人动容",
+        "defEn": "❶v. To put your hand or another part of your body onto something ❷v. To affect someone emotionally",
         "example": "Don't touch the wet paint.",
         "exampleZh": "不要碰湿油漆。",
         "subcategory": "Body & Health",
-        "defZh": "❶v. 用手触碰某物 ❷v. 在情感上打动某人 ❸n. 检测皮肤上压力的感官"
+        "defZh": "❶v. 用手或身体其他部位触碰某物 ❷v. 在情感上打动某人"
       },
       {
         "en": "feel",
@@ -9453,13 +9453,13 @@ var VOCAB_DATA = [
         "en": "hold",
         "phonetic": "/hoʊld/",
         "pos": "v.",
-        "meaning": "❶ 五指收紧把东西稳稳攥在手里不滑落 ❷ 把一群人召集到一处举行活动 ❸ 让局面维持在某个状态不失控",
-        "defEn": "❶v. To grip something firmly in your hand ❷v. To organize and conduct an event ❸v. To maintain control of a situation",
+        "meaning": "❶ 把东西拿在手里或抱在臂弯里不放开 ❷ 把一群人召集到一处举行活动 ❸ 担任并保持某个职位",
+        "defEn": "❶v. To take and keep something in your hand(s). ❷v. To organize and have an event or meeting. ❸v. To have space to contain something inside. ❹v. To continue to be true or valid. ❺n. A firm grip with your hand. [原defEn遗漏",
         "example": "Hold the baby carefully.",
         "irr": "held|held",
         "exampleZh": "小心抱住婴儿。",
         "subcategory": "Body & Health",
-        "defZh": "❶v. 用手紧紧握住某物 ❷v. 组织并举办活动 ❸v. 维持对局势的控制"
+        "defZh": "❶v. 将某物拿在手中或抱在臂弯中 ❷v. 组织并举办活动 ❸v. 担任并保持某个职位"
       },
       {
         "en": "bleed",
@@ -9511,23 +9511,23 @@ var VOCAB_DATA = [
         "phonetic": "/draɪ/",
         "pos": "v./adj.",
         "meaning": "❶ 用抹布/热风把水分赶走让表面不再湿 ❷ 水分蒸发后物体表面不再有水的状态",
-        "defEn": "❶v. To remove moisture from something ❷adj. Free from water or moisture",
+        "defEn": "❶adj. Not wet; containing no water or moisture. ❶adj. Describing wine that is not sweet. ❸v. To become dry or to make something dry.",
         "example": "Dry the dishes with a towel.",
         "exampleZh": "用毛巾把碗碟擦干。",
         "subcategory": "Household & Daily Life",
-        "defZh": "❶v. 除去某物的水分 ❷adj. 无水或无水分的"
+        "defZh": "❶adj.干的、干燥的 ❷adj.无甜味的（酒） ❸v.变干、使干"
       },
       {
         "en": "sweep",
         "phonetic": "/swiːp/",
         "pos": "v.",
-        "meaning": "❶ 用扫把大面积推过去把灰尘垃圾归拢 ❷ 拖把在地板上来回推动清洁 ❸ 力量像扫把一样横扫大片区域",
-        "defEn": "❶v. To clean a floor with a broom ❷v. To move a mop across a surface ❸v. To move across a wide area quickly",
+        "meaning": "❶ 用扫把大面积推过去把灰尘垃圾归拢 ❷ 力量像扫把一样横扫大片区域",
+        "defEn": "❶v. To clean a floor with a broom ❷v. To move quickly and powerfully across an area",
         "example": "Sweep the floor before mopping.",
         "irr": "swept|swept",
         "exampleZh": "拖地前先扫地。",
         "subcategory": "Household & Daily Life",
-        "defZh": "❶v. 用扫帚清扫地板 ❷v. 用拖把在表面擦拭 ❸v. 快速横扫大面积区域"
+        "defZh": "❶v. 用扫帚清扫地板 ❷v. 快速有力地横扫大片区域"
       },
       {
         "en": "bake",
@@ -9544,12 +9544,12 @@ var VOCAB_DATA = [
         "en": "boil",
         "phonetic": "/bɔɪl/",
         "pos": "v.",
-        "meaning": "❶ 把水加热到100度气泡不断翻滚冒上来 ❷ 液体内部大量气泡翻涌的剧烈状态",
+        "meaning": "❶ 把水加热到沸点气泡翻滚冒上来 ❷ 在沸腾的水中煮食物",
         "defEn": "❶v. To heat water until bubbles rise and vapor forms ❷v. To cook food in very hot water",
         "example": "Boil water for tea.",
         "exampleZh": "烧水泡茶。",
         "subcategory": "Household & Daily Life",
-        "defZh": "❶v. 加热水直到冒泡产生蒸汽 ❷v. 在极热的水中煮食物"
+        "defZh": "❶v. 加热液体直到气泡升起产生蒸汽 ❷v. 在沸腾的水中烹煮食物"
       },
       {
         "en": "fry",
@@ -9657,11 +9657,11 @@ var VOCAB_DATA = [
         "phonetic": "/ˈstʌd.i/",
         "pos": "v./n.",
         "meaning": "❶v. 把书摊开逐字逐句啃懂里面的内容 ❷v. 对某个现象深入挖掘追根究底 ❸n. 专门用来安静读书的独立小房间",
-        "defEn": "❶v. To spend time learning from books or materials ❷v. To investigate something thoroughly ❸n. A room used for reading and writing",
+        "defEn": "❶v. To learn about a subject, especially in an educational course or by reading books. ❷v. To examine something carefully. ❸n. A room used for reading and writing.",
         "example": "I study math every evening.",
         "exampleZh": "我每天晚上学数学。",
         "subcategory": "Work & Study",
-        "defZh": "❶v. 从书籍或材料中花时间学习 ❷v. 深入调查某事 ❸n. 用于阅读和写作的房间"
+        "defZh": "❶v.学习（通过阅读等方式） ❷v.仔细阅读、深入研究 ❸n.书房"
       },
       {
         "en": "plan",
@@ -9714,34 +9714,34 @@ var VOCAB_DATA = [
         "en": "check",
         "phonetic": "/tʃek/",
         "pos": "v./n.",
-        "meaning": "❶v. 逐项对照确认每个细节是否正确 ❷n. 美国餐厅吃完饭递过来的那张付款单",
-        "defEn": "❶v. To verify that something is correct or safe ❷n. A written order to pay money from a bank",
+        "meaning": "❶v. 逐项对照确认每个细节是否正确 ❷n. 写着银行账户用来付款的那张支票(美国用语)",
+        "defEn": "❶v. To make certain that something is correct or safe ❷n. US A piece of paper to pay money from your bank account",
         "example": "Check your spelling before submitting.",
         "exampleZh": "提交前检查拼写。",
         "subcategory": "Work & Study",
-        "defZh": "❶v. 核实某物是否正确或安全 ❷n. 从银行付款的书面指令"
+        "defZh": "❶v. 核实某物是否正确或安全 ❷n. 从银行账户付款的支票(美国用语)"
       },
       {
         "en": "test",
         "phonetic": "/test/",
         "pos": "v./n.",
-        "meaning": "❶v./n. 把东西放到特定条件下看它能不能过关 ❷n. 正式考核你到底学了多少的考试",
+        "meaning": "❶v./n. 把东西放到特定条件下看它能不能过关 ❷n. 检验人的知识或能力的考试",
         "defEn": "❶v./n. To examine something to see if it works correctly ❷n. An examination to measure knowledge or ability",
         "example": "Test the product before selling it.",
         "exampleZh": "出售前测试产品。",
         "subcategory": "Work & Study",
-        "defZh": "❶v./n. 检验某物是否正常运作 ❷n. 测量知识或能力的考试"
+        "defZh": "❶v./n. 检验某物是否正常运作 ❷n. 检验知识或能力的考试"
       },
       {
         "en": "measure",
         "phonetic": "/ˈmeʒ.ər/",
         "pos": "v.",
-        "meaning": "❶ 用尺子/仪器对准物体读出精确数值 ❷ 用标准来衡量判断某事的程度 ❸ 物理量的精确读数",
-        "defEn": "❶v. To find the exact size or amount using tools ❷v. To judge the degree or extent of something",
+        "meaning": "❶ 用尺子/仪器对准物体读出精确数值 ❷ 用标准来衡量判断某事的程度",
+        "defEn": "❶v. To find the exact size or amount using tools ❷v. To judge the importance, value, or extent of something",
         "example": "Measure the room before buying furniture.",
         "exampleZh": "买家具前量一下房间大小。",
         "subcategory": "Work & Study",
-        "defZh": "❶v. 使用工具找出精确的大小或数量 ❷v. 判断某事的程度或范围"
+        "defZh": "❶v. 使用工具找出精确的大小或数量 ❷v. 判断某事的重要性、价值或程度"
       },
       {
         "en": "calculate",
@@ -9784,12 +9784,12 @@ var VOCAB_DATA = [
         "phonetic": "/prɪˈzent/",
         "pos": "v.",
         "meaning": "❶v. 把成果摊在桌面上让所有人看清楚 ❷v. 正式递交文件或提案 ❸v. 把奖品亲手递到获奖者手里",
-        "defEn": "❶v. To show something to an audience ❷v. To formally submit a document ❸v. To give a gift or award to someone",
+        "defEn": "❶adj. In a particular place; existing. ❷adj. Relating to now; current. ❸n. A gift. ❹v. To show or give something to someone.",
         "example": "She presented her project to the class.",
         "root": "pre(前)+sent(送) → 前面送来 → 展示",
         "exampleZh": "她向全班展示了她的项目。",
         "subcategory": "Work & Study",
-        "defZh": "❶v. 向观众展示某物 ❷v. 正式提交文件 ❸v. 将礼物或奖项给予某人"
+        "defZh": "❶adj.在场的、出席的 ❷adj.当前的、现在的 ❸n.礼物 ❹v.呈现、展示 ❺v.颁发、赠送"
       },
       {
         "en": "review",
@@ -9831,12 +9831,12 @@ var VOCAB_DATA = [
         "en": "start",
         "phonetic": "/stɑːrt/",
         "pos": "v./n.",
-        "meaning": "❶v. 从静止状态推入运动状态 ❷n. 起跑线上迈出的第一步",
-        "defEn": "❶v. To begin doing something ❷n. The first step or beginning of an activity",
+        "meaning": "❶v. 从零开始迈出第一步做起 ❷n. 起跑线上迈出的第一步",
+        "defEn": "❶v. To begin doing something. ❷n. The beginning of something. ❸n. A sudden involuntary movement of the body. [原defEn只有n.义项，遗漏v.开始这一最核心义项]",
         "example": "Start working on the project now.",
         "exampleZh": "现在开始做项目。",
         "subcategory": "Work & Study",
-        "defZh": "❶v. 开始做某事 ❷n. 某项活动的第一步或开端"
+        "defZh": "❶v. 开始做某事。❷n. 某事的开始、开端。❸n. （因惊吓等引起的）突然身体动作。 [原defZh❶和❷基本正确但❶的动词定义未提及"
       },
       {
         "en": "begin",
@@ -9993,7 +9993,7 @@ var VOCAB_DATA = [
         "en": "lose",
         "phonetic": "/luːz/",
         "pos": "v.",
-        "meaning": "❶ 原本在手里的东西突然滑走了再也找不到 ❷ 在对抗中被打败没能赢 ❸ 在陌生地方转来转去找不到路",
+        "meaning": "❶ 丢失、失去（不再拥有或无法找到）❷ 输掉、被击败 ❸ 迷路 ❹ 浪费、未能保持 [原❹",
         "defEn": "❶v. To no longer have something you once possessed ❷v. To fail to win a competition ❸v. To fail to find your way",
         "example": "I lost my keys again.",
         "irr": "lost|lost",
@@ -10168,7 +10168,7 @@ var VOCAB_DATA = [
         "phonetic": "/ʃɪp/",
         "pos": "n./v.",
         "meaning": "❶v. 把货物装箱贴标签发往目的地 ❷n. 在水面上移动的那艘大船",
-        "defEn": "❶v. To send goods to a destination by transport ❷n. A large vessel that moves across water",
+        "defEn": "❶n. A large boat for transporting people or goods by sea. ❷v. To send something, especially goods, to a place. [原defEn❷",
         "example": "The ship sails tomorrow at dawn.",
         "exampleZh": "船明天黎明出发。",
         "subcategory": "Travel & Transport",
@@ -10238,11 +10238,11 @@ var VOCAB_DATA = [
         "phonetic": "/əˈlaʊ/",
         "pos": "v.",
         "meaning": "❶ 打开门不再拦着，让人进去让事发生 ❷ 创造条件让某事能够发生",
-        "defEn": "❶v. To let someone do something without preventing it ❷v. To make something possible",
+        "defEn": "❶To give permission for someone to do something. ❷To make something possible.",
         "example": "They don't allow dogs in this restaurant.",
         "exampleZh": "这家餐厅不允许带狗。",
         "subcategory": "Law & Rules",
-        "defZh": "❶v. 不阻止某人做某事 ❷v. 使某事成为可能"
+        "defZh": "❶v.允许、准许（不阻止某人做某事） ❷v.使能够、给…机会"
       },
       {
         "en": "forbid",
@@ -10392,13 +10392,13 @@ var VOCAB_DATA = [
         "en": "steal",
         "phonetic": "/stiːl/",
         "pos": "v.",
-        "meaning": "❶ 趁人不注意悄悄拿走别人的东西 ❷ 潜入别人地盘盗走财物 ❸ 把别人的创意偷偷拿来当自己的",
-        "defEn": "❶v. To take someone's property secretly without permission ❷v. To copy someone's idea without credit",
+        "meaning": "❶ 未经许可偷偷拿走别人的东西归自己",
+        "defEn": "❶v. To take something without the permission or knowledge of the owner",
         "example": "Someone stole my wallet.",
         "irr": "stole|stolen",
         "exampleZh": "有人偷了我的钱包。",
         "subcategory": "Law & Rules",
-        "defZh": "❶v. 未经许可秘密拿走他人财产 ❷v. 不加署名地抄袭他人想法"
+        "defZh": "❶v. 未经许可或在不知情的情况下拿走他人的东西"
       },
       {
         "en": "defend",
@@ -10490,7 +10490,7 @@ var VOCAB_DATA = [
         "phonetic": "/fækt/",
         "pos": "n.",
         "meaning": "事实、真相",
-        "defEn": "❶n. Something that is known to be true or has been proved to be true ❷n. A piece of information about a situation",
+        "defEn": "❶n. Something that is known to have happened or to exist, especially something for which proof exists ❷n. A piece of information about a situation",
         "example": "That's a fact, not an opinion.",
         "root": "fact(做) → 已经做成的事 → 事实",
         "exampleZh": "那是事实，不是观点。",
@@ -10503,33 +10503,33 @@ var VOCAB_DATA = [
         "phonetic": "/əˈpɪnjən/",
         "pos": "n.",
         "meaning": "观点、看法",
-        "defEn": "❶n. A thought or belief about something or someone ❷n. A judgment or professional advice",
+        "defEn": "❶n. A thought or belief about something or someone ❷n. The thoughts or beliefs that a group of people have ❸n. A judgment or professional advice",
         "example": "Everyone has their own opinion.",
         "root": "opin(认为)+ion → 认为的 → 观点",
         "exampleZh": "每个人都有自己的看法。",
         "wordType": "abstract",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 对某事或某人的想法或信念 ❷n. 判断或专业建议"
+        "defZh": "❶n. 对某事或某人的想法或信念 ❷n. 一群人共有的看法或信念 ❸n. 判断或专业意见"
       },
       {
         "en": "belief",
         "phonetic": "/bɪˈliːf/",
         "pos": "n.",
         "meaning": "信念、信仰",
-        "defEn": "❶n. The feeling that something is true or exists ❷n. A strong religious faith",
+        "defEn": "❶n. The feeling of being certain that something exists or is true ❷n. Something that you believe ❸n. A strong religious faith",
         "example": "It's my belief that hard work pays off.",
         "root": "be(存在)+lief(爱) → 因爱而存在 → 信念",
         "exampleZh": "我相信努力会有回报。",
         "wordType": "abstract",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 认为某事是真的或存在的感觉 ❷n. 强烈的宗教信仰"
+        "defZh": "❶n. 确信某事物存在或为真的感觉 ❷n. 所相信的事物或信念 ❸n. 强烈的宗教信仰"
       },
       {
         "en": "theory",
         "phonetic": "/ˈθɪəri/",
         "pos": "n.",
         "meaning": "理论、学说",
-        "defEn": "❶n. A formal idea intended to explain something ❷n. An opinion that someone forms based on limited information",
+        "defEn": "❶n. A formal statement of the rules on which a subject of study is based or of ideas suggested to explain a fact or event ❷n. An opinion that someone forms based on limited information",
         "example": "That's just a theory, not proven.",
         "root": "theor(看)+y → 观看思考的结果 → 理论",
         "exampleZh": "那只是理论，没有证实。",
@@ -10542,7 +10542,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkɒnsept/",
         "pos": "n.",
         "meaning": "概念、观念",
-        "defEn": "❶n. An idea or principle that is abstract and general ❷n. A plan or original idea for a product",
+        "defEn": "❶n. A principle or idea ❷n. A plan or original idea for a product",
         "example": "The concept is easy to understand.",
         "root": "con(共同)+cept(抓) → 共同抓住的 → 概念",
         "exampleZh": "概念很容易理解。",
@@ -10555,7 +10555,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈevɪdəns/",
         "pos": "n.",
         "meaning": "证据",
-        "defEn": "❶n. Facts or signs that show clearly that something exists or is true ❷n. Information given in a court of law",
+        "defEn": "❶n. Facts, information, documents, etc. that give reason to believe that something is true ❷n. Information given in a court of law",
         "example": "We need more evidence to prove it.",
         "root": "e(出)+vid(看)+ence → 看出来的 → 证据",
         "exampleZh": "我们需要更多证据来证明。",
@@ -10567,8 +10567,8 @@ var VOCAB_DATA = [
         "en": "pattern",
         "phonetic": "/ˈpætərn/",
         "pos": "n.",
-        "meaning": "❶模式、规律 ❷图案",
-        "defEn": "❶n. A regular arrangement of lines, shapes, or colors ❷n. A particular way in which something is done or organized ❸n. A model from which copies are made",
+        "meaning": "❶模式、规律 ❷图案、花样 ❶方式、形式",
+        "defEn": "❶n. A particular way in which something is done, is organized, or happens ❷n. Any regularly repeated arrangement of lines, shapes, or colours ❸n. A model from which copies are made",
         "example": "Notice the pattern in the data.",
         "exampleZh": "注意数据中的规律。",
         "wordType": "abstract",
@@ -10580,7 +10580,7 @@ var VOCAB_DATA = [
         "phonetic": "/sɔːrs/",
         "pos": "n.",
         "meaning": "来源、出处",
-        "defEn": "❶n. The place where something comes from ❷n. Someone who provides information ❸n. The origin of a river",
+        "defEn": "❶n. The place something comes from or starts at, or the cause of something ❷n. Someone or something that provides information ❸n. The origin of a river",
         "example": "What's the source of this information?",
         "exampleZh": "这条信息的来源是什么？",
         "wordType": "abstract",
@@ -10592,7 +10592,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈstændərd/",
         "pos": "n.",
         "meaning": "标准、规格",
-        "defEn": "❶n. A level of quality that is acceptable ❷n. A moral rule that should be followed ❸adj. Usual or normal",
+        "defEn": "❶n. A level of quality ❷n. A moral rule that should be obeyed ❸adj. Usual or normal ❹n. A pattern or model that is generally accepted",
         "example": "This meets the safety standard.",
         "root": "stand(站)+ard → 站在那里衡量的 → 标准",
         "exampleZh": "这符合安全标准。",
@@ -10605,7 +10605,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkwɒlɪti/",
         "pos": "n.",
         "meaning": "质量、品质",
-        "defEn": "❶n. How good or bad something is ❷n. A characteristic or feature of something ❸n. High grade or excellence",
+        "defEn": "❶n. How good or bad something is ❷n. A high standard ❸n. A characteristic or feature of something",
         "example": "The quality of this product is great.",
         "root": "qual(什么样的)+ity → 什么样的 → 质量",
         "exampleZh": "这个产品质量很好。",
@@ -10618,7 +10618,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkwɒntɪti/",
         "pos": "n.",
         "meaning": "数量",
-        "defEn": "❶n. The amount or number of something",
+        "defEn": "❶n. The amount or number of something, especially that can be measured",
         "example": "We need a large quantity of paper.",
         "root": "quant(多少)+ity → 多少 → 数量",
         "exampleZh": "我们需要大量纸张。",
@@ -10631,7 +10631,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈfiːtʃər/",
         "pos": "n.",
         "meaning": "❶特点、特征 ❷功能",
-        "defEn": "❶n. A typical or noticeable part of something ❷v. To include someone or something as an important part ❸n. A special article in a newspaper",
+        "defEn": "❶n. A typical quality or an important part of something ❷n. A part of a building or of an area of land ❸v. To include someone or something as an important part ❹n. A special article in a newspaper or magazine",
         "example": "This phone has a great camera feature.",
         "root": "feat(做)+ure → 做出来的特点 → 特征",
         "exampleZh": "这款手机有很棒的拍照功能。",
@@ -10644,7 +10644,7 @@ var VOCAB_DATA = [
         "phonetic": "/ədˈvæntɪdʒ/",
         "pos": "n.",
         "meaning": "优势、有利条件",
-        "defEn": "❶n. A condition that gives a better chance of success ❷n. A benefit gained from something ❸n. A point won in a tennis game after deuce",
+        "defEn": "❶n. A condition giving a greater chance of success ❷n. A benefit gained from something ❸n. A point won in a tennis game after deuce",
         "example": "The advantage of this method is speed.",
         "root": "advant(在前)+age → 在前面的 → 优势",
         "exampleZh": "这个方法的优势是速度快。",
@@ -10657,7 +10657,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˌdɪsədˈvæntɪdʒ/",
         "pos": "n.",
         "meaning": "劣势、不利条件",
-        "defEn": "❶n. A condition that makes success more difficult ❷n. A drawback or negative aspect",
+        "defEn": "❶n. A condition or situation that causes problems, especially one that causes something or someone to be less successful than others",
         "example": "The disadvantage is the cost.",
         "exampleZh": "劣势是成本。",
         "wordType": "abstract",
@@ -10669,7 +10669,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈfʌŋkʃən/",
         "pos": "n.",
         "meaning": "❶功能 ❷函数",
-        "defEn": "❶n. The purpose or job that something has ❷n. A mathematical relation between two sets ❸v. To work or operate correctly",
+        "defEn": "❶n. The natural purpose of something or the duty of a person ❷n. An official ceremony or a social occasion ❸n. A mathematical relation between two sets ❹v. To work or operate correctly",
         "example": "What function does this button serve?",
         "root": "funct(做)+ion → 做的事 → 功能",
         "exampleZh": "这个按钮有什么功能？",
@@ -10682,7 +10682,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsɪstəm/",
         "pos": "n.",
         "meaning": "系统、体系",
-        "defEn": "❶n. A set of connected parts that work together ❷n. An organized method or set of rules ❸n. The way a society or organization operates",
+        "defEn": "❶n. A set of connected things or devices that operate together ❷n. A set of ideas or a way of doing something, especially an organized method or set of rules ❸n. The way a society or organization operates",
         "example": "The heating system needs repair.",
         "root": "sys(一起)+stem(站立) → 一起站立的 → 系统",
         "exampleZh": "供暖系统需要修。",
@@ -10695,7 +10695,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈprɪnsəpəl/",
         "pos": "n.",
         "meaning": "❶原则 ❷原理",
-        "defEn": "❶n. A basic idea or rule that explains or controls how something works ❷n. A moral rule or belief that helps you know what is right",
+        "defEn": "❶n. A basic idea or rule that explains or controls how something happens or works ❷n. A moral rule or standard of good behaviour",
         "example": "Stick to your principles.",
         "root": "prince(首要)+iple → 首要的规则 → 原则",
         "exampleZh": "坚持你的原则。",
@@ -10708,7 +10708,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈkætəɡɒri/",
         "pos": "n.",
         "meaning": "类别、分类",
-        "defEn": "❶n. A group of things or people that share a common characteristic",
+        "defEn": "❶n. In a system for dividing things, a type or a group of things that share a common characteristic",
         "example": "Which category does this belong to?",
         "root": "cata(向下)+gory(聚集) → 按类向下聚集 → 分类",
         "exampleZh": "这个属于哪个类别？",
@@ -10721,7 +10721,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈɒpʃən/",
         "pos": "n.",
         "meaning": "选项、选择",
-        "defEn": "❶n. A choice that you can make ❷n. The right to buy or sell something at a fixed price in the future",
+        "defEn": "❶n. One thing that can be chosen from a set of possibilities, or the freedom to make a choice ❷n. The right to buy or sell something at a fixed price in the future",
         "example": "What options do we have?",
         "exampleZh": "我们有什么选项？",
         "wordType": "abstract",
@@ -10733,7 +10733,7 @@ var VOCAB_DATA = [
         "phonetic": "/ɔːlˈtɜːrnətɪv/",
         "pos": "n./adj.",
         "meaning": "❶n.替代方案 ❷adj.替代的",
-        "defEn": "❶adj./n. Different from the usual or traditional way ❷n. One of two or more choices",
+        "defEn": "❶adj. An alternative plan or method is one that you can use if you do not want to use another one ❷n. One of two or more choices",
         "example": "Is there an alternative route?",
         "root": "alter(其他)+native → 其他的 → 替代方案",
         "exampleZh": "有没有替代路线？",
@@ -10752,14 +10752,14 @@ var VOCAB_DATA = [
         "exampleZh": "用这本书做参考。",
         "wordType": "abstract",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 对某事的提及 ❷n. 信息来源 ❸n. 由熟知你的人写的推荐信"
+        "defZh": "❶n. 对某事的提及 ❷n. 引文或引文出处 ❸n. 由熟知你的人写的推荐信或介绍信"
       },
       {
         "en": "level",
         "phonetic": "/ˈlevəl/",
         "pos": "n.",
         "meaning": "❶水平、等级 ❷层面",
-        "defEn": "❶n. The height or position of something relative to a base ❷n. A position on a scale of amount or rank ❸adj. Flat and not sloping",
+        "defEn": "❶n. The height of something ❷n. The amount or number of something ❸n. Someone's ability compared with others; a position on a scale of amount or rank ❹adj. Flat and not sloping",
         "example": "What level is your English?",
         "exampleZh": "你英语什么水平？",
         "wordType": "abstract",
@@ -10771,7 +10771,7 @@ var VOCAB_DATA = [
         "phonetic": "/reɪndʒ/",
         "pos": "n.",
         "meaning": "❶范围 ❷系列",
-        "defEn": "❶n. A variety of different things of the same general type ❷n. The distance over which something can be seen or heard ❸n. A large area of land for animals",
+        "defEn": "❶n. A set of similar things ❷n. The goods made by one company or goods of one particular type that are sold in a shop ❸n. The distance over which something can be seen or heard ❹n. A large area of land for animals",
         "example": "The price range is $10 to $50.",
         "exampleZh": "价格范围10到50美元。",
         "wordType": "abstract",
@@ -10783,7 +10783,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈlɪmɪt/",
         "pos": "n.",
         "meaning": "限制、限度",
-        "defEn": "❶n. The greatest amount or number allowed ❷n. A boundary that cannot be crossed ❸v. To restrict the amount or extent of something",
+        "defEn": "❶n. The greatest amount, number, or level of something that is either possible or allowed ❷n. A boundary that cannot be crossed ❸v. To restrict the amount or extent of something",
         "example": "There's a time limit for the test.",
         "root": "limit(边界) → 不能超过的线 → 限制",
         "exampleZh": "测试有时间限制。",
@@ -10801,14 +10801,14 @@ var VOCAB_DATA = [
         "exampleZh": "两张桌子之间有间隙。",
         "wordType": "abstract",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 两个物体或地点之间的空隙 ❷n. 本应相同的两事物之间的差异 ❸n. 没有任何事情发生的一段时间"
+        "defZh": "❶n. 缺口、豁口或空隙 ❷n. 差距、分歧或隔阂 ❸n. 时间上的间断或间歇"
       },
       {
         "en": "resource",
         "phonetic": "/rɪˈsɔːrs/",
         "pos": "n.",
         "meaning": "资源",
-        "defEn": "❶n. Something that can be used to help achieve a purpose ❷n. Natural materials such as water and minerals ❸n. A supply of money or materials",
+        "defEn": "❶n. A useful or valuable possession or quality of a country, organization, or person ❷n. Natural materials such as water and minerals ❸n. A supply of money or materials",
         "example": "Use online resources to learn more.",
         "root": "re(回)+source(来源) → 回到来源 → 资源",
         "exampleZh": "利用在线资源学习更多。",
@@ -10821,7 +10821,7 @@ var VOCAB_DATA = [
         "phonetic": "/striːm/",
         "pos": "n.",
         "meaning": "小溪、溪流",
-        "defEn": "❶n. A small river ❷n. A continuous flow of something ❸v. To broadcast video or audio live over the internet",
+        "defEn": "❶n. Water that flows naturally along a fixed route formed by a channel cut into rock or ground ❷n. A continuous flow of things or people ❸v. To broadcast video or audio live over the internet",
         "example": "We sat by the stream and relaxed.",
         "exampleZh": "我们坐在溪边放松。",
         "wordType": "abstract",
@@ -10833,7 +10833,7 @@ var VOCAB_DATA = [
         "phonetic": "/həˈraɪzən/",
         "pos": "n.",
         "meaning": "地平线",
-        "defEn": "❶n. The line where the earth or sea seems to meet the sky ❷n. The limit of what is possible or known",
+        "defEn": "❶n. The line at the farthest place that you can see, where the sky seems to touch the land or sea ❷n. The limit of what is possible or known",
         "example": "The sun set below the horizon.",
         "root": "horiz(边界)+on → 天地交界线 → 地平线",
         "exampleZh": "太阳落到地平线以下。",
@@ -10863,7 +10863,7 @@ var VOCAB_DATA = [
         "exampleZh": "第一节课前先看课程大纲。",
         "wordType": "abstract",
         "subcategory": "Office & School Deep",
-        "defZh": "❶n. 课程中要学习的科目列表"
+        "defZh": "❶n. 课程大纲，教学大纲"
       },
       {
         "en": "presentation",
@@ -10875,7 +10875,7 @@ var VOCAB_DATA = [
         "exampleZh": "她做了一个很棒的演示。",
         "wordType": "abstract",
         "subcategory": "Office & School Deep",
-        "defZh": "❶n. 向听众介绍某事信息的演讲 ❷n. 某物展示或提供的方式 ❸n. 正式将某物交给某人的行为"
+        "defZh": "❶n. 演讲、报告或陈述 ❷n. 某物展示或呈现的方式 ❸n. 正式授予或颁发某物的行为"
       },
       {
         "en": "document",
@@ -10895,7 +10895,7 @@ var VOCAB_DATA = [
         "phonetic": "/doʊs/",
         "pos": "n.",
         "meaning": "剂量、一剂",
-        "defEn": "❶n. A measured amount of medicine or drug taken at one time",
+        "defEn": "❶n. A measured amount of something such as medicine ❷n. An amount or experience of something, often something bad",
         "example": "Take the correct dose of medicine.",
         "exampleZh": "按正确剂量服药。",
         "wordType": "abstract",
@@ -10907,7 +10907,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈsɪmptəm/",
         "pos": "n.",
         "meaning": "症状",
-        "defEn": "❶n. A sign that shows a disease or condition exists ❷n. A sign of a problem in a situation",
+        "defEn": "❶n. Any feeling of illness or physical or mental change that is caused by a particular disease ❷n. A sign of a problem in a situation",
         "example": "What are your symptoms?",
         "root": "sym(共同)+ptom(落下) → 与疾病一起出现的 → 症状",
         "exampleZh": "你有什么症状？",
@@ -10925,14 +10925,14 @@ var VOCAB_DATA = [
         "exampleZh": "她发烧温度很高。",
         "wordType": "abstract",
         "subcategory": "Medicine & Health",
-        "defZh": "❶n. 体温高于正常的医学状况 ❷n. 神经兴奋的状态"
+        "defZh": "❶n. 体温高于正常的医学状况（发烧） ❷n. 极度激动或狂热兴奋的状态"
       },
       {
         "en": "cold",
         "phonetic": "/koʊld/",
         "pos": "n./adj.",
         "meaning": "❶n.感冒 ❷adj.冷的",
-        "defEn": "❶adj. At a low temperature ❷n. A common illness that makes your nose run and throat sore ❸adj. Not friendly or showing emotion",
+        "defEn": "❶adj. At a low temperature, especially when compared to the temperature of the human body ❷n. A common illness that makes your nose run and throat sore ❸adj. Not friendly or showing emotion",
         "example": "I caught a cold last week.",
         "exampleZh": "上周我感冒了。",
         "wordType": "abstract",
@@ -10950,7 +10950,7 @@ var VOCAB_DATA = [
         "exampleZh": "我对花生过敏。",
         "wordType": "abstract",
         "subcategory": "Medicine & Health",
-        "defZh": "❶n. 食用或接触某种物质时会引发疾病的情况"
+        "defZh": "❶n. 过敏反应，因食用或接触某种物质而引发的变态反应"
       },
       {
         "en": "infection",
@@ -10963,14 +10963,14 @@ var VOCAB_DATA = [
         "exampleZh": "伤口感染了。",
         "wordType": "abstract",
         "subcategory": "Medicine & Health",
-        "defZh": "❶n. 由病菌进入体内引起的疾病 ❷n. 病菌进入并在体内扩散的过程"
+        "defZh": "❶n. 由细菌或病毒侵入身体部位造成的感染 ❷n. 病菌进入并在体内扩散的过程"
       },
       {
         "en": "salary",
         "phonetic": "/ˈsæləri/",
         "pos": "n.",
         "meaning": "工资、薪水",
-        "defEn": "❶n. A fixed amount of money paid regularly for work",
+        "defEn": "❶n. A fixed amount of money agreed every year as pay for an employee, usually paid directly into his or her bank account",
         "example": "My salary gets paid on the 15th.",
         "root": "sal(盐)+ary → 古罗马用盐付工资 → 薪水",
         "exampleZh": "我的工资15号发。",
@@ -10983,7 +10983,7 @@ var VOCAB_DATA = [
         "phonetic": "/weɪdʒ/",
         "pos": "n.",
         "meaning": "工资（按小时/周计）",
-        "defEn": "❶n. Money paid for work done, usually by the hour or day",
+        "defEn": "❶n. A particular amount of money that is paid, usually every week, to an employee, especially one who does physical work",
         "example": "His hourly wage is $15.",
         "exampleZh": "他小时工资15美元。",
         "wordType": "abstract",
@@ -10995,7 +10995,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈɪnkʌm/",
         "pos": "n.",
         "meaning": "收入",
-        "defEn": "❶n. Money that you receive from work or investments",
+        "defEn": "❶n. Money that is earned from doing work or received from investments ❷n. A company's profit",
         "example": "My income covers my basic expenses.",
         "root": "in(入)+come(来) → 进来的钱 → 收入",
         "exampleZh": "我的收入覆盖基本开支。",
@@ -11008,7 +11008,7 @@ var VOCAB_DATA = [
         "phonetic": "/ɪkˈspens/",
         "pos": "n.",
         "meaning": "支出、花费",
-        "defEn": "❶n. Money that you spend on something ❷n. A cost involved in running a business",
+        "defEn": "❶n. The use of money, time, or effort ❷n. Something that makes you spend money ❸n. Money that you spend on something",
         "example": "Track your monthly expenses.",
         "root": "ex(出)+pend(花) → 钱花出去 → 支出",
         "exampleZh": "追踪你的月度支出。",
@@ -11021,7 +11021,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbʌdʒɪt/",
         "pos": "n.",
         "meaning": "预算",
-        "defEn": "❶n. A plan for how to spend money ❷v. To plan how to spend money carefully",
+        "defEn": "❶n. A plan to show how much money a person or organization will earn and how much they will need or be able to spend ❷v. To plan how to spend money carefully",
         "example": "Stick to your budget this month.",
         "exampleZh": "这个月要守住预算。",
         "wordType": "abstract",
@@ -11057,20 +11057,20 @@ var VOCAB_DATA = [
         "phonetic": "/ˈɪntrəst/",
         "pos": "n.",
         "meaning": "❶利息 ❷兴趣",
-        "defEn": "❶n. Money paid for the use of borrowed money ❷n. A feeling of wanting to know or learn about something ❸n. A share or involvement in a business",
+        "defEn": "❶n. A feeling of wanting to give your attention to something or of wanting to be involved with and discover more about it ❷n. Money paid for the use of borrowed money ❸n. A share or involvement in a business",
         "example": "The loan has a 5% interest rate.",
         "root": "inter(之间)+est → 在其中 → 利息/兴趣",
         "exampleZh": "贷款利率5%。",
         "wordType": "abstract",
         "subcategory": "Finance Daily",
-        "defZh": "❶n. 使用借款所支付的钱 ❷n. 想了解或学习某事的愿望 ❸n. 在企业中的份额或参与"
+        "defZh": "❶n. 想了解或关注某事的兴趣或愿望 ❷n. 使用借款所支付的钱（利息） ❸n. 在企业中的份额、权益或参与"
       },
       {
         "en": "tax",
         "phonetic": "/tæks/",
         "pos": "n.",
         "meaning": "税、税款",
-        "defEn": "❶n. Money that the government collects from people and businesses ❷v. To require someone to pay money to the government",
+        "defEn": "❶n. (An amount of) money paid to the government that is based on your income or the cost of goods or services you have bought ❷v. To require someone to pay money to the government",
         "example": "File your taxes before the deadline.",
         "exampleZh": "截止日期前报税。",
         "wordType": "abstract",
@@ -11082,7 +11082,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈprɒfɪt/",
         "pos": "n.",
         "meaning": "利润",
-        "defEn": "❶n. Money gained from a business activity after costs are paid ❷v. To gain an advantage from a situation",
+        "defEn": "❶n. Money that is earned in trade or business after paying the costs of producing and selling goods and services ❷v. To gain an advantage from a situation",
         "example": "The profit was higher this quarter.",
         "root": "pro(前)+fit(做) → 向前做得好 → 利润",
         "exampleZh": "这季度利润更高。",
@@ -11095,7 +11095,7 @@ var VOCAB_DATA = [
         "phonetic": "/ɪnˈʃʊrəns/",
         "pos": "n.",
         "meaning": "保险",
-        "defEn": "❶n. An arrangement where a company pays money if something bad happens",
+        "defEn": "❶n. An agreement in which you pay a company money and they pay your costs if you have an accident, illness, etc.",
         "example": "Do you have health insurance?",
         "root": "in(入)+sure(确定)+ance → 使确定 → 保险",
         "exampleZh": "你有健康保险吗？",
@@ -11114,14 +11114,14 @@ var VOCAB_DATA = [
         "exampleZh": "我们的房贷下周到期。",
         "wordType": "abstract",
         "subcategory": "Finance Daily",
-        "defZh": "❶n. 用于购房并在多年内偿还的贷款"
+        "defZh": "❶n. （尤指购房的）按揭或抵押贷款，在多年内偿还"
       },
       {
         "en": "account",
         "phonetic": "/əˈkaʊnt/",
         "pos": "n.",
         "meaning": "❶账号、账户 ❷描述",
-        "defEn": "❶n. An arrangement with a bank to keep your money there ❷n. A report or description of an event ❸n. A record of business dealings",
+        "defEn": "❶n. An arrangement with a bank to keep your money there and to allow you to take it out when you need to ❷n. A report or description of an event ❸n. A record of business dealings",
         "example": "Create an account to sign in.",
         "root": "ac(向)+count(计算) → 计算的记录 → 账户",
         "exampleZh": "创建账号登录。",
@@ -11134,7 +11134,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈpæswɜːrd/",
         "pos": "n.",
         "meaning": "密码",
-        "defEn": "❶n. A secret word or combination of letters that lets you access a system",
+        "defEn": "❶n. A secret word or combination of letters or numbers, used for communicating with another person or with a computer system",
         "example": "Change your password regularly.",
         "root": "pass(通过)+word(词) → 通过的词 → 密码",
         "exampleZh": "定期更换密码。",
@@ -11153,14 +11153,14 @@ var VOCAB_DATA = [
         "exampleZh": "我收到了配送通知。",
         "wordType": "abstract",
         "subcategory": "Digital Life",
-        "defZh": "❶n. 告知你发生了某事的消息"
+        "defZh": "❶n. 通知、通告或告示 ❷n. 提醒社交媒体账号有更新的通知信息"
       },
       {
         "en": "download",
         "phonetic": "/ˈdaʊnloʊd/",
         "pos": "n./v.",
         "meaning": "❶v./n. 下载",
-        "defEn": "❶v. To copy data from a larger computer system to a smaller one ❷n. A file that has been copied from the internet",
+        "defEn": "❶v. To copy or move programs or information into a computer's memory, especially from the internet or from a larger computer system ❷n. A file that has been copied from the internet",
         "example": "Download the update before using it.",
         "root": "down(下)+load(载) → 从上往下载 → 下载",
         "exampleZh": "使用前先下载更新。",
@@ -11173,7 +11173,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈʌploʊd/",
         "pos": "n./v.",
         "meaning": "❶v./n. 上传",
-        "defEn": "❶v. To copy data from a smaller computer system to a larger one ❷n. A file that has been sent to the internet",
+        "defEn": "❶v. To copy or move programs or information to a larger computer system or to the internet ❷n. A file that has been sent to the internet",
         "example": "Upload the photo to your profile.",
         "root": "up(上)+load(载) → 往上载 → 上传",
         "exampleZh": "把照片上传到你的资料。",
@@ -11186,7 +11186,7 @@ var VOCAB_DATA = [
         "phonetic": "/lɪŋk/",
         "pos": "n./v.",
         "meaning": "❶n.链接 ❷n.联系 ❸v.连接",
-        "defEn": "❶n. A connection between two things ❷v. To connect two things together ❸n. A clickable reference to a web page",
+        "defEn": "❶n. A connection between two people, things, or ideas ❷v. To connect two things together ❸n. A connection between documents on the internet",
         "example": "Click the link to open the page.",
         "exampleZh": "点击链接打开页面。",
         "wordType": "abstract",
@@ -11198,13 +11198,13 @@ var VOCAB_DATA = [
         "phonetic": "/ˈbækʌp/",
         "pos": "n.",
         "meaning": "备份",
-        "defEn": "❶n. An extra copy of data kept for safety ❷adj. Available as a substitute if needed",
+        "defEn": "❶n. (Someone or something that provides) support or help, or something you have arranged in case your original plan fails ❷n. An extra copy of data kept for safety ❸adj. Available as a substitute if needed",
         "example": "Make a backup of your important files.",
         "root": "back(后)+up(上) → 后面支撑 → 备份",
         "exampleZh": "给重要文件做备份。",
         "wordType": "abstract",
         "subcategory": "Digital Life",
-        "defZh": "❶n. 为安全而保留的数据额外副本 ❷adj. 在需要时可作为替代使用的"
+        "defZh": "❶n. 后备人员或替代物（备用物） ❷n. 为安全而保留的数据额外副本（备份） ❸adj. 在需要时可作为替代使用的"
       },
       {
         "en": "storage",
@@ -11216,14 +11216,14 @@ var VOCAB_DATA = [
         "exampleZh": "检查手机存储空间。",
         "wordType": "abstract",
         "subcategory": "Digital Life",
-        "defZh": "❶n. 将某物保存在特定地方的过程 ❷n. 用于存放物品的空间 ❸n. 用于保存数字数据的设备"
+        "defZh": "❶n. 储存、储藏或储备（某物的过程和空间） ❷n. 用于保存数字数据的设备或空间"
       },
       {
         "en": "network",
         "phonetic": "/ˈnetwɜːrk/",
         "pos": "n.",
         "meaning": "网络",
-        "defEn": "❶n. A group of people or organizations connected to each other ❷n. A system of connected computers ❸n. A group of radio or television stations",
+        "defEn": "❶n. A large system consisting of many similar parts that are connected together to allow movement or communication between them ❷n. A system of connected computers ❸n. A group of people or organizations connected to each other",
         "example": "The network is down right now.",
         "root": "net(网)+work(工作) → 网状运作 → 网络",
         "exampleZh": "网络现在断了。",
@@ -11241,7 +11241,7 @@ var VOCAB_DATA = [
         "exampleZh": "阅读是好习惯。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 经常做的事往往不加思考 ❷n. 对药物的强烈生理需求"
+        "defZh": "❶n. 经常做的事往往不加思考（习惯） ❷n. 坏习惯或毒瘾"
       },
       {
         "en": "process",
@@ -11254,14 +11254,14 @@ var VOCAB_DATA = [
         "exampleZh": "招聘流程需要两周。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 达到特定结果的一系列行动 ❷v. 按既定程序处理某事 ❸n. 做某事的方法"
+        "defZh": "❶n. 达到特定结果的一系列行动（过程） ❷n. 变化过程或进程 ❸v. 按既定程序处理或办理某事"
       },
       {
         "en": "procedure",
         "phonetic": "/prəˈsiːdʒər/",
         "pos": "n.",
         "meaning": "程序、步骤",
-        "defEn": "❶n. A set of actions done in a particular order ❷n. A medical operation ❸n. The official way of doing something",
+        "defEn": "❶n. A set of actions that is the official or accepted way of doing something ❷n. A medical operation",
         "example": "Follow the procedure step by step.",
         "root": "pro(前)+cedure(走) → 向前走的方式 → 程序",
         "exampleZh": "按步骤执行程序。",
@@ -11280,14 +11280,14 @@ var VOCAB_DATA = [
         "exampleZh": "在学习上多花点努力。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 做某事所需的体力或脑力 ❷n. 尝试做困难之事的努力"
+        "defZh": "❶n. 做某事所需的体力或脑力（气力、精力） ❷n. 尝试做困难之事的努力"
       },
       {
         "en": "progress",
         "phonetic": "/ˈprɒɡres/",
         "pos": "n.",
         "meaning": "进步、进展",
-        "defEn": "❶n. Movement toward a better or more developed state ❷n. Forward movement toward a destination ❸v. To move forward gradually",
+        "defEn": "❶n. Movement to an improved or more developed state, or to a forward position ❷v. To move forward gradually",
         "example": "We made good progress this week.",
         "root": "pro(前)+gress(走) → 向前走 → 进步",
         "exampleZh": "这周我们进步很大。",
@@ -11306,14 +11306,14 @@ var VOCAB_DATA = [
         "exampleZh": "测试结果是什么？",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 因某事而发生的结果 ❷n. 从测试或考试中获得的信息 ❸v. 作为效果而发生"
+        "defZh": "❶n. 因某事而发生的结果或后果 ❷n. 测试或考试的成绩 ❸v. 作为效果而发生"
       },
       {
         "en": "effect",
         "phonetic": "/ɪˈfekt/",
         "pos": "n.",
         "meaning": "效果、影响",
-        "defEn": "❶n. A change produced by an action or cause ❷n. The condition of being in operation ❸v. To make something happen",
+        "defEn": "❶n. The result of a particular influence ❷n. The condition of being in operation ❸v. To make something happen",
         "example": "The effect was immediate.",
         "root": "ef(出)+fect(做) → 做出来的 → 效果",
         "exampleZh": "效果立竿见影。",
@@ -11326,7 +11326,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈɪmpækt/",
         "pos": "n.",
         "meaning": "❶影响、冲击 ❷撞击",
-        "defEn": "❶n. A powerful effect that something has on a situation ❷v. To have a strong effect on something ❸n. The force of one object hitting another",
+        "defEn": "❶n. The force or action of one object hitting another ❷n. A powerful effect that something has on a situation ❸v. To have a strong effect on something",
         "example": "The impact of the policy is unclear.",
         "root": "im(入)+pact(压) → 压进去 → 冲击/影响",
         "exampleZh": "政策的影响还不明确。",
@@ -11339,7 +11339,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˈmuːvmənt/",
         "pos": "n.",
         "meaning": "❶运动、移动 ❷运动（社会）",
-        "defEn": "❶n. A change of position ❷n. A group of people working together for a shared purpose ❸n. A general trend or development",
+        "defEn": "❶n. A change of position ❷n. What someone is doing during a particular period ❸n. A group of people working together for a shared purpose ❹n. A general trend or development",
         "example": "Join the fitness movement.",
         "exampleZh": "加入健身运动。",
         "wordType": "abstract",
@@ -11351,7 +11351,7 @@ var VOCAB_DATA = [
         "phonetic": "/ˌɒpəˈreɪʃən/",
         "pos": "n.",
         "meaning": "❶手术 ❷操作 ❸运营",
-        "defEn": "❶n. A planned activity involving many people ❷n. A medical procedure to repair or remove something ❸n. The way a machine or system works",
+        "defEn": "❶n. The fact of operating or being active ❷n. The way that parts of a machine or system work together, or the way in which a business or organization works ❸n. A planned activity involving many people ❹n. A medical procedure",
         "example": "The operation went well.",
         "exampleZh": "手术很顺利。",
         "wordType": "abstract",
@@ -11363,13 +11363,13 @@ var VOCAB_DATA = [
         "phonetic": "/ɪkˈspɪriəns/",
         "pos": "n./v.",
         "meaning": "❶n.经验 ❷n.经历 ❸v.体验",
-        "defEn": "❶n. Something that happens to you that affects how you feel ❷n. Knowledge or skill from doing a job over time ❸v. To feel or be affected by something",
+        "defEn": "❶n. (The process of getting) knowledge or skill from doing, seeing, or feeling things ❷n. Something that happens to you that affects how you feel ❸v. To feel or be affected by something",
         "example": "That trip was an amazing experience.",
         "root": "ex(出)+peri(尝试)+ence → 尝试出来的 → 经验",
         "exampleZh": "那次旅行是一段奇妙的经历。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 发生在你身上并影响你感受的事 ❷n. 长期从事某项工作所获得的知识或技能 ❸v. 感受或受到某事的影响"
+        "defZh": "❶n. 通过做事、观察或感受而获得的知识或技能（经验） ❷n. 发生在你身上并影响你感受的事（经历） ❸v. 体会或感受到某事"
       },
       {
         "en": "delivery",
@@ -11382,14 +11382,14 @@ var VOCAB_DATA = [
         "exampleZh": "快递预计明天到达。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 将货物送到需要之处的行为 ❷n. 分娩的过程 ❸n. 某人说话或表演的方式"
+        "defZh": "❶n. 递送、运送或投递（货物） ❷n. 分娩的过程 ❸n. 演讲或表演的风格方式"
       },
       {
         "en": "purpose",
         "phonetic": "/ˈpɜːrpəs/",
         "pos": "n.",
         "meaning": "目的、意图",
-        "defEn": "❶n. The reason for which something is done ❷n. A goal that someone intends to achieve ❸n. Determination to achieve something",
+        "defEn": "❶n. Why you do something or why something exists ❷n. Determination to achieve something",
         "example": "What's the purpose of this meeting?",
         "root": "pro(前)+pose(放) → 放在前面的 → 目的",
         "exampleZh": "这个会议的目的是什么？",
@@ -11408,7 +11408,7 @@ var VOCAB_DATA = [
         "exampleZh": "这是一个好机会。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 做某事的机会 ❷n. 有利于做某事的时机或情况"
+        "defZh": "❶n. 做某事的机遇、时机或机会 ❷n. 有利于做某事的时机或情况"
       },
       {
         "en": "permission",
@@ -11421,14 +11421,14 @@ var VOCAB_DATA = [
         "exampleZh": "进入前请获得许可。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 允许某人做某事的官方同意"
+        "defZh": "❶n. 允许、许可或准许（某人做某事）"
       },
       {
         "en": "platform",
         "phonetic": "/ˈplætfɔːrm/",
         "pos": "n.",
         "meaning": "❶站台 ❷平台",
-        "defEn": "❶n. A raised flat surface built above the ground ❷n. A system or technology on which other things are built ❸n. A set of policies a political party promotes",
+        "defEn": "❶n. A flat raised area or structure ❷n. A long, flat raised structure at a railway station, where people get on and off trains ❸n. A system or technology on which other things are built ❹n. A set of policies a political party promotes",
         "example": "The train leaves from Platform 5.",
         "exampleZh": "火车从5号站台出发。",
         "wordType": "abstract",
@@ -11445,7 +11445,7 @@ var VOCAB_DATA = [
         "exampleZh": "公交车票价两美元。",
         "wordType": "abstract",
         "subcategory": "Transport Deep",
-        "defZh": "❶n. 乘公交、火车或出租车所支付的车费 ❷n. 餐馆提供的食物"
+        "defZh": "❶n. 乘车所支付的车费或票价 ❷n. 餐馆提供的饭菜或食物"
       },
       {
         "en": "route",
@@ -11457,7 +11457,7 @@ var VOCAB_DATA = [
         "exampleZh": "去机场最快的路线是什么？",
         "wordType": "abstract",
         "subcategory": "Transport Deep",
-        "defZh": "❶n. 从一地到另一地的行进路线 ❷n. 公交或火车使用的固定路线"
+        "defZh": "❶n. 从一地到另一地的路线、路途或航线 ❷n. 途径、渠道或方法"
       },
       {
         "en": "policy",
@@ -11469,7 +11469,7 @@ var VOCAB_DATA = [
         "exampleZh": "新政策下月开始。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 作为决策基础的一套理念或计划 ❷n. 描述保险协议的文件 ❸n. 经正式认可的行事方式"
+        "defZh": "❶n. 政策、方针或策略 ❷n. 保险单（文件）"
       },
       {
         "en": "culture",
@@ -11482,7 +11482,7 @@ var VOCAB_DATA = [
         "exampleZh": "了解当地文化。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 特定人群的生活方式 ❷n. 作为整体的艺术、音乐和文学 ❸n. 在实验室中培育以供研究的细胞"
+        "defZh": "❶n. 特定群体在某一时期普遍的习俗、习惯和信仰（文化） ❷n. 艺术、文艺 ❸n. 在实验室中培养出的细菌或组织"
       },
       {
         "en": "tradition",
@@ -11507,7 +11507,7 @@ var VOCAB_DATA = [
         "exampleZh": "握手是当地习俗。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 特定群体典型的传统做法 ❷adj. 为特定顾客专门制作的"
+        "defZh": "❶n. 习俗、风俗或惯例 ❷adj. 按顾客要求专门制作的 ❸n. 海关（customs）"
       },
       {
         "en": "election",
@@ -11532,7 +11532,7 @@ var VOCAB_DATA = [
         "exampleZh": "今年犯罪率下降了。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 可受法律惩罚的违法行为 ❷n. 不道德或不可接受的行为"
+        "defZh": "❶n. 违法行为或犯罪活动 ❷n. 罪行 ❸n. 不能接受的行为或愚蠢的做法"
       },
       {
         "en": "punishment",
@@ -11544,7 +11544,7 @@ var VOCAB_DATA = [
         "exampleZh": "惩罚是罚款。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 为使人因犯错而受苦所做的事 ❷n. 法庭判处的刑罚"
+        "defZh": "❶n. 惩罚、处罚或受罚 ❷n. 法庭判处的刑罚 ❸n. 粗暴的对待或折磨"
       },
       {
         "en": "freedom",
@@ -11557,7 +11557,7 @@ var VOCAB_DATA = [
         "exampleZh": "言论自由很重要。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 想怎样行动、说话或思考就怎样的权利 ❷n. 未被监禁的状态 ❸n. 不受控制的状态"
+        "defZh": "❶n. 自由权利（行动、说话或思考不受限制） ❷n. 未被监禁的自由 ❸n. 不受控制或自主的状态"
       },
       {
         "en": "equality",
@@ -11583,7 +11583,7 @@ var VOCAB_DATA = [
         "exampleZh": "正义对每个人都应该公平。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 人们受到公平对待的公正 ❷n. 惩罚罪犯的法律体系 ❸n. 法院中的法官"
+        "defZh": "❶n. 公正、公平或正义 ❷n. 司法制度或法律体系 ❸n. 法官"
       },
       {
         "en": "community",
@@ -11596,7 +11596,7 @@ var VOCAB_DATA = [
         "exampleZh": "我们的社区很友好。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 居住在同一地区的人群 ❷n. 有共同兴趣的人群 ❸n. 彼此归属在一起的感觉"
+        "defZh": "❶n. 社区或居住在同一地区的人群 ❷n. 有共同兴趣的社团或群体 ❸n. 彼此归属在一起的感觉"
       },
       {
         "en": "economy",
@@ -11609,7 +11609,7 @@ var VOCAB_DATA = [
         "exampleZh": "今年经济状况不错。",
         "wordType": "abstract",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 一国之内金钱的制造和使用体系 ❷n. 对金钱和资源的谨慎使用"
+        "defZh": "❶n. 经济制度（一国之内金钱的制造和使用体系） ❷n. 节约、节俭（对金钱和资源的谨慎使用）"
       },
       {
         "en": "education",
@@ -11634,19 +11634,19 @@ var VOCAB_DATA = [
         "exampleZh": "我对她撒谎感到内疚。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 觉得自己做了错事的感觉 ❷n. 已犯下罪行的事实"
+        "defZh": "❶n. 内疚、愧疚或自责的感觉 ❷n. 罪责、犯罪的事实或过失"
       },
       {
         "en": "shame",
         "phonetic": "/ʃeɪm/",
         "pos": "n.",
-        "meaning": "羞耻、羞愧",
+        "meaning": "❶羞耻、羞愧 ❷可惜、遗憾",
         "defEn": "❶n. A feeling of guilt or embarrassment about doing something wrong ❷n. Something that deserves criticism",
         "example": "He felt shame about his mistake.",
         "exampleZh": "他为自己的错误感到羞愧。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 因做了错事而产生的内疚或尴尬感 ❷n. 应受批评的事情"
+        "defZh": "❶n. 羞耻、羞愧或丢脸的感觉 ❷n. 可惜或遗憾的事"
       },
       {
         "en": "pride",
@@ -11658,7 +11658,7 @@ var VOCAB_DATA = [
         "exampleZh": "她为自己的工作感到自豪。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 对自己所取得成就的满足感 ❷n. 觉得自己比别人优越的感觉"
+        "defZh": "❶n. 自豪、得意或满足感 ❷n. 自尊 ❸n. 自负或骄傲"
       },
       {
         "en": "jealousy",
@@ -11670,7 +11670,7 @@ var VOCAB_DATA = [
         "exampleZh": "嫉妒会破坏关系。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 因别人拥有自己想要的东西而感到愤怒或不满"
+        "defZh": "❶n. 因别人拥有自己想要的东西而产生的嫉妒或不满"
       },
       {
         "en": "embarrassment",
@@ -11682,7 +11682,7 @@ var VOCAB_DATA = [
         "exampleZh": "那是个尴尬的时刻。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 感到羞耻或不自在的心理"
+        "defZh": "❶n. 尴尬、窘迫或局促不安的心理 ❷n. 令人尴尬的事"
       },
       {
         "en": "gratitude",
@@ -11695,7 +11695,7 @@ var VOCAB_DATA = [
         "exampleZh": "我向她表达了感激。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 对某事心怀感谢的感觉"
+        "defZh": "❶n. 感激之情或感谢"
       },
       {
         "en": "sympathy",
@@ -11708,7 +11708,7 @@ var VOCAB_DATA = [
         "exampleZh": "我对无家可归者感到同情。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 对他人痛苦的理解和关怀 ❷n. 对某人想法或立场的支持"
+        "defZh": "❶n. 同情心（对他人痛苦的理解和关怀） ❷n. 支持或赞同"
       },
       {
         "en": "curiosity",
@@ -11721,7 +11721,7 @@ var VOCAB_DATA = [
         "exampleZh": "好奇心驱使孩子学习。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 想知道或了解某事的渴望"
+        "defZh": "❶n. 好奇心或求知欲 ❷n. 奇特、珍奇或新奇的事物"
       },
       {
         "en": "patience",
@@ -11734,7 +11734,7 @@ var VOCAB_DATA = [
         "exampleZh": "我没耐心——太慢了。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 能冷静等待而不发怒的能力"
+        "defZh": "❶n. 耐心或忍耐力（冷静等待而不发怒的能力）"
       },
       {
         "en": "comfort",
@@ -11747,7 +11747,7 @@ var VOCAB_DATA = [
         "exampleZh": "她现在需要安慰。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 放松且无痛的愉悦感 ❷v. 使某人减少忧虑或不快 ❸n. 让生活更轻松舒适的事物"
+        "defZh": "❶n. 舒适感（放松且无痛的愉悦感） ❷v. 安慰或抚慰某人 ❸n. 让生活更舒适的事物或设施"
       },
       {
         "en": "relief",
@@ -11760,7 +11760,7 @@ var VOCAB_DATA = [
         "exampleZh": "考试结束了真是解脱！",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 不愉快之事结束后的庆幸感 ❷n. 给予困难人群的帮助 ❸n. 税款或债务的减免"
+        "defZh": "❶n. 宽慰或解脱感（不愉快之事结束后的轻松） ❷n. 救济或帮助（给予困难人群） ❸n. 浮雕"
       },
       {
         "en": "frustration",
@@ -11772,7 +11772,7 @@ var VOCAB_DATA = [
         "exampleZh": "没法修好它让我感到挫败。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 因无法达成目标而感到的懊恼"
+        "defZh": "❶n. 因无法满足需求或达成目标而感到的沮丧或懊恼 ❷n. 令人沮丧的事物"
       },
       {
         "en": "loneliness",
@@ -11784,7 +11784,7 @@ var VOCAB_DATA = [
         "exampleZh": "孤独真的很难熬。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 独处且为此感到不快的心理"
+        "defZh": "❶n. 孤独或寂寞（独处且为此感到不快）"
       },
       {
         "en": "excitement",
@@ -11797,7 +11797,7 @@ var VOCAB_DATA = [
         "exampleZh": "孩子们对旅行感到兴奋。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 非常高兴和热切期待的感受"
+        "defZh": "❶n. 激动或兴奋 ❷n. 令人兴奋的事情"
       },
       {
         "en": "boredom",
@@ -11809,7 +11809,7 @@ var VOCAB_DATA = [
         "exampleZh": "无聊让你做奇怪的事。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 因无所事事而产生的疲倦和不耐烦"
+        "defZh": "❶n. 厌烦、厌倦或无聊"
       },
       {
         "en": "despair",
@@ -11822,7 +11822,7 @@ var VOCAB_DATA = [
         "exampleZh": "不要屈服于绝望。",
         "wordType": "abstract",
         "subcategory": "Emotions Deep",
-        "defZh": "❶n. 觉得毫无改善希望的感受"
+        "defZh": "❶n. 绝望或失去希望的感受"
       },
       {
         "en": "discount",
@@ -11835,7 +11835,7 @@ var VOCAB_DATA = [
         "exampleZh": "学生有折扣吗？",
         "wordType": "abstract",
         "subcategory": "Shopping",
-        "defZh": "❶n. 某物通常价格的减少 ❷v. 降低某物的价格"
+        "defZh": "❶n. 减价或折扣 ❷v. 降低价格打折 ❸v. 不考虑、忽视或忽略"
       },
       {
         "en": "sale",
@@ -11847,7 +11847,7 @@ var VOCAB_DATA = [
         "exampleZh": "这周末有大促销。",
         "wordType": "abstract",
         "subcategory": "Shopping",
-        "defZh": "❶n. 以较低价格出售商品的场合 ❷n. 出售某物的行为 ❸n. 已售出的商品数量"
+        "defZh": "❶n. 出售或销售 ❷n. 降价销售或打折促销 ❸n. 已售出的商品数量"
       },
       {
         "en": "promotion",
@@ -11860,7 +11860,7 @@ var VOCAB_DATA = [
         "exampleZh": "促销明天结束。",
         "wordType": "abstract",
         "subcategory": "Shopping",
-        "defZh": "❶n. 旨在增加销售或知名度的活动 ❷n. 工作中晋升到更高职位"
+        "defZh": "❶n. 促销、推销或宣传活动 ❷n. 晋升到更高职位"
       },
       {
         "en": "brand",
@@ -11872,7 +11872,7 @@ var VOCAB_DATA = [
         "exampleZh": "你用什么品牌的洗发水？",
         "wordType": "abstract",
         "subcategory": "Shopping",
-        "defZh": "❶n. 由一家公司生产的带有特定名称的产品或产品系列 ❷v. 在动物身上做标记以表明归属"
+        "defZh": "❶n. 商标、牌子（带有特定名称的产品或产品系列） ❷v. 打烙印或做标记"
       },
       {
         "en": "refund",
@@ -11885,7 +11885,7 @@ var VOCAB_DATA = [
         "exampleZh": "我想退这个商品。",
         "wordType": "abstract",
         "subcategory": "Shopping",
-        "defZh": "❶n. 退还产品时返还的钱 ❷v. 把钱退还给某人"
+        "defZh": "❶n. 退款或返还款 ❷v. 退还钱款"
       },
       {
         "en": "license",
@@ -11898,7 +11898,7 @@ var VOCAB_DATA = [
         "exampleZh": "你有驾照吗？",
         "wordType": "abstract",
         "subcategory": "Personal Items",
-        "defZh": "❶n. 给予做某事许可的官方文件 ❷v. 给某人正式许可"
+        "defZh": "❶n. 许可证、执照（给予做某事许可的官方文件） ❷v. 给某人正式许可或授权"
       },
       {
         "en": "temperature",
@@ -11911,7 +11911,7 @@ var VOCAB_DATA = [
         "exampleZh": "温度降到零度以下了。",
         "wordType": "abstract",
         "subcategory": "Weather Details",
-        "defZh": "❶n. 衡量某物冷热程度的度量 ❷n. 身体或某处的热量水平"
+        "defZh": "❶n. 温度或体温 ❷n. 紧张程度或激烈程度"
       },
       {
         "en": "humidity",
@@ -11923,7 +11923,7 @@ var VOCAB_DATA = [
         "exampleZh": "今天湿度很高。",
         "wordType": "abstract",
         "subcategory": "Weather Details",
-        "defZh": "❶n. 空气中所含水分的多少"
+        "defZh": "❶n. 湿度（空气中所含水分的多少）"
       }
     ]
   },
@@ -12042,7 +12042,7 @@ var VOCAB_DATA = [
         "en": "mushroom",
         "phonetic": "/ˈmʌʃruːm/",
         "pos": "n.",
-        "meaning": "蘑菇",
+        "meaning": "❶蘑菇 ❷v.迅速增长、急剧扩散 [遗漏❷v.迅速增长义项，为常见用法如「mushrooming population」；pos标注应改为n./v.]",
         "example": "I love mushroom soup.",
         "exampleZh": "我喜欢蘑菇汤。",
         "wordType": "concrete",
@@ -12052,19 +12052,19 @@ var VOCAB_DATA = [
         "en": "lemon",
         "phonetic": "/ˈlemən/",
         "pos": "n./v.",
-        "meaning": "❶n.柠檬 ❷n.柠檬色 ❸v.挑剔（口语）",
-        "defEn": "❶n. A yellow fruit with sour juice ❷adj. Having the taste or smell of lemon",
+        "meaning": "❶n.柠檬 ❷n.柠檬色 ❸n.没用的东西/蠢人（美式口语） [原❸v.挑剔为错误，剑桥无lemon的动词义项；原❸对应应为名词义「没用的东西」，如a car that is a lemon]",
+        "defEn": "❶n. A yellow fruit with sour juice ❷n. A pale yellow colour ❸n. (mainly US, informal) Something that does not work or is of poor quality [原❷adj为错误，剑桥无lemon的形容词义项；",
         "example": "Add some lemon juice to the salad.",
         "exampleZh": "在沙拉里加些柠檬汁。",
         "wordType": "concrete",
         "subcategory": "Food & Drink Deep",
-        "defZh": "❶n. 一种黄色、汁水酸涩的水果 ❷adj. 有柠檬味道或气味的"
+        "defZh": "❶n. 一种黄色、汁水酸涩的水果 ❷n. 柠檬色（淡黄色） ❸n. 没用的东西、质量差的东西（美式口语） [原❷adj有柠檬味道/气味为Wiktionary风格，非剑桥义项]"
       },
       {
         "en": "peach",
         "phonetic": "/piːtʃ/",
         "pos": "n.",
-        "meaning": "❶桃子 ❷特别讨人喜欢的人",
+        "meaning": "❶桃子 ❷特别讨人喜欢的人（口语） [含义基本正确，可加「口语」标注以对齐剑桥的informal标记；「特别讨人喜欢」比剑桥「attractive or pleasing」略窄，可改为「极有魅力/极讨人喜欢的人」]",
         "example": "This peach is really sweet.",
         "exampleZh": "这桃子真的很甜。",
         "wordType": "concrete",
@@ -12165,7 +12165,7 @@ var VOCAB_DATA = [
         "en": "jam",
         "phonetic": "/dʒæm/",
         "pos": "n./v.",
-        "meaning": "❶n.果酱 ❷n.堵塞、困境 ❸v.挤满、卡住",
+        "meaning": "❶n.果酱 ❷n.堵塞（交通堵塞traffic jam） ❸n.困境（in a jam） ❹v.卡住、挤满 ❺n.即兴演奏（jam session） [遗漏❺n.即兴演奏=music jam session，为剑桥独立义项且在音乐语境中常见；原❸v.将「挤满」和「卡住」合为一项]",
         "defEn": "❶n. A thick sweet food made from fruit boiled with sugar ❷v. To push something tightly into a space ❸n. A situation where you cannot move",
         "example": "Spread some jam on the toast.",
         "exampleZh": "在吐司上涂些果酱。",
@@ -12218,8 +12218,8 @@ var VOCAB_DATA = [
         "en": "oil",
         "phonetic": "/oɪl/",
         "pos": "n./v.",
-        "meaning": "❶n.油（食用油/机油） ❷v.加油、润滑",
-        "defEn": "❶n. A thick liquid that comes from plants or minerals and is used for cooking or fuel ❷v. To put oil on something to make it work smoothly",
+        "meaning": "❶n.油（食用油/润滑油） ❷n.石油、原油 ❸v.加油、润滑 [遗漏❷n.石油/原油义项为剑桥重要独立义项，如crude oil/oil industry]",
+        "defEn": "❶n. A thick liquid from plants or minerals, used for cooking or fuel ❷n. Petroleum, especially when used as fuel ❸v. To put oil on something to make it work smoothly [defEn❶将cooking和fuel混在一起，但petroleum=oil作为能源是剑桥独立义项，建议分列]",
         "example": "Heat some oil in the pan first.",
         "exampleZh": "先在锅里热些油。",
         "wordType": "concrete",
@@ -12240,7 +12240,7 @@ var VOCAB_DATA = [
         "en": "dough",
         "phonetic": "/doʊ/",
         "pos": "n.",
-        "meaning": "面团、生面",
+        "meaning": "❶面团、生面 ❷钱（俚语=money/cash） [遗漏❷n.钱/钞票俚语义，如「I need some dough」=我需要钱；在口语中很常见]",
         "example": "Let the dough rest for 30 minutes.",
         "exampleZh": "让面团静置30分钟。",
         "wordType": "concrete",
@@ -12270,7 +12270,7 @@ var VOCAB_DATA = [
         "en": "waffle",
         "phonetic": "/ˈwɒfəl/",
         "pos": "n./v.",
-        "meaning": "❶n.华夫饼 ❷v.含糊其辞",
+        "meaning": "❶n.华夫饼 ❷v.含糊其辞、啰嗦 ❸v.犹豫不决（美式=dither） [遗漏❸v.犹豫不决义项，剑桥标注为US用法=dither；中文翻译「含糊其辞」偏TALK义，但遗漏FAIL TO DECIDE义]",
         "defEn": "❶n. A flat cake cooked in a special iron with a pattern of squares ❷v. To talk a lot without saying anything important",
         "example": "Let's make waffles for breakfast.",
         "exampleZh": "我们早餐做华夫饼吧。",
@@ -12370,13 +12370,13 @@ var VOCAB_DATA = [
         "exampleZh": "我午餐吃了鸡肉卷饼。",
         "wordType": "concrete",
         "subcategory": "Food & Drink Deep",
-        "defZh": "❶v. 用纸或布折叠覆盖某物 ❷n. 用来包裹食物的一块材料 ❸n. 用扁面包包裹的一种三明治"
+        "defZh": "❶v. 用材料缠绕/折叠覆盖某物 ❷n. 包装材料、包裹物 ❸n. 用扁面包包裹的三明治卷饼 [defZh❶「用纸或布」过于限定，剑桥原文更广泛=any material folded/wound around]"
       },
       {
         "en": "dip",
         "phonetic": "/dɪp/",
         "pos": "n./v.",
-        "meaning": "❶n.蘸酱 ❷v.蘸、泡 ❸v.下降",
+        "meaning": "❶n.蘸酱 ❷v.蘸、浸 ❸n./v.下降、下沉 ❹n.短暂游泳（take a dip） [遗漏❹n.短暂游泳=take a dip in the pool，为常见口语用法]",
         "defEn": "❶v. To put something briefly into a liquid ❷n. A thick sauce that you put food into before eating ❸n. A downward movement",
         "example": "Try this guacamole dip.",
         "exampleZh": "试试这个鳄梨蘸酱。",
@@ -12430,7 +12430,7 @@ var VOCAB_DATA = [
         "phonetic": "/koʊst/",
         "pos": "n./v.",
         "meaning": "❶n.海岸 ❷v.滑行",
-        "defEn": "❶n. The land next to the sea ❷v. To move without using power, relying on gravity",
+        "defEn": "❶n. The land next to the sea ❷v. To move forward without using power or effort [原❷添加'relying on gravity'过度缩小了义项范围；coasting不仅靠重力，如在自行车上惯性滑行]",
         "example": "The coast has beautiful views.",
         "exampleZh": "海岸景色很美。",
         "wordType": "concrete",
@@ -12452,7 +12452,7 @@ var VOCAB_DATA = [
         "en": "desert",
         "phonetic": "/ˈdezərt/",
         "pos": "n.",
-        "meaning": "沙漠",
+        "meaning": "❶沙漠 ❷应得的奖赏/惩罚（formal，通常复数deserts，如just deserts=应得的下场） [遗漏❷虽罕见但为剑桥正式列出义项；B8阶段可标注为formal/rare]",
         "example": "The desert gets very hot in summer.",
         "root": "des(失去)+ert → 被失去的地方 → 沙漠",
         "exampleZh": "沙漠夏天非常热。",
@@ -12553,19 +12553,19 @@ var VOCAB_DATA = [
         "en": "hail",
         "phonetic": "/heɪl/",
         "pos": "n./v.",
-        "meaning": "❶n.冰雹 ❷v.招呼",
+        "meaning": "❶n.冰雹 ❷v.招呼、呼唤 ❸v.赞扬、称颂 [遗漏❸v.赞扬/称颂=hail as a great leader，为剑桥重要动词义项；defEn❸已有此义但meaning未列入]",
         "defEn": "❶n. Small balls of ice that fall like rain ❷v. To call someone to get their attention ❸v. To come from a particular place",
         "example": "The hail damaged the car.",
         "exampleZh": "冰雹损坏了车。",
         "wordType": "concrete",
         "subcategory": "Nature Deep",
-        "defZh": "❶n. 如雨般落下的小冰球 ❷v. 大声呼唤某人以引起注意 ❸v. 来自某个特定的地方"
+        "defZh": "❶n. 如雨般落下的小冰球 ❷v. 大声呼唤某人以引起注意 ❸v. 赞扬、称颂（hail sb as...把某人誉为...） ❹v. 来自某个地方（hail from） [遗漏❸v.赞扬/称颂=hail as a great leader，为剑桥重要动词义项且常见]"
       },
       {
         "en": "frost",
         "phonetic": "/frɒst/",
         "pos": "n.",
-        "meaning": "霜",
+        "meaning": "❶霜、霜冻 ❷冰点以下温度（如heavy frost严霜/严寒天气） [仅「霜」过于简略，❷冰点以下温度为剑桥独立义项]",
         "example": "Frost covered the windows this morning.",
         "exampleZh": "今早窗户上结了霜。",
         "wordType": "concrete",
@@ -12575,7 +12575,7 @@ var VOCAB_DATA = [
         "en": "breeze",
         "phonetic": "/briːz/",
         "pos": "n.",
-        "meaning": "微风、轻风",
+        "meaning": "❶微风、轻风 ❷v.轻松完成（如breeze through轻松通过） [遗漏❷v.轻松完成义项，为常见口语用法；pos应改为n./v.]",
         "example": "A cool breeze came through the window.",
         "exampleZh": "一阵凉爽的微风从窗户吹进来。",
         "wordType": "concrete",
@@ -12617,7 +12617,7 @@ var VOCAB_DATA = [
         "en": "weed",
         "phonetic": "/wiːd/",
         "pos": "n.",
-        "meaning": "杂草",
+        "meaning": "❶杂草 ❷大麻（俚语=marijuana） [遗漏❷n.大麻俚语义，在口语中极为常见如'smoking weed']",
         "example": "Pull the weeds from the garden.",
         "exampleZh": "把花园里的杂草拔掉。",
         "wordType": "concrete",
@@ -12667,7 +12667,7 @@ var VOCAB_DATA = [
         "en": "bud",
         "phonetic": "/bʌd/",
         "pos": "n.",
-        "meaning": "芽、花蕾",
+        "meaning": "❶芽、花蕾 ❷v.发芽、萌芽（如budding talent崭露头角） [遗漏❷v.发芽/萌芽义项；pos应改为n./v.；v.义也常见于比喻如budding artist]",
         "example": "The buds are starting to open.",
         "exampleZh": "花蕾开始绽放了。",
         "wordType": "concrete",
@@ -12677,7 +12677,7 @@ var VOCAB_DATA = [
         "en": "soil",
         "phonetic": "/soɪl/",
         "pos": "n.",
-        "meaning": "土壤、泥土",
+        "meaning": "❶土壤、泥土 ❷v.弄脏、玷污（如soiled clothes脏衣服） [遗漏❷v.弄脏/玷污义项；pos应改为n./v.]",
         "example": "This soil is great for growing tomatoes.",
         "exampleZh": "这土壤很适合种番茄。",
         "wordType": "concrete",
@@ -12697,7 +12697,7 @@ var VOCAB_DATA = [
         "en": "dawn",
         "phonetic": "/dɔːrn/",
         "pos": "n.",
-        "meaning": "黎明、破晓",
+        "meaning": "❶黎明、破晓 ❷开端、起始（如the dawn of a new era新时代的开端） [遗漏❷n.开端/起始比喻义，为剑桥独立义项且常见]",
         "example": "We woke up at dawn to catch the flight.",
         "exampleZh": "我们黎明醒来赶航班。",
         "wordType": "concrete",
@@ -12707,7 +12707,7 @@ var VOCAB_DATA = [
         "en": "twilight",
         "phonetic": "/ˈtaɪwaɪlaɪt/",
         "pos": "n.",
-        "meaning": "暮光、黄昏",
+        "meaning": "❶暮光、黄昏 ❷衰退期、模糊不明时期（如in the twilight of his career他职业生涯的末期） [遗漏❷比喻义=衰退期/不确定时期，为剑桥独立义项]",
         "example": "The sky was beautiful at twilight.",
         "exampleZh": "黄昏时天空很美。",
         "wordType": "concrete",
@@ -12769,7 +12769,7 @@ var VOCAB_DATA = [
         "en": "stamp",
         "phonetic": "/stæmp/",
         "pos": "n./v.",
-        "meaning": "❶n.邮票 ❷n.印章 ❸v.盖章、跺脚",
+        "meaning": "❶n.邮票 ❷n.印章、印记 ❸v.跺脚、重踩 ❹v.盖章、印上标记 [原❸将「盖章」和「跺脚」两个不同动词义项压缩为一项，应分开；defEn已分开为❷❸]",
         "defEn": "❶n. A small piece of paper with a design, stuck on mail to show postage paid ❷v. To bring your foot down hard on something ❸v. To print a pattern or mark on something",
         "example": "I need a stamp for this letter.",
         "exampleZh": "这封信需要邮票。",
@@ -12933,7 +12933,7 @@ var VOCAB_DATA = [
         "en": "joint",
         "phonetic": "/dʒoɪnt/",
         "pos": "n.",
-        "meaning": "❶关节 ❷连接处 ❸adj.共同的",
+        "meaning": "❶关节 ❷连接处 ❸adj.共同的、联合的 ❹n.大块肉（英式） ❺n.低档酒吧/餐厅（口语） ❻n.大麻烟卷（俚语） [遗漏❹❺❻均为剑桥独立义项；❺和❻在口语中很常见]",
         "example": "My knee joint hurts after jogging.",
         "exampleZh": "慢跑后我膝盖关节疼。",
         "wordType": "concrete",
@@ -12943,7 +12943,7 @@ var VOCAB_DATA = [
         "en": "vein",
         "phonetic": "/veɪn/",
         "pos": "n.",
-        "meaning": "静脉、血管",
+        "meaning": "❶静脉、血管 ❷岩脉、矿脉 ❸特质、气质（如a vein of humor幽默感） [遗漏❷❸均为剑桥独立义项；❸在文学/正式语境中常见]",
         "example": "The nurse found a vein for the injection.",
         "exampleZh": "护士找到了注射的静脉。",
         "wordType": "concrete",
@@ -12953,7 +12953,7 @@ var VOCAB_DATA = [
         "en": "nerve",
         "phonetic": "/nɜːrv/",
         "pos": "n.",
-        "meaning": "❶神经 ❷勇气、胆量",
+        "meaning": "❶神经 ❷勇气、胆量 ❸冒犯、厚脸皮（口语） ❹惹人烦躁（get on someone's nerves） [遗漏❸n.冒犯/厚颜无耻=have the nerve to和❹常见短语get on someone's nerves]",
         "example": "It takes nerve to do that.",
         "exampleZh": "做那事需要胆量。",
         "wordType": "concrete",
@@ -12983,7 +12983,7 @@ var VOCAB_DATA = [
         "en": "hip",
         "phonetic": "/hɪp/",
         "pos": "n.",
-        "meaning": "❶臀部 ❷髋部",
+        "meaning": "❶臀部、髋部（同一义项） ❷蔷薇果、玫瑰果 [原❶❷分列两项但剑桥视为同一身体部位义项，应合并；遗漏❷蔷薇果义项]",
         "example": "She fell and hurt her hip.",
         "exampleZh": "她摔倒伤了髋部。",
         "wordType": "concrete",
@@ -13207,7 +13207,7 @@ var VOCAB_DATA = [
         "en": "prescription",
         "phonetic": "/prɪˈskrɪpʃən/",
         "pos": "n.",
-        "meaning": "处方",
+        "meaning": "❶处方、药方 ❷规定、指示（如a prescription for success成功的法则） [遗漏❷n.规定/指示义，为剑桥独立义项且常见于非医疗语境]",
         "example": "You need a prescription for this medicine.",
         "root": "pre(预先)+script(写)+ion → 预先写好的药单 → 处方",
         "exampleZh": "这个药需要处方。",
@@ -13224,7 +13224,7 @@ var VOCAB_DATA = [
         "exampleZh": "她手臂上有淤青。",
         "wordType": "concrete",
         "subcategory": "Medicine & Health",
-        "defZh": "❶n. 因被击打而在皮肤上留下的痕迹 ❷v. 因击打而在皮肤上造成伤痕"
+        "defZh": "❶n. 因被击打而在皮肤上留下的青紫色痕迹（淤青） ❷v. 因击打而在皮肤上造成淤青 ❸v. 使水果碰伤 [defZh❶「痕迹」过于笼统，bruise特指青紫色痕迹/淤青；❸v.水果碰伤为剑桥义项如bruised bananas]"
       },
       {
         "en": "clinic",
@@ -13381,7 +13381,7 @@ var VOCAB_DATA = [
         "en": "bat",
         "phonetic": "/bæt/",
         "pos": "n.",
-        "meaning": "❶蝙蝠 ❷球棒",
+        "meaning": "❶蝙蝠 ❷球棒 ❸v.用球棒击球 ❹v.眨眼（bat one's eyelashes） [遗漏❸❹v.义项；尤其是bat an eye/eyelashes为常见idiom；pos应改为n./v.]",
         "example": "Bats fly at night.",
         "exampleZh": "蝙蝠在夜间飞行。",
         "wordType": "concrete",
@@ -13462,7 +13462,7 @@ var VOCAB_DATA = [
         "en": "vet",
         "phonetic": "/vet/",
         "pos": "n.",
-        "meaning": "兽医",
+        "meaning": "❶兽医 ❷老兵（vet=veteran的简称，口语） [遗漏❷n.老兵/veteran缩写，为常见口语用法；如「he's a vet from Vietnam」]",
         "example": "Take the cat to the vet.",
         "exampleZh": "带猫去看兽医。",
         "wordType": "concrete",
@@ -13535,7 +13535,7 @@ var VOCAB_DATA = [
         "en": "net",
         "phonetic": "/net/",
         "pos": "n.",
-        "meaning": "❶网（球网/渔网） ❷互联网",
+        "meaning": "❶网（球网/渔网） ❷互联网（the Net） ❸adj.净的、纯的（如net profit净利润） ❹v.用网捕捉 [遗漏❸adj.净的/纯的=net profit/net weight和❹v.网住；pos应改为n./adj./v.]",
         "example": "The tennis net is too high.",
         "exampleZh": "网球网太高了。",
         "wordType": "concrete",
@@ -13545,7 +13545,7 @@ var VOCAB_DATA = [
         "en": "racket",
         "phonetic": "/ˈrækɪt/",
         "pos": "n.",
-        "meaning": "❶球拍 ❷喧闹",
+        "meaning": "❶球拍 ❷喧闹 ❸非法活动、骗局（俚语） [遗漏❸n.非法活动/骗局义项，如a protection racket=敲诈勒索；剑桥明确列为独立义项]",
         "example": "I need a new tennis racket.",
         "exampleZh": "我需要新网球拍。",
         "wordType": "concrete",
@@ -13565,7 +13565,7 @@ var VOCAB_DATA = [
         "en": "pool",
         "phonetic": "/puːl/",
         "pos": "n.",
-        "meaning": "❶游泳池 ❷池塘 ❸台球桌",
+        "meaning": "❶游泳池 ❷池塘 ❸台球桌 ❹集合、共享池（如talent pool人才池） ❺v.集中、共享 [遗漏❹n.集合/共享资源池和❺v.集中/共享，在现代英语中很常见如pool of expertise]",
         "example": "Let's go swimming in the pool.",
         "exampleZh": "我们去游泳池游泳吧。",
         "wordType": "concrete",
@@ -13696,7 +13696,7 @@ var VOCAB_DATA = [
         "en": "screen",
         "phonetic": "/skriːn/",
         "pos": "n.",
-        "meaning": "屏幕",
+        "meaning": "❶屏幕、显示屏 ❷屏风、隔板 ❸v.筛选、审查（如screening test） ❹v.遮蔽、掩护 [仅列「屏幕」遗漏❷❸❹均为剑桥重要义项；❸screen=筛选/审查在医疗/招聘中很常见；pos应改为n./v.]",
         "example": "The screen is really bright.",
         "exampleZh": "屏幕真的很亮。",
         "wordType": "concrete",
@@ -13706,7 +13706,7 @@ var VOCAB_DATA = [
         "en": "cab",
         "phonetic": "/kæb/",
         "pos": "n.",
-        "meaning": "出租车（cab=taxi口语）",
+        "meaning": "❶出租车（口语） ❷卡车驾驶室 [遗漏❷n.卡车驾驶室=cab of a truck，为剑桥独立义项]",
         "example": "Let's take a cab to the airport.",
         "exampleZh": "我们打车去机场吧。",
         "wordType": "concrete",
@@ -13756,7 +13756,7 @@ var VOCAB_DATA = [
         "en": "carriage",
         "phonetic": "/ˈkærɪdʒ/",
         "pos": "n.",
-        "meaning": "❶车厢 ❷马车",
+        "meaning": "❶马车 ❷车厢（英式=train compartment） ❸运送、运费 ❹姿态、举止 [遗漏❸n.运送/运费和❹n.姿态/举止，均为剑桥独立义项；❹尤见于formal语境如「gracious carriage」]",
         "example": "Which carriage is first class?",
         "exampleZh": "哪个车厢是头等舱？",
         "wordType": "concrete",
@@ -13766,7 +13766,7 @@ var VOCAB_DATA = [
         "en": "terminal",
         "phonetic": "/ˈtɜːrmɪnəl/",
         "pos": "n./adj.",
-        "meaning": "❶n.航站楼、终点站 ❷adj.末端的、晚期的",
+        "meaning": "❶n.航站楼、终点站 ❷n.电脑终端设备 ❸adj.不治的、致命的（晚期疾病） ❹adj.末端的 [遗漏❷n.电脑终端设备=common tech term；❸adj.不治的应为首要adj义而非「晚期的」；「晚期的」暗示可治，「不治的」更准确]",
         "example": "We arrived at Terminal 3.",
         "root": "termin(终点)+al → 终点 → 航站楼",
         "exampleZh": "我们到了3号航站楼。",
@@ -13849,7 +13849,7 @@ var VOCAB_DATA = [
         "en": "stress",
         "phonetic": "/stres/",
         "pos": "n.",
-        "meaning": "压力、紧张",
+        "meaning": "❶压力、紧张 ❷重音、强调（语言学） ❸物理应力 ❹v.强调、着重 [仅列1项过于简略，遗漏❷❸❹均为剑桥重要义项；pos应改为n./v.]",
         "example": "Work stress is really hard sometimes.",
         "exampleZh": "工作压力有时真的很难。",
         "wordType": "concrete",
@@ -14041,7 +14041,7 @@ var VOCAB_DATA = [
         "en": "curb",
         "phonetic": "/kɜːrb/",
         "pos": "n./v.",
-        "meaning": "❶n.路缘、马路牙子 ❷v.控制、抑制",
+        "meaning": "❶n.路缘、马路牙子（美式=英式kerb） ❷v.控制、抑制 [原释义基本正确，建议标注curb路缘义为美式拼写对应英式kerb]",
         "defEn": "❶n. The edge of a road where it meets the sidewalk ❷v. To control or limit something that is harmful",
         "example": "Park close to the curb.",
         "exampleZh": "靠近马路牙子停车。",
@@ -14053,7 +14053,7 @@ var VOCAB_DATA = [
         "en": "receipt",
         "phonetic": "/rɪˈsiːt/",
         "pos": "n.",
-        "meaning": "收据、小票",
+        "meaning": "❶收据、小票 ❷收到、接收（如in receipt of=已收到） [遗漏❷n.收到/接收义=the act of receiving，为剑桥独立义项且常见于正式语境如'on receipt of your letter']",
         "example": "Keep the receipt for returns.",
         "root": "re(回)+cept(拿) → 拿回来的凭证 → 收据",
         "exampleZh": "保留收据以便退货。",
@@ -14156,7 +14156,7 @@ var VOCAB_DATA = [
         "en": "purse",
         "phonetic": "/pɜːrs/",
         "pos": "n.",
-        "meaning": "❶女士手提包 ❷资金",
+        "meaning": "❶钱包、手提包（尤指女用） ❷资金 ❸奖金（赛马等）",
         "example": "She put her phone in her purse.",
         "exampleZh": "她把手机放进了手提包。",
         "wordType": "concrete",
@@ -14166,7 +14166,7 @@ var VOCAB_DATA = [
         "en": "mug",
         "phonetic": "/mʌɡ/",
         "pos": "n.",
-        "meaning": "❶马克杯（有柄的大杯子） ❷人脸（口语）",
+        "meaning": "❶马克杯（有柄的大杯子） ❷嘴脸、脸（口语，贬义） ❶愚蠢的人（口语）",
         "example": "Can I have my coffee in a mug?",
         "exampleZh": "我可以用马克杯喝咖啡吗？",
         "wordType": "concrete",
@@ -14226,13 +14226,13 @@ var VOCAB_DATA = [
         "en": "whisk",
         "phonetic": "/wɪsk/",
         "pos": "n./v.",
-        "meaning": "❶n.打蛋器 ❷v.搅拌、拂",
-        "defEn": "❶v. To mix something quickly using a whisk ❷v. To take someone somewhere quickly ❸n. A tool used for beating eggs or cream",
+        "meaning": "❶n.打蛋器 ❷v.用打蛋器搅拌 ❸v.迅速带走",
+        "defEn": "❶v. To beat eggs, cream, etc. with a whisk ❷v. To take someone/something somewhere quickly and suddenly ❸n. A kitchen tool used for beating eggs or cream",
         "example": "Beat the eggs with a whisk.",
         "exampleZh": "用打蛋器打鸡蛋。",
         "wordType": "concrete",
         "subcategory": "Kitchen Deep",
-        "defZh": "❶v. 用打蛋器快速搅拌某物 ❷v. 迅速带某人去某处 ❸n. 用于搅打鸡蛋或奶油的工具"
+        "defZh": "❶v. 用打蛋器搅打鸡蛋、奶油等 ❷v. 迅速突然地带走某人/某物 ❸n. 用于搅打鸡蛋或奶油的厨房工具（打蛋器）"
       },
       {
         "en": "rolling pin",
@@ -14267,7 +14267,7 @@ var VOCAB_DATA = [
       {
         "en": "timer",
         "phonetic": "/ˈtaɪmər/",
-        "pos": "n./v.",
+        "pos": "n.",
         "meaning": "❶n.计时器 ❷n.定时开关",
         "defEn": "❶n. A device that measures and records time, usually signaling when a set period ends",
         "example": "Set the timer for 20 minutes.",
@@ -14341,13 +14341,13 @@ var VOCAB_DATA = [
         "en": "plug",
         "phonetic": "/plʌɡ/",
         "pos": "n./v.",
-        "meaning": "❶n.插头 ❷n.塞子 ❸v.插入、堵住",
-        "defEn": "❶n. A small device that connects electrical equipment to a power supply ❷v. To fill a hole with something ❸v. To advertise something repeatedly",
+        "meaning": "❶n.插头 ❷n.塞子、栓 ❸n.宣传、推荐（口语） ❹v.堵住、填塞 ❺v.宣传、推广（口语）",
+        "defEn": "❶n. A small object with metal pins used to connect electrical equipment to a power supply ❷n. A round piece of rubber/plastic used to block a hole in a sink/bathtub ❸n. An informal recommendation or praise for a product ❹v. To fill a hole with something ❺v. To informally praise/recommend something repeatedly",
         "example": "Plug the charger into the wall.",
         "exampleZh": "把充电器插头插进插座。",
         "wordType": "concrete",
         "subcategory": "Household Deep",
-        "defZh": "❶n. 将电气设备连接到电源的小装置 ❷v. 用某物填塞一个洞 ❸v. 反复宣传某物"
+        "defZh": "❶n. 将电气设备连接到电源的插头 ❷n. 洗涤槽或浴缸排水孔用的塞子、栓 ❸n. 对产品的非正式宣传、推荐 ❹v. 填塞、堵住一个洞 ❺v. 反复宣传、推广（尤指通过广播或电视）"
       },
       {
         "en": "socket",
@@ -14497,8 +14497,8 @@ var VOCAB_DATA = [
       {
         "en": "pipe",
         "phonetic": "/paɪp/",
-        "pos": "n.",
-        "meaning": "❶管道 ❷烟斗",
+        "pos": "n./v.",
+        "meaning": "❶管道、管子 ❷烟斗",
         "example": "The water pipe burst last night.",
         "exampleZh": "昨晚水管爆了。",
         "wordType": "concrete",
@@ -14906,13 +14906,13 @@ var VOCAB_DATA = [
         "en": "drizzle",
         "phonetic": "/ˈdrɪzəl/",
         "pos": "n./v.",
-        "meaning": "❶n.细雨、毛毛雨 ❷v.下细雨",
-        "defEn": "❶v. To pour a small amount of liquid over food ❷n. Light rain falling in very small drops ❸n. A small amount of liquid poured over food",
+        "meaning": "❶n.细雨、毛毛雨 ❷v.下毛毛雨 ❸v.将少量液体淋在食物上",
+        "defEn": "❶n. Light rain falling in very fine drops ❷v. To pour a small amount of liquid over food ❸n. A small amount of liquid poured over food ❹v. To rain in very small fine drops",
         "example": "It's just a drizzle, not real rain.",
         "exampleZh": "只是毛毛雨，不算真下雨。",
         "wordType": "concrete",
         "subcategory": "Weather Details",
-        "defZh": "❶v. 将少量液体淋在食物上 ❷n. 以极小水滴飘落的细雨 ❸n. 淋在食物上的少量液体"
+        "defZh": "❶n. 细雨、毛毛雨 ❷v. 将少量液体淋在食物上 ❸n. 淋在食物上的少量液体 ❹v. 下毛毛雨"
       },
       {
         "en": "ottoman",
@@ -15000,7 +15000,7 @@ var VOCAB_DATA = [
         "en": "bolt",
         "phonetic": "/boʊlt/",
         "pos": "n.",
-        "meaning": "❶ 螺栓 ❷ 闪电",
+        "meaning": "❶插销、门闩 ❷螺栓 ❸闪电 ❹一卷（布）",
         "example": "Tighten the bolt with a wrench.",
         "exampleZh": "用扳手拧紧螺栓。",
         "wordType": "concrete",
@@ -15163,7 +15163,7 @@ var VOCAB_DATA = [
         "exampleZh": "把所有东西装进箱子里。",
         "wordType": "concrete",
         "subcategory": "Household Deep",
-        "defZh": "❶n. 有硬边和盖子的容器 ❷v. 将某物放入箱子中 ❸n. 剧院中的小封闭空间"
+        "defZh": "❶n. 箱子、盒子（有硬边和盖子的容器） ❷v. 将某物装箱 ❸n. 包厢（剧院或体育场旁的） ❹v. 拳击、斗拳"
       },
       {
         "en": "bag",
@@ -15178,8 +15178,8 @@ var VOCAB_DATA = [
       {
         "en": "drain",
         "phonetic": "/dreɪn/",
-        "pos": "n.",
-        "meaning": "排水口、下水道",
+        "pos": "n./v.",
+        "meaning": "❶排水口、下水道 ❷消耗、耗竭（精力、资源等）",
         "example": "The drain is clogged — call a plumber.",
         "root": "drain(干) → 让水干掉 → 排水口",
         "exampleZh": "下水道堵了——叫水管工来。",
@@ -15201,7 +15201,7 @@ var VOCAB_DATA = [
         "en": "bulb",
         "phonetic": "/bʌlb/",
         "pos": "n.",
-        "meaning": "灯泡",
+        "meaning": "❶灯泡 ❷球根、鳞茎",
         "example": "The bulb needs replacing — it keeps flickering.",
         "root": "bulb(球) → 球形的 → 灯泡",
         "exampleZh": "灯泡该换了——一直在闪。",
@@ -15293,7 +15293,7 @@ var VOCAB_DATA = [
         "en": "seal",
         "phonetic": "/siːl/",
         "pos": "n.",
-        "meaning": "❶ 海豹 ❷ 封印",
+        "meaning": "❶海豹 ❷密封、封口 ❸印章、印记",
         "example": "Seals love swimming in cold water.",
         "exampleZh": "海豹喜欢在冷水中游泳。",
         "wordType": "concrete",
@@ -16110,14 +16110,14 @@ var VOCAB_DATA = [
         "en": "detail",
         "phonetic": "/ˈdiːteɪl/",
         "pos": "n.",
-        "meaning": "细节、详情",
-        "defEn": "❶n. A small piece of information about something ❷n. The small features of a design or picture ❸v. To describe something fully",
+        "meaning": "❶细节、详情 ❷（军事）分遣队",
+        "defEn": "❶n. A single piece of information or fact about something ❷n. A group of soldiers given a particular task ❸v. To give all the details about something",
         "example": "Check the details before signing.",
         "root": "de(分开)+tail(切) → 切分开的 → 细节",
         "exampleZh": "签字前检查细节。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 关于某事的一小片信息 ❷n. 设计或图画中的小特征 ❸v. 详尽地描述某事"
+        "defZh": "❶n. 关于某事的一条信息或事实 ❷n. 分派执行特别任务的一组士兵（分遣队） ❸v. 详细说明某事"
       },
       {
         "en": "sample",
@@ -16142,7 +16142,7 @@ var VOCAB_DATA = [
         "exampleZh": "桌子表面很光滑。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 某物的外侧或顶层 ❷adj. 与某物外部有关的 ❸v. 浮到水面之上"
+        "defZh": "❶n. 某物的外侧或顶层 ❷adj. 与某物外部有关的 ❸v. 浮到水面之上；显露、为人所知"
       },
       {
         "en": "layer",
@@ -16173,14 +16173,14 @@ var VOCAB_DATA = [
         "en": "position",
         "phonetic": "/pəˈzɪʃən/",
         "pos": "n.",
-        "meaning": "❶位置 ❷职位 ❸立场",
+        "meaning": "❶位置 ❷姿势 ❸职位 ❹立场",
         "defEn": "❶n. The place where something is located ❷n. A job in an organization ❸n. An opinion or attitude on a subject",
         "example": "What position are you applying for?",
         "root": "pos(放)+ition → 放的地方 → 位置/职位",
         "exampleZh": "你申请什么职位？",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 某物所在的位置 ❷n. 组织中的一个职位 ❸n. 对某一主题的看法或态度"
+        "defZh": "❶n. 某物所在的位置 ❷n. 姿势；身体放置的方式 ❸n. 组织中的一个职位 ❹n. 对某一主题的看法或态度"
       },
       {
         "en": "spot",
@@ -16216,7 +16216,7 @@ var VOCAB_DATA = [
         "exampleZh": "这是禁止停车区域。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 具有特定特征或用途的区域 ❷n. 目标上的环圈之一"
+        "defZh": "❶n. 尤指具有不同特征或用途的地带或地区 ❷n. 目标上的环圈之一"
       },
       {
         "en": "district",
@@ -16273,13 +16273,13 @@ var VOCAB_DATA = [
         "phonetic": "/ɪˈkwɪpmənt/",
         "pos": "n.",
         "meaning": "设备、装备",
-        "defEn": "❶n. The set of tools or clothing needed for a particular activity",
+        "defEn": "❶n. The set of tools, clothing, etc. needed for a particular activity",
         "example": "We need new gym equipment.",
         "root": "equip(装备)+ment → 装备的东西 → 设备",
         "exampleZh": "我们需要新的健身设备。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 为特定活动所需的一套工具或服装"
+        "defZh": "❶n. 为特定活动所需的设备、器材或用具"
       },
       {
         "en": "tool",
@@ -16398,14 +16398,14 @@ var VOCAB_DATA = [
         "en": "faculty",
         "phonetic": "/ˈfækəlti/",
         "pos": "n.",
-        "meaning": "❶教职员工 ❷系、学院",
-        "defEn": "❶n. A group of departments in a university ❷n. The teachers in a university ❸n. A natural ability to do something",
+        "meaning": "❶官能、机能 ❷学院、系 ❸教职员工",
+        "defEn": "❶n. A natural ability to do something ❷n. A group of departments in a university ❸n. The teachers in a university",
         "example": "The faculty meeting is on Wednesday.",
         "root": "fac(做)+ult+y → 做事的人 → 教职员工",
         "exampleZh": "教职员工会议在周三。",
         "wordType": "semi-concrete",
         "subcategory": "Office & School Deep",
-        "defZh": "❶n. 大学中的一组院系 ❷n. 大学中的教师 ❸n. 做某事的天然能力"
+        "defZh": "❶n. 做某事的天然能力；官能，机能 ❷n. 大学中的学院或系 ❸n. 大学中的教职员工"
       },
       {
         "en": "pulse",
@@ -16429,7 +16429,7 @@ var VOCAB_DATA = [
         "exampleZh": "我整晚都在咳嗽。",
         "wordType": "semi-concrete",
         "subcategory": "Medicine & Health",
-        "defZh": "❶v. 突然从喉咙发出粗粝声响排出空气 ❷n. 一次咳嗽的动作或让你咳嗽的疾病"
+        "defZh": "❶v. 咳嗽 ❷n. 咳嗽（动作或疾病）"
       },
       {
         "en": "sneeze",
@@ -16441,12 +16441,12 @@ var VOCAB_DATA = [
         "exampleZh": "打喷嚏时捂住嘴。",
         "wordType": "semi-concrete",
         "subcategory": "Medicine & Health",
-        "defZh": "❶v. 突然从鼻子和嘴发出大声排出空气 ❷n. 一次打喷嚏的动作"
+        "defZh": "❶v. 打喷嚏；突然从鼻子和嘴用力排出空气 ❷n. 一次打喷嚏的动作"
       },
       {
         "en": "wound",
         "phonetic": "/wuːnd/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "伤口、创伤",
         "defEn": "❶n. An injury to the body where the skin is cut or broken ❷v. To cause an injury to someone",
         "example": "Clean the wound before bandaging.",
@@ -16720,7 +16720,7 @@ var VOCAB_DATA = [
       {
         "en": "relative",
         "phonetic": "/ˈrelətɪv/",
-        "pos": "n.",
+        "pos": "n./adj.",
         "meaning": "亲属、亲戚",
         "defEn": "❶n. A member of your family ❷adj. Compared to something else ❸adj. Not absolute or complete",
         "example": "We visited relatives for the holidays.",
@@ -16814,7 +16814,7 @@ var VOCAB_DATA = [
         "exampleZh": "这周交电费账单。",
         "wordType": "semi-concrete",
         "subcategory": "Finance Daily",
-        "defZh": "❶n. 关于商品或服务应付款项的书面声明 ❷n. 一张纸币 ❸n. 一项拟议的新法律"
+        "defZh": "❶n. 账单；关于商品或服务应付款项的书面声明 ❷n. 法案；一项拟议的新法律 ❸n. 纸币；一张钞票（主要指美元）"
       },
       {
         "en": "cash",
@@ -16833,13 +16833,13 @@ var VOCAB_DATA = [
         "phonetic": "/dɪˈpɒzɪt/",
         "pos": "n./v.",
         "meaning": "❶n.存款、押金 ❷v.存入",
-        "defEn": "❶n. A sum of money paid as the first part of a larger amount ❷v. To put money into a bank account ❸n. A natural accumulation of material",
+        "defEn": "❶n. A sum of money paid as the first part of a larger amount（押金） ❷n. Money kept in a bank account（存款） ❸v. To put money into a bank account",
         "example": "I paid a deposit for the apartment.",
         "root": "de(下)+posit(放) → 放下去 → 存入/押金",
         "exampleZh": "我付了公寓押金。",
         "wordType": "semi-concrete",
         "subcategory": "Finance Daily",
-        "defZh": "❶n. 作为较大金额第一部分支付的一笔钱 ❷v. 将钱存入银行账户 ❸n. 物质的天然堆积"
+        "defZh": "❶n. 押金；作为较大付款第一部分的钱 ❷n. 存款；银行账户中的钱 ❸v. 将钱存入银行账户"
       },
       {
         "en": "balance",
@@ -16894,37 +16894,37 @@ var VOCAB_DATA = [
         "en": "court",
         "phonetic": "/kɔːrt/",
         "pos": "n.",
-        "meaning": "❶球场 ❷法庭",
+        "meaning": "❶法庭 ❷球场",
         "defEn": "❶n. A place where legal cases are judged ❷n. An area marked out for playing a game like tennis ❸n. The home and officials of a ruler",
         "example": "The tennis court is free now.",
         "exampleZh": "网球场现在空了。",
         "wordType": "semi-concrete",
         "subcategory": "Sports & Fun Deep",
-        "defZh": "❶n. 审判法律案件的地方 ❷n. 为打网球等比赛而划出的区域 ❸n. 统治者的住所及其官员"
+        "defZh": "❶n. 法院，法庭 ❷n. 球场；为打网球等比赛而划出的区域 ❸n. 统治者的宫廷及官员"
       },
       {
         "en": "pitch",
         "phonetic": "/pɪtʃ/",
         "pos": "n./v.",
-        "meaning": "❶n.足球场 ❷v.投球",
+        "meaning": "❶n.运动场、足球场 ❷v.投球 ❸n.音高 ❹v.搭帐篷",
         "defEn": "❶n. A marked area for playing a sport ❷v. To throw a ball in a game ❸v. To set up a tent or market stall",
         "example": "The pitch was wet from the rain.",
         "exampleZh": "球场因雨变湿了。",
         "wordType": "semi-concrete",
         "subcategory": "Sports & Fun Deep",
-        "defZh": "❶n. 用于进行体育比赛的标记区域 ❷v. 在比赛中投球 ❸v. 搭帐篷或摆市场摊位"
+        "defZh": "❶n. 运动场地（尤指足球场） ❷v. 在比赛中投球 ❸v. 搭帐篷并准备使用"
       },
       {
         "en": "score",
         "phonetic": "/skɔːr/",
         "pos": "n./v.",
-        "meaning": "❶n.比分、分数 ❷v.得分",
+        "meaning": "❶n.比分、分数 ❷v.得分 ❸n.配乐",
         "defEn": "❶n. The number of points achieved in a game or test ❷v. To gain points in a game ❸n. Twenty",
         "example": "What's the score so far?",
         "exampleZh": "目前比分多少？",
         "wordType": "semi-concrete",
         "subcategory": "Sports & Fun Deep",
-        "defZh": "❶n. 在比赛或测试中获得的分数 ❷v. 在比赛中得分 ❸n. 二十"
+        "defZh": "❶n. （比赛中的）得分，比分，成绩 ❷v. 在比赛中得分 ❸n. （电影、戏剧等的）配乐"
       },
       {
         "en": "inning",
@@ -17051,13 +17051,13 @@ var VOCAB_DATA = [
         "en": "file",
         "phonetic": "/faɪl/",
         "pos": "n.",
-        "meaning": "❶文件 ❷文件夹 ❸锉刀",
-        "defEn": "❶n. A collection of information stored on a computer ❷n. A box or folder for keeping loose papers together ❸v. To store information on a computer",
+        "meaning": "❶文件 ❷文件夹、卷宗 ❸锉刀",
+        "defEn": "❶n. A collection of information stored on a computer ❷n. A box or folder for keeping loose papers together ❸n. A tool with a rough surface used for smoothing things",
         "example": "Save the file to your desktop.",
         "exampleZh": "把文件保存到桌面。",
         "wordType": "semi-concrete",
         "subcategory": "Digital Life",
-        "defZh": "❶n. 存储在计算机上的信息集合 ❷n. 用于将散页纸张整理在一起的盒子或文件夹 ❸v. 在计算机上存储信息"
+        "defZh": "❶n. 存储在计算机上的信息集合 ❷n. 用于将散页纸张整理在一起的盒子或文件夹 ❸n. 表面粗糙用于打磨的工具，锉刀"
       },
       {
         "en": "wifi",
@@ -17164,13 +17164,13 @@ var VOCAB_DATA = [
         "phonetic": "/əˈpɔɪntmənt/",
         "pos": "n.",
         "meaning": "预约、约定",
-        "defEn": "❶n. A formal arrangement to meet someone at a particular time ❷n. The choosing of someone for a position ❸n. Equipment or furniture in a room",
+        "defEn": "❶n. A formal arrangement to meet someone at a particular time ❷n. The choosing of someone for a position",
         "example": "I have a doctor's appointment tomorrow.",
         "root": "ap(向)+point(指)+ment → 指定的时间 → 预约",
         "exampleZh": "明天我有医生预约。",
         "wordType": "semi-concrete",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 在特定时间正式安排与某人会面 ❷n. 选任某人担任某个职位 ❸n. 房间里的设备或家具"
+        "defZh": "❶n. 预约；在特定时间正式安排与某人会面 ❷n. 任命；选任某人担任某个职位"
       },
       {
         "en": "departure",
@@ -17219,7 +17219,7 @@ var VOCAB_DATA = [
         "exampleZh": "我的通勤大约需要40分钟。",
         "wordType": "semi-concrete",
         "subcategory": "Transport Deep",
-        "defZh": "❶v. 定期在家和工作地之间往返 ❷n. 在家和工作地之间的定期通勤"
+        "defZh": "❶v. 定期在家和工作地之间往返 ❷n. 在家和工作地之间的定期通勤 ❸v. 减刑（法律）"
       },
       {
         "en": "mileage",
@@ -17281,7 +17281,7 @@ var VOCAB_DATA = [
         "exampleZh": "社会变化很快。",
         "wordType": "semi-concrete",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 以有组织方式共同生活的一大群人 ❷n. 为有共同兴趣的人而设的组织 ❸n. 被视为一个群体的一般民众"
+        "defZh": "❶n. 社会 ❷n. 社团 ❸n. 大众，民众"
       },
       {
         "en": "population",
@@ -17307,7 +17307,7 @@ var VOCAB_DATA = [
         "exampleZh": "科技在这里是大产业。",
         "wordType": "semi-concrete",
         "subcategory": "Society Deep",
-        "defZh": "❶n. 生产某种类型商品或服务的企业群体 ❷n. 勤劳工作的倾向"
+        "defZh": "❶n. 工业，产业；生产某种类型商品或服务的企业群体"
       },
       {
         "en": "lane",
@@ -17351,13 +17351,13 @@ var VOCAB_DATA = [
         "en": "edge",
         "phonetic": "/edʒ/",
         "pos": "n.",
-        "meaning": "❶ 边、边缘 ❷ 优势",
+        "meaning": "❶边、边缘 ❷刀刃 ❸优势",
         "defEn": "❶n. The outer limit of an object or area ❷n. The sharp side of a blade ❸v. To move slowly in a particular direction",
         "example": "Sit on the edge of the bed.",
         "exampleZh": "坐在床边上。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 物体或区域的外沿 ❷n. 刀刃的锋利面 ❸v. 缓慢地向某个方向移动"
+        "defZh": "❶n. 物体或区域的外沿；边缘 ❷n. 刀刃的锋利面 ❸n. 优势；优于他人的有利条件"
       },
       {
         "en": "mark",
@@ -17369,7 +17369,7 @@ var VOCAB_DATA = [
         "exampleZh": "墙上有个痕迹。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 表面上的一小块损坏或污迹 ❷n. 用来代替文字的书写符号 ❸v. 在某物上放置符号以表示已被检查"
+        "defZh": "❶n. 表面上的一小块损坏或污迹 ❷n. 用来代替文字的书写符号 ❸n. 分数、成绩"
       },
       {
         "en": "piece",
@@ -17412,13 +17412,13 @@ var VOCAB_DATA = [
         "en": "patch",
         "phonetic": "/pætʃ/",
         "pos": "n.",
-        "meaning": "❶ 补丁 ❷ 一小块地",
-        "defEn": "❶n. A small area that is different from the area around it ❷v. To mend a hole by sewing a piece of material over it ❸n. A piece of software designed to fix a problem",
+        "meaning": "❶补丁、布片 ❷一小块地 ❸软件补丁",
+        "defEn": "❶n. A piece of material used to cover a hole ❷n. A small area that is different from the area around it ❸n. A piece of software designed to fix a problem",
         "example": "There's a patch of grass here.",
         "exampleZh": "这里有一小块草地。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 与周围区域不同的一小块地方 ❷v. 通过在洞上缝一块材料来修补 ❸n. 旨在修复问题的软件补丁"
+        "defZh": "❶n. 用于覆盖洞口的布片或补丁 ❷n. 与周围区域不同的一小块地方 ❸n. 旨在修复问题的软件补丁"
       },
       {
         "en": "stain",
@@ -17435,7 +17435,7 @@ var VOCAB_DATA = [
       {
         "en": "scratch",
         "phonetic": "/skrætʃ/",
-        "pos": "n.",
+        "pos": "n./v.",
         "meaning": "❶ 刮痕 ❷ 抓",
         "defEn": "❶v. To rub your skin with your nails ❷n. A mark made by rubbing something with a sharp point ❸v. To cancel or withdraw from a competition",
         "example": "There's a scratch on the car door.",
@@ -17449,7 +17449,7 @@ var VOCAB_DATA = [
         "phonetic": "/kræk/",
         "pos": "n.",
         "meaning": "❶ 裂缝 ❷ 破裂声",
-        "defEn": "❶n. A narrow opening between two things ❷v. To break without completely separating the pieces ❸v. To find the solution to a problem",
+        "defEn": "❶n. A narrow opening between two things ❷n. A sudden loud sharp sound ❸v. To break without completely separating the pieces",
         "example": "There's a crack in the window — we need to fix it.",
         "exampleZh": "窗户上有一道裂缝——需要修一下。",
         "wordType": "semi-concrete",
@@ -17530,8 +17530,8 @@ var VOCAB_DATA = [
         "exampleZh": "她去年投资了科技股票。",
         "wordType": "semi-concrete",
         "subcategory": "Finance Daily",
-        "defZh": "❶n. 可供出售的货物供应 ❷n. 可以买卖的公司股份 ❸n. 用肉或骨头熬制汤的汤汁"
+        "defZh": "❶n. 供应物，储备物，存货 ❷n. 股本，股份 ❸n. 高汤，汤汁"
       }
     ]
   }
-]
+];
