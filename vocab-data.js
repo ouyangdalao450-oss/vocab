@@ -1663,11 +1663,11 @@ const VOCAB_DATA = [
         "phonetic": "/ˈlaɪən/",
         "pos": "n.",
         "meaning": "❶狮子❷大师，巨匠",
-        "defEn": "❶A large wild animal of the cat family with yellowish-brown fur that lives in Africa and southern Asia.",
+        "defEn": "❶A large wild animal of the cat family with yellowish-brown fur, living in Africa and southern Asia.",
         "example": "Lions hunt in groups on the African savanna.",
         "root": "leon(狮子) → 百兽之王 → 狮子",
         "exampleZh": "狮子在非洲大草原上成群捕猎。",
-        "defZh": "❶大型猫科动物，狮（Panthera leo），原产于非洲、印度及 formerly更广泛的地区…… ❷（引申）各种现存和灭绝的大型猫科动物， ❸中国石狮。"
+        "defZh": "❶狮子 ❷杰出的人物，巨匠"
       },
       {
         "en": "tail",
@@ -1765,11 +1765,11 @@ const VOCAB_DATA = [
         "phonetic": "/ɡoʊt/",
         "pos": "n.",
         "meaning": "❶ 山羊（有角、善攀爬的家畜） ❷ 色鬼（口语，old goat）",
-        "defEn": "❶An animal related to sheep, usually with horns. ❷(informal, disapproving) A man who is very interested in sex. ❸(informal) Someone blamed for something that goes wrong (scapegoat). [原defEn❶使用Wiktionary分类学命名Capra aegagrus hircus，过于学术化]",
+        "defEn": "❶An animal related to sheep, usually with horns. ❷(informal, disapproving) A man who is very interested in sex. ❸(informal) Someone blamed for something that goes wrong (scapegoat).",
         "example": "The goat climbed up the steep hill.",
         "root": "古英语gāt → 有角善攀爬的动物 → 山羊",
         "exampleZh": "山羊爬上了陡峭的山坡。",
-        "defZh": "❶一种哺乳动物，山羊，以及山羊属的类似物种。❷好色的男人。❸替罪羊。"
+        "defZh": "❶山羊 ❷（口语，贬义）好色的男人 ❸替罪羊（scapegoat）"
       },
       {
         "en": "trunk",
@@ -3904,11 +3904,11 @@ const VOCAB_DATA = [
         "phonetic": "/ˈbʌt̬.ɚ/",
         "pos": "n.",
         "meaning": "黄油",
-        "defEn": "❶A pale yellow solid food containing a lot of fat that is made from cream and is spread on bread or used in cooking.",
+        "defEn": "❶A pale yellow solid food made from cream, spread on bread or used in cooking.",
         "example": "We need to buy more butter from the grocery store.",
         "exampleZh": "我们需要去杂货店多买点黄油。",
         "subcategory": "Food & Drink",
-        "defZh": "❶一种淡黄色的固体食物，由奶油制成，涂在面包上或在烹饪中使用，即黄油。"
+        "defZh": "❶黄油（淡黄色固体，由奶油制成，涂面包或烹饪用）"
       },
       {
         "en": "yogurt",
@@ -6644,33 +6644,33 @@ const VOCAB_DATA = [
         "phonetic": "/kaʊ/",
         "pos": "n.",
         "meaning": "❶母牛，奶牛❷（象、鲸等）雌性动物",
-        "defEn": "❶A large female farm animal kept to produce meat and milk.",
+        "defEn": "❶A large female farm animal kept to produce meat and milk. ❷A female of some large animals such as elephants and whales.",
         "example": "A wild cow crossed the road.",
         "exampleZh": "一只野奶牛穿过了马路。",
         "subcategory": "Animals",
-        "defZh": "❶（严格意义）牛属物种的成年雌性， ❷（formerly不够精确但现已常见）牛属物种的任何成员…… ❸牛肉：作为食物的牛肉。"
+        "defZh": "❶母牛，奶牛 ❷（象、鲸等大型动物的）雌性"
       },
       {
         "en": "pig",
         "phonetic": "/pɪɡ/",
         "pos": "n.",
         "meaning": "猪",
-        "defEn": "❶A large pink, brown, or black farm animal with short legs and a curved tail, kept for its meat.",
+        "defEn": "❶A large pink, brown, or black farm animal with short legs and a curved tail, kept for its meat. ❷A person who eats too much or is not clean.",
         "example": "The man kept a pen with two pigs that he fed from carrots to cabbage.",
         "exampleZh": "这名男子拿着一支钢笔和两头猪，用胡萝卜喂白菜。",
         "subcategory": "Animals",
-        "defZh": "❶猪属中几种聪明的哺乳动物之一， ❷（具体指）幼猪， ❸该动物的可食用肉；猪肉。"
+        "defZh": "❶猪 ❷贪吃或不整洁的人"
       },
       {
         "en": "sheep",
         "phonetic": "/ʃiːp/",
         "pos": "n.",
         "meaning": "❶羊❷绵羊",
-        "defEn": "❶A farm animal with thick wool that eats grass and is kept for its wool, skin, and meat.",
+        "defEn": "❶A farm animal with thick wool that eats grass and is kept for its wool, skin, and meat. ❷A person who is shy or easily influenced by others.",
         "example": "She has a pet sheep at home.",
         "exampleZh": "她家里养了一只宠物羊。",
         "subcategory": "Animals",
-        "defZh": "❶绵羊属的一种毛茸茸的反刍动物。 ❷胆小、害羞、容易被他人引导的人。 ❸（主要用复数）宗教信徒，"
+        "defZh": "❶绵羊 ❷容易跟随他人、缺乏独立思考的人"
       },
       {
         "en": "duck",
@@ -6710,22 +6710,22 @@ const VOCAB_DATA = [
         "phonetic": "/ˈtaɪ.ɡɚ/",
         "pos": "n.",
         "meaning": "❶老虎❷强悍的人",
-        "defEn": "❶A large wild animal of the cat family with yellowish-orange fur with black lines that lives in parts of Asia.",
+        "defEn": "❶A large wild animal of the cat family with yellowish-orange fur and black lines, living in parts of Asia.",
         "example": "The tiger is one of the most popular pets.",
         "exampleZh": "老虎是最受欢迎的宠物之一。",
         "subcategory": "Animals",
-        "defZh": "❶虎（Panthera tigris）， ❷纹章上使用的神话大型猫科动物形象。 ❸穿着制服、随主人骑行的仆人。"
+        "defZh": "❶老虎 ❷强悍或有魄力的人"
       },
       {
         "en": "lion",
         "phonetic": "/—/",
         "pos": "n.",
         "meaning": "❶狮子❷大师，巨匠",
-        "defEn": "❶A large wild animal of the cat family with yellowish-brown fur that lives in Africa and southern Asia.",
+        "defEn": "❶A large wild animal of the cat family with yellowish-brown fur, living in Africa and southern Asia.",
         "example": "The lion is one of the most popular pets.",
         "exampleZh": "狮子是最受欢迎的宠物之一。",
         "subcategory": "Animals",
-        "defZh": "❶大型猫科动物，狮（Panthera leo），原产于非洲、印度及 formerly更广泛的地区…… ❷（引申）各种现存和灭绝的大型猫科动物， ❸中国石狮。"
+        "defZh": "❶狮子 ❷杰出的人物，巨匠"
       },
       {
         "en": "elephant",
@@ -7293,11 +7293,11 @@ const VOCAB_DATA = [
         "phonetic": "/miːt/",
         "pos": "n.",
         "meaning": "肉",
-        "defEn": "❶The flesh of an animal when it is used for food.",
+        "defEn": "❶The flesh of an animal used as food. ❷The most important or interesting part of something.",
         "example": "A quick meat cleared her mind.",
         "exampleZh": "一次快速的肉让她头脑清醒。",
         "subcategory": "Action Nouns",
-        "defZh": "❶作为食物使用的动物肉（肌肉组织）。 ❷按解剖位置和来源分类的肉类型。 ❸食物，供动物或人类食用，尤指固体食物。"
+        "defZh": "❶肉（动物肌肉组织，作为食物） ❷（比喻）核心内容或实质部分"
       },
       {
         "en": "cake",
@@ -7352,7 +7352,7 @@ const VOCAB_DATA = [
         "example": "The family had steak and kidney pie for dinner and cherry pie for dessert.",
         "exampleZh": "一家人晚餐吃牛排和肾馅饼，甜点吃樱桃馅饼。",
         "subcategory": "Action Nouns",
-        "defZh": "❶一种由外壳和馅料组成的糕点。 ❷各种其他类型的， ❸（美国东北部）比萨饼。"
+        "defZh": "❶馅饼，派（肉类、蔬菜或水果做馅的烤糕点）"
       },
       {
         "en": "sauce",
@@ -7447,11 +7447,11 @@ const VOCAB_DATA = [
         "phonetic": "/haʊs/",
         "pos": "n.",
         "meaning": "房子",
-        "defEn": "❶A building that people, usually one family, live in.",
+        "defEn": "❶A building that people, usually one family, live in. ❷A group of people who make laws for a country.",
         "example": "The house is something we all need.",
         "exampleZh": "房子是我们都需要的东西。",
         "subcategory": "Extra High-Frequency",
-        "defZh": "❶建造或用作人类居住的结构。 ❷住在房子里的人；一家人。 ❸用于非居住用途的建筑（通常与……搭配）"
+        "defZh": "❶房子，住宅 ❷议院（如the House of Representatives）"
       },
       {
         "en": "room",
@@ -9678,13 +9678,13 @@ const VOCAB_DATA = [
         "en": "organize",
         "phonetic": "/ˈɔːr.ɡə.naɪz/",
         "pos": "v.",
-        "meaning": "❶ 把散乱的东西按规则分类排好各归各位 ❷ 把人分配到合适位置让团队运转起来 ❸ 把杂乱的桌面/文件整理得井井有条",
-        "defEn": "❶v. To arrange things in a structured order ❷v. To coordinate people for a team effort ❸v. To tidy up files or workspace",
+        "meaning": "❶组织、安排 ❷把人或事物按规则归类",
+        "defEn": "❶v. To arrange or plan something so that it works well ❷v. To put things in order or into groups",
         "example": "Organize your desk before starting work.",
         "root": "organ(器官/组织)+ize → 使有组织 → 组织",
         "exampleZh": "开始工作前整理桌子。",
         "subcategory": "Work & Study",
-        "defZh": "❶v. 将事物按结构化顺序排列 ❷v. 协调人员组成团队协作 ❸v. 整理文件或工作空间"
+        "defZh": "❶v. 组织、安排事物或人员 ❷v. 把杂乱的东西归类整理"
       },
       {
         "en": "manage",
@@ -10248,13 +10248,13 @@ const VOCAB_DATA = [
         "en": "forbid",
         "phonetic": "/fərˈbɪd/",
         "pos": "v.",
-        "meaning": "❶ 在门口竖起'禁止通行'牌子绝不让过 ❷ 明确下令不许做某事",
-        "defEn": "❶v. To tell someone they must not do something ❷v. To prohibit by order",
+        "meaning": "❶禁止、不许做某事",
+        "defEn": "❶v. To tell someone they must not do something",
         "example": "My parents forbid me from staying out past midnight.",
         "irr": "forbade|forbidden",
         "exampleZh": "我父母不许我在外面待到午夜之后。",
         "subcategory": "Law & Rules",
-        "defZh": "❶v. 告知某人不得做某事 ❷v. 以命令禁止"
+        "defZh": "❶v. 禁止、不许某人做某事"
       },
       {
         "en": "permit",
@@ -10776,7 +10776,7 @@ const VOCAB_DATA = [
         "exampleZh": "价格范围10到50美元。",
         "wordType": "abstract",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 同一类型的各种不同事物 ❷n. 某物能被看到或听到的距离 ❸n. 供动物活动的大片土地"
+        "defZh": "❶n. 范围、幅度 ❷n. 一系列同类产品 ❸n. 视线/听觉可及的距离 ❹n. 牧场、大片放牧地"
       },
       {
         "en": "limit",
@@ -11236,12 +11236,12 @@ const VOCAB_DATA = [
         "phonetic": "/ˈhæbɪt/",
         "pos": "n.",
         "meaning": "习惯",
-        "defEn": "❶n. Something you do regularly, often without thinking ❷n. A strong physical need for a drug",
+        "defEn": "❶n. Something you do regularly, often without thinking about it. ❷n. A long piece of clothing worn by monks or nuns.",
         "example": "Reading is a good habit.",
         "exampleZh": "阅读是好习惯。",
         "wordType": "abstract",
         "subcategory": "Action Nouns Deep",
-        "defZh": "❶n. 经常做的事往往不加思考（习惯） ❷n. 坏习惯或毒瘾"
+        "defZh": "❶习惯（经常做的事，往往不加思考） ❷修女或修士穿的服装"
       },
       {
         "en": "process",
@@ -12452,12 +12452,14 @@ const VOCAB_DATA = [
         "en": "desert",
         "phonetic": "/ˈdezərt/",
         "pos": "n.",
-        "meaning": "❶沙漠 ❷应得的奖赏/惩罚（formal，通常复数deserts，如just deserts=应得的下场） [遗漏❷虽罕见但为剑桥正式列出义项；B8阶段可标注为formal/rare]",
+        "meaning": "❶沙漠 ❷荒凉的境地",
         "example": "The desert gets very hot in summer.",
         "root": "des(失去)+ert → 被失去的地方 → 沙漠",
         "exampleZh": "沙漠夏天非常热。",
         "wordType": "concrete",
-        "subcategory": "Nature Deep"
+        "subcategory": "Nature Deep",
+        "defZh": "❶沙漠 ❷荒凉的地方",
+        "defEn": "❶A large area of land covered with sand, with very little rain. ❷A place that is empty and boring."
       },
       {
         "en": "valley",
@@ -16110,14 +16112,14 @@ const VOCAB_DATA = [
         "en": "detail",
         "phonetic": "/ˈdiːteɪl/",
         "pos": "n.",
-        "meaning": "❶细节、详情 ❷（军事）分遣队",
-        "defEn": "❶n. A single piece of information or fact about something ❷n. A group of soldiers given a particular task ❸v. To give all the details about something",
+        "meaning": "❶细节、详情 ❷v. 详细说明",
+        "defEn": "❶n. A single piece of information or fact about something ❷v. To give all the details about something",
         "example": "Check the details before signing.",
         "root": "de(分开)+tail(切) → 切分开的 → 细节",
         "exampleZh": "签字前检查细节。",
         "wordType": "semi-concrete",
         "subcategory": "High-Frequency Deep",
-        "defZh": "❶n. 关于某事的一条信息或事实 ❷n. 分派执行特别任务的一组士兵（分遣队） ❸v. 详细说明某事"
+        "defZh": "❶n. 细节，详情 ❷v. 详细说明"
       },
       {
         "en": "sample",
