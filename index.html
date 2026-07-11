@@ -722,7 +722,7 @@ function renderMeaning(w, isCard) {
     var id = "def-" + w.en.replace(/[^a-zA-Z0-9]/g, "_");
     var cls = isCard ? "card-toggle-zh" : "toggle-zh-btn";
     return '<span class="def-en" id="' + id + '-en">' + w.defEn + ' <button class="' + cls + '" data-def-id="' + id + '" data-def-mode="en">中</button></span>' +
-           '<span class="def-zh" id="' + id + '-zh" style="display:none">' + (w.defZh || w.meaning) + ' <button class="' + cls + ' zh-mode" data-def-id="' + id + '" data-def-mode="zh">英</button></span>';
+           '<span class="def-zh" id="' + id + '-zh" style="display:none">' + w.meaning + ' <button class="' + cls + ' zh-mode" data-def-id="' + id + '" data-def-mode="zh">英</button></span>';
   }
   return w.meaning;
 }
@@ -1877,13 +1877,13 @@ const VERBS200_QUIZ_GROUPS = [
 ];
 
 const NOUNS500V2_QUIZ_GROUPS = [
-  { name: '🍔 饮食购物', subcats: ['Food & Drink Deep', 'Shopping', 'Kitchen Deep', 'Living Room Deep'] },
-  { name: '🏠 家居服装', subcats: ['Household Deep', 'Clothing Deep', 'Personal Items'] },
-  { name: '🏙️ 出行街市', subcats: ['Street & City Deep', 'Transport Deep', 'Office & School Deep'] },
-  { name: '🌿 自然身体', subcats: ['Nature Deep', 'Animals Deep', 'Body Deep'] },
-  { name: '💊 医药天气', subcats: ['Medicine & Health', 'Weather Details'] },
-  { name: '🏀 运动娱乐', subcats: ['Sports & Fun Deep', 'Digital Life'] },
-  { name: '💰 金融情感', subcats: ['Finance Daily', 'Emotions Deep', 'Society Deep', 'High-Frequency Deep'] },
+  { name: '🍽️ 饮食+自然+办公学习', subcats: ['Food & Drink', 'Food & Drink Deep', 'Action Nouns', 'Nature & Outdoors', 'Nature Deep', 'Office & School', 'Office & School Deep'] },
+  { name: '💪 身体+医药健康+动物', subcats: ['Body Parts', 'Body Deep', 'Medicine & Health', 'Body & Health', 'Animals', 'Animals Deep'] },
+  { name: '💰 金融日常+运动娱乐+数字生活', subcats: ['Finance Daily', 'Money & Business', 'Sports & Entertainment', 'Sports & Fun Deep', 'Digital Life', 'Electronics & Appliances'] },
+  { name: '🚗 交通+社会+情感', subcats: ['Transportation', 'Transport Deep', 'Travel & Transport', 'Society & Abstract', 'Society Deep', 'People & Relationships', 'Emotions & States', 'Emotions Deep'] },
+  { name: '🏙️ 街道城市+购物+厨房', subcats: ['Street & City', 'Street & City Deep', 'Shopping', 'Kitchen', 'Kitchen Deep'] },
+  { name: '🏠 家居+服装+卫浴+卧室+工具', subcats: ['Household Items', 'Household Deep', 'Household & Daily Life', 'Personal Items', 'Clothing', 'Clothing Deep', 'Bathroom', 'Bedroom', 'Tools & Repair'] },
+  { name: '🌈 天气+客厅+颜色数字+高频词', subcats: ['Time, Date & Weather', 'Weather Details', 'Living Room', 'Living Room Deep', 'Colors, Shapes & Numbers', 'Extra High-Frequency'] },
 ];
 
 /* ===== 测验音效(Web Audio API 合成)===== */
